@@ -67,7 +67,7 @@ You may need to restart or log out and log back in again to have it fully apply.
 
 ## Community, discussion, contribution, and support
 
-This project is managed by [SIG Contributor Experience](sig-contribex) as a part of [KEP-0005](kep-005)
+This project is managed by [SIG Contributor Experience][sig-contribex] as a part of [KEP-0005][kep-0005]
 
 You can reach the maintainers of this project at:
 
