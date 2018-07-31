@@ -1,0 +1,17 @@
+/.git
+/.github
+/.gitignore
+CLA.md
+Gopkg.lock
+Gopkg.toml
+LICENSE
+Makefile
+OWNERS
+OWNERS_ALIASES
+SECURITY_CONTACTS
+sigs.yaml
+/_tmp
+/vendor
+/hack
+/generator
+/icons
