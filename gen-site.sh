@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 
-set -e
+# Copyright 2018 The Kubernetes Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+set -o errexit
+set -o nounset
 set -o pipefail
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
@@ -20,11 +35,11 @@ EXCLUDE_LIST="$DIR/exclude.list"
 INCLUDE_LIST="$DIR/include.list"
 HUGO_BUILD=${HUGO_BUILD:-false}
 
-# ensures directory structure and git repo in place
+# Ensures directory structure and git repo in place
 init() {
   mkdir -p "$CONTENT_DIR"
   if [[ ! -d "$SRC_DIR" ]]; then
-    echo "Cloning k/community."
+    echo "Cloning kubernetes/community."
     git clone "$KCOMMUNITY_REPO" "$SRC_DIR"
   fi
 }
@@ -102,7 +117,7 @@ main() {
     # if its a README, it must be renamed to _index
     [[ $(basename "${file,,}") == 'readme.md' ]] && rename_file "$file"
   done < <(find_md_files)
-  echo "Community Site Content Generated."
+  echo "Contributor Site Content Generated."
   if [[ "$HUGO_BUILD" = true ]]; then
     echo "Building Site with: hugo --source \"$DIR\" $*"
     hugo --source "$DIR" "$@"

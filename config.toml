@@ -1,7 +1,7 @@
-baseURL = "/"
+baseURL = "https://contributor.kubernetes.io"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "Kubernetes Community"
+title = "Kubernetes Contributor Community"
 theme = "docdock"
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
@@ -9,6 +9,9 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 publishDir="build/public"
+
+[blackfriday]
+    extensions = [ "noEmptyLineBeforeBlock"]
 
 [params]
 editURL = ""
