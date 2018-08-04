@@ -1,0 +1,19 @@
+[build]
+publish = "build/public"
+command = "./gen-site.sh"
+
+[build.environment]
+HUGO_VERSION = "0.45.1"
+HUGO_BUILD = "true"
+
+[context.production.environment]
+HUGO_ENV = "production"
+
+[context.deploy-preview]
+command = "./gen-site.sh -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+command = "./gen-site.sh -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy.environment]
+command = "./gen-site.sh -b $DEPLOY_PRIME_URL"
