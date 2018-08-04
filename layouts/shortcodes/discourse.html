@@ -1,0 +1,26 @@
+{{/*
+The discourse shortcode is used for embedding a topic from discuss.kubernetes.io.
+It accepts a single parameter, the explicit topic ID to embed. 
+
+Examples:
+{{< discourse 1234 >}}
+{{< discourse topicId=1234 >}}
+
+All other configuration takes place within the discourse forum itself.
+
+For more information, see the discourse documentation here:
+https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963
+*/}}
+
+<div id='discourse-comments'></div>
+
+<script type="text/javascript">
+  DiscourseEmbed = { discourseUrl: 'https://discuss.kubernetes.io/',
+                     topicId: {{if .IsNamedParams}}{{.Get "topicId"}}{{else}}{{.Get 0}}{{end}} };
+
+  (function() {
+    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+  })();
+</script>
