@@ -79,6 +79,9 @@ sub_links() {
       -e 's|\](../sig-|](/special-interest-groups/sig-|Ig' \
       -e 's|\](../wg-|](/working-groups/wg-|Ig' \
       "$1"
+  # Embedding links to images that are not https will trigger a warning due to linking to 
+  # non secure content from a secure page.
+  sed -i -E 's|(!\[.*\]\()http:|\1https:|Ig' "$1"
   echo "Links Updated in: $1"
 }
 
