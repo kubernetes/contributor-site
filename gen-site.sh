@@ -113,10 +113,9 @@ main() {
   init
   sync_content
   while IFS= read -r -d $'\0' file; do
-    # short circult early if already 
-    [[ $(head -n 1 "$file") == "$HEADER_STRING" ]] && continue
     sub_links "$file"
-    insert_header "$file"
+    # insert header if not found
+    [[ $(head -n 1 "$file") != "$HEADER_STRING" ]] && insert_header "$file"
     # if its a README, it must be renamed to _index
     [[ $(basename "${file,,}") == 'readme.md' ]] && rename_file "$file"
   done < <(find_md_files)
