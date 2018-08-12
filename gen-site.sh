@@ -23,7 +23,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
 # short circuit if requirements cannot be met
 [[ ! -f "$DIR/header.tmplt" ]] && echo 'Header Template missing. Exiting.' && exit 1
 [[ ! -f "$DIR/exclude.list" ]] && echo 'Exclude list missing. Exiting.' && exit 1
-[[ ! -f "$DIR/include.list" ]] && echo 'Include list missing. Exiting.' && exit 1
 
 # KCOMMUNITY_ROOT is passed as src dir if executing from k/community context
 SRC_DIR="${KCOMMUNITY_ROOT:-"$DIR/build/src"}"
@@ -32,10 +31,9 @@ CONTENT_DIR="$DIR/content"
 HEADER_STRING=$(head -n 1 "$DIR/header.tmplt")
 HEADER_TMPLT=$(sed -e ':a;N;$!ba;s/\n/\\n/g' "$DIR/header.tmplt")
 EXCLUDE_LIST="$DIR/exclude.list"
-INCLUDE_LIST="$DIR/include.list"
 HUGO_BUILD=${HUGO_BUILD:-false}
 
-# Ensures directory structure and git repo in place
+# Ensures top level directory structure and git repo in place
 init() {
   mkdir -p "$CONTENT_DIR"
   if [[ ! -d "$SRC_DIR" ]]; then
@@ -47,17 +45,31 @@ init() {
 # syncs content from community repo to content dir
 sync_content() {
   echo "Syncing k/community to content dir."
-  mkdir -p "$CONTENT_DIR/special-interest-groups"
-  mkdir -p "$CONTENT_DIR/working-groups"
+  mkdir -p "$CONTENT_DIR/sigs"
+  mkdir -p "$CONTENT_DIR/governance/steering-committee"
+
+  # Governance Content
+  rsync -av --exclude-from="$EXCLUDE_LIST" \
+    "$SRC_DIR/committee-steering/" "$CONTENT_DIR/governance/steering-committee"
+  cp "$SRC_DIR/governance.md" "$CONTENT_DIR/governance/README.md"
+  cp "$SRC_DIR/sig-governance.md" "$CONTENT_DIR/governance/"
+  cp "$SRC_DIR/community-membership.md" "$CONTENT_DIR/governance/"
+
+  # SIG Content
   find "$SRC_DIR" -type d -name "sig-*" -maxdepth 1 \
-    -exec rsync -av --exclude-from="$EXCLUDE_LIST" "{}" "$CONTENT_DIR/special-interest-groups/" \;
+    -exec rsync -av --exclude-from="$EXCLUDE_LIST" "{}" "$CONTENT_DIR/sigs/" \;
   find "$SRC_DIR" -type d -name "wg-*" -maxdepth 1 \
-    -exec rsync -av --exclude-from="$EXCLUDE_LIST" "{}" "$CONTENT_DIR/working-groups/" \;
+    -exec rsync -av --exclude-from="$EXCLUDE_LIST" "{}" "$CONTENT_DIR/sigs/" \;
+  cp "$SRC_DIR/sig-list.md" "$CONTENT_DIR/sigs/README.md"
+
+  # Other Content
   find "$SRC_DIR" ! -path "$SRC_DIR" -type d  -maxdepth 1 \
-    -exec rsync -av --exclude-from="$EXCLUDE_LIST" --exclude="/wg-*" --exclude="/sig-*" {} "$CONTENT_DIR" \;
-  rsync -av --include-from="$INCLUDE_LIST" --exclude="*" "$SRC_DIR/" "$CONTENT_DIR"
-  cp "$SRC_DIR/sig-list.md" "$CONTENT_DIR/special-interest-groups/README.md"
-  cp "$SRC_DIR/sig-list.md" "$CONTENT_DIR/working-groups/README.md"
+    -exec rsync -av --exclude-from="$EXCLUDE_LIST" \
+    --exclude="/wg-*" \
+    --exclude="/sig-*" \
+    --exclude="/committee-steering" \
+    {} "$CONTENT_DIR" \;
+
   cp "$SRC_DIR/README.md" "$CONTENT_DIR/README.md"
 }
 
@@ -68,19 +80,50 @@ find_md_files() {
 
 # Cleans up formatting of links found in docs
 sub_links() {
+
+  # Inserts the correct path if link is made to local README.md.
+  # This rule must be executed before any rule that potentially removes or
+  # changes a path containing README.md 
+  if grep -q -i "(README.md)" "$1"; then
+    local dir_path
+    dir_path="$(dirname "$1")"
+    sed -i -e "s|(README.md)|(${dir_path#"$CONTENT_DIR"}/|Ig" "$1"
+  fi
+
+  # Corrects inline link extensions and github references
   sed -i \
       -e 's|https://github\.com/kubernetes/community/blob/master||Ig' \
-      -e 's|README\.md)|)|Ig' \
-      -e 's|README\.md#|#|Ig' \
-      -e 's|\.md)|)|Ig' \
-      -e 's|\.md#|#|Ig' \
-      -e 's|\](sig-|](/special-interest-groups/sig-|Ig' \
-      -e 's|\](wg-|](/working-groups/wg-|Ig' \
-      -e 's|\](../sig-|](/special-interest-groups/sig-|Ig' \
-      -e 's|\](../wg-|](/working-groups/wg-|Ig' \
+      -e 's|/README\.md)|/)|Ig' \
+      -e 's|/README\.md#|/#|Ig' \
+      -e 's|\.md)|/)|Ig' \
+      -e 's|\.md#|/#|Ig' \
       "$1"
-  # Embedding links to images that are not https will trigger a warning due to linking to 
-  # non secure content from a secure page.
+
+  # Corrects relative links
+  sed -i -E 's|(\[.*\]:.*)/README.md|\1/|Ig' "$1"
+  sed -i -E 's|(\[.*\]:.*)\.md|\1/|Ig'  "$1"
+
+  # Corrects sig and wg links
+  sed -i \
+      -e 's|\](sig-list)|](/sigs/)|Ig' \
+      -e 's|\](sig-list/)|(/sigs/)|Ig' \
+      -e 's|\](/sig-list/)|](/sigs/)|Ig' \
+      -e 's|\](sig-|](/sigs/sig-|Ig' \
+      -e 's|\](wg-|](/sigs/wg-|Ig' \
+      -e 's|\](../sig-|](/sigs/sig-|Ig' \
+      -e 's|\](../wg-|](/sigs/wg-|Ig' \
+      "$1"
+
+ # Corrects links to items placed in governance directory
+  sed -i \
+      -e 's|/committee-steering/|/governance/steering-committee/|Ig' \
+      -e 's|]: committee-steering/|]:/governance/steering-committee/|Ig' \
+      -e 's|/community-membership/|/governance/community-membership/|Ig' \
+      -e 's|]: community-membership/|]: /governance/community-membership/|Ig' \
+      "$1"
+
+  # Embedding links to images that are not https will trigger a warning due to
+  # linking to non secure content from a secure page.
   sed -i -E 's|(!\[.*\]\()http:|\1https:|Ig' "$1"
   echo "Links Updated in: $1"
 }
@@ -90,14 +133,23 @@ insert_header() {
   local title
   local filename
   filename="$(basename "$1")"
-  # If its README, assume the title should be that of the parent dir. 
-  # Otherwise use the name of the file.
+  # If its README, assume the title should be that of the parent dir unless
+  # it is one of the top level dirs that should have an overrided name. 
   if [[ "${filename,,}" == 'readme.md' || "${filename,,}" == '_index.md' ]]; then
-    title="$(basename "$(dirname "$1")")"
+    case "$(dirname "$1")" in
+      "$CONTENT_DIR") title="Kubernetes Contributor Community" ;;
+      "$CONTENT_DIR/committee-code-of-conduct") title="Code of Conduct Committee" ;;
+      "$CONTENT_DIR/communication") title="How We Communicate" ;;
+      "$CONTENT_DIR/github-management") title="GitHub Management" ;;
+      "$CONTENT_DIR/governance") title="Governance" ;;
+      "$CONTENT_DIR/keps") title="Enhancement Proposals (KEPs)" ;;
+      "$CONTENT_DIR/sigs") title="SIGs and WGs" ;;
+      *) title="$(basename "$(dirname "$1")")" ;;
+    esac
   else
     title="${filename%.md}"
   fi
-  sed -i "1i${HEADER_TMPLT//__TITLE__/$title}" "$1"
+  sed -i "1i${HEADER_TMPLT//__TITLE__/${title}}" "$1"
   echo "Header inserted into: $1"
 }
 

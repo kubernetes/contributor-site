@@ -31,17 +31,8 @@ enableGitInfo = true
 home = [ "HTML", "RSS", "JSON"]
 
 # items in main will default to being ordered above auto-generated content and NOT open in new page
-[[menu.main]]
-name = "Community Membership"
-url = "/community-membership/"
+#[[menu.main]]
 
-[[menu.main]]
-name = "Governance"
-url = "/governance/"
-
-[[menu.main]]
-name = "SIG governance"
-url = "/sig-governance/"
 #
-# [[menu.shortcut   s]]
+# [[menu.shortcuts]]
 # shortcuts assumes going offsite and will open in a few window

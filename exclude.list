@@ -15,3 +15,5 @@ sigs.yaml
 /hack
 /generator
 /icons
+/archive
+/events
