@@ -45,17 +45,22 @@ init() {
 # syncs content from community repo to content dir
 sync_content() {
   echo "Syncing k/community to content dir."
-  mkdir -p "$CONTENT_DIR/sigs"
-  mkdir -p "$CONTENT_DIR/governance/steering-committee"
 
   # Governance Content
+  mkdir -p "$CONTENT_DIR/governance/steering-committee"
+  mkdir -p "$CONTENT_DIR/governance/cocc"
   rsync -av --exclude-from="$EXCLUDE_LIST" \
     "$SRC_DIR/committee-steering/" "$CONTENT_DIR/governance/steering-committee"
+  rsync -av --exclude-from="$EXCLUDE_LIST" \
+    "$SRC_DIR/committee-code-of-conduct/" "$CONTENT_DIR/governance/cocc"
+  rsync -av --exclude-from="$EXCLUDE_LIST" \
+    "$SRC_DIR/github-management" "$CONTENT_DIR/governance"
   cp "$SRC_DIR/governance.md" "$CONTENT_DIR/governance/README.md"
   cp "$SRC_DIR/sig-governance.md" "$CONTENT_DIR/governance/"
   cp "$SRC_DIR/community-membership.md" "$CONTENT_DIR/governance/"
 
   # SIG Content
+  mkdir -p "$CONTENT_DIR/sigs"
   find "$SRC_DIR" -type d -name "sig-*" -maxdepth 1 \
     -exec rsync -av --exclude-from="$EXCLUDE_LIST" "{}" "$CONTENT_DIR/sigs/" \;
   find "$SRC_DIR" -type d -name "wg-*" -maxdepth 1 \
@@ -68,6 +73,8 @@ sync_content() {
     --exclude="/wg-*" \
     --exclude="/sig-*" \
     --exclude="/committee-steering" \
+    --exclude="/committee-code-of-conduct" \
+    --exclude="github-management" \
     {} "$CONTENT_DIR" \;
 
   cp "$SRC_DIR/README.md" "$CONTENT_DIR/README.md"
@@ -120,6 +127,10 @@ sub_links() {
       -e 's|]: committee-steering/|]:/governance/steering-committee/|Ig' \
       -e 's|/community-membership/|/governance/community-membership/|Ig' \
       -e 's|]: community-membership/|]: /governance/community-membership/|Ig' \
+      -e 's|/committee-code-of-conduct/|governance/cocc/|Ig' \
+      -e 's|]: committee-code-of-conduct/|governance/cocc/|Ig' \
+      -e 's|/github-management/|/governance/github-management|Ig' \
+      -e 's|]: github-management/|/governance/github-management|Ig' \
       "$1"
 
   # Embedding links to images that are not https will trigger a warning due to
@@ -138,10 +149,10 @@ insert_header() {
   if [[ "${filename,,}" == 'readme.md' || "${filename,,}" == '_index.md' ]]; then
     case "$(dirname "$1")" in
       "$CONTENT_DIR") title="Kubernetes Contributor Community" ;;
-      "$CONTENT_DIR/committee-code-of-conduct") title="Code of Conduct Committee" ;;
       "$CONTENT_DIR/communication") title="How We Communicate" ;;
-      "$CONTENT_DIR/github-management") title="GitHub Management" ;;
       "$CONTENT_DIR/governance") title="Governance" ;;
+      "$CONTENT_DIR/governance/cocc") title="Code of Conduct Committee" ;;
+      "$CONTENT_DIR/governance/github-management") title="GitHub Management" ;;
       "$CONTENT_DIR/keps") title="Enhancement Proposals (KEPs)" ;;
       "$CONTENT_DIR/sigs") title="SIGs and WGs" ;;
       *) title="$(basename "$(dirname "$1")")" ;;
