@@ -15,4 +15,6 @@ sigs.yaml
 /hack
 /generator
 /icons
+/archive
+/events
 /contributors/design-proposals
