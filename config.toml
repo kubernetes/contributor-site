@@ -25,7 +25,7 @@ disableNavChevron = true # set true to hide next/prev chevron, default is false
 highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
 menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
 enableGitInfo = true
-# custom_css = [] #ordered list to override css
+custom_css = [ "css/overrides.css" ]
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
