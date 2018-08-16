@@ -1,0 +1,77 @@
+/* Circle in navigation */
+#sidebar ul li .read-icon,
+#sidebar ul li.visited > div > .read-icon,
+#sidebar ul li.visited.active > div > .read-icon {
+  display: none;
+}
+
+/* Arrow if nav has children */
+#sidebar ul li .category-icon {
+  color: #fff;
+}
+
+/* Sidebar */
+#sidebar {
+  background-color: #303030;
+  background-image: url('/images/texture.png');
+  background-position-x: 25%;
+  background-size: cover;
+}
+
+/* Navigation in sidebar */
+#sidebar ul.topics {
+  margin: 0;
+  padding: 0 0 0.5rem 1rem;
+  background-color: rgba(34, 34, 34, 0.3);
+}
+
+/* Random horizontal rule on navigation */
+#sidebar hr {
+  display: none;
+}
+
+/* Expanded child navigation */
+#sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
+  background-color: rgba(34, 34, 34, 0.5);
+}
+
+/* Arrow if nav is active with children */
+#sidebar ul li.active > div > .category-icon {
+  color: #333;
+}
+
+/* Children of expanded navigation that are not active */
+#sidebar .parent li, #sidebar .active li {
+  border-left: 1px #333 solid;
+}
+
+/* Top bar */
+#top-bar {
+  box-shadow: none;
+  border: 1px #ccc solid;
+}
+
+/* Animated underlines */
+#body a.highlight:after {
+  -webkit-transition: none;
+  transition: none;
+  -ms-transition: none;
+  -moz-transition: none;
+}
+
+/* Child active */
+#sidebar ul li.active > div > a {
+  padding-left: 0;
+  color: #333 !important;
+}
+
+/* Child active hover color */
+#sidebar ul li.active > div > a:hover {
+  color: #111 !important;
+}
+
+/* Top of the sidebar header */
+#header-wrapper {
+  background-color: #533BEA;
+  border-bottom: 1px solid #eee;
+}
