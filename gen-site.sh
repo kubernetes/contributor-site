@@ -39,6 +39,10 @@ init() {
   if [[ ! -d "$SRC_DIR" ]]; then
     echo "Cloning kubernetes/community."
     git clone "$KCOMMUNITY_REPO" "$SRC_DIR"
+  elif [[ "$HUGO_BUILD" = true   && \
+          $(git -C "$SRC_DIR" rev-parse --show-toplevel) == "$SRC_DIR" ]]; then
+    echo "Syncing with latest content from master."
+    git -C "$SRC_DIR" pull
   fi
 }
 
