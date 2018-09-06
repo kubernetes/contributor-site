@@ -15,7 +15,7 @@ publishDir="build/public"
 
 [params]
 editURL = ""
-showVisitedLinks = true # default is false
+showVisitedLinks = false # default is false
 themeStyle = "original" # "original" or "flex" # default "flex"
 themeVariant = "blue" # choose theme variant "green", "gold" , "gray", "blue" (default)
 ordersectionsby = "title" # ordersectionsby = "title"
