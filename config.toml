@@ -34,5 +34,6 @@ home = [ "HTML", "RSS", "JSON"]
 #[[menu.main]]
 
 #
-# [[menu.shortcuts]]
-# shortcuts assumes going offsite and will open in a few window
+[[menu.shortcuts]]
+name = "Glossary"
+url = "https://kubernetes.io/docs/reference/glossary/?community=true"
