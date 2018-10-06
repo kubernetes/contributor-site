@@ -1,8 +1,6 @@
 baseURL = "https://contributor.kubernetes.io"
-languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "Kubernetes Contributor Community"
-theme = "docdock"
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
 defaultContentLanguage = "en"
@@ -11,29 +9,22 @@ enableMissingTranslationPlaceholders = false
 publishDir="build/public"
 
 [blackfriday]
-    extensions = [ "noEmptyLineBeforeBlock"]
+extensions = [ "noEmptyLineBeforeBlock"]
 
 [params]
 editURL = ""
 showVisitedLinks = false # default is false
-themeStyle = "original" # "original" or "flex" # default "flex"
-themeVariant = "blue" # choose theme variant "green", "gold" , "gray", "blue" (default)
 ordersectionsby = "title" # ordersectionsby = "title"
 disableHomeIcon = false # default is false
-disableSearch = true # default is false
 disableNavChevron = true # set true to hide next/prev chevron, default is false
-highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
 menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
-enableGitInfo = true
+enableGitInfo = false
+sectionPagesMenu="menu"
 custom_css = [ "css/overrides.css" ]
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 
-# items in main will default to being ordered above auto-generated content and NOT open in new page
-#[[menu.main]]
-
-#
 [[menu.shortcuts]]
 name = "Glossary"
 url = "https://kubernetes.io/docs/reference/glossary/?community=true"

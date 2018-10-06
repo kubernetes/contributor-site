@@ -16,13 +16,8 @@
 <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
 <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
-<link href="{{"css/hybrid.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
-<link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-<link href="{{"theme-original/style.css" | relURL}}" rel="stylesheet">
-{{with .Site.Params.themeVariant}}
-  <link href="{{(printf "theme-original/variant-%s.css" .) | relURL}}" rel="stylesheet">
-{{end}}
+<link href="{{"css/style.css" | relURL}}" rel="stylesheet">
 {{ range .Site.Params.custom_css -}}
 <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
