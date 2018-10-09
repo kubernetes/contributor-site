@@ -140,6 +140,7 @@ sub_links() {
   # Embedding links to images that are not https will trigger a warning due to
   # linking to non secure content from a secure page.
   sed -i -E 's|(!\[.*\]\()http:|\1https:|Ig' "$1"
+  sed -i -e 's|src="http:|src="https:|Ig' "$1"
   echo "Links Updated in: $1"
 }
 
