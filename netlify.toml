@@ -3,7 +3,7 @@ publish = "build/public"
 command = "./gen-site.sh"
 
 [build.environment]
-HUGO_VERSION = "0.45.1"
+HUGO_VERSION = "0.49"
 HUGO_BUILD = "true"
 
 [context.production.environment]
