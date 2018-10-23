@@ -1,0 +1,31 @@
+baseURL: https://contributor.kubernetes.io
+DefaultContentLanguage: en
+title: Kubernetes Contributor Community
+pygmentsCodeFences: true
+pygmentsStyle: monokailight
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+enableMissingTranslationPlaceholders: false
+publishDir: build/public
+pluralizeListTitles: false
+
+blackfriday:
+  extensions: [ "noEmptyLineBeforeBlock" ]
+
+params:
+  editURL: ""
+  showVisitedLinks: false
+  ordersectionsby: title
+  disableHomeIcon: false
+  disableNavChevron: true
+  menushortcutsnewtab: false
+  enableGitInfo: false
+  sectionPagesMenu: menu
+  custom_css: [ "css/overrides.css" ]
+
+outputs:
+  home: [ "HTML", "RSS", "JSON"]
+
+menu.shortcuts:
+  name: Glossary
+  url: https://kubernetes.io/docs/reference/glossary/?community=true
