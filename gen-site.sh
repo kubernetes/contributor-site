@@ -249,12 +249,12 @@ sync_kcommunity_content() {
 update_links() {
 
   # replace 'README.md' with '/' if the link begins with '/'
-  sed -i -E 's|(\[.+\]\(/.+)/README\.md|\1/|Ig' "$1"
+  sed -i -E '/\[.+\]\(\S+/ {s|README\.md||g}' "$1"
   sed -i -E 's|(^\[.+\]:\s*/.*)/README\.md|\1/|g' "$1"
 
   # replace '.md' with '/' if the link begins with '/'
-  sed -i -E 's|(\[.+\]\(/.+)\.md|\1/|Ig' "$1"
-  sed -i -E 's|(^\[.+\]:\s*/.*)\.md|\1/|g' "$1"
+  sed -i -E '/\[.+\]\(\S+\./ {s|\.md|/|g}' "$1"
+  sed -i -E 's|(^\[.+\]:\s*/\S+)\.md|\1/|g' "$1"
 
   # governance links
   sed -i \
