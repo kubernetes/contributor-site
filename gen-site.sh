@@ -95,7 +95,7 @@ expand_file_paths() {
   fi
 
   mapfile -t ref_link_matches < \
-    <(grep -o -i -P '^\[.+\]:\s*(?!http|mailto|#|)\K\S+$' "$1")
+    <(grep -o -i -P '^\[.+\]:\s*(?!http|mailto|#)\K\S+$' "$1")
 
   if [[ -v ref_link_matches ]]; then
     for match in "${ref_link_matches[@]}"; do
