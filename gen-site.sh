@@ -35,7 +35,11 @@ readonly KCOMMUNITY_EXCLUDE_LIST="$DIR/kcommunity_exclude.list"
 # directory to ensure there are no left over artifacts from previous build.
 init_content() {
   mkdir -p "$CONTENT_DIR"
-  [[ "$HUGO_BUILD" = true ]] && (rm -r "${CONTENT_DIR:?}/"* || true) 
+  if [[ "$HUGO_BUILD" = true && \
+        -n "$(find "$CONTENT_DIR" -mindepth 1 -not -path "*.gitignore")" ]]; then
+    echo "Clearing Content Directory."
+    rm -r "${CONTENT_DIR:?}/"*
+  fi
 }
 
 # Intializes source repositores in build directory. If executing a build (CI)
@@ -78,30 +82,53 @@ expand_file_paths() {
   # Additional a-z0-9 section was to ignore some regex's used in design
   # proposals. It's an ugly hack, but will prevent expansion.
   mapfile -t inline_link_matches < \
-    <(grep -o -i -P '\[(?!a\-z0\-9).+\]\((?!http|mailto|#|\))\K.+?(?=\))' "$1")
+    <(grep -o -i -P '\[(?!a\-z0\-9).+\]\((?!http|mailto|#|\))\K\S+?(?=\))' "$1")
 
-  for match in "${inline_link_matches[@]}"; do
-    expanded_path=$(cd "$(dirname "$1")" && \
-      realpath "$match" -m --relative-base="$2")
-    [[ ${expanded_path:0:1} != "/" ]] && expanded_path="/$expanded_path"
-    if [[ "$match" != "$expanded_path" ]]; then
-      echo "Expanding Path: File: $1 Original: $match Expanded: $expanded_path"
-      sed -i -e "s|]($match)|]($expanded_path)|g" "$1"
-    fi
-  done
+   if [[ -v inline_link_matches ]]; then
+    for match in "${inline_link_matches[@]}"; do
+      expanded_path=$(gen_link_path "$1" "$match" "$2")
+      if [[ "$match" != "$expanded_path" ]]; then
+        echo "Expanding Path: File: $1 Original: $match Expanded: $expanded_path"
+        sed -i -e "s|]($match)|]($expanded_path)|g" "$1"
+      fi
+    done
+  fi
 
   mapfile -t ref_link_matches < \
-    <(grep -o -i -P '^\[.+\]\:\s*(?!http|mailto|#|\))\K.+$' "$1")
+    <(grep -o -i -P '^\[.+\]:\s*(?!http|mailto|#|)\K\S+$' "$1")
 
-  for match in "${inline_link_matches[@]}"; do
-    expanded_path=$(cd "$(dirname "$1")" && \
-      realpath "$match" -m --relative-base="$2")
-    [[ ${expanded_path:0:1} != '/' ]] && expanded_path="/$expanded_path"
-    if [[ "$match" != "$expanded_path" ]]; then
-      echo "Expanding Path: File: $1 Original: $match Expanded: $expanded_path"
-      sed -i -e "s|]:\s*$match|]: $expanded_path|g" "$1"
-    fi
-  done
+  if [[ -v ref_link_matches ]]; then
+    for match in "${ref_link_matches[@]}"; do
+      expanded_path=$(gen_link_path "$1" "$match" "$2")
+      if [[ "$match" != "$expanded_path" ]]; then
+        echo "Expanding Path: File: $1 Original: $match Expanded: $expanded_path"
+        sed -i -e "s|]:\s*$match|]: $expanded_path|g" "$1"
+      fi
+    done
+  fi
+}
+
+# Generates (or expands) the full path relative to the root of the directory if
+# it is valid path, otherwise return the passed path assuming it in reference
+# to something else.
+# Args:
+# $1 - path to file containing relative link
+# $2 - path to be expanded
+# $3 - relative base to trim from path
+gen_link_path() {
+  local dirpath=""
+  local filename=""
+  local expanded_path=""
+  dirpath="$( (cd "$(dirname "$1")" && readlink -f "$(dirname "$2")") || \
+          dirname "$2" )"
+  filename="$(basename "$2")"
+  [[ "$dirpath" == '.' || "$dirpath" == "/" ]] && dirpath=""
+  expanded_path="$dirpath/$filename"
+  if echo "$2" | grep -q -P "^\.?\/?$expanded_path"; then
+    echo "$expanded_path"
+  else
+    echo "${expanded_path##"$3"}"
+  fi
 }
 
 
@@ -115,19 +142,23 @@ trim_repo_url() {
   local inline_link_matches=()
   local ref_link_matches=()
 
-  mapfile -t inline_link_matches < <(grep -o -P "\[.+\]\($2\K.+?(?=\))" "$1")
+  mapfile -t inline_link_matches < <(grep -o -P "\[.+\]\($2\K\S+?(?=\))" "$1")
 
-  for match in "${inline_link_matches[@]}"; do
-    echo "Trimming URL: File: $1 Original: $2$match New: $match"
-    sed -i -e "s|]($2$match)|]($match)|g" "$1"
-  done
+  if [[ -v inline_link_matches ]]; then
+    for match in "${inline_link_matches[@]}"; do
+      echo "Trimming URL: File: $1 Original: $2$match New: $match"
+      sed -i -e "s|]($2$match)|]($match)|g" "$1"
+    done
+  fi
 
-  mapfile -t ref_link_matches < <(grep -o -P "^\[.+\]\:\s*$2\K.+$" "$1")
+  mapfile -t ref_link_matches < <(grep -o -P "^\[.+\]\:\s*$2\K\S+$" "$1")
 
-  for match in "${ref_link_matches[@]}"; do
-    echo "Trimming URL: File: $1 Original: $2$1 New: $match"
-    sed -i -e "s|]:\s*$2$match|]: $match|g" "$1"
-  done
+  if [[ -v ref_link_matches ]]; then
+    for match in "${ref_link_matches[@]}"; do
+      echo "Trimming URL: File: $1 Original: $2$1 New: $match"
+      sed -i -e "s|]:\s*$2$match|]: $match|g" "$1"
+    done
+  fi
 }
 
 
@@ -158,7 +189,7 @@ update_frontmatter_metadata() {
         echo "Adding original_url attribute: File: $1")
   fi
 
-  original_path="$(realpath --relative-to="$2" "$1")"
+  original_path="${1//$2}"
   [[ "${original_path:0:1}" != '/' ]] && original_path="/$original_path"
   
   grep -q "^original_url: $3$original_path" "$1" || \
@@ -351,6 +382,7 @@ main() {
     [[ $(basename "${file,,}") == 'readme.md' ]] && rename_readme "$file"
   done < <(find_md_files "$CONTENT_DIR")
 
+  echo "Completed Content Update."
   if [[ "$HUGO_BUILD" = true ]]; then
     echo "Building Site with: hugo --cleanDestinationDir --source \"$DIR\" $*"
     hugo --source "$DIR" "$@"
