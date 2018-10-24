@@ -70,8 +70,11 @@
   color: #111 !important;
 }
 
-/* Top of the sidebar header */
+
+/* Updated in parent style
+/* Top of the sidebar header 
 #header-wrapper {
-  background-color: #533BEA;
+  background-color: #3673E3;
   border-bottom: 1px solid #eee;
 }
+*/
