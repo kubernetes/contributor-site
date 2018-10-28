@@ -283,26 +283,8 @@ b, strong, label, th {
   -ms-transition: all 0.35s ease;
   transition: all 0.35s ease; }
 
-#grav-logo {
-  max-width: 60%; }
-
-#grav-logo path {
-  fill: #fff !important; }
-
 fieldset {
   border: 1px solid #ddd; }
-
-textarea, input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], select[multiple=multiple] {
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); }
-
-textarea:hover, input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover, select[multiple=multiple]:hover {
-  border-color: #c4c4c4; }
-
-textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
-  border-color: #2053AB;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(0, 169, 218, 0.7); }
 
 #header-wrapper {
   background-color: #3673E3;
@@ -704,17 +686,8 @@ td {
   position: relative;
   height: 100%; }
 
-.lightbox-active #body {
-  overflow: visible; }
-
-.lightbox-active #body .padding {
-  overflow: visible; }
-
 #github-contrib i {
   vertical-align: middle; }
-
-.featherlight img {
-  margin: 0 !important; }
 
 .lifecycle #body-inner ul {
   list-style: none;
@@ -864,9 +837,6 @@ pre .copy-to-clipboard:hover {
 
 .section {
   opacity: 1; }
-
-#searchResults {
-  text-align: left; }
 
 #sidebar-toggle-span {
   display: none; }

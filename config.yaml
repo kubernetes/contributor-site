@@ -13,19 +13,12 @@ blackfriday:
   extensions: [ "noEmptyLineBeforeBlock" ]
 
 params:
-  editURL: ""
-  showVisitedLinks: false
-  ordersectionsby: title
-  disableHomeIcon: false
-  disableNavChevron: true
-  menushortcutsnewtab: false
-  enableGitInfo: false
   sectionPagesMenu: menu
-  custom_css: [ "css/overrides.css" ]
 
 outputs:
   home: [ "HTML", "RSS", "JSON"]
 
-menu.shortcuts:
-  name: Glossary
-  url: https://kubernetes.io/docs/reference/glossary/?community=true
+menu:
+  shortcuts:
+  - name: Glossary
+    url: https://kubernetes.io/docs/reference/glossary/?community=true

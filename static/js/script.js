@@ -75,21 +75,6 @@ jQuery(document).ready(function() {
         return false;
     });
 
-    jQuery('[data-search-toggle]').on('click', function() {
-        if (sidebarStatus == 'closed') {
-            jQuery('[data-sidebar-toggle]').trigger('click');
-            jQuery(document.body).removeClass('searchbox-hidden');
-            searchStatus = 'open';
-
-            return false;
-        }
-
-        jQuery(document.body).toggleClass('searchbox-hidden');
-        searchStatus = (jQuery(document.body).hasClass('searchbox-hidden') ? 'closed' : 'open');
-
-        return false;
-    });
-
     var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)
     if (!touchsupport){ // browser doesn't support touch
         $('#toc-menu').hover(function() {
@@ -127,7 +112,4 @@ jQuery(window).on('load', function() {
         adjustForScrollbar();
     });
 
-
-    
-    
 });
