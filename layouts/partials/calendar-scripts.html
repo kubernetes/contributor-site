@@ -1,0 +1,25 @@
+<script type="text/javascript" src="{{"js/moment.min.js" | relURL }}"></script>
+<script type="text/javascript" src="{{"js/fullcalendar.min.js" | relURL }}"></script>
+<script type="text/javascript" src="{{"js/gcal.min.js" | relURL }}"></script>
+<script>
+    $(document).ready(function () {
+        $('#calendar').fullCalendar({
+          header: { 
+            left: 'prev,today,next',
+            center: 'title' ,
+            right: 'day,agendaWeek,month,list'
+          },
+          defaultView: 'month',
+          displayEventTime: false,
+          googleCalendarApiKey: '',
+          events: {
+            googleCalendarId: ''
+          },
+          eventClick: function(event) {
+            // opens events in a popup window
+            window.open(event.url, 'gcalevent', 'width=700,height=600');
+            return false;
+          }
+        })
+    });
+  </script>

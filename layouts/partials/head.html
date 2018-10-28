@@ -1,13 +1,4 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36037335-10"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-36037335-10');
-</script>
-
+{{ partial "google-analytics.html" . }}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 {{ .Hugo.Generator }}
@@ -16,16 +7,8 @@
 <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
 <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
-<link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
+<link href="{{"css/fonts.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/style.css" | relURL}}" rel="stylesheet">
-{{ range .Site.Params.custom_css -}}
-<link rel="stylesheet" href="{{ . | absURL }}">
-{{- end }}
-<link rel="stylesheet" href="{{"css/bootstrap.min.css" | relURL}}">
-<script src="{{"js/jquery-2.x.min.js" | relURL}}"></script>
-<style type="text/css">
-  :root #header + #content > #left > #rlblock_left {
-    display:none !important;
-  }
-</style>
+{{ if eq .Section "events" }}{{ partial "calendar-header.html" . }}{{ end }}
+{{ partial "scripts.html" . }}
 {{ partial "custom-head.html" . }}
