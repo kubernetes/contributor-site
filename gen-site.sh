@@ -26,6 +26,7 @@ readonly HUGO_BUILD="${HUGO_BUILD:-false}"
 readonly KCOMMUNITY_REPO="${KCOMMUNITY_REPO:-"https://github.com/kubernetes/community.git"}"
 readonly KCOMMUNITY_SRC_DIR="${KCOMMUNITY_SRC_DIR:-"$DIR/build/community"}"
 readonly CONTENT_DIR="$DIR/content"
+readonly MANAGED_CONTENT="$DIR/managed_content"
 readonly FRONTMATTER_STRING=$(head -n 1 "$DIR/frontmatter.tmplt")
 readonly FRONTMATTER_TMPLT=$(sed -e ':a;N;$!ba;s/\n/\\n/g' "$DIR/frontmatter.tmplt")
 readonly KCOMMUNITY_EXCLUDE_LIST="$DIR/kcommunity_exclude.list"
@@ -362,6 +363,12 @@ rename_readme() {
   echo "Renamed: $1 to $filename"
 }
 
+# Content within the managed content directory is 'out of band' and layered on
+# top of the generated content from the various other sources.
+sync_managed_content() {
+  rsync -av "$MANAGED_CONTENT/" "$CONTENT_DIR"
+}
+
 main() {
   init_content
   init_src "$KCOMMUNITY_REPO" "$KCOMMUNITY_SRC_DIR"
@@ -381,6 +388,9 @@ main() {
     insert_page_title "$file"
     [[ $(basename "${file,,}") == 'readme.md' ]] && rename_readme "$file"
   done < <(find_md_files "$CONTENT_DIR")
+
+  echo "Syncing Managed Content to content dir."
+  sync_managed_content
 
   echo "Completed Content Update."
   if [[ "$HUGO_BUILD" = true ]]; then
