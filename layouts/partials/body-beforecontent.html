@@ -1,7 +1,5 @@
 <div id="headermain"></div>
-<nav id="sidebar" class="{{if $.Site.Params.showVisitedLinks }}showVisitedLinks{{end}}">
-
-
+<nav id="sidebar">
 
 <div class="highlightable">
   <div id="header-wrapper">
@@ -11,11 +9,9 @@
   </div>
 
       <ul class="topics">
-        {{- if not .Site.Params.disableHomeIcon}}
-            <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
-            <a href="{{"/" | relLangURL}}"><i class="fa fa-fw fa-home"></i></a>
-            </li>
-        {{- end}}
+        <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
+         <a href="{{"/" | relLangURL}}"><i class="fa fa-fw fa-home"></i></a>
+        </li>
 
         {{- with .Site.Menus.main}}
         <section id="shortcuts">
@@ -42,10 +38,6 @@
             {{- end}}
         </section>
 
-        {{- if $.Site.Params.showVisitedLinks}}
-            <a id="clear-history" class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> {{T "Clear-History"}}</a>
-        {{- end}}
-
 		{{- end}}
 
     <hr />
@@ -64,17 +56,10 @@
 <div class="padding highlightable">
 {{if not .IsHome}}
   <div id="top-bar">
-    {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
-      {{ $File := .File }}
-      {{ $Site := .Site }}
-      {{with $File.Path }}
+    {{ if isset .Params "original_url" }}
     <div id="top-github-link">
-      <a class="github-link" href="{{ $Site.Params.editURL }}{{ replace $File.Dir "\\" "/" }}{{ $File.LogicalName }}" target="blank">
-        <i class="fa fa-code-fork"></i>
-        {{T "Edit-this-page"}}
-      </a>
+      <a class="github-link" title="View Original on GitHub" href="{{ .Params.original_url }}" target="blank"><i class="fa fa-github"></i></a>
     </div>
-      {{- end }}
     {{- end -}}
 
     <div id="breadcrumbs" itemscope="" itemtype="https://schema.org/breadcrumb">

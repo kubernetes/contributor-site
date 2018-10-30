@@ -1,180 +1,7 @@
 @charset "UTF-8";
- /*
-	Built with SCSS.
-	If you would like to explore this CSS,
-	use source map feature of your browser.
- */
 
  /* TODO: Sync with SCSS */
-/* roboto-mono-regular - latin */
-@font-face {
-  font-family: 'Roboto Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/roboto-mono-v5-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Mono'), local('RobotoMono-Regular'),
-       url('../fonts/roboto-mono-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-mono-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-mono-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-mono-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-mono-v5-latin-regular.svg#RobotoMono') format('svg'); /* Legacy iOS */
-}
-/* roboto-100 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: url('../fonts/roboto-v18-latin-100.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Thin'), local('Roboto-Thin'),
-       url('../fonts/roboto-v18-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-100.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-100.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-100italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 100;
-  src: url('../fonts/roboto-v18-latin-100italic.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'),
-       url('../fonts/roboto-v18-latin-100italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-100italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-100italic.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-100italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-100italic.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-300 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../fonts/roboto-v18-latin-300.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Light'), local('Roboto-Light'),
-       url('../fonts/roboto-v18-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-300.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-300italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 300;
-  src: url('../fonts/roboto-v18-latin-300italic.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
-       url('../fonts/roboto-v18-latin-300italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-300italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-300italic.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-300italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-300italic.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-regular - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/roboto-v18-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Roboto'), local('Roboto-Regular'),
-       url('../fonts/roboto-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 400;
-  src: url('../fonts/roboto-v18-latin-italic.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Italic'), local('Roboto-Italic'),
-       url('../fonts/roboto-v18-latin-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-italic.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-italic.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-500 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../fonts/roboto-v18-latin-500.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Medium'), local('Roboto-Medium'),
-       url('../fonts/roboto-v18-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-500.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-500italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 500;
-  src: url('../fonts/roboto-v18-latin-500italic.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'),
-       url('../fonts/roboto-v18-latin-500italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-500italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-500italic.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-500italic.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-700 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/roboto-v18-latin-700.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Bold'), local('Roboto-Bold'),
-       url('../fonts/roboto-v18-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-700.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-700italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 700;
-  src: url('../fonts/roboto-v18-latin-700italic.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'),
-       url('../fonts/roboto-v18-latin-700italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-700italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-700italic.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-700italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-700italic.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-900 - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: url('../fonts/roboto-v18-latin-900.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Black'), local('Roboto-Black'),
-       url('../fonts/roboto-v18-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-900.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-900.svg#Roboto') format('svg'); /* Legacy iOS */
-}
-/* roboto-900italic - latin */
-@font-face {
-  font-family: 'Roboto';
-  font-style: italic;
-  font-weight: 900;
-  src: url('../fonts/roboto-v18-latin-900italic.eot'); /* IE9 Compat Modes */
-  src: local('Roboto Black Italic'), local('Roboto-BlackItalic'),
-       url('../fonts/roboto-v18-latin-900italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v18-latin-900italic.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v18-latin-900italic.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v18-latin-900italic.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v18-latin-900italic.svg#Roboto') format('svg'); /* Legacy iOS */
-}
+
 /* Table of contents */
 .progress ul {
   list-style: none;
@@ -201,83 +28,10 @@
 #TableOfContents > ul > li > ul > li > ul > li > ul > li > ul > li {
   display: none; }
 
-.alert-info {
-  background-color: #d7eef9 !important;
-  border-color: #b2def4 !important;
-  color: rgba(26, 128, 180, 0.9925) !important; }
-
-.alert-success {
-  background-color: #d9efd6 !important;
-  border-color: #bce3b5 !important;
-  color: rgba(70, 149, 57, 0.9925) !important; }
-
-.alert-warning {
-  background-color: #fbf6e1 !important;
-  border-color: #f6ecbe !important;
-  color: rgba(180, 154, 26, 0.9925) !important; }
-
-.alert-danger {
-  background-color: #f5dddd !important;
-  border-color: #ecbdbd !important;
-  color: rgba(159, 46, 46, 0.9925) !important; }
-
-.panel {
-  background-color: white !important; }
-  .panel-body {
-    color: #323232 !important; }
-
-/* This feels so wrong... I'm re-theming bootstrap in here, there has to be a cleaner way. */
-/* TODO: Build bootstrap with the rest of the CSS? */
-.panel-primary {
-  border-color: #87b5dd !important; }
-
-.panel-primary > .panel-heading, .panel-primary > .panel-footer {
-  background-color: #a3c6e5;
-  border-color: #87b5dd;
-  color: rgba(84, 118, 148, 0.9925); }
-
-.panel-info {
-  border-color: #c2e5f6 !important; }
-
-.panel-info > .panel-heading, .panel-info > .panel-footer {
-  background-color: #d7eef9;
-  border-color: #c2e5f6;
-  color: rgba(72, 130, 159, 0.9925); }
-
-.panel-success {
-  border-color: #c9e8c3 !important; }
-
-.panel-success > .panel-heading, .panel-success > .panel-footer {
-  background-color: #daefd6;
-  border-color: #c9e8c3;
-  color: rgba(98, 142, 90, 0.9925); }
-
-.panel-warning {
-  border-color: #f8f1cd !important; }
-
-.panel-warning > .panel-heading, .panel-warning > .panel-footer {
-  background-color: #fbf7e1;
-  border-color: #f8f1cd;
-  color: rgba(159, 145, 72, 0.9925); }
-
-.panel-danger {
-  border-color: #f0cbcb !important; }
-
-.panel-danger > .panel-heading, .panel-danger > .panel-footer {
-  background-color: #f5dede;
-  border-color: #f0cbcb;
-  color: rgba(148, 84, 84, 0.9925); }
-
-.panel-default {
-  border-color: #e9e9e9 !important; }
-
-.panel-default > .panel-heading, .panel-default > .panel-footer {
-  background-color: #f4f4f4;
-  border-color: #e9e9e9;
-  color: rgba(116, 116, 116, 0.9925); }
-
 body {
   font-size: 16px !important;
+  font-weight: 300 !important;
+  line-height: 28px !important;
   color: #323232 !important; }
 
 #body a.highlight, #body a.highlight:hover, #body a.highlight:focus {
@@ -297,10 +51,10 @@ body {
   height: 1px;
   width: 0%;
   background-color: #238fbd;
-  -webkit-transition: width 0.35s ease;
-  -moz-transition: width 0.35s ease;
-  -ms-transition: width 0.35s ease;
-  transition: width 0.35s ease; }
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  transition: none; }
 
 #body a.highlight:hover:after, #body a.highlight:focus:after {
   width: 100%; }
@@ -319,7 +73,8 @@ body {
   margin-right: 0.5rem !important; }
 
 #top-bar {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); }
+  box-shadow: none;
+  border: 1px #ccc solid; }
 
 .btn {
   color: white !important;
@@ -419,7 +174,6 @@ h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, h5:hover .anchor, h6:hover
 
 /* Redfines headers style */
 h2, h3, h4, h5, h6 {
-  font-weight: 400;
   line-height: 1.1; }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -529,26 +283,8 @@ b, strong, label, th {
   -ms-transition: all 0.35s ease;
   transition: all 0.35s ease; }
 
-#grav-logo {
-  max-width: 60%; }
-
-#grav-logo path {
-  fill: #fff !important; }
-
 fieldset {
   border: 1px solid #ddd; }
-
-textarea, input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], select[multiple=multiple] {
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06); }
-
-textarea:hover, input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover, select[multiple=multiple]:hover {
-  border-color: #c4c4c4; }
-
-textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
-  border-color: #2053AB;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(0, 169, 218, 0.7); }
 
 #header-wrapper {
   background-color: #3673E3;
@@ -566,60 +302,6 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 
 #header #logo-svg path {
   fill: #fff; }
-
-.searchbox {
-  margin-top: 1rem;
-  position: relative;
-  border: 1px solid #6795e3;
-  background: #183f81;
-  border-radius: 4px; }
-
-.searchbox label {
-  color: rgba(255, 255, 255, 0.8);
-  position: absolute;
-  left: 10px;
-  top: 3px; }
-
-.searchbox span {
-  color: rgba(255, 255, 255, 0.6);
-  position: absolute;
-  right: 10px;
-  top: 3px;
-  cursor: pointer;
-  -webkit-transition: color 0.15s ease;
-  -moz-transition: color 0.15s ease;
-  -ms-transition: color 0.15s ease;
-  transition: color 0.15s ease; }
-
-.searchbox span:hover {
-  color: rgba(255, 255, 255, 0.9);
-  -webkit-transition: color 0.15s ease;
-  -moz-transition: color 0.15s ease;
-  -ms-transition: color 0.15s ease;
-  transition: color 0.15s ease; }
-
-.searchbox input {
-  display: inline-block;
-  color: #fff;
-  width: 100%;
-  height: 30px;
-  background: transparent;
-  border: 0;
-  padding: 0 25px 0 30px;
-  margin: 0;
-  font-weight: 300; }
-
-.searchbox input::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.6); }
-
-.searchbox input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.6); }
-
-.searchbox input:-moz-placeholder {
-  color: rgba(255, 255, 255, 0.6); }
-
-.searchbox input:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.6); }
 
 #main {
   background: #f7f7f7;
@@ -688,30 +370,6 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #body-inner {
   margin-bottom: 5rem; }
 
-#chapter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 2rem 0; }
-
-#chapter #body-inner {
-  padding-bottom: 3rem;
-  max-width: 80%; }
-
-#chapter h3 {
-  font-family: "Lato", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
-  font-weight: 300;
-  text-align: center; }
-
-#chapter h1 {
-  font-size: 5rem;
-  border-bottom: 4px solid #F0F2F4; }
-
-#chapter p {
-  text-align: center;
-  font-size: 1.2rem; }
-
 #footer {
   padding: 2rem 1rem 0;
   color: #b3b3b3;
@@ -721,22 +379,28 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
   margin: 0; }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto";
   font-weight: normal; }
-  body strong {
-    font-family: "Roboto";
-    font-weight: bold; }
+body strong {
+  font-family: "Roboto";
+  font-weight: bold; }
 
 h1 {
   font-family: "Roboto";
-  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
   text-align: center; }
 
-h2, h5, h6, p { 
-  font-weight: 300; }
+h2 { font-size: 28px; line-height: 60px; }
+  
+h3 { font-size: 24px; font-weight: 300; line-height: 32px; }
+  
+h4 { font-size: 20px; line-height: 40px; }
+  
+h5, h6 { font-size: 16px; font-weight: 500; line-height: 36px; }
+  
+p { font-size: 16px; font-weight: 300; line-height: 28px; }
 
-h3, h4 { 
-  font-weight: 400; }
 
 blockquote {
   border-left: 10px solid #f2f2f2; }
@@ -751,66 +415,8 @@ blockquote cite {
   color: #666;
   font-size: 1.2rem; }
 
-div.notices {
-  margin: 2rem 0;
-  position: relative; }
-
-div.notices p {
-  padding: 15px;
-  display: block;
-  font-size: 1rem;
-  margin-top: 0rem;
-  margin-bottom: 0rem; }
-
-div.notices p:first-child:before {
-  position: absolute;
-  top: -27px;
-  color: #fff;
-  font-family: FontAwesome;
-  content: '';
-  left: 10px; }
-
-div.notices p:first-child:after {
-  position: absolute;
-  top: -27px;
-  color: #fff;
-  left: 2rem; }
-
-div.notices.info p:first-child:after {
-  content: 'Info'; }
-
-div.notices.warning p:first-child:after {
-  content: 'Warning'; }
-
-div.notices.note p:first-child:after {
-  content: 'Note'; }
-
-div.notices.tip p:first-child:after {
-  content: 'Tip'; }
-
-div.notices.note {
-  border-top: 30px solid #6bb1e0;
-  background: #e6f3fb;
-  color: rgba(47, 103, 141, 0.995) !important; }
-
-div.notices.info {
-  border-top: 30px solid #f1b37e;
-  background: #fefaf5;
-  color: rgba(150, 90, 38, 0.995) !important; }
-
-div.notices.tip {
-  border-top: 30px solid #84c578;
-  background: #e8f7e6;
-  color: rgba(72, 125, 63, 0.995) !important; }
-
-div.notices.warning {
-  border-top: 30px solid #d58181;
-  background: #fbeded;
-  color: rgba(132, 56, 56, 0.995) !important; }
-
 code, kbd, pre, samp {
-  font-family: "Consolas", menlo, monospace;
-  font-size: 92%; }
+  font-family: "Roboto Mono", monospace; }
 
 code {
   border-radius: 2px;
@@ -819,8 +425,6 @@ code {
   border: 1px solid #ffeeb8;
   padding: 0px 2px; }
 
-.hljs {
-  background: #1d1f21; }
 
 code + .copy-to-clipboard {
   margin-left: -2px;
@@ -974,7 +578,7 @@ td {
   z-index: 1000000;
   display: none;
   padding: 5px 8px;
-  font: normal normal 11px/1.5 "Lato", "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+  font: normal normal 11px/1.5 "Roboto", sans-serif;
   color: #fff;
   text-align: center;
   text-decoration: none;
@@ -1082,17 +686,8 @@ td {
   position: relative;
   height: 100%; }
 
-.lightbox-active #body {
-  overflow: visible; }
-
-.lightbox-active #body .padding {
-  overflow: visible; }
-
 #github-contrib i {
   vertical-align: middle; }
-
-.featherlight img {
-  margin: 0 !important; }
 
 .lifecycle #body-inner ul {
   list-style: none;
@@ -1243,9 +838,6 @@ pre .copy-to-clipboard:hover {
 .section {
   opacity: 1; }
 
-#searchResults {
-  text-align: left; }
-
 #sidebar-toggle-span {
   display: none; }
 
@@ -1255,7 +847,10 @@ pre .copy-to-clipboard:hover {
   margin-right: 1rem !important; }
 
 #sidebar {
-  background-color: #2053AB;
+  background-color: #303030;
+  background-image: url('/images/texture.png');
+  background-position-x: 25%;
+  background-size: cover;
   position: fixed;
   top: 0;
   width: 300px;
@@ -1280,6 +875,7 @@ pre .copy-to-clipboard:hover {
   #sidebar a.subtitle {
     color: rgba(204, 204, 204, 0.6); }
   #sidebar hr {
+    display: none;
     border-bottom: 1px solid #2a232f; }
   #sidebar a.padding {
     padding: 0 1rem; }
@@ -1301,7 +897,7 @@ pre .copy-to-clipboard:hover {
     font-size: 80%; }
   #sidebar .parent li,
   #sidebar .active li {
-    border-left: 1px solid gray; }
+    border-left: 1px #333 solid; }
   #sidebar h5.parent a {
     background: #201b24;
     color: #d9d9d9 !important; }
@@ -1327,7 +923,9 @@ pre .copy-to-clipboard:hover {
     #sidebar ul.searched .search-match a:hover {
       color: #fff; }
     #sidebar ul.topics {
-      margin: 0 0 0 1rem; }
+      margin: 0;
+      padding: 0 0 0.5rem 1rem;
+      background-color: rgba(34, 34, 34, 0.3); }
     #sidebar ul.topics.searched ul {
       display: block; }
     #sidebar ul.topics ul {
@@ -1345,7 +943,7 @@ pre .copy-to-clipboard:hover {
       opacity: 0.5;
       font-weight: normal; }
     #sidebar ul li .category-icon {
-      color: gray; }
+      color: #fff; }
     #sidebar ul.topics > li.parent a, #sidebar ul.topics > li.active a {
       color: #fff;
       -webkit-transition: color 0.15s ease;
@@ -1359,18 +957,20 @@ pre .copy-to-clipboard:hover {
       -ms-transition: color 0.15s ease;
       transition: color 0.15s ease; }
     #sidebar ul.topics > li.parent, #sidebar ul.topics > li.active {
-      background: #183f81;
+      background-color: rgba(34, 34, 34, 0.5);
       margin-left: -1rem;
       margin-right: 0rem;
       padding-left: 1rem;
       padding-right: 0rem; }
+    #sidebar ul li.active > div > .category-icon {
+      color: #333; }
     #sidebar ul li.active > div > a {
       background: white;
       color: gray !important;
       padding-left: 1rem;
       padding-right: 0rem; }
     #sidebar ul li.active > div > a:hover {
-      color: #b5b5b5 !important;
+      color: #111 !important;
       -webkit-transition: color 0.15s ease;
       -moz-transition: color 0.15s ease;
       -ms-transition: color 0.15s ease;
@@ -1422,33 +1022,8 @@ pre .copy-to-clipboard:hover {
     display: inline;
     font-weight: 100; }
   #sidebar #shortcuts h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     color: #fff; }
-
-/*
-	Here lives CSS required for shortcodes
-*/
-.children p {
-  font-size: small;
-  margin-top: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px; }
-
-.children-li p {
-  font-size: small;
-  font-style: italic; }
-
-.children-h2 p, .children-h3 p {
-  font-size: small;
-  margin-top: 0px;
-  padding-top: 0px;
-  margin-bottom: 0px;
-  padding-bottom: 0px; }
-
-.children h3, .children h2 {
-  margin-bottom: 0px;
-  margin-top: 5px; }
 
 @media only all and (min-width: 48em) and (max-width: 59.938em) {
   body #chapter h1 {
