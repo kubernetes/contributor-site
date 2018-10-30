@@ -9,11 +9,11 @@
 <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/fonts.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/style.css" | relURL}}" rel="stylesheet">
-{{ if eq .Section "Community Calendar" }}{{ partial "calendar-head.html" . }}{{ end }}
+{{ if eq .Title "Community Calendar" }}{{ partial "calendar-head.html" . }}{{ end }}
 <script type="text/javascript"> var baseurl = "{{.Site.BaseURL}}"; </script>
 <script type="text/javascript" src="{{"js/jquery.min.js" | relURL}}"></script>
 <script type="text/javascript" src="{{"js/clipboard.min.js" | relURL}}"></script>
 <script type="text/javascript" src="{{"js/docdock.js" | relURL}}"></script>
 <script type="text/javascript" src="{{"js/script.js" | relURL}}"></script>
-{{- if eq .Section "Community Calendar" }}{{ partial "calendar-scripts.html" . }}{{ end }}
+{{- if eq .Title "Community Calendar" }}{{ partial "calendar-scripts.html" . }}{{ end }}
 {{ partial "custom-head.html" . }}
