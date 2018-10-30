@@ -1,6 +1,6 @@
 [build]
 publish = "build/public"
-command = "./gen-site.sh"
+command = "python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);' && ./gen-site.sh"
 
 [build.environment]
 HUGO_VERSION = "0.49"
@@ -10,10 +10,10 @@ HUGO_BUILD = "true"
 HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "./gen-site.sh -b $DEPLOY_PRIME_URL"
+command = "python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);' && ./gen-site.sh -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
-command = "./gen-site.sh -b $DEPLOY_PRIME_URL"
+command = "python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);' && ./gen-site.sh -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
-command = "./gen-site.sh -b $DEPLOY_PRIME_URL"
+command = "python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);' && ./gen-site.sh -b $DEPLOY_PRIME_URL"
