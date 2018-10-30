@@ -19,8 +19,9 @@ outputs:
   home: [ "HTML", "RSS", "JSON"]
 
 menu:
+  main: 
+  - name: Community Calendar
+    url: /calendar/  
   shortcuts:
-  - name: Calendar
-    url: https://contributor.kubernetes.io/calendar?community=true
   - name: Glossary
     url: https://kubernetes.io/docs/reference/glossary/?community=true
