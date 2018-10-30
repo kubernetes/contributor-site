@@ -21,6 +21,6 @@ outputs:
 menu:
   shortcuts:
   - name: Calendar
-    url: https://contributor.kubernetes.io/calendar    
+    url: https://contributor.kubernetes.io/calendar?community=true
   - name: Glossary
     url: https://kubernetes.io/docs/reference/glossary/?community=true
