@@ -22,7 +22,7 @@ set -o nounset
 set -o pipefail
 
 readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
-readonly HUGO_BUILD="${HUGO_BUILD:-false}"
+readonly CI_BUILD="${CI_BUILD:-false}"
 readonly KCOMMUNITY_REPO="${KCOMMUNITY_REPO:-"https://github.com/kubernetes/community.git"}"
 readonly KCOMMUNITY_SRC_DIR="${KCOMMUNITY_SRC_DIR:-"$DIR/build/community"}"
 readonly CONTENT_DIR="$DIR/content"
@@ -36,7 +36,7 @@ readonly KCOMMUNITY_EXCLUDE_LIST="$DIR/kcommunity_exclude.list"
 # directory to ensure there are no left over artifacts from previous build.
 init_content() {
   mkdir -p "$CONTENT_DIR"
-  if [[ "$HUGO_BUILD" = true && \
+  if [[ "$CI_BUILD" = true && \
         -n "$(find "$CONTENT_DIR" -mindepth 1 -not -path "*.gitignore")" ]]; then
     echo "Clearing Content Directory."
     rm -r "${CONTENT_DIR:?}/"*
@@ -52,7 +52,7 @@ init_src() {
   if [[ ! -d "$2" ]]; then
     echo "Cloning $1"
     git clone "$1" "$2"
-  elif [[ "$HUGO_BUILD" = true && \
+  elif [[ "$CI_BUILD" = true && \
           $(git -C "$2" rev-parse --show-toplevel) == "$2" ]]; then
     echo "Syncing with latest content from master."
     git -C "$2" checkout .
@@ -393,7 +393,7 @@ main() {
   sync_managed_content
 
   echo "Completed Content Update."
-  if [[ "$HUGO_BUILD" = true ]]; then
+  if [[ "$CI_BUILD" = true ]]; then
     echo "Building Site with: hugo --cleanDestinationDir --source \"$DIR\" $*"
     hugo --source "$DIR" "$@"
   fi
