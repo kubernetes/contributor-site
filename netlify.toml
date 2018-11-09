@@ -3,8 +3,8 @@ publish = "build/public"
 command = "python -c 'import os,sys,fcntl; flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);' && ./gen-site.sh"
 
 [build.environment]
-HUGO_VERSION = "0.49"
-HUGO_BUILD = "true"
+HUGO_VERSION = "0.49.2"
+CI_BUILD = "true"
 
 [context.production.environment]
 HUGO_ENV = "production"
