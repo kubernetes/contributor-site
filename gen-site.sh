@@ -203,24 +203,25 @@ update_frontmatter_metadata() {
 sync_kcommunity_content() {
 
   # Governance Content
-  mkdir -p "$CONTENT_DIR/governance/steering-committee"
-  mkdir -p "$CONTENT_DIR/governance/cocc"
+  # removed until content is cleaned up
+  #mkdir -p "$CONTENT_DIR/governance/steering-committee"
+  #mkdir -p "$CONTENT_DIR/governance/cocc"
 
-  rsync -av --exclude-from="$KCOMMUNITY_EXCLUDE_LIST" \
-    "$KCOMMUNITY_SRC_DIR/committee-steering/" \
-    "$CONTENT_DIR/governance/steering-committee"
+  #rsync -av --exclude-from="$KCOMMUNITY_EXCLUDE_LIST" \
+  #  "$KCOMMUNITY_SRC_DIR/committee-steering/" \
+  #  "$CONTENT_DIR/governance/steering-committee"
 
-  rsync -av --exclude-from="$KCOMMUNITY_EXCLUDE_LIST" \
-    "$KCOMMUNITY_SRC_DIR/committee-code-of-conduct/" \
-    "$CONTENT_DIR/governance/cocc"
+  #rsync -av --exclude-from="$KCOMMUNITY_EXCLUDE_LIST" \
+  #  "$KCOMMUNITY_SRC_DIR/committee-code-of-conduct/" \
+  #  "$CONTENT_DIR/governance/cocc"
 
-  rsync -av --exclude-from="$KCOMMUNITY_EXCLUDE_LIST" \
-    "$KCOMMUNITY_SRC_DIR/github-management" \
-    "$CONTENT_DIR/governance"
+  #rsync -av --exclude-from="$KCOMMUNITY_EXCLUDE_LIST" \
+  #  "$KCOMMUNITY_SRC_DIR/github-management" \
+  #  "$CONTENT_DIR/governance"
   
-  cp "$KCOMMUNITY_SRC_DIR/governance.md" "$CONTENT_DIR/governance/README.md"
-  cp "$KCOMMUNITY_SRC_DIR/sig-governance.md" "$CONTENT_DIR/governance/"
-  cp "$KCOMMUNITY_SRC_DIR/community-membership.md" "$CONTENT_DIR/governance/"
+  #cp "$KCOMMUNITY_SRC_DIR/governance.md" "$CONTENT_DIR/governance/README.md"
+  #cp "$KCOMMUNITY_SRC_DIR/sig-governance.md" "$CONTENT_DIR/governance/"
+  #cp "$KCOMMUNITY_SRC_DIR/community-membership.md" "$CONTENT_DIR/governance/"
 
  # SIG Content
   mkdir -p "$CONTENT_DIR/sigs"
@@ -258,20 +259,21 @@ update_links() {
   sed -i -E 's|(^\[.+\]:\s*/\S+)\.md|\1/|g' "$1"
 
   # governance links
-  sed -i \
-      -e 's|](/committee-steering|](/governance/steering-committee|g' \
-      -e 's|]:\s*/committee-steering|]: /governance/steering-committee|g' \
-      -e 's|](/committee-code-of-conduct|](/governance/cocc|g' \
-      -e 's|]:\s*/committee-code-of-conduct|]: /governance/cocc|g' \
-      -e 's|](/github-management|](/governance/github-management|g' \
-      -e 's|]:\s*/github-management|]: /governance/github-management|g' \
-      -e 's|](/governance|](/governance|g' \
-      -e 's|]:\s*/governance|]: /governance|g' \
-      -e 's|](/sig-governance|](/governance/sig-governance|g' \
-      -e 's|]:\s*/sig-governance|]: /governance/sig-governance|g' \
-      -e 's|](/community-membership|](/governance/community-membership|g' \
-      -e 's|]:\s*/community-membership|]: /governance/community-membership|g' \
-      "$1"
+  # removed until content is cleaned up
+  #sed -i \
+  #    -e 's|](/committee-steering|](/governance/steering-committee|g' \
+  #    -e 's|]:\s*/committee-steering|]: /governance/steering-committee|g' \
+  #    -e 's|](/committee-code-of-conduct|](/governance/cocc|g' \
+  #    -e 's|]:\s*/committee-code-of-conduct|]: /governance/cocc|g' \
+  #    -e 's|](/github-management|](/governance/github-management|g' \
+  #    -e 's|]:\s*/github-management|]: /governance/github-management|g' \
+  #    -e 's|](/governance|](/governance|g' \
+  #    -e 's|]:\s*/governance|]: /governance|g' \
+  #    -e 's|](/sig-governance|](/governance/sig-governance|g' \
+  #    -e 's|]:\s*/sig-governance|]: /governance/sig-governance|g' \
+  #    -e 's|](/community-membership|](/governance/community-membership|g' \
+  #    -e 's|]:\s*/community-membership|]: /governance/community-membership|g' \
+  #    "$1"
 
   # sig and wg links
   sed -i \
