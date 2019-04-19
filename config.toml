@@ -11,6 +11,10 @@ sansSerifFont = "Roboto"
 twitterHandle = "kubernetes"
 googleAnalyticsId = "180100527"
 
+[params.fullcalendar]
+js = ["core", "daygrid", "google-calendar", "moment", "list"]
+css = ["core", "daygrid", "list"]
+
 [[params.fonts]]
 name = "Roboto"
 sizes = [300,400,600,700]

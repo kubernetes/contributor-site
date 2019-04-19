@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="{{ $prodCss.RelPermalink }}" integrity="{{ $prodCss.Data.Integrity }}">
 {{ end }}
 {{ if $calendar }}
-{{ $extraCss := (slice "core" "daygrid") }}
+{{ $extraCss := site.Params.fullcalendar.css }}
 {{ range $extraCss }}
 {{ $file := printf "css/fullcalendar/%s.min.css" . }}
 {{ $css  := resources.Get $file | fingerprint }}
