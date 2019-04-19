@@ -6,9 +6,18 @@
 {{ $prodOpts     := (dict "targetPath" $cssOutput "includePaths" $includePaths "outputStyle" "compressed") }}
 {{ $cssOpts      := cond $inServerMode $devOpts $prodOpts }}
 {{ $css          := resources.Get $sass | resources.ExecuteAsTemplate $sass . | toCSS $cssOpts }}
+{{ $calendar     := .Params.calendar }}
 {{ if $inServerMode }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ else }}
 {{ $prodCss      := $css | fingerprint }}
 <link rel="stylesheet" href="{{ $prodCss.RelPermalink }}" integrity="{{ $prodCss.Data.Integrity }}">
+{{ end }}
+{{ if $calendar }}
+{{ $extraCss := (slice "core" "daygrid") }}
+{{ range $extraCss }}
+{{ $file := printf "css/fullcalendar/%s.min.css" . }}
+{{ $css  := resources.Get $file | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}
 {{ end }}
