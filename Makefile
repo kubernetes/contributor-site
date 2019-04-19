@@ -29,7 +29,9 @@ help: ## Show this help text.
 server: ## Run Hugo locally (if Hugo "extended" is installed locally)
 	hugo server \
 		--buildDrafts \
-		--buildFuture
+		--buildFuture \
+		--disableFastRender \
+		--ignoreCache
 
 docker-image: ## Build container imagefor use with docker-* targets.
 	$(DOCKER) build . -t $(DOCKER_IMAGE) --build-arg HUGO_VERSION=$(HUGO_VERSION)
