@@ -12,14 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-DIR		:= $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
-BUILD_DIR	:= $(join $(DIR), build)
-CONTENT_DIR	:= $(join $(DIR), content)
-DOCKER		?= docker    
-DOCKER_IMAGE	:= k8s-contrib-site-hugo
-DOCKER_RUN	:= $(DOCKER) run --rm -it -v $(DIR):/src
-HUGO_VERSION	:= 0.49.2
+DOCKER		 ?= docker
+DOCKER_RUN	 := $(DOCKER) run --rm -it -v $(CURDIR):/src
+HUGO_VERSION := 0.55.0
+DOCKER_IMAGE := klakegg/hugo:$(HUGO_VERSION)-ext
 
 .DEFAULT_GOAL	:= help
 
@@ -30,40 +26,29 @@ docker-targets: docker-image docker-build docker-serve docker-gen-site docker-ge
 help: ## Show this help text.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
-render: ## Build Hugo site.
-	hugo
+server: ## Run Hugo locally (if Hugo "extended" is installed locally)
+	hugo server \
+		--buildDrafts \
+		--buildFuture
 
-server: ## Start Hugo webserver.
-	hugo server --ignoreCache --disableFastRender
+docker-render: ## Build the site using Hugo within a Docker container (equiv to render).
+	$(DOCKER_RUN) $(DOCKER_IMAGE) --ignoreCache --minify
 
-gen-site: ## Generate Contributor Site content.
-	./gen-site.sh
+docker-server: ## Run Hugo locally within a Docker container (equiv to server).
+	$(DOCKER_RUN) -p 1313:1313 $(DOCKER_IMAGE) server --bind 0.0.0.0
 
-gen-site-ci: ## Generate Contributor Site content as if called from CI system.
-	CI_BUILD=true ./gen-site.sh
+clean: ## Cleans build artifacts
+	rm -rf public/ resources/
 
-docker-image: ## Build container imagefor use with docker-* targets.
-	$(DOCKER) build . -t $(DOCKER_IMAGE) --build-arg HUGO_VERSION=$(HUGO_VERSION)
+production-build: ## Builds the production site (this command used only by Netlify)
+	hugo \
+		--ignoreCache \
+		--minify
 
-docker-render: ## Build Hugo site executing within a container (equiv to render).
-	$(DOCKER_RUN) $(DOCKER_IMAGE) hugo
-
-docker-server: ## Start Hugo webserver executing within a container (equiv to server).
-	$(DOCKER_RUN) -p 1313:1313 $(DOCKER_IMAGE) hugo server --watch --bind 0.0.0.0
-
-docker-gen-site: ## Generate Contributor Site content executing within a container (equiv to gen-site).
-	$(DOCKER_RUN) $(DOCKER_IMAGE) ./gen-site.sh
-
-docker-gen-site-ci: ## Generate Contributor Site content as if called from CI system (equiv to gen-site-ci).
-	$(DOCKER_RUN) -e CI_BUILD=true $(DOCKER_IMAGE) ./gen-site.sh
-
-clean-all: clean-build clean-content clean-docker ## Executes clean-build, clean-content, and clean-docker.
-
-clean-build: ## Cleans build dependnecies.
-	[ -d $(BUILD_DIR) ] && rm -rf $(BUILD_DIR)/*
-
-clean-content: ## Cleans generated content.
-	[ -d $(CONTENT_DIR) ] && rm -rf $(CONTENT_DIR)/*
-
-clean-docker: ## Removes docker image if found.
-	$(DOCKER) rmi $(DOCKER_IMAGE)
+preview-build: ## Builds a deploy preview of the site (this command used only by Netlify)
+	hugo \
+		--baseURL $(DEPLOY_PRIME_URL) \
+		--buildDrafts \
+		--buildFuture \
+		--ignoreCache \
+		--minify

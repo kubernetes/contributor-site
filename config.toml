@@ -1,0 +1,15 @@
+baseURL = "https://k8s-contributors.netlify.com/"
+languageCode = "en-us"
+title = "Kubernetes Contributors"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+pygmentsCodefences = true
+pygmentsStyle = "dracula"
+
+[params]
+fontAwesomeVersion = "5.8.1"
+sansSerifFont = "Roboto"
+twitterHandle = "kubernetes"
+
+[[params.fonts]]
+name = "Roboto"
+sizes = [300,400,600,700]

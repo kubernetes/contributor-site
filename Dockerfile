@@ -1,5 +1,5 @@
 FROM alpine:latest
-ARG HUGO_VERSION=0.49.2
+ARG HUGO_VERSION=${HUGO_VERSION}
 
 RUN apk add --no-cache \
     bash  \
@@ -8,7 +8,7 @@ RUN apk add --no-cache \
     rsync \
     sed
 
-RUN wget -qO- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-64bit.tar.gz | \
+RUN wget -q0- https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz | \
     tar xvz hugo -C /usr/local/bin \
  && mkdir -p /src \
  && addgroup -Sg 1000 hugo \

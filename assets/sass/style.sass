@@ -1,0 +1,27 @@
+{{ $fonts    := .Site.Params.fonts }}
+{{ $fontSlice := (slice) }}
+{{ range $fonts }}
+{{ $fontSlice = $fontSlice | append (printf "%s:%s" (replace .name " " "+") (delimit .sizes ",")) }}
+{{ end }}
+{{ $fontsUrl := printf "https://fonts.googleapis.com/css?family=%s" (delimit $fontSlice "|") }}
+{{ $sansSerifFont := .Site.Params.sansSerifFont }}
+{{ $fontAwesomeVersion := .Site.Params.fontAwesomeVersion }}
+{{ $fontAwesomeUrl     := printf "https://use.fontawesome.com/releases/v%s/css/all.css" $fontAwesomeVersion }}
+
+@charset "utf-8"
+@import url({{ $fontsUrl }})
+@import url({{ $fontAwesomeUrl }})
+
+
+@import "bulma/sass/utilities/initial-variables"
+@import "bulma/sass/utilities/functions"
+
+@import "variables"
+
+@import "bulma/sass/utilities/derived-variables"
+@import "bulma/bulma"
+
+@import "helpers"
+@import "page"
+@import "sidebar"
+@import "main"
