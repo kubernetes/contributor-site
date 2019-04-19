@@ -15,7 +15,7 @@
 DOCKER		 ?= docker
 DOCKER_RUN	 := $(DOCKER) run --rm -it -v $(CURDIR):/src
 HUGO_VERSION := 0.55.0
-DOCKER_IMAGE := klakegg/hugo:$(HUGO_VERSION)-ext
+DOCKER_IMAGE := k8s-contrib-site-hugo
 
 .DEFAULT_GOAL	:= help
 
@@ -31,11 +31,14 @@ server: ## Run Hugo locally (if Hugo "extended" is installed locally)
 		--buildDrafts \
 		--buildFuture
 
+docker-image: ## Build container imagefor use with docker-* targets.
+	$(DOCKER) build . -t $(DOCKER_IMAGE) --build-arg HUGO_VERSION=$(HUGO_VERSION)
+
 docker-render: ## Build the site using Hugo within a Docker container (equiv to render).
-	$(DOCKER_RUN) $(DOCKER_IMAGE) --ignoreCache --minify
+	$(DOCKER_RUN) $(DOCKER_IMAGE) hugo --ignoreCache --minify
 
 docker-server: ## Run Hugo locally within a Docker container (equiv to server).
-	$(DOCKER_RUN) -p 1313:1313 $(DOCKER_IMAGE) server --bind 0.0.0.0
+	$(DOCKER_RUN) -p 1313:1313 $(DOCKER_IMAGE) hugo server --bind 0.0.0.0
 
 clean: ## Cleans build artifacts
 	rm -rf public/ resources/
