@@ -1,0 +1,16 @@
+.main
+  flex: 5 0 0
+  +y-scrollable
+
+  .article
+    +desktop
+      width: 80%
+      padding: 0 1.5rem
+
+    +mobile
+      padding: 0
+
+    .content
+      h1, h2, h3, h4, h5, h6
+        text-transform: uppercase
+        font-weight: 300

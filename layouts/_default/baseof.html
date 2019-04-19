@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.LanguageCode }}">
   <head>
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    {{ partial "head.html" . }}
+    {{ partial "google-analytics.html" . }}
+    {{ partial "meta.html" . }}
+    <title>
+      {{ block "title" . }}{{ .Title }}{{ end }}
+    </title>
+    {{ partial "css.html" . }}
   </head>
-  <body data-url="{{ .RelPermalink }}">
-    {{ partial "body-beforecontent.html" . }}
-    {{ block "main" . }}
-    {{ end }}
-    {{ partial "body-aftercontent.html" . }}
-    {{ block "footer" . }}
-    {{ end }}
-    {{ partial "custom-footer.html" . }}
+  <body class="page">
+    {{ partial "sidebar.html" . }}
+
+    <main class="main">
+      {{ partial "navbar.html" . }}
+
+      <article class="article">
+        {{ block "main" . }}
+        {{ end }}
+      </article>
+    </main>
+
+    {{ partial "javascript.html" . }}
   </body>
 </html>

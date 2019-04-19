@@ -27,3 +27,7 @@
 *.un~
 Session.vim
 .netrwhist
+
+# Hugo-generated artifacts
+public/
+resources/

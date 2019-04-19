@@ -1,0 +1,38 @@
+{{ $logo     := "img/logos/kubernetes.png" | relURL }}
+{{ $sections := site.Sections }}
+{{ $pages    := where site.RegularPages ".Section" "" }}
+<nav class="navbar is-primary is-hidden-desktop">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/">
+      <img src="{{ $logo }}">
+    </a>
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbar-menu" class="navbar-menu">
+    <div class="navbar-end">
+      {{ range $sections }}
+      <a class="navbar-item" href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+
+      {{ range .Pages }}
+      <a class="navbar-item is-indented" href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+      {{ end }}
+      {{ end }}
+
+      {{ range $pages }}
+      <a class="navbar-item" href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</nav>

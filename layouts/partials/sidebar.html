@@ -1,0 +1,55 @@
+{{ $logo     := "img/logos/kubernetes.png" | relURL }}
+{{ $pages    := where site.RegularPages ".Section" "" }}
+{{ $url      := .RelPermalink }}
+{{ $isHome   := .IsHome }}
+{{ $sections := site.Sections }}
+{{ $section  := .Section }}
+<aside class="sidebar is-hidden-touch">
+  <div class="sidebar-menu">
+    <div class="sidebar-menu-header">
+      <div class="sidebar-menu-header-logo">
+        <img src="{{ $logo }}">
+      </div>
+    </div>
+
+    <div class="sidebar-menu-main">
+      <div class="toc">
+        <div class="toc-section">
+          <a class="toc-section-link{{ if $isHome }} is-section{{ end }}" href="/">
+            Home
+          </a>
+        </div>
+
+        {{ range $sections }}
+        {{ $isCurrentSection := eq $section .Section }}
+        <div class="toc-section">
+          <a class="toc-section-link{{ if $isCurrentSection }} is-section{{ end }}" href="{{ .RelPermalink }}">
+            {{ .Title }}
+          </a>
+
+          {{ if $isCurrentSection }}
+          {{ $isCurrentPage    := eq $url .RelPermalink }}
+          <div class="toc-subsection">
+            {{ range .Pages }}
+            {{ $isCurrentPage := eq $url .RelPermalink }}
+            <a class="toc-subsection-link{{ if $isCurrentPage }} is-page{{ end }}" href="{{ .RelPermalink }}">
+              {{ .Title }}
+            </a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{ range $pages }}
+        {{ $isCurrentPage := eq $url .RelPermalink }}
+        <div class="toc-section">
+          <a class="toc-section-link{{ if $isCurrentPage }} is-section{{ end }}" href="{{ .RelPermalink }}">
+            {{ .Title }}
+          </a>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</aside>

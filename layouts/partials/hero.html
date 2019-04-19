@@ -1,0 +1,15 @@
+{{ $isHome      := .IsHome }}
+{{ $description := .Params.description }}
+<div class="hero">
+  <div class="hero-body">
+    <p class="title is-size-1 is-size-2-mobile is-uppercase has-text-weight-light{{ with $description }} is-spaced{{ end }}">
+      {{ .Title }}
+    </p>
+
+    {{ with $description }}
+    <p class="subtitle is-size-4 is-size-5-mobile has-text-weight-light">
+      {{ . | markdownify }}
+    </p>
+    {{ end }}
+  </div>
+</div>
