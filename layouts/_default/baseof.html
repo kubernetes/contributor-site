@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.LanguageCode }}">
   <head>
+    {{ partial "google-analytics.html" . }}
     {{ partial "meta.html" . }}
     <title>
       {{ block "title" . }}{{ .Title }}{{ end }}

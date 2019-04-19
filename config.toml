@@ -9,6 +9,7 @@ pygmentsStyle = "dracula"
 fontAwesomeVersion = "5.8.1"
 sansSerifFont = "Roboto"
 twitterHandle = "kubernetes"
+googleAnalyticsId = "180100527"
 
 [[params.fonts]]
 name = "Roboto"
