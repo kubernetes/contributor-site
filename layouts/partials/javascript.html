@@ -1,10 +1,10 @@
 {{ $calendar   := .Params.calendar }}
-{{ $extraJs    := (slice "core/main.min.js" "daygrid/main.min.js") }}
 {{ $app        := resources.Get "js/app.js" | fingerprint }}
 <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
 {{ if $calendar }}
+{{ $extraJs    := (slice "core" "daygrid" "google-calendar") }}
 {{ range $extraJs }}
-{{ $file := printf "js/fullcalendar/%s" . }}
+{{ $file := printf "js/fullcalendar/%s.min.js" . }}
 {{ $js   := resources.Get $file | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 {{ end }}
