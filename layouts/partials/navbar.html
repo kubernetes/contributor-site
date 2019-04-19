@@ -1,5 +1,6 @@
-{{ $logo  := "img/logos/kubernetes.png" | relURL }}
-{{ $pages := site.RegularPages }}
+{{ $logo     := "img/logos/kubernetes.png" | relURL }}
+{{ $sections := site.Sections }}
+{{ $pages    := where site.RegularPages ".Section" "" }}
 <nav class="navbar is-primary is-hidden-desktop">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
@@ -15,6 +16,18 @@
 
   <div id="navbar-menu" class="navbar-menu">
     <div class="navbar-end">
+      {{ range $sections }}
+      <a class="navbar-item" href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+
+      {{ range .Pages }}
+      <a class="navbar-item is-indented" href="{{ .RelPermalink }}">
+        {{ .Title }}
+      </a>
+      {{ end }}
+      {{ end }}
+
       {{ range $pages }}
       <a class="navbar-item" href="{{ .RelPermalink }}">
         {{ .Title }}
