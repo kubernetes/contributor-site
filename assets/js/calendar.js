@@ -8,7 +8,7 @@ function renderCalendar() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'list', 'googleCalendar', 'moment' ],
-    googleCalendarApiKey: 'AIzaSyDn_UhFPLDgxouI5nc8hOULFY25EjwGR44',
+    googleCalendarApiKey: 'AIzaSyDlAwor0K8xljdp_r3V-9nFKnyoBQzm3Ro',
     events: {
       googleCalendarId: 'cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com'
     },
