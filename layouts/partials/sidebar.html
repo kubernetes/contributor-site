@@ -4,6 +4,7 @@
 {{ $isHome   := .IsHome }}
 {{ $sections := site.Sections }}
 {{ $section  := .Section }}
+{{ $extra    := site.Menus.sidebar }}
 <aside class="sidebar is-hidden-touch">
   <div class="sidebar-menu">
     <div class="sidebar-menu-header">
@@ -46,6 +47,14 @@
         <div class="toc-section">
           <a class="toc-section-link{{ if $isCurrentPage }} is-section{{ end }}" href="{{ .RelPermalink }}">
             {{ .Title }}
+          </a>
+        </div>
+        {{ end }}
+
+        {{ range $extra }}
+        <div class="toc-section">
+          <a class="toc-section-link" href="{{ .URL }}" target="_blank">
+            {{ .Name }}
           </a>
         </div>
         {{ end }}

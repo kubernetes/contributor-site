@@ -18,3 +18,8 @@ css = ["core", "list"]
 [[params.fonts]]
 name = "Roboto"
 sizes = [300,400,600,700]
+
+[menu]
+[[menu.sidebar]]
+name = "Code of Conduct"
+url = "https://github.com/cncf/foundation/blob/master/code-of-conduct.md"
