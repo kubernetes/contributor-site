@@ -22,4 +22,4 @@ sizes = [300,400,600,700]
 [menu]
 [[menu.sidebar]]
 name = "Code of Conduct"
-url = "https://github.com/cncf/foundation/blob/master/code-of-conduct.md"
+url = "https://github.com/kubernetes/community/blob/master/code-of-conduct.md"
