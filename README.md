@@ -18,13 +18,13 @@ repository.
 To develop site content, you can run the site locally using [Hugo][hugo] in
 two ways:
 
-1. [Inside a Docker container](#docker)
+1. [Inside a Docker container](#using-docker)
 2. [Natively](#natively) (not inside a Docker container)
 
 When you make changes to the site's content, Hugo will automatically update
 the site and refresh your browser window.
 
-### Using Docker {#docker}
+### Using Docker
 
 The easiest and most cross-system-compatible way to run the Contributor
 Site is to use [Docker][docker]. To begin, create the docker image to be used 
