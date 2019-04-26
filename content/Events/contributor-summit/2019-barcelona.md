@@ -1,6 +1,6 @@
 ---
 title: Contributor Summit
-description: Our contributor event during Kubecon
+description: Our contributor event during Kubecon + CloudNativeCon
 weight: 1
 ---
 
