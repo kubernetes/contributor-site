@@ -4,7 +4,7 @@ description: A systematic guide to contributing to the Kubernetes ecosystem
 weight: 1
 ---
 
-![Git workflow](git_workflow.png)
+![Git workflow](/img/git_workflow.png)
 
 ### 1 Fork in the cloud
 
