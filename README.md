@@ -39,6 +39,27 @@ You can then preview the site by running `make docker-server`.
 
 To run the site locally using an installed Hugo executable, run `make server`.
 
+## YouTube embeds
+
+You can embed YouTube videos on pages using the `youtube` shortcode and
+specifying the unique ID of the video. Here's an example:
+
+```bash
+Check out this cool video:
+
+{{< youtube 6cCEmAisx8A >}}
+```
+
+This embed would take up the full width of the surrounding element. You can
+specify a smaller width as a percentage by changing the second argument. This
+embed, for example, would occupy 70% of the width:
+
+```bash
+Check out this cool video:
+
+{{< youtube 6cCEmAisx8A 70 >}}
+```
+
 ## Community, discussion, contribution, and support
 
 This project is managed by [SIG Contributor Experience][sig-contribex] as a
