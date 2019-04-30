@@ -1,0 +1,7 @@
+{{ $link   := .Get "link" }}
+{{ $text   := .Get "text" }}
+{{ $script := .Get "script" }}
+<a id="sched-embed" href="{{ $link }}">
+  {{ $text }}
+</a>
+<script type="text/javascript" src="{{ $script }}"></script>

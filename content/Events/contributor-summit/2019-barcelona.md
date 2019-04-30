@@ -12,4 +12,5 @@ This is a complimentary event and pre-registration is required.
 You must be registered for KubeCon + CloudNativeCon Europe 2019 to attend this event.
 T-shirt sizing is not guaranteed after Friday, April 12.
 
-<a id="sched-embed" href="//contsummiteu19.sched.com/">View the Kubernetes Contributor Summit Europe schedule &amp; directory.</a><script type="text/javascript" src="//contsummiteu19.sched.com/js/embed.js"></script>
+{{< schedule link="//contsummiteu19.sched.com" text="View the Kubernetes Contributor Summit Europe schedule & directory." script="//contsummiteu19.sched.com/js/embed.js" >}}
+
