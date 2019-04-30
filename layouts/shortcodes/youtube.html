@@ -1,5 +1,7 @@
 {{ $id    := .Get 0 }}
 {{ $size  := .Get 1 | default 100 }}
-<div class="youtube-embed">
-  <iframe class="youtube-embed-iframe" src="//www.youtube.com/embed/{{ $id }}" style="width: {{ $size }}%; height: {{ $size }}%;" allowfullscreen="" title="YouTube Video" />
+{{ $title := .Get 2 | default "Kubernetes contributor site vido" }}
+{{ $url   := printf "https://youtube.com/embed/%s" $id }}
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="{{ $url }}" style="position: absolute; top: 0; left: 0; width: {{ $size }}%; height: {{ $size }}%; border: 0;" allowfullscreen title="{{ $title }}"></iframe>
 </div>
