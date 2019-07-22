@@ -20,11 +20,17 @@ DOCKER_IMAGE := k8s-contrib-site-hugo
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets docker-targets
-targets: help render serve clean-all clean-build clean-content
-docker-targets: docker-image docker-build docker-serve docker-gen-site docker-gen-site-ci
+targets: help gen-content render serve clean production preview-build
+docker-targets: docker-image docker-render docker-server
 
 help: ## Show this help text.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
+gen-content: ## Generates content from external sources.
+	hack/gen-content.sh
+
+render: ## Build the site using Hugo on the host.
+	hugo --ignoreCache --minify
 
 server: ## Run Hugo locally (if Hugo "extended" is installed locally)
 	hugo server \
@@ -33,24 +39,32 @@ server: ## Run Hugo locally (if Hugo "extended" is installed locally)
 		--disableFastRender \
 		--ignoreCache
 
-docker-image: ## Build container imagefor use with docker-* targets.
+docker-image: ## Build container image for use with docker-* targets.
 	$(DOCKER) build . -t $(DOCKER_IMAGE) --build-arg HUGO_VERSION=$(HUGO_VERSION)
+
+docker-gen-content: ## Generates content from external sources within a Docker container (equiv to gen-content).
+  $(DOCKER_RUN) $(DOCKER_IMAGE) src/hack/gen-content.sh
 
 docker-render: ## Build the site using Hugo within a Docker container (equiv to render).
 	$(DOCKER_RUN) $(DOCKER_IMAGE) hugo --ignoreCache --minify
 
 docker-server: ## Run Hugo locally within a Docker container (equiv to server).
-	$(DOCKER_RUN) -p 1313:1313 $(DOCKER_IMAGE) hugo server --bind 0.0.0.0
+	$(DOCKER_RUN) -p 1313:1313 $(DOCKER_IMAGE) hugo server \
+		--bind 0.0.0.0 \
+		--buildDrafts \
+		--buildFuture \
+		--disableFastRender \
+		--ignoreCache
 
-clean: ## Cleans build artifacts
-	rm -rf public/ resources/
+clean: ## Cleans build artifacts.
+	rm -rf public/ resources/ _tmp/
 
-production-build: ## Builds the production site (this command used only by Netlify)
+production-build: ## Builds the production site (this command used only by Netlify).
 	hugo \
 		--ignoreCache \
 		--minify
 
-preview-build: ## Builds a deploy preview of the site (this command used only by Netlify)
+preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
 	hugo \
 		--baseURL $(DEPLOY_PRIME_URL) \
 		--buildDrafts \
