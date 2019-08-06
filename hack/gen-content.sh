@@ -18,14 +18,15 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly DEBUG=${DEBUG:-"false"}
+#readonly DEBUG=${DEBUG:-"false"}
+readonly DEBUG=${DEBUG:-"true"}
 readonly REPO_ROOT="$(git rev-parse --show-toplevel)"
 readonly CONTENT_DIR="$REPO_ROOT/content"
 readonly TEMP_DIR="$REPO_ROOT/_tmp"
-readonly KCOMMUNITY_REPO="${KCOMMUNITY_REPO:-"https://github.com/kubernetes/community.git"}"
-readonly KCOMMUNITY_SRC_DIR="${KCOMMUNITY_SRC_DIR:-"$TEMP_DIR/community"}"
-readonly GUIDE_SRC_DIR="${GUIDE_SRC_DIR:-"/contributors/guide"}"
-readonly GUIDE_DST_DIR="${GUIDE_DST_DIR:-"/guide"}"
+
+readonly GH_ROOT="${GH_ROOT:-"https://github.com/kubernetes"}"
+readonly EXTERNAL_SOURCES="${EXTERNAL_SOURCES:-"$REPO_ROOT/external-sources"}"
+
 
 cd "$REPO_ROOT"
 
@@ -64,30 +65,22 @@ find_md_files() {
 }
 
 
-# Processes files inteneded for Hugo.
-# - Expands and updates links to their correct address within the Hugo site
-# - Renames any needed files (README.md's) to their appropirate file name.
-# Args:
 # $1 - Full path to markdown file to be processed
 # $2 - Full file system path to root of cloned git repo
-# $3 - Path to "root" of desired content in src dir
-# $4 - Path to "root" of desired content in dst dir
-# $5 - GitHub repo link or friendly domain used for external links  e.g. git.k8s.io/community
+# $3 - srcs array name 
+# $4 - dest array name
 process_content() {
   local inline_link_matches=()
   local ref_link_matches=()
 
-  # Additional a-z0-9 section was to ignore some regex's used in design
-  # proposals. It's an ugly hack, but will prevent expansion.
   mapfile -t inline_link_matches < \
     <(grep -o -i -P '\[(?!a\-z0\-9).+\]\((?!http|https|mailto|#|\))\K\S+?(?=\))' "$1")
 
-  if [[ -v inline_link_matches ]]; then
+ if [[ -v inline_link_matches ]]; then
     for match in "${inline_link_matches[@]}"; do
-
       local replacement_link=""
-      replacement_link="$(gen_link "$match" "$1" "$2" "$3" "$4" "$5")"
-
+      replacement_link="$(expand_path "$1" "$match" "$2")"
+      replacement_link=$(gen_link "$replacement_link" "$2" "$3" "$4")
       if [[ "$match" != "$replacement_link" ]]; then
         echo "Replace link: File: $1 Original: $match Replaced: $replacement_link"
         sed -i -e "s|]($match)|]($replacement_link)|g" "$1"
@@ -100,10 +93,9 @@ process_content() {
 
   if [[ -v ref_link_matches ]]; then
     for match in "${ref_link_matches[@]}"; do
-
       local replacement_link=""
-      replacement_link="$(gen_link "$match" "$1" "$2" "$3" "$4" "$5")"
-
+      replacement_link="$(expand_path "$1" "$match" "$2")"
+      replacement_link=$(gen_link "$replacement_link" "$2" "$3" "$4")
       if [[ "$match" != "$replacement_link" ]]; then
         echo "Replace link: File: $1 Original: $match Replaced: $replacement_link"
         sed -i -e "s|]:\s*$match|]: $replacement_link|g" "$1"
@@ -111,54 +103,6 @@ process_content() {
     done
   fi
 
-  if [[ $(basename "${1,,}") == 'readme.md' ]]; then
-    local filename=""
-    filename="$(dirname "$1")/_index.md"
-    mv "$1" "$filename"
-    echo "Renamed: $1 to $filename"
-  fi
-}
-
-
-# Generates the correct link for the destination location. If it is an internal
-# link. It expands the path relative to the file and replaces it with the path
-# at the destination location. If it is an external link, it will update it with
-# the repo or "friendly" domain.
-# $1 - Link String
-# $2 - Full path to markdown file to be processed
-# $3 - Full file system path to root of cloned git repo
-# $4 - Path to "root" of desired content in src dir
-# $5 - Path to "root" of desired content in dst dir
-# $6 - GitHub repo link or friendly domain used for external links  e.g. git.k8s.io/community
-
-gen_link() {
-   local generated_link=""
-
-  # if the link does not start with http* expand the path for evaluation
-  if echo "$1" | grep -q -i -v "^http"; then
-    generated_link="$(expand_link_path "$2" "$match" "$3")"
-
-    # If linking within the same directory or lower, replace the path with
-    # destination path. Otherwise gen an external link.
-     if echo "$generated_link" | grep -q -i "^${4}"; then
-      generated_link="${generated_link/${4}/${5}}"
-    else
-      generated_link="${6}${generated_link}"
-    fi
-  fi
-
-  # README's default to the index page and must be fully removed.
-  # Internal links must have '.md' stripped from their link for hugo. 
-  if echo "$generated_link" | grep -q -i -v '^http'; then
-    if basename "$generated_link" | grep -i -q '\/readme\.md'; then
-      # shellcheck disable=SC2001 # prefer sed for native ignorecase
-      replacement_link="$(echo "$generated_link" | sed -e 's|/readme\.md|/|I')"
-    else
-      # shellcheck disable=SC2001 # prefer sed for native ignorecase
-      replacement_link="$(echo "$generated_link" | sed -e 's|\.md||I')"
-    fi
-  fi
-  echo "$generated_link"
 }
 
 # Generates (or expands) the full path relative to the root of the directory if
@@ -167,8 +111,8 @@ gen_link() {
 # Args:
 # $1 - path to file containing relative link
 # $2 - path to be expanded
-# $3 - relative base to trim from path
-expand_link_path() {
+# $3 - prefix to repo trim from path
+expand_path() {
   local dirpath=""
   local filename=""
   local expanded_path=""
@@ -185,22 +129,110 @@ expand_link_path() {
 }
 
 
+# Generates the correct link for the destination location.
+# $1 - Link String
+# $2 - Full file system path to root of cloned git repo 
+# $3 - Array of sources (passed by reference)
+# $4 - Array of destinations (passed by reference)
+
+gen_link() {
+  local -n glsrcs=$3
+  local -n gldsts=$4
+  local generated_link=""; generated_link="$1"
+
+  # If it was previously an "external" link but now local to the contributor site
+  # update the link to strip the url portion.
+  if echo "$generated_link" | grep -q -i -E "[http|https]://(git.k8s.io|(www\.)?github.com/kubernetes)"; then
+    local i; i=0
+    while (( i < ${glsrcs[@]} )); do
+      local repo=""
+      local src=""
+      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)"
+      src="${glsrcs[i]#/${repo}}"
+      if echo "$generated_link" grep -q -i -E"(/${repo}(/tree/master)?${src}"; then
+        generated_link="$src"
+        break
+      fi
+      ((i++))
+    done
+  fi
+
+  # if the link does not start with http* expand the path for evaluation
+  if echo "$generated_link" | grep -q -i -v "^http"; then
+    local internal_link; internal_link="false"
+    local i; i=0
+    while (( i < ${#glsrcs[@]} )); do
+      local repo=""
+      local src=""
+      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)"
+      src="${glsrcs[i]#/${repo}}"
+      if echo "$generated_link" | grep -i -q "^${src}"; then
+        generated_link="${generated_link/${src}/${gldsts[i]}}"
+        if basename "$generated_link" | grep -i -q 'readme\.md'; then
+          # shellcheck disable=SC2001 # prefer sed for native ignorecase
+          generated_link="$(echo "$generated_link" | sed -e 's|/readme\.md|/|I')"
+          internal_link="true"
+          break
+        else
+          # shellcheck disable=SC2001 # prefer sed for native ignorecase
+          generated_link="$(echo "$generated_link" | sed -e 's|\.md||I')"
+          internal_link="true"
+          break
+        fi
+      fi
+     ((i++))
+    done
+    if [[ "$internal_link" == "false" ]]; then
+      generated_link="https://git.k8s.io/$(basename "$2")${generated_link}"
+    fi
+  fi
+
+  echo "$generated_link"
+}
+
+
 main() {
   mkdir -p "$TEMP_DIR"
 
-  echo "Beginning preprocessing of contributor guide content."
-  init_src "$KCOMMUNITY_REPO" "$KCOMMUNITY_SRC_DIR"
-  while IFS= read -r -d $'\0' file; do
-    process_content "$file" "$KCOMMUNITY_SRC_DIR" "$GUIDE_SRC_DIR" "$GUIDE_DST_DIR" "https://git.k8s.io/community"
-  done < <(find_md_files "${KCOMMUNITY_SRC_DIR}${GUIDE_SRC_DIR}")
+  local repos=()
+  local srcs=()
+  local dsts=()
+
+  repos=("${EXTERNAL_SOURCES}"/*)
+
+  for repo in "${repos[@]}"; do
+    # shellcheck disable=SC2094 # false detection on read/write to $repo at the same time
+    while IFS=, read -re src dst; do
+      srcs+=("/$(basename "$repo")$(echo "$src" | sed -e 's/^\"//g;s/\"$//g')")
+      dsts+=("$(echo "$dst" | sed -e 's/^\"//g;s/\"$//g')")
+    done < "$repo"
+    init_src "${GH_ROOT}/$(basename "$repo").git" "${TEMP_DIR}/$(basename "$repo")"
+  done
+
+
+  for s in "${srcs[@]}"; do
+    local repo=""
+    local src=""
+    repo="$(echo "${s}" | cut -d '/' -f2)"
+    src="${s#/${repo}}"
+    while IFS= read -r -d $'\0' file; do
+      process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts
+      if [[ $(basename "${file,,}") == 'readme.md' ]]; then
+        filename=""
+        filename="$(dirname "$file")/_index.md"
+        mv "$file" "$filename"
+        echo "Renamed: $file to $filename"
+      fi
+    done < <(find_md_files "${TEMP_DIR}${s}")
+  done
+
 
   echo "Copying to hugo content directory."
-  cp -v -r  "${KCOMMUNITY_SRC_DIR}${GUIDE_SRC_DIR}/" "${CONTENT_DIR}${GUIDE_DST_DIR}"
-
- while IFS= read -r -d $'\0' file; do
-   [[ $(basename "${file,,}") == 'readme.md' ]] && rename_readme "$file"
- done < <(find_md_files "${CONTENT_DIR}${GUIDE_DST_DIR}")
- echo "Content synced."
+  for (( i=0; i < ${#srcs[@]}; i++ )); do
+    echo "${TEMP_DIR}${srcs[i]}/* ${CONTENT_DIR}${dsts[i]}"
+    rsync -av "${TEMP_DIR}${srcs[i]}/" "${CONTENT_DIR}${dsts[i]}"
+  done 
+  echo "Content synced."
 }
 
 
