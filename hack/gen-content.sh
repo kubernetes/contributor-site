@@ -18,8 +18,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-#readonly DEBUG=${DEBUG:-"false"}
-readonly DEBUG=${DEBUG:-"true"}
+readonly DEBUG=${DEBUG:-"false"}
 readonly REPO_ROOT="$(git rev-parse --show-toplevel)"
 readonly CONTENT_DIR="$REPO_ROOT/content"
 readonly TEMP_DIR="$REPO_ROOT/_tmp"
@@ -38,8 +37,9 @@ if [[ "$DEBUG" == false ]]; then
   trap cleanup EXIT
 fi
 
-# Intializes source repositores in build directory. If executing a build (CI)
-# Ensure that it is up to date and in a clean state.
+# init_src
+# Intializes source repositores by pulling the latest content. If the repo
+# is alread present, fetch the latest content from the master branch.
 # Args:
 # $1 - git repo to be cloned/fetched
 # $2 - path to destination directory for cloned repo
@@ -57,6 +57,7 @@ init_src() {
   fi
 }
 
+# find_md_files
 # Returns all markdown files within a directory
 # Args:
 # $1 - Path to directory to search for markdown files
@@ -65,6 +66,30 @@ find_md_files() {
 }
 
 
+# process_content
+# Updates the links within a markdown file so that they will resolve within
+# the Hugo generated site. If the link is a file reference, it is expanded 
+# so the path is from the root of the git repo. The links are then passed
+# to gen_link which will determine if the link references content within one
+# of the sources being synced to the content directory. If so, update the link
+# with the path that it will be after being copied over. This includes removing
+# the extension and if the file is a README, trim it (README's function as the 
+# root page.) If the link references something not within the content that is
+# being copied over, but still within one of the kubernetes projects update it to
+# to use the git.k8s.io shortener.
+# Example:
+#   Repo: https://github.com/kubernetes/community
+#   Content to be synced: /contributors/guide -> /guide
+#   Markdown file: /contributors/guide/README.md
+#   Links:
+#   ./bug-bounty.md -> /guide/bug-bounty
+#   contributor-cheatsheet/README.md -> /guide/contributor-cheatsheet
+#   ../../sig-list.md -> https://git.k8s.io/community/sig-list.md
+#   /contributors/devel/README.md -> https://git.k8s.io/community/contributors/devel/README.md
+#   http://git.k8s.io/cotributors/guide/collab.md -> /guide/collab
+#   https://github.com/kubernetes/enhancements/tree/master/keps -> https://git.k8s.io/enhancements/keps
+# 
+# Args:
 # $1 - Full path to markdown file to be processed
 # $2 - Full file system path to root of cloned git repo
 # $3 - srcs array name 
@@ -74,30 +99,38 @@ process_content() {
   local ref_link_matches=()
 
   mapfile -t inline_link_matches < \
-    <(grep -o -i -P '\[(?!a\-z0\-9).+\]\((?!http|https|mailto|#|\))\K\S+?(?=\))' "$1")
+    <(grep -o -i -P '\[(?!a\-z0\-9).+?\]\((?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*|\))\K\S+?(?=\))' "$1")
 
  if [[ -v inline_link_matches ]]; then
     for match in "${inline_link_matches[@]}"; do
       local replacement_link=""
-      replacement_link="$(expand_path "$1" "$match" "$2")"
+      if echo "$match" | grep -i -q "^http"; then
+        replacement_link="$match"
+      else
+        replacement_link="$(expand_path "$1" "$match" "$2")"
+      fi
       replacement_link=$(gen_link "$replacement_link" "$2" "$3" "$4")
       if [[ "$match" != "$replacement_link" ]]; then
-        echo "Replace link: File: $1 Original: $match Replaced: $replacement_link"
+        echo "Update link: File: $1 Original: $match Updated: $replacement_link"
         sed -i -e "s|]($match)|]($replacement_link)|g" "$1"
       fi
     done
   fi
 
   mapfile -t ref_link_matches < \
-    <(grep -o -i -P '^\[.+\]:\s*(?!http|https|mailto|#)\K\S+$' "$1")
+    <(grep -o -i -P '^\[.+\]:\s*(?!|mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*)\K\S+$' "$1")
 
   if [[ -v ref_link_matches ]]; then
     for match in "${ref_link_matches[@]}"; do
       local replacement_link=""
-      replacement_link="$(expand_path "$1" "$match" "$2")"
+      if echo "$match" | grep -i -q "^http"; then
+        replacement_link="$match"
+      else
+        replacement_link="$(expand_path "$1" "$match" "$2")"
+      fi
       replacement_link=$(gen_link "$replacement_link" "$2" "$3" "$4")
       if [[ "$match" != "$replacement_link" ]]; then
-        echo "Replace link: File: $1 Original: $match Replaced: $replacement_link"
+        echo "Update link: File: $1 Original: $match Updated: $replacement_link"
         sed -i -e "s|]:\s*$match|]: $replacement_link|g" "$1"
       fi
     done
@@ -105,6 +138,7 @@ process_content() {
 
 }
 
+# expand_paths
 # Generates (or expands) the full path relative to the root of the directory if
 # it is valid path, otherwise return the passed path assuming it in reference
 # to something else.
@@ -128,28 +162,28 @@ expand_path() {
   fi
 }
 
-
-# Generates the correct link for the destination location.
+# gen_link
+# Generates the correct link for the destination location. If it is a url that
+# references content that will be synced, convert it to a path.
 # $1 - Link String
 # $2 - Full file system path to root of cloned git repo 
 # $3 - Array of sources (passed by reference)
 # $4 - Array of destinations (passed by reference)
-
 gen_link() {
   local -n glsrcs=$3
   local -n gldsts=$4
   local generated_link=""; generated_link="$1"
 
   # If it was previously an "external" link but now local to the contributor site
-  # update the link to strip the url portion.
+  # update the link by trimming the url portion.
   if echo "$generated_link" | grep -q -i -E "[http|https]://(git.k8s.io|(www\.)?github.com/kubernetes)"; then
     local i; i=0
-    while (( i < ${glsrcs[@]} )); do
+    while (( i < ${#glsrcs[@]} )); do
       local repo=""
       local src=""
       repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)"
       src="${glsrcs[i]#/${repo}}"
-      if echo "$generated_link" grep -q -i -E"(/${repo}(/tree/master)?${src}"; then
+      if echo "$generated_link" | grep -q -i -E "/${repo}(/tree/master)?${src}"; then
         generated_link="$src"
         break
       fi
@@ -157,7 +191,9 @@ gen_link() {
     done
   fi
 
-  # if the link does not start with http* expand the path for evaluation
+  # If the link's path matches against one of the source locations, update it
+  # to use the matching destination path. If no match us found, prepend the
+  # git.k8s.io address.
   if echo "$generated_link" | grep -q -i -v "^http"; then
     local internal_link; internal_link="false"
     local i; i=0
@@ -194,15 +230,23 @@ gen_link() {
 main() {
   mkdir -p "$TEMP_DIR"
 
-  local repos=()
-  local srcs=()
-  local dsts=()
+  local repos=() # array of kubernetes repos containing content to be synced
+  local srcs=() # array of sources of content to be synced 
+  local dsts=() # array of destinations for the content to be synced to
 
+  # Files within the EXTERNAL_SOURCES directory should be csv formatted with the
+  # name of the file being the kubernetes repo name (e.g. community), and the
+  # content being the path to the content to be synced within the repo to the
+  # to the destination within the HUGO contenet directory. 
+  # Example:
+  # filename: community
+  # "/contributors/guide", "/guide" 
   repos=("${EXTERNAL_SOURCES}"/*)
 
+  # populate the arrays with information parsed from files in ${EXTERNAL_SOURCES}
   for repo in "${repos[@]}"; do
     # shellcheck disable=SC2094 # false detection on read/write to $repo at the same time
-    while IFS=, read -re src dst; do
+    while IFS=, read -re src dst || [ -n "$src" ]; do
       srcs+=("/$(basename "$repo")$(echo "$src" | sed -e 's/^\"//g;s/\"$//g')")
       dsts+=("$(echo "$dst" | sed -e 's/^\"//g;s/\"$//g')")
     done < "$repo"
@@ -229,8 +273,11 @@ main() {
 
   echo "Copying to hugo content directory."
   for (( i=0; i < ${#srcs[@]}; i++ )); do
-    echo "${TEMP_DIR}${srcs[i]}/* ${CONTENT_DIR}${dsts[i]}"
-    rsync -av "${TEMP_DIR}${srcs[i]}/" "${CONTENT_DIR}${dsts[i]}"
+    if [[ -d "${TEMP_DIR}${srcs[i]}" ]]; then
+      rsync -av "${TEMP_DIR}${srcs[i]}/" "${CONTENT_DIR}${dsts[i]}"
+    elif [[ -f "${TEMP_DIR}${srcs[i]}" ]]; then
+      rsync -av "${TEMP_DIR}${srcs[i]}" "${CONTENT_DIR}${dsts[i]}"
+    fi
   done 
   echo "Content synced."
 }
