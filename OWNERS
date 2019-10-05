@@ -1,21 +1,15 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - calebamiles
   - castrojo
-  - cblecker
-  - grodrigues3
+  - guineveresaenger
   - idvoretskyi
-  - jdumars
+  - tpepper
+  - kbarnard10
+  - justaugustus
   - mrbobbytables
-  - parispittman
 approvers:
-  - calebamiles
   - castrojo
-  - cblecker
-  - grodrigues3
-  - idvoretskyi
-  - jdumars
-  - mrbobbytables
   - parispittman
-  - steering-committee
+  - guineveresaenger
+  - mrbobbytables
