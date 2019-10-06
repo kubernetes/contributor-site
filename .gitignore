@@ -34,3 +34,7 @@ resources/
 
 # Temp directory for processing content
 _tmp/
+
+# Shell histories
+.ash_history
+.bash_history

@@ -274,9 +274,11 @@ main() {
   echo "Copying to hugo content directory."
   for (( i=0; i < ${#srcs[@]}; i++ )); do
     if [[ -d "${TEMP_DIR}${srcs[i]}" ]]; then
-      rsync -av "${TEMP_DIR}${srcs[i]}/" "${CONTENT_DIR}${dsts[i]}"
+      # OWNERS files are excluded when copied to prevent potential overwriting of desired
+      # owner config.
+      rsync -av "${TEMP_DIR}${srcs[i]}/" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
     elif [[ -f "${TEMP_DIR}${srcs[i]}" ]]; then
-      rsync -av "${TEMP_DIR}${srcs[i]}" "${CONTENT_DIR}${dsts[i]}"
+      rsync -av "${TEMP_DIR}${srcs[i]}" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
     fi
   done 
   echo "Content synced."
