@@ -7,11 +7,21 @@ site at https://kubernetes-contributor.netlify.com.
 
 ## Site content
 
-The site is generated from [Markdown](https://www.markdownguide.org/) sources
-in the [`content`](./content) directory. To update the site's content, make
-changes to the Markdown sources and [submit a pull
-request](https://help.github.com/en/articles/about-pull-requests) to this
+The content for the Contributor Site is sourced from multiple locations.
+Content managed within this repository is generated from generated from [Markdown]
+found within the [`content`][ct] directory. To update the site's content,
+make changes to the Markdown sources and [submit a pull request][pr] to this
 repository.
+
+Some content is externally sourced and changes to that must be made in the
+original location. A list of sources and their locations within the
+[`content`][ct] is available below:
+
+### External sources
+
+- **Source:** https://git.k8s.io/community/contributors/guide <br>
+  **Destination:** `/guide`
+
 
 ## Running the site locally
 
@@ -30,7 +40,9 @@ The easiest and most cross-system-compatible way to run the Contributor
 Site is to use [Docker][docker]. To begin, create the docker image to be used 
 with generating the site by executing `make docker-image`.
 
-You can then preview the site by running `make docker-server`.
+To ensure you can view the site with externally sourced content, run
+`make docker-gen-content` before previewing the site by with `make docker-server`.
+
 
 ### Natively
 
@@ -76,6 +88,9 @@ Participation in the Kubernetes community is governed by the
 [Kubernetes Code of Conduct](code-of-conduct.md).
 
 [hugo]: https://gohugo.io/
+[Markdown]: https://www.markdownguide.org/
+[ct]: ./content/
+[pr]: https://help.github.com/en/articles/about-pull-requests
 [hugo-docs]: https://gohugo.io/documentation/
 [frontmatter]: https://gohugo.io/content-management/front-matter/
 [docker]: https://www.docker.com/get-started
