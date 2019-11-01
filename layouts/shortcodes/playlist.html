@@ -1,0 +1,7 @@
+{{ $id    := .Get 0 }}
+{{ $size  := .Get 1 | default 100 }}
+{{ $title := .Get 2 | default "Kubernetes contributor site video" }}
+{{ $url   := printf "https://www.youtube.com/embed/videoseries?list=%s" $id }}
+<div class="youtube-embed" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="{{ $url }}" style="position: absolute; top: 0; left: 0; width: {{ $size }}%; height: {{ $size }}%; border: 0;" allowfullscreen title="{{ $title }}"></iframe>
+</div>

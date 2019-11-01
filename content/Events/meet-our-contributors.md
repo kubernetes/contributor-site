@@ -8,7 +8,7 @@ When Slack seems like it’s going too fast, and you just need a quick answer fr
 
 Meet Our Contributors gives you a monthly one-hour opportunity to ask questions about our upstream community, watch interviews with our contributors, and participate in peer code reviews.
 
-{{< youtube 0bBda3Bs8i0 >}}
+{{< playlist PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F >}}
 
 ## When:
 Every first Wednesday of the month at the following times. Grab a copy of the calendar to yours from [kubernetes.io/community](https://kubernetes.io/community/)
