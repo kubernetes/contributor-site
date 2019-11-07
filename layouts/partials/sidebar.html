@@ -29,7 +29,6 @@
           </a>
 
           {{ if $isCurrentSection }}
-          {{ $isCurrentPage    := eq $url .RelPermalink }}
           <div class="toc-subsection">
             {{ range .Pages }}
             {{ $isCurrentPage := eq $url .RelPermalink }}
