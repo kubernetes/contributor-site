@@ -29,7 +29,7 @@ To develop site content, you can run the site locally using [Hugo][hugo] in
 two ways:
 
 1. [Inside a Docker container](#using-docker)
-2. [Natively](#natively) (not inside a Docker container)
+2. [Local Installation](#local-installation) (Without using docker container)
 
 When you make changes to the site's content, Hugo will automatically update
 the site and refresh your browser window.
@@ -44,12 +44,17 @@ To ensure you can view the site with externally sourced content, run
 `make docker-gen-content` before previewing the site by with `make docker-server`.
 
 
-### Natively
+### Local Installation
 
-> For instructions on installing and using Hugo, see the [Hugo
-> Documentation][hugo-docs].
+>Install Hugo before setting up the project on your local machine. For more 
+>details on Hugo, See [here][hugo].
 
-To run the site locally using an installed Hugo executable, run `make server`.
+- Fork & Clone the repository on your local machine.
+- Verify `Hugo` installation by using :
+```sh
+hugo --version
+```
+- Run the site using `hugo server`
 
 ## YouTube embeds
 

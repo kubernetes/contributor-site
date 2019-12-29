@@ -23,7 +23,3 @@ sizes = [300,400,600,700]
 [[menu.sidebar]]
 name = "Role Board"
 url = "https://discuss.kubernetes.io/c/contributors/role-board"
-[[menu.sidebar]]
-name = "Code of Conduct"
-url = "https://github.com/kubernetes/community/blob/master/code-of-conduct.md"
-
