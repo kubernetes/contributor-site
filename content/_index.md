@@ -12,7 +12,7 @@ It is intended to be the hub for all things related to the Kubernetes Contributo
 
 The first step is to check out the [contributor guide](/guide/). All contributors must abide by the [CNCF Code of Conduct](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) and [sign the CLA](https://github.com/kubernetes/community/blob/master/CLA.md).
 
-If you need help with submitting a pull request, found a bug, or have a suggestion, please join us in [Slack] and pop over to the [#kubernetes-dev channel][kdev].
+If you need help with submitting a pull request, found a bug, or have a suggestion, please join us in [Slack] and pop over to the [#kubernetes-dev channel].
 
 Remember: No question is too small.
 
@@ -21,7 +21,7 @@ Remember: No question is too small.
 There are many ways you can stay involved with the Kubernetes Contributor community. 
 
 * Join a [SIG](https://git.k8s.io/community/sig-list.md)
-* Contribute to and explore our [developer guide](https://git.k8s.io/community/contributors/devel) and contributor guide
+* Contribute to and explore our [developer guide](https://git.k8s.io/community/contributors/devel) and contributor guide(https://git.k8s.io/community/contributors/guide)
 * Voice your thoughts and have them heard at one of our biweekly [contributor experience SIG meetings](https://github.com/kubernetes/community/tree/master/sig-contributor-experience#meetings). 
 * Meet our contributors by joining our [monthly one hour meeting](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)
 * Learn more about our community by joining in our [weekly community meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md)
@@ -39,5 +39,6 @@ We’re building out this site in real-time! Want to join us and help? Here’s 
 * Directory of Kubernetes SIGs and other community groups
 * Pathways to success for [new Kubernetes contributors](https://github.com/kubernetes/community/blob/master/community-membership.md) and mentoring programs
 * Workshop videos
+
 [Slack]: https://slack.k8s.io/
-[kdev]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
+[#kubernetes-dev channel]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
