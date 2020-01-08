@@ -1,10 +1,11 @@
-{{ $logo     := "img/logos/kubernetes.png" | relURL }}
-{{ $pages    := where site.RegularPages ".Section" "" }}
-{{ $url      := .RelPermalink }}
-{{ $isHome   := .IsHome }}
-{{ $sections := site.Sections }}
-{{ $section  := .Section }}
-{{ $extra    := site.Menus.sidebar }}
+{{ $logo         := "img/logos/kubernetes.png" | relURL }}
+{{ $external     := "img/external.png" }}
+{{ $pages        := where site.RegularPages ".Section" "" }}
+{{ $url          := .RelPermalink }}
+{{ $isHome       := .IsHome }}
+{{ $sections     := site.Sections }}
+{{ $section      := .Section }}
+{{ $extra        := site.Menus.sidebar }}
 <aside class="sidebar is-hidden-touch">
   <div class="sidebar-menu">
     <div class="sidebar-menu-header">
@@ -54,6 +55,7 @@
         <div class="toc-section">
           <a class="toc-section-link" href="{{ .URL }}" target="_blank">
             {{ .Name }}
+            <img src="{{ $external }}" width="20" height="20">
           </a>
         </div>
         {{ end }}
