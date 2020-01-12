@@ -21,7 +21,7 @@ Remember: No question is too small.
 There are many ways you can stay involved with the Kubernetes Contributor community. 
 
 * Join a [SIG](https://git.k8s.io/community/sig-list.md)
-* Contribute to and explore our [developer guide](https://git.k8s.io/community/contributors/devel) and contributor guide(https://git.k8s.io/community/contributors/guide)
+* Contribute to and explore our [developer guide](https://git.k8s.io/community/contributors/devel) and [contributor guide](/guide/)
 * Voice your thoughts and have them heard at one of our biweekly [contributor experience SIG meetings](https://github.com/kubernetes/community/tree/master/sig-contributor-experience#meetings). 
 * Meet our contributors by joining our [monthly one hour meeting](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)
 * Learn more about our community by joining in our [weekly community meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md)
