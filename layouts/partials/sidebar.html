@@ -1,5 +1,5 @@
 {{ $logo         := "img/logos/kubernetes.png" | relURL }}
-{{ $external     := "img/external.png" }}
+{{ $external     := "img/external.png" | relURL }}
 {{ $pages        := where site.RegularPages ".Section" "" }}
 {{ $url          := .RelPermalink }}
 {{ $isHome       := .IsHome }}
