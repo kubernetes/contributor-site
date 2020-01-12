@@ -12,8 +12,8 @@ twitterHandle = "kubernetes"
 googleAnalyticsId = "180100527"
 
 [params.fullcalendar]
-js = ["core", "google-calendar", "list"]
-css = ["core", "list"]
+js = ["core", "google-calendar", "daygrid"]
+css = ["core", "daygrid"]
 
 [[params.fonts]]
 name = "Roboto"
