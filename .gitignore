@@ -38,3 +38,6 @@ _tmp/
 # Shell histories
 .ash_history
 .bash_history
+
+# Added yarn dependecies
+node_modules/
