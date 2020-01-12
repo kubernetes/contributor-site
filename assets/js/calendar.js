@@ -9,8 +9,10 @@ function renderCalendar() {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'dayGrid', 'googleCalendar', 'moment' ],
     defaultView: 'dayGridMonth',
-    googleCalendarApiKey: 'AIzaSyCePJ8tLdqZTHQ71_17eSCREAh4YXWRVDI',
-    events: 'vishakhanihore.10@gmail.com',
+    googleCalendarApiKey: 'AIzaSyDlAwor0K8xljdp_r3V-9nFKnyoBQzm3Ro',
+    events: {
+    	googleCalenderId: 'cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com',
+    },
     header: {
       left: 'prev,next today',
       center: 'title',
