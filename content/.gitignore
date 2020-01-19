@@ -1,0 +1,3 @@
+# Files synced to the root of the content directory should be added to the
+# ignore list.
+code-of-conduct.md
