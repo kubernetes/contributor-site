@@ -22,9 +22,8 @@ readonly DEBUG=${DEBUG:-"false"}
 readonly REPO_ROOT="$(git rev-parse --show-toplevel)"
 readonly CONTENT_DIR="$REPO_ROOT/content"
 readonly TEMP_DIR="$REPO_ROOT/_tmp"
-
-readonly GH_ROOT="${GH_ROOT:-"https://github.com/kubernetes"}"
 readonly EXTERNAL_SOURCES="${EXTERNAL_SOURCES:-"$REPO_ROOT/external-sources"}"
+readonly HEADER_TMPLT="---\ntitle: __TITLE__\n---\n"
 
 
 cd "$REPO_ROOT"
@@ -136,6 +135,9 @@ process_content() {
     done
   fi
 
+  if [[ $(head -n 1 "$1") != "---" ]]; then
+    insert_header "$1"
+  fi
 }
 
 # expand_paths
@@ -176,14 +178,19 @@ gen_link() {
 
   # If it was previously an "external" link but now local to the contributor site
   # update the link by trimming the url portion.
-  if echo "$generated_link" | grep -q -i -E "[http|https]://(git.k8s.io|(www\.)?github.com/kubernetes)"; then
+  # TODO: Improve support for handling additional external repos.
+  # Detection is a problem for non kubernetes orgs. New org names must be
+  # appended for generation of correct url rewrites. It may need to be further
+  # updated if the external org/repo uses their own domain shortener similar to
+  # git.k8s.io.
+  if echo "$generated_link" | grep -q -i -E "https?:\/\/((sigs|git)\.k8s\.io|(www\.)?github\.com\/(kubernetes(-(client|csi|incubator|sigs))?|cncf))"; then
     local i; i=0
     while (( i < ${#glsrcs[@]} )); do
       local repo=""
       local src=""
-      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)"
+      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${s}" | cut -d '/' -f3)"
       src="${glsrcs[i]#/${repo}}"
-      if echo "$generated_link" | grep -q -i -E "/${repo}(/tree/master)?${src}"; then
+      if echo "$generated_link" | grep -q -i -E "/${repo}(/(blob|tree)/master)?${src}"; then
         generated_link="$src"
         break
       fi
@@ -192,15 +199,15 @@ gen_link() {
   fi
 
   # If the link's path matches against one of the source locations, update it
-  # to use the matching destination path. If no match us found, prepend the
-  # git.k8s.io address.
+  # to use the matching destination path. If no match is found, expand to
+  # a full github.com/$org/$repo address
   if echo "$generated_link" | grep -q -i -v "^http"; then
     local internal_link; internal_link="false"
     local i; i=0
     while (( i < ${#glsrcs[@]} )); do
       local repo=""
       local src=""
-      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)"
+      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${s}" | cut -d '/' -f3)"
       src="${glsrcs[i]#/${repo}}"
       if echo "$generated_link" | grep -i -q "^${src}"; then
         generated_link="${generated_link/${src}/${gldsts[i]}}"
@@ -219,11 +226,33 @@ gen_link() {
      ((i++))
     done
     if [[ "$internal_link" == "false" ]]; then
-      generated_link="https://git.k8s.io/$(basename "$2")${generated_link}"
+      local org
+      org="$(echo "$2" | rev | cut -d '/' -f2 | rev)" # reverse the string to trim from the "right"
+      generated_link="https://github.com/$org/$(basename "$2")/blob/master${generated_link}"
     fi
   fi
 
   echo "$generated_link"
+}
+
+# insert_header
+# Inserts the base hugo header needed to render a page correctly. This should
+# only be called if -no- header is already detected.
+# $1 - The full path to the markdown file.
+insert_header() {
+  local title
+  local filename
+  filename="$(basename "$1")"
+  # If its README, assume the title should be that of the parent dir.
+  # Otherwise use the name of the file.
+  if [[ "${filename,,}" == 'readme.md' || "${filename,,}" == '_index.md' ]]; then
+    title="$(basename "$(dirname "$1")")"
+  else
+    title="${filename%.md}"
+  fi
+  title="$(echo "${title//[-|_]/ }" | sed -r 's/\<./\U&/g')"
+  sed -i "1i${HEADER_TMPLT//__TITLE__/$title}" "$1"
+  echo "Header inserted into: $1"
 }
 
 
@@ -235,29 +264,39 @@ main() {
   local dsts=() # array of destinations for the content to be synced to
 
   # Files within the EXTERNAL_SOURCES directory should be csv formatted with the
-  # name of the file being the kubernetes repo name (e.g. community), and the
-  # content being the path to the content to be synced within the repo to the
-  # to the destination within the HUGO contenet directory. 
+  # directory being the GitHub org and name of the file being the repo name
+  # (e.g. kubernetes/community), and the  content being the path to the content
+  # to be synced within the repo to the to the destination within the HUGO
+  # content directory.
   # Example:
-  # filename: community
+  # file-path: external-sources/kubernetes/community
   # "/contributors/guide", "/guide" 
-  repos=("${EXTERNAL_SOURCES}"/*)
+
+  shopt -s globstar
+  for repo in "${EXTERNAL_SOURCES}"/**; do
+    if [[ -f "$repo" ]]; then
+      repos+=("$repo")
+    fi
+  done
+  shopt -u globstar
 
   # populate the arrays with information parsed from files in ${EXTERNAL_SOURCES}
   for repo in "${repos[@]}"; do
+    local org
+    org="$(basename "$(dirname "$repo")")"
     # shellcheck disable=SC2094 # false detection on read/write to $repo at the same time
     while IFS=, read -re src dst || [ -n "$src" ]; do
-      srcs+=("/$(basename "$repo")$(echo "$src" | sed -e 's/^\"//g;s/\"$//g')")
+      srcs+=("/$org/$(basename "$repo")$(echo "$src" | sed -e 's/^\"//g;s/\"$//g')")
       dsts+=("$(echo "$dst" | sed -e 's/^\"//g;s/\"$//g')")
     done < "$repo"
-    init_src "${GH_ROOT}/$(basename "$repo").git" "${TEMP_DIR}/$(basename "$repo")"
+    init_src "https://github.com/$org/$(basename "$repo").git" "${TEMP_DIR}/$org/$(basename "$repo")"
   done
 
 
   for s in "${srcs[@]}"; do
     local repo=""
     local src=""
-    repo="$(echo "${s}" | cut -d '/' -f2)"
+    repo="$(echo "${s}" | cut -d '/' -f2)/$(echo "${s}" | cut -d '/' -f3)"
     src="${s#/${repo}}"
     while IFS= read -r -d $'\0' file; do
       process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts
