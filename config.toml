@@ -32,7 +32,7 @@ twitterHandle = "kubernetes"
 googleAnalyticsId = "180100527"
 
 [params.fullcalendar]
-js = ["core", "google-calendar", "daygrid"]
+js = ["core", "google-calendar", "daygrid", "moment"]
 css = ["core", "daygrid"]
 
 [[params.fonts]]
