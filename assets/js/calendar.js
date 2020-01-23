@@ -8,16 +8,14 @@ function renderCalendar() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'dayGrid', 'googleCalendar', 'moment' ],
-    defaultView: 'dayGridMonth',
-    googleCalendarApiKey: 'AIzaSyDlAwor0K8xljdp_r3V-9nFKnyoBQzm3Ro',
-    events: {
-    	googleCalenderId: 'cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com',
-    },
+    defaultView: 'dayGridWeek',
     header: {
       left: 'prev,next today',
       center: 'title',
-      right: 'dayGridMonth,listYear'
+      right: 'dayGridDay,dayGridWeek,dayGridMonth'
     },
+    googleCalendarApiKey: 'AIzaSyDlAwor0K8xljdp_r3V-9nFKnyoBQzm3Ro',
+    events: 'cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com',
     eventClick: openEvent,
     timezone: 'local',
     displayEventTime: true,
