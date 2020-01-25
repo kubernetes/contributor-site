@@ -1,5 +1,6 @@
 function openEvent(event) {
-  window.open(event.url, 'gcalevent', 'width=600,height=600');
+  window.open(event.event.url, '_blank', 'width=700,height=700');
+  event.jsEvent.preventDefault();
   return false;
 }
 
