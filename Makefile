@@ -14,7 +14,7 @@
 
 DOCKER			?= docker
 DOCKER_RUN		:= $(DOCKER) run --rm -it -v $(CURDIR):/src
-HUGO_VERSION		:= HUGO_VERSION = $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
+HUGO_VERSION		:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 DOCKER_IMAGE		:= k8s-contrib-site-hugo
 
 # Fast NONBlOCKING IO to stdout caused by the hack/gen-content.sh script can
