@@ -97,4 +97,4 @@ Participation in the Kubernetes community is governed by the
 [sig-contribex]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md
 [sig-contribex-slack]: http://slack.k8s.io/#sig-contribex
 [sig-contribex-list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
-[kep-0005]: https://github.com/kubernetes/community/blob/master/keps/sig-contributor-experience/0005-contributor-site.md
+[kep-0005]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-contributor-experience/0005-contributor-site.md
