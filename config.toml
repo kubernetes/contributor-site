@@ -40,7 +40,13 @@ name = "Roboto"
 sizes = [300,400,600,700]
 
 [menu]
+
+[[menu.sidebar]]
+name = "Release Schedule (1.18)"
+url = "https://git.k8s.io/sig-release/releases/release-1.18#timeline"
+weight = 98
+
 [[menu.sidebar]]
 name = "Role Board"
 url = "https://discuss.kubernetes.io/c/contributors/role-board"
-
+weight = 99
