@@ -188,7 +188,7 @@ gen_link() {
     while (( i < ${#glsrcs[@]} )); do
       local repo=""
       local src=""
-      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${s}" | cut -d '/' -f3)"
+      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${glsrcs[i]}" | cut -d '/' -f3)"
       src="${glsrcs[i]#/${repo}}"
       if echo "$generated_link" | grep -q -i -E "/${repo}(/(blob|tree)/master)?${src}"; then
         generated_link="$src"
@@ -207,7 +207,7 @@ gen_link() {
     while (( i < ${#glsrcs[@]} )); do
       local repo=""
       local src=""
-      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${s}" | cut -d '/' -f3)"
+      repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${glsrcs[i]}" | cut -d '/' -f3)"
       src="${glsrcs[i]#/${repo}}"
       if echo "$generated_link" | grep -i -q "^${src}"; then
         generated_link="${generated_link/${src}/${gldsts[i]}}"
@@ -293,20 +293,38 @@ main() {
   done
 
 
-  for s in "${srcs[@]}"; do
+  for ((i=0; i<${#srcs[@]};i++)); do
     local repo=""
     local src=""
-    repo="$(echo "${s}" | cut -d '/' -f2)/$(echo "${s}" | cut -d '/' -f3)"
-    src="${s#/${repo}}"
+    repo="$(echo "${srcs[i]}" | cut -d '/' -f2)/$(echo "${srcs[i]}" | cut -d '/' -f3)"
+    src="${srcs[i]#/${repo}}"
     while IFS= read -r -d $'\0' file; do
       process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts
-      if [[ $(basename "${file,,}") == 'readme.md' ]]; then
+      # if the source file is a readme, or the destination is a singular file it
+      # should be evaluated and if needed renamed.
+      if [[ $(basename "${file,,}") == 'readme.md' ]] \
+          || echo "${dsts[i]}" | grep -q "\.md$"; then
         filename=""
-        filename="$(dirname "$file")/_index.md"
-        mv "$file" "$filename"
-        echo "Renamed: $file to $filename"
+        # if file is a readme and the destination is NOT a file, assume it is
+        # the "root" of a directory.
+        if [[ $(basename "${file,,}") == 'readme.md' ]] \
+            && echo "${dsts[i]}" | grep -v -q "\.md$" ; then
+          filename="$(dirname "$file")/_index.md"
+        else
+          # If not a readme, assume its a singular file that should be moved.
+          # Because it is renamed in place before syncing, the srcs array must
+          # be updated to reflect its rename. This is over-eager for most use
+          # cases, but should take care of everything.
+          filename="$(dirname "$file")/$(basename "${dsts[i]}")"
+          srcs[i]="$(dirname "${srcs[i]}")/$(basename "${dsts[i]}")"
+        fi
+        # checks if both the source and destination would be the same
+        if [[ "$file" != "$filename" ]]; then
+          mv "$file" "$filename"
+          echo "Renamed: $file to $filename"
+        fi
       fi
-    done < <(find_md_files "${TEMP_DIR}${s}")
+    done < <(find_md_files "${TEMP_DIR}${srcs[i]}")
   done
 
 

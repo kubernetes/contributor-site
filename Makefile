@@ -16,6 +16,7 @@ DOCKER			?= docker
 DOCKER_RUN		:= $(DOCKER) run --rm -it -v $(CURDIR):/src
 HUGO_VERSION		:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 DOCKER_IMAGE		:= k8s-contrib-site-hugo
+REPO_ROOT	:=${CURDIR}
 
 # Fast NONBlOCKING IO to stdout caused by the hack/gen-content.sh script can
 # cause Netlify builds to terminate unexpectantly. This forces stdout to block.
@@ -26,7 +27,7 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets docker-targets
-targets: help gen-content render serve clean production preview-build
+targets: help gen-content render serve clean clean-all sproduction preview-build
 docker-targets: docker-image docker-gen-content docker-render docker-server
 
 help: ## Show this help text.
@@ -66,6 +67,12 @@ docker-server: ## Run Hugo locally within a Docker container (equiv to server).
 
 clean: ## Cleans build artifacts.
 	rm -rf public/ resources/ _tmp/
+
+clean-all: ## Cleans both build artifacts and files sycned to content directory
+	rm -rf public/ resources/ _tmp/
+	rm -f content/code-of-conduct.md
+	rm -f content/release.md
+	find content/guide -not -name ".gitignore" -not -name "guide" -maxdepth 1 -exec rm -rf {} \;
 
 production-build: ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
