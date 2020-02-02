@@ -1,6 +1,8 @@
 {{ $logo     := "img/logos/kubernetes.png" | relURL }}
 {{ $sections := site.Sections }}
+{{ $external     := "img/external.png" | relURL }}
 {{ $pages    := where site.RegularPages ".Section" "" }}
+{{ $extra        := site.Menus.sidebar }}
 <nav class="navbar is-primary is-hidden-desktop">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
@@ -33,6 +35,14 @@
         {{ .Title }}
       </a>
       {{ end }}
+
+      {{ range $extra }}
+      <a class="navbar-item is-indented" href="{{ .URL }}" target="_blank">
+        {{ .Name }}
+        <img src="{{ $external }}" width="20" height="20">
+      </a>
+      {{ end }}
+
     </div>
   </div>
 </nav>
