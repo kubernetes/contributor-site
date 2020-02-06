@@ -74,8 +74,7 @@ find_md_files() {
 # with the path that it will be after being copied over. This includes removing
 # the extension and if the file is a README, trim it (README's function as the 
 # root page.) If the link references something not within the content that is
-# being copied over, but still within one of the kubernetes projects update it to
-# to use the git.k8s.io shortener.
+# being copied over, it will be expanded to the full github url.
 # Example:
 #   Repo: https://github.com/kubernetes/community
 #   Content to be synced: /contributors/guide -> /guide
@@ -83,10 +82,9 @@ find_md_files() {
 #   Links:
 #   ./bug-bounty.md -> /guide/bug-bounty
 #   contributor-cheatsheet/README.md -> /guide/contributor-cheatsheet
-#   ../../sig-list.md -> https://git.k8s.io/community/sig-list.md
-#   /contributors/devel/README.md -> https://git.k8s.io/community/contributors/devel/README.md
+#   ../../sig-list.md -> https://github.com/kubernetes/community/blob/master/sig-list.md
+#   /contributors/devel/README.md -> https://github.com/kubernetes/community/blob/master/contributors/devel/README.md
 #   http://git.k8s.io/cotributors/guide/collab.md -> /guide/collab
-#   https://github.com/kubernetes/enhancements/tree/master/keps -> https://git.k8s.io/enhancements/keps
 # 
 # Args:
 # $1 - Full path to markdown file to be processed
