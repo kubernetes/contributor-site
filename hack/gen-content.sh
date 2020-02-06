@@ -115,7 +115,7 @@ process_content() {
   fi
 
   mapfile -t ref_link_matches < \
-    <(grep -o -i -P '^\[.+\]:\s*(?!|mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*)\K\S+$' "$1")
+    <(grep -o -i -P '^\[.+\]:\s*(?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*)\K\S+$' "$1")
 
   if [[ -v ref_link_matches ]]; then
     for match in "${ref_link_matches[@]}"; do
