@@ -1,6 +1,8 @@
 {{ $logo     := "img/logos/kubernetes.png" | relURL }}
 {{ $sections := site.Sections }}
 {{ $external     := "img/external.png" | relURL }}
+{{ $isHome       := .IsHome }}
+{{ $section      := .Section }}
 {{ $pages    := where site.RegularPages ".Section" "" }}
 {{ $extra        := site.Menus.sidebar }}
 <nav class="navbar is-primary is-hidden-desktop">
@@ -18,6 +20,9 @@
 
   <div id="navbar-menu" class="navbar-menu">
     <div class="navbar-end">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
       {{ range $sections }}
       <a class="navbar-item" href="{{ .RelPermalink }}">
         {{ .Title }}
@@ -37,7 +42,7 @@
       {{ end }}
 
       {{ range $extra }}
-      <a class="navbar-item is-indented" href="{{ .URL }}" target="_blank">
+      <a class="navbar-item" href="{{ .URL }}" target="_blank">
         {{ .Name }}
         <img src="{{ $external }}" width="20" height="20">
       </a>
