@@ -22,7 +22,7 @@ pygmentsStyle = "dracula"
       autoHeadingIDType = "github"
     [markup.goldmark.renderer]
       hardWraps = false
-      unsafe = false
+      unsafe = true
       xHTML = false
 
 [params]
