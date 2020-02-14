@@ -214,12 +214,30 @@ gen_link() {
           generated_link="$(echo "$generated_link" | sed -e 's|/readme\.md|/|I')"
           internal_link="true"
           break
+        # If the destination is intended to be the root for a directory and the
+        # source was not a README, set the generated link to the "root" of the
+        # destination.
+        elif basename "$generated_link" | grep -i -q '_index.md'; then
+          generated_link="$(dirname "${gldsts[i]}")"
+          internal_link="true"
+          break
         else
           # shellcheck disable=SC2001 # prefer sed for native ignorecase
           generated_link="$(echo "$generated_link" | sed -e 's|\.md||I')"
           internal_link="true"
           break
         fi
+      # This catches the condition if the link to be expanded did not link
+      # to a file directly (a README), but should when copied over. By default
+      # GitHub will display the README in a directory if no file is specified.
+      # This updates those types of links to reference the destination file
+      # path.
+      elif basename "$generated_link" | grep -q -v -i -E ".+\..+" && \
+           basename "$src" | grep -q -i "^readme\.md" && \
+           [[ "$generated_link" == $(dirname "$src") ]]; then
+        # shellcheck disable=SC2001 # prefer sed for native ignorecase
+        generated_link="$(echo "${gldsts[i]}" | sed -e 's|\.md||I')"
+        internal_link="true"
       fi
      ((i++))
     done
@@ -290,7 +308,12 @@ main() {
     init_src "https://github.com/$org/$(basename "$repo").git" "${TEMP_DIR}/$org/$(basename "$repo")"
   done
 
-
+  # Duplicate of the srcs array used to reference the file paths of the source
+  # files as some file names may be changed in place to be copied over correctly.
+  # The original src array cannot be used as it would break link generation. This
+  # is because the src paths are used to determine if the content is "internal"
+  # or "external" before link generation.
+  renamed_srcs=("${srcs[@]}")
   for ((i=0; i<${#srcs[@]};i++)); do
     local repo=""
     local src=""
@@ -310,13 +333,14 @@ main() {
           filename="$(dirname "$file")/_index.md"
         else
           # If not a readme, assume its a singular file that should be moved.
-          # Because it is renamed in place before syncing, the srcs array must
-          # be updated to reflect its rename. This is over-eager for most use
-          # cases, but should take care of everything.
+          # Because it is renamed in place before syncing, the renamed_srcs array
+          # is updated to reflect its rename, leaving the srcs array untouched
+          # for use in passing to the process_content function.
           filename="$(dirname "$file")/$(basename "${dsts[i]}")"
-          srcs[i]="$(dirname "${srcs[i]}")/$(basename "${dsts[i]}")"
+          renamed_srcs[i]="$(dirname "${srcs[i]}")/$(basename "${dsts[i]}")"
         fi
-        # checks if both the source and destination would be the same
+        # checks if both the source and destination would be the same. If so
+        # skip updating.
         if [[ "$file" != "$filename" ]]; then
           mv "$file" "$filename"
           echo "Renamed: $file to $filename"
@@ -327,13 +351,13 @@ main() {
 
 
   echo "Copying to hugo content directory."
-  for (( i=0; i < ${#srcs[@]}; i++ )); do
-    if [[ -d "${TEMP_DIR}${srcs[i]}" ]]; then
+  for (( i=0; i < ${#renamed_srcs[@]}; i++ )); do
+    if [[ -d "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
       # OWNERS files are excluded when copied to prevent potential overwriting of desired
       # owner config.
-      rsync -av "${TEMP_DIR}${srcs[i]}/" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
-    elif [[ -f "${TEMP_DIR}${srcs[i]}" ]]; then
-      rsync -av "${TEMP_DIR}${srcs[i]}" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
+      rsync -av "${TEMP_DIR}${renamed_srcs[i]}/" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
+    elif [[ -f "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
+      rsync -av "${TEMP_DIR}${renamed_srcs[i]}" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
     fi
   done 
   echo "Content synced."
