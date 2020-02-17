@@ -1,7 +1,7 @@
 ---
 title: Meet Our Contributors
 description: Ask Us Anything!
-weight: 2
+weight: 4
 ---
 
 When Slack seems like it’s going too fast, and you just need a quick answer from a human...
