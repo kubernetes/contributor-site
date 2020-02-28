@@ -1,6 +1,7 @@
 ---
 title: Contributor Summits 
 description: Details of Upcoming & Past Contributor Summits in Kubernetes
+weight: 2
 ---
 
 ## Upcoming Contributor Summits
