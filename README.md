@@ -21,7 +21,10 @@ original location. A list of sources and their locations within the
 
 - **Source:** https://git.k8s.io/community/contributors/guide <br>
   **Destination:** `/guide`
-
+- **Source:** https://github.com/cncf/foundation/blob/master/code-of-conduct.md <br>
+  **Destination:** `/code-of-conduct.md`
+- **Source:** https://git.k8s.io/sig-release/releases/release-1.18/README.md <br>
+  **Destination:** `/release.md`
 
 ## Running the site locally
 
