@@ -85,6 +85,18 @@ You can reach the maintainers of this project at:
 - [Slack][sig-contribex-slack]
 - [Mailing List][sig-contribex-list]
 
+## Evolution of this site:
+
+We’re building out this site in real-time! Want to join us and help? Here’s what we have in store for next iterations:
+
+* [x] An Events page showcasing all current and future happenings within the Kubernetes community. We hope to launch this feature by November 2019. Want to help us hit this target? Help us [work on this project](https://github.com/kubernetes-sigs/contributor-site/issues/15) by forking the repo and submitting a pull request!
+* [x] Contributor guide/handbook: Feature launch date estimated November 2019
+* [ ] Developers' guide/handbook: Feature launch date estimated April 2020
+* [ ] Role Board: Feature launch date estimated April 2020
+* [ ] Directory of Kubernetes SIGs and other community groups
+* [x] Pathways to success for [new Kubernetes contributors](https://github.com/kubernetes/community/blob/master/community-membership.md) and mentoring programs
+* [ ] Workshop videos
+
 ### Code of conduct
 
 Participation in the Kubernetes community is governed by the

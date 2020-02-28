@@ -29,16 +29,5 @@ There are many ways you can stay involved with the Kubernetes Contributor commun
 * Check out our entire developer guide in the [community repo](http://git.k8s.io/community/contributors/devel)
 * Find out how we make decisions, organize, and how to get involved in [governance](http://git.k8s.io/community/governance.md)
 
-### Evolution of this site:
-
-We’re building out this site in real-time! Want to join us and help? Here’s what we have in store for next iterations:
-
-* An Events page showcasing all current and future happenings within the Kubernetes community. We hope to launch this feature by November 2019. Want to help us hit this target? Help us [work on this project](https://github.com/kubernetes-sigs/contributor-site/issues/15) by forking the repo and submitting a pull request!
-* Contributor guide/handbook: Feature launch date estimated November 2019
-* Role Board: Feature launch date estimated November 2019
-* Directory of Kubernetes SIGs and other community groups
-* Pathways to success for [new Kubernetes contributors](https://github.com/kubernetes/community/blob/master/community-membership.md) and mentoring programs
-* Workshop videos
-
 [Slack]: https://slack.k8s.io/
 [#kubernetes-dev channel]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
