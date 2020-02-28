@@ -1,38 +1,26 @@
-{{ $summit_1     := "img/summit_image.JPG" | relURL }}
-{{ $summit_na     := "img/summit_na.jpg" | relURL }}
-<p class="subtitle is-3">Upcoming Contributor Summits</p>
+{{ $summit_image    := .Get "summit_image" }}
+{{ $summit_name     := .Get "summit_name"}}
+{{ $summit_content  := .Get "summit_content"}}
+{{ $summit_date     := .Get "summit_date"}}
+{{ $summit_link     := .Get "summit_link"}}
+{{ $social_username := .Get "social_username"}}
+{{ $social_link     := .Get "social_link"}}
+
+<br>
 <div class="card"> 
-  <img src="{{ $summit_1 }}" alt="Contributor Summit" width="1000" height="1600">
+  <img src="{{ $summit_image }}" alt="Contributor Summit" width="100%" height="100%">
   <div class="card-content">
     <div class="media">
       <div class="media-content">
-        <p class="title is-4"> Kubernetes Contributor Summit-Amsterdam 2020</p>
-        <p class="subtitle is-6"><a href="https://twitter.com/kubecon_?lang=en">@KubeCon_</a></p>
+        <p class="title is-4"> {{$summit_name}}</p>
+        <p class="subtitle is-6"><a href="{{ $social_link }}">{{$social_username}}</a></p>
       </div>
       <div class="content">
-        The yearly Kubernetes Contributor Summits bring together new and current Kubernetes contributors alike to connect and share face-to-face. The Amsterdam event is shaping up to focus on strengthening our contributor base in other regions outside of the US, and adding in some activities for our current contributors to get hallway conversations in with their distributed peers.<br> For more information, click <a href="https://events.linuxfoundation.org/kubernetes-contributor-summit-europe/">here</a>.
-        <br>
-        <strong><time datetime="2020-03-29">March 29-30, 2020</time></strong>
+        {{$summit_content}}
+        <br> For more information, click <a href="{{ $summit_link }}">here</a>.<br>
+        <strong>{{$summit_date}}</strong>
       </div>
     </div>
   </div>
 </div>
-<br>
-<br>
-<p class="subtitle is-3">Past Contributor Summits</p>
-<div class="card"> 
-  <img src="{{ $summit_na }}" alt="Contributor Summit NA" width="1000" height="1600">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-4"> Kubernetes Contributor Summit-San Diego 2019</p>
-        <p class="subtitle is-6"><a href="https://twitter.com/kubecon_?lang=en">@KubeCon_</a></p>
-      </div>
-      <div class="content">
-        Welcome! If you want to contribute upstream to the Kubernetes project, you’ve come to the right place! Join new and current Kubernetes contributors at Kubernetes Contributor Summit North America 2019 in San Diego!<br> For more information, click <a href="https://events19.linuxfoundation.org/events/kubernetes-contributor-summit-north-america-2019/">here</a>.
-        <br>
-        <strong><time datetime="2019-11-17">November 17-18, 2019</time></strong>
-      </div>
-    </div>
-  </div>
-</div>
+

@@ -13,8 +13,8 @@ In some sense, Contributor Summits are a real-life extension of the community an
 
 Contributor Summits often have three tracks:
 - **New Contributor Workshop** for those looking to find out how to become Kubernetes contributors.
-- **Active Contributor Track** - Featuring technical discussions, unconference sessions, workshops, and more for those that are actively contributing to the Kubernetes project.
-- The Documentation Sprint is for community members who want to help with writing or localizing documentation.
+- **Active Contributor Track** featuring technical discussions, unconference sessions, workshops, and more for those that are actively contributing to the Kubernetes project.
+- The **Documentation Sprint** is for community members who want to help with writing or localizing documentation.
 
-{{< events >}}
+
  
