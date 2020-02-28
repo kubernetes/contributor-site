@@ -1,8 +1,13 @@
 ---
 title: Events 
-description: Events in the Kubernetes community
-calendar: true
+description: Events in the Kubernetes Community
 ---
-{{< calendar >}}
 
-See it on the web at [calendar.google.com](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles) , or paste this [iCal url](https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics) into any [iCal client](https://en.wikipedia.org/wiki/ICalendar). Do NOT copy the meetings over to a your personal calendar, you will miss meeting updates. Instead use your client's calendaring feature to say you are attending the meeting so that any changes made to meetings will be reflected on your personal calendar. 
+This section contains details about the meeting and events occuring in the Kubernetes Community.
+
+- [Community Calendar](/events/community-calendar): Schedule of all SIG communities meetings in the Kubernetes Community.
+- [Kubernetes Contributor Summits](/events/contributor-summits): Contributor Summits bring together new and current Kubernetes contributors to connect and learn from one another.
+- [Weekly Community Meetings](/events/community-meeting): Community Meetings provide a forum for discussion of project-level concerns that might need a wider audience than a single special interest group (SIG).
+- [Office Hours](/events/office-hours): Office Hours is a live stream where we answer live questions about Kubernetes from users on the YouTube channel
+- [Meet Our Contributors](/events/meet-our-contributors): Meet Our Contributors gives you a monthly one-hour opportunity to ask questions about our upstream community, watch interviews with our contributors, and participate in peer code reviews.
+

@@ -1,0 +1,26 @@
+{{ $summit_image    := .Get "summit_image" }}
+{{ $summit_name     := .Get "summit_name"}}
+{{ $summit_content  := .Get "summit_content"}}
+{{ $summit_date     := .Get "summit_date"}}
+{{ $summit_link     := .Get "summit_link"}}
+{{ $social_username := .Get "social_username"}}
+{{ $social_link     := .Get "social_link"}}
+
+<br>
+<div class="card"> 
+  <img src="{{ $summit_image }}" alt="Contributor Summit" width="100%" height="100%">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="title is-4"> {{$summit_name}}</p>
+        <p class="subtitle is-6"><a href="{{ $social_link }}">{{$social_username}}</a></p>
+      </div>
+      <div class="content">
+        {{$summit_content}}
+        <br> For more information, click <a href="{{ $summit_link }}">here</a>.<br>
+        <strong>{{$summit_date}}</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
