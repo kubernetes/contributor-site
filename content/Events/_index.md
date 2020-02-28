@@ -3,18 +3,11 @@ title: Events
 description: Events in the Kubernetes Community
 ---
 
-Contributor Summits bring together new and current Kubernetes contributors to connect and learn from one another. It is an opportunity for existing contributors to help shape the future of the project, and offers a welcoming space for new community members to learn, explore and put the contributor workflow to practice.
+This section contains details about the meeting and events occuring in the Kubernetes Community.
 
-In some sense, Contributor Summits are a real-life extension of the community and SIG meetings. They aim to:
+- [Community Calendar](/events/community-calendar): Schedule of all SIG communities meetings in the Kubernetes Community.
+- [Kubernetes Contributor Summits](/events/contributor-summits): Contributor Summits bring together new and current Kubernetes contributors to connect and learn from one another.
+- [Weekly Community Meetings](/events/community-meeting): Community Meetings provide a forum for discussion of project-level concerns that might need a wider audience than a single special interest group (SIG).
+- [Office Hours](/events/office-hours): Office Hours is a live stream where we answer live questions about Kubernetes from users on the YouTube channel
+- [Meet Our Contributors](/events/meet-our-contributors): Meet Our Contributors gives you a monthly one-hour opportunity to ask questions about our upstream community, watch interviews with our contributors, and participate in peer code reviews.
 
-- Onboard new contributors to be productive in our community
-- Send contributors home with more context, knowledge, and skills about the project
-- Facilitate SIG-specific face-to-face collaboration
-
-Contributor Summits often have three tracks:
-- **New Contributor Workshop** for those looking to find out how to become Kubernetes contributors.
-- **Active Contributor Track** featuring technical discussions, unconference sessions, workshops, and more for those that are actively contributing to the Kubernetes project.
-- The **Documentation Sprint** is for community members who want to help with writing or localizing documentation.
-
-
- 
