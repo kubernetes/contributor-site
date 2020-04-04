@@ -1,0 +1,24 @@
+{
+  "name": "contributor-site",
+  "version": "0.0.1",
+  "description": "Kubernetes Contributor Site",
+  "main": "none.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "postcss-cli": "^7.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kubernetes-sigs/contributor-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kubernetes-sigs/contributor-site/issues"
+  },
+  "homepage": "https://github.com/kubernetes-sigs/contributor-site#readme"
+}
