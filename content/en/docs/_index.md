@@ -4,5 +4,5 @@ description: "Kubernetes Contributor Documentation"
 type: docs
 menu:
   main:
-    weight: 20
+    weight: 30
 ---
