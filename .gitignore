@@ -29,8 +29,8 @@ Session.vim
 .netrwhist
 
 # Hugo-generated artifacts
-public/
-resources/
+/public/
+/resources/
 
 # Files synced to the root of the content directory should be added to the ignore list.
 content/code-of-conduct.md
