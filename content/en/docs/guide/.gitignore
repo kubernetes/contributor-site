@@ -1,0 +1,5 @@
+# select files from https://git.k8s.io/community/contributors/guide
+!.gitignore
+!_index.md
+!*.png
+*

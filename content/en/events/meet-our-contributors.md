@@ -1,6 +1,9 @@
 ---
 title: Meet Our Contributors
-description: Ask Us Anything!
+description: >
+  Meet Our Contributors gives you a monthly one-hour opportunity to ask questions
+  about our upstream community, watch interviews with our contributors, and
+  participate in peer code reviews.
 weight: 4
 ---
 
