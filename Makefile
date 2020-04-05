@@ -27,7 +27,7 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets docker-targets
-targets: help gen-content render serve clean clean-all sproduction preview-build
+targets: help gen-content render serve clean clean-all sproduction preview-build docsy-build
 docker-targets: docker-image docker-gen-content docker-render docker-server
 
 help: ## Show this help text.
@@ -92,3 +92,13 @@ preview-build: ## Builds a deploy preview of the site (this command used only by
 		--buildFuture \
 		--ignoreCache \
 		--minify
+
+docsy-build:
+	hugo \
+		--verbose \
+		--baseURL $(DEPLOY_PRIME_URL) \
+		--buildDrafts \
+		--buildFuture \
+		--ignoreCache \
+		--minify
+

@@ -6,8 +6,8 @@ command = "make production-build"
 HUGO_VERSION = "0.68.3"
 
 [context.deploy-preview]
-command = "make preview-build"
+command = "make docsy-build"
 
 # to preview docsy build etc
 [context.branch-deploy]
-command = "make preview-build"
+command = "make docsy-build"
