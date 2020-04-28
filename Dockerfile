@@ -1,5 +1,5 @@
 FROM alpine:latest
-ARG HUGO_VERSION=0.55.6
+ARG HUGO_VERSION=0.69.2
 
 RUN apk add --no-cache \
     bash \
@@ -9,7 +9,13 @@ RUN apk add --no-cache \
     grep \
     libc6-compat \
     rsync \
-    sed
+    sed \
+    npm
+
+# Required for PostCSS
+RUN npm install -G \
+    autoprefixer \
+    postcss-cli
 
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \

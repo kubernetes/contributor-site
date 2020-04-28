@@ -37,9 +37,11 @@ gen-content: ## Generates content from external sources.
 	hack/gen-content.sh
 
 render: ## Build the site using Hugo on the host.
+	git submodule update --init --recursive --depth 1
 	hugo --verbose --ignoreCache --minify
 
 server: ## Run Hugo locally (if Hugo "extended" is installed locally)
+	git submodule update --init --recursive --depth 1
 	hugo server \
 		--verbose \
 		--buildDrafts \
@@ -54,9 +56,11 @@ docker-gen-content: ## Generates content from external sources within a Docker c
 	$(DOCKER_RUN) $(DOCKER_IMAGE) hack/gen-content.sh
 
 docker-render: ## Build the site using Hugo within a Docker container (equiv to render).
+	$(DOCKER_RUN) $(DOCKER_IMAGE) git submodule update --init --recursive --depth 1
 	$(DOCKER_RUN) $(DOCKER_IMAGE) hugo --verbose --ignoreCache --minify
 
 docker-server: ## Run Hugo locally within a Docker container (equiv to server).
+	$(DOCKER_RUN) $(DOCKER_IMAGE) git submodule update --init --recursive --depth 1
 	$(DOCKER_RUN) -p 1313:1313 $(DOCKER_IMAGE) hugo server \
 		--verbose \
 		--bind 0.0.0.0 \
@@ -76,6 +80,7 @@ clean-all: ## Cleans both build artifacts and files sycned to content directory
 
 production-build: ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
+	git submodule update --init --recursive --depth 1
 	hack/gen-content.sh
 	hugo \
 		--verbose \
@@ -84,6 +89,7 @@ production-build: ## Builds the production site (this command used only by Netli
 
 preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
+	git submodule update --init --recursive --depth 1
 	hack/gen-content.sh
 	hugo \
 		--verbose \
