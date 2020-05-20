@@ -2,8 +2,8 @@
 
 This repository contains the [Hugo][hugo] site and generator scripts for the
 Kubernetes Contributor site. In the future, the site will be available at
-https://contributors.kubernetes.io. For now, you can access the in-progress
-site at https://kubernetes-contributor.netlify.com.
+https://kubernetes.dev. For now, you can access the in-progress
+site at https://kubernetes-contributor.netlify.app.
 
 ## Site content
 
@@ -49,31 +49,34 @@ To ensure you can view the site with externally sourced content, run
 
 ### Natively
 
-> For instructions on installing and using Hugo, see the [Hugo
-> Documentation][hugo-docs].
+For instructions on installing and using Hugo, see the [Hugo Documentation][hugo-docs].
+Note that the extended version is required.
 
-To run the site locally using an installed Hugo executable, run `make server`.
+In addition to Hugo, the [postcss-cli] and [autoprefixer] JavaScript packages are
+required. These can be installed via the [Node Package Manager] (`npm`) from a
+recent version of [nodejs] with `npm install -g postcss-cli autoprefixer`.
 
-## YouTube embeds
-
-You can embed YouTube videos on pages using the `youtube` shortcode and
-specifying the unique ID of the video. Here's an example:
-
-```bash
-Check out this cool video:
-
-{{< youtube 6cCEmAisx8A >}}
+The Contributor Site uses the [docsy] theme. It is included as a [git submodule].
+To fetch docsy and it's requirements, run the command:
+```
+git submodule update --init --recursive --depth 1
 ```
 
-This embed would take up the full width of the surrounding element. You can
-specify a smaller width as a percentage by changing the second argument. This
-embed, for example, would occupy 70% of the width:
+To ensure you can view the site with externally sourced content, run
+`make gen-content` before previewing the site by with `make server`.
 
-```bash
-Check out this cool video:
+**NOTE to OSX Users**
 
-{{< youtube 6cCEmAisx8A 70 >}}
+ The `hack/gen-content.sh` script requires the gnu version
+of base packages such as `find`, `grep`, and `sed`. 
 ```
+brew install coreutils findutils grep gnu-sed gnu-tar make readlink
+```
+You will then need to update your path to include these:
+```
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+```
+
 
 ## Community, discussion, contribution, and support
 
@@ -106,10 +109,14 @@ Participation in the Kubernetes community is governed by the
 [Markdown]: https://www.markdownguide.org/
 [ct]: ./content/
 [pr]: https://help.github.com/en/articles/about-pull-requests
-[hugo-docs]: https://gohugo.io/documentation/
+[hugo-docs]: https://gohugo.io/getting-started/installing
 [frontmatter]: https://gohugo.io/content-management/front-matter/
 [docker]: https://www.docker.com/get-started
 [sig-contribex]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md
 [sig-contribex-slack]: http://slack.k8s.io/#sig-contribex
 [sig-contribex-list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
 [kep-0005]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-contributor-experience/0005-contributor-site.md
+[docsy]: https://docsy.dev
+[postcss-cli]: https://postcss.org/
+[autoprefixer]: https://github.com/postcss/autoprefixer
+[git submodule]: https://git-scm.com/book/en/v2/Git-Tools-Submodules

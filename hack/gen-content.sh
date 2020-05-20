@@ -20,7 +20,7 @@ set -o pipefail
 
 readonly DEBUG=${DEBUG:-"false"}
 readonly REPO_ROOT="$(git rev-parse --show-toplevel)"
-readonly CONTENT_DIR="$REPO_ROOT/content"
+readonly CONTENT_DIR="$REPO_ROOT/content/en"
 readonly TEMP_DIR="$REPO_ROOT/_tmp"
 readonly EXTERNAL_SOURCES="${EXTERNAL_SOURCES:-"$REPO_ROOT/external-sources"}"
 readonly HEADER_TMPLT="---\ntitle: __TITLE__\n---\n"
