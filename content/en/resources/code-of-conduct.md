@@ -1,10 +1,21 @@
 ---
 title: Code Of Conduct
-description: The CNCF Code of Conduct
 weight: 100
+description: |
+  The Code of Conduct serves as a set of rules used by the Kubernetes community
+  to establish a safe, respectful and inclusive environment.
 ---
 
-# CNCF Community Code of Conduct v1.0
+# Kubernetes Community Code of Conduct
+
+The Kubernetes Community abides by the [CNCF Code of Conduct].
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by contacting the Kubernetes Code of Conduct Committee via
+conduct@kubernetes.io.
+
+[CNCF Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+
 
 Other languages available:
 - [Chinese/中文](https://github.com/cncf/foundation/blob/master/code-of-conduct-languages/zh.md)
@@ -19,6 +30,8 @@ Other languages available:
 - [Portuguese/Português](https://github.com/cncf/foundation/blob/master/code-of-conduct-languages/pt.md)
 - [Arabic/العربية](https://github.com/cncf/foundation/blob/master/code-of-conduct-languages/ar.md)
 - [Polish/Polski](https://github.com/cncf/foundation/blob/master/code-of-conduct-languages/pl.md)
+
+<!-- Below this point is copied directly from the CNCF Code of Conduct -->
 
 ### Contributor Code of Conduct
 
