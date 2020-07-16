@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://kubernetes-contributor.netlify.app/"
 title = "Kubernetes Contributors"
 theme = ["docsy"]
 enableRobotsTXT = true
