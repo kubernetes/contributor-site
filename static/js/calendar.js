@@ -10,7 +10,7 @@ function renderCalendar() {
     var calendar = new FullCalendar.Calendar(calendarEl, {
       googleCalendarApiKey: 'AIzaSyDn_UhFPLDgxouI5nc8hOULFY25EjwGR44',
       events: {
-        googleCalendarId: 'cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com'
+        googleCalendarId: 'calendar@kubernetes.io'
       },
       themeSystem: 'bootstrap',
       aspectRatio: 2.3,
