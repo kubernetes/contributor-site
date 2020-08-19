@@ -14,24 +14,24 @@ command = "make preview-build"
 
 [[redirects]]
 from = "http://k8s.dev/*"
-to =  "https://www.kubernetes.dev/:splat:"
+to =  "https://www.kubernetes.dev/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://k8s.dev/*"
-to =  "https://www.kubernetes.dev/:splat:"
+to =  "https://www.kubernetes.dev/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "http://kubernetes.dev/*"
-to =  "https://www.kubernetes.dev/:splat:"
+to =  "https://www.kubernetes.dev/:splat"
 status = 301
 force = true
 
 [[redirects]]
 from = "https://kubernetes.dev/*"
-to =  "https://www.kubernetes.dev/:splat:"
+to =  "https://www.kubernetes.dev/:splat"
 status = 301
 force = true
