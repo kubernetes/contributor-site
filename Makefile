@@ -84,7 +84,8 @@ production-build: ## Builds the production site (this command used only by Netli
 	hack/gen-content.sh
 	hugo \
 		--verbose \
-		--ignoreCache
+		--buildFuture \
+		--ignoreCache \
 
 		# --minify -Add back in when hugo upgrades to minify 2.7.3 or greater
 
