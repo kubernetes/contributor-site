@@ -54,7 +54,7 @@ There are many ways you can stay involved with the Kubernetes Contributor commun
 
 - Join one of our [community groups]
 - Contribute to and explore our [contributor] and [developer] guides
-- Voice your thoughts and have them heard at one of our biweekly [Contributor Experience meetings] 
+- Voice your thoughts and have them heard at one of our weekly [Contributor Experience meetings]
 - Meet our contributors by joining our [monthly one hour meeting][moc]
 - Learn more about our community by joining in our [monthly community meeting]
 - Take a journey to [becoming a reviewer or approver]
@@ -63,10 +63,10 @@ There are many ways you can stay involved with the Kubernetes Contributor commun
 [community groups]: https://git.k8s.io/community/sig-list.md
 [contributor]: /docs/guide/
 [developer]: https://git.k8s.io/community/contributors/devel/
-[Contributor Experience Meetings]: https://github.com/kubernetes/community/tree/master/sig-contributor-experience#meetings
-[moc]: https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md
-[monthly community meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
-[becoming a reviewer or approver]: https://github.com/kubernetes/community/blob/master/events/community-membership.md
+[Contributor Experience Meetings]: https://git.k8s.io/community/sig-contributor-experience#meetings
+[moc]: /events/meet-our-contributors
+[monthly community meeting]: /events/community-meeting
+[becoming a reviewer or approver]: https://git.k8s.io/community/community-membership.md
 [governance]: http://git.k8s.io/community/governance.md
 
 
