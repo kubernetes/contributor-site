@@ -62,7 +62,7 @@ There are many ways you can stay involved with the Kubernetes Contributor commun
 
 [community groups]: https://git.k8s.io/community/sig-list.md
 [contributor]: /docs/guide/
-[developer]: /docs/devel/
+[developer]: https://git.k8s.io/community/contributors/devel/
 [Contributor Experience Meetings]: https://github.com/kubernetes/community/tree/master/sig-contributor-experience#meetings
 [moc]: https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md
 [monthly community meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
