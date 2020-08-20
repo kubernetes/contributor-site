@@ -1,7 +1,7 @@
 ---
 title: "Announcing the Contributor Website"
 linkTitle: "Announcing the Contributor Website"
-date: 2020-08-25
+date: 2020-08-24
 ---
 
 Welcome to [kubernetes.dev], the Kubernetes Contributor website; built to become
