@@ -10,9 +10,9 @@ menu:
 {{< blocks/cover title="Welcome" image_anchor="center" height="auto" color="primary">}}
 
 
-<p class="lead mt-5"><b>Welcome to the Kubernetes Contributor Community</b></p>
+<p class="lead mt-5" style="text-shadow: 1px 1px #000000;"><b>Welcome to the Kubernetes Contributor Community</b></p>
 
-<b>
+<b style="text-shadow: 1px 1px #000000;">
 This site is the home of contributor documentation, and serves as a starting
 point for your journey as a Kubernetes contributor.
 
