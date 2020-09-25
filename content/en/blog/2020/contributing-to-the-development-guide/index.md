@@ -3,7 +3,7 @@ title: "Contributing to the Development Guide"
 linkTitle: "Contributing to the Development Guide"
 Author: Erik L. Arneson
 Description: "A new contributor describes the experience of writing and submitting changes to the Kubernetes Development Guide."
-date: 2020-09-15
+date: 2020-09-28
 resources:
 - src: "jorge-castro-code-of-conduct.jpg"
   title: "Jorge Castro announcing the Kubernetes Code of Conduct during a weekly SIG ContribEx meeting."
