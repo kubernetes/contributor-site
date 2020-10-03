@@ -40,11 +40,12 @@ the site and refresh your browser window.
 ### Using Docker
 
 The easiest and most cross-system-compatible way to run the Contributor
-Site is to use [Docker][docker]. To begin, create the docker image to be used 
-with generating the site by executing `make docker-image`.
+Site is to use [Docker][docker]. To begin, create the docker image to be used
+with generating the site by executing `make container-image`.
 
 To ensure you can view the site with externally sourced content, run
-`make docker-gen-content` before previewing the site by with `make docker-server`.
+`make container-gen-content` before previewing the site by with
+`make container-serve`.
 
 
 ### Natively
