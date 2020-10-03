@@ -67,7 +67,7 @@ docker-render:
 	$(MAKE) container-render
 
 container-render: ## Build the site using Hugo within a container (equiv to render).
-	$(CONTAINER_RUN) $(CONTAINER_IMAGE) git submodule update --init --recursive --depth 1
+	git submodule update --init --recursive --depth 1
 	$(CONTAINER_RUN) $(CONTAINER_IMAGE) hugo --verbose --ignoreCache --minify
 
 docker-server:
@@ -75,8 +75,11 @@ docker-server:
 	$(MAKE) container-serve
 
 container-serve: ## Run Hugo locally within a container, available at http://localhost:1313/
-	$(CONTAINER_RUN) $(CONTAINER_IMAGE) git submodule update --init --recursive --depth 1
-	$(CONTAINER_RUN) -p 1313:1313 $(CONTAINER_IMAGE) hugo server \
+	git submodule update --init --recursive --depth 1
+	$(CONTAINER_RUN) -p 1313:1313 \
+		--mount type=tmpfs,destination=/src/resources,tmpfs-mode=0777 \
+		$(CONTAINER_IMAGE) \
+	hugo server \
 		--verbose \
 		--bind 0.0.0.0 \
 		--buildDrafts \
