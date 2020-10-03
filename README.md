@@ -1,9 +1,8 @@
 # Kubernetes Contributor Site
 
 This repository contains the [Hugo][hugo] site and generator scripts for the
-Kubernetes Contributor site. In the future, the site will be available at
-https://kubernetes.dev. For now, you can access the in-progress
-site at https://kubernetes-contributor.netlify.app.
+Kubernetes Contributor site. The published website is available at
+https://kubernetes.dev/ (served via Netlify).
 
 ## Site content
 
