@@ -77,7 +77,7 @@ docker-server:
 container-serve: ## Run Hugo locally within a container, available at http://localhost:1313/
 	git submodule update --init --recursive --depth 1
 	$(CONTAINER_RUN) -p 1313:1313 \
-		--mount type=tmpfs,destination=/src/resources,tmpfs-mode=0777 \
+		--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
 		$(CONTAINER_IMAGE) \
 	hugo server \
 		--verbose \
@@ -85,7 +85,9 @@ container-serve: ## Run Hugo locally within a container, available at http://loc
 		--buildDrafts \
 		--buildFuture \
 		--disableFastRender \
-		--ignoreCache
+		--ignoreCache \
+		--destination /tmp/hugo \
+		--cleanDestinationDir
 
 clean: ## Cleans build artifacts.
 	rm -rf public/ resources/ _tmp/
