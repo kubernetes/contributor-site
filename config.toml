@@ -33,6 +33,24 @@ anchor = "smart"
 [services.googleAnalytics]
  id = "UA-98841695-5"
 
+# Hugo internal cacheing
+[caches]
+ [caches.assets]
+  dir = ":cacheDir/_gen"
+  maxAge = -1
+ [caches.getcsv]
+  dir = ":cacheDir/:project"
+  maxAge = "60s"
+ [caches.getjson]
+  dir = ":cacheDir/:project"
+  maxAge = "60s"
+ [caches.images]
+  dir = ":cacheDir/_images"
+  maxAge = -1
+ [caches.modules]
+  dir = ":cacheDir/modules"
+  maxAge = -1
+
 # Language configuration
 
 [languages]
