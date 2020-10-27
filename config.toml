@@ -99,7 +99,7 @@ version = "0.0"
 # github_subdir = ""
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-# gcs_engine_id = "011737558837375720776:fsdu1nryfng"
+gcs_engine_id = "8ad0f1b8442fece81"
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
