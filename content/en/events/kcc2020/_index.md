@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes Contributor Celebration 2020"
+title: "Kubernetes Contributor Celebration"
 weight: 1 5
 slug: "kcc2020"
 aliases: [ "/celebration", "/kcc2020" ]
@@ -20,7 +20,7 @@ December 10th 2020
 December 13th 2020
 
 #### What is Discord?
-???
+Discord is a communications platform geared towards games and real time communication. While similar to slack, it adds the concepts of voice channels, where you can join others 
 
 #### Are family/friends allowed?
 Yes! Please have them register as a family/friend and use the email you registered with as the reference. They must agree to abide by the Code of Conduct while attending.
