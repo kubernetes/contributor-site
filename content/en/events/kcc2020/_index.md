@@ -20,7 +20,7 @@ December 10th 2020
 December 13th 2020
 
 #### What is Discord?
-Discord is a communications platform geared towards games and real time communication. While similar to slack, it adds the concepts of voice channels, where you can join others 
+[Discord](https://discord.com/) is a hosted online communication platform similar to Slack, but with a focus on voice and video in addition to text base chat. It’s been built [to support the hosting of a safe, positive and inclusive space.](https://discord.com/safety)
 
 #### Are family/friends allowed?
 Yes! Please have them register as a family/friend and use the email you registered with as the reference. They must agree to abide by the Code of Conduct while attending.
