@@ -20,8 +20,8 @@ December 10th 2020
 #### When does the event end?
 December 13th 2020
 
-#### What is Discord?
-[Discord](https://discord.com/) is a hosted online communication platform similar to Slack, but with a focus on voice and video in addition to text base chat. It’s been built [to support the hosting of a safe, positive and inclusive space.](https://discord.com/safety)
+#### Where is the celebration being held?
+The celebration will be hosted on [Discord](https://discord.com/), a hosted online communication platform similar to Slack, but with a focus on voice and video in addition to text base chat. It’s been built [to support the hosting of a safe, positive and inclusive space.](https://discord.com/safety)
 
 #### Are family/friends allowed?
 Yes! Please have them register as a family/friend and use the email you registered with as the reference. They must agree to abide by the Code of Conduct while attending.
