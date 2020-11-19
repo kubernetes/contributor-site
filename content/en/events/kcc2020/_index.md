@@ -1,28 +1,33 @@
 ---
-title: "Kubernetes Contributor Celebration"
-weight: 1 5
+title: "Contributor Celebration"
+weight: 1
 slug: "kcc2020"
 aliases: [ "/celebration", "/kcc2020" ]
 description: |
-   It's been a rough year, and without any in person events we've lost the best part of the Contributor Summits - the Hallway Track. The Kubernetes Contributor Celebration is an attempt to reclaim that and celebrate our accomplishments. It's a time for us to relax, chat and do something fun with your fellow contributors!
+   It's been a rough year, and without any in person events we've lost the best
+   part of the Contributor Summits - the Hallway Track. The Kubernetes Contributor
+   Celebration is an attempt to reclaim that and celebrate our accomplishments.
+   It's a time for us to relax, chat and do something fun with your fellow
+   contributors!
 type: docs
 ---
 
-## Registration
+### About
 
-[Link to registration](https://forms.gle/51tqQgxuHxLaeU1P8)
+The Contributor Celebration will take place after the 1.20 release from December
+10th through the 13th. You can expect hangouts, awards, games and a slew of
+other [activities]. The greater Kubernetes Contributor community in addition to
+friends and family are all invited!
 
-## FAQ
+For more information, see the  [Contributor Celebration FAQ].
 
-#### When does the event go live?
-December 10th 2020
+### Registration
 
-#### When does the event end?
-December 13th 2020
+To register, please fill out the [Registration Form].
 
-#### Where is the celebration being held?
-The celebration will be hosted on [Discord](https://discord.com/), a hosted online communication platform similar to Slack, but with a focus on voice and video in addition to text base chat. It’s been built [to support the hosting of a safe, positive and inclusive space.](https://discord.com/safety)
+Further information on how to connect will be sent closer to the event.
 
-#### Are family/friends allowed?
-Yes! Please have them register as a family/friend and use the email you registered with as the reference. They must agree to abide by the Code of Conduct while attending.
+[activities]: ./activities
+[Contributor Celebration FAQ]: ./faq
+[Registration Form]: https://forms.gle/51tqQgxuHxLaeU1P8
 
