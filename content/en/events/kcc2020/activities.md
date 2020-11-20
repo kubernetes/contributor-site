@@ -16,7 +16,7 @@ type: docs
   - [Animal Crossing](#animal-crossing)
   - [Destiny 2](#destiny-2)
   - [Fall Guys](#fall-guys)
-  - [skribble.io](#skribbleio)
+  - [skribbl.io](#skribblio)
 
 ## Events
 
@@ -175,7 +175,7 @@ a Kubernetes community member, please use the `/report` command or contact the
 [fg-ps]: https://www.playstation.com/en-us/games/fall-guys-ultimate-knockout-ps4/
 
 
-### skribble.io
+### skribbl.io
 
 [Game Site][sk-site]
 
