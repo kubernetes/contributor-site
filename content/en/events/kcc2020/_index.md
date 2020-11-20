@@ -19,7 +19,7 @@ The Contributor Celebration will take place after the 1.20 release from December
 other [activities]. The greater Kubernetes Contributor community in addition to
 friends and family are all invited!
 
-For more information, see the  [Contributor Celebration FAQ].
+For more information, see the  [Contributor Celebration FAQ][faq].
 
 ### Registration
 
@@ -27,7 +27,14 @@ To register, please fill out the [Registration Form].
 
 Further information on how to connect will be sent closer to the event.
 
+### Code of Conduct
+
+This event, like all Kubernetes events, has a [Code of Conduct]. For information
+on how to raise an issue or contact someone that might be able to answer a code
+of conduct question, please see the [faq].
+
 [activities]: ./activities
-[Contributor Celebration FAQ]: ./faq
+[faq]: ./faq
 [Registration Form]: https://forms.gle/51tqQgxuHxLaeU1P8
+[Code of Conduct]: /resources/code-of-conduct
 

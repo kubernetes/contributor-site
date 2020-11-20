@@ -80,7 +80,7 @@ wins!
 
 **Reporting:** There is no in-game reporting mechanism. If there is an issue
 with a Kubernetes community member, please use the `/report` command or contact
-the CoC directly.
+the [CoCC directly].
 
 [au-steam]: https://store.steampowered.com/app/945360/Among_Us/
 [au-itch]: https://innersloth.itch.io/among-us
@@ -137,7 +137,7 @@ able to head to “The Tower”.
 **Reporting:** Reporting can be done via the “Roster” tab in game. Generally
 speaking chat is done via third party tools so other than player usernames you
 don’t typically chat with other players. If there is an issue with a Kuberntes
-community member, please use the `/report` command or contact the CoC directly.
+community member, please use the `/report` command or contact the [CoCC directly].
 
 **Guides / New Player Coaches:** Jorge Castro (PC), Allison Downey(PC),and Wayne
 Witzel(PC)
@@ -167,8 +167,8 @@ in a final match with a randomised mini-game designed for a smaller player size.
 The winner of the match is the last player standing.
 
 **Reporting:** There is no in-game reporting mechanism. If there is an issue with
-a Kubernetes community member, please use the `/report` command or contact the CoC
-directly.
+a Kubernetes community member, please use the `/report` command or contact the
+[CoCC directly].
 
 [fg-site]: https://fallguys.com/
 [fg-steam]: https://store.steampowered.com/app/1097150/Fall_Guys_Ultimate_Knockout/
@@ -193,6 +193,9 @@ earlier you guess a word the more points you get!
 
 **Reporting:** There is no in-game reporting mechanism. If there is an issue
 with a Kubernetes community member, please use the `/report` command or contact
-the CoC directly.
+the [CoCC directly].
 
 [sk-site]: https://skribble.io
+
+
+[CoCC directly]: https://git.k8s.io/community/code-of-conduct.md
