@@ -12,6 +12,8 @@ description: |
 type: docs
 ---
 
+<img align="center" alt="you're invited" style="max-width:50%;" src="/events/kcc2020/invited.png">
+
 ### About
 
 The Contributor Celebration will take place after the 1.20 release from December
