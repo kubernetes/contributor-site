@@ -106,8 +106,7 @@ production-build: ## Builds the production site (this command used only by Netli
 		--verbose \
 		--buildFuture \
 		--ignoreCache \
-
-		# --minify -Add back in when hugo upgrades to minify 2.7.3 or greater
+		--minify
 
 preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
@@ -118,6 +117,5 @@ preview-build: ## Builds a deploy preview of the site (this command used only by
 		--baseURL $(DEPLOY_PRIME_URL) \
 		--buildDrafts \
 		--buildFuture \
-		--ignoreCache
-
-		# --minify -Add back in when hugo upgrades to minify 2.7.3 or greater
+		--ignoreCache \
+		--minify
