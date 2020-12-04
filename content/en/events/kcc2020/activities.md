@@ -11,6 +11,7 @@ type: docs
 - [Events](#events)
   - [Kubernetes Contributor Awards](#kubernetes-contributor-awards)
   - [Most Extreme Kubernetes Challenge - DevOps Party Game](#most-extreme-kubernetes-challenge---devops-party-game)
+  - [The Great Cloud Native Bake Off](#the-great-cloud-native-bake-off)
 - [Games](#games)
   - [Among Us](#among-us)
   - [Animal Crossing](#animal-crossing)
@@ -22,6 +23,8 @@ type: docs
 
 ### Kubernetes Contributor Awards
 
+- [Session link](https://sched.co/gC19)
+
 Kubernetes SIG Co-Chairs and Tech Leads would like for you to attend this special
 event where we honor and dedicate the hard work that the community has been
 working on. These peer awards are a tradition at the Kubernetes Contributor
@@ -29,6 +32,9 @@ Summits so we are bringing them virtual, please join us to thank and support all
 the people who have worked hard to help us this year.
 
 ### Most Extreme Kubernetes Challenge - DevOps Party Game
+
+- [Friday Session Link](https://sched.co/gC1L)
+- [Saturday Session Link](https://sched.co/gC1U)
 
 Join [Ian Coldwater] along with [Jeremy Meiss] as they host a special edition of
 the [DevOps Party Game]. We will have Kubernetes questions and panelists to take
@@ -42,6 +48,40 @@ We will be giving away lots of great prizes!
 [Jeremy Meiss]: https://twitter.com/IAmJerdog
 [DevOps Party Game]: https://devopspartygames.com/
 [Kubernetes YouTube channel]: http://youtube.com/kubernetescommunity
+
+### The Great Cloud Native Bake Off
+
+- [Session Link](https://sched.co/gCUR)
+
+A virtual cooking even styled after the Great British Bake-off will be held
+during the Kubernetes celebration Event hosted by CNCF Ambassador [Kat Cosgrove]
+on Saturday Dec 12 at 12pm PT.
+
+- Contestants will have 90 minutes to cook a Kubernetes themed dessert.  Anything
+  goes, as long as the majority of preparation is done live.  The competition is
+  open to all skill levels, from baking from a cake mix to grinding your own
+  flour as long as you can theme it to Kubernetes.
+- Contestants will be responsible for their own recipes and acquiring their
+  ingredients. If you need help with either of these, let us know!
+- Contestants will be expected to join a video conference call 30 mins prior to
+  kick off, and should have a phone or ipad with a stand (or a patient friend )
+  to capture them preparing their dessert.
+- Our Host and Commentators will provide commentary on our contestants and will
+  ask each contestant questions through the event. At the end of the 90minutes
+  we’ll be joined by an esteemed group of expert judges who will judge your
+  (hopefully completed) dessert on the following criteria:
+  - **Execution:** How well does it fit the “Kubernetes theme”
+  - **Appearance:** How does it look?
+  - **Taste:** Obviously the judges can’t taste it, so they’ll need to be
+    creative for this one.
+
+We’re looking for cooks of all backgrounds and talents. If this sounds like fun
+to you and you want to cook with us,  email pczarkowski@vmware.com with the
+subject _“Great Kubernetes Bake-off”_. List your name, company you work for, your
+self-assessed cooking skills (from 1 to 5, 5 being Gordon Ramsey), a twitter
+handle (or other social media) and any other details you wish to provide.
+
+[Kat Cosgrove]: https://twitter.com/Dixie3Flatline
 
 ## Games
 

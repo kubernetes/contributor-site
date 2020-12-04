@@ -21,6 +21,7 @@ type: docs
   - [Why do I need to agree to abide by the Code of Conduct?](#why-do-i-need-to-agree-to-abide-by-the-code-of-conduct)
   - [Why can I only see the verification and info channels?](#why-can-i-only-see-the-verification-and-info-channels)
   - [What is this YAGPDB.xyz and why is it messaging me?](#what-is-this-yagpdbxyz-and-why-is-it-messaging-me)
+  - [How do I display my pronouns in Discord?](#how-do-i-display-my-pronouns-in-discord)
   - [What are the `#<channel>-info` channels for?](#what-are-the-channel-info-channels-for)
   - [What are the `#<channel>-links` channels for?](#what-are-the-channel-links-channels-for)
   - [How do I know if someone is a Moderator, Staff Member or an Admin?](#how-do-i-know-if-someone-is-a-moderator-staff-member-or-an-admin)
@@ -110,6 +111,29 @@ everything. If you need assistance, join the `#help` channel.
 [YAGPDB] (Yet Another General Purpose Discord Bot) is a verified discord bot
 that we use to manage a variety of services within discord, from verification
 and moderation to role selection and automation.
+
+
+### How do I display my pronouns in Discord?
+
+In Discord, you can set a nickname per-”server”. We recommend putting your
+pronouns in your nickname so they are visible at all times in Discord and with
+overlays.
+
+1 ) To do so, click the server dropdown (Top Left)
+
+<img align="center" src="/events/kcc2020/server.png" width="40%">
+<br>
+<br>
+2 ) Select “Change Nickname”
+<br>
+<br>
+<img align="center" src="/events/kcc2020/nickname.png" width="40%">
+<br>
+<br>
+3 ) Then follow the template of “nickname (pro/noun)” like so:
+<br>
+<br>
+<img align="center" src="/events/kcc2020/name.png" width="40%">
 
 
 ### What are the `#<channel>-info` channels for?
