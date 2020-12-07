@@ -12,12 +12,27 @@ type: docs
   - [Kubernetes Contributor Awards](#kubernetes-contributor-awards)
   - [Most Extreme Kubernetes Challenge - DevOps Party Game](#most-extreme-kubernetes-challenge---devops-party-game)
   - [The Great Cloud Native Bake Off](#the-great-cloud-native-bake-off)
-- [Games](#games)
+- [Party Games](#party-games)
   - [Among Us](#among-us)
   - [Animal Crossing](#animal-crossing)
   - [Destiny 2](#destiny-2)
   - [Fall Guys](#fall-guys)
   - [skribbl.io](#skribblio)
+  - [Jackbox](#jackbox)
+- [Board Games](#board-games)
+  - [Board Game Arena](#board-game-arena)
+  - [Dominion Online](#dominion-online)
+  - [Jinteki.net (Netrunner)](#jintekinet-netrunner)
+  - [Tabletopia](#tabletopia)
+  - [Yucata](#yucata)
+  - [Boiteajeux](#boiteajeux)
+  - [Tabletop Simulator](#tabletop-simulator)
+  - [Wingspan](#wingspan)
+  - [Race For The Galaxy](#race-for-the-galaxy)
+  - [Terraforming Mars](#terraforming-mars)
+  - [Ticket To Ride](#ticket-to-ride)
+  - [Sentinels Of The Multiverse](#sentinels-of-the-multiverse)
+  - [Roll For The Galaxy](#roll-for-the-galaxy)
 
 ## Events
 
@@ -83,7 +98,7 @@ handle (or other social media) and any other details you wish to provide.
 
 [Kat Cosgrove]: https://twitter.com/Dixie3Flatline
 
-## Games
+## Party Games
 
 For Linux players, there are no game specific instructions, but many
 can run on Linux through [proton](https://www.protondb.com/)
@@ -93,9 +108,10 @@ endorsement for the Kubernetes project as a whole.
 
 ### Among Us
 
-[Game Site](https://innersloth.itch.io/among-us)
-
-**Platforms:** PC ([Steam][au-steam] / [itch.io][au-itch]) | [Android][au-android] | [iOS][au-ios]
+* **URL**: https://innersloth.itch.io/among-us
+* **Platforms:** PC ([Steam][au-steam] / [itch.io][au-itch]) | [Android][au-android] | [iOS][au-ios]
+* **Cost**: $5 on PC, free on mobile
+* **Players:** 4-10
 
 **NOTE:** It's Cross-Platform!
 
@@ -129,9 +145,11 @@ the [CoCC directly].
 
 ### Animal Crossing
 
-[Game Site][ac-site]
 
-**Platforms:** [Nintendo Switch][ac-switch]
+* **URL:** https://www.animal-crossing.com/new-horizons/
+* **Platforms:** [Nintendo Switch][ac-switch]
+* **Cost:** $60
+* **Players**: Varies
 
 <i>“Escape to a deserted island and create your own paradise as you explore,
 create, and customize in the Animal Crossing: New Horizons game. Your island
@@ -152,17 +170,16 @@ wherever you want.”</i> - [Nintendo][ac-nin]
 **Reporting:** See Nintendo’s doc:
 [How to Report Profanity or Offensive Behavior][ac-report]
 
-[ac-site]: https://www.animal-crossing.com/new-horizons/
 [ac-switch]: https://www.nintendo.com/games/detail/animal-crossing-new-horizons-switch/
 [ac-nin]: https://www.nintendo.com/games/detail/animal-crossing-new-horizons-switch/
 [ac-report]: https://en-americas-support.nintendo.com/app/answers/detail/a_id/49140/~/how-to-report-profanity-or-offensive-behavior-%28animal-crossing%3A-new-horizons%29
 
-
 ### Destiny 2
 
-[Game Site][d2-site]
-
-**Platforms:** PC ([Steam][d2-steam]) | [Xbox][d2-xbox] | [Playstation][d2-ps] | [Stadia][d2-stadia]
+* **URL**: https://www.bungie.net/7/en/Destiny/NewLight
+* **Platforms:** PC ([Steam][d2-pc]) | [Xbox][d2-xbox] | [Playstation][d2-ps] | [Stadia][d2-stadia]
+* **Cost:** Free (base game only, expansions are $25-$40)
+* **Players:** 3-6
 
 Destiny is a multiplayer scifi/fantasy space shooter game with lots of guns and
 space super powers. Players can team up in 3 person squads for missions called
@@ -182,7 +199,6 @@ community member, please use the `/report` command or contact the [CoCC directly
 **Guides / New Player Coaches:** Jorge Castro (PC), Allison Downey(PC),and Wayne
 Witzel(PC)
 
-[d2-site]: https://www.bungie.net/
 [d2-pc]: https://store.steampowered.com/app/1085660/Destiny_2/
 [d2-xbox]: https://www.xbox.com/en-US/games/destiny-2
 [d2-ps]: https://store.playstation.com/en-us/product/UP0002-CUSA05042_00-DESTINYTHEGAME02
@@ -190,9 +206,10 @@ Witzel(PC)
 
 ### Fall Guys
 
-[Game Site][fg-site]
-
-**Platforms:** PC ([Steam][fg-steam]) | [Playstation][fg-ps]
+* **URL:** https://fallguys.com/
+* **Platforms:** PC ([Steam][fg-steam]) | [Playstation][fg-ps]
+* **Cost:** $20
+* **Players**: 1-60
 
 Up to 60 players compete in matches with battle royale-style gameplay. Players,
 represented as jellybean-like figures, move around a three-dimensional playing
@@ -210,7 +227,6 @@ The winner of the match is the last player standing.
 a Kubernetes community member, please use the `/report` command or contact the
 [CoCC directly].
 
-[fg-site]: https://fallguys.com/
 [fg-steam]: https://store.steampowered.com/app/1097150/Fall_Guys_Ultimate_Knockout/
 [fg-ps]: https://www.playstation.com/en-us/games/fall-guys-ultimate-knockout-ps4/
 
@@ -219,7 +235,10 @@ a Kubernetes community member, please use the `/report` command or contact the
 
 [Game Site][sk-site]
 
-Platforms: Browser
+* **Platforms:** Browser
+* **URL:** https://skribble.io
+* **Cost:** Free
+* **Players:** 2-8
 
 skribbl.io is a free multiplayer drawing and guessing game. One game consists of
 a few rounds in which every round someone has to draw their chosen word and others
@@ -235,7 +254,136 @@ earlier you guess a word the more points you get!
 with a Kubernetes community member, please use the `/report` command or contact
 the [CoCC directly].
 
-[sk-site]: https://skribble.io
-
 
 [CoCC directly]: https://git.k8s.io/community/code-of-conduct.md
+
+### Jackbox
+
+* **Platforms:** Windows, Mac, Linux (browser for participants)
+* **Steam:** https://store.steampowered.com/app/1211630/The_Jackbox_Party_Pack_7/
+* **Cost:** $30 (only host needs to purchase)
+* **Players:** 2-8
+
+Jackbox is a mainstay of the DevOps Party Games stream. The link is for Pack 7 but as the name implies, there’s quite a few others from over the years, each with different minigames. The host will have to stream their display for others to watch, Discord supports game streaming itself or you can use Twitch or YouTube or anything else you're comfortable with.
+
+## Board Games
+
+Just because we are internet-partying doesn’t mean we need to skimp on the board games! This is not an exhaustive list and if you have any questions please join us in the board-games channel on Discord!
+If you want to lead a game and there isn't an open voice/video channel available, please ask for one in the mod-chat-public channel and we'll be happy to make more!
+
+### Board Game Arena
+
+* **Platforms:** Browser
+* **URL:** https://boardgamearena.com/
+* **Cost:** Mostly free, premium games require at least one paid player
+* **Players:** Varies by game, up to 10+
+
+BGA hosts a wide variety of games, from classics like Connect Four to nerd staples like Innovation. Setup and hosting a game is super smooth. Highly recommended if they have a game you’re looking for.
+
+### Dominion Online
+
+* **Platforms:** Browser
+* **URL:** https://dominion.games/
+* **Cost:** Base game free, expansions require at least one paid player
+* **Players:** 2-6
+
+The definitive online version of Dominion, a deck-building game. The website can be a bit graphically intensive for a tablet, but laptops should have no trouble. The original base game is free, and I would recommend new players stick to that anyway. If you want to unlock expansions there is a slightly awkward subscription option, it’s cheap but make sure you cancel if you aren’t going to keep using it.
+
+### Jinteki.net (Netrunner)
+
+* **Platforms:** Browser
+* **URL:** https://www.jinteki.net/
+* **Cost:** Free
+* **Players:** 2
+
+A fan-run, online version of Android: Netrunner, an older two-player card game. Unfortunately being a website for existing fans, it doesn’t have a tutorial to speak of so you will need an existing player to show you the ropes. But once you get in, it’s a very solid implementation of a great game. If you haven’t tried out a fully asymmetric game before, Netrunner is a fun way to expand your horizons.
+
+### Tabletopia
+
+* **Platforms:** Browser, Mac, Windows
+* **URL:** https://tabletopia.com/
+* **Cost:** Many free, a lot of newer games require paid subscription
+* **Players:** Varies by game
+
+Tabletopia is a generalized tabletop gaming simulator with support for thousands of games. Usually not quite as smooth as the previous options given its sandbox-y nature but allows for even very complex tabletop games. This also has free, native Mac and Windows clients if WebGL makes your browser sad.
+
+### Yucata
+
+* **Platforms:** Browser
+* **URL:** https://www.yucata.de/en
+* **Cost:** Free
+* **Players:** Varies by game, mostly 2-4
+
+Similar to BGA, Yucata is a fan-run site with many games on offer, all free and even allowing playing as a guest. The games are mostly a bit older and niche given the difficulties of securing licenses, but well implemented.
+
+### Boiteajeux
+
+* **Platforms:** Browser
+* **URL:** http://www.boiteajeux.net/
+* **Cost:** Free
+* **Players:** Varies by game
+
+One step more niche than Yucata is Boiteajeux. But it is notable for having an online version of Dixit (think Apple to Apples or Cards Against Humanity but with paintings instead of words and stories instead of madlibs) and Agricola (the tableau-building game which unseated Puerto Rico as the BGG champion back in 2008).
+
+### Tabletop Simulator
+
+* **Platforms:** Windows, Mac, Linux
+* **Steam:** https://store.steampowered.com/app/286160/Tabletop_Simulator/
+* **Cost:** $20 (plus DLC for official game modes)
+* **Players:** Varies by game
+
+Similar to Tabletopia, Tabletop Simulator is exactly what it sounds like, a gaming sandbox with a scripting system to implement games. It does offer a few dozen official games for an extra DLC charge, but the vast majority of the reason to use it is the _incredibly_ extensive user-created selection in Steam Workshop. Some Workshop games are fully scripted, while others are just the pieces and cards and whatnot and you have to handle the rules yourself. It also support a VR mode, though more as a fun lark than something I would really recommend for a long gaming session.
+
+### Wingspan
+
+* **Platforms:** Windows, Mac
+* **Steam:** https://store.steampowered.com/app/1054490/Wingspan/
+* **Cost:** $20
+* **Players:** 1-5
+
+If you know any boardgame nerds, they probably won’t shut up about Wingspan and I won’t either, it’s great. On top of being a fantastic game, this desktop version is gorgeous and has both real-time and async multiplayer support. It includes the 1 player solitaire Wingspan Automata but human and bot multiplayer too.
+
+### Race For The Galaxy
+
+* **Platforms:** Windows and Mac have pre-built versions, source available for Linux
+* **URL:** http://keldon.net/rftg/
+* **Cost:** Free
+* **Players:** 2-6
+
+A bit of an odd one out, Keldon’s RFTG is a fan-made version of the tableau-building classic but with the blessing of the original publisher. Like other fan-made implementations, it doesn’t have a built-in tutorial but it does have a simple online multiplayer system. Linux users might need to compile it themselves. The defining feature is AI opponents but it also supports online play with other humans.
+
+### Terraforming Mars
+
+* **Platforms:** Windows
+* **Steam:** https://store.steampowered.com/app/800270/Terraforming_Mars/
+* **Cost:** $20
+* **Players:** 1-5
+
+Terraforming Mars is a well loved board game, though the digital version is a bit more buggy than I would like. The Prelude DLC has just launched though, so if you already own it on Steam and want a new challenge with friends, it’s always a good time! Online multiplayer does require creating a free Asmodee account.
+
+### Ticket To Ride
+
+* **Platforms:** Windows, Mac
+* **Steam:** https://store.steampowered.com/app/108200/Ticket_to_Ride/
+* **Cost:** $10 (plus DLC for expansions)
+* **Players:** 2-5
+
+Another true classic, Ticket To Ride has been a staple of board game nights for over a decade. This also has numerous console and mobile ports, though I’m unsure if the online multiplayer is compatible between them.
+
+### Sentinels Of The Multiverse
+
+* **Platforms:** Windows, Mac, Linux
+* **Steam:** https://store.steampowered.com/app/337150/Sentinels_of_the_Multiverse/
+* **Cost:** $10 (plus DLC for expansions, free demo for the tutorial)
+* **Players:** 2-5
+
+A bit older but still putting out expansions, Sentinels is a superhero-themed cooperative card game where you work together to take down supervillians. All the original game expansions have now been released as DLC with Steam Workshop support coming soon for player-made expansions and new cards.
+
+### Roll For The Galaxy
+
+* **Platforms:** Windows
+* **Steam:** https://store.steampowered.com/app/893840/Roll_for_the_Galaxy/
+* **Cost:** $15
+* **Players:** 2-5
+
+The same developer as the earlier free Race has also built a full commercial release for the dice-based spinnoff Roll. As polished as the other retail games here, but with the clear heart of a true fan too. If you haven’t tried this game and like Race For The Galaxy, definitely check it out.
