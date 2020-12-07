@@ -117,7 +117,10 @@ and moderation to role selection and automation.
 
 In Discord, you can set a nickname per-”server”. We recommend putting your
 pronouns in your nickname so they are visible at all times in Discord and with
-overlays.
+overlays. A few examples of what this would look like:
+- `Arty (they/them)`
+- `Bob (he/him)`
+- `Jamie (she/her)`
 
 1 ) To do so, click the server dropdown (Top Left)
 
