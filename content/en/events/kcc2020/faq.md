@@ -1,6 +1,6 @@
 ---
 title: "Frequently Asked Questions (FAQ)"
-weight: 2
+weight: 4
 slug: "faq"
 description: |
    Contributor Celebration Frequently Asked Questions.
@@ -19,13 +19,14 @@ type: docs
   - [How do I join?](#how-do-i-join)
   - [Why do I need to verify myself once I connect (complete captcha)?](#why-do-i-need-to-verify-myself-once-i-connect-complete-captcha)
   - [Why do I need to agree to abide by the Code of Conduct?](#why-do-i-need-to-agree-to-abide-by-the-code-of-conduct)
-  - [Why can I only see the verification and info channels?](#why-can-i-only-see-the-verification-and-info-channels)
+  - [Why can I only see the instructions-to-connect and info channels?](#why-can-i-only-see-the-instructions-to-connect-and-info-channels)
   - [What is this YAGPDB.xyz and why is it messaging me?](#what-is-this-yagpdbxyz-and-why-is-it-messaging-me)
   - [How do I display my pronouns in Discord?](#how-do-i-display-my-pronouns-in-discord)
   - [What are the `#<channel>-info` channels for?](#what-are-the-channel-info-channels-for)
   - [What are the `#<channel>-links` channels for?](#what-are-the-channel-links-channels-for)
   - [How do I know if someone is a Moderator, Staff Member or an Admin?](#how-do-i-know-if-someone-is-a-moderator-staff-member-or-an-admin)
   - [Someone is spamming/harassing me, what should I do?](#someone-is-spammingharassing-me-what-should-i-do)
+  - [Discord is running slowly or stuttering, what should I do?](#discord-is-running-slowly-or-stuttering-what-should-i-do)
   - [Help! I have a question?](#help-i-have-a-question)
 
 ## General Information
@@ -97,7 +98,7 @@ gaming, please still try to be inclusive and not offensive.
 Remember: Don’t be a jerk. :) 
 
 
-### Why can I only see the verification and info channels?
+### Why can I only see the instructions-to-connect and info channels?
 
 You’ve completed the captcha, but haven’t agreed to the code of conduct, head
 over to the `#code-of-conduct` channel and accept it, and you’ll be able to see
@@ -179,6 +180,17 @@ will reach out.
 
 If it's within a game and the person is not a part of this event, please use the
 in game method of reporting / blocking the person.
+
+
+### Discord is running slowly or stuttering, what should I do?
+
+On Mac and occasionally on other platforms, Discord can stutter and consume a
+significant amount of CPU resources. The current workaround is to disable
+_Hardware Acceleration_. You can disable it in your _User Settings_ by clicking
+on the cog next to your username and navigating to the setting here:
+
+
+**User Settings -> Appearance -> Advanced -> Hardware Acceleration**
 
 
 ### Help! I have a question?
