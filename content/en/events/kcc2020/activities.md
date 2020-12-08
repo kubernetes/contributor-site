@@ -1,6 +1,6 @@
 ---
 title: "Events and Activities"
-weight: 1
+weight: 2
 slug: "activities"
 description: |
    Events, activities, and games planned for the Contributor Celebration

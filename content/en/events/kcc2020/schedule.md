@@ -1,6 +1,6 @@
 ---
 title: "Schedule"
-weight: 3
+weight: 2
 slug: "schedule"
 description: |
    Contributor Celebration Schedule.

@@ -1,6 +1,6 @@
 ---
 title: "Frequently Asked Questions (FAQ)"
-weight: 2
+weight: 4
 slug: "faq"
 description: |
    Contributor Celebration Frequently Asked Questions.
