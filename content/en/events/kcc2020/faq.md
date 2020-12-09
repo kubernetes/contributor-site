@@ -73,13 +73,16 @@ Discord server invites will be sent out closer to the event.
 There will be trivia and other games available. For more information see the
 [activities] page.
 
+[activities]: /events/kcc2020/activities/
+
 
 ## Discord Information
 
 ### How do I join?
 
-Step by step instructions will be posted closer to the event date. If you want
-to save yourself a step, you can create a [Discord] account at any time.
+Please see the [How to join] page.
+
+[How to join]: /events/kcc2020/how-to-join/
 
 ### Why do I need to verify myself once I connect (complete captcha)?
 
