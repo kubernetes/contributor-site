@@ -33,6 +33,7 @@ type: docs
   - [Ticket To Ride](#ticket-to-ride)
   - [Sentinels Of The Multiverse](#sentinels-of-the-multiverse)
   - [Roll For The Galaxy](#roll-for-the-galaxy)
+- [Virtual Photobooth](#virtual-photobooth)
 
 ## Events
 
@@ -387,3 +388,9 @@ A bit older but still putting out expansions, Sentinels is a superhero-themed co
 * **Players:** 2-5
 
 The same developer as the earlier free Race has also built a full commercial release for the dice-based spinnoff Roll. As polished as the other retail games here, but with the clear heart of a true fan too. If you haven’t tried this game and like Race For The Galaxy, definitely check it out.
+
+## Virtual Photobooth
+
+Turn on your webcams and bring out your silly faces! In lieu of taking a group photo at a contributor summit this year, let's make a collage of all our awesome faces instead! Zero pressure and totally optional! Once you click the link and follow the directions you'll see a 3-2-1 countdown and it'll take your picture! Don't worry, if you don't like it, it gives you a chance to retake your photos before submitting. Smile!
+
+https://app.virtualbooth.me/booth/q64QRzGM
