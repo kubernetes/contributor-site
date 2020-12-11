@@ -16,6 +16,8 @@ type: docs
 
 ### About
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qBJ2tEbwSzY?start=523" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 The Contributor Celebration will take place after the 1.20 release from December
 10th through the 13th. You can expect hangouts, awards, games and a slew of
 other [activities]. The greater Kubernetes Contributor community in addition to
