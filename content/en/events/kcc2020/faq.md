@@ -178,7 +178,7 @@ If they’re within discord, use the command:
 ```
 /report <@username> <reason>
 ```
-You can also ask for assistance in `#mod-chat-public`. A member of the mod team
+You can also ask for assistance in `#help`. A member of the mod team
 will reach out.
 
 If it's within a game and the person is not a part of this event, please use the
