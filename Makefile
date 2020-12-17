@@ -71,10 +71,10 @@ container-render: ## Build the site using Hugo within a container (equiv to rend
 	$(CONTAINER_RUN) $(CONTAINER_IMAGE) hugo --verbose --ignoreCache --minify
 
 docker-server:
-	@echo -e "**** The use of docker-render is deprecated. Use container-serve instead. ****" 1>&2
-	$(MAKE) container-serve
+	@echo -e "**** The use of docker-server is deprecated. Use container-server instead. ****" 1>&2
+	$(MAKE) container-server
 
-container-serve: ## Run Hugo locally within a container, available at http://localhost:1313/
+container-server: ## Run Hugo locally within a container, available at http://localhost:1313/
 	git submodule update --init --recursive --depth 1
 	$(CONTAINER_RUN) -p 1313:1313 \
 		--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
