@@ -96,7 +96,7 @@ clean-all: ## Cleans both build artifacts and files sycned to content directory
 	rm -rf public/ resources/ _tmp/
 	rm -f content/code-of-conduct.md
 	rm -f content/release.md
-	find content/guide -not -name ".gitignore" -not -name "guide" -maxdepth 1 -exec rm -rf {} \;
+	if [ -d "content/guide" ]; then find content/guide -not -name ".gitignore" -not -name "guide" -maxdepth 1 -exec rm -rf {} \; ; fi
 
 production-build: ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
