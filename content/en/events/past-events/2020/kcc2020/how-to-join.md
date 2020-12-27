@@ -8,6 +8,12 @@ description: |
 type: docs
 ---
 
+{{% alert title="Notice" color="warning" %}}
+This event has passed. Recordings from the event can be found on the
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
+{{% /alert %}}
+
+
 The celebration and all the activities will all take place on  the official
 Kubernetes [Discord] server with major events being streamed to the
 [Kubernetes YouTube Channel]. 

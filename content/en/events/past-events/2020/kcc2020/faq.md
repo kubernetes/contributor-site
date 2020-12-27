@@ -7,6 +7,11 @@ description: |
 type: docs
 ---
 
+{{% alert title="Notice" color="warning" %}}
+This event has passed. Recordings from the event can be found on the
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
+{{% /alert %}}
+
 - [General Information](#general-information)
   - [What is the Kubernetes Contributor Celebration?](#what-is-the-kubernetes-contributor-celebration)
   - [When is it?](#when-is-it)

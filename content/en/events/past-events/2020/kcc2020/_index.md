@@ -12,6 +12,11 @@ description: |
 type: docs
 ---
 
+{{% alert title="Notice" color="warning" %}}
+This event has passed. Recordings from the event can be found on the
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
+{{% /alert %}}
+
 <img align="center" alt="you're invited" style="max-width:50%;" src="/events/past-events/2020/kcc2020/invited.png">
 
 ### About
