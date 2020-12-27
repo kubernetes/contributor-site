@@ -51,7 +51,7 @@ For instructions on creating an account and installing the client, see the
    symbol) on the left side of the application. 
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/add-server.png" width="40%">
+   <img align="center" src="/events/past-events/2020/kcc2020/add-server.png" width="40%">
    <br>
    <br>
    A menu should pop up asking if you'd like to create or join a server. Select
@@ -62,7 +62,7 @@ For instructions on creating an account and installing the client, see the
    email, and paste it in the **Invite link** text box.
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/join-server.png" width="40%">
+   <img align="center" src="/events/past-events/2020/kcc2020/join-server.png" width="40%">
    <br> 
    <br> 
 3) Two things will happen: You will be directed to the `#instructions-to-connect`
@@ -71,7 +71,7 @@ For instructions on creating an account and installing the client, see the
    the server.
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/instructions-to-connect.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/instructions-to-connect.png" width="100%">
    <br>
    <br> 
 4) The bot will dm you a unique link where you will need to complete a captcha.
@@ -81,14 +81,14 @@ For instructions on creating an account and installing the client, see the
    (`@YAGPDB.xyz`), and select **message**. That will take you to the correct
    prompt.
    <br>
-   <img align="center" src="/events/kcc2020/dm-from-bot.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/dm-from-bot.png" width="100%">
    <br>
    <br>
    If you do not complete the captcha within 10 minutes, you will be booted from
    the server (you will still be able to reconnect).
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/verification.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/verification.png" width="100%">
    <br>
    <br>
 5) After completing the captcha, navigate to the `#code-of-conduct` channel.
@@ -97,10 +97,10 @@ For instructions on creating an account and installing the client, see the
    channels within the server.
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/coc.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/coc.png" width="100%">
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/coc-emoji.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/coc-emoji.png" width="100%">
    <br> 
    <br>
    Once you accept the Code of conduct, you will see a list of categories and
@@ -109,7 +109,7 @@ For instructions on creating an account and installing the client, see the
    collapse that entire section in the sidebar.
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/channels.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/channels.png" width="100%">
    <br> 
    <br>
    **Note:** Unlike Slack you can see every channel, and every user on the server!
@@ -132,7 +132,7 @@ and some might be too soft. If you’re expecting to play with a group for a lon
 time this can help tremendously:
 <br>
 <br>
-<img align="center" src="/events/kcc2020/user-volume.png" width="100%">
+<img align="center" src="/events/past-events/2020/kcc2020/user-volume.png" width="100%">
 <br> 
 <br>
 
@@ -143,7 +143,7 @@ Once you’ve joined a voice channel you can use the widgets at the bottom left
 of the screen to share your own screen and to use video if you want:
 <br>
 <br>
-<img align="center" src="/events/kcc2020/voice-video.png" width="40%">
+<img align="center" src="/events/past-events/2020/kcc2020/voice-video.png" width="40%">
 <br> 
 <br>
 The _Voice connected_ text and signal meter will change depending on your
@@ -160,14 +160,14 @@ video settings.
    corner:
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/settings-cog.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/settings-cog.png" width="100%">
    <br> 
    <br>
 2) Navigate to the **Voice & Video** section of the User Settings to adjust your
    inputs and outputs.
    <br>
    <br>
-   <img align="center" src="/events/kcc2020/voice-video-settings.png" width="100%">
+   <img align="center" src="/events/past-events/2020/kcc2020/voice-video-settings.png" width="100%">
    <br> 
    <br>
 
@@ -188,4 +188,4 @@ If you're problem was not covered in the [FAQ], you can reach out for help in
 the **#Help** channel under the **Info and Announcements** Category.
 <br>
 <br>
-<img align="center" src="/events/kcc2020/help-channel.png" width="40%">
+<img align="center" src="/events/past-events/2020/kcc2020/help-channel.png" width="40%">

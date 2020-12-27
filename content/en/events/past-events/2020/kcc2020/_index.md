@@ -12,7 +12,7 @@ description: |
 type: docs
 ---
 
-<img align="center" alt="you're invited" style="max-width:50%;" src="/events/kcc2020/invited.png">
+<img align="center" alt="you're invited" style="max-width:50%;" src="/events/past-events/2020/kcc2020/invited.png">
 
 ### About
 
