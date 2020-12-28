@@ -38,7 +38,7 @@ Org membership requests can be made using the [Org Membership Request] form in
 the [kubernetes/org] repo. Requests are often processed in batch once every 2-3
 business days.
 
-**NOTE:** If you are an existing member of the [kubernetes] org, you are **note**
+**NOTE:** If you are an existing member of the [kubernetes] org, you are **not**
 required to apply for org membership in another Kubernetes org, such as
 [kubernetes-sigs]. Instead, open a pull request to the [kubernetes/org] repo
 adding yourself a member of the other org.
