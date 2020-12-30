@@ -7,6 +7,11 @@ description: |
 type: docs
 ---
 
+{{% alert title="Notice" color="warning" %}}
+This event has passed. Recordings from the event can be found on the
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
+{{% /alert %}}
+
 - [General Information](#general-information)
   - [What is the Kubernetes Contributor Celebration?](#what-is-the-kubernetes-contributor-celebration)
   - [When is it?](#when-is-it)
@@ -110,7 +115,7 @@ everything. If you need assistance, join the `#help` channel.
 
 ### What is this YAGPDB.xyz and why is it messaging me?
 
-<img align="left" src="/events/kcc2020/yagpdb.png" width="40" height="40">
+<img align="left" src="/events/past-events/2020/kcc2020/yagpdb.png" width="40" height="40">
 
 [YAGPDB] (Yet Another General Purpose Discord Bot) is a verified discord bot
 that we use to manage a variety of services within discord, from verification
@@ -128,19 +133,19 @@ overlays. A few examples of what this would look like:
 
 1 ) To do so, click the server dropdown (Top Left)
 
-<img align="center" src="/events/kcc2020/server.png" width="40%">
+<img align="center" src="/events/past-events/2020/kcc2020/server.png" width="40%">
 <br>
 <br>
 2 ) Select “Change Nickname”
 <br>
 <br>
-<img align="center" src="/events/kcc2020/nickname.png" width="40%">
+<img align="center" src="/events/past-events/2020/kcc2020/nickname.png" width="40%">
 <br>
 <br>
 3 ) Then follow the template of “nickname (pro/noun)” like so:
 <br>
 <br>
-<img align="center" src="/events/kcc2020/name.png" width="40%">
+<img align="center" src="/events/past-events/2020/kcc2020/name.png" width="40%">
 
 
 ### What are the `#<channel>-info` channels for?

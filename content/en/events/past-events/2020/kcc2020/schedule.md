@@ -7,6 +7,11 @@ description: |
 type: docs
 ---
 
+{{% alert title="Notice" color="warning" %}}
+This event has passed. Recordings from the event can be found on the
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
+{{% /alert %}}
+
 Thursday December 10th, the doors will open and members will be invited to discord. 
 
 Events and official activities are planned for Friday and Saturday, with the
