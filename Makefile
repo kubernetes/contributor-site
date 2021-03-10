@@ -97,6 +97,8 @@ clean-all: ## Cleans both build artifacts and files sycned to content directory
 	rm -f content/en/events/community-meeting.md
 	rm -f content/en/events/meet-our-contributors.md
 	rm -f content/en/events/office-hours.md
+	rm -f content/en/docs/cheatsheet.md
+	rm -f content/en/resources/rename.md
 	find content/en/docs/guide -maxdepth 1 \
 		-not -path content/en/docs/guide \
 		-not -name ".gitignore" \
