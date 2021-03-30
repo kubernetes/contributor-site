@@ -49,7 +49,7 @@ My fears were unfounded. Immediately, I felt welcome. I like to think this isn't
 working on a much needed task, but rather because the Kubernetes community is filled
 with friendly, welcoming people. During the weekly SIG ContribEx meetings, our reports on progress
 with the Development Guide were included immediately. In addition, the leader of the meeting would
-always stress that the [Kubernetes Code of Conduct]({{< ref "/resources/code-of-conduct" >}}) was in
+always stress that the [Kubernetes Code of Conduct]({{< ref "/community/code-of-conduct" >}}) was in
 effect, and that we should, like Bill and Ted, be excellent to each other.
 
 ## This Doesn't Mean It's All Easy

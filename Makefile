@@ -112,9 +112,11 @@ clean-all: ## Cleans both build artifacts and files sycned to content directory
 		-not -path content/en/resources/release \
 		-not -name ".gitignore" \
 		-exec rm -rf {} \;
-	find content/en/resources/community-groups -maxdepth 1 \
-		-not -path content/en/resources/community-groups \
+	find content/en/community -maxdepth 1 \
+		-not -path content/en/community \
 		-not -name ".gitignore" \
+		-not -name "_index.md" \
+		-not -name "code-of-conduct.md" \
 		-exec rm -rf {} \;
 
 production-build: ## Builds the production site (this command used only by Netlify).
