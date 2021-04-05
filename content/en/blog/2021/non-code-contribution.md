@@ -37,7 +37,7 @@ None of those things required me to write code. Non-code contributors are an ess
 
 # Hop into the Kubernetes community
 
-To join the Kubernetes community, I recommend finding a SIG where your skills align, doing things you want to do in your off time. There's a list of [Kubernetes SIGs](/resources/community-groups/); it’s had over 200 contributors over the years. If you’re not sure where to go, start with [Contributor Experience](https://github.com/kubernetes/community/tree/master/sig-contributor-experience). We’re here to help.
+To join the Kubernetes community, I recommend finding a SIG where your skills align, doing things you want to do in your off time. There's a list of [Kubernetes SIGs](/resources/community-groups/) with a lot of great options. If you’re not sure where to go, start with [Contributor Experience](https://github.com/kubernetes/community/tree/master/sig-contributor-experience). We’re here to help.
 
 Often, all you have to do to get started as a contributor is show up to a SIG meeting and tell folks how you want to help. Folks will be more than happy to move whatever hurdles are in your way to help you be productive. There will be some hurdles, of course--Kubernetes is a massive project--but we are all in it together.
 
