@@ -9,7 +9,7 @@ Kubernetes contributors aren't people in capes or part of some secret society. H
 
 A few years ago, I spoke at an event and jokingly said, "Kubernetes is just a bunch of APIs and YAML... I'm a contributor; you don't believe me?" After that talk, someone pulled me aside and asked if I was the Kubernetes contributor. They wanted to get involved in the community. Then came the real question, "I don't know which special interest group (SIG) I would work in."
 
-The SIG you work in depends on your skills and what you want to do with your free time.
+The SIG you work in depends on your skills and what you want to do with your (or your company's) free time.
 
 I’ll start with myself as an example.
 
