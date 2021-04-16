@@ -39,7 +39,7 @@ None of those things required me to write code. Non-code contributors are an ess
 
 To join the Kubernetes community, I recommend finding a SIG where your skills align, doing things you want to do in your off time. There's a list of [Kubernetes SIGs](/resources/community-groups/) with a lot of great options. If you’re not sure where to go, start with [Contributor Experience](https://github.com/kubernetes/community/tree/master/sig-contributor-experience). We’re here to help.
 
-Often, all you have to do to get started as a contributor is show up to a SIG meeting and tell folks how you want to help. Folks will be more than happy to move whatever hurdles are in your way to help you be productive. There will be some hurdles, of course--Kubernetes is a massive project--but we are all in it together.
+Often, all you have to do to get started as a contributor is show up to a SIG meeting and seeing if the work going is something that interests you. Being a fly on the wall is a practical way to get started. Once you get started on something, in particular, folks will be more than happy to move whatever hurdles are in your way to help you be productive. There will be some hurdles, of course--Kubernetes is a massive project--but we are all in it together.
 
 Fresh perspectives are essential to healthy projects. We need developers of all kinds to build Kubernetes and its toolchain, which is well-known. What’s lesser known is just how crucial non-code contributions are to the project’s health. If you’re interested in contributing to Kubernetes and aren’t sure how or where to get involved, feel free to join #sig-contribex in [Kubernetes Slack](https://slack.k8s.io/). Or, if it’s easier, reach out to me directly; we’ll figure out where you belong.
 
