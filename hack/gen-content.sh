@@ -288,7 +288,7 @@ main() {
   # file-path: external-sources/kubernetes/community
   # "/contributors/guide", "/guide" 
 
-  shopt -s globstar
+  shopt -s globstar dotglob
   for repo in "${EXTERNAL_SOURCES}"/**; do
     if [[ -f "$repo" ]]; then
       repos+=("$repo")
