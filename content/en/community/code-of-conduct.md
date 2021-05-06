@@ -1,6 +1,7 @@
 ---
 title: Code Of Conduct
 weight: 500
+aliases: [ "/coc", "/code-of-conduct" ]
 description: |
   The Code of Conduct serves as a set of rules used by the Kubernetes community
   to establish a safe, respectful and inclusive environment.
