@@ -43,8 +43,8 @@ Site is to use [Docker][docker]. To begin, create the docker image to be used
 with generating the site by executing `make container-image`.
 
 To ensure you can view the site with externally sourced content, run
-`make container-gen-content` before previewing the site by with
-`make container-serve`.
+`make container-gen-content` before previewing the site with
+`make container-server`.
 
 
 ### Natively
