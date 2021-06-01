@@ -1,9 +1,33 @@
 ---
 layout: blog
 title: "From Kubernetes for work to Kubernetes for play" 
-date: 2021-05-07
-Slug: contributor-stories-series
+date: 2021-06-01
+Slug: peeyush-contributor-story
 ---
+
+{{% alert color="primary" %}}
+<i>
+Addendum by <a href="https://twitter.com/mbbroberg">Matt Broberg</a> on May 26, 2021
+</i>
+<br><br>
+It's with a heavy heart that this story of Peeyush's contribution begins by acknowledging his sudden passing.
+Peeyush was a foundational member of the Upstream Marketing subproject.
+I saw his friendly face every Friday for over a year,
+and often chat about life before others joined the call.
+He was kind, incredibly funny, and a loving father. 
+He was also an incredible technologist with years of hands-on experience with Kubernetes,
+but he spent his time building a space dedicated to communication and connection.
+He valued making all contributors feel like this community can be their home, and he was incredibly successful at it.
+<br><br>
+We lost a friend this week.
+If you're mourning that loss,
+know you're not alone.
+Whatever you do to honor him,
+may it be with as much kindness as he brought to others every day.
+We have started to collect some of our <a href="https://github.com/cncf/memorials/blob/master/peeyush-gupta.md" target="_blank" rel="noreferrer">thoughts and memories of Peeyush</a> as a memorial to him and what he brought to the community.
+If you would like to share some of your own, please <a href="https://github.com/cncf/memorials/blob/master/peeyush-gupta.md" target="_blank" rel="noreferrer">open a PR adding your own memories of him.</a>
+
+{{% /alert %}}
 
 By [Peeyush Gupta](https://twitter.com/pensu91)
 
@@ -19,7 +43,7 @@ I loved the experience of working with the community and it made me want to cont
 
 ## Finding my place to contribute
 
-CNCF is home for Kubernetes and a lot of other cloud native projects. Once I got involved with Kubernetes and attended a couple of KubeCons, it made me aware of those projects as well. One of those projects is OpenEBS, a leading cloud native storage solution. I liked the project and started contributing and became a maintainer.
+The CNCF is home for Kubernetes and a lot of other cloud native projects. Once I got involved with Kubernetes and attended a couple of KubeCons, it made me aware of those projects as well. One of those projects is OpenEBS, a leading cloud native storage solution. I liked the project and started contributing and became a maintainer.
 
 Most of my community journey has been about just showing up and talking to people. I started with code contributions, but today most of my contribution is non-code. And I believe it has never been a barrier to my journey as long as I want to contribute in one way or another. I have always received positive responses to any query and it's amazing how ready folks are to help even if they have a very busy schedule. 
 
