@@ -1,0 +1,42 @@
+<script src="/js/keps/kep_search.js"></script>
+<div class="container">
+  <dir class="d-flex">
+    <div class="col">
+      <div class="input-group mt-2 col-md-12">
+        <input type="text" name="search" id="keps_search" class="form-control" placeholder="Search KEP(s) by keyword" />
+      </div>
+    </div>
+    <div class="col ml-auto">
+      <div class="input-group mx-auto mt-2 col-md-12" style="width: 400px;">
+        <label for="keps">Choose SIG group:</label>
+        <select class="custom-select" name="sig group" id="sig_group">
+          <option selected value="all">Choose...</option>
+          {{ range $data_sig := .Site.Data.sigs.sigs.sigs }}
+          <option value="{{$data_sig.dir}}">{{ printf "%s" $data_sig.name }}</option>
+          {{ end }}
+        </select>
+      </div>
+    </div>
+  </dir>
+  <table id="keps_table" class="table table-bordered table-hover mt-2 col-md-12">
+    <thead>
+      <tr>
+        <th scope="col">KEP Number</th>
+        <th scope="col">KEP Title</th>
+        <th scope="col">SIG-Group</th>
+        <th scope="col">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $data := $.Site.Data.keps.keps_data.keps }}
+      <tr>
+        <td>{{ printf "%s" $data.kep_number }}</td>
+        <td>
+          <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owning_sig}}/{{$data.name}}">{{ printf "%s" $data.title }}</a></td>
+        <td>{{ printf "%s" $data.owning_sig }}</td>
+        <td>{{ printf "%s" $data.authors }}</td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
