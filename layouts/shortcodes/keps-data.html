@@ -1,5 +1,5 @@
 <script src="/js/keps/kep_search.js"></script>
-<div class="container">
+<div >
   <dir class="d-flex">
     <div class="col">
       <div class="input-group mt-2 col-md-12">
@@ -9,8 +9,8 @@
     <div class="col ml-auto">
       <div class="input-group mx-auto mt-2 col-md-12" style="width: 400px;">
         <label for="keps">Choose SIG group:</label>
-        <select class="custom-select" name="sig group" id="sig_group">
-          <option selected value="all">Choose...</option>
+        <select class="custom-select" name="sig group" id="sig_group_select">
+          <option selected="selected" value="all">Choose...</option>
           {{ range $data_sig := .Site.Data.sigs.sigs.sigs }}
           <option value="{{$data_sig.dir}}">{{ printf "%s" $data_sig.name }}</option>
           {{ end }}

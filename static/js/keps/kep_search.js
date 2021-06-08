@@ -1,5 +1,6 @@
   $(document).ready(function() {
     $('#keps_search').keyup(function() {
+      reset_choose_sig_option();
       search_table($(this).val());
     });
     $("select").on('change', function() {
@@ -8,7 +9,6 @@
       } else {
         reset_keps_table();
       }
-
     })
 
     function search_table(value) {
@@ -30,6 +30,12 @@
     function reset_keps_table() {
       $('#keps_table tr').each(function(f) {
         $(this).show();
+      });
+    }
+
+    function reset_choose_sig_option() {
+      $('#sig_group_select option').prop('selected', function() {
+          return this.defaultSelected;
       });
     }
   });
