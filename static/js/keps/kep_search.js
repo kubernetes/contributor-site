@@ -5,6 +5,7 @@
     });
     $("select").on('change', function() {
       if ($(this).val() != 'all') {
+        reset_input_keps_search();
         search_table($(this).val());
       } else {
         reset_keps_table();
@@ -37,5 +38,9 @@
       $('#sig_group_select option').prop('selected', function() {
           return this.defaultSelected;
       });
+    }
+
+    function reset_input_keps_search() {
+      $('#keps_search').val("");
     }
   });
