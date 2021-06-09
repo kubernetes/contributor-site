@@ -14,8 +14,6 @@ menu:
 These data come from the [k/enhancements](https://github.com/kubernetes/enhancements)
 repository on GitHub.
 
-<h3 class="mt-2 col-md-12">
-	KEP List:
-</h3>
+###	KEP List
 
 {{< keps-data >}}

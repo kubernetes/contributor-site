@@ -10,8 +10,8 @@ keps:
   approvers: ['@lavalamp']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-03-25"
-  last-updated: "2019-03-25"
+  creation_date: "2019-03-25"
+  last_updated: "2019-03-25"
   status: implementable
   see-also:
     - /keps/sig-api-machinery/0006-apply.md
@@ -37,8 +37,8 @@ keps:
   reviewers: ['@deads2k', '@lavalamp', '@ahg-g', '@wojtek-t']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-02-28"
-  last-updated: ""
+  creation_date: "2019-02-28"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -72,8 +72,8 @@ keps:
   approvers: ['@liggitt', '@deads2k']
   prr-approvers: []
   editor: '@sttts'
-  creation-date: "2019-06-03"
-  last-updated: "2019-10-01"
+  creation_date: "2019-06-03"
+  last_updated: "2019-10-01"
   status: provisional
   see-also:
     - /keps/sig-api-machinery/0006-apply.md
@@ -97,8 +97,8 @@ keps:
   reviewers: ['@jpbetz', '@justinsb', '@smarterclayton']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
-  creation-date: "2019-03-27"
-  last-updated: "2019-10-10"
+  creation_date: "2019-03-27"
+  last_updated: "2019-10-10"
   status: implemented
   see-also:
     - TODO
@@ -126,8 +126,8 @@ keps:
   reviewers: ['@liggitt', '@smarterclayton']
   approvers: ['@lavalamp', '@deads2k']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-07-11"
-  last-updated: "2019-07-24"
+  creation_date: "2019-07-11"
+  last_updated: "2019-07-24"
   status: implementable
   stage: beta
   latest-milestone: v1.20
@@ -155,8 +155,8 @@ keps:
           portion of KEP']
   prr-approvers: []
   editor: '@calebamiles'
-  creation-date: "2019-02-25"
-  last-updated: "2020-01-15"
+  creation_date: "2019-02-25"
+  last_updated: "2020-01-15"
   status: implementable
   see-also:
     - https://goo.gl/qiARUK - Network Proxy design proposal
@@ -183,8 +183,8 @@ keps:
   reviewers: ['@sttts', '@cheftako', '@liggitt', '@soltysh']
   approvers: ['@lavalamp', '@mikedanese']
   prr-approvers: ['@johnbelamaric', '@wojtek-t']
-  creation-date: "2019-09-27"
-  last-updated: ""
+  creation_date: "2019-09-27"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.21
@@ -209,8 +209,8 @@ keps:
   reviewers: []
   approvers: ['@deads2k', '@liggitt', '@lavalamp']
   prr-approvers: []
-  creation-date: "2020-01-23"
-  last-updated: "2020-01-23"
+  creation_date: "2020-01-23"
+  last_updated: "2020-01-23"
   status: implementable
   stage: beta
   latest-milestone: "1.18"
@@ -232,8 +232,8 @@ keps:
   reviewers: ['@lavalamp', '@smarterclayton']
   approvers: ['@derekwaynecarr', '@liggitt']
   prr-approvers: []
-  creation-date: "2020-03-23"
-  last-updated: ""
+  creation_date: "2020-03-23"
+  last_updated: ""
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -255,8 +255,8 @@ keps:
   reviewers: ['@lavalamp', '@deads2k', '@seans3', '@logicalhan']
   approvers: ['@lavalamp', '@smarterclayton']
   prr-approvers: ['@ehashman']
-  creation-date: "2020-04-16"
-  last-updated: ""
+  creation_date: "2020-04-16"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-architecture/1635-prevent-permabeta
@@ -285,8 +285,8 @@ keps:
   approvers: ['@liggitt', '@deads2k']
   prr-approvers: []
   editor: TBD
-  creation-date: "2020-04-21"
-  last-updated: "2020-07-23"
+  creation_date: "2020-04-21"
+  last_updated: "2020-07-23"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -308,8 +308,8 @@ keps:
   reviewers: ['@jpbetz']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-07-23"
-  last-updated: ""
+  creation_date: "2020-07-23"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-api-machinery/20191210-consistent-reads-from-cache.md
@@ -336,8 +336,8 @@ keps:
   reviewers: [jpbetz, lavalamp, sttts, kensipe]
   approvers: [TBD]
   prr-approvers: [deads2k]
-  creation-date: "2020-08-04"
-  last-updated: ""
+  creation_date: "2020-08-04"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-api-machinery/20190426-crd-defaulting.md
@@ -360,8 +360,8 @@ keps:
   reviewers: ['@caesarxuchao', '@lavalamp', '@MikeSpreitzer', '@deads2k']
   approvers: ['@lavalamp', '@deads2k']
   prr-approvers: []
-  creation-date: "2020-09-02"
-  last-updated: ""
+  creation_date: "2020-09-02"
+  last_updated: ""
   status: implementable
   see-also:
     - https://docs.google.com/document/d/1ed7miqlFY7-9lZxE7gzoyx_MFQCtFEDqtcKMpaAmHys/edit?usp=sharing
@@ -387,8 +387,8 @@ keps:
   reviewers: ['@apelisse', '@kwiesmueller']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-11-16"
-  last-updated: ""
+  creation_date: "2020-11-16"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-api-machinery/0006-apply.md
@@ -412,8 +412,8 @@ keps:
   reviewers: ['@liggitt', '@nikhita', '@thockin', '@deads2k']
   approvers: ['@liggitt', '@deads2k']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-11-22"
-  last-updated: ""
+  creation_date: "2020-11-22"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.22
@@ -437,8 +437,8 @@ keps:
   reviewers: ['@deads2k', '@yliaog', '@lavalamp']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
-  creation-date: "2018-08-06"
-  last-updated: "2019-03-19"
+  creation_date: "2018-08-06"
+  last_updated: "2019-03-19"
   status: implementable
   stage: alpha
   latest-milestone: "1.14"
@@ -461,8 +461,8 @@ keps:
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
   editor: '@sttts'
-  creation-date: "2018-07-31"
-  last-updated: "2019-04-30"
+  creation_date: "2018-07-31"
+  last_updated: "2019-04-30"
   status: implemented
   see-also:
     - https://github.com/kubernetes/enhancements/pull/1002
@@ -488,8 +488,8 @@ keps:
   approvers: ['@luxas', '@sttts']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-29"
-  last-updated: "2019-04-02"
+  creation_date: "2019-01-29"
+  last_updated: "2019-04-02"
   status: provisional
   see-also:
     - KEP-32
@@ -514,8 +514,8 @@ keps:
   approvers: ['@liggitt', '@pwittrock']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-03-22"
-  last-updated: "2019-03-22"
+  creation_date: "2019-03-22"
+  last_updated: "2019-03-22"
   status: implementable
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/server-get.md
@@ -540,8 +540,8 @@ keps:
   approvers: ['@lavalamp', '@deads2k']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-25"
-  last-updated: "2019-05-09"
+  creation_date: "2019-04-25"
+  last_updated: "2019-05-09"
   status: implemented
   see-also:
     - /keps/sig-api-machinery/20180415-crds-to-ga.md
@@ -568,8 +568,8 @@ keps:
   approvers: ['@caesarxuchao', '@lavalamp']
   prr-approvers: []
   editor: '@deads2k'
-  creation-date: "2019-06-07"
-  last-updated: "2019-06-12"
+  creation_date: "2019-06-07"
+  last_updated: "2019-06-12"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -592,8 +592,8 @@ keps:
   approvers: ['@liggitt', '@sttts']
   prr-approvers: []
   editor: '@deads2k'
-  creation-date: "2019-06-12"
-  last-updated: "2019-07-03"
+  creation_date: "2019-06-12"
+  last_updated: "2019-07-03"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -616,8 +616,8 @@ keps:
   approvers: ['@liggitt', '@lavalamp']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-03-22"
-  last-updated: "2019-03-22"
+  creation_date: "2019-03-22"
+  last_updated: "2019-03-22"
   status: implementable
   see-also:
     - https://github.com/kubernetes/kubernetes/issues/44164
@@ -640,8 +640,8 @@ keps:
   reviewers: ['@deads2k', '@yliaog', '@lavalamp']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
-  creation-date: "2019-08-22"
-  last-updated: "2019-08-22"
+  creation_date: "2019-08-22"
+  last_updated: "2019-08-22"
   status: implementable
   stage: alpha
   latest-milestone: "1.17"
@@ -664,8 +664,8 @@ keps:
   approvers: ['@lavalamp', '@deads2k', '@wojtek-t']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-12-10"
-  last-updated: "2020-02-19"
+  creation_date: "2019-12-10"
+  last_updated: "2020-02-19"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -686,8 +686,8 @@ keps:
   reviewers: ['@deads2k', '@lavalamp']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
-  creation-date: "2018-10-12"
-  last-updated: "2018-12-17"
+  creation_date: "2018-10-12"
+  last_updated: "2018-12-17"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -708,8 +708,8 @@ keps:
   reviewers: ['@deads2k', '@lavalamp']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
-  creation-date: "2019-01-02"
-  last-updated: "2019-01-04"
+  creation_date: "2019-01-02"
+  last_updated: "2019-01-04"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -730,8 +730,8 @@ keps:
   reviewers: ['@deads2k', '@yliaog']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
-  creation-date: "2019-01-23"
-  last-updated: "2019-01-23"
+  creation_date: "2019-01-23"
+  last_updated: "2019-01-23"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -752,8 +752,8 @@ keps:
   reviewers: ['@lavalamp', '@wojtek-t']
   approvers: ['@lavalamp', '@deads2k']
   prr-approvers: []
-  creation-date: "2020-03-09"
-  last-updated: "2020-04-02"
+  creation_date: "2020-03-09"
+  last_updated: "2020-04-02"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -775,8 +775,8 @@ keps:
   reviewers: ['@thockin', '@apelisse', '@sttts', '@roycaihw']
   approvers: ['@thockin', '@apelisse']
   prr-approvers: ['@deads2k']
-  creation-date: "2021-03-07"
-  last-updated: ""
+  creation_date: "2021-03-07"
+  last_updated: ""
   status: implementable
   see-also:
     - https://groups.google.com/g/kubernetes-sig-architecture/c/UmPwm-J3ztE/m/QckZWJAABQAJ
@@ -800,8 +800,8 @@ keps:
   reviewers: ['@liggitt']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2017-08-29"
-  last-updated: ""
+  creation_date: "2017-08-29"
+  last_updated: ""
   status: implemented
   stage: beta
   latest-milestone: v1.9
@@ -827,8 +827,8 @@ keps:
   approvers: ['@liggitt', '@deads2k']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-27"
-  last-updated: "2019-02-04"
+  creation_date: "2019-01-27"
+  last_updated: "2019-02-04"
   status: implemented
   see-also:
     - '[Admission Control Webhook Beta Design Doc](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/admission-control-webhooks.md)'
@@ -853,8 +853,8 @@ keps:
   approvers: ['@bgrant0607']
   prr-approvers: ['@deads2k']
   editor: TBD
-  creation-date: "2018-03-28"
-  last-updated: "2021-02-21"
+  creation_date: "2018-03-28"
+  last_updated: "2021-02-21"
   status: implementable
   see-also:
     - n/a
@@ -886,8 +886,8 @@ keps:
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
   editor: '@sttts'
-  creation-date: "2019-04-26"
-  last-updated: "2019-07-29"
+  creation_date: "2019-04-26"
+  last_updated: "2019-07-29"
   status: implemented
   see-also:
     - /keps/sig-api-machinery/20180731-crd-pruning.md
@@ -913,8 +913,8 @@ keps:
   approvers: ['@erictune']
   prr-approvers: []
   editor: apelisse
-  creation-date: "2018-06-21"
-  last-updated: "2020-03-23"
+  creation_date: "2018-06-21"
+  last_updated: "2020-03-23"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -935,8 +935,8 @@ keps:
   reviewers: ['@lavalamp', '@deads2k', '@sttts', '@liggitt']
   approvers: ['@lavalamp', '@deads2k']
   prr-approvers: []
-  creation-date: "2019-04-25"
-  last-updated: "2019-04-25"
+  creation_date: "2019-04-25"
+  last_updated: "2019-04-25"
   status: implemented
   replaces:
     - (https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/customresource-conversion-webhook.md)
@@ -960,8 +960,8 @@ keps:
   approvers: ['@liggitt', '@sttts']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-02-07"
-  last-updated: "2019-02-13"
+  creation_date: "2019-02-07"
+  last_updated: "2019-02-13"
   status: implemented
   see-also:
     - '[Validation for CustomResources design doc](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/api-machinery/customresources-validation.md)'
@@ -986,8 +986,8 @@ keps:
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-04-15"
-  last-updated: "2018-04-24"
+  creation_date: "2018-04-15"
+  last_updated: "2018-04-24"
   status: implementable
   see-also:
     - '[Umbrella Issue](https://github.com/kubernetes/kubernetes/issues/58682)'
@@ -1014,8 +1014,8 @@ keps:
   reviewers: ['@jpbetz']
   approvers: ['@deads2k', '@lavalamp']
   prr-approvers: []
-  creation-date: "2019-02-06"
-  last-updated: "2019-04-30"
+  creation_date: "2019-02-06"
+  last_updated: "2019-04-30"
   status: implemented
   see-also:
     - https://github.com/kubernetes/kubernetes/issues/73585
@@ -1044,8 +1044,8 @@ keps:
   approvers: ['@kow3ns', '@janetkuo', '@soltysh']
   prr-approvers: ['@deads2k', '@ehashman']
   editor: TBD
-  creation-date: "2020-03-02"
-  last-updated: "2020-05-06"
+  creation_date: "2020-03-02"
+  last_updated: "2020-05-06"
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -1071,8 +1071,8 @@ keps:
   reviewers: ['@kow3ns', '@xing-yang', '@msau42', '@janetkuo']
   approvers: ['@msau42', '@janetkuo']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-06-04"
-  last-updated: ""
+  creation_date: "2020-06-04"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -1098,8 +1098,8 @@ keps:
   reviewers: ['@liggitt', '@kow3ns', '@janetkuo', “@mortent”, '@wojtek-t']
   approvers: ['@kow3ns', '@janetkuo', '@liggitt', '@wojtek-t']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-04-18"
-  last-updated: ""
+  creation_date: "2019-04-18"
+  last_updated: ""
   status: implementable
   replaces:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/apps/cronjob.md
@@ -1131,8 +1131,8 @@ keps:
   reviewers: ['@janetkuo', '@ahg-g', '@kow3ns', '@soltysh']
   approvers: ['@janetkuo', '@kow3ns']
   prr-approvers: [wojtek-t, '@wojtek-t']
-  creation-date: "2020-12-15"
-  last-updated: ""
+  creation_date: "2020-12-15"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-apps/1828-delete-priority-annotations
@@ -1159,8 +1159,8 @@ keps:
   reviewers: ['@erictune', '@ahg', '@liggitt']
   approvers: ['@soltysh', '@janetkuo']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-12-29"
-  last-updated: ""
+  creation_date: "2020-12-29"
+  last_updated: ""
   status: implemented
   stage: beta
   latest-milestone: v1.22
@@ -1188,8 +1188,8 @@ keps:
   reviewers: ['@soltysh', '@ahg', '@alculquicondor', TBD]
   approvers: ['@janetkuo', TBD]
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-01-06"
-  last-updated: ""
+  creation_date: "2020-01-06"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -1216,8 +1216,8 @@ keps:
   reviewers: ['@ahg-g', '@janetkuo', '@alculquicondor']
   approvers: ['@janetkuo']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2021-01-12"
-  last-updated: ""
+  creation_date: "2021-01-12"
+  last_updated: ""
   status: implementable
   see-also:
     - https://github.com/kubernetes/kubernetes/issues/45509
@@ -1244,8 +1244,8 @@ keps:
   reviewers: ['@erictune', '@lavalamp', '@soltysh']
   approvers: ['@janetkuo']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-01-21"
-  last-updated: ""
+  creation_date: "2020-01-21"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -1272,8 +1272,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-09-25"
-  last-updated: "2018-09-25"
+  creation_date: "2018-09-25"
+  last_updated: "2018-09-25"
   status: provisional
   see-also:
     - https://github.com/kubernetes/community/pull/1249
@@ -1297,8 +1297,8 @@ keps:
   reviewers: ['@soltysh']
   approvers: ['@soltysh']
   prr-approvers: ['@ehashman']
-  creation-date: "2021-04-07"
-  last-updated: "2021-04-12"
+  creation_date: "2021-04-07"
+  last_updated: "2021-04-12"
   status: implementable
   see-also:
     - https://github.com/kubernetes/kubernetes/issues/65098
@@ -1326,8 +1326,8 @@ keps:
   reviewers: ['@enisoc', '@tnozicka']
   approvers: ['@kow3ns']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2018-08-16"
-  last-updated: ""
+  creation_date: "2018-08-16"
+  last_updated: ""
   status: implementable
   see-also:
     - n/a
@@ -1367,8 +1367,8 @@ keps:
   approvers: ['@mattfarina', '@prydonius', '@kow3ns']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-11-13"
-  last-updated: "2018-11-19"
+  creation_date: "2018-11-13"
+  last_updated: "2018-11-19"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -1390,8 +1390,8 @@ keps:
   reviewers: ['@liggitt', '@kow3ns', '@soltysh', '@janetkuo', '@wojtek-t']
   approvers: ['@kow3ns', '@liggitt', '@wojtek-t']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-03-18"
-  last-updated: ""
+  creation_date: "2019-03-18"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.22
@@ -1421,8 +1421,8 @@ keps:
   approvers: ['@janetkuo', '@kow3ns']
   prr-approvers: ['@wojtek-t']
   editor: TBD
-  creation-date: "2018-12-29"
-  last-updated: "2021-05-06"
+  creation_date: "2018-12-29"
+  last_updated: "2021-05-06"
   status: implementable
   see-also:
     - n/a
@@ -1451,8 +1451,8 @@ keps:
   approvers: ['@kow3ns', '@janetkuo']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-12"
-  last-updated: "2019-04-12"
+  creation_date: "2019-04-12"
+  last_updated: "2019-04-12"
   status: implemented
   stage: stable
   latest-milestone: "1.15"
@@ -1474,8 +1474,8 @@ keps:
   approvers: ['@bgrant0607']
   prr-approvers: []
   editor: '@jbeda'
-  creation-date: "2017-08-22"
-  last-updated: "2020-02-18"
+  creation_date: "2017-08-22"
+  last_updated: "2020-02-18"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -1497,8 +1497,8 @@ keps:
   reviewers: ['@lavalamp', '@derekwaynecarr', '@liggitt']
   approvers: ['@thockin', '@derekwaynecarr']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-07-16"
-  last-updated: "2021-04-02"
+  creation_date: "2019-07-16"
+  last_updated: "2021-04-02"
   status: implemented
   stage: stable
   latest-milestone: v1.21
@@ -1521,8 +1521,8 @@ keps:
       '@deads2k']
   approvers: ['@derekwaynecarr', '@dims']
   prr-approvers: []
-  creation-date: "2019-07-31"
-  last-updated: "2020-12-15"
+  creation_date: "2019-07-31"
+  last_updated: "2020-12-15"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -1544,8 +1544,8 @@ keps:
   reviewers: ['@deads2k', '@bentheelder', '@timothysc', '@smarterclayton', '@johnbelamaric']
   approvers: ['@timothysc', '@smarterclayton', '@johnbelamaric']
   prr-approvers: []
-  creation-date: "2019-10-23"
-  last-updated: "2019-10-23"
+  creation_date: "2019-10-23"
+  last_updated: "2019-10-23"
   status: implementable
   see-also:
     - /keps/sig-architecture/20190412-conformance-behaviors.md
@@ -1568,8 +1568,8 @@ keps:
   reviewers: ['@hh', '@smarterclayton', '@spiffxp']
   approvers: ['@johnbelamaric', '@smarterclayton']
   prr-approvers: []
-  creation-date: "2020-03-18"
-  last-updated: ""
+  creation_date: "2020-03-18"
+  last_updated: ""
   status: provisional
   see-also:
     - /keps/sig-architecture/20190412-conformance-behaviors.md
@@ -1595,8 +1595,8 @@ keps:
   reviewers: ['@bgrant0607', '@liggitt', '@smarterclayton']
   approvers: ['@derekwaynecarr', '@johnbelamaric']
   prr-approvers: []
-  creation-date: "2019-10-01"
-  last-updated: ""
+  creation_date: "2019-10-01"
+  last_updated: ""
   status: implemented
   stage: ""
   latest-milestone: v1.19
@@ -1618,8 +1618,8 @@ keps:
   reviewers: ['@andrewsykim']
   approvers: ['@ahg-g']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-03-31"
-  last-updated: ""
+  creation_date: "2020-03-31"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: ""
@@ -1641,8 +1641,8 @@ keps:
   reviewers: ['@erictune', '@idvoretskyi', '@spiffxp', '@timothysc']
   approvers: ['@bgrant0607', '@jbeda']
   prr-approvers: []
-  creation-date: "2018-09-08"
-  last-updated: ""
+  creation_date: "2018-09-08"
+  last_updated: ""
   status: provisional
   see-also:
     - /keps/0001-kubernetes-enhancement-proposal-process.md
@@ -1666,8 +1666,8 @@ keps:
   reviewers: ['@sttts', '@lavalamp']
   approvers: ['@smarterclayton', '@thockin']
   prr-approvers: []
-  creation-date: "2019-03-19"
-  last-updated: "2019-11-01"
+  creation_date: "2019-03-19"
+  last_updated: "2019-11-01"
   status: implemented
   stage: stable
   latest-milestone: "1.15"
@@ -1690,8 +1690,8 @@ keps:
   approvers: ['@bgrant0607', '@smarterclayton']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-12"
-  last-updated: "2020-07-28"
+  creation_date: "2019-04-12"
+  last_updated: "2020-07-28"
   status: withdrawn
   stage: ""
   latest-milestone: ""
@@ -1713,8 +1713,8 @@ keps:
   reviewers: ['@liggitt']
   approvers: ['@liggitt']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-08-06"
-  last-updated: "2021-04-29"
+  creation_date: "2019-08-06"
+  last_updated: "2021-04-29"
   status: implementable
   replaces:
     - /keps/sig-storage/2451-service-account-token-volumes
@@ -1755,8 +1755,8 @@ keps:
   approvers: [liggitt, derekwaynecarr, neolit123, deads2k]
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-09-16"
-  last-updated: ""
+  creation_date: "2019-09-16"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: "1.17"
@@ -1779,8 +1779,8 @@ keps:
   approvers: ['@liggitt', '@enj', '@micahhausler', '@ericchiang']
   prr-approvers: ['@johnbelamaric']
   editor: TBD
-  creation-date: "2018-06-26"
-  last-updated: "2020-01-25"
+  creation_date: "2018-06-26"
+  last_updated: "2020-01-25"
   status: implemented
   replaces:
     - https://github.com/kubernetes/community/pull/2314/
@@ -1806,8 +1806,8 @@ keps:
   reviewers: ['@liggitt', '@smarterclayton', '@munnerz']
   approvers: ['@liggitt', '@smarterclayton']
   prr-approvers: []
-  creation-date: "2019-06-07"
-  last-updated: "2020-09-14"
+  creation_date: "2019-06-07"
+  last_updated: "2020-09-14"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -1829,8 +1829,8 @@ keps:
   reviewers: ['@mikedanese', '@liggitt']
   approvers: ['@mikedanese', '@deads2k', '@liggitt']
   prr-approvers: []
-  creation-date: "2020-04-14"
-  last-updated: "2021-01-06"
+  creation_date: "2020-04-14"
+  last_updated: "2021-01-06"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -1852,8 +1852,8 @@ keps:
   reviewers: ['@mrunalp', '@dashpole', '@marosset', '@ritazh']
   approvers: ['@deads2k', '@enj', '@IanColdwater', '@mikedanese', '@tabbysable']
   prr-approvers: ['@deads2k']
-  creation-date: "2021-03-19"
-  last-updated: ""
+  creation_date: "2021-03-19"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -1879,8 +1879,8 @@ keps:
   reviewers: ['@smarterclayton', '@mikedanese']
   approvers: ['@smarterclayton', '@mikedanese', '@johnbelamaric']
   prr-approvers: []
-  creation-date: "2017-06-27"
-  last-updated: ""
+  creation_date: "2017-06-27"
+  last_updated: ""
   status: implemented
   see-also:
     - /keps/sig-auth/20190607-certificates-api.md
@@ -1911,8 +1911,8 @@ keps:
   reviewers: ['@saad-ali', '@tallclair']
   approvers: ['@thockin', '@smarterclayton']
   prr-approvers: []
-  creation-date: "2017-08-14"
-  last-updated: "2020-05-01"
+  creation_date: "2017-08-14"
+  last_updated: "2020-05-01"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -1934,8 +1934,8 @@ keps:
   reviewers: ['@liggitt', '@mikedanese']
   approvers: ['@liggitt', '@mikedanese']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-07-11"
-  last-updated: ""
+  creation_date: "2019-07-11"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.21
@@ -1958,8 +1958,8 @@ keps:
   approvers: ['@tallclair', '@liggitt', '@yliaog']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-05-18"
-  last-updated: "2018-07-31"
+  creation_date: "2018-05-18"
+  last_updated: "2018-07-31"
   status: withdrawn
   stage: ""
   latest-milestone: ""
@@ -1981,8 +1981,8 @@ keps:
   approvers: ['@mikedanese', '@liggit', '@tallclair']
   prr-approvers: []
   editor: '@micahhausler'
-  creation-date: "2019-01-16"
-  last-updated: "2019-05-17"
+  creation_date: "2019-01-16"
+  last_updated: "2019-05-17"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -2005,8 +2005,8 @@ keps:
   approvers: ['@liggitt', '@tallclair', '@deads2k']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-28"
-  last-updated: "2019-01-31"
+  creation_date: "2019-01-28"
+  last_updated: "2019-01-31"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -2029,8 +2029,8 @@ keps:
   approvers: ['@brancz', '@maciekpytel', '@directxman12']
   prr-approvers: []
   editor: '@directxman12'
-  creation-date: "2018-04-19"
-  last-updated: "2018-04-19"
+  creation_date: "2018-04-19"
+  last_updated: "2018-04-19"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -2051,8 +2051,8 @@ keps:
   reviewers: ['@josephburnett', '@mwielgus', '@gjtempleton']
   approvers: ['@josephburnett', '@gjtempleton']
   prr-approvers: []
-  creation-date: "2020-02-18"
-  last-updated: "2020-11-03"
+  creation_date: "2020-02-18"
+  last_updated: "2020-11-03"
   status: implementable
   stage: alpha
   latest-milestone: "1.20"
@@ -2073,8 +2073,8 @@ keps:
   reviewers: ['@josephburnett', '@gjtempleton']
   approvers: ['@josephburnett', '@gjtempleton']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-05-10"
-  last-updated: "2021-05-10"
+  creation_date: "2021-05-10"
+  last_updated: "2021-05-10"
   status: implementable
   stage: stable
   latest-milestone: v1.22
@@ -2096,8 +2096,8 @@ keps:
   approvers: ['@mwielgus', '@josephburnett']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-03-07"
-  last-updated: "2020-01-29"
+  creation_date: "2019-03-07"
+  last_updated: "2020-01-29"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -2118,8 +2118,8 @@ keps:
   reviewers: ['@pwittrock', '@liggitt']
   approvers: ['@pwittrock']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-04-09"
-  last-updated: ""
+  creation_date: "2019-04-09"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.20
@@ -2142,8 +2142,8 @@ keps:
   approvers: ['@soltysh', '@pwittrock']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-10-08"
-  last-updated: "2020-01-27"
+  creation_date: "2019-10-08"
+  last_updated: "2020-01-27"
   status: implementable
   see-also:
     - https://docs.google.com/document/d/1w-HRLtMncDAL_yQQJdHDasyCZRdJTOV1N6y22fGsKkY/edit#
@@ -2167,8 +2167,8 @@ keps:
   reviewers: ['@aylei', '@soltysh']
   approvers: ['@pwittrock', '@soltysh']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2019-08-05"
-  last-updated: ""
+  creation_date: "2019-08-05"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-node/20190212-ephemeral-containers.md
@@ -2193,8 +2193,8 @@ keps:
   reviewers: ['@pwittrock', '@monopole']
   approvers: ['@pwittrock', '@monopole']
   prr-approvers: []
-  creation-date: "2020-05-20"
-  last-updated: "2020-05-20"
+  creation_date: "2020-05-20"
+  last_updated: "2020-05-20"
   status: implemented
   stage: alpha
   latest-milestone: v1.19
@@ -2216,8 +2216,8 @@ keps:
   reviewers: ['@monopole', '@pwittrock']
   approvers: ['@monopole', '@pwittrock']
   prr-approvers: []
-  creation-date: "2020-12-21"
-  last-updated: "2020-01-15"
+  creation_date: "2020-12-21"
+  last_updated: "2020-01-15"
   status: implemented
   stage: beta
   latest-milestone: "1.22"
@@ -2238,8 +2238,8 @@ keps:
   reviewers: ['@dougsland', '@eddiezane', '@soltysh', '@howardjohn', '@rikatz']
   approvers: ['@soltysh', '@rikatz']
   prr-approvers: ['@johnbelamaric', '@deads2k']
-  creation-date: "2020-12-16"
-  last-updated: "2021-03-10"
+  creation_date: "2020-12-16"
+  last_updated: "2021-03-10"
   status: implementable
   stage: alpha
   latest-milestone: v1.21
@@ -2262,275 +2262,11 @@ keps:
   approvers: ['@pwittrock', '@soltysh']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-11-14"
-  last-updated: "2021-01-12"
+  creation_date: "2019-11-14"
+  last_updated: "2021-01-12"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: base
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: resources
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: composition
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: kustomization
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: builtins-base
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: resources
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: prod-integration-base
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: prod-plugin-transformation
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: plugins-base
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: plugins-base
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: plugins-base
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
-  milestone:
-      alpha: ""
-      beta: ""
-      stable: ""
-  feature-gates: []
-  disable-supported: false
-  metrics: []
-- id: ""
-  prnumber: ""
-  name: plugins-base
-  title: ""
-  kep_number: ""
-  authors: []
-  owning_sig: ""
-  reviewers: []
-  approvers: []
-  prr-approvers: []
-  creation-date: ""
-  last-updated: ""
-  status: ""
-  stage: ""
-  latest-milestone: ""
   milestone:
       alpha: ""
       beta: ""
@@ -2549,8 +2285,8 @@ keps:
   reviewers: ['@monopole', '@pwittrock']
   approvers: ['@monopole', '@pwittrock']
   prr-approvers: []
-  creation-date: "2021-01-20"
-  last-updated: ""
+  creation_date: "2021-01-20"
+  last_updated: ""
   status: provisional
   see-also:
     - /keps/sig-cli/993-kustomize-generators-transformers
@@ -2575,8 +2311,8 @@ keps:
   approvers: ['@soltysh']
   prr-approvers: []
   editor: '@droot'
-  creation-date: "2018-05-05"
-  last-updated: "2019-01-09"
+  creation_date: "2018-05-05"
+  last_updated: "2019-01-09"
   status: implemented
   see-also:
     - n/a
@@ -2605,8 +2341,8 @@ keps:
   approvers: ['@pwittrock', '@soltysh']
   prr-approvers: []
   editor: juanvallejo
-  creation-date: "2018-07-24"
-  last-updated: "2010-02-26"
+  creation_date: "2018-07-24"
+  last_updated: "2010-02-26"
   status: implemented
   see-also:
     - n/a
@@ -2635,8 +2371,8 @@ keps:
   approvers: ['@soltysh']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-11-13"
-  last-updated: "2018-11-13"
+  creation_date: "2018-11-13"
+  last_updated: "2018-11-13"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -2659,8 +2395,8 @@ keps:
   approvers: ['@pwittrock', '@soltysh']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-09-20"
-  last-updated: "2019-09-20"
+  creation_date: "2019-09-20"
+  last_updated: "2019-09-20"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -2682,8 +2418,8 @@ keps:
   approvers: ['@monopole']
   prr-approvers: []
   editor: '@pwittrock'
-  creation-date: "2019-03-12"
-  last-updated: "2019-03-12"
+  creation_date: "2019-03-12"
+  last_updated: "2019-03-12"
   status: implementable
   see-also:
     - /keps/sig-cli/2385-kustomize-secret-generator-plugins/
@@ -2708,8 +2444,8 @@ keps:
   approvers: ['@monopole']
   prr-approvers: []
   editor: '@Liujingfang1'
-  creation-date: "2019-03-14"
-  last-updated: "2019-03-18"
+  creation_date: "2019-03-14"
+  last_updated: "2019-03-18"
   status: implemented
   stage: beta
   latest-milestone: "1.16"
@@ -2732,8 +2468,8 @@ keps:
   approvers: ['@liggitt', '@seans3', '@soltysh', '@monopole']
   prr-approvers: []
   editor: '@pwittrock'
-  creation-date: "2019-01-17"
-  last-updated: "2019-03-18"
+  creation_date: "2019-01-17"
+  last_updated: "2019-03-18"
   status: implemented
   see-also:
     - /keps/sig-cli/2386-kustomize-subcommand-integration/
@@ -2760,8 +2496,8 @@ keps:
   approvers: ['@monopole', '@Liujingfang1', '@pwittrock']
   prr-approvers: []
   editor: '@sethpollack'
-  creation-date: "2019-02-04"
-  last-updated: "2019-02-04"
+  creation_date: "2019-02-04"
+  last_updated: "2019-02-04"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -2784,8 +2520,8 @@ keps:
   approvers: ['@liggitt', '@seans3', '@soltysh']
   prr-approvers: []
   editor: '@pwittrock'
-  creation-date: "2018-11-07"
-  last-updated: "2019-02-15"
+  creation_date: "2018-11-07"
+  last_updated: "2019-02-15"
   status: implemented
   see-also:
     - '[kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/docs/workflows.md)'
@@ -2814,8 +2550,8 @@ keps:
   reviewers: ['@soltysh']
   approvers: ['@soltysh']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-04-06"
-  last-updated: "2021-04-06"
+  creation_date: "2021-04-06"
+  last_updated: "2021-04-06"
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -2838,8 +2574,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2020-01-15"
-  last-updated: "2020-03-23"
+  creation_date: "2020-01-15"
+  last_updated: "2020-03-23"
   status: implemented
   see-also:
     - /keps/sig-api-machinery/0015-dry-run.md
@@ -2865,8 +2601,8 @@ keps:
   approvers: ['@soltysh']
   prr-approvers: ['@deads2k', '@johnbelamaric']
   editor: TBD
-  creation-date: "2019-02-22"
-  last-updated: "2019-05-11"
+  creation_date: "2019-02-22"
+  last_updated: "2019-05-11"
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -2890,8 +2626,8 @@ keps:
   reviewers: ['@droot', '@sethpollack']
   approvers: ['@monopole']
   prr-approvers: []
-  creation-date: "2019-03-25"
-  last-updated: "2019-04-30"
+  creation_date: "2019-03-25"
+  last_updated: "2019-04-30"
   status: implemented
   see-also:
     - /keps/sig-cli/2299-kustomize-plugin-composition
@@ -2916,8 +2652,8 @@ keps:
   approvers: ['@cheftako', '@andrewsykim', '@spiffxp', '@stephenaugustus']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-07-29"
-  last-updated: "2020-05-08"
+  creation_date: "2019-07-29"
+  last_updated: "2020-05-08"
   status: implemented
   see-also:
     - /keps/sig-cloud-provider/20190125-removing-in-tree-providers.md
@@ -2942,8 +2678,8 @@ keps:
   reviewers: ['@cheftako']
   approvers: ['@cheftako']
   prr-approvers: []
-  creation-date: "2020-04-29"
-  last-updated: ""
+  creation_date: "2020-04-29"
+  last_updated: ""
   status: implementable
   see-also:
     - /kep/sig-cloud-provider/20190125-removing-in-tree-providers.md
@@ -2968,8 +2704,8 @@ keps:
   reviewers: ['@bowei', '@cheftako', '@thockin']
   approvers: ['@bowei', '@cheftako', '@thockin']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-11-02"
-  last-updated: ""
+  creation_date: "2020-11-02"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -2996,8 +2732,8 @@ keps:
   reviewers: ['@cheftako', '@anfernee', '@caesarxuchao', '@Jefftree', '@andrewsykim']
   approvers: [TBD]
   prr-approvers: [deads2k, '@deads2k']
-  creation-date: "2020-09-28"
-  last-updated: ""
+  creation_date: "2020-09-28"
+  last_updated: ""
   status: implementable
   see-also:
     - keps/sig-api-machinery/20190226-network-proxy.md
@@ -3027,8 +2763,8 @@ keps:
   approvers: ['@andrewsykim', '@cheftako', '@tallclair', '@mikedanese']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-10-04"
-  last-updated: "2019-12-10"
+  creation_date: "2019-10-04"
+  last_updated: "2019-12-10"
   status: replaced
   stage: ""
   latest-milestone: ""
@@ -3051,8 +2787,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-06-06"
-  last-updated: "2018-11-16"
+  creation_date: "2018-06-06"
+  last_updated: "2018-11-16"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3075,8 +2811,8 @@ keps:
   approvers: ['@thockin']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-01-09"
-  last-updated: "2019-04-10"
+  creation_date: "2018-01-09"
+  last_updated: "2019-04-10"
   status: provisional
   replaces:
     - contributors/design-proposals/cloud-provider/cloud-provider-refactoring.md
@@ -3101,8 +2837,8 @@ keps:
   approvers: ['@andrewsykim', '@hogepodge', '@jagosan']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-07-31"
-  last-updated: "2019-02-12"
+  creation_date: "2018-07-31"
+  last_updated: "2019-02-12"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3124,8 +2860,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-25"
-  last-updated: "2019-01-25"
+  creation_date: "2019-01-25"
+  last_updated: "2019-01-25"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3149,8 +2885,8 @@ keps:
   approvers: ['@thockin', '@liggit']
   prr-approvers: ['@wojtek-t']
   editor: TBD
-  creation-date: "2018-12-18"
-  last-updated: "2019-04-11"
+  creation_date: "2018-12-18"
+  last_updated: "2019-04-11"
   status: implementable
   stage: alpha
   latest-milestone: v1.21
@@ -3180,8 +2916,8 @@ keps:
   reviewers: ['@cheftako', '@nckturner', '@andrewsykim']
   approvers: ['@cheftako']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-04-22"
-  last-updated: ""
+  creation_date: "2019-04-22"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-cloud-provider/20180530-cloud-controller-manager.md
@@ -3210,8 +2946,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-25"
-  last-updated: "2019-01-25"
+  creation_date: "2019-01-25"
+  last_updated: "2019-01-25"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3233,8 +2969,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-25"
-  last-updated: "2019-01-25"
+  creation_date: "2019-01-25"
+  last_updated: "2019-01-25"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -3256,8 +2992,8 @@ keps:
   approvers: ['@frapposelli', '@cantbewong', '@andrewsykim', '@dvonthenen']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-25"
-  last-updated: "2020-04-09"
+  creation_date: "2019-01-25"
+  last_updated: "2020-04-09"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -3279,8 +3015,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-25"
-  last-updated: "2019-01-25"
+  creation_date: "2019-01-25"
+  last_updated: "2019-01-25"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3303,8 +3039,8 @@ keps:
   approvers: ['@thockin', '@liggit']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-02-15"
-  last-updated: "2019-02-15"
+  creation_date: "2019-02-15"
+  last_updated: "2019-02-15"
   status: implementable
   see-also:
     - /keps/sig-node/20190130-node-os-arch-labels.md
@@ -3328,8 +3064,8 @@ keps:
   approvers: ['@andrewsykim']
   prr-approvers: []
   editor: '@feiskyer'
-  creation-date: "2019-07-22"
-  last-updated: "2021-01-26"
+  creation_date: "2019-07-22"
+  last_updated: "2021-01-26"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -3352,8 +3088,8 @@ keps:
   approvers: ['@brendanburns']
   prr-approvers: []
   editor: '@feiskyer'
-  creation-date: "2018-07-11"
-  last-updated: "2018-09-29"
+  creation_date: "2018-07-11"
+  last_updated: "2018-09-29"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3375,8 +3111,8 @@ keps:
   approvers: ['@brendanburns']
   prr-approvers: []
   editor: '@feiskyer'
-  creation-date: "2018-08-09"
-  last-updated: "2018-09-29"
+  creation_date: "2018-08-09"
+  last_updated: "2018-09-29"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3398,8 +3134,8 @@ keps:
   approvers: ['@feiskyer', '@khenidak', '@hogepodge', '@jagosan']
   prr-approvers: []
   editor: '@feiskyer'
-  creation-date: "2019-01-29"
-  last-updated: "2020-09-29"
+  creation_date: "2019-01-29"
+  last_updated: "2020-09-29"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3422,8 +3158,8 @@ keps:
   approvers: ['@andrewsykim', '@hogepodge', '@jagosan']
   prr-approvers: []
   editor: TBD
-  creation-date: yyyy-mm-dd
-  last-updated: yyyy-mm-dd
+  creation_date: yyyy-mm-dd
+  last_updated: yyyy-mm-dd
   status: provisional
   see-also:
     - KEP-1
@@ -3452,8 +3188,8 @@ keps:
   approvers: ['@andrewsykim', '@hogepodge', '@jagosan']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-06-20"
-  last-updated: "2018-06-20"
+  creation_date: "2018-06-20"
+  last_updated: "2018-06-20"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3474,8 +3210,8 @@ keps:
   reviewers: ['@andrewsykim', '@cheftako']
   approvers: ['@andrewsykim', '@cheftako', '@hogepodge', '@jagosan']
   prr-approvers: []
-  creation-date: "2020-02-25"
-  last-updated: "2020-02-25"
+  creation_date: "2020-02-25"
+  last_updated: "2020-02-25"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3496,8 +3232,8 @@ keps:
   reviewers: ['@andrewsykim', '@cheftako']
   approvers: ['@andrewsykim', '@cheftako']
   prr-approvers: []
-  creation-date: "2019-12-06"
-  last-updated: "2020-02-26"
+  creation_date: "2019-12-06"
+  last_updated: "2020-02-26"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3519,8 +3255,8 @@ keps:
   approvers: ['@timothysc']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-28"
-  last-updated: "2019-03-11"
+  creation_date: "2019-01-28"
+  last_updated: "2019-03-11"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3543,8 +3279,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2020-01-21"
-  last-updated: "2020-02-06"
+  creation_date: "2020-01-21"
+  last_updated: "2020-02-06"
   status: provisional
   see-also:
     - /keps/sig-cluster-lifecycle/addons/2492-Addons-via-Operators/
@@ -3568,8 +3304,8 @@ keps:
   approvers: ['@justinsb', '@timothysc']
   prr-approvers: []
   editor: '@justinsb'
-  creation-date: "2018-01-19"
-  last-updated: "2019-04-04"
+  creation_date: "2018-01-19"
+  last_updated: "2019-04-04"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3591,8 +3327,8 @@ keps:
   approvers: ['@roberthbailey', '@timothysc']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-10-22"
-  last-updated: "2018-10-22"
+  creation_date: "2018-10-22"
+  last_updated: "2018-10-22"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3613,8 +3349,8 @@ keps:
   reviewers: ['@neolit123']
   approvers: ['@timothysc', '@justinsb', '@neolit123']
   prr-approvers: []
-  creation-date: "2020-05-08"
-  last-updated: ""
+  creation_date: "2020-05-08"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3636,8 +3372,8 @@ keps:
   approvers: ['@justinsb', '@timothysc', '@luxas']
   prr-approvers: []
   editor: '@timothysc'
-  creation-date: "2019-06-11"
-  last-updated: "2019-07-05"
+  creation_date: "2019-06-11"
+  last_updated: "2019-07-05"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3660,8 +3396,8 @@ keps:
   approvers: ['@timothysc', '@luxas']
   prr-approvers: []
   editor: '@fabriziopandini'
-  creation-date: "2019-07-22"
-  last-updated: "2020-09-18"
+  creation_date: "2019-07-22"
+  last_updated: "2020-09-18"
   status: replaced
   stage: ""
   latest-milestone: ""
@@ -3684,8 +3420,8 @@ keps:
   approvers: ['@timothysc']
   prr-approvers: []
   editor: '@rosti'
-  creation-date: "2019-09-25"
-  last-updated: "2020-04-29"
+  creation_date: "2019-09-25"
+  last_updated: "2020-04-29"
   status: implementable
   see-also:
     - /keps/sig-cluster-lifecycle/kubeadm/0023-kubeadm-config.md
@@ -3710,8 +3446,8 @@ keps:
   reviewers: ['@fabriziopandini', '@rosti']
   approvers: ['@fabriziopandini']
   prr-approvers: []
-  creation-date: "2020-05-04"
-  last-updated: ""
+  creation_date: "2020-05-04"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-cluster-lifecycle/kubeadm/20190722-Advanced-configurations-with-kubeadm-(Kustomize).md
@@ -3737,8 +3473,8 @@ keps:
   reviewers: ['@fabriziopandini']
   approvers: ['@fabriziopandini']
   prr-approvers: []
-  creation-date: "2020-10-03"
-  last-updated: ""
+  creation_date: "2020-10-03"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.20
@@ -3760,8 +3496,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-04-12"
-  last-updated: "2018-04-12"
+  creation_date: "2018-04-12"
+  last_updated: "2018-04-12"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3783,8 +3519,8 @@ keps:
   approvers: ['@luxas', '@timothysc']
   prr-approvers: []
   editor: '@fabriziopandini'
-  creation-date: "2018-01-28"
-  last-updated: "2019-04-18"
+  creation_date: "2018-01-28"
+  last_updated: "2019-04-18"
   status: provisional
   see-also:
     - KEP 0004
@@ -3808,8 +3544,8 @@ keps:
   approvers: ['@luxas', '@timothysc']
   prr-approvers: []
   editor: '@fabriziopandini'
-  creation-date: "2018-03-16"
-  last-updated: "2019-01-22"
+  creation_date: "2018-03-16"
+  last_updated: "2019-01-22"
   status: provisional
   see-also:
     - KEP 0008
@@ -3833,8 +3569,8 @@ keps:
   approvers: ['@timothysc', '@luxas']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-22"
-  last-updated: "2019-04-18"
+  creation_date: "2019-01-22"
+  last_updated: "2019-04-18"
   status: implementable
   see-also:
     - KEP-0015
@@ -3859,8 +3595,8 @@ keps:
   approvers: ['@timothysc']
   prr-approvers: []
   editor: '@Klaven'
-  creation-date: "2019-02-15"
-  last-updated: "2019-02-27"
+  creation_date: "2019-02-15"
+  last_updated: "2019-02-27"
   status: implementable
   see-also:
     - https://github.com/kubernetes/enhancements/pull/843
@@ -3884,8 +3620,8 @@ keps:
       '@fabriziopandini', '@neolit123']
   approvers: ['@timothysc', '@neolit123', '@fabriziopandini']
   prr-approvers: []
-  creation-date: "2019-05-06"
-  last-updated: "2019-05-29"
+  creation_date: "2019-05-06"
+  last_updated: "2019-05-29"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3909,8 +3645,8 @@ keps:
   approvers: ['@timothysc', '@luxas']
   prr-approvers: []
   editor: '@fabriziopandini'
-  creation-date: "2019-09-16"
-  last-updated: "2019-09-28"
+  creation_date: "2019-09-16"
+  last_updated: "2019-09-28"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -3933,8 +3669,8 @@ keps:
   approvers: ['@timothysc']
   prr-approvers: []
   editor: '@fabriziopandini'
-  creation-date: "2019-11-25"
-  last-updated: "2019-11-25"
+  creation_date: "2019-11-25"
+  last_updated: "2019-11-25"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -3956,8 +3692,8 @@ keps:
   reviewers: ['@neolit123', '@fabriziopandini', '@randomvariable', '@vincepri', '@PushkarJ']
   approvers: ['@neolit123', '@fabriziopandini']
   prr-approvers: ['@ehashman']
-  creation-date: "2021-03-13"
-  last-updated: ""
+  creation_date: "2021-03-13"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -3984,8 +3720,8 @@ keps:
   approvers: ['@yujuhong', '@roberthbailey']
   prr-approvers: []
   editor: '@timothysc'
-  creation-date: "2017-10-20"
-  last-updated: "2018-01-23"
+  creation_date: "2017-10-20"
+  last_updated: "2018-01-23"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4007,8 +3743,8 @@ keps:
   approvers: ['@luxas', '@timothysc', '@fabriziopandini', '@neolit123']
   prr-approvers: []
   editor: '@neolit123'
-  creation-date: "2018-08-01"
-  last-updated: "2021-04-15"
+  creation_date: "2018-08-01"
+  last_updated: "2021-04-15"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -4031,8 +3767,8 @@ keps:
   approvers: ['@timothysc']
   prr-approvers: []
   editor: '@ksubrmnn'
-  creation-date: "2019-04-24"
-  last-updated: "2019-04-24"
+  creation_date: "2019-04-24"
+  last_updated: "2019-04-24"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -4055,8 +3791,8 @@ keps:
   approvers: ['@thockin', '@jbeda', '@deads2k']
   prr-approvers: []
   editor: '@luxas'
-  creation-date: "2018-07-07"
-  last-updated: "2018-08-10"
+  creation_date: "2018-07-07"
+  last_updated: "2018-08-10"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -4080,8 +3816,8 @@ keps:
   approvers: ['@thockin', '@jbeda', '@bgrant0607', '@smarterclayton']
   prr-approvers: []
   editor: '@luxas'
-  creation-date: "2018-11-27"
-  last-updated: "2018-12-10"
+  creation_date: "2018-11-27"
+  last_updated: "2018-12-10"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -4103,8 +3839,8 @@ keps:
   approvers: ['@parispittman', '@grodrigues3']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-04-03"
-  last-updated: "2018-04-17"
+  creation_date: "2018-04-03"
+  last_updated: "2018-04-17"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4126,8 +3862,8 @@ keps:
   reviewers: ['@alejandrox1', '@mrbobbytables', '@logicalhan', '@smourapina', '@thockin']
   approvers: ['@cblecker', '@nikhita']
   prr-approvers: []
-  creation-date: "2020-02-15"
-  last-updated: ""
+  creation_date: "2020-02-15"
+  last_updated: ""
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4150,8 +3886,8 @@ keps:
   approvers: ['@parispittman', '@mrbobbytables']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-02-19"
-  last-updated: "2021-01-04"
+  creation_date: "2018-02-19"
+  last_updated: "2021-01-04"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4173,8 +3909,8 @@ keps:
   approvers: ['@cblecker', '@derekwaynecarr', '@dims']
   prr-approvers: []
   editor: '@zacharysarah'
-  creation-date: "2019-10-20"
-  last-updated: "2019-10-20"
+  creation_date: "2019-10-20"
+  last_updated: "2019-10-20"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -4197,8 +3933,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-25"
-  last-updated: "2019-04-29"
+  creation_date: "2019-04-25"
+  last_updated: "2019-04-29"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -4220,8 +3956,8 @@ keps:
   approvers: ['@piosz', '@DirectXMan12']
   prr-approvers: []
   editor: '@DirectXMan12'
-  creation-date: "2018-11-06"
-  last-updated: "2019-03-21"
+  creation_date: "2018-11-06"
+  last_updated: "2019-03-21"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4245,8 +3981,8 @@ keps:
       '@mml', '@sttts', '@bsalamat', '@andrewsykim']
   approvers: ['@brancz']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2019-04-04"
-  last-updated: ""
+  creation_date: "2019-04-04"
+  last_updated: ""
   status: implemented
   see-also:
     - /keps/sig-instrumentation/1206-metrics-overhaul
@@ -4270,8 +4006,8 @@ keps:
   reviewers: ['@dims', '@mtaufen', '@derekwaynecarr']
   approvers: ['@brancz', '@thockin']
   prr-approvers: ['@wojtek-t', '@johnbelamaric']
-  creation-date: "2019-11-15"
-  last-updated: ""
+  creation_date: "2019-11-15"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -4293,8 +4029,8 @@ keps:
   reviewers: ['@brancz', '@dashpole', '@ehashman']
   approvers: ['@brancz', '@dashpole', '@ahg-g']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-07-30"
-  last-updated: ""
+  creation_date: "2020-07-30"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.21
@@ -4316,8 +4052,8 @@ keps:
   reviewers: ['@dashpole', '@brancz', '@ehashman', '@x13n']
   approvers: ['@ehashman']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-04-15"
-  last-updated: "2021-02-08"
+  creation_date: "2020-04-15"
+  last_updated: "2021-02-08"
   status: implementable
   stage: alpha
   latest-milestone: v1.21
@@ -4339,8 +4075,8 @@ keps:
   reviewers: ['@yastij', '@wojtek-t']
   approvers: ['@brancz']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-01-31"
-  last-updated: "2021-02-03"
+  creation_date: "2019-01-31"
+  last_updated: "2021-02-03"
   status: implementable
   stage: stable
   latest-milestone: v1.19
@@ -4363,8 +4099,8 @@ keps:
   reviewers: ['@logicalhan', '@caesarxuchao']
   approvers: ['@brancz', '@lavalamp']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2018-12-04"
-  last-updated: "2020-10-14"
+  creation_date: "2018-12-04"
+  last_updated: "2020-10-14"
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -4388,8 +4124,8 @@ keps:
   reviewers: ['@johnbelamaric', '@janetkuo', '@danwinship', '@deads2k', '@liggitt']
   approvers: ['@pmorie', '@thockin']
   prr-approvers: []
-  creation-date: "2020-03-30"
-  last-updated: ""
+  creation_date: "2020-03-30"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -4410,8 +4146,8 @@ keps:
   reviewers: ['@mikedanese']
   approvers: ['@pmorie']
   prr-approvers: []
-  creation-date: "2020-11-13"
-  last-updated: ""
+  creation_date: "2020-11-13"
+  last_updated: ""
   status: provisional
   see-also:
     - /keps/sig-multicluster/1645-multi-cluster-services-api
@@ -4434,8 +4170,8 @@ keps:
   reviewers: ['@bowei', '@thockin', '@wojtek-t', '@johnbelamaric']
   approvers: ['@bowei', '@thockin']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-06-01"
-  last-updated: "2021-05-04"
+  creation_date: "2019-06-01"
+  last_updated: "2021-05-04"
   status: implementable
   see-also:
     - https://docs.google.com/document/d/1sLJfolOeEVzK5oOviRmtHOHmke8qtteljQPaDUEukxY/edit#
@@ -4474,8 +4210,8 @@ keps:
   reviewers: ['@bowei', '@thockin', '@johnbelamaric', '@sdodson']
   approvers: ['@bowei', '@thockin']
   prr-approvers: []
-  creation-date: "2019-04-24"
-  last-updated: "2020-09-23"
+  creation_date: "2019-04-24"
+  last_updated: "2020-09-23"
   status: implemented
   see-also:
     - /keps/sig-network/0030-nodelocal-dns-cache.md
@@ -4499,8 +4235,8 @@ keps:
   reviewers: ['@thockin', '@dcbw', '@andrewsykim']
   approvers: ['@thockin']
   prr-approvers: []
-  creation-date: "2020-01-03"
-  last-updated: ""
+  creation_date: "2020-01-03"
+  last_updated: ""
   status: implementable
   replaces:
     - /keps/sig-network/ 20200103-mixed-protocol-lb
@@ -4526,8 +4262,8 @@ keps:
   reviewers: ['@aledbf']
   approvers: ['@caseydavenport', '@ligitt', '@thockin']
   prr-approvers: ['@wojtek-t']
-  creation-date: yyyy-mm-dd
-  last-updated: ""
+  creation_date: yyyy-mm-dd
+  last_updated: ""
   status: implemented
   replaces:
     - '/keps/sig-network/20190125-ingress-api-group.md '
@@ -4550,8 +4286,8 @@ keps:
   reviewers: ['@thockin', '@dcbw']
   approvers: ['@thockin', '@dcbw']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-12-27"
-  last-updated: "2021-02-05"
+  creation_date: "2019-12-27"
+  last_updated: "2021-02-05"
   status: implementable
   see-also:
     - /keps/sig-network/20190603-EndpointSlice-API.md
@@ -4580,8 +4316,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2020-02-04"
-  last-updated: "2020-5-01"
+  creation_date: "2020-02-04"
+  last_updated: "2020-5-01"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -4603,8 +4339,8 @@ keps:
   reviewers: ['@thockin', '@wojtek-t', '@smarterclayton']
   approvers: ['@thockin']
   prr-approvers: ['@johnbelamaric', '@wojtek-t']
-  creation-date: "2020-04-07"
-  last-updated: "2020-04-07"
+  creation_date: "2020-04-07"
+  last_updated: "2020-04-07"
   status: implementable
   see-also:
     - /keps/sig-network/1672-tracking-terminating-endpoints/README.md
@@ -4632,8 +4368,8 @@ keps:
   reviewers: ['@thockin', '@robscott', '@freehan', '@smarterclayton', '@wojtek-t']
   approvers: ['@thockin']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-04-07"
-  last-updated: ""
+  creation_date: "2020-04-07"
+  last_updated: ""
   status: implementable
   see-also:
     - /kep/sig-network/20190603-EndpointSlice-API.md
@@ -4661,8 +4397,8 @@ keps:
   reviewers: ['@thockin', '@cheftako', '@MorrisLaw']
   approvers: ['@thockin', '@andrewsykim']
   prr-approvers: []
-  creation-date: ""
-  last-updated: ""
+  creation_date: ""
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -4688,8 +4424,8 @@ keps:
   reviewers: ['@thockin', '@uablrek', '@rikatz']
   approvers: ['@thockin']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-06-21"
-  last-updated: ""
+  creation_date: "2020-06-21"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -4713,8 +4449,8 @@ keps:
   reviewers: ['@andrewsykim', '@abhiraut', '@danwinship']
   approvers: ['@thockin']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-10-08"
-  last-updated: ""
+  creation_date: "2020-10-08"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -4738,8 +4474,8 @@ keps:
   reviewers: [robscott, thockin]
   approvers: ['@thockin']
   prr-approvers: ['@johnbelamaric', '@wojtek-t']
-  creation-date: "2020-10-07"
-  last-updated: ""
+  creation_date: "2020-10-07"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-network/2004-topology-aware-subsetting
@@ -4768,8 +4504,8 @@ keps:
   reviewers: ['@IanColdwater', '@tabbysable']
   approvers: ['@tallclair', '@lavalamp']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-12-07"
-  last-updated: ""
+  creation_date: "2020-12-07"
+  last_updated: ""
   status: implemented
   see-also:
     - https://github.com/kubernetes/kubernetes/issues/97110
@@ -4794,8 +4530,8 @@ keps:
   reviewers: ['@danehans', '@cmluciano', '@hbagdi', '@bowei']
   approvers: ['@thockin']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-01-28"
-  last-updated: ""
+  creation_date: "2021-01-28"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-network/1453-ingress-api
@@ -4821,8 +4557,8 @@ keps:
   reviewers: ['@andrewsykim', '@bowei', '@dcbw', '@thockin']
   approvers: ['@thockin', '@wojtek-t']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2021-02-04"
-  last-updated: ""
+  creation_date: "2021-02-04"
+  last_updated: ""
   status: implementable
   see-also:
     - https://docs.google.com/document/d/1ZzUoFY1SrdjVefl7gVOJZJLt1I1LHttw8pcX95nlgMY/edit?usp=sharing
@@ -4857,8 +4593,8 @@ keps:
   approvers: ['@thockin']
   prr-approvers: []
   editor: '@bradhoekstra'
-  creation-date: "2018-10-17"
-  last-updated: "2018-11-12"
+  creation_date: "2018-10-17"
+  last_updated: "2018-11-12"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4880,8 +4616,8 @@ keps:
   approvers: ['@bowei', '@thockin']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-03-24"
-  last-updated: "2018-04-02"
+  creation_date: "2018-03-24"
+  last_updated: "2018-04-02"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4902,8 +4638,8 @@ keps:
   reviewers: []
   approvers: []
   prr-approvers: []
-  creation-date: ""
-  last-updated: ""
+  creation_date: ""
+  last_updated: ""
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4926,8 +4662,8 @@ keps:
   approvers: ['@thockin']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-11-04"
-  last-updated: "2019-11-27"
+  creation_date: "2019-11-04"
+  last_updated: "2019-11-27"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -4949,8 +4685,8 @@ keps:
   reviewers: ['@thockin', '@liggitt', '@aojea', '@sftim']
   approvers: ['@thockin']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-04-02"
-  last-updated: ""
+  creation_date: "2021-04-02"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -4976,8 +4712,8 @@ keps:
   approvers: ['@thockin', '@m1093782566']
   prr-approvers: []
   editor: '@thockin'
-  creation-date: "2018-03-21"
-  last-updated: "2019-06-27"
+  creation_date: "2018-03-21"
+  last_updated: "2019-06-27"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -5000,8 +4736,8 @@ keps:
   approvers: ['@thockin']
   prr-approvers: []
   editor: '@rajansandeep'
-  creation-date: "2018-03-21"
-  last-updated: "2018-05-18"
+  creation_date: "2018-03-21"
+  last_updated: "2018-05-18"
   status: provisional
   see-also:
     - https://github.com/kubernetes/community/pull/2167
@@ -5026,8 +4762,8 @@ keps:
   approvers: ['@thockin', '@bowei']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-18"
-  last-updated: "2019-02-11"
+  creation_date: "2019-01-18"
+  last_updated: "2019-02-11"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -5049,8 +4785,8 @@ keps:
   approvers: ['@lachie83', '@thockin']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-07-14"
-  last-updated: "2019-07-27"
+  creation_date: "2019-07-14"
+  last_updated: "2019-07-27"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -5071,8 +4807,8 @@ keps:
   reviewers: ['@thockin', '@johnbelamaric']
   approvers: ['@thockin']
   prr-approvers: []
-  creation-date: "2018-10-24"
-  last-updated: "2021-05-12"
+  creation_date: "2018-10-24"
+  last_updated: "2021-05-12"
   status: replaced
   stage: ""
   latest-milestone: v1.22
@@ -5095,8 +4831,8 @@ keps:
   approvers: ['@thockin']
   prr-approvers: ['@johnbelamaric']
   editor: TBD
-  creation-date: "2018-05-21"
-  last-updated: "2021-05-03"
+  creation_date: "2018-05-21"
+  last_updated: "2021-05-03"
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -5125,8 +4861,8 @@ keps:
   approvers: ['@thockin']
   prr-approvers: []
   editor: '@rajansandeep'
-  creation-date: "2018-05-18"
-  last-updated: "2018-05-18"
+  creation_date: "2018-05-18"
+  last_updated: "2018-05-18"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -5149,8 +4885,8 @@ keps:
   approvers: [thockin@, dchen1107@]
   prr-approvers: []
   editor: freehan@
-  creation-date: "2018-04-01"
-  last-updated: "2018-04-01"
+  creation_date: "2018-04-01"
+  last_updated: "2018-04-01"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -5171,8 +4907,8 @@ keps:
   reviewers: ['@danwinship', '@thockin']
   approvers: ['@thockin']
   prr-approvers: []
-  creation-date: "2018-06-14"
-  last-updated: ""
+  creation_date: "2018-06-14"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.20
@@ -5196,8 +4932,8 @@ keps:
   reviewers: ['@aledbf']
   approvers: ['@thockin', '@caseydavenport']
   prr-approvers: []
-  creation-date: "2018-01-25"
-  last-updated: "2018-04-25"
+  creation_date: "2018-01-25"
+  last_updated: "2018-04-25"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -5220,8 +4956,8 @@ keps:
   approvers: ['@thockin']
   prr-approvers: []
   editor: '@rosti'
-  creation-date: "2019-06-13"
-  last-updated: ""
+  creation_date: "2019-06-13"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -5244,8 +4980,8 @@ keps:
   approvers: ['@andrewsykim', '@bowei', '@thockin']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-23"
-  last-updated: "2020-01-06"
+  creation_date: "2019-04-23"
+  last_updated: "2020-01-06"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -5268,8 +5004,8 @@ keps:
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-09-06"
-  last-updated: "2019-06-04"
+  creation_date: "2018-09-06"
+  last_updated: "2019-06-04"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -5292,8 +5028,8 @@ keps:
       '@k82cn']
   approvers: ['@dchen1107', '@derekwaynecarr', '@ahg-g', '@mwielgus']
   prr-approvers: ['@ehashman']
-  creation-date: "2018-11-06"
-  last-updated: ""
+  creation_date: "2018-11-06"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-node/2273-kubelet-container-resources-cri-api-changes
@@ -5323,8 +5059,8 @@ keps:
   approvers: ['@liggitt', '@derekwaynecarr']
   prr-approvers: []
   editor: '@saschagrunert'
-  creation-date: "2019-07-17"
-  last-updated: ""
+  creation_date: "2019-07-17"
+  last_updated: ""
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -5347,8 +5083,8 @@ keps:
   approvers: ['@dawnchen']
   prr-approvers: ['@ehashman']
   editor: Derek Carr
-  creation-date: "2019-01-29"
-  last-updated: "2021-05-12"
+  creation_date: "2019-01-29"
+  last_updated: "2021-05-12"
   status: implemented
   stage: stable
   latest-milestone: v1.22
@@ -5371,8 +5107,8 @@ keps:
   approvers: ['@derekwaynecarr', '@dchen1107']
   prr-approvers: []
   editor: TBD
-  creation-date: "2020-02-05"
-  last-updated: "2020-05-11"
+  creation_date: "2020-02-05"
+  last_updated: "2020-05-11"
   status: implemented
   see-also:
     - /keps/sig-cloud-provider/20190729-building-without-in-tree-providers.md
@@ -5396,8 +5132,8 @@ keps:
   reviewers: ['@Random-Liu', '@yujuhong', '@mrunalp', '@derekwaynecarr']
   approvers: ['@Random-Liu', '@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2019-12-05"
-  last-updated: "2021-05-11"
+  creation_date: "2019-12-05"
+  last_updated: "2021-05-11"
   status: implementable
   replaces:
     - https://docs.google.com/document/d/1OE_QoInPlVCK9rMAx9aybRmgFiVjHpJCHI9LrfdNM_s/edit#heading=h.4yfjiw58o8d3
@@ -5421,8 +5157,8 @@ keps:
   reviewers: ['@Huang-Wei']
   approvers: [sig-node, sig-cloud-provider]
   prr-approvers: []
-  creation-date: "2020-01-14"
-  last-updated: "2020-03-23"
+  creation_date: "2020-01-14"
+  last_updated: "2020-03-23"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -5443,8 +5179,8 @@ keps:
   reviewers: ['@klueska', '@derekwaynecarr']
   approvers: ['@derekwaynecarr']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-02-03"
-  last-updated: "2021-05-11"
+  creation_date: "2020-02-03"
+  last_updated: "2021-05-11"
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -5469,8 +5205,8 @@ keps:
   reviewers: ['@thockin', '@marosset', '@dashpole', '@wojtek-t']
   approvers: ['@dchen1107']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-05-18"
-  last-updated: ""
+  creation_date: "2020-05-18"
+  last_updated: ""
   status: implementable
   see-also:
     - N/A
@@ -5500,8 +5236,8 @@ keps:
   reviewers: [dashpole, derekwaynecarr, dawnchen]
   approvers: [dashpole, derekwaynecarr, dawnchen]
   prr-approvers: [deads2k, johnbelamaric, wojtek-t]
-  creation-date: "2020-06-18"
-  last-updated: ""
+  creation_date: "2020-06-18"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-node/606-compute-device-assignment
@@ -5529,8 +5265,8 @@ keps:
   reviewers: [derekwaynecarr, liggitt, sftim]
   approvers: [derekwaynecarr, liggitt]
   prr-approvers: [deads2k]
-  creation-date: "2020-07-08"
-  last-updated: ""
+  creation_date: "2020-07-08"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-node/20191205-container-streaming-requests.md
@@ -5561,8 +5297,8 @@ keps:
   reviewers: ['@dashpole']
   approvers: ['@dashpole']
   prr-approvers: [johnbelamaric, '@johnbelamaric']
-  creation-date: "2020-09-03"
-  last-updated: ""
+  creation_date: "2020-09-03"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -5586,8 +5322,8 @@ keps:
   reviewers: ['@dchen1107', '@derekwaynecarr']
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: []
-  creation-date: "2020-09-08"
-  last-updated: ""
+  creation_date: "2020-09-08"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.20
@@ -5611,8 +5347,8 @@ keps:
   reviewers: ['@SergeyKanzhelev', '@karan']
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-09-21"
-  last-updated: ""
+  creation_date: "2020-09-21"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.21
@@ -5638,8 +5374,8 @@ keps:
       '@mrunalp', '@dims', '@sftim']
   approvers: [TBD]
   prr-approvers: ['@ehashman']
-  creation-date: "2019-06-04"
-  last-updated: ""
+  creation_date: "2019-06-04"
+  last_updated: ""
   status: implementable
   see-also:
     - https://github.com/kubernetes/enhancements/pull/1370
@@ -5667,8 +5403,8 @@ keps:
   reviewers: ['@derekwaynecarr', '@dchen1107']
   approvers: ['@derekwaynecarr', '@dchen1107']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-09-30"
-  last-updated: ""
+  creation_date: "2020-09-30"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -5690,8 +5426,8 @@ keps:
   reviewers: ['@derekwaynecarr', '@renaudwastaken', '@dashpole']
   approvers: ['@sig-node-leads']
   prr-approvers: []
-  creation-date: "2018-07-19"
-  last-updated: ""
+  creation_date: "2018-07-19"
+  last_updated: ""
   status: implementable
   see-also:
     - keps/sig-node/606-compute-device-assignment/
@@ -5718,8 +5454,8 @@ keps:
   reviewers: ['@dashpole', '@sjenning']
   approvers: ['@dashpole', '@sjenning', '@dchen1107']
   prr-approvers: [deads2k, johnbelamaric, wojtek-t, '@johnbelamaric']
-  creation-date: "2020-06-18"
-  last-updated: ""
+  creation_date: "2020-06-18"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-node/20190129-hugepages.md
@@ -5747,8 +5483,8 @@ keps:
   reviewers: [derekwaynecarr, dawnchen]
   approvers: [derekwaynecarr, dawnchen]
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2020-10-04"
-  last-updated: ""
+  creation_date: "2020-10-04"
+  last_updated: ""
   status: implementable
   stage: stable
   latest-milestone: v1.21
@@ -5772,8 +5508,8 @@ keps:
   approvers: ['@liggitt', '@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
   editor: TBD
-  creation-date: "2017-06-21"
-  last-updated: "2021-02-04"
+  creation_date: "2017-06-21"
+  last_updated: "2021-02-04"
   status: implementable
   stage: stable
   latest-milestone: v1.21
@@ -5795,8 +5531,8 @@ keps:
   reviewers: ['@cheftako', '@liggitt', '@derekwaynecarr']
   approvers: ['@cheftako', '@liggitt', '@derekwaynecarr']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-11-12"
-  last-updated: ""
+  creation_date: "2020-11-12"
+  last_updated: ""
   status: implementable
   replaces:
     - /keps/sig-cloud-provider/20191004-out-of-tree-credential-providers.md
@@ -5824,8 +5560,8 @@ keps:
   reviewers: ['@yujuhong', '@dchen1107', '@derekwaynecarr', '@dashpole', '@sjennning']
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: [johnbelamaric]
-  creation-date: "2020-09-14"
-  last-updated: ""
+  creation_date: "2020-09-14"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.20
@@ -5847,8 +5583,8 @@ keps:
   reviewers: ['@matthyx', '@dims', '@derekwaynecarr', '@smarterclayton']
   approvers: ['@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-01-07"
-  last-updated: ""
+  creation_date: "2021-01-07"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -5874,8 +5610,8 @@ keps:
   approvers: ['@yujuhong', '@dchen1107', '@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
   editor: Giuseppe Scrivano
-  creation-date: "2019-11-18"
-  last-updated: "2019-11-18"
+  creation_date: "2019-11-18"
+  last_updated: "2019-11-18"
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -5896,8 +5632,8 @@ keps:
   reviewers: ['@Random-Liu', '@yujuhong', '@PatrickLang']
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: ['@ehashman']
-  creation-date: "2019-10-25"
-  last-updated: ""
+  creation_date: "2019-10-25"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-node/1287-in-place-update-pod-resources
@@ -5925,8 +5661,8 @@ keps:
   approvers: ['@dchen1107']
   prr-approvers: ['@ehashman']
   editor: TBD
-  creation-date: "2021-01-27"
-  last-updated: "2021-05-12"
+  creation_date: "2021-01-27"
+  last_updated: "2021-05-12"
   status: implementable
   see-also:
     - TODO
@@ -5954,8 +5690,8 @@ keps:
   reviewers: ['@SergeyKanzhelev', '@anguslees', '@deads2k', '@sftim']
   approvers: ['@derekwaynecarr', '@dchen1107']
   prr-approvers: ['@deads2k']
-  creation-date: "2021-04-06"
-  last-updated: ""
+  creation_date: "2021-04-06"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -5980,8 +5716,8 @@ keps:
   reviewers: ['@derekwaynecarr', '@renaudwastaken']
   approvers: ['@sig-node-leads']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-02-02"
-  last-updated: ""
+  creation_date: "2021-02-02"
+  last_updated: ""
   status: implementable
   see-also:
     - keps/sig-node/606-compute-device-assignment/
@@ -6014,8 +5750,8 @@ keps:
   reviewers: ['@mrunalp', '@SergeyKanzhelev']
   approvers: ['@mrunalp', '@derekwaynecarr']
   prr-approvers: ['@deads2k']
-  creation-date: "2018-01-25"
-  last-updated: ""
+  creation_date: "2018-01-25"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.21
@@ -6041,8 +5777,8 @@ keps:
   reviewers: ['@mrunalp', '@tallclair']
   approvers: ['@mrunalp']
   prr-approvers: ['@deads2k']
-  creation-date: "2021-02-03"
-  last-updated: ""
+  creation_date: "2021-02-03"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -6068,8 +5804,8 @@ keps:
   approvers: ['@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
   editor: TBD
-  creation-date: "2021-03-14"
-  last-updated: ""
+  creation_date: "2021-03-14"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -6093,8 +5829,8 @@ keps:
   reviewers: ['@klueska']
   approvers: ['@sig-node-leads']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-04-14"
-  last-updated: ""
+  creation_date: "2021-04-14"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -6118,8 +5854,8 @@ keps:
   reviewers: ['@derekwaynecarr', '@SergeyKanzhelev']
   approvers: ['@derekwaynecarr']
   prr-approvers: ['@deads2k']
-  creation-date: "2021-05-11"
-  last-updated: ""
+  creation_date: "2021-05-11"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -6145,8 +5881,8 @@ keps:
   reviewers: ['@thockin', '@mrunalp', '@SergeyKanzhelev']
   approvers: ['@thockin']
   prr-approvers: ['@johnbelarmic', '@johnbelamaric']
-  creation-date: "2020-04-04"
-  last-updated: ""
+  creation_date: "2020-04-04"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -6168,8 +5904,8 @@ keps:
   reviewers: ['@yujuhong']
   approvers: ['@dchen1107', '@liggitt']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2019-02-12"
-  last-updated: ""
+  creation_date: "2019-02-12"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-cli/1441-kubectl-debug
@@ -6197,8 +5933,8 @@ keps:
   reviewers: ['@lavalamp', '@liggitt', '@thockin', '@dchen1107', '@alejandroEsc']
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2017-04-26"
-  last-updated: ""
+  creation_date: "2017-04-26"
+  last_updated: ""
   status: implemented (beta)
   stage: beta (deprecated)
   latest-milestone: v1.22
@@ -6220,8 +5956,8 @@ keps:
   reviewers: ['@sjenning', '@derekwaynecarr']
   approvers: ['@derekwaynecarr']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2018-04-30"
-  last-updated: "2021-04-08"
+  creation_date: "2018-04-30"
+  last_updated: "2021-04-08"
   status: implemented
   stage: stable
   latest-milestone: v1.21
@@ -6244,8 +5980,8 @@ keps:
   approvers: ['@dawnchen', '@derekwaynecarr']
   prr-approvers: []
   editor: Connor Doyle
-  creation-date: "2017-05-23"
-  last-updated: "2017-05-23"
+  creation_date: "2017-05-23"
+  last_updated: "2017-05-23"
   status: implementable
   replaces:
     - ' kubernetes/community/contributors/design-proposals/node/cpu-manager.md'
@@ -6270,8 +6006,8 @@ keps:
   approvers: ['@dchen1107']
   prr-approvers: []
   editor: N/A
-  creation-date: "2016-12-21"
-  last-updated: "2019-09-30"
+  creation_date: "2016-12-21"
+  last_updated: "2019-09-30"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -6293,8 +6029,8 @@ keps:
   reviewers: ['@dchen1107', '@derekwaynecarr', '@yujuhong']
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: []
-  creation-date: "2018-06-19"
-  last-updated: ""
+  creation_date: "2018-06-19"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.20
@@ -6322,8 +6058,8 @@ keps:
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-04-27"
-  last-updated: "2018-04-27"
+  creation_date: "2018-04-27"
+  last_updated: "2018-04-27"
   status: implemented
   see-also:
     - https://github.com/kubernetes/kubernetes/issues/14733
@@ -6351,8 +6087,8 @@ keps:
   reviewers: ['@thockin', '@derekwaynecarr', '@dchen1107', '@vishh']
   approvers: ['@sig-node-leads']
   prr-approvers: []
-  creation-date: "2018-07-19"
-  last-updated: ""
+  creation_date: "2018-07-19"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.20
@@ -6380,8 +6116,8 @@ keps:
   approvers: ['@dchen1107', '@derekwaynecarr']
   prr-approvers: []
   editor: Eric Ernst
-  creation-date: "2019-02-26"
-  last-updated: "2020-10-27"
+  creation_date: "2019-02-26"
+  last_updated: "2020-10-27"
   status: implemented (beta)
   stage: ""
   latest-milestone: ""
@@ -6405,8 +6141,8 @@ keps:
   approvers: ['@dawnchen', '@derekwaynecarr']
   prr-approvers: []
   editor: Louise Daly
-  creation-date: "2019-01-30"
-  last-updated: "2019-01-30"
+  creation_date: "2019-01-30"
+  last_updated: "2019-01-30"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -6428,8 +6164,8 @@ keps:
   reviewers: [DirectXMan12, tallclair]
   approvers: [dchen1107, brancz]
   prr-approvers: []
-  creation-date: "2019-01-24"
-  last-updated: "2019-02-21"
+  creation_date: "2019-01-24"
+  last_updated: "2019-02-21"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -6452,8 +6188,8 @@ keps:
   approvers: ['@enisoc', '@kow3ns', '@derekwaynecarr', '@dchen1107']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-05-14"
-  last-updated: "2020-06-24"
+  creation_date: "2018-05-14"
+  last_updated: "2020-06-24"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -6475,8 +6211,8 @@ keps:
   approvers: ['@dashpole', '@dchen1107']
   prr-approvers: []
   editor: Derek Carr
-  creation-date: "2019-01-29"
-  last-updated: "2019-03-05"
+  creation_date: "2019-01-29"
+  last_updated: "2019-03-05"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -6499,8 +6235,8 @@ keps:
   approvers: ['@dchen1107']
   prr-approvers: []
   editor: Yu-Ju Hong
-  creation-date: "2019-01-30"
-  last-updated: "2019-01-30"
+  creation_date: "2019-01-30"
+  last_updated: "2019-01-30"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -6523,8 +6259,8 @@ keps:
   approvers: ['@derekwaynecarr', '@thockin']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-02-21"
-  last-updated: "2020-09-16"
+  creation_date: "2019-02-21"
+  last_updated: "2020-09-16"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -6545,8 +6281,8 @@ keps:
   reviewers: ['@justaugustus']
   approvers: ['@justaugustus']
   prr-approvers: []
-  creation-date: "2020-09-22"
-  last-updated: ""
+  creation_date: "2020-09-22"
+  last_updated: ""
   status: implemented
   stage: ""
   latest-milestone: v1.20
@@ -6569,8 +6305,8 @@ keps:
   reviewers: ['@quinton_hoole']
   approvers: ['@justaugustus', '@spiffxp', '@bgrant', '@deads2k', '@dchen1107', '@pwittrock']
   prr-approvers: []
-  creation-date: "2020-01-22"
-  last-updated: ""
+  creation_date: "2020-01-22"
+  last_updated: ""
   status: implemented
   stage: ""
   latest-milestone: v1.19
@@ -6593,8 +6329,8 @@ keps:
   approvers: ['@tallclair']
   prr-approvers: []
   editor: yuwenma
-  creation-date: "2019-03-16"
-  last-updated: "2019-03-21"
+  creation_date: "2019-03-16"
+  last_updated: "2019-03-21"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -6617,8 +6353,8 @@ keps:
   approvers: ['@spiffxp', '@tpepper']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-02-19"
-  last-updated: "2019-02-27"
+  creation_date: "2019-02-19"
+  last_updated: "2019-02-27"
   status: provisional
   see-also:
     - https://github.com/kubernetes/enhancements/pull/858
@@ -6645,8 +6381,8 @@ keps:
   approvers: ['@dims']
   prr-approvers: []
   editor: '@brendandburns'
-  creation-date: "2019-01-23"
-  last-updated: "2019-01-31"
+  creation_date: "2019-01-23"
+  last_updated: "2019-01-31"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -6669,8 +6405,8 @@ keps:
   approvers: ['@calebamiles', '@tpepper', '@justaugustus']
   prr-approvers: []
   editor: '@saschagrunert'
-  creation-date: "2019-03-31"
-  last-updated: "2021-01-12"
+  creation_date: "2019-03-31"
+  last_updated: "2021-01-12"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -6692,8 +6428,8 @@ keps:
   reviewers: ['@AishSundar', '@BenTheElder', '@dims', '@listx']
   approvers: ['@thockin']
   prr-approvers: []
-  creation-date: "2018-09-05"
-  last-updated: "2018-11-14"
+  creation_date: "2018-09-05"
+  last_updated: "2018-11-14"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -6717,8 +6453,8 @@ keps:
   approvers: ['@BenTheElder', '@derekwaynecarr', '@dims', '@johnbelamaric', '@LappleApple',
       '@saschagrunert', '@spiffxp', '@stevekuznetsov']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-01-21"
-  last-updated: ""
+  creation_date: "2021-01-21"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -6739,8 +6475,8 @@ keps:
   reviewers: ['@ahg-g', '@Huang-Wei']
   approvers: ['@ahg-g', '@Huang-Wei']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-09-26"
-  last-updated: ""
+  creation_date: "2019-09-26"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-scheduling/895-pod-topology-spread
@@ -6766,8 +6502,8 @@ keps:
   reviewers: ['@Huang-Wei', '@liggitt']
   approvers: ['@Huang-Wei']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-01-14"
-  last-updated: ""
+  creation_date: "2020-01-14"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-scheduling/20180409-scheduling-framework.md
@@ -6797,8 +6533,8 @@ keps:
   reviewers: ['@ahg-g', '@Huang-Wei']
   approvers: ['@ahg-g', '@Huang-Wei']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-05-28"
-  last-updated: ""
+  creation_date: "2020-05-28"
+  last_updated: ""
   status: implemented
   replaces:
     - https://github.com/cofyc/community/blob/master/contributors/design-proposals/scheduling/scheduler_extender.md
@@ -6822,8 +6558,8 @@ keps:
   reviewers: ['@alculquicondor', '@Huang-Wei', '@ahg-g']
   approvers: ['@Huang-Wei', '@ahg-g']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-09-29"
-  last-updated: ""
+  creation_date: "2020-09-29"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -6849,8 +6585,8 @@ keps:
   reviewers: ['@alculquicondor', '@Huang-Wei', '@liggitt']
   approvers: ['@Huang-Wei', '@liggitt']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2021-01-11"
-  last-updated: ""
+  creation_date: "2021-01-11"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -6878,8 +6614,8 @@ keps:
   reviewers: ['@derekwaynecarr', '@davidopp']
   approvers: [TBD]
   prr-approvers: []
-  creation-date: "2019-10-11"
-  last-updated: ""
+  creation_date: "2019-10-11"
+  last_updated: ""
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -6900,8 +6636,8 @@ keps:
   reviewers: ['@alculquicondor', '@Huang-Wei']
   approvers: ['@Huang-Wei']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2021-02-08"
-  last-updated: ""
+  creation_date: "2021-02-08"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.22
@@ -6925,8 +6661,8 @@ keps:
   approvers: ['@liggitt']
   prr-approvers: []
   editor: Babak Salamat
-  creation-date: "2019-01-31"
-  last-updated: "2019-01-31"
+  creation_date: "2019-01-31"
+  last_updated: "2019-01-31"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -6949,8 +6685,8 @@ keps:
   approvers: [TBD, '@k82cn']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-10-12"
-  last-updated: "2019-10-12"
+  creation_date: "2019-10-12"
+  last_updated: "2019-10-12"
   status: implemented
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/scheduling/taint-node-by-condition.md
@@ -6975,8 +6711,8 @@ keps:
   approvers: ['@k82cn']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-10-11"
-  last-updated: "2019-10-11"
+  creation_date: "2019-10-11"
+  last_updated: "2019-10-11"
   status: implemented
   see-also:
     - https://docs.google.com/document/d/10Ch3dhD88mnHYTq9q4jtX3e9e6gpndC78g5Ea6q4JY4/edit#heading=h.dtxm02f9bgaw
@@ -6999,8 +6735,8 @@ keps:
   reviewers: ['@bsalamat', '@vishh']
   approvers: ['@bsalamat']
   prr-approvers: []
-  creation-date: "2018-07-03"
-  last-updated: "2019-01-03"
+  creation_date: "2018-07-03"
+  last_updated: "2019-01-03"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -7022,8 +6758,8 @@ keps:
   reviewers: ['@huang-wei', '@k82cn', '@ravisantoshgudimetla', '@ahg-g', '@alculquicondor']
   approvers: ['@ahg-g', '@alculquicondor', '@huang-wei', '@k82cn']
   prr-approvers: []
-  creation-date: "2018-04-09"
-  last-updated: ""
+  creation_date: "2018-04-09"
+  last_updated: ""
   status: implemented
   see-also:
     - /keps/sig-scheduling/1451-multi-scheduling-profiles
@@ -7049,8 +6785,8 @@ keps:
   reviewers: ['@Huang-Wei']
   approvers: ['@ahg-g', '@liggitt']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-05-08"
-  last-updated: ""
+  creation_date: "2020-05-08"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-scheduling/1451-multi-scheduling-profiles
@@ -7074,8 +6810,8 @@ keps:
   reviewers: ['@bsalamat', '@lavalamp', '@krmayankk', '@ahg-g', '@alculquicondor']
   approvers: ['@ahg-g', '@alculquicondor']
   prr-approvers: []
-  creation-date: "2019-02-21"
-  last-updated: ""
+  creation_date: "2019-02-21"
+  last_updated: ""
   status: implemented
   see-also:
     - /keps/sig-scheduling/1258-default-even-pods-spreading
@@ -7104,8 +6840,8 @@ keps:
   reviewers: [k82cn, wgliang, Huang-Wei]
   approvers: [bsalamat, Huang-Wei]
   prr-approvers: []
-  creation-date: "2019-03-17"
-  last-updated: ""
+  creation_date: "2019-03-17"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.19
@@ -7135,8 +6871,8 @@ keps:
   reviewers: ['@k82cn', '@Huang-Wei', '@bsalamat']
   approvers: ['@k82cn', '@bsalamat']
   prr-approvers: []
-  creation-date: "2019-03-11"
-  last-updated: "2019-05-01"
+  creation_date: "2019-03-11"
+  last_updated: "2019-05-01"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -7159,8 +6895,8 @@ keps:
   approvers: ['@bsalamat', '@derekwaynecarr']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-23"
-  last-updated: "2020-04-18"
+  creation_date: "2019-04-23"
+  last_updated: "2020-04-18"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -7182,8 +6918,8 @@ keps:
   reviewers: ['@ehashman']
   approvers: ['@dashpole']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-05-07"
-  last-updated: "2020-10-14"
+  creation_date: "2020-05-07"
+  last_updated: "2020-10-14"
   status: implementable
   stage: alpha
   latest-milestone: "1.19"
@@ -7206,8 +6942,8 @@ keps:
   reviewers: ['@BenTheElder', '@dashpole', '@ehashman', '@logicalhan', '@mikejoh']
   approvers: ['@dashpole', '@ehashman']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-08-12"
-  last-updated: ""
+  creation_date: "2020-08-12"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-instrumentation/1753-logs-sanitization
@@ -7233,8 +6969,8 @@ keps:
   approvers: [saad-ali]
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-24"
-  last-updated: "2020-04-16"
+  creation_date: "2019-01-24"
+  last_updated: "2020-04-16"
   status: implemented
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/volume-topology-scheduling.md
@@ -7260,8 +6996,8 @@ keps:
   reviewers: ['@yujuhong', '@lavalamp', '@msau42']
   approvers: ['@saad-ali']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2019-11-17"
-  last-updated: "2020-12-10"
+  creation_date: "2019-11-17"
+  last_updated: "2020-12-10"
   status: implemented
   stage: stable
   latest-milestone: v1.21
@@ -7286,8 +7022,8 @@ keps:
   reviewers: ['@msau42', '@jingxu97', '@liggitt', '@gnufied']
   approvers: ['@msau42', '@saad-ali', '@thockin', '@liggitt']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-05-12"
-  last-updated: ""
+  creation_date: "2020-05-12"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.21
@@ -7309,8 +7045,8 @@ keps:
   reviewers: ['@saad-ali', '@xing-yang', '@msau42']
   approvers: ['@saad-ali', '@msau42']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2019-09-19"
-  last-updated: ""
+  creation_date: "2019-09-19"
+  last_updated: ""
   status: implementable
   see-also:
     - https://docs.google.com/document/d/1WtX2lRJjZ03RBdzQIZY3IOvmoYiF5JxDX35-SsCIAfg
@@ -7338,8 +7074,8 @@ keps:
   reviewers: ['@thockin', '@saad-ali', '@smarterclayton', '@j-griffith']
   approvers: ['@thockin', '@saad-ali']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-12-03"
-  last-updated: "2021-05-13"
+  creation_date: "2019-12-03"
+  last_updated: "2021-05-13"
   status: implementable
   replaces:
     - /keps/sig-storage/20200120-generic-data-populators.md
@@ -7366,8 +7102,8 @@ keps:
   reviewers: ['@gnuified', '@msau42', '@xing-yang']
   approvers: ['@saad-ali']
   prr-approvers: []
-  creation-date: "2020-04-27"
-  last-updated: ""
+  creation_date: "2020-04-27"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.19
@@ -7392,8 +7128,8 @@ keps:
   reviewers: ['@jsafrane']
   approvers: ['@saad-ali']
   prr-approvers: ['@wojtek-t']
-  creation-date: "2020-04-17"
-  last-updated: ""
+  creation_date: "2020-04-17"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.21
@@ -7430,8 +7166,8 @@ keps:
       '@tallclair']
   approvers: ['@saad-ali']
   prr-approvers: []
-  creation-date: "2020-02-18"
-  last-updated: ""
+  creation_date: "2020-02-18"
+  last_updated: ""
   status: implementable
   see-also:
     - /keps/sig-storage/20200120-skip-permission-change.md
@@ -7459,8 +7195,8 @@ keps:
   reviewers: ['@msau42', '@saad-ali', '@thockin']
   approvers: ['@msau42', '@saad-ali', '@thockin']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-07-09"
-  last-updated: ""
+  creation_date: "2019-07-09"
+  last_updated: ""
   status: implemented
   see-also:
     - keps/sig-storage/1900-volume-snapshot-validation-webhook
@@ -7488,8 +7224,8 @@ keps:
   approvers: ['@saad-ali', '@xing-yang']
   prr-approvers: ['@deads2k']
   editor: TBD
-  creation-date: "2020-01-27"
-  last-updated: "2020-05-18"
+  creation_date: "2020-01-27"
+  last_updated: "2020-05-18"
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -7516,8 +7252,8 @@ keps:
   reviewers: ['@msau42', '@jsafrane', '@Huang-Wei', '@ahg-g']
   approvers: ['@msau42', '@jsafrane', '@Huang-Wei', '@ahg-g']
   prr-approvers: ['@wojtek-t', '@deads2k']
-  creation-date: "2020-06-03"
-  last-updated: ""
+  creation_date: "2020-06-03"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.20
@@ -7542,8 +7278,8 @@ keps:
   reviewers: ['@msau42', '@seh', '@jsafrane', '@mikedanese']
   approvers: ['@msau42', '@mikedanese']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-06-09"
-  last-updated: "2021-04-29"
+  creation_date: "2020-06-09"
+  last_updated: "2021-04-29"
   status: implementable
   stage: stable
   latest-milestone: v1.22
@@ -7569,8 +7305,8 @@ keps:
   reviewers: ['@msau42', '@liggit', '@xing-yang', '@mattcary']
   approvers: ['@msau42', '@liggit', '@xing-yang', '@mattcary']
   prr-approvers: []
-  creation-date: "2020-07-22"
-  last-updated: ""
+  creation_date: "2020-07-22"
+  last_updated: ""
   status: implemented
   see-also:
     - keps/sig-storage/177-volume-snapshot
@@ -7595,8 +7331,8 @@ keps:
   approvers: ['@saad-ali', '@xing-yang']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-11-25"
-  last-updated: "2020-09-10"
+  creation_date: "2019-11-25"
+  last_updated: "2020-09-10"
   status: provisional
   stage: ""
   latest-milestone: ""
@@ -7617,8 +7353,8 @@ keps:
   reviewers: ['@msau42', '@thockin']
   approvers: ['@msau42']
   prr-approvers: []
-  creation-date: "2020-05-08"
-  last-updated: ""
+  creation_date: "2020-05-08"
+  last_updated: ""
   status: implementable
   stage: stable
   latest-milestone: v1.20
@@ -7640,8 +7376,8 @@ keps:
   reviewers: ['@pohly', '@saad-ali', '@wojtek-t']
   approvers: ['@saad-ali', '@wojtek-t']
   prr-approvers: []
-  creation-date: "2019-02-04"
-  last-updated: ""
+  creation_date: "2019-02-04"
+  last_updated: ""
   status: implementable
   see-also:
     - https://github.com/kubernetes/community/blob/master/sig-scalability/slos/pod_startup_latency.md
@@ -7665,8 +7401,8 @@ keps:
   reviewers: ['@msau42', '@saad-ali']
   approvers: ['@msau42']
   prr-approvers: []
-  creation-date: "2019-02-04"
-  last-updated: ""
+  creation_date: "2019-02-04"
+  last_updated: ""
   status: implemented
   stage: stable
   latest-milestone: v1.14
@@ -7687,8 +7423,8 @@ keps:
   reviewers: ['@msau42', '@jsafrane']
   approvers: ['@msau42']
   prr-approvers: ['@deads2k']
-  creation-date: "2021-01-22"
-  last-updated: ""
+  creation_date: "2021-01-22"
+  last_updated: ""
   status: implementable
   see-also:
     - https://github.com/kubernetes/enhancements/issues/1682
@@ -7716,8 +7452,8 @@ keps:
   approvers: ['@saad-ali']
   prr-approvers: []
   editor: '@zshihang'
-  creation-date: "2018-05-15"
-  last-updated: "2020-04-29"
+  creation_date: "2018-05-15"
+  last_updated: "2020-04-29"
   status: replaced
   see-also:
     - https://github.com/kubernetes/community/blob/e3a6b8172fec9506b15520549e52be683e30cbfb/contributors/design-proposals/storage/svcacct-token-volume-source.md
@@ -7740,8 +7476,8 @@ keps:
   reviewers: [TBD, '@saad-ali', msau42]
   approvers: [TBD]
   prr-approvers: [TBD, '@ehashman']
-  creation-date: "2021-02-10"
-  last-updated: ""
+  creation_date: "2021-02-10"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -7770,8 +7506,8 @@ keps:
   approvers: ['@saad-ali']
   prr-approvers: []
   editor: TBD
-  creation-date: "2017-08-29"
-  last-updated: "2020-09-30"
+  creation_date: "2017-08-29"
+  last_updated: "2020-09-30"
   status: implementable
   stage: alpha
   latest-milestone: v1.19
@@ -7799,8 +7535,8 @@ keps:
   approvers: ['@saad-ali']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-10-08"
-  last-updated: "2020-03-09"
+  creation_date: "2019-10-08"
+  last_updated: "2020-03-09"
   status: implemented
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/raw-block-pv.md
@@ -7825,8 +7561,8 @@ keps:
   approvers: ['@childsb']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-25"
-  last-updated: "2019-02-01"
+  creation_date: "2019-01-25"
+  last_updated: "2019-02-01"
   status: implementable
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/grow-volume-size.md
@@ -7852,8 +7588,8 @@ keps:
   approvers: ['@bsalamat', '@msau42', '@thockin']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-08"
-  last-updated: "2019-04-08"
+  creation_date: "2019-04-08"
+  last_updated: "2019-04-08"
   status: implemented
   see-also:
     - https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/20190129-csi-migration.md
@@ -7877,8 +7613,8 @@ keps:
   reviewers: ['@saad-ali', '@jsafrane']
   approvers: ['@saad-ali', '@childsb']
   prr-approvers: []
-  creation-date: "2019-01-29"
-  last-updated: "2019-01-29"
+  creation_date: "2019-01-29"
+  last_updated: "2019-01-29"
   status: implementable
   see-also:
     - '[Kubernetes Volume expansion](https://github.com/kubernetes/enhancements/issues/284)'
@@ -7904,8 +7640,8 @@ keps:
   approvers: ['@msau42', '@saad-ali']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-24"
-  last-updated: "2020-04-16"
+  creation_date: "2019-01-24"
+  last_updated: "2020-04-16"
   status: implemented
   see-also:
     - n/a
@@ -7934,8 +7670,8 @@ keps:
   approvers: ['@liggitt', '@msau42']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-10-29"
-  last-updated: "2020-01-03"
+  creation_date: "2018-10-29"
+  last_updated: "2020-01-03"
   status: implemented
   see-also:
     - n/a
@@ -7964,8 +7700,8 @@ keps:
   approvers: ['@saad-ali']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-30"
-  last-updated: "2020-03-09"
+  creation_date: "2019-01-30"
+  last_updated: "2020-03-09"
   status: implemented
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/raw-block-pv.md
@@ -7990,8 +7726,8 @@ keps:
   reviewers: ['@msau42', '@jsafrane', '@liggitt']
   approvers: ['@thockin', '@saad-ali']
   prr-approvers: []
-  creation-date: "2019-01-22"
-  last-updated: "2019-08-30"
+  creation_date: "2019-01-22"
+  last_updated: "2019-08-30"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -8014,8 +7750,8 @@ keps:
   approvers: ['@saad-ali']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-29"
-  last-updated: "2020-03-09"
+  creation_date: "2019-01-29"
+  last_updated: "2020-03-09"
   status: implemented
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface-pod-information.md
@@ -8040,8 +7776,8 @@ keps:
   approvers: ['@saadali']
   prr-approvers: ['@wojtek-t']
   editor: '@davidz627'
-  creation-date: "2019-01-29"
-  last-updated: "2021-02-03"
+  creation_date: "2019-01-29"
+  last_updated: "2021-02-03"
   status: implementable
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/csi-migration.md
@@ -8078,8 +7814,8 @@ keps:
   approvers: ['@saad-ali']
   prr-approvers: []
   editor: TBD
-  creation-date: "2020-01-20"
-  last-updated: "2020-01-20"
+  creation_date: "2020-01-20"
+  last_updated: "2020-01-20"
   status: implementable
   see-also:
     - https://github.com/kubernetes/enhancements/issues/1682
@@ -8108,8 +7844,8 @@ keps:
   approvers: ['@saad-ali']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-29"
-  last-updated: "2020-03-09"
+  creation_date: "2019-01-29"
+  last_updated: "2020-03-09"
   status: implemented
   see-also:
     - https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/container-storage-interface-skip-attach.md
@@ -8134,8 +7870,8 @@ keps:
   approvers: ['@thockin', '@saad-ali', '@liyinan926']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-20"
-  last-updated: "2019-04-25"
+  creation_date: "2019-01-20"
+  last_updated: "2019-04-25"
   status: implementable
   see-also:
     - n/a
@@ -8164,8 +7900,8 @@ keps:
   approvers: ['@saad-ali', '@thockin']
   prr-approvers: []
   editor: '@j-griffith'
-  creation-date: "2018-11-11"
-  last-updated: "2020-03-09"
+  creation_date: "2018-11-11"
+  last_updated: "2020-03-09"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -8188,8 +7924,8 @@ keps:
   approvers: [TBD]
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-06-25"
-  last-updated: "2019-01-30"
+  creation_date: "2018-06-25"
+  last_updated: "2019-01-30"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -8212,8 +7948,8 @@ keps:
   approvers: ['@stevekuznetsov', '@cjwagner']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-06-04"
-  last-updated: "2019-07-24"
+  creation_date: "2019-06-04"
+  last_updated: "2019-07-24"
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -8235,8 +7971,8 @@ keps:
   reviewers: [dims, liggitt]
   approvers: [spiffxp, justaugustus]
   prr-approvers: [johnbelamaric, '@johnbelamaric']
-  creation-date: "2021-02-03"
-  last-updated: ""
+  creation_date: "2021-02-03"
+  last_updated: ""
   status: implementable
   stage: beta
   latest-milestone: v1.21
@@ -8258,8 +7994,8 @@ keps:
   reviewers: [BenTheElder]
   approvers: [spiffxp, saschagrunert]
   prr-approvers: [johnbelamaric, '@johnbelamaric']
-  creation-date: "2021-02-08"
-  last-updated: ""
+  creation_date: "2021-02-08"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.21
@@ -8281,8 +8017,8 @@ keps:
   reviewers: ['@spiffxp', '@justaugustus', '@alvaroaleman']
   approvers: ['@spiffxp', '@justaugustus', '@alvaroaleman']
   prr-approvers: []
-  creation-date: "2021-02-23"
-  last-updated: ""
+  creation_date: "2021-02-23"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: "0.0"
@@ -8305,8 +8041,8 @@ keps:
   approvers: ['@spiffxp', '@tpepper']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-01-18"
-  last-updated: "2019-03-06"
+  creation_date: "2019-01-18"
+  last_updated: "2019-03-06"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -8328,8 +8064,8 @@ keps:
   reviewers: ['@yujihong', '@derekwaynecarr', '@tallclair']
   approvers: ['@michmike']
   prr-approvers: []
-  creation-date: "2019-04-24"
-  last-updated: ""
+  creation_date: "2019-04-24"
+  last_updated: ""
   status: implementable
   stage: stable
   latest-milestone: v1.20
@@ -8351,8 +8087,8 @@ keps:
   approvers: ['@liggitt']
   prr-approvers: []
   editor: TBD
-  creation-date: "2019-04-18"
-  last-updated: "2019-04-18"
+  creation_date: "2019-04-18"
+  last_updated: "2019-04-18"
   status: implemented
   see-also:
     - keps/sig-windows/20181221-windows-group-managed-service-accounts-for-container-identity.md
@@ -8376,8 +8112,8 @@ keps:
   reviewers: ['@patricklang', '@michmike', '@jingxu97', '@yujuhong', '@msau42']
   approvers: ['@patricklang', '@msau42']
   prr-approvers: ['@deads2k']
-  creation-date: "2019-07-14"
-  last-updated: "2021-05-12"
+  creation_date: "2019-07-14"
+  last_updated: "2021-05-12"
   status: implementable
   stage: stable
   latest-milestone: v1.22
@@ -8400,8 +8136,8 @@ keps:
   approvers: ['@bgrant0607', '@michmike', '@patricklang', '@spiffxp']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-11-29"
-  last-updated: "2019-03-06"
+  creation_date: "2018-11-29"
+  last_updated: "2019-03-06"
   status: implemented
   stage: ""
   latest-milestone: ""
@@ -8424,8 +8160,8 @@ keps:
   approvers: ['@dchen1107']
   prr-approvers: []
   editor: '@patricklang'
-  creation-date: "2019-10-08"
-  last-updated: "2019-10-15"
+  creation_date: "2019-10-08"
+  last_updated: "2019-10-15"
   status: implementable
   see-also:
     - /keps/sig-windows/20190424-windows-cri-containerd.md
@@ -8449,8 +8185,8 @@ keps:
   reviewers: ['@jsturtevant', '@Random-Liu']
   approvers: ['@liggitt', '@yujuhong']
   prr-approvers: ['@deads2k']
-  creation-date: "2020-10-09"
-  last-updated: ""
+  creation_date: "2020-10-09"
+  last_updated: ""
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -8476,8 +8212,8 @@ keps:
   reviewers: ['@marosset', '@immuzz']
   approvers: ['@marosset']
   prr-approvers: ['@johnbelamaric']
-  creation-date: "2021-01-14"
-  last-updated: "2021-05-05"
+  creation_date: "2021-01-14"
+  last_updated: "2021-05-05"
   status: implementable
   stage: alpha
   latest-milestone: v1.22
@@ -8503,8 +8239,8 @@ keps:
   approvers: ['@liggitt', '@yujuhong', '@patricklang']
   prr-approvers: []
   editor: TBD
-  creation-date: "2018-11-29"
-  last-updated: "2020-03-20"
+  creation_date: "2018-11-29"
+  last_updated: "2020-03-20"
   status: implemented
   stage: ""
   latest-milestone: ""

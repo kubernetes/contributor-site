@@ -1,5 +1,5 @@
 <script src="/js/keps/kep_search.js"></script>
-<div >
+<div>
   <dir class="d-flex">
     <div class="col">
       <div class="input-group mt-2 col-md-12">
@@ -7,12 +7,14 @@
       </div>
     </div>
     <div class="col ml-auto">
-      <div class="input-group mx-auto mt-2 col-md-12" style="width: 400px;">
-        <label for="keps">Choose SIG:</label>
+      <div class="input-group mx-auto mt-2 col-md-12" style="">
+        <label for="keps" class="pr-3">Choose SIG:</label>
         <select class="custom-select" name="sig group" id="sig_group_select">
           <option selected="selected" value="all">Choose...</option>
           {{ range $data_sig := .Site.Data.sigs.sigs.sigs }}
-          <option value="{{$data_sig.dir}}">{{ printf "%s" $data_sig.name }}</option>
+          <option value="{{$data_sig.dir}}">
+            {{ printf "%s" $data_sig.dir }}
+          </option>
           {{ end }}
         </select>
       </div>
@@ -28,13 +30,31 @@
       </tr>
     </thead>
     <tbody>
-      {{ range $data := $.Site.Data.keps.keps_data.keps }}
+      {{ range $index, $data := sort $.Site.Data.keps.keps_data.keps "kep_number" }}
       <tr>
-        <td>{{ printf "%s" $data.kep_number }}</td>
         <td>
-          <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owning_sig}}/{{$data.name}}">{{ printf "%s" $data.title }}</a></td>
-        <td>{{ printf "%s" $data.owning_sig }}</td>
-        <td>{{ printf "%s" $data.authors }}</td>
+          <a href="https://kep.k8s.io/{{ $data.kep_number }}">
+            {{ printf "%s" $data.kep_number }}
+          </a>
+        </td>
+        <td>
+          <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owning_sig}}/{{$data.name}}#summary">
+            {{ printf "%s" $data.title }}
+          </a>
+        </td>
+        <td>
+          <a href=" https://github.com/kubernetes/community/blob/master/{{ $data.owning_sig }}/README.md">
+            {{ printf "%s" $data.owning_sig }}
+          </a>
+        </td>
+        <td>
+          {{ range $index, $author := $data.authors }}
+            {{- if $index -}}, {{ end -}}
+            <a href="https://github.com/{{ trim $author "@" }}">
+              <span class="github-user">@{{ trim $author "@" }}</span>
+            </a>
+          {{ end }}
+        </td>
       </tr>
       {{ end }}
     </tbody>
