@@ -8,10 +8,8 @@ menu:
     weight: 40
 ---
 
-<div>
-	Data from Enhancements tracking repository:
-	<a href="https://github.com/kubernetes/enhancements">kubernetes/enhancements</a>
-</div>
+These data come from the [k/enhancements](https://github.com/kubernetes/enhancements)
+repository on GitHub.
 
 <h3 class="mt-2 col-md-12">
 	KEP List:
