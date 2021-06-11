@@ -3,7 +3,7 @@
   <dir class="d-flex">
     <div class="col">
       <div class="input-group mt-2 col-md-12">
-        <input type="text" name="search" id="keps_search" class="form-control" placeholder="Search KEP(s) by keyword" />
+        <input type="text" name="search" id="keps_search" class="form-control" placeholder="Search KEP(s) by keyword/release like v1.21 or year" />
       </div>
     </div>
     <div class="col ml-auto">
@@ -23,10 +23,12 @@
   <table id="keps_table" class="table table-bordered table-hover mt-2 col-md-12">
     <thead>
       <tr>
-        <th scope="col">KEP Number</th>
-        <th scope="col">Title</th>
-        <th scope="col">SIG</th>
-        <th scope="col">Author</th>
+        <th scope="col" class="col-md-2">KEP Number</th>
+        <th scope="col" class="col-md-2">Title</th>
+        <th scope="col" class="col-md-1">SIG</th>
+        <th scope="col" class="col-md-1">Author</th>
+        <th scope="col" class="col-md-2">Create & Last Update</th>
+        <th scope="col" class="col-md-2">Milestone</th>
       </tr>
     </thead>
     <tbody>
@@ -54,6 +56,39 @@
               <span class="github-user">@{{ trim $author "@" }}</span>
             </a>
           {{ end }}
+        </td>
+        <td>
+          <span class="row pl-2">
+            <b>Created on:</b>
+            {{ if $data.creation_date }}
+              {{ $data.creation_date }}
+            {{ else }}
+              NA
+            {{ end }}
+          </span>
+          <span class="row pl-2">
+            <b>Last Updated:</b>
+            {{ if $data.last_updated }}
+              {{ $data.last_updated }}
+            {{ else }}
+              NA
+            {{ end }}
+          </span>
+        </td>
+        <td>
+          <ul class="list-unstyled">
+          {{range $key, $value := $data.milestone}}
+            <li>{{$key}}:
+              <b>
+                {{ if $value }}
+                  {{$value}}
+                {{ else }}
+                  NA
+                {{ end }}
+              </b>
+            </li>
+          {{end}}
+          </ul>
         </td>
       </tr>
       {{ end }}
