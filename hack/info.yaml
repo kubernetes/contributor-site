@@ -1,0 +1,11 @@
+sources:
+- repo: https://github.com/kubernetes/community.git
+  files:
+  - src: "/contributors/guide/README.md"
+    dest: "/docs/guide/_index.md"
+  # - src: "/contributors/guide/*"
+  #   dest: "/docs/guide"
+  # - src: "/events/(community-meeting.md|office-hours.md)"
+  #   dest: "/events"
+  - src: "/mentoring/programs/meet-our-contributors.md"
+    dest:  "/events/meet-our-contributors.md"
