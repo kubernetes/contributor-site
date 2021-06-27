@@ -1,0 +1,3 @@
+# select files from https://git.k8s.io/community/sigs.yaml
+!.gitignore
+sigs.yaml

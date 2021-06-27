@@ -32,65 +32,69 @@
       </tr>
     </thead>
     <tbody>
-      {{ range $index, $data := sort $.Site.Data.keps.keps_data.keps "kep_number" }}
-      <tr>
-        <td>
-          <a href="https://kep.k8s.io/{{ $data.kep_number }}">
-            {{ printf "%s" $data.kep_number }}
-          </a>
-        </td>
-        <td>
-          <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owning_sig}}/{{$data.name}}#summary">
-            {{ printf "%s" $data.title }}
-          </a>
-        </td>
-        <td>
-          <a href=" https://github.com/kubernetes/community/blob/master/{{ $data.owning_sig }}/README.md">
-            {{ printf "%s" $data.owning_sig }}
-          </a>
-        </td>
-        <td>
-          {{ range $index, $author := $data.authors }}
-            {{- if $index -}}, {{ end -}}
-            <a href="https://github.com/{{ trim $author "@" }}">
-              <span class="github-user">@{{ trim $author "@" }}</span>
-            </a>
-          {{ end }}
-        </td>
-        <td>
-          <span class="row pl-2">
-            <b>Created on:</b>
-            {{ if $data.creation_date }}
-              {{ $data.creation_date }}
-            {{ else }}
-              NA
-            {{ end }}
-          </span>
-          <span class="row pl-2">
-            <b>Last Updated:</b>
-            {{ if $data.last_updated }}
-              {{ $data.last_updated }}
-            {{ else }}
-              NA
-            {{ end }}
-          </span>
-        </td>
-        <td>
-          <ul class="list-unstyled">
-          {{range $key, $value := $data.milestone}}
-            <li>{{$key}}:
-              <b>
-                {{ if $value }}
-                  {{$value}}
+      {{ range $index, $data := sort .Site.Data.keps.keps "kep_number" }}
+      <!-- Displaying only if KEP number is
+           present and not the "0000"in metadata -->
+        {{ if and ($data.kep_number) (not (in $data.kep_number 0000)) }}
+          <tr>
+            <td>
+              <a href="https://kep.k8s.io/{{ $data.kep_number }}">
+                {{ printf "%s" $data.kep_number }}
+              </a>
+            </td>
+            <td>
+              <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owningSig}}/{{$data.name}}#summary">
+                {{ printf "%s" $data.title }}
+              </a>
+            </td>
+            <td>
+              <a href=" https://github.com/kubernetes/community/blob/master/{{ $data.owningSig }}/README.md">
+                {{ printf "%s" $data.owningSig }}
+              </a>
+            </td>
+            <td>
+              {{ range $index, $author := $data.authors }}
+              {{- if $index -}}, {{ end -}}
+              <a href="https://github.com/{{ trim $author "@" }}">
+                <span class="github-user">@{{ trim $author "@" }}</span>
+              </a>
+              {{ end }}
+            </td>
+            <td>
+              <span class="row pl-2">
+                <b>Created on:</b>
+                {{ if $data.creationDate }}
+                  {{ $data.creationDate }}
                 {{ else }}
                   NA
                 {{ end }}
-              </b>
-            </li>
-          {{end}}
-          </ul>
-        </td>
-      </tr>
+              </span>
+              <span class="row pl-2">
+                <b>Last Updated:</b>
+                {{ if $data.lastUpdated }}
+                  {{ $data.lastUpdated }}
+                {{ else }}
+                  NA
+                {{ end }}
+              </span>
+            </td>
+            <td>
+              <ul class="list-unstyled">
+                {{range $key, $value := $data.milestone}}
+                  <li>{{$key}}:
+                    <b>
+                      {{ if $value }}
+                        {{$value}}
+                      {{ else }}
+                        NA
+                      {{ end }}
+                    </b>
+                  </li>
+                {{end}}
+              </ul>
+            </td>
+          </tr>
+        {{ end }}
       {{ end }}
     </tbody>
   </table>

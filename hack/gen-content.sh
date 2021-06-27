@@ -24,7 +24,11 @@ readonly CONTENT_DIR="$REPO_ROOT/content/en"
 readonly TEMP_DIR="$REPO_ROOT/_tmp"
 readonly EXTERNAL_SOURCES="${EXTERNAL_SOURCES:-"$REPO_ROOT/external-sources"}"
 readonly HEADER_TMPLT="---\ntitle: __TITLE__\n---\n"
-
+readonly SIG_YAML_REPO="community"
+readonly SIG_YAML_PATH_IN_REPO="sigs.yaml"
+readonly SIG_YAML_DATA_PATH_IN_HUGO="${REPO_ROOT}/data/sigs/sigs.yaml"
+readonly ENHANCEMENTS_REPO="enhancements"
+readonly KEPS_YAML_DATA_PATH_IN_HUGO="${REPO_ROOT}/data/keps/"
 
 cd "$REPO_ROOT"
 
@@ -67,12 +71,12 @@ find_md_files() {
 
 # process_content
 # Updates the links within a markdown file so that they will resolve within
-# the Hugo generated site. If the link is a file reference, it is expanded 
+# the Hugo generated site. If the link is a file reference, it is expanded
 # so the path is from the root of the git repo. The links are then passed
 # to gen_link which will determine if the link references content within one
 # of the sources being synced to the content directory. If so, update the link
 # with the path that it will be after being copied over. This includes removing
-# the extension and if the file is a README, trim it (README's function as the 
+# the extension and if the file is a README, trim it (README's function as the
 # root page.) If the link references something not within the content that is
 # being copied over, it will be expanded to the full github url.
 # Example:
@@ -85,11 +89,11 @@ find_md_files() {
 #   ../../sig-list.md -> https://github.com/kubernetes/community/blob/master/sig-list.md
 #   /contributors/devel/README.md -> https://github.com/kubernetes/community/blob/master/contributors/devel/README.md
 #   http://git.k8s.io/cotributors/guide/collab.md -> /guide/collab
-# 
+#
 # Args:
 # $1 - Full path to markdown file to be processed
 # $2 - Full file system path to root of cloned git repo
-# $3 - srcs array name 
+# $3 - srcs array name
 # $4 - dest array name
 process_content() {
   local inline_link_matches=()
@@ -166,7 +170,7 @@ expand_path() {
 # Generates the correct link for the destination location. If it is a url that
 # references content that will be synced, convert it to a path.
 # $1 - Link String
-# $2 - Full file system path to root of cloned git repo 
+# $2 - Full file system path to root of cloned git repo
 # $3 - Array of sources (passed by reference)
 # $4 - Array of destinations (passed by reference)
 gen_link() {
@@ -271,12 +275,26 @@ insert_header() {
   echo "Header inserted into: $1"
 }
 
+copy_file() {
+  echo  "moving file $1 to $2"
+  mv "$1" "$2"
+}
+
+generate_keps() {
+  echo "go mod tidy"
+  cd "${1}" && go mod tidy
+  echo "go run ${1}/cmd/kepctl/main.go query and putting JSON in data folder"
+  go run "${1}/cmd/kepctl/main.go" query --output json > "${2}/keps.json"
+  # Remove this once the PR is merged:
+  # https://github.com/kubernetes/enhancements/pull/2801
+  sed -i -e 's/kep-number/kep_number/g'  "${2}/keps.json"
+}
 
 main() {
   mkdir -p "$TEMP_DIR"
 
   local repos=() # array of kubernetes repos containing content to be synced
-  local srcs=() # array of sources of content to be synced 
+  local srcs=() # array of sources of content to be synced
   local dsts=() # array of destinations for the content to be synced to
 
   # Files within the EXTERNAL_SOURCES directory should be csv formatted with the
@@ -286,7 +304,7 @@ main() {
   # content directory.
   # Example:
   # file-path: external-sources/kubernetes/community
-  # "/contributors/guide", "/guide" 
+  # "/contributors/guide", "/guide"
 
   shopt -s globstar dotglob
   for repo in "${EXTERNAL_SOURCES}"/**; do
@@ -300,12 +318,22 @@ main() {
   for repo in "${repos[@]}"; do
     local org
     org="$(basename "$(dirname "$repo")")"
+    repo_name="$(basename "$repo")"
     # shellcheck disable=SC2094 # false detection on read/write to $repo at the same time
     while IFS=, read -re src dst || [ -n "$src" ]; do
       srcs+=("/$org/$(basename "$repo")$(echo "$src" | sed -e 's/^\"//g;s/\"$//g')")
       dsts+=("$(echo "$dst" | sed -e 's/^\"//g;s/\"$//g')")
     done < "$repo"
-    init_src "https://github.com/$org/$(basename "$repo").git" "${TEMP_DIR}/$org/$(basename "$repo")"
+    init_src "https://github.com/$org/$repo_name.git" "${TEMP_DIR}/$org/$repo_name"
+    if [[ $repo_name == "${SIG_YAML_REPO}" ]]; then
+      # Copy the required sigs.yaml file in /data/sigs/sigs.yaml
+      copy_file "${TEMP_DIR}/$org/$repo_name/${SIG_YAML_PATH_IN_REPO}" "${SIG_YAML_DATA_PATH_IN_HUGO}"
+    fi
+
+    if [[ $repo_name == "${ENHANCEMENTS_REPO}" ]]; then
+      generate_keps "${TEMP_DIR}/$org/$repo_name" "${KEPS_YAML_DATA_PATH_IN_HUGO}"
+    fi
+
   done
 
   # Duplicate of the srcs array used to reference the file paths of the source
@@ -359,7 +387,7 @@ main() {
     elif [[ -f "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
       rsync -av "${TEMP_DIR}${renamed_srcs[i]}" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
     fi
-  done 
+  done
   echo "Content synced."
 }
 
