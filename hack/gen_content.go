@@ -51,7 +51,6 @@ func main() {
 
 	for _, source := range info.Sources {
 		repo := source.Repo
-		// TODO: replace hard coded "community" with some variable
 		folderName, _ := GetStringInBetweenTwoString(repo, "https://github.com/kubernetes/", ".git")
 		concatenatedPath := "./_tmp/" + folderName
 		gitClone := exec.Command("git", "clone", repo, concatenatedPath)
@@ -114,12 +113,13 @@ func GetAllLinks(markdown string) (string, map[string]string) {
 		}
 
 		if !stop {
-			// Make regex
 			matches := re.FindAllStringSubmatch(scanner.Text(), -1)
 			matches2 := re2.FindAllStringSubmatch(scanner.Text(), -1)
-			// Only apply regex if there are links and the link does not start with #
+
 			if matches != nil {
+				// for ignoring internal links
 				if !strings.HasPrefix(matches[0][2], "#") {
+					// TODO: add logic to build hugo link
 					markdown = strings.Replace(markdown, matches[0][2], "hugo-url", -1)
 					m[matches[0][1]] = matches[0][2]
 				}
