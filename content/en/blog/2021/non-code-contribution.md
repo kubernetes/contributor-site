@@ -1,7 +1,7 @@
 ---
 title: "How to choose a SIG as a non-code Kubernetes contributor"
 linkTitle: "How to choose a SIG as a non-code Kubernetes contributor"
-date: 2021-02-21
+date: 2021-07-09
 ---
 By [Chris Short](https://twitter.com/ChrisShort)
 
