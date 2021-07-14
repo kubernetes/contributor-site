@@ -13,7 +13,8 @@ description: >
 ### About
 
 The North America Summit will take place October 11th, in Los Angeles, California
-alongside [KubeCon] at the [JW Marriott LA Live].
+alongside <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon</a>
+at the <a href="https://www.marriott.com/hotels/travel/laxjw-jw-marriott-los-angeles-la-live/" rel="noopener noreferrer" target="_blank">JW Marriott LA Live</a>.
 
 
 It will be a fully hybrid event enabling those that cannot attend in person to
@@ -23,7 +24,9 @@ our contributors to break off and hold smaller focused discussions.
 
 This page will be updated with more information as it develops. If you have
 questions or comments, please reach out to the Summit Staff by emailing
-community@kubernetes.io or asking in the [`#contributor-summit`] slack channel.
+community@kubernetes.io or asking in the
+<a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
+slack channel.
 
 ### Registration
 
@@ -35,7 +38,4 @@ the regular Contributor comms channels (kubernetes-dev, twitter etc.).
 Attendees agree to abide by Kubernetes [Code of Conduct]. More information on
 how to report an event will be posted in the future.
 
-[Kubecon]: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/
-[JW Marriott LA Live]: https://www.marriott.com/hotels/travel/laxjw-jw-marriott-los-angeles-la-live/
-[`#contributor-summit`]: https://kubernetes.slack.com/messages/contributor-summit
-[Code of Conduct]: /resources/code-of-conduct
+[Code of Conduct]: /community/code-of-conduct
