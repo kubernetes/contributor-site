@@ -48,6 +48,7 @@ func main() {
 
 	var entries []entry
 	for _, source := range info.Sources {
+		// TODO: add logic to handle more orgs
 		repoName, _ := GetStringInBetweenTwoString(source.Repo, "https://github.com/kubernetes/", ".git")
 		orgName := "kubernetes"
 		for _, file := range source.Files {
@@ -60,7 +61,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = os.Mkdir("./_out", 0755)
+	err = os.Mkdir("./contentNew", 0755)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -77,7 +78,7 @@ func main() {
 
 		for _, file := range source.Files {
 			copyFrom := concatenatedPath + file.Src
-			copyTo := "./_out/" + folderName + file.Dest
+			copyTo := "./contentNew/" + folderName + file.Dest
 			Copy(copyFrom, copyTo, entries)
 		}
 	}
@@ -91,8 +92,7 @@ func Copy(src, dst string, entries []entry) error {
 		return err
 	}
 
-	mkdown, mp := GetAllLinks(string(input), src, entries)
-	PrettyPrint(mp)
+	mkdown := GetAllLinks(string(input), src, entries)
 
 	dir, _ := filepath.Split(dst)
 	err = os.MkdirAll(dir, os.ModePerm)
@@ -112,11 +112,11 @@ func Copy(src, dst string, entries []entry) error {
 	return nil
 }
 
-func GetAllLinks(markdown string, src string, entries []entry) (string, map[string]string) {
-	// Holds all the links and their corresponding values
-	m := make(map[string]string)
+// src is something like "./_tmp/community/contributors/guide/README.md"
+func GetAllLinks(markdown string, src string, entries []entry) string {
 
 	// Regex to extract link for [text](./something.md)
+	// TODO: change this regex to return only the () and not both [] and ()
 	re := regexp.MustCompile(`\[([^\]]*)\]\(([^)]*)\)`)
 	// Regex to extract link for [text]: ./something.md
 	re2 := regexp.MustCompile(`^\[.*\]:\s(\S+)$`)
@@ -125,6 +125,7 @@ func GetAllLinks(markdown string, src string, entries []entry) (string, map[stri
 	stop := false
 	// Scans line by line
 	for scanner.Scan() {
+		// TODO: improve logic to stop only when same number of "`" are found
 		if strings.HasPrefix(scanner.Text(), "```") {
 			stop = !stop
 		}
@@ -136,7 +137,6 @@ func GetAllLinks(markdown string, src string, entries []entry) (string, map[stri
 			if matches != nil {
 				// for ignoring internal links
 				if !strings.HasPrefix(matches[0][2], "#") {
-					// TODO: add logic to build hugo link
 					foundLink := matches[0][2]
 					var replacementLink string
 					if strings.HasPrefix(foundLink, "http") {
@@ -144,54 +144,72 @@ func GetAllLinks(markdown string, src string, entries []entry) (string, map[stri
 					} else {
 						replacementLink = ExpandPath(foundLink, src)
 					}
-					replacementLink = GenLink(replacementLink, entries)
-					markdown = strings.Replace(markdown, matches[0][2], "hugo-url", -1)
-					m[matches[0][1]] = matches[0][2]
+					replacementLink = GenLink(replacementLink, entries, src)
+					markdown = strings.Replace(markdown, matches[0][2], replacementLink, -1)
 				}
 			}
 			if matches2 != nil {
 				if !strings.HasPrefix(matches2[0][1], "#") {
 					markdown = strings.Replace(markdown, matches2[0][1], "hugo-url", -1)
-					m[matches2[0][1]] = matches2[0][1]
 				}
 			}
 		}
 	}
 	//fmt.Println(markdown)
-	return markdown, m
+	return markdown
 }
 
-func GenLink(replacementLink string, entries []entry) string {
+func GenLink(replacementLink string, entries []entry, src string) string {
 	// if it is a web link
 	if strings.HasPrefix(replacementLink, "http") {
-		// if it belongs to one of the k8s urls check if it's present in the hugo site and replace
-		// TODO: add more checks here  for now let's just work with "http://github.com/kubernetes"
+		// if it belongs to one of the k8s urls, replace if it will be present on the hugo site
+		// TODO: add more checks here for now let's just work with "http://github.com/kubernetes"
 
+		// for example replacementLink = https://github.com/kubernetes/community/blob/master/mentoring/programs/meet-our-contributors.md
 		if strings.Contains(replacementLink, "http://github.com/kubernetes") {
 			for _, entry := range entries {
-				// TODO: remove blob tree master from the replacementLink else Contains won't work
+				// one entry would be "/mentoring/programs/meet-our-contributors.md"
+				// ?? TODO: remove blob tree master from the replacementLink else Contains won't work
 				if strings.Contains(replacementLink, entry.src) {
+					// return "/events/meet-our-contributors.md"
 					return entry.dest
 				}
 			}
 		}
+
+		// if it's not one of the k8s urls just let it be
+		// for example replacement link "youtube.com"
+
 	} else {
-		// if its not an external url check if present on hugo side if yes then replace with that else generate an external url
+		// if its not an external url check if it's present on hugo site
+
+		// if yes then replace with that
+		// for example replacement link "/contributors/guide/abc.md"
 		for _, entry := range entries {
 			if replacementLink == entry.src {
 				return entry.dest
 			}
 		}
-		// add logic for generating external link now
-
+		// else generate an external url
+		// for example replacement link "/mentoring/programs/shadow-roles.md"
+		// src is something like "./_tmp/community/contributors/guide/README.md"
+		repo := strings.SplitAfter(src, "/")[2]
+		for _, entry := range entries {
+			if entry.repo == repo {
+				return "http://github.com/" + entry.org + "/" + entry.repo + replacementLink
+			}
+		}
 	}
 	return replacementLink
 }
 
+// foundLink is something like ../../abc.md
+// src is something like "./_tmp/community/contributors/guide/README.md"
 func ExpandPath(foundLink string, src string) string {
 	// if ./a.md or /a.md or a.md then it's in same dir as src
 	if filepath.Dir(foundLink) == "." || filepath.Dir(foundLink) == "/" {
-		return filepath.Dir(src) + filepath.Base(foundLink)
+		// return "./_tmp/community/contributors/guide" + "abc.md"
+		return filepath.Dir(src) + "/" + filepath.Base(foundLink)
 	}
 
 	// if foundLink was ../../abc.md and src was /_temp/community/something/contributors/guide/README.md
@@ -200,20 +218,22 @@ func ExpandPath(foundLink string, src string) string {
 	fileName := filepath.Base(foundLink)
 	foundLink = filepath.Dir(foundLink)
 
-	// foundLink is now ../.. src is now  /_temp/community/something/contributors/guide and fileName is abc.md
+	// src is now "./_tmp/community/contributors/guide"
+	// fileName is now abc.md
+	// foundLink is now ../..
 
 	linkSliceLen := len(strings.SplitAfter(foundLink, "/"))
 	srcSlice := strings.SplitAfter(src, "/")
 
-	// linkSliceLen is now 2 srcSlice is [_temp,community,something,contributors,guide]
+	// linkSliceLen is now 2 srcSlice is [., _tmp, community, contributors, guide]
 
 	// we want to get the last 2 elements of srcSlice now
 	srcSlice = srcSlice[len(srcSlice)-linkSliceLen:]
 
 	// now srcSlice is [contributors, guide]
 
-	// return contributors/guide/abc.md
-	return strings.Join(srcSlice, "/") + fileName
+	// return "/" + "contributors/guide" + "/" + abc.md" = /contributors/guide/abc.md
+	return "/" + strings.Join(srcSlice, "/") + "/" + fileName
 }
 
 func GetStringInBetweenTwoString(str string, startS string, endS string) (result string, found bool) {
