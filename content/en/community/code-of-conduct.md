@@ -15,7 +15,7 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by contacting the Kubernetes Code of Conduct Committee via
 conduct@kubernetes.io.
 
-[CNCF Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+[CNCF Code of Conduct]: https://git.k8s.io/community/code-of-conduct.md
 
 
 Other languages available:
