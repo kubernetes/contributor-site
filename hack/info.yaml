@@ -1,11 +1,77 @@
 sources:
 - repo: https://github.com/kubernetes/community.git
   files:
-  - src: "/contributors/guide/README.md"
-    dest: "/docs/guide/_index.md"
-  # - src: "/contributors/guide/*"
-  #   dest: "/docs/guide"
-  # - src: "/events/(community-meeting.md|office-hours.md)"
-  #   dest: "/events"
-  - src: "/mentoring/programs/meet-our-contributors.md"
-    dest:  "/events/meet-our-contributors.md"
+  - src: /contributors/guide/README.md
+    dest: /docs/guide/_index.md
+  - src: /contributors/guide/coding-conventions.md
+    dest: /docs/guide/coding-convention.md
+  - src: /contributors/guide/collab.md
+    dest: /docs/guide/collab.md
+  - src: /contributors/guide/contributing.md
+    dest: /docs/guide/contributing.md
+  - src: /contributors/guide/expectations.md
+    dest: /docs/guide/expectations.md
+  - src: /contributors/guide/first-contribution.md
+    dest: /docs/guide/first-contribution.md
+  - src: /contributors/guide/getting-started.md
+    dest: /docs/guide/getting-started.md
+  - src: /contributors/guide/github-workflow.md
+    dest: /docs/guide/github-workflow.md
+  - src: /contributors/guide/help-wanted.md
+    dest: /docs/guide/help-wanted.md
+  - src: /contributors/guide/issue-triage.md
+    dest: /docs/guide/issue-triage.md
+  - src: /contributors/guide/non-code-contributions.md
+    dest: /docs/guide/non-code-contributions.md
+  - src: /contributors/guide/owners.md
+    dest: /docs/guide/owners.md
+  - src: /contributors/guide/pull-requests.md
+    dest: /docs/guide/pull-requests.md
+  - src: /contributors/guide/release-notes.md
+    dest: /docs/guide/release-notes.md
+  - src: /contributors/guide/git_workflow.png
+    dest: /docs/guide/git_workflow.png
+  - src: /contributors/guide/contributor-cheatsheet/README.md
+    dest: /docs/contributor-cheatsheet.md
+  - src: /events/community-meeting.md
+    dest: /events/community-meeting.md
+  - src: /events/office-hours.md
+    dest: /events/office-hours.md
+  - src: /mentoring/programs/meet-our-contributors.md
+    dest: /events/meet-our-contributors.md
+  - src: /sig-list.md
+    dest: /community/community-groups.md
+  - src: /mentoring/README.md
+    dest: /community/mentoring.md
+  - src: /values.md
+    dest: /community/values.md
+  - src: /communication/best-practices.md
+    dest: /docs/comms/notifications.md
+  - src: /communication/calendar-guidelines.md
+    dest: /docs/comms/calendars.md
+  - src: /communication/discuss-guidelines.md
+    dest: /docs/comms/discuss.md"
+  - src: /communication/mailing-list-guidelines.md
+    dest: /docs/comms/mailing-lists.md
+  - src: /communication/moderation.md
+    dest: /docs/comms/moderation.md
+  - src: /communication/moderators.md
+    dest: /docs/comms/moderators.md
+  - src: /communication/requesting-survey.md
+    dest: /docs/comms/surveys.md
+  - src: /communication/slack-guidelines.md
+    dest: /docs/comms/slack.md
+  - src: /communication/zoom-guidelines.md
+    dest: /docs/comms/zoom.md
+  - src: /communication/youtube/youtube-guidelines.md
+    dest: /docs/comms/youtube.md
+  - src: /github-management/default-branch-migration.md
+    dest: /resources/rename.md
+  - src: /committee-code-of-conduct/incident-process.md
+    dest: /community/code-of-conduct-incident-process.md
+- repo: https://github.com/kubernetes/sig-release
+  files:
+  - src: /releases/release-1.22/README.md
+    dest: /resources/release/index.md
+
+#  git.k8s.io, etc will only be in links not in the yaml
