@@ -72,6 +72,7 @@ func main() {
 	for _, source := range info.Sources {
 		repo := source.Repo
 		folderName := strings.SplitAfter(repo, "/")[4]
+		folderName = strings.ReplaceAll(folderName, ".git", "")
 		concatenatedPath := "./_tmp/" + folderName
 		gitClone := exec.Command("git", "clone", repo, concatenatedPath)
 		err := gitClone.Run()
@@ -148,13 +149,15 @@ func GetAllLinks(markdown string, src string, entries []entry) string {
 						replacementLink = ExpandPath(foundLink, src)
 					}
 					replacementLink = GenLink(replacementLink, entries, src)
-					// TODO: remove md here and keep # in mind -> done
-					replacementLink = strings.ReplaceAll(replacementLink, ".md", "")
-					// TODO: if it's _index or index then remove the last part -> done
-					replacementLink = strings.ReplaceAll(replacementLink, "_index", "")
-					replacementLink = strings.ReplaceAll(replacementLink, "index", "")
-
-					markdown = strings.Replace(markdown, matches[0][2], replacementLink, -1)
+					if foundLink != replacementLink {
+						// TODO: remove md here and keep # in mind -> done
+						replacementLink = strings.ReplaceAll(replacementLink, ".md", "")
+						// TODO: if it's _index or index then remove the last part -> done
+						replacementLink = strings.ReplaceAll(replacementLink, "_index", "")
+						replacementLink = strings.ReplaceAll(replacementLink, "index", "")
+						fmt.Println("In", src, "replacing", foundLink, "with", replacementLink)
+						markdown = strings.Replace(markdown, matches[0][2], replacementLink, -1)
+					}
 				}
 			}
 			if matches2 != nil {
