@@ -50,13 +50,19 @@ func main() {
 	for _, source := range info.Sources {
 		// TODO: add logic to handle more orgs -> DONE
 		orgName := strings.SplitAfter(source.Repo, "/")[3]
+		orgName = strings.ReplaceAll(orgName, "/", "")
 		repoName := strings.SplitAfter(source.Repo, "/")[4]
+		repoName = strings.ReplaceAll(repoName, ".git", "")
 		// repoName, _ := GetStringInBetweenTwoString(source.Repo, "https://github.com/kubernetes/", ".git")
 		// orgName := "kubernetes"
 		for _, file := range source.Files {
 			entries = append(entries, entry{orgName, repoName, file.Src, file.Dest})
 		}
 	}
+
+	fmt.Println("$$$")
+	fmt.Println(entries)
+	fmt.Println("$$$")
 
 	err = os.Mkdir("./_tmp", 0755)
 	if err != nil {
@@ -148,14 +154,17 @@ func GetAllLinks(markdown string, src string, entries []entry) string {
 					} else {
 						replacementLink = ExpandPath(foundLink, src)
 					}
+					fmt.Println("EXPANDED PATH", replacementLink)
 					replacementLink = GenLink(replacementLink, entries, src)
 					if foundLink != replacementLink {
-						// TODO: remove md here and keep # in mind -> done
-						replacementLink = strings.ReplaceAll(replacementLink, ".md", "")
-						// TODO: if it's _index or index then remove the last part -> done
-						replacementLink = strings.ReplaceAll(replacementLink, "_index", "")
-						replacementLink = strings.ReplaceAll(replacementLink, "index", "")
-						fmt.Println("In", src, "replacing", foundLink, "with", replacementLink)
+						if !strings.HasPrefix(replacementLink, "http") {
+							// TODO: remove md here and keep # in mind -> done
+							replacementLink = strings.ReplaceAll(replacementLink, ".md", "")
+							// TODO: if it's _index or index then remove the last part -> done
+							replacementLink = strings.ReplaceAll(replacementLink, "_index", "")
+							replacementLink = strings.ReplaceAll(replacementLink, "index", "")
+						}
+						fmt.Println("Replacing", foundLink, "with", replacementLink, "in", src)
 						markdown = strings.Replace(markdown, matches[0][2], replacementLink, -1)
 					}
 				}
@@ -202,13 +211,24 @@ func GenLink(replacementLink string, entries []entry, src string) string {
 		// else generate an external url
 		// for example replacement link "/mentoring/programs/shadow-roles.md"
 		// src is something like "./_tmp/community/contributors/guide/README.md"
+		fmt.Println("IT WENT HERE")
+		fmt.Println("src", src)
+		fmt.Println("replacementLink", replacementLink)
+
+		// if replacementLink == "/contributors/devel/sig-architecture/api-conventions.md" {
 		repo := strings.SplitAfter(src, "/")[2]
+		repo = strings.ReplaceAll(repo, "/", "")
+		// fmt.Println("repo", repo)
 		for _, entry := range entries {
+			// fmt.Println("entry.repo", entry.repo)
 			if entry.repo == repo {
 				// TODO: add blob/master also -> done
-				return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/main" + replacementLink
+				return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + replacementLink
 			}
 		}
+		// fmt.Println("OVER $$$$$")
+		// }
+
 	}
 	return replacementLink
 }
@@ -223,6 +243,13 @@ func ExpandPath(foundLink string, src string) string {
 		fullFilePath := filepath.Dir(src) + "/" + filepath.Base(foundLink)
 		// we want to return "/" + "contributors/guide/abc.md"
 		return "/" + strings.Join(strings.Split(fullFilePath, "/")[3:], "/")
+	}
+
+	// for cases where
+	// foundLink is /contributors/devel/sig-architecture/api_changes.md
+	// src is ./_tmp/community/contributors/guide/coding-conventions.md
+	if !strings.Contains(foundLink, "..") {
+		return foundLink
 	}
 
 	// if foundLink was ../../abc.md and src was ./_tmp/community/contributors/guide/README.md
