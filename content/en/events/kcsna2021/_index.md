@@ -1,5 +1,5 @@
 ---
-title: Contributor Summit North America 2021
+title: "Contributor Summit North America 2021"
 type: docs
 aliases: [ "/summit", "/kcsna2021" ]
 weight: 1
@@ -8,7 +8,7 @@ description: >
 
 ---
 
-<img align="center" alt="Kubernetes Contributor Summit in Los Angeles, California" style="max-width:65%;" src="/events/kcsna2021/banner.jpeg">
+<img align="center" alt="Kubernetes Contributor Summit in Los Angeles, California" style="max-width:80%;" src="/events/kcsna2021/banner.png">
 
 ### About
 
@@ -28,10 +28,7 @@ community@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
-### Registration
 
-Registration is not yet open, a notice of reg opening will be sent to out to
-the regular Contributor comms channels (kubernetes-dev, twitter etc.).
 
 ### Code of Conduct
 
