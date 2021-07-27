@@ -82,8 +82,8 @@ find_md_files() {
 #   Links:
 #   ./bug-bounty.md -> /guide/bug-bounty
 #   contributor-cheatsheet/README.md -> /guide/contributor-cheatsheet
-#   ../../sig-list.md -> https://git.k8s.io/community/sig-list.md
-#   /contributors/devel/README.md -> https://git.k8s.io/community/contributors/devel/README.md
+#   ../../sig-list.md -> https://github.com/kubernetes/community/blob/master/sig-list.md
+#   /contributors/devel/README.md -> https://github.com/kubernetes/community/blob/master/contributors/devel/README.md
 #   http://git.k8s.io/cotributors/guide/collab.md -> /guide/collab
 # 
 # Args:
