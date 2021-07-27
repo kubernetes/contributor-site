@@ -97,7 +97,7 @@ We’re building out this site in real-time! Want to join us and help? Here’s 
 * [ ] Developers' guide/handbook: Feature launch date estimated April 2020
 * [ ] Role Board: Feature launch date estimated April 2020
 * [ ] Directory of Kubernetes SIGs and other community groups
-* [x] Pathways to success for [new Kubernetes contributors](https://github.com/kubernetes/community/blob/master/community-membership.md) and mentoring programs
+* [x] Pathways to success for [new Kubernetes contributors](https://git.k8s.io/community/community-membership.md) and mentoring programs
 * [ ] Workshop videos
 
 ### Code of conduct
@@ -112,10 +112,10 @@ Participation in the Kubernetes community is governed by the
 [hugo-docs]: https://gohugo.io/getting-started/installing
 [frontmatter]: https://gohugo.io/content-management/front-matter/
 [docker]: https://www.docker.com/get-started
-[sig-contribex]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md
+[sig-contribex]: https://git.k8s.io/community/sig-contributor-experience/README.md
 [sig-contribex-slack]: http://slack.k8s.io/#sig-contribex
 [sig-contribex-list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
-[kep-0005]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-contributor-experience/0005-contributor-site.md
+[kep-0005]: https://git.k8s.io/enhancements/keps/sig-contributor-experience/0005-contributor-site.md
 [docsy]: https://docsy.dev
 [postcss-cli]: https://postcss.org/
 [autoprefixer]: https://github.com/postcss/autoprefixer

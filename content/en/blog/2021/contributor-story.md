@@ -15,7 +15,7 @@ We are asking any and **all contributors to share their unique story** to highli
 
 ## How can I share my contributor story? 
 
-Contributor stories are welcome at this domain, kubernetes.dev, following our regular [blogging practices](https://github.com/kubernetes/community/blob/master/sig-docs/blog-subproject/README.md#submit-a-post). The main change is in the location: pull requests can be directed to the [contributor site repository](https://github.com/kubernetes/contributor-site) for this series.
+Contributor stories are welcome at this domain, kubernetes.dev, following our regular [blogging practices](https://git.k8s.io/community/sig-docs/blog-subproject/README.md#submit-a-post). The main change is in the location: pull requests can be directed to the [contributor site repository](https://github.com/kubernetes/contributor-site) for this series.
 
 If you want help brainstorming your story before submitting a draft, the Upstream Marketing Team is here to offer a hand. Reach out to us through [our issue template](https://github.com/kubernetes/community/issues/new?assignees=&labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=marketing-request.md&title=REQUEST%3A+New+communication+about+%3Ctopic%3E), and we'll be happy to coach you through the process.
 
