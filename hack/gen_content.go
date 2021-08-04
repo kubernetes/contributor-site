@@ -69,7 +69,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = os.Mkdir("./contentNew", 0755)
+	err = os.Mkdir("./content/en", 0755)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -88,7 +88,7 @@ func main() {
 
 		for _, file := range source.Files {
 			copyFrom := concatenatedPath + file.Src
-			copyTo := "./contentNew/" + folderName + file.Dest
+			copyTo := "./content/en" + file.Dest
 			Copy(copyFrom, copyTo, entries)
 		}
 	}
