@@ -17,9 +17,10 @@ active contributor but not a member, consider [applying for org membership]!
 If you have questions, please see the [faq] or reach out to us at
 community@kubernetes.io.
 
-**Registration link coming soon**
+[Register here]
 
 
+[Register here]: https://www.cvent.com/d/ymq151/4W?ct=f34626fb-147d-492c-81d2-b77ce49232c1
 [faq]: /events/kcsna2021/faq/
 [kubernetes]: https://github.com/kubernetes
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
@@ -29,7 +30,7 @@ community@kubernetes.io.
 
 ### Attend virtually
 
-**Registration link coming soon**
+[Register here]
 
 Anyone may register to attend remotely! We are working out what this will look
 like, but you we are aiming for a fully hybrid event with those remotely being
