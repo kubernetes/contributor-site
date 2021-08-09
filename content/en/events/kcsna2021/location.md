@@ -1,7 +1,7 @@
 ---
 title: "Location & Venue"
 type: docs
-weight: 4
+weight: 5
 ---
 
 <img align="right" src="/events/kcsna2021/hotel.jpeg" width="25%">
