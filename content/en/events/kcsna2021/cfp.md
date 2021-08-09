@@ -8,13 +8,13 @@ weight: 3
 
 The Call for Proposals (CFP) has some dates to keep in mind.
 
-CFP Opens: Aug 9
+- CFP Opens: Aug 9
 
 #### Session Proposal Dates
 
-CFP closes for sessions: Aug 30
-Notification for sessions: Sept 6
-Schedule announced for sessions: Sept 20
+- CFP closes for sessions: Aug 30
+- Notification for sessions: Sept 6
+- Schedule announced for sessions: Sept 20
 
 #### Unconference Discussion Proposal Dates
 
@@ -22,9 +22,9 @@ As we will be running a hybrid summit this year with some virtual attendees, we
 need to gather topics ahead of time to ensure that we can have a productive
 summit. Use the same CFP form to submit topics for discussion.
 
-CFP closes for unconference: Oct 1
-Notification/dot voting begins for unconference: Oct 1
-Schedule announced for unconference: Oct 4
+- CFP closes for unconference: Oct 1
+- Notification/dot voting begins for unconference: Oct 1
+- Schedule announced for unconference: Oct 4
 
 ### Link
 
