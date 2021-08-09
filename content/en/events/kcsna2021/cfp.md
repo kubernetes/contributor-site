@@ -23,8 +23,9 @@ need to gather topics ahead of time to ensure that we can have a productive
 summit. Use the same CFP form to submit topics for discussion.
 
 - CFP closes for unconference: Oct 1
-- Notification/dot voting begins for unconference: Oct 1
-- Schedule announced for unconference: Oct 4
+- Dot voting begins for unconference: Oct 1
+- Dot voting ends for unconference: Oct 4
+- Schedule announced for unconference: Oct 5
 
 ### Link
 
