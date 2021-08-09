@@ -1,7 +1,7 @@
 ---
 title: "Frequently Asked Questions (FAQ)"
 type: docs
-weight: 3
+weight: 4
 ---
 
 - [When is the summit taking place?](#when-is-the-summit-taking-place)
