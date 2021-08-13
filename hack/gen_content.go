@@ -69,10 +69,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	err = os.Mkdir("./content/en", 0755)
-	if err != nil {
-		log.Fatal(err)
-	}
+	// err = os.Mkdir("./content", 0755)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
 	// not iterating through "entries" so that we don't have to do multiple git clones
 	for _, source := range info.Sources {
@@ -88,7 +88,7 @@ func main() {
 
 		for _, file := range source.Files {
 			copyFrom := concatenatedPath + file.Src
-			copyTo := "./content/en" + file.Dest
+			copyTo := "./content" + file.Dest
 			Copy(copyFrom, copyTo, entries)
 		}
 	}
@@ -105,10 +105,19 @@ func Copy(src, dst string, entries []entry) error {
 	mkdown := GetAllLinks(string(input), src, entries)
 
 	dir, _ := filepath.Split(dst)
-	err = os.MkdirAll(dir, os.ModePerm)
-	if err != nil {
-		log.Fatal(err)
+	// only create folders if they do not already exist
+	if _, err := os.Stat(dir); os.IsNotExist(err) {
+		err = os.MkdirAll(dir, os.ModePerm)
+		if err != nil {
+			log.Fatal(err)
+		}
+	} else {
+		fmt.Println("File Exists")
 	}
+	// err = os.MkdirAll(dir, os.ModePerm)
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 	_, err = os.Create(dst)
 	if err != nil {
 		log.Fatal(err)
