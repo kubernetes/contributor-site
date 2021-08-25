@@ -230,9 +230,29 @@ func GenLink(replacementLink string, entries []entry, src string) string {
 		// fmt.Println("repo", repo)
 		for _, entry := range entries {
 			// fmt.Println("entry.repo", entry.repo)
+			// fmt.Println("repo", repo)
 			if entry.repo == repo {
 				// TODO: add blob/master also -> done
-				return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + replacementLink
+				fmt.Println("entry.dest", entry.dest)
+				fmt.Println("repLink", replacementLink)
+				fmt.Println("src", src)
+				if strings.Contains(src, entry.src) {
+					stuff := strings.Split(entry.src, "/")
+					fmt.Println(stuff)
+					if len(stuff) == 1 {
+						return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + replacementLink
+					} else {
+						extra := "/"
+						for k, v := range stuff {
+							if k == (len(stuff) - 1) {
+								continue
+							}
+							extra += v
+						}
+
+						return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + extra + replacementLink
+					}
+				}
 			}
 		}
 		// fmt.Println("OVER $$$$$")
