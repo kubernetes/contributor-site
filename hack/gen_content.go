@@ -180,7 +180,26 @@ func GetAllLinks(markdown string, src string, entries []entry) string {
 			}
 			if matches2 != nil {
 				if !strings.HasPrefix(matches2[0][1], "#") {
-					markdown = strings.Replace(markdown, matches2[0][1], "hugo-url", -1)
+					foundLink := matches2[0][1]
+					var replacementLink string
+					if strings.HasPrefix(foundLink, "http") {
+						replacementLink = foundLink
+					} else {
+						replacementLink = ExpandPath(foundLink, src)
+					}
+					fmt.Println("EXPANDED PATH", replacementLink)
+					replacementLink = GenLink(replacementLink, entries, src)
+					if foundLink != replacementLink {
+						if !strings.HasPrefix(replacementLink, "http") {
+							// TODO: remove md here and keep # in mind -> done
+							replacementLink = strings.ReplaceAll(replacementLink, ".md", "")
+							// TODO: if it's _index or index then remove the last part -> done
+							replacementLink = strings.ReplaceAll(replacementLink, "_index", "")
+							replacementLink = strings.ReplaceAll(replacementLink, "index", "")
+						}
+						fmt.Println("Replacing", foundLink, "with", replacementLink, "in", src)
+						markdown = strings.Replace(markdown, matches2[0][1], replacementLink, -1)
+					}
 				}
 			}
 		}
