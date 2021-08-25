@@ -1,33 +1,33 @@
 <!doctype html>
-<html lang="{{ .Site.Language.Lang }}" class="no-js">
+<html lang="{{ .Site.Language.Lang}}" class="no-js">
   <head>
     {{ partial "head.html" . }}
-    <link href='{{ .Site.BaseURL }}/css/fullcalendar/main.min.css' rel='stylesheet' />
-    <script src='{{ .Site.BaseURL }}/js/fullcalendar/main.min.js'></script>
-    <script src='{{ .Site.BaseURL }}/js/calendar.js'></script>
+    <link href='{{ .Site.BaseURL}}/css/fullcalendar/main.min.css' rel='stylesheet'/>
+    <script src='{{ .Site.BaseURL}}/js/fullcalendar/main.min.js'></script>
+    <script src='{{ .Site.BaseURL}}/js/calendar.js'></script>
     <script>
       renderCalendar();
     </script>
   </head>
-  <body class="td-{{ .Kind }}">
+  <body class="td-{{ .Kind}}">
     <header>
-      {{ partial "navbar.html" . }}
+      {{ partial "navbar.html" .}}
     </header>
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
           <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            {{ partial "sidebar.html" . }}
+            {{ partial "sidebar.html" .}}
           </div>
           <main class="col-12 col-md-9 col-xl-9 pl-md-5" role="main">
-            {{ partial "version-banner.html" . }}
-            {{ if not .Site.Params.ui.breadcrumb_disable }}{{ partial "breadcrumb.html" . }}{{ end }}
+            {{ partial "version-banner.html" .}}
+            {{ if not .Site.Params.ui.breadcrumb_disable}}{{ partial "breadcrumb.html" .}}{{ end }}
             {{ block "main" . }}{{ end }}
           </main>
         </div>
       </div>
-      {{ partial "footer.html" . }}
+      {{ partial "footer.html" .}}
     </div>
-    {{ partial "scripts.html" . }}
+    {{ partial "scripts.html" .}}
   </body>
 </html>
