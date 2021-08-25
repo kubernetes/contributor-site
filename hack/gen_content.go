@@ -48,31 +48,22 @@ func main() {
 
 	var entries []entry
 	for _, source := range info.Sources {
-		// TODO: add logic to handle more orgs -> DONE
-		orgName := strings.SplitAfter(source.Repo, "/")[3]
-		orgName = strings.ReplaceAll(orgName, "/", "")
+		orgName := strings.Split(source.Repo, "/")[3]
 		repoName := strings.SplitAfter(source.Repo, "/")[4]
 		repoName = strings.ReplaceAll(repoName, ".git", "")
-		// repoName, _ := GetStringInBetweenTwoString(source.Repo, "https://github.com/kubernetes/", ".git")
-		// orgName := "kubernetes"
 		for _, file := range source.Files {
 			entries = append(entries, entry{orgName, repoName, file.Src, file.Dest})
 		}
 	}
 
-	fmt.Println("$$$")
+	fmt.Println("ENTRIES START")
 	fmt.Println(entries)
-	fmt.Println("$$$")
+	fmt.Println("ENTRIES END")
 
 	err = os.Mkdir("./_tmp", 0755)
 	if err != nil {
 		log.Fatal(err)
 	}
-
-	// err = os.Mkdir("./content", 0755)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
 
 	// not iterating through "entries" so that we don't have to do multiple git clones
 	for _, source := range info.Sources {
@@ -87,16 +78,15 @@ func main() {
 		}
 
 		for _, file := range source.Files {
-			copyFrom := concatenatedPath + file.Src
 			copyTo := "./content" + file.Dest
-			Copy(copyFrom, copyTo, entries)
+			Copy(concatenatedPath, file.Src, copyTo, entries)
 		}
 	}
 
 }
 
-func Copy(src, dst string, entries []entry) error {
-	input, err := ioutil.ReadFile(src)
+func Copy(concatenatedPath, src, dst string, entries []entry) error {
+	input, err := ioutil.ReadFile(concatenatedPath + src)
 	if err != nil {
 		fmt.Println(err)
 		return err
@@ -111,13 +101,8 @@ func Copy(src, dst string, entries []entry) error {
 		if err != nil {
 			log.Fatal(err)
 		}
-	} else {
-		fmt.Println("File Exists")
 	}
-	// err = os.MkdirAll(dir, os.ModePerm)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
+
 	_, err = os.Create(dst)
 	if err != nil {
 		log.Fatal(err)
@@ -131,7 +116,7 @@ func Copy(src, dst string, entries []entry) error {
 	return nil
 }
 
-// src is something like "./_tmp/community/contributors/guide/README.md"
+// src is what is in the YAML under files, something like "/contributors/guide/README.md"
 func GetAllLinks(markdown string, src string, entries []entry) string {
 
 	// Regex to extract link for [text](./something.md)
@@ -211,12 +196,10 @@ func GenLink(replacementLink string, entries []entry, src string) string {
 	// if it is a web link
 	if strings.HasPrefix(replacementLink, "http") {
 		// if it belongs to one of the k8s urls, replace if it will be present on the hugo site
-		// TODO: add more checks here for now let's just work with "http://github.com/kubernetes"
 		// for example replacementLink = https://github.com/kubernetes/community/blob/master/mentoring/programs/meet-our-contributors.md
 		if strings.Contains(replacementLink, "github.com/kubernetes") || strings.Contains(replacementLink, "github.com/kubernetes-sigs") || strings.Contains(replacementLink, "github.com/kubernetes-csi") || strings.Contains(replacementLink, "github.com/kubernetes-client") || strings.Contains(replacementLink, "git.k8s.io") || strings.Contains(replacementLink, "sigs.k8s.io") {
 			for _, entry := range entries {
 				// one entry would be "/mentoring/programs/meet-our-contributors.md"
-				// ?? TODO: remove blob tree master from the replacementLink else Contains won't work
 				if strings.Contains(replacementLink, entry.src) {
 					// return "/events/meet-our-contributors.md"
 					return entry.dest
@@ -224,7 +207,7 @@ func GenLink(replacementLink string, entries []entry, src string) string {
 			}
 		}
 
-		// if it's not one of the k8s urls just let it be
+		// if it's not one of the k8s urls, let it be
 
 	} else {
 		// if its not an external url check if it's present on hugo site
@@ -238,83 +221,75 @@ func GenLink(replacementLink string, entries []entry, src string) string {
 		}
 		// else generate an external url
 		// for example replacement link "/mentoring/programs/shadow-roles.md"
-		// src is something like "./_tmp/community/contributors/guide/README.md"
-		fmt.Println("IT WENT HERE")
+		// src is something like "/contributors/guide/README.md"
 		fmt.Println("src", src)
 		fmt.Println("replacementLink", replacementLink)
 
-		// if replacementLink == "/contributors/devel/sig-architecture/api-conventions.md" {
-		repo := strings.SplitAfter(src, "/")[2]
-		repo = strings.ReplaceAll(repo, "/", "")
-		// fmt.Println("repo", repo)
 		for _, entry := range entries {
-			// fmt.Println("entry.repo", entry.repo)
-			// fmt.Println("repo", repo)
-			if entry.repo == repo {
-				// TODO: add blob/master also -> done
+			if entry.src == src {
 				fmt.Println("entry.dest", entry.dest)
 				fmt.Println("repLink", replacementLink)
 				fmt.Println("src", src)
-				if strings.Contains(src, entry.src) {
-					stuff := strings.Split(entry.src, "/")
-					fmt.Println(stuff)
-					if len(stuff) == 1 {
-						return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + replacementLink
-					} else {
-						extra := "/"
-						for k, v := range stuff {
-							if k == (len(stuff) - 1) {
-								continue
-							}
-							extra += v
-						}
+				return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + replacementLink
 
-						return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + extra + replacementLink
-					}
-				}
+				// if strings.Contains(src, entry.src) {
+				// 	stuff := strings.Split(entry.src, "/")
+				// 	fmt.Println(stuff)
+				// 	if len(stuff) == 1 {
+				// 		return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + replacementLink
+				// 	} else {
+				// 		extra := "/"
+				// 		for k, v := range stuff {
+				// 			if k == (len(stuff) - 1) {
+				// 				continue
+				// 			}
+				// 			extra += v
+				// 		}
+
+				// 		return "https://github.com/" + entry.org + "/" + entry.repo + "/blob/master" + extra + replacementLink
+				// 	}
+				// }
 			}
 		}
-		// fmt.Println("OVER $$$$$")
-		// }
-
 	}
 	return replacementLink
 }
 
 // foundLink is something like ../../abc.md
-// src is something like "./_tmp/community/contributors/guide/README.md"
+// src is something like "/contributors/guide/README.md"
 // expandPath will return "/contributors/guide/abc.md"
 func ExpandPath(foundLink string, src string) string {
 	// if ./a.md or /a.md or a.md then it's in same dir as src
 	if filepath.Dir(foundLink) == "." || filepath.Dir(foundLink) == "/" {
-		// fullFilePath is "./_tmp/community/contributors/guide" + "/" +"abc.md"
+		// fullFilePath is "/contributors/guide" + "/" +"abc.md"
 		fullFilePath := filepath.Dir(src) + "/" + filepath.Base(foundLink)
-		// we want to return "/" + "contributors/guide/abc.md"
-		return "/" + strings.Join(strings.Split(fullFilePath, "/")[3:], "/")
+		return fullFilePath
 	}
 
 	// for cases where
 	// foundLink is /contributors/devel/sig-architecture/api_changes.md
-	// src is ./_tmp/community/contributors/guide/coding-conventions.md
+	// src is /contributors/guide/coding-conventions.md
 	if !strings.Contains(foundLink, "..") {
 		return foundLink
 	}
 
-	// if foundLink was ../../abc.md and src was ./_tmp/community/contributors/guide/README.md
+	// RELATIVE PATH LOGIC NEEDS TO BE WORKED ON BASED ON EXAMPLES (the code below this line)
+
+	// if foundLink was ../../abc.md and src was /contributors/guide/README.md
 
 	src = filepath.Dir(src)
 	fileName := filepath.Base(foundLink)
 	foundLink = filepath.Dir(foundLink)
 
-	// src is now "./_tmp/community/contributors/guide"
+	// src is now "/contributors/guide"
 	// fileName is now abc.md
 	// foundLink is now ../..
 
-	linkSliceLen := len(strings.SplitAfter(foundLink, "/"))
-	srcSlice := strings.SplitAfter(src, "/")
+	linkSliceLen := len(strings.Split(foundLink, "/"))
+	srcSlice := strings.Split(src, "/")
 
 	// linkSliceLen is now 2
-	// srcSlice is now [., _tmp, community, contributors, guide]
+	// srcSlice is now [contributors, guide]
 
 	// we want to get the last 2 elements of srcSlice now
 	srcSlice = srcSlice[len(srcSlice)-linkSliceLen:]

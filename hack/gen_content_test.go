@@ -5,8 +5,18 @@ import (
 	"testing"
 )
 
-func Test_Expand_Path(t *testing.T) {
-	fmt.Println(ExpandPath("election.md", "_tmp/community/committee-code-of-conduct/incident-process.md"))
+func Test_Expand_Path_Same_Dir(t *testing.T) {
+	fmt.Println(ExpandPath("election.md", "/contributors/guide/README.md"))
+	t.Fail()
+}
+
+func Test_Expand_Path_No_Replace_Needed(t *testing.T) {
+	fmt.Println(ExpandPath("/contributors/devel/sig-architecture/api_changes.md", "/contributors/guide/README.md"))
+	t.Fail()
+}
+
+func Test_Expand_Path_Replace_Needed(t *testing.T) {
+	fmt.Println(ExpandPath("../help/api_changes.md", "/contributors/guide/README.md"))
 	t.Fail()
 }
 
