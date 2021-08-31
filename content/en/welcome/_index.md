@@ -33,7 +33,7 @@ contributor resources, Kubernetes SIGs, and more.
 <h2>Get Involved:</h2>
 
 The first step is to check out the <a href="/docs/guide/">contributor guide</a>.
-All contributors must abide by the <a href="/resources/code-of-conduct/">CNCF Code of Conduct</a>
+All contributors must abide by the <a href="/community/code-of-conduct/">CNCF Code of Conduct</a>
 and <a href="https://git.k8s.io/community/CLA.md">sign the CLA</a>.
 
 If you need help with submitting a pull request, found a bug, or have a suggestion,
