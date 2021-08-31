@@ -12,8 +12,8 @@ The Call for Proposals (CFP) has some dates to keep in mind.
 
 #### Session Proposal Dates
 
-- CFP closes for sessions: Aug 30
-- Notification for sessions: Sept 6
+- CFP closes for sessions: Sept 10
+- Notification for sessions: Sept 17
 - Schedule announced for sessions: Sept 20
 
 #### Unconference Discussion Proposal Dates
