@@ -32,9 +32,9 @@ the [Location & Venue] section for more information.
 
 ### Will I be able to attend remotely?
 
-Yes! We are planning a full hybrid event that **should** allow those
-participating remotely to interact and work with contributors on-site. We will
-post more details on how this will work closer to the event.
+As we are not holding a formal event, we encourage you to work with your SIG or
+subproject to engage over Slack or team Zoom rooms. Any SIG or subproject that
+holds an event will have the ability to connect with any remote attendees.
 
 
 ### Why is vaccination required to attend in-person?
@@ -44,7 +44,6 @@ As a co-located event, the summit is required to adhere to KubeCon’s
 Health & Safety Guidelines</a>. There may be additional restrictions that
 develop closer to the event, and we will update the event accordingly to follow
 venue, municipality and CDC guidelines at a minimum.
-
 
 
 ### Why do I need to be a Kubernetes Org member to attend in-person?
