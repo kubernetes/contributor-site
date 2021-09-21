@@ -1,0 +1,3 @@
+# get files from https://git.k8s.io/enhancements/ using hack/gen-content.sh
+!.gitignore
+keps.json

@@ -1,0 +1,101 @@
+<script src="/js/keps/kep_search.js"></script>
+<div>
+  <dir class="d-flex">
+    <div class="col">
+      <div class="input-group mt-2 col-md-12">
+        <input type="text" name="search" id="keps_search" class="form-control" placeholder="Search KEP(s) by keyword/release like v1.21 or year" />
+      </div>
+    </div>
+    <div class="col ml-auto">
+      <div class="input-group mx-auto mt-2 col-md-12" style="">
+        <label for="keps" class="pr-3">Choose SIG:</label>
+        <select class="custom-select" name="sig group" id="sig_group_select">
+          <option selected="selected" value="all">Choose...</option>
+          {{ range $data_sig := .Site.Data.sigs.sigs.sigs }}
+          <option value="{{$data_sig.dir}}">
+            {{ printf "%s" $data_sig.dir }}
+          </option>
+          {{ end }}
+        </select>
+      </div>
+    </div>
+  </dir>
+  <table id="keps_table" class="table table-bordered table-hover mt-2 col-md-12">
+    <thead>
+      <tr>
+        <th scope="col" class="col-md-2">KEP Number</th>
+        <th scope="col" class="col-md-2">Title</th>
+        <th scope="col" class="col-md-1">SIG</th>
+        <th scope="col" class="col-md-1">Author</th>
+        <th scope="col" class="col-md-2">Create & Last Update</th>
+        <th scope="col" class="col-md-2">Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $index, $data := sort .Site.Data.keps.keps "kep_number" }}
+      <!-- Displaying only if KEP number is
+           present and not the "0000"in metadata -->
+        {{ if and ($data.kep_number) (not (in $data.kep_number 0000)) }}
+          <tr>
+            <td>
+              <a href="https://kep.k8s.io/{{ $data.kep_number }}">
+                {{ printf "%s" $data.kep_number }}
+              </a>
+            </td>
+            <td>
+              <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owningSig}}/{{$data.name}}#summary">
+                {{ printf "%s" $data.title }}
+              </a>
+            </td>
+            <td>
+              <a href=" https://github.com/kubernetes/community/blob/master/{{ $data.owningSig }}/README.md">
+                {{ printf "%s" $data.owningSig }}
+              </a>
+            </td>
+            <td>
+              {{ range $index, $author := $data.authors }}
+              {{- if $index -}}, {{ end -}}
+              <a href="https://github.com/{{ trim $author "@" }}">
+                <span class="github-user">@{{ trim $author "@" }}</span>
+              </a>
+              {{ end }}
+            </td>
+            <td>
+              <span class="row pl-2">
+                <b>Created on:</b>
+                {{ if $data.creationDate }}
+                  {{ $data.creationDate }}
+                {{ else }}
+                  NA
+                {{ end }}
+              </span>
+              <span class="row pl-2">
+                <b>Last Updated:</b>
+                {{ if $data.lastUpdated }}
+                  {{ $data.lastUpdated }}
+                {{ else }}
+                  NA
+                {{ end }}
+              </span>
+            </td>
+            <td>
+              <ul class="list-unstyled">
+                {{range $key, $value := $data.milestone}}
+                  <li>{{$key}}:
+                    <b>
+                      {{ if $value }}
+                        {{$value}}
+                      {{ else }}
+                        NA
+                      {{ end }}
+                    </b>
+                  </li>
+                {{end}}
+              </ul>
+            </td>
+          </tr>
+        {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+</div>
