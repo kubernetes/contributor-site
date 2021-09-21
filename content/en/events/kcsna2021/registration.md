@@ -1,12 +1,30 @@
 ---
-title: "Registration"
+title: "RSVP"
 type: docs
 weight: 2
 ---
 
-As we are not holding the formal Contributor Summit, we are not
-running registration. SIGs and subprojects who choose to hold a mini-event will
-be responsible for any kind of signups they need to manage.
+As we are not holding the formal Contributor Summit, we are not running
+conference registration. SIGs and subprojects who choose to hold a mini-event
+will be responsible for any kind of signups they need to manage.
+
+We **will** be holding an evening social event, however, and have an RSVP link
+for attendees. To attend the social, you must be a member or active contributor
+of one of the Kubernetes GitHub Orgs (e.g., [kubernetes] or [kubernetes-sigs]) or
+a sponsored attendee. If you are an active contributor but not a member, consider
+[applying for org membership]!
+
+If you have questions, please see the [faq] or reach out to us at
+community@kubernetes.io.
+
+[Register here]
+
+
+[Register here]: https://www.cvent.com/d/ymq151/4W?ct=f34626fb-147d-492c-81d2-b77ce49232c1
+[faq]: /events/kcsna2021/faq/
+[kubernetes]: https://github.com/kubernetes
+[kubernetes-sigs]: https://github.com/kubernetes-sigs
+[applying for org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 
 **NOTE:** Any in-person events held by SIGs and subprojects will follow KubeCon’s
 [Health & Safety Guidelines] requiring **ALL** in-person attendees to be fully

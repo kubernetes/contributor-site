@@ -27,12 +27,16 @@ other collaboration. To reserve the space, please reach out to
 community@kubernetes.io or ask in the
 <a href="https://kubernetes.slack.com/messages/summit-staff" rel="noopener noreferrer" target="_blank">#summit-staff</a>
 
+We will be holding an evening social event. Please [RSVP] as soon as possible.
+
 This page will be updated with more information as it develops. If you have
 questions or comments, please reach out to the Summit Staff by emailing
 community@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
+
+[RSVP]: /events/kcsna2021/registration/
 
 
 ### Code of Conduct
