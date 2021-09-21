@@ -12,15 +12,22 @@ description: >
 
 ### About
 
-The North America Summit will take place October 11th, in Los Angeles, California
-alongside <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon</a>
-at the <a href="https://www.marriott.com/hotels/travel/laxjw-jw-marriott-los-angeles-la-live/" rel="noopener noreferrer" target="_blank">JW Marriott LA Live</a>.
+The North America Summit will be an informal event taking place on October 11th
+in Los Angeles, California alongside
+<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon</a>
+at the
+<a href="https://www.marriott.com/hotels/travel/laxjw-jw-marriott-los-angeles-la-live/" rel="noopener noreferrer" target="_blank">JW Marriott LA Live</a>.
 
 
-It will be a fully hybrid event enabling those that cannot attend in person to
-participate remotely. However, due to the uncertainty involved with attending
-the event, the focus will be on unconference sessions and providing a space for
-our contributors to break off and hold smaller focused discussions.
+We are downsizing the event due to low registration numbers so we can focus on
+the virtual contributor celebration later in 2021. However, we will still have a
+space to hang out, catch up, and meet new contributors. We also have space
+available for SIGs or subprojects that wish to do a mini hackathon, sprint, or
+other collaboration. To reserve the space, please reach out to
+community@kubernetes.io or ask in the
+<a href="https://kubernetes.slack.com/messages/summit-staff" rel="noopener noreferrer" target="_blank">#summit-staff</a>
+
+We will be holding an evening social event. Please [RSVP] as soon as possible.
 
 This page will be updated with more information as it develops. If you have
 questions or comments, please reach out to the Summit Staff by emailing
@@ -28,6 +35,8 @@ community@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
+
+[RSVP]: /events/kcsna2021/registration/
 
 
 ### Code of Conduct
