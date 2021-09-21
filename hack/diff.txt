@@ -1,0 +1,974 @@
+diff -r ./content/community/code-of-conduct-incident-process.md ../../contentCorrect/en/community/code-of-conduct-incident-process.md
+83c83
+< To reduce the likelihood of recusals, our [election](https://github.com/kubernetes/community/blob/master/election.md) process stipulates that we may never have a majority of the Committee from a single employer.
+---
+> To reduce the likelihood of recusals, our [election](https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/election.md) process stipulates that we may never have a majority of the Committee from a single employer.
+diff -r ./content/community/community-groups.md ../../contentCorrect/en/community/community-groups.md
+22c22
+< time bounded Working Groups, and the [community meeting](https://github.com/kubernetes/community/blob/mastercommunication/README.md#weekly-meeting).
+---
+> time bounded Working Groups, and the [community meeting](https://github.com/kubernetes/community/blob/master/communication/README.md#weekly-meeting).
+24c24
+< SIGs follow these [guidelines](https://github.com/kubernetes/community/blob/master/) although each of these groups may operate a little differently
+---
+> SIGs follow these [guidelines](https://github.com/kubernetes/community/blob/master/governance.md) although each of these groups may operate a little differently
+29c29
+< When the need arises, a [new SIG can be created](https://github.com/kubernetes/community/blob/master/)
+---
+> When the need arises, a [new SIG can be created](https://github.com/kubernetes/community/blob/master/sig-wg-lifecycle.md)
+35,58c35,58
+< |[API Machinery](https://github.com/kubernetes/community/blob/mastersig-api-machinery/README.md)|api-machinery|* [David Eads](https://github.com/deads2k), Red Hat<br>* [Federico Bongiovanni](https://github.com/fedebongio), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-api-machinery)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery)|* Kubebuilder and Controller Runtime Meeting: [Thursdays at 09:00 PT (Pacific Time) (biweekly)]()<br>* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/my/apimachinery)<br>
+< |[Apps](https://github.com/kubernetes/community/blob/mastersig-apps/README.md)|apps|* [Janet Kuo](https://github.com/janetkuo), Google<br>* [Kenneth Owens](https://github.com/kow3ns), Brex<br>* [Maciej Szulik](https://github.com/soltysh), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-apps)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)|* Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09)<br>
+< |[Architecture](https://github.com/kubernetes/community/blob/mastersig-architecture/README.md)|architecture|* [Derek Carr](https://github.com/derekwaynecarr), Red Hat<br>* [Davanum Srinivas](https://github.com/dims), VMware<br>* [John Belamaric](https://github.com/johnbelamaric), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-architecture)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)|* Enhancements Subproject Meeting: [Thursdays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/95357819945)<br>* Production Readiness Office Hours: [Wednesdays at 12:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/482444151)<br>* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/845605479)<br>* code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/159990793)<br>* conformance office Hours: [Tuesdays at 19:00 UTC (biweekly)](https://zoom.us/j/427337923)<br>
+< |[Auth](https://github.com/kubernetes/community/blob/mastersig-auth/README.md)|auth|* [Mo Khan](https://github.com/enj), VMware<br>* [Mike Danese](https://github.com/mikedanese), Google<br>* [Rita Zhang](https://github.com/ritazh), Microsoft<br>|* [Slack](https://kubernetes.slack.com/messages/sig-auth)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-auth)|* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/264572674)<br>* Secrets Store CSI Meeting: [Thursdays at 8:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/91272289538)<br>
+< |[Autoscaling](https://github.com/kubernetes/community/blob/mastersig-autoscaling/README.md)|autoscaling|* [Guy Templeton](https://github.com/gjtempleton), Skyscanner<br>* [Marcin Wielgus](https://github.com/mwielgus), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)|* Regular SIG Meeting: [Mondays at 16:00 Poland (weekly)](https://zoom.us/j/944410904)<br>
+< |[CLI](https://github.com/kubernetes/community/blob/mastersig-cli/README.md)|cli|* [Eddie Zaneski](https://github.com/eddiezane), Amazon<br>* [Sean Sullivan](https://github.com/seans3), Google<br>* [Maciej Szulik](https://github.com/soltysh), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-cli)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)|* Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time) (monthly)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09)<br>* Kustomize Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time) (monthly)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09)<br>* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09)<br>
+< |[Cloud Provider](https://github.com/kubernetes/community/blob/mastersig-cloud-provider/README.md)|cloud-provider|* [Andrew Sy Kim](https://github.com/andrewsykim), VMware<br>* [Walter Fender](https://github.com/cheftako), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-cloud-provider)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider)|* Regular SIG Meeting: [Wednesdays at 13:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09)<br>* (cloud-provider-extraction-migration) Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute: [Thursdays at 13:30 PT (Pacific Time) (weekly)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit)<br>* (provider-alibaba-cloud) Regular Alibaba Cloud Subproject Meeting: [Tuesdays at 12:00 UTC (monthly 2020 start date: Jan. 7th)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit)<br>* (provider-aws) Regular AWS Subproject Meeting: [Fridays at 9:00 PT (Pacific Time) (biweekly 2019 start date: Jan. 11th)](https://zoom.us/my/k8ssigaws)<br>* (provider-azure) Azure Subproject Meeting (every four weeks): [Mondays at 18:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/586836662)<br>* (provider-azure) Azure Subproject Meeting (every four weeks): [Thursdays at 8:30 PT (Pacific Time) (biweekly)](https://zoom.us/j/586836662)<br>* (provider-gcp) Regular GCP Subproject Meeting: [Thursdays at 16:00 UTC (biweekly)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit)<br>* (provider-ibmcloud) Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST (biweekly)](https://zoom.us/j/9392903494)<br>* (provider-openstack) Regular OpenStack Subproject Meeting: [Wednesdays at 08:00 PT (Pacific Time) (biweekly starting Wednesday March 20, 2019)](https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit)<br>* (provider-vsphere) Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time) (monthly - first Wednesday every month)](https://zoom.us/j/584244729)<br>
+< |[Cluster Lifecycle](https://github.com/kubernetes/community/blob/mastersig-cluster-lifecycle/README.md)|cluster-lifecycle|* [Justin Santa Barbara](https://github.com/justinsb), Google<br>* [Lubomir Ivanov](https://github.com/neolit123), VMware<br>* [Vince Prignano](https://github.com/vincepri), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)|* Regular SIG Meeting: [Tuesdays at 08:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09)<br>* (cluster-addons) Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09)<br>* (cluster-api) Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09)<br>* (cluster-api-provider-aws) Cluster API Provider AWS office hours: [Mondays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09)<br>* (cluster-api-provider-azure) Cluster API Provider Azure office hours: [Thursdays at 08:00 PT (Pacific Time) (bi-weekly)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09)<br>* (cluster-api-provider-digitalocean) Cluster API Provider DigitalOcean office hours: [Thursdays at 09:00 PT (Pacific Time) (monthly, second Thursday of the month)](https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09)<br>* (cluster-api-provider-nested) Cluster API Provider Nested Office Hours: [Tuesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09)<br>* (cluster-api-provider-vsphere) Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time) (biweekly starting Thursday June 25th, 2020)](https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09)<br>* (etcdadm) etcdadm Office Hours: [Mondays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09)<br>* (image-builder) Image Builder office hours: [Thursdays at 08:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09)<br>* (kops) kops Office Hours: [Fridays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09)<br>* (kubeadm) kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09)<br>* (kubespray) Kubespray Office Hours: [Wednesdays at 08:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/532465189?pwd=THMvL2MzdjZXWG55eHpJMkU2dkI1dz09)<br>* (minikube) minikube office hours: [Mondays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09)<br>
+< |[Contributor Experience](https://github.com/kubernetes/community/blob/mastersig-contributor-experience/README.md)|contributor-experience|* [Alison Dowdney](https://github.com/alisondy), Weaveworks<br>* [Bob Killen](https://github.com/mrbobbytables), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-contribex)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex)|* Regular SIG Meeting: [Wednesdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09)<br>* (community-management) APAC Coordinator Meeting: [Thursdays at 5:00 UTC (biweekly)](https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09)<br>* (contributor-comms) Contributor Comms - Upstream Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time) (weekly)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09)<br>* (events) Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time) (monthly on 3rd Wednesday)](https://hackmd.io/@k8s/office-hours)<br>* (events) Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time) (monthly on 3rd Wednesday)]()<br>* (github-management) GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time) (Monthly on 4th Thursday)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09)<br>* (mentoring) Mentoring Subproject Meeting: [Mondays at 08:00 PT (Biweekly)](https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09)<br>
+< |[Docs](https://github.com/kubernetes/community/blob/mastersig-docs/README.md)|docs|* [Jim Angel](https://github.com/jimangel), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-docs)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)|* APAC SIG Meeting: [Wednesdays at 01:00 UTC (monthly - Wednesday, after the fourth Tuesday, every month)](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit)<br>* Korean Team Meeting: [Thursdays at 13:00 UTC (biweekly)](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit)<br>* Localization Subgroup Meeting: [Mondays at 15:00 UTC (monthly)](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/)<br>* Regular SIG Meeting: [Tuesdays at 17:30 UTC (weekly - except fourth Tuesday every month)](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit)<br>* Spanish Team Meeting: [Tuesdays at 15:30 UTC (weekly)](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09)<br>
+< |[Instrumentation](https://github.com/kubernetes/community/blob/mastersig-instrumentation/README.md)|instrumentation|* [Elana Hashman](https://github.com/ehashman), Red Hat<br>* [Han Kang](https://github.com/logicalhan), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)|* Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time) (biweekly)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09)<br>* Regular Triage Meeting: [Thursdays at 9:30 PT (Pacific Time) (biweekly - alternating with regular meeting)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09)<br>
+< |[Multicluster](https://github.com/kubernetes/community/blob/mastersig-multicluster/README.md)|multicluster|* [Jeremy Olmsted-Thompson](https://github.com/jeremyot), Google<br>* [Paul Morie](https://github.com/pmorie), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-multicluster)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster)|* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time) (weekly)](https://zoom.us/my/k8s.mc)<br>
+< |[Network](https://github.com/kubernetes/community/blob/mastersig-network/README.md)|network|* [Casey Davenport](https://github.com/caseydavenport), Tigera<br>* [Dan Williams](https://github.com/dcbw), Red Hat<br>* [Tim Hockin](https://github.com/thockin), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-network)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-network)|* Gateway API Meeting (APAC Friendly): [Mondays at 15:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/441530404)<br>* Gateway API Meeting (EMEA Friendly): [Tuesdays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/441530404)<br>* Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time) (weekly)](https://zoom.us/j/96264742248)<br>* SIG Network Ingress NGINX Meeting: [Tuesdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/98377891310)<br>* SIG Network Kube Proxy Meeting: [Fridays at 8:30 PT (Pacific Time) (weekly)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit)<br>* SIG Network Meeting: [Thursdays at 14:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/361123509)<br>
+< |[Node](https://github.com/kubernetes/community/blob/mastersig-node/README.md)|node|* [Dawn Chen](https://github.com/dchen1107), Google<br>* [Derek Carr](https://github.com/derekwaynecarr), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-node)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-node)|* Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/4799874685)<br>* Monthly Alternate Time CI/Triage Meeting: [second Thursdays at 08:00 PT (Pacific Time) (monthly)](https://zoom.us/j/4799874685)<br>* Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time) (weekly - excluding 2nd week of the month)](https://zoom.us/j/4799874685)<br>
+< |[Release](https://github.com/kubernetes/community/blob/mastersig-release/README.md)|release|* [Stephen Augustus](https://github.com/justaugustus), Cisco<br>* [Sascha Grunert](https://github.com/saschagrunert), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-release)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-release)|* Regular SIG Meeting: [Tuesdays at 14:30 UTC (biweekly)](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09)<br>* (Release Engineering) Release Engineering: [Tuesdays at 14:30 UTC (biweekly)](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09)<br>
+< |[Scalability](https://github.com/kubernetes/community/blob/mastersig-scalability/README.md)|scalability|* [Matt Matejczyk](https://github.com/mm4tt), Google<br>* [Shyam Jeedigunta](https://github.com/shyamjvs), AWS<br>|* [Slack](https://kubernetes.slack.com/messages/sig-scalability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)|* Regular SIG Meeting: [Thursdays at 10:30 PT (Pacific Time) (bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates)))](https://zoom.us/j/94252896018?pwd=cTlMMlBoTHZqUEdjRm9VY2NWNUg5dz09)<br>
+< |[Scheduling](https://github.com/kubernetes/community/blob/mastersig-scheduling/README.md)|scheduling|* [Wei Huang](https://github.com/Huang-Wei), IBM<br>* [Abdullah Gharaibeh](https://github.com/ahg-g), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-scheduling)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)|* 10AM PT Meeting: [Thursdays at 17:00 UTC (biweekly starting Thursday June 7, 2018)](https://zoom.us/j/841218129)<br>
+< |[Security](https://github.com/kubernetes/community/blob/mastersig-security/README.md)|security|* [Ian Coldwater](https://github.com/IanColdwater), Twilio<br>* [Tabitha Sable](https://github.com/tabbysable), Datadog<br>|* [Slack](https://kubernetes.slack.com/messages/sig-security)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-security)|* Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/9934z1184192?pwd=L25Tc0ZOL3FqU09KNERlTU12dFhTQT09)<br>
+< |[Service Catalog](https://github.com/kubernetes/community/blob/mastersig-service-catalog/README.md)|service-catalog|* [Jonathan Berkhahn](https://github.com/jberkhahn), IBM<br>* [Konstantin Semenov](https://github.com/jhvhs), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-service-catalog)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)|* Regular SIG Meeting: [Mondays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/7201225346)<br>
+< |[Storage](https://github.com/kubernetes/community/blob/mastersig-storage/README.md)|storage|* [Saad Ali](https://github.com/saad-ali), Google<br>* [Xing Yang](https://github.com/xing-yang), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-storage)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)|* Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/614261834)<br>
+< |[Testing](https://github.com/kubernetes/community/blob/mastersig-testing/README.md)|testing|* [Benjamin Elder](https://github.com/BenTheElder), Google<br>* [Aaron Crickenberger](https://github.com/spiffxp), Google<br>* [Steve Kuznetsov](https://github.com/stevekuznetsov), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-testing)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-testing)|* SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time) (bi-weekly starting Tuesday August 13, 2019)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09)<br>
+< |[UI](https://github.com/kubernetes/community/blob/mastersig-ui/README.md)|ui|* [Sebastian Florek](https://github.com/floreks), Kubermatic<br>* [Marcin Maciaszczyk](https://github.com/maciaszczykm), Kubermatic<br>* [Shu Muto](https://github.com/shu-mutou), NEC<br>|* [Slack](https://kubernetes.slack.com/messages/sig-ui)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)|* Regular SIG Meeting: [Thursdays at 09:00 PT (Pacific Time) (bi-weekly)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)<br>
+< |[Usability](https://github.com/kubernetes/community/blob/mastersig-usability/README.md)|usability|* [Himanshu Pandey](https://github.com/hpandeycodeit), VMware<br>* [Gaby Moreno Cesar](https://github.com/morengab), IBM<br>* [Tasha Drew](https://github.com/tashimi), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-usability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-usability)|* Regular SIG Meeting: [Tuesdays at 9:00 PT (Pacific Time) (every third week)](https://zoom.us/j/3832562240)<br>
+< |[Windows](https://github.com/kubernetes/community/blob/mastersig-windows/README.md)|windows|* [Mark Rossetti](https://github.com/marosset), Microsoft<br>|* [Slack](https://kubernetes.slack.com/messages/sig-windows)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)|* Backlog Refinement  / Bug Triage Meeting: [Thursdays at 12:30 Eastern Time (ET) (biweekly)](https://zoom.us/j/94389601840?pwd=MCs2SEJQWG0zUWpBS3Nod0ZNMmVXQT09)<br>* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET) (weekly)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09)<br>* Weekly CI Meeting: [Tuesdays at 12:15 Eastern Time (ET) (weekly)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09)<br>
+---
+> |[API Machinery](https://github.com/kubernetes/community/blob/master/sig-api-machinery/README.md)|api-machinery|* [David Eads](https://github.com/deads2k), Red Hat<br>* [Federico Bongiovanni](https://github.com/fedebongio), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-api-machinery)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-api-machinery)|* Kubebuilder and Controller Runtime Meeting: [Thursdays at 09:00 PT (Pacific Time) (biweekly)]()<br>* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/my/apimachinery)<br>
+> |[Apps](https://github.com/kubernetes/community/blob/master/sig-apps/README.md)|apps|* [Janet Kuo](https://github.com/janetkuo), Google<br>* [Kenneth Owens](https://github.com/kow3ns), Brex<br>* [Maciej Szulik](https://github.com/soltysh), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-apps)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)|* Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09)<br>
+> |[Architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md)|architecture|* [Derek Carr](https://github.com/derekwaynecarr), Red Hat<br>* [Davanum Srinivas](https://github.com/dims), VMware<br>* [John Belamaric](https://github.com/johnbelamaric), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-architecture)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture)|* Enhancements Subproject Meeting: [Thursdays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/95357819945)<br>* Production Readiness Office Hours: [Wednesdays at 12:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/482444151)<br>* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/845605479)<br>* code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/159990793)<br>* conformance office Hours: [Tuesdays at 19:00 UTC (biweekly)](https://zoom.us/j/427337923)<br>
+> |[Auth](https://github.com/kubernetes/community/blob/master/sig-auth/README.md)|auth|* [Mo Khan](https://github.com/enj), VMware<br>* [Mike Danese](https://github.com/mikedanese), Google<br>* [Rita Zhang](https://github.com/ritazh), Microsoft<br>|* [Slack](https://kubernetes.slack.com/messages/sig-auth)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-auth)|* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/264572674)<br>* Secrets Store CSI Meeting: [Thursdays at 8:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/91272289538)<br>
+> |[Autoscaling](https://github.com/kubernetes/community/blob/master/sig-autoscaling/README.md)|autoscaling|* [Guy Templeton](https://github.com/gjtempleton), Skyscanner<br>* [Marcin Wielgus](https://github.com/mwielgus), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-autoscaling)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling)|* Regular SIG Meeting: [Mondays at 16:00 Poland (weekly)](https://zoom.us/j/944410904)<br>
+> |[CLI](https://github.com/kubernetes/community/blob/master/sig-cli/README.md)|cli|* [Eddie Zaneski](https://github.com/eddiezane), Amazon<br>* [Sean Sullivan](https://github.com/seans3), Google<br>* [Maciej Szulik](https://github.com/soltysh), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-cli)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)|* Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time) (monthly)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09)<br>* Kustomize Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time) (monthly)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09)<br>* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09)<br>
+> |[Cloud Provider](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md)|cloud-provider|* [Andrew Sy Kim](https://github.com/andrewsykim), VMware<br>* [Walter Fender](https://github.com/cheftako), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-cloud-provider)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider)|* Regular SIG Meeting: [Wednesdays at 13:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09)<br>* (cloud-provider-extraction-migration) Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute: [Thursdays at 13:30 PT (Pacific Time) (weekly)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit)<br>* (provider-alibaba-cloud) Regular Alibaba Cloud Subproject Meeting: [Tuesdays at 12:00 UTC (monthly 2020 start date: Jan. 7th)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit)<br>* (provider-aws) Regular AWS Subproject Meeting: [Fridays at 9:00 PT (Pacific Time) (biweekly 2019 start date: Jan. 11th)](https://zoom.us/my/k8ssigaws)<br>* (provider-azure) Azure Subproject Meeting (every four weeks): [Mondays at 18:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/586836662)<br>* (provider-azure) Azure Subproject Meeting (every four weeks): [Thursdays at 8:30 PT (Pacific Time) (biweekly)](https://zoom.us/j/586836662)<br>* (provider-gcp) Regular GCP Subproject Meeting: [Thursdays at 16:00 UTC (biweekly)](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit)<br>* (provider-ibmcloud) Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST (biweekly)](https://zoom.us/j/9392903494)<br>* (provider-openstack) Regular OpenStack Subproject Meeting: [Wednesdays at 08:00 PT (Pacific Time) (biweekly starting Wednesday March 20, 2019)](https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit)<br>* (provider-vsphere) Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time) (monthly - first Wednesday every month)](https://zoom.us/j/584244729)<br>
+> |[Cluster Lifecycle](https://github.com/kubernetes/community/blob/master/sig-cluster-lifecycle/README.md)|cluster-lifecycle|* [Justin Santa Barbara](https://github.com/justinsb), Google<br>* [Lubomir Ivanov](https://github.com/neolit123), VMware<br>* [Timothy St. Clair](https://github.com/timothysc), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)|* Regular SIG Meeting: [Tuesdays at 08:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09)<br>* (cluster-addons) Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09)<br>* (cluster-api) Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09)<br>* (cluster-api-provider-aws) Cluster API Provider AWS office hours: [Mondays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09)<br>* (cluster-api-provider-azure) Cluster API Provider Azure office hours: [Thursdays at 08:00 PT (Pacific Time) (bi-weekly)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09)<br>* (cluster-api-provider-digitalocean) Cluster API Provider DigitalOcean office hours: [Thursdays at 09:00 PT (Pacific Time) (monthly, second Thursday of the month)](https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09)<br>* (cluster-api-provider-nested) Cluster API Provider Nested Office Hours: [Tuesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09)<br>* (cluster-api-provider-vsphere) Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time) (biweekly starting Thursday June 25th, 2020)](https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09)<br>* (etcdadm) etcdadm Office Hours: [Mondays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09)<br>* (image-builder) Image Builder office hours: [Thursdays at 08:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09)<br>* (kops) kops Office Hours: [Fridays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09)<br>* (kubeadm) kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09)<br>* (kubespray) Kubespray Office Hours: [Wednesdays at 08:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/532465189?pwd=THMvL2MzdjZXWG55eHpJMkU2dkI1dz09)<br>* (minikube) minikube office hours: [Mondays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09)<br>
+> |[Contributor Experience](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md)|contributor-experience|* [Alison Dowdney](https://github.com/alisondy), Weaveworks<br>* [Bob Killen](https://github.com/mrbobbytables), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-contribex)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex)|* Regular SIG Meeting: [Wednesdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09)<br>* (community-management) APAC Coordinator Meeting: [Thursdays at 5:00 UTC (biweekly)](https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09)<br>* (contributor-comms) Contributor Comms - Upstream Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time) (weekly)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09)<br>* (events) Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time) (monthly on 3rd Wednesday)](https://hackmd.io/@k8s/office-hours)<br>* (events) Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time) (monthly on 3rd Wednesday)]()<br>* (github-management) GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time) (Monthly on 4th Thursday)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09)<br>* (mentoring) Mentoring Subproject Meeting: [Mondays at 08:00 PT (Biweekly)](https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09)<br>
+> |[Docs](https://github.com/kubernetes/community/blob/master/sig-docs/README.md)|docs|* [Irvi Aini](https://github.com/irvifa), Spotify<br>* [Jim Angel](https://github.com/jimangel), Google<br>* [Kaitlyn Barnard](https://github.com/kbarnard10), Kong<br>|* [Slack](https://kubernetes.slack.com/messages/sig-docs)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)|* APAC SIG Meeting: [Wednesdays at 01:00 UTC (monthly - Wednesday, after the fourth Tuesday, every month)](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit)<br>* Korean Team Meeting: [Thursdays at 13:00 UTC (biweekly)](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit)<br>* Localization Subgroup Meeting: [Mondays at 15:00 UTC (monthly)](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/)<br>* Regular SIG Meeting: [Tuesdays at 17:30 UTC (weekly - except fourth Tuesday every month)](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit)<br>* Spanish Team Meeting: [Tuesdays at 15:30 UTC (weekly)](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09)<br>
+> |[Instrumentation](https://github.com/kubernetes/community/blob/master/sig-instrumentation/README.md)|instrumentation|* [Elana Hashman](https://github.com/ehashman), Red Hat<br>* [Han Kang](https://github.com/logicalhan), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-instrumentation)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)|* Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time) (biweekly)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09)<br>* Regular Triage Meeting: [Thursdays at 9:30 PT (Pacific Time) (biweekly - alternating with regular meeting)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09)<br>
+> |[Multicluster](https://github.com/kubernetes/community/blob/master/sig-multicluster/README.md)|multicluster|* [Jeremy Olmsted-Thompson](https://github.com/jeremyot), Google<br>* [Paul Morie](https://github.com/pmorie), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-multicluster)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster)|* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time) (weekly)](https://zoom.us/my/k8s.mc)<br>
+> |[Network](https://github.com/kubernetes/community/blob/master/sig-network/README.md)|network|* [Casey Davenport](https://github.com/caseydavenport), Tigera<br>* [Dan Williams](https://github.com/dcbw), Red Hat<br>* [Tim Hockin](https://github.com/thockin), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-network)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-network)|* Gateway API Meeting (APAC Friendly): [Mondays at 15:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/441530404)<br>* Gateway API Meeting (EMEA Friendly): [Tuesdays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/441530404)<br>* Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time) (weekly)](https://zoom.us/j/96264742248)<br>* SIG Network Ingress NGINX Meeting: [Tuesdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/98377891310)<br>* SIG Network Kube Proxy Meeting: [Fridays at 8:30 PT (Pacific Time) (weekly)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit)<br>* SIG Network Meeting: [Thursdays at 14:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/361123509)<br>
+> |[Node](https://github.com/kubernetes/community/blob/master/sig-node/README.md)|node|* [Dawn Chen](https://github.com/dchen1107), Google<br>* [Derek Carr](https://github.com/derekwaynecarr), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-node)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-node)|* Regular SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/4799874685)<br>* Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/4799874685)<br>
+> |[Release](https://github.com/kubernetes/community/blob/master/sig-release/README.md)|release|* [Stephen Augustus](https://github.com/justaugustus), Cisco<br>* [Sascha Grunert](https://github.com/saschagrunert), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-release)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-release)|* Regular SIG Meeting: [Tuesdays at 14:30 UTC (biweekly)](https://zoom.us/j/327142148)<br>* (Release Engineering) Release Engineering: [Tuesdays at 14:30 UTC (biweekly)](https://zoom.us/j/240812475)<br>
+> |[Scalability](https://github.com/kubernetes/community/blob/master/sig-scalability/README.md)|scalability|* [Matt Matejczyk](https://github.com/mm4tt), Google<br>* [Shyam Jeedigunta](https://github.com/shyamjvs), AWS<br>|* [Slack](https://kubernetes.slack.com/messages/sig-scalability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)|* Regular SIG Meeting: [Thursdays at 10:30 PT (Pacific Time) (bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates)))](https://zoom.us/j/94252896018?pwd=cTlMMlBoTHZqUEdjRm9VY2NWNUg5dz09)<br>
+> |[Scheduling](https://github.com/kubernetes/community/blob/master/sig-scheduling/README.md)|scheduling|* [Wei Huang](https://github.com/Huang-Wei), IBM<br>* [Abdullah Gharaibeh](https://github.com/ahg-g), Google<br>|* [Slack](https://kubernetes.slack.com/messages/sig-scheduling)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)|* 10AM PT Meeting: [Thursdays at 17:00 UTC (biweekly starting Thursday June 7, 2018)](https://zoom.us/j/841218129)<br>
+> |[Security](https://github.com/kubernetes/community/blob/master/sig-security/README.md)|security|* [Ian Coldwater](https://github.com/IanColdwater), Twilio<br>* [Tabitha Sable](https://github.com/tabbysable), Datadog<br>|* [Slack](https://kubernetes.slack.com/messages/sig-security)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-security)|* Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/9934z1184192?pwd=L25Tc0ZOL3FqU09KNERlTU12dFhTQT09)<br>
+> |[Service Catalog](https://github.com/kubernetes/community/blob/master/sig-service-catalog/README.md)|service-catalog|* [Jonathan Berkhahn](https://github.com/jberkhahn), IBM<br>* [Konstantin Semenov](https://github.com/jhvhs), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-service-catalog)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog)|* Regular SIG Meeting: [Mondays at 10:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/7201225346)<br>
+> |[Storage](https://github.com/kubernetes/community/blob/master/sig-storage/README.md)|storage|* [Saad Ali](https://github.com/saad-ali), Google<br>* [Xing Yang](https://github.com/xing-yang), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-storage)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)|* Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/614261834)<br>
+> |[Testing](https://github.com/kubernetes/community/blob/master/sig-testing/README.md)|testing|* [Benjamin Elder](https://github.com/BenTheElder), Google<br>* [Aaron Crickenberger](https://github.com/spiffxp), Google<br>* [Steve Kuznetsov](https://github.com/stevekuznetsov), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/sig-testing)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-testing)|* SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time) (bi-weekly starting Tuesday August 13, 2019)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09)<br>
+> |[UI](https://github.com/kubernetes/community/blob/master/sig-ui/README.md)|ui|* [Sebastian Florek](https://github.com/floreks), Kubermatic<br>* [Marcin Maciaszczyk](https://github.com/maciaszczykm), Kubermatic<br>* [Shu Muto](https://github.com/shu-mutou), NEC<br>|* [Slack](https://kubernetes.slack.com/messages/sig-ui)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)|* Regular SIG Meeting: [Thursdays at 09:00 PT (Pacific Time) (bi-weekly)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)<br>
+> |[Usability](https://github.com/kubernetes/community/blob/master/sig-usability/README.md)|usability|* [Himanshu Pandey](https://github.com/hpandeycodeit), VMware<br>* [Gaby Moreno Cesar](https://github.com/morengab), IBM<br>* [Tasha Drew](https://github.com/tashimi), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-usability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-usability)|* Regular SIG Meeting: [Tuesdays at 9:00 PT (Pacific Time) (every third week)](https://zoom.us/j/3832562240)<br>
+> |[Windows](https://github.com/kubernetes/community/blob/master/sig-windows/README.md)|windows|* [Mark Rossetti](https://github.com/marosset), Microsoft<br>|* [Slack](https://kubernetes.slack.com/messages/sig-windows)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)|* Backlog Refinement  / Bug Triage Meeting: [Thursdays at 12:30 Eastern Time (ET) (biweekly)](https://zoom.us/j/94389601840?pwd=MCs2SEJQWG0zUWpBS3Nod0ZNMmVXQT09)<br>* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET) (weekly)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09)<br>* Weekly CI Meeting: [Tuesdays at 12:15 Eastern Time (ET) (weekly)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09)<br>
+64,73c64,73
+< |[API Expression](https://github.com/kubernetes/community/blob/masterwg-api-expression/README.md)|* API Machinery<br>* Architecture<br>|* [Antoine Pelisse](https://github.com/apelisse), Google<br>* [Kevin Wiesmueller](https://github.com/kwiesmueller), //SEIBERT/MEDIA GmbH<br>|* [Slack](https://kubernetes.slack.com/messages/wg-api-expression)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression)|* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time) (biweekly)](https://zoom.us/j/94238112084)<br>
+< |[Component Standard](https://github.com/kubernetes/community/blob/masterwg-component-standard/README.md)|* API Machinery<br>* Architecture<br>* Cluster Lifecycle<br>|* [Michael Taufen](https://github.com/mtaufen), Google<br>* [Leigh Capili](https://github.com/stealthybox), Weaveworks<br>|* [Slack](https://kubernetes.slack.com/messages/wg-component-standard)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard)|* Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time) (weekly)](https://zoom.us/j/8027741546)<br>* Weekly Mentorship Office Hours - Come ask questions and get help: [Tuesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/8027741546)<br>
+< |[Data Protection](https://github.com/kubernetes/community/blob/masterwg-data-protection/README.md)|* Apps<br>* Storage<br>|* [Xing Yang](https://github.com/xing-yang), VMware<br>* [Xiangqian Yu](https://github.com/yuxiangqian), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-data-protection)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-data-protection)|* Regular WG Meeting: [Wednesdays at 9:00 PT (Pacific Time) (bi-weekly)](https://zoom.us/j/6933410772)<br>
+< |[IoT Edge](https://github.com/kubernetes/community/blob/masterwg-iot-edge/README.md)|* Multicluster<br>* Network<br>|* [Steve Wong](https://github.com/cantbewong), VMware<br>* [Cindy Xing](https://github.com/cindyxing), Microsoft<br>* [Dejan Bosanac](https://github.com/dejanb), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/wg-iot-edge)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)|* APAC WG Meeting: [Wednesdays at 5:00 UTC (every four weeks)](https://zoom.us/j/91251176046?pwd=cmdqclovM3R3eDB1VlpuL1ZGU1hnZz09)<br>* Regular WG Meeting (Pacific Time): [Wednesdays at 09:00 PT (every four weeks)](https://zoom.us/j/92778512626?pwd=MXhlemwvYnhkQmkxeXllQ0Z5VGs4Zz09)<br>
+< |[K8s Infra](https://github.com/kubernetes/community/blob/masterwg-k8s-infra/README.md)|* Architecture<br>* Contributor Experience<br>* Release<br>* Testing<br>|* [Arnaud Meukam](https://github.com/ameukam), Alter Way<br>* [Davanum Srinivas](https://github.com/dims), VMware<br>* [Aaron Crickenberger](https://github.com/spiffxp), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-k8s-infra)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)|* Regular WG Meeting: [Wednesdays at 20:00 UTC (bi-weekly)](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09)<br>
+< |[Multitenancy](https://github.com/kubernetes/community/blob/masterwg-multitenancy/README.md)|* API Machinery<br>* Auth<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Sanjeev Rampal](https://github.com/srampal), Cisco<br>* [Tasha Drew](https://github.com/tashimi), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/wg-multitenancy)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy)|* Regular WG Meeting: [Tuesdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/my/k8s.sig.auth)<br>
+< |[Naming](https://github.com/kubernetes/community/blob/masterwg-naming/README.md)|* Architecture<br>* Contributor Experience<br>* Docs<br>|* [Celeste Horgan](https://github.com/celestehorgan), CNCF<br>* [Jaice Singer DuMars](https://github.com/jdumars), Apple<br>* [Stephen Augustus](https://github.com/justaugustus), Cisco<br>|* [Slack](https://kubernetes.slack.com/messages/wg-naming)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-naming)|* Regular WG Meeting: [Mondays at 10:30 PT (Pacific Time) (monthly - second Monday of month)](https://zoom.us/j/91522666403?pwd=WnRSNlNhNXhDWkR2ZU9ydGpsNWxtZz09)<br>
+< |[Policy](https://github.com/kubernetes/community/blob/masterwg-policy/README.md)|* Architecture<br>* Auth<br>* Multicluster<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Jim Bugwadia](https://github.com/JimBugwadia), Kyverno/Nirmata<br>* [Robert Ficcaglia](https://github.com/rficcaglia), SunStone<br>|* [Slack](https://kubernetes.slack.com/messages/wg-policy)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)|* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time) (semimonthly)](https://zoom.us/j/7375677271)<br>
+< |[Reliability](https://github.com/kubernetes/community/blob/masterwg-reliability/README.md)|* Architecture<br>* Cluster Lifecycle<br>* Release<br>* Scalability<br>* Testing<br>|* [David Eads](https://github.com/deads2k), Red Hat<br>* [Steve Kuznetsov](https://github.com/stevekuznetsov), Red Hat<br>* [Wojciech Tyczynski](https://github.com/wojtek-t), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-reliability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-reliability)|* Regular WG Meeting: [Mondays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/97964505804?pwd=R3hzSnArQWJHYmdWUnpSUDh3aXhFUT09)<br>
+< |[Structured Logging](https://github.com/kubernetes/community/blob/masterwg-structured-logging/README.md)|* API Machinery<br>* Architecture<br>* Cloud Provider<br>* Instrumentation<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Marek Siarkowicz](https://github.com/serathius), Google<br>* [Shubheksha Jalan](https://github.com/shubheksha), Apple<br>|* [Slack](https://kubernetes.slack.com/messages/wg-structured-logging)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging)|* Regular Meeting: [Thursdays at 15:00 UTC (biweekly)](https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09)<br>
+---
+> |[API Expression](https://github.com/kubernetes/community/blob/master/wg-api-expression/README.md)|* API Machinery<br>* Architecture<br>|* [Antoine Pelisse](https://github.com/apelisse), Google<br>* [Kevin Wiesmueller](https://github.com/kwiesmueller), //SEIBERT/MEDIA GmbH<br>|* [Slack](https://kubernetes.slack.com/messages/wg-api-expression)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression)|* Regular WG Meeting: [Tuesdays at 9:30 PT (Pacific Time) (biweekly)](https://zoom.us/j/94238112084)<br>
+> |[Component Standard](https://github.com/kubernetes/community/blob/master/wg-component-standard/README.md)|* API Machinery<br>* Architecture<br>* Cluster Lifecycle<br>|* [Michael Taufen](https://github.com/mtaufen), Google<br>* [Leigh Capili](https://github.com/stealthybox), Weaveworks<br>|* [Slack](https://kubernetes.slack.com/messages/wg-component-standard)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard)|* Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time) (weekly)](https://zoom.us/j/8027741546)<br>* Weekly Mentorship Office Hours - Come ask questions and get help: [Tuesdays at 10:00 PT (Pacific Time) (weekly)](https://zoom.us/j/8027741546)<br>
+> |[Data Protection](https://github.com/kubernetes/community/blob/master/wg-data-protection/README.md)|* Apps<br>* Storage<br>|* [Xing Yang](https://github.com/xing-yang), VMware<br>* [Xiangqian Yu](https://github.com/yuxiangqian), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-data-protection)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-data-protection)|* Regular WG Meeting: [Wednesdays at 9:00 PT (Pacific Time) (bi-weekly)](https://zoom.us/j/6933410772)<br>
+> |[IoT Edge](https://github.com/kubernetes/community/blob/master/wg-iot-edge/README.md)|* Multicluster<br>* Network<br>|* [Steve Wong](https://github.com/cantbewong), VMware<br>* [Cindy Xing](https://github.com/cindyxing), Microsoft<br>* [Dejan Bosanac](https://github.com/dejanb), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/wg-iot-edge)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)|* APAC WG Meeting: [Wednesdays at 5:00 UTC (every four weeks)](https://zoom.us/j/91251176046?pwd=cmdqclovM3R3eDB1VlpuL1ZGU1hnZz09)<br>* Regular WG Meeting (Pacific Time): [Wednesdays at 09:00 PT (every four weeks)](https://zoom.us/j/92778512626?pwd=MXhlemwvYnhkQmkxeXllQ0Z5VGs4Zz09)<br>
+> |[K8s Infra](https://github.com/kubernetes/community/blob/master/wg-k8s-infra/README.md)|* Architecture<br>* Contributor Experience<br>* Release<br>* Testing<br>|* [Arnaud Meukam](https://github.com/ameukam), Alter Way<br>* [Davanum Srinivas](https://github.com/dims), VMware<br>* [Aaron Crickenberger](https://github.com/spiffxp), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-k8s-infra)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)|* Regular WG Meeting: [Wednesdays at 20:00 UTC (bi-weekly)](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09)<br>
+> |[Multitenancy](https://github.com/kubernetes/community/blob/master/wg-multitenancy/README.md)|* API Machinery<br>* Auth<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Sanjeev Rampal](https://github.com/srampal), Cisco<br>* [Tasha Drew](https://github.com/tashimi), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/wg-multitenancy)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy)|* Regular WG Meeting: [Tuesdays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/my/k8s.sig.auth)<br>
+> |[Naming](https://github.com/kubernetes/community/blob/master/wg-naming/README.md)|* Architecture<br>* Contributor Experience<br>* Docs<br>|* [Celeste Horgan](https://github.com/celestehorgan), CNCF<br>* [Jaice Singer DuMars](https://github.com/jdumars), Apple<br>* [Stephen Augustus](https://github.com/justaugustus), Cisco<br>|* [Slack](https://kubernetes.slack.com/messages/wg-naming)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-naming)|* Regular WG Meeting: [Mondays at 10:30 PT (Pacific Time) (monthly - second Monday of month)](https://zoom.us/j/91522666403?pwd=WnRSNlNhNXhDWkR2ZU9ydGpsNWxtZz09)<br>
+> |[Policy](https://github.com/kubernetes/community/blob/master/wg-policy/README.md)|* Architecture<br>* Auth<br>* Multicluster<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Jim Bugwadia](https://github.com/JimBugwadia), Kyverno/Nirmata<br>* [Robert Ficcaglia](https://github.com/rficcaglia), SunStone<br>|* [Slack](https://kubernetes.slack.com/messages/wg-policy)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)|* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time) (semimonthly)](https://zoom.us/j/7375677271)<br>
+> |[Reliability](https://github.com/kubernetes/community/blob/master/wg-reliability/README.md)|* Architecture<br>* Cluster Lifecycle<br>* Release<br>* Scalability<br>* Testing<br>|* [David Eads](https://github.com/deads2k), Red Hat<br>* [Steve Kuznetsov](https://github.com/stevekuznetsov), Red Hat<br>* [Wojciech Tyczynski](https://github.com/wojtek-t), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-reliability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-reliability)|* Regular WG Meeting: [Mondays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/97964505804?pwd=R3hzSnArQWJHYmdWUnpSUDh3aXhFUT09)<br>
+> |[Structured Logging](https://github.com/kubernetes/community/blob/master/wg-structured-logging/README.md)|* API Machinery<br>* Architecture<br>* Cloud Provider<br>* Instrumentation<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Marek Siarkowicz](https://github.com/serathius), Google<br>* [Shubheksha Jalan](https://github.com/shubheksha), Apple<br>|* [Slack](https://kubernetes.slack.com/messages/wg-structured-logging)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging)|* Regular Meeting: [Thursdays at 15:00 UTC (biweekly)](https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09)<br>
+79,80c79,80
+< |[Big Data](https://github.com/kubernetes/community/blob/masterug-big-data/README.md)|big-data|* [Erik Erlandson](https://github.com/erikerlandson), Red Hat<br>* [Anirudh Ramanathan](https://github.com/foxish), Rockset<br>* [Yinan Li](https://github.com/liyinan926), Google<br>|* [Slack](https://kubernetes.slack.com/messages/ug-big-data)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data)|* Regular User Group Meeting: [Wednesdays at 18:00 UTC (biweekly)](https://zoom.us/my/ug.big.data)<br>
+< |[VMware Users](https://github.com/kubernetes/community/blob/masterug-vmware-users/README.md)|vmware-users|* [Steve Wong](https://github.com/cantbewong), VMware<br>* [Myles Gray](https://github.com/mylesagray), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/ug-vmware)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-vmware)|* Regular User Group Meeting: [Thursdays at 11:00 PT (Pacific Time) (monthly)](https://docs.google.com/document/d/1ujpqj4hhcIBrSCK2qn6J1r--3QyD96rfDjXTZQ7n7Mw/edit)<br>
+---
+> |[Big Data](https://github.com/kubernetes/community/blob/master/ug-big-data/README.md)|big-data|* [Erik Erlandson](https://github.com/erikerlandson), Red Hat<br>* [Anirudh Ramanathan](https://github.com/foxish), Rockset<br>* [Yinan Li](https://github.com/liyinan926), Google<br>|* [Slack](https://kubernetes.slack.com/messages/ug-big-data)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data)|* Regular User Group Meeting: [Wednesdays at 18:00 UTC (biweekly)](https://zoom.us/my/ug.big.data)<br>
+> |[VMware Users](https://github.com/kubernetes/community/blob/master/ug-vmware-users/README.md)|vmware-users|* [Steve Wong](https://github.com/cantbewong), VMware<br>* [Myles Gray](https://github.com/mylesagray), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/ug-vmware)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-vmware)|* Regular User Group Meeting: [Thursdays at 11:00 PT (Pacific Time) (monthly)](https://docs.google.com/document/d/1ujpqj4hhcIBrSCK2qn6J1r--3QyD96rfDjXTZQ7n7Mw/edit)<br>
+86,88c86,88
+< |[Code of Conduct](https://github.com/kubernetes/community/blob/mastercommittee-code-of-conduct/README.md)|code-of-conduct|* [Aeva Black](https://github.com/AevaOnline), Microsoft<br>* [Celeste Horgan](https://github.com/celestehorgan), CNCF<br>* [Karen Chu](https://github.com/karenhchu), Microsoft<br>* [Tasha Drew](https://github.com/tashimi), VMware<br>* [Tim Pepper](https://github.com/tpepper), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/code-of-conduct)<br>* [Private Mailing List](conduct@kubernetes.io)
+< |[Security Response](https://github.com/kubernetes/community/blob/mastercommittee-security-response/README.md)|security-response|* [CJ Cullen](https://github.com/cjcullen), Google<br>* [Joel Smith](https://github.com/joelsmith), Red Hat<br>* [Luke Hinds](https://github.com/lukehinds), Red Hat<br>* [Micah Hausler](https://github.com/micahhausler), Amazon<br>* [Swamy Shivaganga Nagaraju](https://github.com/swamymsft), Microsoft<br>* [Tabitha Sable](https://github.com/tabbysable), Datadog<br>* [Tim Allclair](https://github.com/tallclair), Apple<br>|* [Private Mailing List](security@kubernetes.io)
+< |[Steering](https://github.com/kubernetes/community/blob/mastercommittee-steering/README.md)|steering|* [Christoph Blecker](https://github.com/cblecker), Red Hat<br>* [Derek Carr](https://github.com/derekwaynecarr), Red Hat<br>* [Davanum Srinivas](https://github.com/dims), VMware<br>* [Jordan Liggitt](https://github.com/liggitt), Google<br>* [Bob Killen](https://github.com/mrbobbytables), Google<br>* [Nikhita Raghunath](https://github.com/nikhita), VMware<br>* [Paris Pittman](https://github.com/parispittman), Apple<br>|* [Slack](https://kubernetes.slack.com/messages/steering-committee)<br>* [Mailing List](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering)<br>* [Private Mailing List](steering-private@kubernetes.io)
+---
+> |[Code of Conduct](https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/README.md)|code-of-conduct|* [Aeva Black](https://github.com/AevaOnline), Microsoft<br>* [Celeste Horgan](https://github.com/celestehorgan), CNCF<br>* [Karen Chu](https://github.com/karenhchu), Microsoft<br>* [Tasha Drew](https://github.com/tashimi), VMware<br>* [Tim Pepper](https://github.com/tpepper), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/code-of-conduct)<br>* [Private Mailing List](conduct@kubernetes.io)
+> |[Security Response](https://github.com/kubernetes/community/blob/master/committee-security-response/README.md)|security-response|* [CJ Cullen](https://github.com/cjcullen), Google<br>* [Joel Smith](https://github.com/joelsmith), Red Hat<br>* [Luke Hinds](https://github.com/lukehinds), Red Hat<br>* [Micah Hausler](https://github.com/micahhausler), Amazon<br>* [Swamy Shivaganga Nagaraju](https://github.com/swamymsft), Microsoft<br>* [Tabitha Sable](https://github.com/tabbysable), Datadog<br>* [Tim Allclair](https://github.com/tallclair), Apple<br>|* [Private Mailing List](security@kubernetes.io)
+> |[Steering](https://github.com/kubernetes/community/blob/master/committee-steering/README.md)|steering|* [Christoph Blecker](https://github.com/cblecker), Red Hat<br>* [Derek Carr](https://github.com/derekwaynecarr), Red Hat<br>* [Davanum Srinivas](https://github.com/dims), VMware<br>* [Jordan Liggitt](https://github.com/liggitt), Google<br>* [Bob Killen](https://github.com/mrbobbytables), Google<br>* [Nikhita Raghunath](https://github.com/nikhita), VMware<br>* [Paris Pittman](https://github.com/parispittman), Apple<br>|* [Slack](https://kubernetes.slack.com/messages/steering-committee)<br>* [Mailing List](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering)<br>* [Private Mailing List](steering-private@kubernetes.io)
+diff -r ./content/docs/comms/calendars.md ../../contentCorrect/en/docs/comms/calendars.md
+179,180c179,180
+< [gsuite]: hugo-url
+< [doodle]: hugo-url
+---
+> [gsuite]: https://github.com/kubernetes/community/issues/3362
+> [doodle]: https://doodle.com
+182,186c182,186
+< [new shared calendar]: hugo-url
+< [configure access permissions and sharing:]: hugo-url
+< [SIG/WG list]: hugo-url
+< [Public Community Calendar]: hugo-url
+< [contributor mailing list]: hugo-url
+---
+> [new shared calendar]: https://support.google.com/calendar/answer/37095?hl=en
+> [configure access permissions and sharing:]: https://support.google.com/calendar/answer/37082?hl=en
+> [SIG/WG list]: /community/community-groups
+> [Public Community Calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io&ctz=America%2FLos_Angeles
+> [contributor mailing list]: https://groups.google.com/forum/#!forum/kubernetes-dev
+diff -r ./content/docs/comms/discuss.md ../../contentCorrect/en/docs/comms/discuss.md
+203,221c203,221
+< [Discourse]: hugo-url
+< [A community forum for Kubernetes KEP]: hugo-url
+< [archive k-users]: hugo-url
+< [Kubernetes Code of Conduct]: hugo-url
+< [Linux Foundation Privacy Policy]: hugo-url
+< [admins]: hugo-url
+< [Discuss About page]: hugo-url
+< [sig contributor experience mailing list]: hugo-url
+< [built in system for flagging inappropriate posts]: hugo-url
+< [unlist]: hugo-url
+< [user-trust]: hugo-url
+< [moderation guidelines]: hugo-url
+< [kubernetes.io blog]: hugo-url
+< [lwkd]: hugo-url
+< [Site Feedback and Help]: hugo-url
+< [SIG, WG or subj-project]: hugo-url
+< [Regional Discussions Category]: hugo-url
+< [translated versions of the CNCF Code of Conduct]: hugo-url
+< [CNCF foundation]: hugo-url
+---
+> [Discourse]: https://discourse.org
+> [A community forum for Kubernetes KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-contributor-experience/0000-community-forum
+> [archive k-users]: https://github.com/kubernetes/community/issues/2492
+> [Kubernetes Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [Linux Foundation Privacy Policy]: https://www.linuxfoundation.org/privacy/
+> [admins]: /docs/comms/moderators#discusskubernetesio
+> [Discuss About page]: https://discuss.kubernetes.io/about
+> [sig contributor experience mailing list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
+> [built in system for flagging inappropriate posts]: https://meta.discourse.org/t/what-are-flags-and-how-do-they-work/32783
+> [unlist]: https://meta.discourse.org/t/what-is-the-difference-between-closed-unlisted-and-archived-topics/51238
+> [user-trust]: https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/
+> [moderation guidelines]: /docs/comms/moderation
+> [kubernetes.io blog]: https://kubernetes.io/blog/
+> [lwkd]: http://lwkd.info/
+> [Site Feedback and Help]: https://discuss.kubernetes.io/c/site-feedback
+> [SIG, WG or subj-project]: /community/community-groups
+> [Regional Discussions Category]: https://discuss.kubernetes.io/c/regional-discussions
+> [translated versions of the CNCF Code of Conduct]: https://github.com/cncf/foundation/tree/master/code-of-conduct-languages
+> [CNCF foundation]: https://github.com/cncf/foundation
+diff -r ./content/docs/comms/mailing-lists.md ../../contentCorrect/en/docs/comms/mailing-lists.md
+284,293c284,293
+< [sig-list]: hugo-url
+< [Code of Conduct]: hugo-url
+< [admins]: hugo-url
+< [sig contributor experience mailing list]: hugo-url
+< [moderation guidelines]: hugo-url
+< [lock the thread immediately]: hugo-url
+< [delete the post]: hugo-url
+< [these instructions]: hugo-url
+< [groups help]: hugo-url
+< [sigs.yaml]: hugo-url
+---
+> [sig-list]: /community/community-groups
+> [Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [admins]: /docs/comms/moderators#mailing-lists
+> [sig contributor experience mailing list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
+> [moderation guidelines]: /docs/comms/moderation
+> [lock the thread immediately]: https://support.google.com/groups/answer/2466386?hl=en#
+> [delete the post]: https://support.google.com/groups/answer/1046523?hl=en
+> [these instructions]: https://support.google.com/groups/answer/2646833?hl=en&ref_topic=2458761#
+> [groups help]: https://support.google.com/groups/answer/2466386?hl=en&ref_topic=2458761
+> [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
+diff -r ./content/docs/comms/moderation.md ../../contentCorrect/en/docs/comms/moderation.md
+205,207c205,207
+< - [Discuss Guidelines](https://github.com/kubernetes/community/blob/master/discuss-guidelines.md)
+< - [Moderators](https://github.com/kubernetes/community/blob/master/moderators.md#discuss.kubernetes.io)
+< - [Regional Moderators](https://github.com/kubernetes/community/blob/master/moderators.md#regional-category-moderators)
+---
+> - [Discuss Guidelines](/docs/comms/discuss)
+> - [Moderators](/docs/comms/moderators#discuss.kubernetes.io)
+> - [Regional Moderators](/docs/comms/moderators#regional-category-moderators)
+211,212c211,212
+< - [Mailing List Guidelines](https://github.com/kubernetes/community/blob/master/mailing-list-guidelines.md)
+< - [Moderators](https://github.com/kubernetes/community/blob/master/moderators.md#mailing-list)
+---
+> - [Mailing List Guidelines](/docs/comms/mailing-lists)
+> - [Moderators](/docs/comms/moderators#mailing-list)
+216,217c216,217
+< - [Slack Guidelines](https://github.com/kubernetes/community/blob/master/slack-guidelines.md)
+< - [Moderators](https://github.com/kubernetes/community/blob/master/moderators.md#slack)
+---
+> - [Slack Guidelines](/docs/comms/slack)
+> - [Moderators](/docs/comms/moderators#slack)
+226,227c226,227
+< - [Youtube Guidelines](https://github.com/kubernetes/community/blob/master./youtube/youtube-guidelines.md)
+< - [Moderators](https://github.com/kubernetes/community/blob/master/moderators.md#youtube-channel)
+---
+> - [Youtube Guidelines](/docs/comms/youtube)
+> - [Moderators](/docs/comms/moderators#youtube-channel)
+231,232c231,232
+< - [Zoom Guidelines](https://github.com/kubernetes/community/blob/master/zoom-guidelines.md)
+< - [Moderators](https://github.com/kubernetes/community/blob/master/moderators.md#zoom)
+---
+> - [Zoom Guidelines](/docs/comms/zoom)
+> - [Moderators](/docs/comms/moderators#zoom)
+256c256
+< [moderators@kubernetes.io group]: hugo-url
+---
+> [moderators@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/main/groups/groups.yaml
+272,280c272,280
+< [charter]: hugo-url
+< [moderators]: hugo-url
+< [Code of Conduct]: hugo-url
+< [Kubernetes Community Values]: hugo-url
+< [stages of burnout]: hugo-url
+< [Code of Conduct Committee]: hugo-url
+< [Steering Committee]: hugo-url
+< [moderator request]: hugo-url
+< [filing an issue]: hugo-url
+---
+> [charter]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience/charter.md#code-binaries-and-services
+> [moderators]: /docs/comms/moderators
+> [Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [Kubernetes Community Values]: /community/values
+> [stages of burnout]: https://opensource.com/business/15/12/avoid-burnout-live-happy
+> [Code of Conduct Committee]: https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/README.md
+> [Steering Committee]: https://git.k8s.io/steering
+> [moderator request]: https://github.com/kubernetes/community/issues/new/choose
+> [filing an issue]: https://github.com/kubernetes/community/issues/new/?assignees=&labels=area%2Fcommunity-management%2C+sig%2Fcontributor-experience&template=moderator_application.md&title=REQUEST%3A+New+moderator+for+%3Cyour-GH-handle%3E+of+%3Ck8s+property%3E
+diff -r ./content/docs/comms/moderators.md ../../contentCorrect/en/docs/comms/moderators.md
+230,237c230,237
+< [moderation guidelines]: hugo-url
+< [github administration team]: hugo-url
+< [trust system]: hugo-url
+< [chinese]: hugo-url
+< [german]: hugo-url
+< [italian]: hugo-url
+< [spanish]: hugo-url
+< [ukrainian]: hugo-url
+---
+> [moderation guidelines]: /docs/comms/moderation
+> [github administration team]: https://git.k8s.io/community/github-management#github-administration-team
+> [trust system]: https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/
+> [chinese]: https://discuss.kubernetes.io/t/about-the-chinese-category/2881
+> [german]: https://discuss.kubernetes.io/t/about-the-german-category/3152
+> [italian]: https://discuss.kubernetes.io/t/about-the-italian-category/2917/2
+> [spanish]: https://discuss.kubernetes.io/t/about-the-spanish-category/6167
+> [ukrainian]: https://discuss.kubernetes.io/t/about-the-ukrainian-category/2916
+diff -r ./content/docs/comms/notifications.md ../../contentCorrect/en/docs/comms/notifications.md
+20,22c20,22
+< [Special Interest Groups (SIG)]: hugo-url
+< [Working Groups (WG)]: hugo-url
+< [Gubernator]: hugo-url
+---
+> [Special Interest Groups (SIG)]: /community/community-groups#master-sig-list
+> [Working Groups (WG)]: /community/community-groups#master-working-group-list
+> [Gubernator]: https://gubernator.k8s.io/pr
+97,98c97,98
+< [kubernetes-dev]: hugo-url
+< [thread]: hugo-url
+---
+> [kubernetes-dev]: https://groups.google.com/g/kubernetes-dev
+> [thread]: https://groups.google.com/forum/#!topic/kubernetes-dev/5qU8irU7_tE/discussion
+101c101
+< [Creating rules to filter your email]: hugo-url
+---
+> [Creating rules to filter your email]: https://support.google.com/mail/answer/6579?hl=en
+diff -r ./content/docs/comms/slack.md ../../contentCorrect/en/docs/comms/slack.md
+339c339
+< This channel abides to the Kubernetes Code of Conduct - http://git.k8s.io/communityhugo-url
+---
+> This channel abides to the Kubernetes Code of Conduct - http://git.k8s.io/community/code-of-conduct.md
+401,421c401,421
+< [coc]: hugo-url
+< [admins]: hugo-url
+< [Slack Archive Download]: hugo-url
+< [cocc]: hugo-url
+< [GitHub Issue]: hugo-url
+< [sig-list]: hugo-url
+< [tempelis]: hugo-url
+< [slack-config]: hugo-url
+< [Channel Documentation]: hugo-urlREADME.md#channels
+< [channels.yaml]: hugo-urlchannels.yaml
+< [restrictions.yaml]: hugo-urlrestrictions.yaml
+< [`owners`]: hugo-url
+< [users]: hugo-urlREADME.md#users
+< [users.yaml]: hugo-urlusers.yaml
+< [usergroups.yaml]: hugo-urlusergroups.yaml
+< [User Group Documentation]: hugo-urlREADME.md#usergroups
+< [Slack Config Documentation]: hugo-urlREADME.md
+< [default message pinned]: hugo-urltemplate.yaml
+< [Slack’s policy on inactivated accounts]: hugo-url
+< [moderation guidelines]: hugo-url
+< [CNCF Slack]: hugo-url
+---
+> [coc]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [admins]: /docs/comms/moderators#Slack
+> [Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
+> [cocc]: https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/README.md
+> [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
+> [sig-list]: /community/community-groups
+> [tempelis]: http://sigs.k8s.io/slack-infra/tempelis
+> [slack-config]: https://github.com/kubernetes/community/blob/master/communication/slack-config
+> [Channel Documentation]: https://github.com/kubernetes/community/blob/master/communication/slack-configREADME.md#channels
+> [channels.yaml]: https://github.com/kubernetes/community/blob/master/communication/slack-configchannels.yaml
+> [restrictions.yaml]: https://github.com/kubernetes/community/blob/master/communication/slack-configrestrictions.yaml
+> [`owners`]: /docs/guide/owners
+> [users]: https://github.com/kubernetes/community/blob/master/communication/slack-configREADME.md#users
+> [users.yaml]: https://github.com/kubernetes/community/blob/master/communication/slack-configusers.yaml
+> [usergroups.yaml]: https://github.com/kubernetes/community/blob/master/communication/slack-configusergroups.yaml
+> [User Group Documentation]: https://github.com/kubernetes/community/blob/master/communication/slack-configREADME.md#usergroups
+> [Slack Config Documentation]: https://github.com/kubernetes/community/blob/master/communication/slack-configREADME.md
+> [default message pinned]: https://github.com/kubernetes/community/blob/master/communication/slack-configtemplate.yaml
+> [Slack’s policy on inactivated accounts]: https://get.Slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
+> [moderation guidelines]: /docs/comms/moderation
+> [CNCF Slack]: https://slack.cncf.io/
+diff -r ./content/docs/comms/surveys.md ../../contentCorrect/en/docs/comms/surveys.md
+84c84
+< [issue]: hugo-url
+---
+> [issue]: https://github.com/kubernetes/community/issues
+108c108
+< [contributor comms issue template]: hugo-url/new/choose
+---
+> [contributor comms issue template]: https://github.com/kubernetes/community/issues/new/choose
+diff -r ./content/docs/comms/youtube.md ../../contentCorrect/en/docs/comms/youtube.md
+165c165
+< - [SIG Contributor Experience](https://github.com/kubernetes/community/blob/masterhugo-url/README.md)
+---
+> - [SIG Contributor Experience](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md)
+215,230c215,230
+< [coc]: hugo-url
+< [Kubernetes YouTube Channel]: hugo-url
+< [collaboration]: hugo-url
+< [loosen the permissions in your YouTube settings]: hugo-url
+< [SIG Contributor Experience]: hugo-url
+< [centralized list of administrators]: hugo-url
+< [YouTube admins]: hugo-url#YouTube-Channel
+< [trim]: hugo-url
+< [edit]: hugo-url
+< [Community Meeting]: hugo-url
+< [Office Hours]: hugo-url
+< [Meet our Contributors]: hugo-url
+< [Streaming Config]: hugo-url
+< [Subprojects]: hugo-url
+< [moderation guidelines]: hugo-url
+< [zoom guidelines]:/communication/zoom-guidelines.md
+\ No newline at end of file
+---
+> [coc]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
+> [collaboration]: https://support.google.com/youtube/answer/6109639
+> [loosen the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
+> [SIG Contributor Experience]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience
+> [centralized list of administrators]: /docs/comms/moderators
+> [YouTube admins]: /docs/comms/moderators#YouTube-Channel
+> [trim]: https://support.google.com/youtube/answer/9057455?hl=en
+> [edit]: https://support.google.com/youtube/topic/9257530?hl=en&ref_topic=9257610
+> [Community Meeting]: /events/community-meeting
+> [Office Hours]: /events/office-hours
+> [Meet our Contributors]: /events/meet-our-contributors
+> [Streaming Config]: https://github.com/kubernetes/community/blob/master/communication/youtube/streaming-config.md
+> [Subprojects]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+> [moderation guidelines]: /docs/comms/moderation
+> [zoom guidelines]: /docs/comms/zoom
+\ No newline at end of file
+diff -r ./content/docs/comms/zoom.md ../../contentCorrect/en/docs/comms/zoom.md
+217,240c217,240
+< [community meeting]: hugo-url
+< [SIG/WG meetings]: hugo-url
+< [Office Hours]: hugo-url
+< [Meet Our Contributors]: hugo-url
+< [moderation]: hugo-url
+< [zoom admins]: hugo-url
+< [host key]: hugo-url
+< [CNCF Service Desk]: hugo-url
+< [Kubernetes Code of Conduct]: hugo-url
+< [code of conduct committee]: hugo-url
+< [SIG Creation procedure]: hugo-url
+< [latest version]: hugo-url
+< [documentation on how to use their moderation tools]: hugo-url
+< [best practices doc]: hugo-url
+< [Kubernetes channel]: hugo-url
+< [SIG Contributor Experience]: hugo-url
+< [Please follow this guideline for more details]: hugo-url
+< [centralized list of administrators]: hugo-url
+< [documentation on how to use their screen sharing feature]: hugo-url
+< [lots of things that can go wrong]: hugo-url
+< [Blue Yeti]: hugo-url
+< [pop filter]: hugo-url
+< [Join on muted audio and video]: hugo-url
+< [waiting room]: hugo-url
+---
+> [community meeting]: /events/community-meeting
+> [SIG/WG meetings]: /community/community-groups
+> [Office Hours]: /events/office-hours
+> [Meet Our Contributors]: https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md
+> [moderation]: /docs/comms/moderation
+> [zoom admins]: /docs/comms/moderators#zoom
+> [host key]: https://support.zoom.us/hc/en-us/articles/205172555-Host-Key
+> [CNCF Service Desk]: https://github.com/cncf/servicedesk
+> [Kubernetes Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [code of conduct committee]: https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/README.md
+> [SIG Creation procedure]: https://github.com/kubernetes/community/blob/master/sig-wg-lifecycle.md#communicate
+> [latest version]: https://zoom.us/download
+> [documentation on how to use their moderation tools]: https://support.zoom.us/hc/en-us/articles/201362603-Host-Controls-in-a-Meeting
+> [best practices doc]: https://docs.google.com/document/d/1fudC_diqhN2TdclGKnQ4Omu4mwom83kYbZ5uzVRI07w/edit?usp=sharing
+> [Kubernetes channel]: https://www.youtube.com/c/kubernetescommunity
+> [SIG Contributor Experience]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience
+> [Please follow this guideline for more details]: /docs/comms/youtube
+> [centralized list of administrators]: /docs/comms/moderators
+> [documentation on how to use their screen sharing feature]: https://support.zoom.us/hc/en-us/articles/201362153-How-Do-I-Share-My-Screen
+> [lots of things that can go wrong]: https://www.youtube.com/watch?v=JMOOG7rWTPg
+> [Blue Yeti]: https://www.bluedesigns.com/products/yeti/
+> [pop filter]: https://en.wikipedia.org/wiki/Pop_filter
+> [Join on muted audio and video]: https://support.zoom.us/hc/en-us/articles/203024649-Video-Or-Microphone-Off-By-Attendee
+> [waiting room]: https://support.zoom.us/hc/en-us/articles/115000332726-Waiting-Room
+diff -r ./content/docs/contributor-cheatsheet.md ../../contentCorrect/en/docs/contributor-cheatsheet.md
+15c15
+< [Deutsch](https://github.com/kubernetes/community/blob/master/guide/contributor-cheatsheet/README-de.md) | [Français](README-fr.md) | [Bahasa Indonesia](README-id.md) | [日本語](README-ja.md) | [한국어](README-ko.md) | [Português](README-pt.md) | [中文](README-zh.md) | [Українська](README-uk.md) | [Italian](README-it.md)
+---
+> [Deutsch](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-de.md) | [Français](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-fr.md) | [Bahasa Indonesia](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-id.md) | [日本語](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-ja.md) | [한국어](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-ko.md) | [Português](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-pt.md) | [中文](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-zh.md) | [Українська](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-uk.md) | [Italian](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README-it.md)
+379,424c379,424
+< [contributor guide]: hugo-url
+< [developer guide]: hugo-url
+< [gubernator dashboard]: hugo-url
+< [prow]: hugo-url
+< [tide]: hugo-url
+< [tide dashboard]: hugo-url/tide
+< [bot commands]: hugo-url
+< [gitHub labels]: hugo-url
+< [Kubernetes Code Search]: hugo-url
+< [@dims]: hugo-url
+< [calendar]: hugo-url
+< [kubernetes-dev]: hugo-url
+< [slack channels]: hugo-url
+< [Stack Overflow]: hugo-url
+< [youtube channel]: hugo-url
+< [triage dashboard]: hugo-url
+< [test grid]: hugo-url
+< [developer statistics]: hugo-url
+< [code of conduct]: hugo-url
+< [user support requests]: hugo-url
+< [troubleshooting guide]: hugo-url
+< [kubernetes forum]: hugo-url
+< [pull request process]: hugo-url
+< [github workflow]: hugo-url
+< [prow]: hugo-url
+< [cla]: hugo-url
+< [cla troubleshooting guidelines]: hugo-url
+< [commands]: hugo-url/command-help
+< [kind]: hugo-url/command-help#kind
+< [cc]: hugo-url/command-help#cc
+< [hold]: hugo-url/command-help#hold
+< [assign]: hugo-url/command-help#assign
+< [SIGs]: hugo-url
+< [testing guide]: hugo-url
+< [labels]: hugo-url
+< [trivial fix]: hugo-url#10-trivial-edits
+< [GitHub workflow]: hugo-url#3-branch
+< [squashing commits]: hugo-url#6-squashing-and-commit-titles
+< [owners]: hugo-url
+< [testing locally]: hugo-url#testing
+< [Atlassian git tutorial]: hugo-url
+< [git magic]: hugo-url
+< [Security and Disclosure Information]: hugo-url
+< [approve]: hugo-url/command-help#approve
+< [GitHub Administration Team]: hugo-url
+< [Kubernetes Patch Release]: hugo-url
+---
+> [contributor guide]: /docs/guide
+> [developer guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/README.md
+> [gubernator dashboard]: https://gubernator.k8s.io/pr
+> [prow]: https://prow.k8s.io
+> [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+> [tide dashboard]: https://prow.k8s.io/tide
+> [bot commands]: https://go.k8s.io/bot-commands
+> [gitHub labels]: https://go.k8s.io/github-labels
+> [Kubernetes Code Search]: https://cs.k8s.io/
+> [@dims]: https://github.com/dims
+> [calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
+> [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+> [slack channels]: http://slack.k8s.io/
+> [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
+> [youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
+> [triage dashboard]: https://go.k8s.io/triage
+> [test grid]: https://testgrid.k8s.io
+> [developer statistics]: https://k8s.devstats.cncf.io
+> [code of conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [user support requests]: /docs/guide/issue-triage#determine-if-its-a-support-request
+> [troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
+> [kubernetes forum]: https://discuss.kubernetes.io/
+> [pull request process]: /docs/guide/pull-requests
+> [github workflow]: /docs/guide/github-workflow
+> [prow]: https://git.k8s.io/test-infra/prow#prow
+> [cla]: https://github.com/kubernetes/community/blob/master/CLA.md#how-do-i-sign
+> [cla troubleshooting guidelines]: https://github.com/kubernetes/community/blob/master/CLA.md#troubleshooting
+> [commands]: https://prow.k8s.io/command-help
+> [kind]: https://prow.k8s.io/command-help#kind
+> [cc]: https://prow.k8s.io/command-help#cc
+> [hold]: https://prow.k8s.io/command-help#hold
+> [assign]: https://prow.k8s.io/command-help#assign
+> [SIGs]: /community/community-groups
+> [testing guide]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md
+> [labels]: https://git.k8s.io/test-infra/label_sync/labels.md
+> [trivial fix]: /docs/guide/pull-requests#10-trivial-edits
+> [GitHub workflow]: /docs/guide/github-workflow#3-branch
+> [squashing commits]: /docs/guide/pull-requests#6-squashing-and-commit-titles
+> [owners]: /docs/guide/owners
+> [testing locally]: /docs/guide#testing
+> [Atlassian git tutorial]: https://www.atlassian.com/git/tutorials
+> [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
+> [Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/
+> [approve]: https://prow.k8s.io/command-help#approve
+> [GitHub Administration Team]: https://github.com/kubernetes/community/blob/master/github-management#github-administration-team
+> [Kubernetes Patch Release]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md
+diff -r ./content/docs/guide/_index.md ../../contentCorrect/en/docs/guide/_index.md
+51c51
+< - [Your First Contribution](https://github.com/kubernetes/community/blob/master/guide/first-contribution.md) - things you'll need to know
+---
+> - [Your First Contribution](/docs/guide/first-contribution) - things you'll need to know
+53c53
+< - [Contributing](https://github.com/kubernetes/community/blob/master/guide/contributing.md) - the main reference guide to contributing
+---
+> - [Contributing](/docs/guide/contributing) - the main reference guide to contributing
+142,160c142,160
+< [a bot]: hugo-url
+< [Contributor License Agreement]: hugo-url
+< [Code of Conduct]: hugo-url
+< [Community Values]: hugo-url
+< [First Contribution]: https://github.com/kubernetes/community/blob/master/guide/first-contribution.md
+< [Contributing]: https://github.com/kubernetes/community/blob/master/guide/contributing.md
+< [Developer Resources]: hugo-url
+< [Community Expectations]: hugo-url
+< [CM]: hugo-url
+< [here]: hugo-url
+< [General Information]: hugo-url
+< [mentoring initiatives]: hugo-url
+< [Meet Our Contributors]: hugo-url
+< [OWNERS files]: hugo-url
+< [Cloud Native Computing Foundation Guidelines]: hugo-url
+< [Events]: hugo-url
+< [YouTube Playlist]: hugo-url
+< [Kubernetes Contributor Playground]: hugo-url
+< [Open Issues]: hugo-url
+---
+> [a bot]: https://github.com/k8s-ci-robot
+> [Contributor License Agreement]: https://github.com/kubernetes/community/blob/master/CLA.md
+> [Code of Conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md
+> [Community Values]: /community/values
+> [First Contribution]: /docs/guide/first-contribution
+> [Contributing]: /docs/guide/contributing
+> [Developer Resources]: https://github.com/kubernetes/community/blob/master/contributors/devel/README.md#setting-up-your-dev-environment-coding-and-debugging
+> [Community Expectations]: /docs/guide/expectations
+> [CM]: https://github.com/kubernetes/community/blob/master/community-membership.md
+> [here]: https://github.com/kubernetes/community/blob/master/events/2019/11-contributor-summit
+> [General Information]: https://github.com/kubernetes/community/blob/master/communication
+> [mentoring initiatives]: /community/mentoring
+> [Meet Our Contributors]: /events/meet-our-contributors
+> [OWNERS files]: /docs/guide/owners
+> [Cloud Native Computing Foundation Guidelines]: https://github.com/cncf/communitygroups
+> [Events]: https://www.cncf.io/events/
+> [YouTube Playlist]: https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx
+> [Kubernetes Contributor Playground]: https://github.com/kubernetes-sigs/contributor-playground/blob/master/README.md
+> [Open Issues]: https://github.com/kubernetes/community/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fcontributor-guide
+diff -r ./content/docs/guide/contributing.md ../../contentCorrect/en/docs/guide/contributing.md
+28c28
+< Check out our [community guiding principles](https://github.com/kubernetes/community/blob/masterhttps://github.com/kubernetes/community/blob/master/contributors/guide/expectations.md#code-review) on how to create great code as a big group.
+---
+> Check out our [community guiding principles](/docs/guide/expectations#code-review) on how to create great code as a big group.
+32c32
+< For quick reference on contributor resources, we have a handy [contributor cheatsheet](https://github.com/kubernetes/community/blob/master./contributor-cheatsheet/).
+---
+> For quick reference on contributor resources, we have a handy [contributor cheatsheet](/docs/contributor-cheatsheet).
+42c42
+< To check out code to work on, please refer to [the GitHub Workflow Guide](https://github.com/kubernetes/community/blob/master/guide/github-workflow.md).
+---
+> To check out code to work on, please refer to [the GitHub Workflow Guide](/docs/guide/github-workflow).
+46c46
+< - [Kubernetes-specific github workflow](https://github.com/kubernetes/community/blob/master/guide/pull-requests.md#the-testing-and-merge-workflow).
+---
+> - [Kubernetes-specific github workflow](/docs/guide/pull-requests#the-testing-and-merge-workflow).
+63c63
+< * not having correctly signed the CLA ahead of your first PR. See the [CLA page](https://github.com/kubernetes/community/blob/master/guide/CLA.md) for troubleshooting help, in some cases you might need to file a ticket with the CNCF to resolve a CLA problem.  
+---
+> * not having correctly signed the CLA ahead of your first PR. See the [CLA page](https://github.com/kubernetes/community/blob/master/CLA.md) for troubleshooting help, in some cases you might need to file a ticket with the CNCF to resolve a CLA problem.  
+65,66c65,66
+< * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](https://github.com/kubernetes/community/blob/master/contributors/develhttps://github.com/kubernetes/community/blob/master/guide/sig-testing/flaky-tests.md))
+< * Not following [scalability good practices](https://github.com/kubernetes/community/blob/master/guide/scalability-good-practices.md)
+---
+> * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/flaky-tests.md))
+> * Not following [scalability good practices](https://github.com/kubernetes/community/blob/master/contributors/guide/scalability-good-practices.md)
+71c71
+< For a brief description of the importance of code review, please read [On Code Review](https://github.com/kubernetes/community/blob/masterhttps://github.com/kubernetes/community/blob/master/contributors/guide/expectations.md#code-review).  
+---
+> For a brief description of the importance of code review, please read [On Code Review](/docs/guide/expectations#code-review).  
+76c76
+< * follow the project [coding conventions](https://github.com/kubernetes/community/blob/master/guide/coding-conventions.md)
+---
+> * follow the project [coding conventions](/docs/guide/coding-convention)
+81c81
+< Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](https://github.com/kubernetes/community/blob/master/guide/code-of-conduct.md) as well as [community expectations](./expectations.md#expectations-of-reviewers-review-latency) and must go above and beyond to promote a collaborative, respectful community.
+---
+> Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](https://github.com/kubernetes/community/blob/master/code-of-conduct.md) as well as [community expectations](/docs/guide/expectations#expectations-of-reviewers-review-latency) and must go above and beyond to promote a collaborative, respectful community.
+105,106c105,106
+< Testing is the responsibility of all contributors and is in part owned by all SIGs, but is also coordinated by [sig-testing](https://github.com/kubernetes/community/blob/master/guide/sig-testing). 
+< Refer to the [Testing Guide](/contributors/develhttps://github.com/kubernetes/community/blob/master/guide/sig-testing/testing.md) for more information.
+---
+> Testing is the responsibility of all contributors and is in part owned by all SIGs, but is also coordinated by [sig-testing](https://github.com/kubernetes/community/blob/master/sig-testing). 
+> Refer to the [Testing Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md) for more information.
+113c113
+< * End-to-end ("e2e"): These are broad tests of overall system behavior and coherence.  These are more complicated as they require a functional kubernetes cluster built from the sources to be tested. A separate [document detailing e2e testing](/contributors/develhttps://github.com/kubernetes/community/blob/master/guide/sig-testing/e2e-tests.md) and test cases themselves can be found in [kubernetes/test/e2e/](https://git.k8s.io/kubernetes/test/e2e).
+---
+> * End-to-end ("e2e"): These are broad tests of overall system behavior and coherence.  These are more complicated as they require a functional kubernetes cluster built from the sources to be tested. A separate [document detailing e2e testing](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md) and test cases themselves can be found in [kubernetes/test/e2e/](https://git.k8s.io/kubernetes/test/e2e).
+diff -r ./content/docs/guide/expectations.md ../../contentCorrect/en/docs/guide/expectations.md
+33c33
+< The [community membership](https://github.com/kubernetes/community/blob/master/guide/community-membership.md) outlines the responsibilities
+---
+> The [community membership](https://github.com/kubernetes/community/blob/master/community-membership.md) outlines the responsibilities
+45c45
+< Reviewers are highly encouraged to not only abide by the [code of conduct](https://github.com/kubernetes/community/blob/master/guide/governance.md#code-of-conduct) but are strongly encouraged to go above and beyond the code of conduct to promote a collaborative, respectful Kubernetes community.
+---
+> Reviewers are highly encouraged to not only abide by the [code of conduct](https://github.com/kubernetes/community/blob/master/governance.md#code-of-conduct) but are strongly encouraged to go above and beyond the code of conduct to promote a collaborative, respectful Kubernetes community.
+diff -r ./content/docs/guide/first-contribution.md ../../contentCorrect/en/docs/guide/first-contribution.md
+115,119c115,119
+< - [`hugo-urlcommunity/blob/master/sig-apps/CONTRIBUTING.md`](hugo-urlcommunity/blob/master/sig-apps/CONTRIBUTING.md)
+< - [`hugo-urlcommunity/blob/master/sig-cli/CONTRIBUTING.md`](hugo-urlcommunity/blob/master/sig-cli/CONTRIBUTING.md)
+< - [`hugo-urlcommunity/blob/master/sig-multicluster/CONTRIBUTING.md`](hugo-urlcommunity/blob/master/sig-multicluster/CONTRIBUTING.md)
+< - [`hugo-urlcommunity/blob/master/sig-storage/CONTRIBUTING.md`](hugo-urlcommunity/blob/master/sig-storage/CONTRIBUTING.md)
+< - [`hugo-urlcommunity/blob/master/sig-windows/CONTRIBUTING.md`](hugo-urlcommunity/blob/master/sig-windows/CONTRIBUTING.md)
+---
+> - [`/sig-apps/CONTRIBUTING.md`](https://github.com/kubernetes/community/blob/master/sig-apps/CONTRIBUTING.md)
+> - [`/sig-cli/CONTRIBUTING.md`](https://github.com/kubernetes/community/blob/master/sig-cli/CONTRIBUTING.md)
+> - [`/sig-multicluster/CONTRIBUTING.md`](https://github.com/kubernetes/community/blob/master/sig-multicluster/CONTRIBUTING.md)
+> - [`/sig-storage/CONTRIBUTING.md`](https://github.com/kubernetes/community/blob/master/sig-storage/CONTRIBUTING.md)
+> - [`/sig-windows/CONTRIBUTING.md`](https://github.com/kubernetes/community/blob/master/sig-windows/CONTRIBUTING.md)
+130,147c130,147
+< [Contributor Role Board]: hugo-url
+< [k8s-ci-robot]: hugo-url
+< [Non-Code Contributions Guide]: hugo-url
+< [multiple repositories]: hugo-url
+< [kubernetes/kubernetes]: hugo-url
+< [help wanted]: hugo-url
+< [good first issue]: hugo-url
+< [extra assistance]:./help-wanted.md
+< [sl]: hugo-url
+< [video meetings]: hugo-url
+< [sig-contributor-experience]: hugo-url
+< [weekly meetings]: hugo-url
+< [container networking interface]: hugo-url
+< [network SIG]: hugo-url
+< [ask in Slack]: hugo-url
+< [issue triage guide]: hugo-url
+< [kubernetes/website]: hugo-urlwebsite/issues
+< [SIG Contributor Experience]: hugo-url
+---
+> [Contributor Role Board]: https://discuss.kubernetes.io/c/contributors/role-board
+> [k8s-ci-robot]: https://github.com/k8s-ci-robot
+> [Non-Code Contributions Guide]: /docs/guide/non-code-contributions
+> [multiple repositories]: https://github.com/kubernetes/
+> [kubernetes/kubernetes]: https://git.k8s.io/kubernetes
+> [help wanted]: https://go.k8s.io/help-wanted
+> [good first issue]: https://go.k8s.io/good-first-issue
+> [extra assistance]: /docs/guide/help-wanted
+> [sl]: /community/community-groups
+> [video meetings]: https://kubernetes.io/community/
+> [sig-contributor-experience]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md
+> [weekly meetings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
+> [container networking interface]: https://github.com/containernetworking/cni
+> [network SIG]: http://git.k8s.io/community/sig-network
+> [ask in Slack]: http://slack.k8s.io/
+> [issue triage guide]: /docs/guide/issue-triage
+> [kubernetes/website]: https://github.com/kubernetes/website/issues
+> [SIG Contributor Experience]: https://github.com/kubernetes/community/blob/master/sig-contributor-experience#contact
+Binary files ./content/docs/guide/git_workflow.png and ../../contentCorrect/en/docs/guide/git_workflow.png differ
+diff -r ./content/docs/guide/github-workflow.md ../../contentCorrect/en/docs/guide/github-workflow.md
+10c10
+< ![Git workflow](https://github.com/kubernetes/community/blob/master/guide/git_workflow.png)
+---
+> ![Git workflow](/docs/guide/git_workflow.png)
+22c22
+< [go-workspace]: hugo-url
+---
+> [go-workspace]: https://golang.org/doc/code.html#Workspaces
+85c85
+< This workflow is process-specific; for quick start build instructions for [kubernetes/kubernetes](https://git.k8s.io/kubernetes) please [see here](/contributors/devel/development.md#building-kubernetes-on-a-local-osshell-environment).
+---
+> This workflow is process-specific; for quick start build instructions for [kubernetes/kubernetes](https://git.k8s.io/kubernetes) please [see here](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#building-kubernetes-on-a-local-osshell-environment).
+diff -r ./content/docs/guide/issue-triage.md ../../contentCorrect/en/docs/guide/issue-triage.md
+102c102
+< We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to [SIG Contributor Experience](/sig-contributor-experience/README.md#contact).
+---
+> We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to [SIG Contributor Experience](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md#contact).
+209c209
+< Components are divided among [Special Interest Groups (SIGs)](https://github.com/kubernetes/community/blob/master/guide/sig-list.md). [The bot](https://go.k8s.io/bot-commands) assists in finding a proper SIG to own an issue.
+---
+> Components are divided among [Special Interest Groups (SIGs)](/community/community-groups). [The bot](https://go.k8s.io/bot-commands) assists in finding a proper SIG to own an issue.
+diff -r ./content/docs/guide/non-code-contributions.md ../../contentCorrect/en/docs/guide/non-code-contributions.md
+64,65c64,65
+<   - [Mailing list moderation](/docs/comms/moderation#mailing-list)
+<   - [Slack](/docs/comms/moderation#slack) or [Discourse management](/docs/comms/moderation#discuss)
+---
+>   - [Mailing list moderation](/docs/comms/moderation)
+>   - [Slack](/docs/comms/moderation) or [Discourse management](/docs/comms/moderation)
+diff -r ./content/docs/guide/owners.md ../../contentCorrect/en/docs/guide/owners.md
+312,319c312,319
+< [go-regex]: hugo-url
+< [test-infra-7690]: hugo-url
+< [approver-role]: hugo-url
+< [reviewer-role]: hugo-url
+< [community membership doc]: hugo-url
+< [chromium-owners]: hugo-url
+< [github-codeowners]: hugo-url
+< [pr-workflow]: hugo-url
+---
+> [go-regex]: https://golang.org/pkg/regexp/#pkg-overview
+> [test-infra-7690]: https://github.com/kubernetes/test-infra/issues/7690
+> [approver-role]: https://git.k8s.io/community/community-membership.md#approver
+> [reviewer-role]: https://git.k8s.io/community/community-membership.md#reviewer
+> [community membership doc]: https://git.k8s.io/community/community-membership.md
+> [chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
+> [github-codeowners]: https://help.github.com/articles/about-codeowners/
+> [pr-workflow]: /docs/guide/pull-requests#the-testing-and-merge-workflow
+diff -r ./content/docs/guide/pull-requests.md ../../contentCorrect/en/docs/guide/pull-requests.md
+44c44
+< If you're looking for information on setting up your developer environment and creating code to contribute to Kubernetes, see the [development guide](https://github.com/kubernetes/community/blob/masterhttps://github.com/kubernetes/community/blob/master/contributors/devel/development.md).
+---
+> If you're looking for information on setting up your developer environment and creating code to contribute to Kubernetes, see the [development guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md).
+46c46
+< First-time contributors should head to the [Contributor Guide](/docs/guide/) to get started.
+---
+> First-time contributors should head to the [Contributor Guide](/docs/guide) to get started.
+86c86
+< If you feel your pull request is in this state, contact the appropriate [SIG](/community/community-groups) or [SIG-Release](https://git.k8s.io/sig-release) for clarification.
+---
+> If you feel your pull request is in this state, contact the appropriate [SIG](https://git.k8s.io/community/sig-list.md) or [SIG-Release](https://git.k8s.io/sig-release) for clarification.
+168,169c168,169
+< * [Development guide](https://github.com/kubernetes/community/blob/masterhttps://github.com/kubernetes/community/blob/master/contributors/devel/development.md)
+< * [Coding conventions](https://github.com/kubernetes/community/blob/master/contributors//guide/coding-conventions.md)
+---
+> * [Development guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md)
+> * [Coding conventions](/docs/guide/coding-convention)
+184c184
+< Here's a [list of SIGs](https://github.com/kubernetes/community/blob/master/guide/sig-list.md), this includes their public meetings.
+---
+> Here's a [list of SIGs](/community/community-groups), this includes their public meetings.
+280c280
+< For more information, see [squash commits](https://github.com/kubernetes/community/blob/master/guide/github-workflow.md#squash-commits).
+---
+> For more information, see [squash commits](/docs/guide/github-workflow#squash-commits).
+482c482
+< - [How to Write a Git Commit Message - Chris Beams](hugo-urlposts/git-commit/)
+---
+> - [How to Write a Git Commit Message - Chris Beams](https://chris.beams.io/posts/git-commit/)
+532c532
+< A generic explanation of how labels are used in pull requests can be found [here](https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md#code-review-using-owners-files). 
+---
+> A generic explanation of how labels are used in pull requests can be found [here](/docs/guide/owners#code-review-using-owners-files). 
+551c551
+< Pull requests by Kubernetes organization [members](https://github.com/kubernetes/community/blob/master/guide/community-membership.md) do not need this step. Now the pull request is considered to be trusted, and the pre-submit tests will run:
+---
+> Pull requests by Kubernetes organization [members](https://github.com/kubernetes/community/blob/master/community-membership.md) do not need this step. Now the pull request is considered to be trusted, and the pre-submit tests will run:
+604,612c604,612
+< [Chris Beams]: hugo-url
+< [Tim Pope]: hugo-url
+< [Scott Chacon]: hugo-url
+< [Ben Straub]: hugo-url
+< [kind]: hugo-url
+< [area]: hugo-url
+< [preferred editor]: hugo-url
+< [imperative mood]: hugo-url
+< [GitHub keywords]: hugo-url
+---
+> [Chris Beams]: https://chris.beams.io/
+> [Tim Pope]: https://tpo.pe/
+> [Scott Chacon]: https://scottchacon.com/
+> [Ben Straub]: https://ben.straub.cc/
+> [kind]: https://github.com/kubernetes/kubernetes/labels?q=kind
+> [area]: https://github.com/kubernetes/kubernetes/labels?q=area
+> [preferred editor]: https://help.github.com/en/github/using-git/associating-text-editors-with-git
+> [imperative mood]: https://www.grammar-monster.com/glossary/imperative_mood.htm
+> [GitHub keywords]: https://help.github.com/articles/closing-issues-using-keywords
+diff -r ./content/events/community-meeting.md ../../contentCorrect/en/events/community-meeting.md
+117,129c117,129
+< [community-meeting]: hugo-url
+< [10am PT]: hugo-url
+< [calendar.google.com]: hugo-url
+< [iCal url]: hugo-url
+< [iCal client]: hugo-url
+< [YouTube Channel]: hugo-url
+< [agenda]: hugo-url
+< [this forum thread]: hugo-url
+< [devstats graphs]: hugo-url
+< [CNCF Webinar]: hugo-url
+< [schedule]: hugo-url
+< [pregenerated slide template]: hugo-url
+< [Meeting Notes Archive]: hugo-url
+---
+> [community-meeting]: https://zoom.us/j/91768411674?pwd=MVpqL0ZHbGFYMnpXVXpybTBvalFRQT09
+> [10am PT]: http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29
+> [calendar.google.com]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
+> [iCal url]: https://calendar.google.com/calendar/ical/calendar%40kubernetes.io/public/basic.ics
+> [iCal client]: https://en.wikipedia.org/wiki/ICalendar
+> [YouTube Channel]: https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ
+> [agenda]: http://bit.ly/k8scommunity
+> [this forum thread]: https://discuss.kubernetes.io/t/kubernetes-weekly-community-meeting-notes/35/53
+> [devstats graphs]: https://k8s.devstats.cncf.io/
+> [CNCF Webinar]: https://www.cncf.io/webinars/
+> [schedule]: https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k
+> [pregenerated slide template]: https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0
+> [Meeting Notes Archive]: https://git.kubernetes.io/community/communication/meeting-notes-archive
+diff -r ./content/events/meet-our-contributors.md ../../contentCorrect/en/events/meet-our-contributors.md
+95,103c95,103
+< [#meet-our-contributors]: hugo-url
+< [Convert to your timezone]: hugo-url
+< [#meet-our-contributors]: hugo-url
+< [Kubernetes YouTube Channel]: hugo-url
+< [previous Meet-Our-Contributors monthly meetings]: hugo-url
+< [#office-hours]: hugo-url
+< [#k8smoc]: hugo-url
+< [#meet-our-contributors]: hugo-url
+< [here]: hugo-url
+---
+> [#meet-our-contributors]: https://kubernetes.slack.com/messages/meet-our-contributors
+> [Convert to your timezone]: https://www.thetimezoneconverter.com/?t=03%3A30%20pm&tz=UTC&
+> [#meet-our-contributors]: https://kubernetes.slack.com/messages/meet-our-contributors
+> [Kubernetes YouTube Channel]: https://www.youtube.com/c/KubernetesCommunity/live
+> [previous Meet-Our-Contributors monthly meetings]: https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F
+> [#office-hours]: https://kubernetes.slack.com/messages/office-hours
+> [#k8smoc]: https://twitter.com/hashtag/k8smoc
+> [#meet-our-contributors]: https://kubernetes.slack.com/messages/meet-our-contributors
+> [here]: /events/office-hours
+diff -r ./content/events/office-hours.md ../../contentCorrect/en/events/office-hours.md
+171,183c171,183
+< [YouTube channel]: hugo-url
+< [9am ET]: hugo-url
+< [5pm PT]: hugo-url
+< [Kubernetes YouTube Channel]: hugo-urllive
+< [#office-hours channel]: hugo-url
+< [discuss.kubernetes.io]: hugo-url
+< [StackOverflow]: hugo-url
+< [Meet our Contributors]: hugo-url
+< [Office Hours playlist]: hugo-url
+< [Volunteer working sheet]: hugo-url
+< [@castrojo]: hugo-url
+< [#kubernetes-users]: hugo-url
+< [#office-hours]: hugo-url
+---
+> [YouTube channel]: https://www.youtube.com/c/KubernetesCommunity/
+> [9am ET]: http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29
+> [5pm PT]: http://www.thetimezoneconverter.com/?t=17:00&&tz=PT%20(Pacific%20Time)
+> [Kubernetes YouTube Channel]: https://www.youtube.com/c/KubernetesCommunity/live
+> [#office-hours channel]: https://kubernetes.slack.com/messages/office-hours
+> [discuss.kubernetes.io]: https://discuss.kubernetes.io
+> [StackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
+> [Meet our Contributors]: /events/meet-our-contributors
+> [Office Hours playlist]: https://www.youtube.com/watch?v=D0Q7wwljN30&list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg
+> [Volunteer working sheet]: http://bit.ly/k8s-office-hours-volunteers
+> [@castrojo]: https://github.com/castrojo
+> [#kubernetes-users]: https://kubernetes.slack.com/messages/kubernetes-users
+> [#office-hours]: https://kubernetes.slack.com/messages/office-hours
+diff -r ./content/resources/release/index.md ../../contentCorrect/en/resources/release/index.md
+15c15
+< * [This document](/resources/release/)
+---
+> * [This document](https://git.k8s.io/sig-release/releases/release-1.22/README.md)
+29c29
+< * [kubernetes/sig-release v1.22 milestone](hugo-url/milestone/50)
+---
+> * [kubernetes/sig-release v1.22 milestone](https://github.com/kubernetes/kubernetes/milestone/50)
+41,43c41,43
+< - **Thursday, May 13th**: Week 3 - [Enhancements Freeze](https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#enhancements-freeze)
+< - **Thursday, July 8th**: Week 11 - [Code Freeze](https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#code-freeze)
+< - **Thursday, July 15th**: Week 12 - [Test Freeze](https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#test-freeze)
+---
+> - **Thursday, May 13th**: Week 3 - [Enhancements Freeze](https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#enhancements-freeze)
+> - **Thursday, July 8th**: Week 11 - [Code Freeze](https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#code-freeze)
+> - **Thursday, July 15th**: Week 12 - [Test Freeze](https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#test-freeze)
+88c88
+< Please refer to the [release phases document](https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md).
+---
+> Please refer to the [release phases document](https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md).
+90,109c90,109
+< [k8s122-calendar]: hugo-url
+< [Internal Contact Info]: hugo-url
+< [Retrospective Document]: hugo-url
+< 
+< [Enhancements Freeze]: https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#enhancements-freeze
+< [Burndown]: https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#burndown
+< [Code Freeze]: https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#code-freeze
+< [Exception]: https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#exceptions
+< [Thaw]: https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#thaw
+< [Test Freeze]: https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md#test-freeze
+< 
+< [kubernetes-release-team@]: hugo-url
+< [kubernetes-sig-release@]: hugo-url
+< [#sig-release]: hugo-url
+< [kubernetes-release-calendar]: hugo-url
+< [kubernetes/kubernetes]: hugo-url
+< 
+< [master-blocking]: hugo-url
+< [master-informing]: hugo-url
+< [1.22-blocking]: hugo-url
+---
+> [k8s122-calendar]: https://bit.ly/k8s-release-cal
+> [Internal Contact Info]: https://github.com/kubernetes/sig-release/blob/master/releases/release-1.22/TBD
+> [Retrospective Document]: http://bit.ly/k8s122-retro
+> 
+> [Enhancements Freeze]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#enhancements-freeze
+> [Burndown]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#burndown
+> [Code Freeze]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#code-freeze
+> [Exception]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#exceptions
+> [Thaw]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#thaw
+> [Test Freeze]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#test-freeze
+> 
+> [kubernetes-release-team@]: https://groups.google.com/a/kubernetes.io/g/release-team
+> [kubernetes-sig-release@]: https://groups.google.com/forum/#!forum/kubernetes-sig-release
+> [#sig-release]: https://kubernetes.slack.com/messages/sig-release/
+> [kubernetes-release-calendar]: https://bit.ly/k8s-release-cal
+> [kubernetes/kubernetes]: https://github.com/kubernetes/kubernetes
+> 
+> [master-blocking]: https://testgrid.k8s.io/sig-release-master-blocking#Summary
+> [master-informing]: https://testgrid.k8s.io/sig-release-master-informing#Summary
+> [1.22-blocking]: https://testgrid.k8s.io/sig-release-1.22-blocking#Summary
+111,112c111,112
+< [exception requests]: hugo-url
+< [release phases document]: https://github.com/kubernetes/sig-release/blob/master/release-1.22/release_phases.md
+---
+> [exception requests]: https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md
+> [release phases document]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md
+diff -r ./content/resources/rename.md ../../contentCorrect/en/resources/rename.md
+149,161c149,161
+< [kubernetes/org]: hugo-url
+< [@kubernetes/owners]: hugo-url
+< [#github-management]: hugo-url
+< [kubernetes/test-infra#20665]: hugo-url
+< [kubernetes/test-infra#20667]: hugo-url
+< [kubernetes/test-infra#20669]: hugo-url
+< [kubernetes/test-infra#20672]: hugo-url
+< [kubernetes/test-infra#20675]: hugo-url
+< [`status-reconciler`]: hugo-url
+< [`branch_protection`]: hugo-url
+< [`milestone_applier`]: hugo-url
+< [official instructions]: hugo-url
+< [GitHub instructions to rename your local branch]: hugo-url
+---
+> [kubernetes/org]: https://github.com/kubernetes/org/issues
+> [@kubernetes/owners]: https://github.com/orgs/kubernetes/teams/owners
+> [#github-management]: https://kubernetes.slack.com/messages/github-management
+> [kubernetes/test-infra#20665]: https://github.com/kubernetes/test-infra/pull/20665
+> [kubernetes/test-infra#20667]: https://github.com/kubernetes/test-infra/issues/20667
+> [kubernetes/test-infra#20669]: https://github.com/kubernetes/test-infra/pull/20669
+> [kubernetes/test-infra#20672]: https://github.com/kubernetes/test-infra/issues/20672
+> [kubernetes/test-infra#20675]: https://github.com/kubernetes/test-infra/pull/20675
+> [`status-reconciler`]: https://github.com/kubernetes/test-infra/tree/master/prow/cmd/status-reconciler
+> [`branch_protection`]: https://github.com/kubernetes/test-infra/blob/ca6273046b355d38eade4c4bd435bd13fbb55043/config/prow/config.yaml#L131
+> [`milestone_applier`]: https://github.com/kubernetes/test-infra/blob/ca6273046b355d38eade4c4bd435bd13fbb55043/config/prow/plugins.yaml#L324
+> [official instructions]: https://github.com/github/renaming#renaming-existing-branches
+> [GitHub instructions to rename your local branch]: https://docs.github.com/en/github/administering-a-repository/renaming-a-branch#updating-a-local-clone-after-a-branch-name-changes
