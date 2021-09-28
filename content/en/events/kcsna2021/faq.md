@@ -75,13 +75,6 @@ SIG face-to-face meeting etc, you can sponsor them to attend the summit.
 Please reach out to community@kubernetes.io to make arrangements.
 
 
-### I am not an Org member. Can I still attend?
-
-You can participate remotely. We are limiting the in-person event to
-[Kubernetes Org Members](#why-is-vaccination-required-to-attend-in-person) and
-[sponsored attendees](#what-is-a-sponsored-attendee) due to uncertain attendance
-and on-site staffing availability. 
-
 
 ### Will there be a New Contributor Workshop?
 

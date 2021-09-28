@@ -21,13 +21,16 @@ at the
 
 We are downsizing the event due to low registration numbers so we can focus on
 the virtual contributor celebration later in 2021. However, we will still have a
-space to hang out, catch up, and meet new contributors. We also have space
-available for SIGs or subprojects that wish to do a mini hackathon, sprint, or
-other collaboration. To reserve the space, please reach out to
-community@kubernetes.io or ask in the
-<a href="https://kubernetes.slack.com/messages/summit-staff" rel="noopener noreferrer" target="_blank">#summit-staff</a>
+space to hang out, catch up, and meet new contributors. See the [location]
+section for details.
 
-We will be holding an evening social event. Please [RSVP] as soon as possible.
+Are you interested in bowling, billiards or just hanging out with your
+fellow contributors? We will be holding an evening social event at 
+<a href="https://www.luckystrikeent.com/locations/los-angeles/" rel="noopener noreferrer" target="_blank">Lucky Strike</a>,
+a short walk away from the Marriott after the summit. If you intend to swing by,
+please [RSVP] as soon as possible.
+
+
 
 This page will be updated with more information as it develops. If you have
 questions or comments, please reach out to the Summit Staff by emailing
@@ -35,8 +38,9 @@ community@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
-
+[location]: /events/kcsna2021/location/
 [RSVP]: /events/kcsna2021/registration/
+
 
 
 ### Code of Conduct
