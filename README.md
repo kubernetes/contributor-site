@@ -44,7 +44,7 @@ with generating the site by executing `make container-image`.
 
 To ensure you can view the site with externally sourced content, run
 `make container-gen-content` before previewing the site by with
-`make container-serve`.
+`make container-server`.
 
 
 ### Natively
