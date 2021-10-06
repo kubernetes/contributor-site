@@ -46,7 +46,7 @@ adding yourself a member of the other org.
 
 [Kubernetes GitHub Org members]: https://git.k8s.io/community/community-membership.md
 [community membership guidelines]: https://git.k8s.io/community/community-membership.md#member
-[Org Membership Request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.md&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
+[Org Membership Request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
 
 
 
