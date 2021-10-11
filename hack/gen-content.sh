@@ -38,7 +38,7 @@ fi
 
 # init_src
 # Intializes source repositores by pulling the latest content. If the repo
-# is alread present, fetch the latest content from the master branch.
+# is already present, fetch the latest content from the master branch.
 # Args:
 # $1 - git repo to be cloned/fetched
 # $2 - path to destination directory for cloned repo

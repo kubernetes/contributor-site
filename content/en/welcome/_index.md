@@ -38,7 +38,7 @@ and <a href="https://git.k8s.io/community/CLA.md">sign the CLA</a>.
 
 If you need help with submitting a pull request, found a bug, or have a suggestion,
 please join us in <a href="https://slack.k8s.io/">Slack</a> and pop over to the
-<a href="https://app.slack.com/client/T09NY5SBT/C09R23FHP">#kubernetes-dev channel</a>.
+<a href="https://app.slack.com/client/T09NY5SBT/C09R23FHP">#kubernetes-contributors channel</a>.
 
 <b>Remember: No question is too small.</b>
 </div>
