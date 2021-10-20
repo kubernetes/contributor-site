@@ -12,6 +12,8 @@ RUN apk add --no-cache \
     sed \
     npm
 
+WORKDIR /src
+
 # Required for PostCSS
 RUN npm install -G \
     autoprefixer \
@@ -24,7 +26,6 @@ RUN mkdir -p /usr/local/src && \
     addgroup -Sg 1000 hugo && \
     adduser -Sg hugo -u 1000 -h /src hugo
 
-WORKDIR /src
 
 USER hugo:hugo
 
