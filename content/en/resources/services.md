@@ -84,7 +84,7 @@ For more information, see the Kubernetes [GitHub Repository Guidelines].
 
 ### Contributor communications
 
-Contributor communication requests, such as tweets ([@k8contributors]), blog
+Contributor communication requests, such as Tweets from the [K8sContributors Twitter account](https://twitter.com/K8sContributors), blog
 posts, editorial support, promotion requests, or announcements can be made by
 filling out the [Contributor Comms Request] form in the [kubernetes/community]
 repo.
