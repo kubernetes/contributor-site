@@ -2,7 +2,7 @@
 title: "Contributor Celebration"
 weight: 1
 slug: "kcc2020"
-aliases: [ "/celebration", "/kcc2020" ]
+aliases: [ "/kcc2020" ]
 description: |
    It's been a rough year, and without any in person events we've lost the best
    part of the Contributor Summits - the Hallway Track. The Kubernetes Contributor
