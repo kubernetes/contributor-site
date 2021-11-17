@@ -29,8 +29,6 @@ Jackbox meets Kubernetes! Details TBD.
 
 ### The Great Cloud Native Bake Off
 
-- [Session Link](https://sched.co/gCUR)
-
 A hit from 2020, it's the virtual cooking even styled after
 the Great British Bake-off will be held during the Kubernetes
 celebration!

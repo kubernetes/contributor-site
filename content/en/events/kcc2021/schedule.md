@@ -13,8 +13,8 @@ Events and official activities are planned for Monday and Tuesday, with the
 server remaining open the rest of the week for anyone that would still like to
 join in and hang out.
 
-<!--{{% schedule
+{{% schedule
   text="Kubernetes Contributor Celebration"
-  link="https://kcc2020.sched.com"
-  script="https://kcc2020.sched.com/js/embed.js"
-%}}-->
+  link="https://kcc2021.sched.com"
+  script="https://kcc2021.sched.com/js/embed.js"
+%}}

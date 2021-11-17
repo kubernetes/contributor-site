@@ -39,8 +39,7 @@ fun with your fellow contributors!
 
 ### When is it?
 
-It will be from the afternoon (Pacific Time) December 13th through the weekend,
-ending on December 15th.
+It will be the week of December 13th.
 
 ### How do I register?
 
@@ -140,20 +139,6 @@ overlays. A few examples of what this would look like:
 <br>
 <img align="center" src="/events/kcc2021/name.png" width="40%">
 
-
-### What are the `#<channel>-info` channels for?
-
-For games that are popular enough to have their own category, the info channel
-in them will describe the game, links to where it can be downloaded, and will
-provide guidance on reporting people for that game/platform.
-
-### What are the `#<channel>-links` channels for?
-
-Often when you’re having a conversation in one of the voice channels you’ll want
-to share a link with the other people on voice. You can’t do this directly in
-the voice channels, and it can clutter up the main text-chat channels, so the
-`#<channel>-links` channels are a scratch-pad for links or other things that
-are only relevant to the conversation carrying on in voice chat.
 
 ### How do I know if someone is a Moderator, Staff Member or an Admin?
 
