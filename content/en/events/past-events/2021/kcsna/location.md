@@ -6,7 +6,7 @@ weight: 5
 
 
 ### Marriott 
-<img align="right" src="/events/kcsna2021/hotel.jpeg" width="15%">
+<img align="right" src="/events/past-events/2021/kcsna/hotel.jpeg" width="15%">
 
 The North America Summit will take place October 11th, in Los Angeles, California
 alongside <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon</a>
@@ -21,7 +21,7 @@ Los Angeles, California 90015 USA
 
 
 ### Lucky Strike
-<img align="right" src="/events/kcsna2021/lucky-strike.jpg" width="30%">
+<img align="right" src="/events/past-events/2021/kcsna/lucky-strike.jpg" width="30%">
 
 The evening social event will be held at
 <a href="https://www.luckystrikeent.com/locations/los-angeles/" rel="noopener noreferrer" target="_blank">Lucky Strike</a>,
@@ -35,7 +35,7 @@ Los Angeles, CA 90015
 
 
 ### Los Angeles Convention Center (LACC)
-<img align="right" src="/events/kcsna2021/LACC.jpg" width="20%">
+<img align="right" src="/events/past-events/2021/kcsna/LACC.jpg" width="20%">
 
 Registration and badge pick-up will be available at the
 <a href="https://www.lacclink.com/" rel="noopener noreferrer" target="_blank">LACC</a>.

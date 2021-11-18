@@ -17,11 +17,10 @@ a sponsored attendee. If you are an active contributor but not a member, conside
 If you have questions, please see the [faq] or reach out to us at
 community@kubernetes.io.
 
-[Register here]
+**Registration is currently closed.**
 
 
-[Register here]: https://www.cvent.com/d/ymq151/4W?ct=f34626fb-147d-492c-81d2-b77ce49232c1
-[faq]: /events/kcsna2021/faq/
+[faq]: /events/past-events/2021/kcsna/faq/
 [kubernetes]: https://github.com/kubernetes
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
 [applying for org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
