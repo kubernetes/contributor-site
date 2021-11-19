@@ -43,7 +43,9 @@ It will be the week of December 13th.
 
 ### How do I register?
 
-The registration form is TBA.
+Please fill out the [registration form].
+
+[registration form]: https://forms.gle/oAppmLDggEEGx5tz5
 
 ### Are friends and family allowed?
 

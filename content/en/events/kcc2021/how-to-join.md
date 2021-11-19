@@ -28,13 +28,12 @@ Kubernetes [Discord] server with major events being streamed to the
 
 ## Register for the event
 
-Invites will be sent to people that [register] on Thursday, December 10th. If you
-register after that date, an invite will be sent shortly after you've signed up.
+Invites will be sent to people that [register] closer to the event.
 
 Look for an email sent from the `contributors@kubernetes.io` account with the
 subject line: **Kubernetes Contributor Celebration Invite**.
 
-[register]: https://forms.gle/51tqQgxuHxLaeU1P8
+[register]: https://forms.gle/oAppmLDggEEGx5tz5
 
 
 ## Connecting to Discord

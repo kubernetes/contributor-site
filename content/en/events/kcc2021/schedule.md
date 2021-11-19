@@ -7,12 +7,6 @@ description: |
 type: docs
 ---
 
-Monday December 13th, the doors will open and members will be invited to discord.
-
-Events and official activities are planned for Monday and Tuesday, with the
-server remaining open the rest of the week for anyone that would still like to
-join in and hang out.
-
 {{% schedule
   text="Kubernetes Contributor Celebration"
   link="https://kcc2021.sched.com"
