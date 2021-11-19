@@ -21,9 +21,10 @@ For more information, see the  [Contributor Celebration FAQ][faq].
 
 ### Registration
 
-Registration for this event is TBA.
+To register, please fill out the [Registration Form].
 
 Further information on how to connect will be sent closer to the event.
+
 
 ### Code of Conduct
 
@@ -33,6 +34,6 @@ of conduct question, please see the [faq].
 
 [activities]: ./activities
 [faq]: ./faq
-[Registration Form]: http://tba.tba
+[Registration Form]: https://forms.gle/oAppmLDggEEGx5tz5
 [Code of Conduct]: /resources/code-of-conduct
 
