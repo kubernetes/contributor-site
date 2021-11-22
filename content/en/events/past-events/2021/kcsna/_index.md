@@ -8,7 +8,7 @@ description: >
 
 ---
 
-<img align="center" alt="Kubernetes Contributor Summit in Los Angeles, California" style="max-width:80%;" src="/events/kcsna2021/banner.png">
+<img align="center" alt="Kubernetes Contributor Summit in Los Angeles, California" style="max-width:80%;" src="/events/past-events/2021/kcsna/banner.png">
 
 ### About
 
@@ -38,8 +38,8 @@ community@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
-[location]: /events/kcsna2021/location/
-[RSVP]: /events/kcsna2021/registration/
+[location]: /events/past-events/2021/kcsna/location/
+[RSVP]: /events/past-events/2021/kcsna/registration/
 
 
 
