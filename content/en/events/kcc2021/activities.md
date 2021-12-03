@@ -25,12 +25,23 @@ the people who have worked hard to help us this year.
 
 ### Most Extreme Kubernetes Challenge - DevOps Party Game
 
-Jackbox meets Kubernetes! Details TBD.
+DevOps Party Games takes the idea of “online party games” and tilts it on its
+head by adding DevOps-inspired content to existing games, and then streams it
+live via Twitch for a worldwide audience to watch, comment, and hopefully be
+entertained. In addition, the hosts (Matt Stratton, Jeremy Meiss, and Dan Maher)
+will provide color commentary, much like a modern day Cotton McKnight and
+Pepper Brooks (announcers from Dodgeball).” There will be a Kubernetes slant
+for this edition of DevOps Party Games.
 
 ### The Great Cloud Native Bake Off
 
-A hit from 2020, it's the virtual cooking even styled after
-the Great British Bake-off will be held during the Kubernetes
-celebration!
+We take cooking and baking pretty seriously in the Cloud Native ecosystem; we
+do have a [Cloud Native Community Cookbook] after all. “We will be selecting
+6 to 8 Kubernetes contributors to participate in the second annual BakeOff
+(K8sBO). No professional experience is required … just enthusiasm, availability,
+and the willingness to wash a lot of dishes.” If you’re interested in baking,
+please [sign up] for the Bake Off as soon as possible.
 
-Details TBD.
+
+[Cloud Native Community Cookbook]: https://github.com/cncf/cloud-native-community-cookbook
+[sign up]: https://forms.gle/wrRd4vM1t2LfUdxW6 
