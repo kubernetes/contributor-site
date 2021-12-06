@@ -28,13 +28,13 @@ More deatils on [how to join](https://www.kubernetes.dev/events/kcc2021/how-to-j
     Contestants will be expected to join a video conference call 30 mins prior to kick-off, and should have a phone or ipad with a stand (or a patient friend ) to capture them preparing their dessert.
     Our Host and Commentators will provide commentary on our contestants and will ask each contestant questions throughout the event.
 
-    :::info
+    
     At the end of the 90 minutes we’ll be joined by an esteemed group of expert judges who will judge your hopefully completed dessert on the following criteria:
 
-    Execution: How well does it fit the “Kubernetes theme”
-    Appearance: How does it look ?
-    Taste: Obviously the judges can’t taste it, so they’ll need to be creative for this one.
-    :::
+    1. Execution: How well does it fit the “Kubernetes theme”
+    2. Appearance: How does it look ?
+    3. Taste: Obviously the judges can’t taste it, so they’ll need to be creative for this one.
+    
     **We’re looking for cooks of all backgrounds and talents.** If this sounds like fun to you and you want to cook with us, please fill the [form](https://docs.google.com/forms/d/e/1FAIpQLScmvXEFsdy0NzQofp198ShzupRPc4M5yDZYfdEMYPR4qD7aCw/viewform)
 
 3. [**Kubernetes Contributor Awards**](https://www.kubernetes.dev/events/kcc2021/activities/#kubernetes-contributor-awards)
