@@ -28,8 +28,7 @@ More deatils on [how to join](https://www.kubernetes.dev/events/kcc2021/how-to-j
     Contestants will be expected to join a video conference call 30 mins prior to kick-off, and should have a phone or ipad with a stand (or a patient friend ) to capture them preparing their dessert.
     Our Host and Commentators will provide commentary on our contestants and will ask each contestant questions throughout the event.
 
-    
-    At the end of the 90 minutes we’ll be joined by an esteemed group of expert judges who will judge your hopefully completed dessert on the following criteria:
+     At the end of the 90 minutes we’ll be joined by an esteemed group of expert judges who will judge your hopefully completed dessert on the following criteria:
 
     1. Execution: How well does it fit the “Kubernetes theme”
     2. Appearance: How does it look ?
