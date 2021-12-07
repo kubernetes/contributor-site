@@ -1,7 +1,7 @@
 ---
 title: "Announcing the Kubernetes Contributor Celebration 2021"
 linkTitle: "Contributor Celebration 2021"
-date: 2021-12-06
+date: 2021-12-07
 ---
 
 By [Debabrata Panigrahi](https://twitter.com/debaelopedev)
