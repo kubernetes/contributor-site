@@ -42,6 +42,14 @@ do have a [Cloud Native Community Cookbook] after all. “We will be selecting
 and the willingness to wash a lot of dishes.” If you’re interested in baking,
 please [sign up] for the Bake Off as soon as possible.
 
+### Krafternetes
+
+All day December 16th, creative folks will be showing up in the Krafternetes 
+channel on Discord to share art, music, and performances. Between studio tours, 
+a collaborative "quick draw" session, or online performances, the artists of
+Kubernetes will have events all day to share with you.  If you're interested in
+participating, speak up in channel Krafternetes on [slack].
 
 [Cloud Native Community Cookbook]: https://github.com/cncf/cloud-native-community-cookbook
 [sign up]: https://forms.gle/wrRd4vM1t2LfUdxW6 
+[slack]: https://slack.k8s.io
