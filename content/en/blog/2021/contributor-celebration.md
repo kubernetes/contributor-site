@@ -16,10 +16,12 @@ Like last year, this year also we are back with Kubernetes Contributor Celebrati
 To register, please fill out the [Registration Form](https://docs.google.com/forms/d/e/1FAIpQLSdRIboKulEPf7jVgRH3iTVwS4PEk6k0htcOs1eSG2OBmkxEjg/viewform).
 More details on [how to join](/events/kcc2021/how-to-join/) the event.
 ### Events and Activities
-1. [**DevOps Party Games**](https://www.kubernetes.dev/events/kcc2021/activities/#most-extreme-kubernetes-challenge---devops-party-game)
- "DevOps Party Games takes the idea of "online party games" and tilts it on its head by adding DevOps-inspired content to existing games, and then streams it live via Twitch for a worldwide audience to watch, comment, and hopefully be entertained. In addition, the hosts (Matt Stratton, Jeremy Meiss, and Dan Maher) will provide color commentary, much like a modern day Cotton McKnight and Pepper Brooks (announcers from Dodgeball)." There will be a Kubernetes slant for this edition of DevOps Party Games.
+1. [**DevOps Party Games**](/events/kcc2021/activities/#most-extreme-kubernetes-challenge---devops-party-game)
+    
+    "DevOps Party Games takes the idea of "online party games" and tilts it on its head by adding DevOps-inspired content to existing games, and then streams it live via Twitch for a worldwide audience to watch, comment, and hopefully be entertained. In addition, the hosts (Matt Stratton, Jeremy Meiss, and Dan Maher) will provide color commentary, much like a modern day Cotton McKnight and Pepper Brooks (announcers from Dodgeball)." There will be a Kubernetes slant for this edition of DevOps Party Games.
 
-2. **[The Great Cloud Native Bakeoff](https://www.youtube.com/watch?v=koT08purWDc)**
+2. **[The Great Cloud Native Bakeoff](/events/kcc2021/activities/#krafternetes)**
+
      A virtual cooking event styled after the [Great British Bake-off](https://en.wikipedia.org/wiki/The_Great_British_Bake_Off) will be held during the Kubernetes Celebration Event.
 
     Contestants will have 90 minutes to bake something related to to your Cloud Native experience. Anything goes, as long as the majority of preparation is done live.  The competition is open to all skill levels, from baking from a cake mix to grinding your own flour as long as it's somehow Kubernetes-themed.
@@ -27,17 +29,17 @@ More details on [how to join](/events/kcc2021/how-to-join/) the event.
 
      At the end of the contest, each baked good will be judged on ambition, execution, success, and implementation of a Kubernetes theme.  The winner will get a unique, handmade, baking-related prize.
     
-    **We’re looking for cooks of all backgrounds and talents.** If this sounds like fun to you and you want to cook with us, please fill the [form](https://docs.google.com/forms/d/e/1FAIpQLScmvXEFsdy0NzQofp198ShzupRPc4M5yDZYfdEMYPR4qD7aCw/viewform)
+    **We’re looking for cooks of all backgrounds and talents.** If this sounds like fun to you and you want to cook with us, please fill the [form](https://docs.google.com/forms/d/e/1FAIpQLScmvXEFsdy0NzQofp198ShzupRPc4M5yDZYfdEMYPR4qD7aCw/viewform).
 
-3. [**Kubernetes Contributor Awards**](https://www.kubernetes.dev/events/kcc2021/activities/#kubernetes-contributor-awards)
+3. [**Kubernetes Contributor Awards**](/events/kcc2021/activities/#kubernetes-contributor-awards)
      In this special event we honor contributors who have made special efforts, or shown extraordinary ability, during the prior year. These peer awards are a tradition at the Kubernetes Contributor Summits, and this year we're having them online. Please join us to thank and support fellow contributors who have made our project excellent.
      
-4. **krafternetes**
+4. **[krafternetes](/events/kcc2021/activities/#krafternetes)**
     A series of "studio sessions" by contributors, to showcase the art forms they are working on be it through live or recorded sessions, followed by a discussion on the same. Interested folks could join the #krafternetes channel on kubernetes slack. 
 
 ### Schedule
 The event is scheduled from 16th-19th December 2021.
-More Information about the schedule could be found [here](/events/kcc2021/schedule/)
+More Information about the schedule could be found [here](/events/kcc2021/schedule/).
 
 
 ### See you all at the event 
