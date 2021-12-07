@@ -12,6 +12,7 @@ type: docs
   - [Kubernetes Contributor Awards](#kubernetes-contributor-awards)
   - [Most Extreme Kubernetes Challenge - DevOps Party Game](#most-extreme-kubernetes-challenge---devops-party-game)
   - [The Great Cloud Native Bake Off](#the-great-cloud-native-bake-off)
+  - [Krafternetes](#krafternetes)
 
 ## Events
 
