@@ -55,9 +55,9 @@ participating, speak up in channel Krafternetes on [slack].
 
 Comms go to static, and all you can see is a blinding red flash meaning this space 
 ship is now in HIGH_ALERT. Will you and the rest of the crew make it off this 
-asteroid mining hauler alive? Laura Lorenz is GMing a Contributor Summit special 
+asteroid mining hauler alive? @lauralorenz is GMing a Contributor Summit special 
 one-shot of the Tabletop RPG "Mothership". And you just know that in this sci-fi 
-horror fantasy world, all life support and warp systems are running on k8s version 
+_horror_ fantasy world, all life support and warp systems are running on k8s version 
 1.23 -- which wouldn't be as scary if the game world wasn't in the year 2491. No 
 tabletop roleplaying experience required, 6 players maximum, PG-13 content and 2 
 hour timebox. You will need access to voice and 2 d10 die (or use the dice widget 
