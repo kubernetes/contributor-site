@@ -13,6 +13,7 @@ type: docs
   - [Most Extreme Kubernetes Challenge - DevOps Party Game](#most-extreme-kubernetes-challenge---devops-party-game)
   - [The Great Cloud Native Bake Off](#the-great-cloud-native-bake-off)
   - [Krafternetes](#krafternetes)
+  - [Kubernetes the Tabletop RPG](#kubernetes-the-tabletop-rpg)
 
 ## Events
 
@@ -51,6 +52,19 @@ a collaborative "quick draw" session, or online performances, the artists of
 Kubernetes will have events all day to share with you.  If you're interested in
 participating, speak up in channel Krafternetes on [slack].
 
+### Kubernetes the Tabletop RPG
+
+Comms go to static, and all you can see is a blinding red flash meaning this space 
+ship is now in HIGH_ALERT. Will you and the rest of the crew make it off this 
+asteroid mining hauler alive? @lauralorenz is GMing a Contributor Summit special 
+one-shot of the Tabletop RPG "Mothership". And you just know that in this sci-fi 
+_horror_ fantasy world, all life support and warp systems are running on k8s version 
+1.23 -- which wouldn't be as scary if the game world wasn't in the year 2491. No 
+tabletop roleplaying experience required, 6 players maximum, PG-13 content and 2 
+hour timebox. You will need access to voice and 2 d10 die (or use the dice widget 
+on Google search). [Sign up here] for Thursday or Friday night sessions.
+
 [Cloud Native Community Cookbook]: https://github.com/cncf/cloud-native-community-cookbook
 [sign up]: https://forms.gle/wrRd4vM1t2LfUdxW6 
 [slack]: https://slack.k8s.io
+[Sign up here]: https://forms.gle/4cxJ5pJBiHYq5GTM8
