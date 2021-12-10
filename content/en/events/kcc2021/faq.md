@@ -157,7 +157,7 @@ overlays. A few examples of what this would look like:
 - `board-games` : Any board games enthusiast, this is your place to be!
 - `theater` : Let's watch movies and stuff and chat about it here.
 - `links-from-voice` : Use this channel to share links from various voice channels.
-- `main-events-chats` :  Text discussion related to events taking place in the main event channel
+- `main-events-chat` :  Text discussion related to events taking place in the main event channel
 - `main-events` : [Main events](https://www.kubernetes.dev/events/kcc2021/activities/#events) will be kicked off here
 - `hallway-1`/`hallway-2` : Voice channels for random discussions
 - `games-1`/`games-2` : People can team up to play online games using these channels
