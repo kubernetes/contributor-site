@@ -22,8 +22,8 @@ type: docs
   - [Why can I only see the instructions-to-connect and info channels?](#why-can-i-only-see-the-instructions-to-connect-and-info-channels)
   - [What is this YAGPDB.xyz and why is it messaging me?](#what-is-this-yagpdbxyz-and-why-is-it-messaging-me)
   - [How do I display my pronouns in Discord?](#how-do-i-display-my-pronouns-in-discord)
-  - [What are the `#<channel>-info` channels for?](#what-are-the-channel-info-channels-for)
-  - [What are the `#<channel>-links` channels for?](#what-are-the-channel-links-channels-for)
+  - [Information on each channel in Discord](#information-on-each-channel-in-discord)
+  - [What is the `HORIZONTAL VOICE AUTOSCALER` channel for?](#what-is-the-horizontal-voice-autoscaler-channel-for)
   - [How do I know if someone is a Moderator, Staff Member or an Admin?](#how-do-i-know-if-someone-is-a-moderator-staff-member-or-an-admin)
   - [Someone is spamming/harassing me, what should I do?](#someone-is-spammingharassing-me-what-should-i-do)
   - [Discord is running slowly or stuttering, what should I do?](#discord-is-running-slowly-or-stuttering-what-should-i-do)
@@ -141,6 +141,33 @@ overlays. A few examples of what this would look like:
 <br>
 <img align="center" src="/events/kcc2021/name.png" width="40%">
 
+### Information on each channel in Discord
+
+- `announcements` : Announcements for any new events/updates will be done here
+- `code-of-conduct` : Make sure to accept the code of conduct by reacting with the Kubernetes emoji to the message!
+- `instructions-to-connect` : Follow the steps mentioned therre to enable all the existing channels
+- `faq` : Have a question or having a problem? Your question may be answered here :)
+- `help` : Need help? Have a question? Ask them here!
+- `feedback` : We would love to here your thoughts on what we can improve on and we can do a better job next time.
+- `general` : General chat for folks to chat
+- `awwwwww` : Show us pictures of your pets and other fluffy things that are cute. Humans allowed.
+- `food` : Show us food pictures and other tasty items around you.
+- `lfg` : Looking for a people to play a game with? Post your invite here!
+- `games` : Share links to play online games with each other.
+- `board-games` : Any board games enthusiast, this is your place to be!
+- `theater` : Let's watch movies and stuff and chat about it here.
+- `links-from-voice` : Use this channel to share links from various voice channels.
+- `main-events-chat` :  Text discussion related to events taking place in the main event channel
+- `main-events` : [Main events](https://www.kubernetes.dev/events/kcc2021/activities/#events) will be kicked off here
+- `hallway-1`/`hallway-2` : Voice channels for random discussions
+- `games-1`/`games-2` : People can team up to play online games using these channels
+- `k8s-ttrpg` : Kubernetes on the Tabletop RPG event will be kicked off here
+- `+ HORIZONTAL POD AUTOSCALER` : Creates your own voice channel
+
+### What is the HORIZONTAL VOICE AUTOSCALER channel for?
+
+Under this channel, a `+ create voice channel` channel can be seen, joining which will create your own voice channel (just as similar as creating a pod!). 
+For more information on the bot, check the pinned message in the `ac-commands` channel.
 
 ### How do I know if someone is a Moderator, Staff Member or an Admin?
 
