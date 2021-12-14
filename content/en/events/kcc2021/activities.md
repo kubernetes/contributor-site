@@ -35,15 +35,6 @@ will provide color commentary, much like a modern day Cotton McKnight and
 Pepper Brooks (announcers from Dodgeball).” There will be a Kubernetes slant
 for this edition of DevOps Party Games.
 
-### The Great Cloud Native Bake Off
-
-We take cooking and baking pretty seriously in the Cloud Native ecosystem; we
-do have a [Cloud Native Community Cookbook] after all. “We will be selecting
-6 to 8 Kubernetes contributors to participate in the second annual BakeOff
-(K8sBO). No professional experience is required … just enthusiasm, availability,
-and the willingness to wash a lot of dishes.” If you’re interested in baking,
-please [sign up] for the Bake Off as soon as possible.
-
 ### Krafternetes
 
 All day December 16th, creative folks will be showing up in the Krafternetes 
@@ -67,4 +58,3 @@ on Google search). [Sign up here] for Thursday or Friday night sessions.
 [Cloud Native Community Cookbook]: https://github.com/cncf/cloud-native-community-cookbook
 [sign up]: https://forms.gle/wrRd4vM1t2LfUdxW6 
 [slack]: https://slack.k8s.io
-[Sign up here]: https://forms.gle/4cxJ5pJBiHYq5GTM8
