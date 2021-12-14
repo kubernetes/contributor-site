@@ -37,7 +37,7 @@ for this edition of DevOps Party Games.
 
  ### Cloud Native Community Cookbook - Kiwi Hackbach Edition
  
-Hippie's [Hackbach](hackbach.nz) will be cooking up a couple recipes from our
+Hippie's Hackbach will be cooking up a couple recipes from our
 [Cloud Native Community Cookbook](https://github.com/cncf/cloud-native-community-cookbook)...
 and in true open-source style, everyone is encouraged to cook along in your own kitchen!
 From one of the many existing recipes, or add you own (via a PR of course)! We hope is to
