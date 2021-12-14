@@ -77,9 +77,10 @@ For instructions on creating an account and installing the client, see the
 4) The bot will dm you a unique link where you will need to complete a captcha.
    <br>
    <br>
-   **NOTE:** If you did not get a dm from the bot, right click on the bot name
-   (`@YAGPDB.xyz`), and select **message**. That will take you to the correct
-   prompt.
+   **NOTE:** On desktop clients, if you did not get a dm from the bot, right click 
+   on the bot name (`@YAGPDB.xyz`), and select **message**. That will take you 
+   to the correct prompt. On the web client, you need to click the "Home" server
+   in the upper left corner in order to see the bot's message.
    <br>
    <img align="center" src="/events/kcc2021/dm-from-bot.png" width="100%">
    <br>
