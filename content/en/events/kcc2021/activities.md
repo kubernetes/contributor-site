@@ -11,7 +11,7 @@ type: docs
 - [Events](#events)
   - [Kubernetes Contributor Awards](#kubernetes-contributor-awards)
   - [Most Extreme Kubernetes Challenge - DevOps Party Game](#most-extreme-kubernetes-challenge---devops-party-game)
-  - [The Great Cloud Native Bake Off](#the-great-cloud-native-bake-off)
+  - [Cloud Native Community Cookbook - Hackbach Edition](#cloud-native-community-cookbook---kiwi-hackbach-edition)
   - [Krafternetes](#krafternetes)
   - [Kubernetes the Tabletop RPG](#kubernetes-the-tabletop-rpg)
 
@@ -34,6 +34,14 @@ entertained. In addition, the hosts (Matt Stratton, Jeremy Meiss, and Dan Maher)
 will provide color commentary, much like a modern day Cotton McKnight and
 Pepper Brooks (announcers from Dodgeball).” There will be a Kubernetes slant
 for this edition of DevOps Party Games.
+
+ ### Cloud Native Community Cookbook - Kiwi Hackbach Edition
+ 
+Hippie's [Hackbach](hackbach.nz) will be cooking up a couple recipes from our
+[Cloud Native Community Cookbook](https://github.com/cncf/cloud-native-community-cookbook)...
+and in true open-source style, everyone is encouraged to cook along in your own kitchen!
+From one of the many existing recipes, or add you own (via a PR of course)! We hope is to
+create a new release of the cookbook and send physical copy it out to the folks in attendance.
 
 ### Krafternetes
 
