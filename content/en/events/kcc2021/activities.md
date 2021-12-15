@@ -63,6 +63,7 @@ tabletop roleplaying experience required, 6 players maximum, PG-13 content and 2
 hour timebox. You will need access to voice and 2 d10 die (or use the dice widget 
 on Google search). [Sign up here] for Thursday or Friday night sessions.
 
+[sign up here]: https://forms.gle/mJZ9HLZnTf1Jdv6i7
 [Cloud Native Community Cookbook]: https://github.com/cncf/cloud-native-community-cookbook
 [sign up]: https://forms.gle/wrRd4vM1t2LfUdxW6 
 [slack]: https://slack.k8s.io
