@@ -72,4 +72,4 @@ on Google search). [Sign up here] for Thursday or Friday night sessions.
 [Cloud Native Community Cookbook]: https://github.com/cncf/cloud-native-community-cookbook
 [sign up]: https://forms.gle/wrRd4vM1t2LfUdxW6 
 [slack]: https://slack.k8s.io
-[DevOps Party Games]
+[DevOps Party Games]: https://devopspartygames.com
