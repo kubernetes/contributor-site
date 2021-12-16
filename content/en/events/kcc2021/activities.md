@@ -25,15 +25,20 @@ working on. These peer awards are a tradition at the Kubernetes Contributor
 Summits so we are bringing them virtual, please join us to thank and support all
 the people who have worked hard to help us this year.
 
-### Most Extreme Kubernetes Challenge - DevOps Party Game
+### DevOps Party Games: Most Extreme Kubernetes Contributor Challenge
 
-DevOps Party Games takes the idea of “online party games” and tilts it on its
-head by adding DevOps-inspired content to existing games, and then streams it
-live via Twitch for a worldwide audience to watch, comment, and hopefully be
-entertained. In addition, the hosts (Matt Stratton, Jeremy Meiss, and Dan Maher)
-will provide color commentary, much like a modern day Cotton McKnight and
-Pepper Brooks (announcers from Dodgeball).” There will be a Kubernetes slant
-for this edition of DevOps Party Games.
+[DevOps Party Games] takes the idea of “online party games” and tilts it on its head 
+by adding DevOps-inspired content to existing games, and then streams it live via Twitch
+for a worldwide audience to watch, comment, and hopefully be entertained. In addition, the
+hosts (Matt Stratton, Jeremy Meiss, and Dan Maher) will provide color commentary, much 
+like a modern day Cotton McKnight and Pepper Brooks (announcers from Dodgeball).
+
+For this edition there will be a twist! All participants are Kubernetes contributors! Join 
+your hosts Matty Stratton (main DPG host) + Paris Pittman (K8s Steering Committee) with 
+fellow contributor and maintainer participants:
+Laura Lorenz (sig-multicluster), Tim Hockin (sig-network), Tabitha Sable (sig-security), 
+Xing Yang (sig-storage), Adolfo Garcia (sig-release), Kat Cosgrove (sig-release), Dims 
+Srinivas (Steering, sig-architecture), Danielle Lancashire (sig-node)
 
  ### Cloud Native Community Cookbook - Kiwi Hackbach Edition
  
@@ -67,3 +72,4 @@ on Google search). [Sign up here] for Thursday or Friday night sessions.
 [Cloud Native Community Cookbook]: https://github.com/cncf/cloud-native-community-cookbook
 [sign up]: https://forms.gle/wrRd4vM1t2LfUdxW6 
 [slack]: https://slack.k8s.io
+[DevOps Party Games]: https://devopspartygames.com
