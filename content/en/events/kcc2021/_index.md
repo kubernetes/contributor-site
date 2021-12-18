@@ -10,6 +10,13 @@ description: |
 type: docs
 ---
 
+{{% alert title="Congrats!"  %}}
+
+Congrats to our 2021 Kubernetes Contributor Awardees!
+Click [here](/community/awards/2021/) to see the full list of award recipients.
+
+{{% /alert %}}
+
 ### About
 
 The Contributor Celebration will take place after the 1.23 release during the week
