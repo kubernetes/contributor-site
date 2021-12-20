@@ -30,7 +30,7 @@ Conformance Work
 *Madhav Jivrajani*  
 KEP Reading Club  
 
-*Kirsten Garrison, @beepboopclick*  
+*Kirsten Garrison, @kikisdeliveryservice*
 Enhancements Subproject
 
 *Elana Hashman, @ehashdn*  
