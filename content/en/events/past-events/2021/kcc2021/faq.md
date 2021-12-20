@@ -7,6 +7,11 @@ description: |
 type: docs
 ---
 
+{{% alert title="Notice" color="warning" %}}
+This event has passed. Recordings from the event can be found on the
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP1nRmC5ks6szxfDN69ZZFcS).
+{{% /alert %}}
+
 - [General Information](#general-information)
   - [What is the Kubernetes Contributor Celebration?](#what-is-the-kubernetes-contributor-celebration)
   - [When is it?](#when-is-it)
@@ -72,7 +77,7 @@ Discord server invites will be sent out closer to the event.
 There will be trivia and other games available. For more information see the
 [activities] page.
 
-[activities]: /events/kcc2021/activities/
+[activities]: /events/past-events/2021/kcc2021/activities/
 
 
 ## Discord Information
@@ -81,7 +86,7 @@ There will be trivia and other games available. For more information see the
 
 Please see the [How to join] page.
 
-[How to join]: /events/kcc2021/how-to-join/
+[How to join]: /events/past-events/2021/kcc2021/how-to-join/
 
 ### Why do I need to verify myself once I connect (complete captcha)?
 
@@ -109,7 +114,7 @@ everything. If you need assistance, join the `#help` channel.
 
 ### What is this YAGPDB.xyz and why is it messaging me?
 
-<img align="left" src="/events/kcc2021/yagpdb.png" width="40" height="40">
+<img align="left" src="/events/past-events/2021/kcc2021/yagpdb.png" width="40" height="40">
 
 [YAGPDB] (Yet Another General Purpose Discord Bot) is a verified discord bot
 that we use to manage a variety of services within discord, from verification
@@ -127,19 +132,19 @@ overlays. A few examples of what this would look like:
 
 1 ) To do so, click the server dropdown (Top Left)
 
-<img align="center" src="/events/kcc2021/server.png" width="40%">
+<img align="center" src="/events/past-events/2021/kcc2021/server.png" width="40%">
 <br>
 <br>
 2 ) Select “Change Nickname”
 <br>
 <br>
-<img align="center" src="/events/kcc2021/nickname.png" width="40%">
+<img align="center" src="/events/past-events/2021/kcc2021/nickname.png" width="40%">
 <br>
 <br>
 3 ) Then follow the template of “nickname (pro/noun)” like so:
 <br>
 <br>
-<img align="center" src="/events/kcc2021/name.png" width="40%">
+<img align="center" src="/events/past-events/2021/kcc2021/name.png" width="40%">
 
 ### Information on each channel in Discord
 
@@ -158,7 +163,7 @@ overlays. A few examples of what this would look like:
 - `theater` : Let's watch movies and stuff and chat about it here.
 - `links-from-voice` : Use this channel to share links from various voice channels.
 - `main-events-chat` :  Text discussion related to events taking place in the main event channel
-- `main-events` : [Main events](https://www.kubernetes.dev/events/kcc2021/activities/#events) will be kicked off here
+- `main-events` : [Main events](https://www.kubernetes.dev/events/past-events/2021/kcc2021/activities/#events) will be kicked off here
 - `hallway-1`/`hallway-2` : Voice channels for random discussions
 - `games-1`/`games-2` : People can team up to play online games using these channels
 - `k8s-ttrpg` : Kubernetes on the Tabletop RPG event will be kicked off here
