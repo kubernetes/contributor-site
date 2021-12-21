@@ -8,6 +8,11 @@ description: |
 type: docs
 ---
 
+{{% alert title="Notice" color="warning" %}}
+This event has passed. Recordings from the event can be found on the
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP1nRmC5ks6szxfDN69ZZFcS).
+{{% /alert %}}
+
 
 The celebration and all the activities will all take place on  the official
 Kubernetes [Discord] server with major events being streamed to the
@@ -51,7 +56,7 @@ For instructions on creating an account and installing the client, see the
    symbol) on the left side of the application. 
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/add-server.png" width="40%">
+   <img align="center" src="/events/past-events/2021/kcc2021/add-server.png" width="40%">
    <br>
    <br>
    A menu should pop up asking if you'd like to create or join a server. Select
@@ -62,7 +67,7 @@ For instructions on creating an account and installing the client, see the
    email, and paste it in the **Invite link** text box.
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/join-server.png" width="40%">
+   <img align="center" src="/events/past-events/2021/kcc2021/join-server.png" width="40%">
    <br> 
    <br> 
 3) Two things will happen: You will be directed to the `#instructions-to-connect`
@@ -71,7 +76,7 @@ For instructions on creating an account and installing the client, see the
    the server.
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/instructions-to-connect.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/instructions-to-connect.png" width="100%">
    <br>
    <br> 
 4) The bot will dm you a unique link where you will need to complete a captcha.
@@ -82,14 +87,14 @@ For instructions on creating an account and installing the client, see the
    to the correct prompt. On the web client, you need to click the "Home" server
    in the upper left corner in order to see the bot's message.
    <br>
-   <img align="center" src="/events/kcc2021/dm-from-bot.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/dm-from-bot.png" width="100%">
    <br>
    <br>
    If you do not complete the captcha within 10 minutes, you will be booted from
    the server (you will still be able to reconnect).
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/verification.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/verification.png" width="100%">
    <br>
    <br>
 5) After completing the captcha, navigate to the `#code-of-conduct` channel.
@@ -98,10 +103,10 @@ For instructions on creating an account and installing the client, see the
    channels within the server.
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/coc.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/coc.png" width="100%">
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/coc-emoji.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/coc-emoji.png" width="100%">
    <br> 
    <br>
    Once you accept the Code of conduct, you will see a list of categories and
@@ -110,7 +115,7 @@ For instructions on creating an account and installing the client, see the
    collapse that entire section in the sidebar.
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/channels.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/channels.png" width="100%">
    <br> 
    <br>
    **Note:** Unlike Slack you can see every channel, and every user on the server!
@@ -118,7 +123,7 @@ For instructions on creating an account and installing the client, see the
    categories you're interested in and mute the others.
 
 
-[YAGPDB.xyz]: /events/kcc2021/faq/#what-is-this-yagpdbxyz-and-why-is-it-messaging-me
+[YAGPDB.xyz]: /events/past-events/2021/kcc2021/faq/#what-is-this-yagpdbxyz-and-why-is-it-messaging-me
 [Code of Conduct]: https://www.kubernetes.dev/resources/code-of-conduct/
 
 
@@ -133,7 +138,7 @@ and some might be too soft. If you’re expecting to play with a group for a lon
 time this can help tremendously:
 <br>
 <br>
-<img align="center" src="/events/kcc2021/user-volume.png" width="100%">
+<img align="center" src="/events/past-events/2021/kcc2021/user-volume.png" width="100%">
 <br> 
 <br>
 
@@ -144,7 +149,7 @@ Once you’ve joined a voice channel you can use the widgets at the bottom left
 of the screen to share your own screen and to use video if you want:
 <br>
 <br>
-<img align="center" src="/events/kcc2021/voice-video.png" width="40%">
+<img align="center" src="/events/past-events/2021/kcc2021/voice-video.png" width="40%">
 <br> 
 <br>
 The _Voice connected_ text and signal meter will change depending on your
@@ -161,21 +166,21 @@ video settings.
    corner:
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/settings-cog.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/settings-cog.png" width="100%">
    <br> 
    <br>
 2) Navigate to the **Voice & Video** section of the User Settings to adjust your
    inputs and outputs.
    <br>
    <br>
-   <img align="center" src="/events/kcc2021/voice-video-settings.png" width="100%">
+   <img align="center" src="/events/past-events/2021/kcc2021/voice-video-settings.png" width="100%">
    <br> 
    <br>
 
 If you are continuing to have problems, check our [FAQ] or see the official
 [Discord Voice and Video Troubleshooting Guide][dg]
 
-[FAQ]: /events/kcc2021/faq/
+[FAQ]: /events/past-events/2021/kcc2021/faq/
 [dg]: https://support.discord.com/hc/en-us/articles/360045138471
 
 
@@ -189,4 +194,4 @@ If you're problem was not covered in the [FAQ], you can reach out for help in
 the **#Help** channel under the **Info and Announcements** Category.
 <br>
 <br>
-<img align="center" src="/events/kcc2021/help-channel.png" width="40%">
+<img align="center" src="/events/past-events/2021/kcc2021/help-channel.png" width="40%">
