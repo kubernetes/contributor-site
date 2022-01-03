@@ -134,7 +134,7 @@ enable = true
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
 	name = "Kubernetes Dev Mailing List"
-	url = "https://groups.google.com/g/kubernetes-dev"
+	url = "https://groups.google.com/a/kubernetes.io/group/dev"
 	icon = "fa fa-envelope"
         desc = "Discussion and help from your fellow users"
 [[params.links.user]]
