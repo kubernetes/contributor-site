@@ -9,7 +9,9 @@ slug: sig-multicluster-spotlight-2022
 
 ## Introduction
 
-[SIG Multicluster](https://github.com/kubernetes/community/tree/master/sig-multicluster) is the SIG focused on how Kubernetes concepts are expanded and used beyond the cluster boundary. Historically, Kubernetes resources only interacted within that boundary - KRU or Kubernetes Resource Universe (not an actual Kubernetes concept). Kubernetes clusters, even now, don't really know anything about themselves or, about other clusters. Absence of cluster identifiers is a case in point. With the growing adoption of multicloud and multicluster deployments, the work SIG Multicluster doing is gaining a lot of attention. In this blog, [Jeremy Olmsted-Thompson, Google](https://twitter.com/jeremyot) and [Chris Short, AWS](https://twitter.com/ChrisShort) discuss the interesting problems SIG Multicluster is solving and how you can get involved. Their initials **JOT** and **CS** will be used for brevity.
+[SIG Multicluster](https://github.com/kubernetes/community/tree/master/sig-multicluster) is the Special Interest Group (SIG) focused on how Kubernetes concepts are expanded and used beyond the cluster boundary. Historically, Kubernetes resources only interacted within that boundary - KRU or Kubernetes Resource Universe (not an actual Kubernetes concept). Kubernetes clusters, even now, don't really know anything about themselves or, about other clusters. Absence of cluster identifiers is a case in point. With the growing adoption of multicloud and multicluster deployments, the work SIG Multicluster doing is gaining a lot of attention.
+
+In this article, [Jeremy Olmsted-Thompson, Google](https://twitter.com/jeremyot) and [Chris Short, AWS](https://twitter.com/ChrisShort) discuss the interesting problems SIG Multicluster is solving and how you can get involved. Their initials **JOT** and **CS** will be used for brevity.
 
 ## A summary of their conversation
 
