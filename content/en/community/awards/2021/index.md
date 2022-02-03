@@ -19,7 +19,7 @@ For their long term effort and leadership on server-side-apply and the related w
 
 #### Apps
 
-*Aldo Cuilquicondor*  
+*Aldo Culquicondor*  
 For improving the jobs controller, expanding its functionality
 
 #### Architecture
