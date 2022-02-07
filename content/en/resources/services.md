@@ -217,7 +217,7 @@ For more information on funding requests, see the [Project Funding] page.
 
 
 <!-- shared links -->
-[cg]: /resources/community-groups
+[cg]: /community/community-groups
 [kubernetes/community]: https://github.com/kubernetes/community
 [kubernetes/org]: https://github.com/kubernetes/org
 [kubernetes/k8s.io]: https://github.com/kubernetes/k8s.io
