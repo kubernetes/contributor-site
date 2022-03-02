@@ -15,7 +15,7 @@ Welcome back to the second episode of the "Meet Our Contributors" blog post seri
 
 This post will feature four outstanding contributors from the Australia and New Zealand regions, who have played diverse leadership and community roles in the Upstream Kubernetes project.
 
-So, without further ado, let's get straight to the blog.
+So, without further ado, let's get straight to the article.
 
 ## [Caleb Woodbine](https://github.com/BobyMCbobs)
 
@@ -65,7 +65,7 @@ He asserts the best thing a new contributor can do is to "start contributing". N
 
 ---
 
-If you have any recommendations/suggestions for who we should interview next, please let us know in #sig-contribex. Your suggestions would be much appreciated. We're thrilled to have additional folks assisting us in reaching out to even more wonderful individuals of the community.
+If you have any recommendations/suggestions for who we should interview next, please let us know in [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex). Your suggestions would be much appreciated. We're thrilled to have additional folks assisting us in reaching out to even more wonderful individuals of the community.
 
 
 We'll see you all in the next one. Everyone, till then, have a happy contributing! :wave: 
