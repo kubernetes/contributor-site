@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Meet Our Contributors - APAC (Aus-NZ region)"
-date: 2022-03-02
+date: 2022-03-14
 slug: meet-our-contributors-au-nz-ep-02
 ---
 
