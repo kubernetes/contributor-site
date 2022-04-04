@@ -26,14 +26,13 @@ The in-person location at the
 <a href="https://www.feriavalencia.com/en/" rel="noopener noreferrer" target="_blank">Feria Valencia</a>,
 See the [Location & Venue] section for more information.
 
-[Location & Venue]: /events/past-events/2021/kcsna/location/
+[Location & Venue]: /events/kcseu/location/
 
 
 ### Will I be able to attend remotely?
 
-As we are not holding a formal event, we encourage you to work with your SIG or
-subproject to engage over Slack or team Zoom rooms. Any SIG or subproject that
-holds an event will have the ability to connect with any remote attendees.
+No, based on our experience with Kubecon NA 2021, we do not expect to be able
+to support remote access for this event.
 
 
 ### Why is vaccination required to attend in-person?
@@ -51,14 +50,18 @@ With uncertain attendance and staffing, we made this decision to ensure we can
 put on an event to the best of our ability.
 
 Kubernetes Orgs:
-- [kubernetes](https://github.com/kubernetes)
-- [kubernetes-client](https://github.com/kubernetes-client)
-- [kubernetes-csi](https://github.com/kubernetes-csi)
-- [kubernetes-sigs](https://github.com/kubernetes-sigs)
+
+<ul>
+<li><a href="https://github.com/kubernetes" rel="noopener noreferrer" target="_blank">kubernetes</a></li>
+<li><a href="https://github.com/kubernetes-client" rel="noopener noreferrer" target="_blank">kubernetes-client</a></li>
+<li><a href="https://github.com/kubernetes-csi rel="noopener noreferrer" target="_blank">kubernetes-csi</a></li>
+<li><a href="https://github.com/kubernetes-sigs" rel="noopener noreferrer" target="_blank">kubernetes-sigs</a></li>
+</ul>
 
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
-docs for more information.
+docs for more information. If your application to join is pending, please
+contact us at community@kubernetes.io about registering.
 
 [org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 
@@ -66,7 +69,7 @@ docs for more information.
 ### What is a sponsored attendee?
 
 If you are a SIG lead or subproject owner and there is someone that is not yet
-an org member or from another project that might take part of a panel,
+an org member or from another project that might take part in a panel,
 SIG face-to-face meeting etc, you can sponsor them to attend the summit.
 Please reach out to community@kubernetes.io to make arrangements.
 
@@ -78,7 +81,7 @@ No, with uncertain attendance and staffing, we made this decision to ensure we
 can put on an event to the best of our ability. For those that are interested
 in becoming a contributor, SIG ContribEx plans to launch a course later this year.
 
-Until then, here are you some additional resources you may find useful:
+Until then, here are some additional resources you may find useful:
 - [New Contributor Workshop 2019 - Barcelona](https://www.youtube.com/watch?v=BQ7y2TFOzF4&list=PL69nYSiGNLP2WTJ6P8sQenhf0RY-JqF5L)
 - [New Contributor Workshop 2019 - San Diego](https://www.youtube.com/watch?v=uUJrGwAom-E&list=PL69nYSiGNLP0OWp38tPBc-jSlMmwWr6Ci&index=15)
 - [Kubernetes Contributor Guide](/docs/guide/)

@@ -12,6 +12,9 @@ Registration and badge pick-up will be available at the
 You **MUST** go through vaccination verification and pick up your badge before
 attending the summit or evening social event.
 
+The summit itself will be on Level 3 of the Feria Valencia Event Center.
+
+
 **Address**<br>
 Av. de les Fires, s/n, 46035<br>
 València, Spain<br>

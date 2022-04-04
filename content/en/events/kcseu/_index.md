@@ -11,7 +11,7 @@ description: >
 
 ### About
 
-The Europe Summit will be an lightweight event taking place on May 16th
+The Europe Summit will be a lightweight event taking place on May 16th
 in Valencia, Spain alongside 
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" rel="noopener noreferrer" target="_blank">KubeCon</a>
 at the
@@ -28,13 +28,12 @@ community@kubernetes.io or asking in the
 slack channel.
 
 [location]: /events/kcseu/location/
-[RSVP]: /events/kcseu/registration/
-
 
 
 ### Code of Conduct
 
-Attendees agree to abide by Kubernetes [Code of Conduct]. More information on
-how to report an event will be posted in the future.
+Attendees agree to abide by Kubernetes [Code of Conduct]. To report an incident
+please reach out to the [CNCF event staff].
 
 [Code of Conduct]: /community/code-of-conduct
+[CNCF event staff]: https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/code-of-conduct/#if-you-witness-unacceptable-behavior
