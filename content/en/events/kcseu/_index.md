@@ -21,6 +21,13 @@ Similar to North America summit last year, the summit in Europe will be
 informal with minimal programming, but plenty of space to hang out, catch up,
 and meet new contributors.
 
+We are looking for SIG meetings, session leaders for unconference sessions, plus 
+one or more pre-planned plenary sessions.  If you have an idea for a session, or 
+if your SIG wants to use the Contributor Summit to have an in-person work session
+or meeting, please [email us](mailto:community@kubernetes.io).
+
+There will also be a documentation sprint, led by SIG-Docs.
+
 This page will be updated with more information as it develops. If you have
 questions or comments, please reach out to the Summit Staff by emailing
 community@kubernetes.io or asking in the
