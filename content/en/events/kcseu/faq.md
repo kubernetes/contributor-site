@@ -11,6 +11,9 @@ weight: 4
 - [Why do I need to be a Kubernetes Org member to attend in-person?](#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person)
 - [What is a sponsored attendee?](#what-is-a-sponsored-attendee)
 - [I am not an Org member. Can I still attend?](#i-am-not-an-org-member-can-i-still-attend)
+- [I have an idea for a session.  How do I propose it?](#i-have-an-idea-for-a-session)
+- [My SIG wants to meet at the Summit](#my-sig-wants-to-meet-at-the-summit)
+- [Will there be a Doc Sprint?](#will-there-be-a-doc-sprint)
 - [Will there be a New Contributor Workshop?](#will-there-be-a-new-contributor-workshop)
 - [I have a question! How do I contact the event staff?](#i-have-a-question-how-do-i-contact-the-event-staff)
 
@@ -73,7 +76,23 @@ an org member or from another project that might take part in a panel,
 SIG face-to-face meeting etc, you can sponsor them to attend the summit.
 Please reach out to community@kubernetes.io to make arrangements.
 
+### I have an idea for a session
 
+Most of the Summit will be unconference-style, so you will have an opportunity
+to propose a session the morning of the Summit.  However, we have a couple of
+time slots for plenary sessions around the unconference ones, so if you have 
+a topic that you think needs the whole community's attention, please 
+[email us].
+
+### My SIG wants to meet at the Summit
+
+We will provide space for SIG, WG, Committee, and other Kubernetes team meetings
+at the Summit.  If you think your team will want to hold one of these, please
+[email us] and we'll work with you on scheduling.
+
+### Will there be a doc sprint?
+
+Yes, SIG-Docs plans to hold a Doc Sprint at the Summit.
 
 ### Will there be a New Contributor Workshop?
 
@@ -89,6 +108,8 @@ Until then, here are some additional resources you may find useful:
 
 ### I have a question! How do I contact the event staff?
 
-You can reach out to us directly at community@kubernetes.io or pop into the
+You can [email us] or pop into the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">
 #contributor-summit</a> slack channel to ask a question. :)
+
+[email us]: mailto:community@kubernetes.io

@@ -14,7 +14,12 @@ attending the summit or evening social event.
 
 The summit itself will be on Level 3 of the Feria Valencia Event Center.
 
-
 **Address**<br>
 Av. de les Fires, s/n, 46035<br>
 València, Spain<br>
+
+### Contributor Social Location
+
+The Contributor Social will be held at a beach club and restaurant which is
+several kilometers from the Feria. CNCF will be providing a bus from the Fiera
+to the venue, and our community will also organize ride-sharing.
