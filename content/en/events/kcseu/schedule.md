@@ -15,7 +15,8 @@ attending the summit or social evening event.
 
 - 7:30am - 5pm - Registration + Vaccine Verification + Badge Pick-up @ the [Feria Valencia]
 - 9am - 4pm - Contributor hangout @ the [Feria Valencia] (ballroom 6)
-- 5pm - 8pm - Evening social (TBD)
+- 6:30pm - 8:30pm - Evening social @ the [La Casa de la Mar]
 
 
-[Feria Valencia]: /events/kcseu/location/
+[Feria Valencia]: /events/kcseu/location/#Feria-Valencia
+[La Casa de la Mar]: /events/kcseu/location/#La-Casa-de-la-Mar
