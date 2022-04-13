@@ -18,8 +18,14 @@ The summit itself will be on Level 3 of the Feria Valencia Event Center.
 Av. de les Fires, s/n, 46035<br>
 València, Spain<br>
 
-### Contributor Social Location
+### La Casa de la Mar
 
-The Contributor Social will be held at a beach club and restaurant which is
+The Contributor Social will be held at the
+<a href="https://lacasadelamar.com/espacios-patacona/" rel="noopener noreferrer" target="_blank">La Casa de la Mar</a>
 several kilometers from the Feria. CNCF will be providing a bus from the Fiera
-to the venue, and our community will also organize ride-sharing.
+to the venue, and our community will also organize ride-sharing. Details to be posted later.
+
+**Address**<br>
+Avenida Vicente Blasco Ibañez Novelist, 8.<br>
+CP. 46120 – Alboraya<br>
+Valencia, Spain<br>
