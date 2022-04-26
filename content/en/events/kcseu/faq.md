@@ -8,6 +8,7 @@ weight: 4
 - [Where is the summit located?](#where-is-the-summit-located)
 - [Will I be able to attend remotely?](#will-i-be-able-to-attend-remotely)
 - [Why is vaccination required to attend in-person?](#why-is-vaccination-required-to-attend-in-person)
+- [Do I need to wear a mask?](#do-i-need-to-wear-a-mask)
 - [Why do I need to be a Kubernetes Org member to attend in-person?](#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person)
 - [What is a sponsored attendee?](#what-is-a-sponsored-attendee)
 - [I am not an Org member. Can I still attend?](#i-am-not-an-org-member-can-i-still-attend)
@@ -15,6 +16,7 @@ weight: 4
 - [My SIG wants to meet at the Summit](#my-sig-wants-to-meet-at-the-summit)
 - [Will there be a Doc Sprint?](#will-there-be-a-doc-sprint)
 - [Will there be a New Contributor Workshop?](#will-there-be-a-new-contributor-workshop)
+- [Can I bring a guest to the Contributor Social](#can-i-bring-a-guest-to-the-social)
 - [I have a question! How do I contact the event staff?](#i-have-a-question-how-do-i-contact-the-event-staff)
 
 ### When is the summit taking place?
@@ -46,6 +48,9 @@ Health & Safety Guidelines</a>. There may be additional restrictions that
 develop closer to the event, and we will update the event accordingly to follow
 venue, municipality and CDC guidelines at a minimum.
 
+### Do I need to wear a mask?
+
+All attendees are required to wear masks except when eating or drinking.  Eating and drinking should be kept to designated areas.
 
 ### Why do I need to be a Kubernetes Org member to attend in-person?
 
@@ -74,7 +79,7 @@ contact us at community@kubernetes.io about registering.
 If you are a SIG lead or subproject owner and there is someone that is not yet
 an org member or from another project that might take part in a panel,
 SIG face-to-face meeting etc, you can sponsor them to attend the summit.
-Please reach out to community@kubernetes.io to make arrangements.
+Please [email us] to make arrangements.
 
 ### I have an idea for a session
 
@@ -87,12 +92,13 @@ a topic that you think needs the whole community's attention, please
 ### My SIG wants to meet at the Summit
 
 We will provide space for SIG, WG, Committee, and other Kubernetes team meetings
-at the Summit.  If you think your team will want to hold one of these, please
-[email us] and we'll work with you on scheduling.
+at the Summit.  If you think your team will want to hold one of these, please 
+add your team to [the meeting schedule](https://docs.google.com/spreadsheets/d/1LS1q4VJajZkNZODdMnJ4eH3XnTsE_4em6pjQgToHyfw/edit?usp=sharing).
 
 ### Will there be a doc sprint?
 
-Yes, SIG-Docs plans to hold a Doc Sprint at the Summit.
+Yes, SIG-Docs plans to hold a Doc Sprint at the Summit, which will run for the
+full day from 11am to 5pm.
 
 ### Will there be a New Contributor Workshop?
 
@@ -105,6 +111,11 @@ Until then, here are some additional resources you may find useful:
 - [New Contributor Workshop 2019 - San Diego](https://www.youtube.com/watch?v=uUJrGwAom-E&list=PL69nYSiGNLP0OWp38tPBc-jSlMmwWr6Ci&index=15)
 - [Kubernetes Contributor Guide](/docs/guide/)
 
+### Can I bring a guest to the Social?
+
+Space permitting, contributors will be allowed to bring a single family member
+or partner to the social (a "plus one"). Look for a sign-up form for this, 
+coming soon.
 
 ### I have a question! How do I contact the event staff?
 

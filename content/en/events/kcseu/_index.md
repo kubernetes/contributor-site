@@ -22,11 +22,13 @@ informal with minimal programming, but plenty of space to hang out, catch up,
 and meet new contributors.
 
 We are looking for SIG meetings, session leaders for unconference sessions, plus 
-one or more pre-planned plenary sessions.  If you have an idea for a session, or 
-if your SIG wants to use the Contributor Summit to have an in-person work session
-or meeting, please [email us](mailto:community@kubernetes.io).
+one or more pre-planned plenary sessions.  If you have an idea for a session, please
+look for our thread on session ideas coming soon. If your SIG wants to use the 
+Contributor Summit to have an in-person work session
+or meeting, please [sign up](https://docs.google.com/spreadsheets/d/1LS1q4VJajZkNZODdMnJ4eH3XnTsE_4em6pjQgToHyfw/edit?usp=sharing).
 
-There will also be a documentation sprint, led by SIG-Docs.
+We'll start the day with a Steering Committee AMA. There will also be an all-day
+documentation sprint, led by SIG-Docs.
 
 This page will be updated with more information as it develops. If you have
 questions or comments, please reach out to the Summit Staff by emailing
