@@ -1,9 +1,9 @@
 ---
 layout: blog
 title: >-
-    "K8s Triage bot Helper CI Job: ‘*make update*’"
-date: 2022-03-15
-slug: k8s-triage-bot-helper-ci-job
+    K8s CI Bot Helper Job: automating "make update"
+date: 2022-04-26
+slug: k8s-ci-bot-helper-job
 ---
 
 **Authors:** [Subhasmita Swain](https://github.com/SubhasmitaSw), [Davanum Srinivas](https://github.com/dims) 
