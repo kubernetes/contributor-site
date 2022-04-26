@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: >-
-    "K8s Triage bot Helper CI Job: ‘*make update*’"
+  K8s CI Bot Helper Job: automating "make update"
 date: 2022-03-15
 slug: k8s-triage-bot-helper-ci-job
 ---
