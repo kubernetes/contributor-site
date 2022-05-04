@@ -21,14 +21,14 @@ Similar to North America summit last year, the summit in Europe will be
 informal with minimal programming, but plenty of space to hang out, catch up,
 and meet new contributors.
 
-We are looking for SIG meetings, session leaders for unconference sessions, plus 
-one or more pre-planned plenary sessions.  If you have an idea for a session, please
-look for our thread on session ideas coming soon. If your SIG wants to use the 
-Contributor Summit to have an in-person work session
-or meeting, please [sign up](https://docs.google.com/spreadsheets/d/1LS1q4VJajZkNZODdMnJ4eH3XnTsE_4em6pjQgToHyfw/edit?usp=sharing).
 
-We'll start the day with a Steering Committee AMA. There will also be an all-day
-documentation sprint, led by SIG-Docs.
+We are looking for [SIG meetings](https://docs.google.com/spreadsheets/d/1LS1q4VJajZkNZODdMnJ4eH3XnTsE_4em6pjQgToHyfw/edit?usp=sharing), 
+[session topics and leaders for unconference sessions](https://github.com/kubernetes/community/issues/6633), plus
+one or more pre-planned plenary sessions.  If you have an idea for a session, or 
+if your SIG wants to use the Contributor Summit to have an in-person work session
+or meeting, please [email us].
+
+There will also be a documentation sprint, led by SIG Docs.
 
 This page will be updated with more information as it develops. If you have
 questions or comments, please reach out to the Summit Staff by emailing
@@ -46,3 +46,5 @@ please reach out to the [CNCF event staff].
 
 [Code of Conduct]: /community/code-of-conduct
 [CNCF event staff]: https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/code-of-conduct/#if-you-witness-unacceptable-behavior
+
+[email us]: mailto:community@kubernetes.io

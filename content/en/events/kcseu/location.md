@@ -1,7 +1,7 @@
 ---
 title: "Location & Venue"
 type: docs
-weight: 5
+weight: 4
 ---
 
 
