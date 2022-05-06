@@ -21,10 +21,22 @@ in the morning, and then hold sessions in the afternoon, after the Steering AMA.
 This is the format used at many [DevOps Days](https://devopsdays.org/open-space-format/), and helps us accommodate changing 
 needs and unpredictable travel schedules.
 
-If you already have a topic in mind, we urge you to [add it to the Topics issue](https://github.com/kubernetes/contributor-site/pull/306)
+If you already have a topic in mind, we urge you to [add it to the Topics issue](https://github.com/kubernetes/community/issues/6633)
 so that other contributors can arrive mentally prepared for it.  This is
 especially crucial if you think you might not make it to the Summit until 
 afternoon.
+
+## SIG Meetings
+
+SIGs, Working Groups, and teams will be meeting during the Summit.  See if your
+team is meeting and mark your attendance on our 
+[SIG Meetings Schedule](https://docs.google.com/spreadsheets/d/1LS1q4VJajZkNZODdMnJ4eH3XnTsE_4em6pjQgToHyfw/edit?usp=sharing).
+
+## Doc Sprint
+
+SIG-Docs will have a full-day Documentation working session during the Summit.
+If you contribute to the docs -- and who doesn't -- or you want to learn to
+do it better, join them.
 
 ### May 15th
 

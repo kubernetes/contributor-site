@@ -17,20 +17,12 @@ in Valencia, Spain alongside
 at the
 <a href="https://www.feriavalencia.com/en/" rel="noopener noreferrer" target="_blank">Feria Valencia</a>.
 
-Similar to North America summit last year, the summit in Europe will be
-informal with minimal programming, but plenty of space to hang out, catch up,
-and meet new contributors.
+The Summit will be a loosely organized event with a [relaxed schedule](/events/kcseu/schedule),
+ including a Steering AMA, three hours of [Unconference Sessions](https://github.com/kubernetes/community/issues/6633), 
+multiple SIG and WG meetings, and a Documentation Sprint.  This will be followed
+by a [Contributor Social](/events/kcseu/social) with games and refreshments.
 
-
-We are looking for [SIG meetings](https://docs.google.com/spreadsheets/d/1LS1q4VJajZkNZODdMnJ4eH3XnTsE_4em6pjQgToHyfw/edit?usp=sharing), 
-[session topics and leaders for unconference sessions](https://github.com/kubernetes/community/issues/6633), plus
-one or more pre-planned plenary sessions.  If you have an idea for a session, or 
-if your SIG wants to use the Contributor Summit to have an in-person work session
-or meeting, please [email us].
-
-There will also be a documentation sprint, led by SIG Docs.
-
-This page will be updated with more information as it develops. If you have
+This page will be updated as more activities are scheduled. If you have
 questions or comments, please reach out to the Summit Staff by emailing
 community@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
