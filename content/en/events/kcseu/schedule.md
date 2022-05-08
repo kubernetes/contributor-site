@@ -54,7 +54,7 @@ do it better, join them.
 * 1:30pm - 2:25pm Unconference Session 1
 * 2:30pm - 3:30pm Unconference Session 2
 * 3:30pm - 3:55pm Coffee/Tea
-* 16:00pm - 16:55pm Unconference Session 3
+* 4:00pm - 4:55pm Unconference Session 3
 * 5:00pm - Hotel break
 * 6pm - Transport to the Social venue
 * 6:30pm - 8:30pm - Evening social @ the [La Casa de la Mar]
