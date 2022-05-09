@@ -16,10 +16,6 @@ The Social is open only to registered attendees of the Kubernetes Contributor
 Summit and possibly their guests (see below).  You must be [registered](https://cvent.me/384mb9)
 before attending.
 
-## Information Form
-
-Please help us plan a better social [by filling out our form](https://www.surveymonkey.com/r/kccseu22social).
-
 ## Location And Transportation
 
 The Contributor Social will be held at the
@@ -59,10 +55,15 @@ drinks.
 
 ## Bringing A Guest
 
-If we have room, contributors will be able to bring a single family member or 
-partner to the Social.  We will not know if we have room until May 10th.  
+Contributors will be able to bring a single family member or 
+partner to the Social.  This does not include coworkers or casual friends;
+our intention is to support domestic partners and close family of contributors
+by including them.  
 
-If you would like to bring a guest, [please fill out the Social form](https://www.surveymonkey.com/r/kccseu22social).
+Guests must be fully vaccinated and adhere to all other KubeCon health & 
+safety requirements.
 
-If you have questions about guests (such as wanting to bring children as well),
+If you would like to bring a guest, [please fill out the request form](https://www.surveymonkey.com/r/kccseu22social).
+
+If you have questions about guests,
 then [contact us](mailto:community@cncf.io).

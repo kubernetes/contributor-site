@@ -86,8 +86,8 @@ Please [email us] to make arrangements.
 Most of the Summit will be unconference-style, so you will have an opportunity
 to propose a session the morning of the Summit.  However, we have a couple of
 time slots for plenary sessions around the unconference ones, so if you have 
-a topic that you think needs the whole community's attention, please 
-[email us].
+a topic that you think needs the whole community's attention, please [add it to
+the issue](https://github.com/kubernetes/community/issues/6633).
 
 ### My SIG wants to meet at the Summit
 
@@ -113,9 +113,9 @@ Until then, here are some additional resources you may find useful:
 
 ### Can I bring a guest to the Social?
 
-Space permitting, contributors will be allowed to bring a single family member
-or partner to the social (a "plus one"). Look for a sign-up form for this, 
-coming soon.
+Contributors will be allowed to bring a single family member
+or partner to the social (a "plus one"). 
+[See the Social page to request a guest pass](https://www.kubernetes.dev/events/kcseu/social/).
 
 ### I have a question! How do I contact the event staff?
 
