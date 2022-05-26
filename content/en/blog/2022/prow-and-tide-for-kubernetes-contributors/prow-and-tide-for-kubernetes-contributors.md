@@ -45,4 +45,4 @@ I've done this once in five years of contributing. But, it's good to write it do
 
 These are a handful of the [commands](https://prow.kubernetes.io/command-help) and [labels](https://github.com/kubernetes/test-infra/blob/master/label_sync/labels.md) I enjoy. I'm sure there are many others that are helpful to folks. With that in mind, see if there's something you can benefit from in these resources. They are there to make working on Kubernetes a better experience. If you think there's some functionality missing, I'd invite you to drop a Slack message in [SIG-ContribEx](https://kubernetes.slack.com/archives/C1TU9EB9S) or [SIG-K8s-Infra](https://kubernetes.slack.com/archives/CCK68P2Q2) to discuss.
 
-HUGE SHOUTOUT: To the folks that keep these systems humming along for the Kubernetes community. Couldn't do it without y'all.
+**Huge shoutout**: To the folks that keep these systems humming along for the Kubernetes community. Couldn't do it without y'all.
