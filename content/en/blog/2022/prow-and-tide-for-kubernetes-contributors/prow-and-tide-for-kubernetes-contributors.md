@@ -11,7 +11,7 @@ slug: prow-and-tide-for-kubernetes-contributors
 
 In my work in the Kubernetes world, I look up a label or Prow command often. The systems behind the scenes ([Prow](https://prow.kubernetes.io/) and [Tide](https://pkg.go.dev/k8s.io/test-infra/prow/cmd/tide#section-readme)) are here to help Kubernetes Contributors get stuff done.
 
-Labeling which SIG, WG, subproject, etc. is as important as the issue or PR having someone assigned. To quote [the docs](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md), "Tide is a [Prow](https://github.com/kubernetes/test-infra/blob/master/prow/README.md) component for managing a pool of GitHub PRs that match a given set of criteria. It will automatically retest PRs that meet the criteria ('tide comes in') and automatically merge them when they have up-to-date passing test results ('tide goes out')."
+Labeling which SIG, WG, or subproject is as important as the issue or PR having someone assigned. To quote [the docs](https://github.com/kubernetes/test-infra/blob/master/prow/cmd/tide/README.md), "Tide is a [Prow](https://github.com/kubernetes/test-infra/blob/master/prow/README.md) component for managing a pool of GitHub PRs that match a given set of criteria. It will automatically retest PRs that meet the criteria ('tide comes in') and automatically merge them when they have up-to-date passing test results ('tide goes out')."
 
 Something that really helps move things along is the [label_sync](https://github.com/kubernetes/test-infra/blob/master/label_sync/labels.md#intro) tool along with the logic Prow and Tide bring to the community.
 
