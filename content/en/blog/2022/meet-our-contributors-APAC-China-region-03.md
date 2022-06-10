@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Meet Our Contributors - APAC (China region)"
-date: 2022-06-11
+date: 2022-06-13
 slug: meet-our-contributors-chn-ep-03
 ---
 
@@ -9,7 +9,7 @@ slug: meet-our-contributors-chn-ep-03
 
 ---
 
-Good day, everyone 👋
+Hello, everyone 👋
 
 Welcome back to the third episode of the "Meet Our Contributors" blog post series for APAC.
 
@@ -24,7 +24,7 @@ Andy Zhang currently works for Microsoft China at the Shanghai site. His main fo
 
 He states that as he is working in Azure Kubernetes Service team and spends most of his time contributing to the Kubernetes community project. Now he is the main contributor of quite a lot Kubernetes projects such as Kubernetes cloud provider projects.
 
-His open source contributions are mainly self motivated. In the last two years he has mentored a few students contributing to Kubernetes through the LFX Mentorship who later on got jobs due to their expertise and contributions on Kubernetes projects. 
+His open source contributions are mainly self-motivated. In the last two years he has mentored a few students contributing to Kubernetes through the LFX Mentorship program, some of whom got jobs due to their expertise and contributions on Kubernetes projects.
 
 Andy is an active member of the China Kubernetes community. He adds that the Kubernetes community has a good guide about how to become members, code reviewers, approvers and finally when he found out that some open source projects are in the very early stage, he actively contributed to those projects and became the project maintainer.
 
@@ -35,7 +35,7 @@ Shiming Zhang is a Software Engineer with DaoCloud in Shanghai, China.
 
 He has mostly been involved with `SIG Node` as a reviewer.
 
-As of his prior experience in this project, Shiming has been involved with Kubernetes at his company. His major contributions have mainly been bug fixes and feature improvements in an ongoing [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2712-pod-priority-based-graceful-node-shutdown), all revolving around SIG Node.
+As of his prior experience, Shiming had been involved with Kubernetes at his company. His major contributions have mainly been bug fixes and feature improvements in an ongoing [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2712-pod-priority-based-graceful-node-shutdown), all revolving around SIG Node.
 
 Some of his major PRs are [fixing watchForLockfileContention memory leak](https://github.com/kubernetes/kubernetes/pull/100326), [fixing startupProbe behaviour](https://github.com/kubernetes/kubernetes/pull/101093), [adding Field status.hostIPs for Pod](https://github.com/kubernetes/enhancements/pull/2661).
 
@@ -46,10 +46,11 @@ Paco Xu works at DaoCloud, a Shanghai-based cloud-native firm. He works with the
 
 He started with Kubernetes in early 2017 and his first contribution was in March 2018. He started with a bug that he found, but his solution was not that graceful, hence wasn't accepted. He then started with some good first issues, which helped him to a great extent. In addition to this, from 2016 to 2017, he made some minor contributions to Docker.
 
-Currently, Paco is a reviewer for `kubeadm` and `SIG Node`. He states that the maintainers have helped him a lot in learning and contributing to the project. According to him, the best thing one can do is to learn how the owners work on the project.
+Currently, Paco is a reviewer for `kubeadm` and `SIG Node`. He states that the maintainers have helped him a lot in learning and contributing to the project.
 
-Paco also emphasizes on contributing to an open source project if one is using it. For him, an open source project is like a book to learn. One can learn a lot from an open source project and get inspirisions during disucussions with the project maintainers.
+Paco says that you should contribute to open source projects you use. For him, an open source project is like a book to learn, getting inspired through discussions with the project maintainers.
 
+> In my opinion, the best way for me is learning how owners work on the project.
 
 ## [Jintao Zhang](https://github.com/tao12345666333)
 
