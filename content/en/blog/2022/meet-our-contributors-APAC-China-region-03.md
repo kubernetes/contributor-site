@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Meet Our Contributors - APAC (China region)"
-date: 2022-06-13
+date: 2022-06-15
 slug: meet-our-contributors-chn-ep-03
 ---
 
@@ -15,14 +15,14 @@ Welcome back to the third episode of the "Meet Our Contributors" blog post serie
 
 This post features four outstanding contributors from  China, who have played diverse leadership and community roles in the upstream Kubernetes project.
 
-So, without further ado, let's get straight to the blog.
+So, without further ado, let's get straight to the article.
 
 
 ## [Andy Zhang](https://github.com/andyzhangx)
 
 Andy Zhang currently works for Microsoft China at the Shanghai site. His main focus is on Kubernetes storage drivers. Andy started contributing to Kubernetes about 5 years ago.
 
-He states that as he is working in Azure Kubernetes Service team and spends most of his time contributing to the Kubernetes community project. Now he is the main contributor of quite a lot Kubernetes projects such as Kubernetes cloud provider projects.
+He states that as he is working in Azure Kubernetes Service team and spends most of his time contributing to the Kubernetes community project. Now he is the main contributor of quite a lot Kubernetes subprojects such as Kubernetes cloud provider code.
 
 His open source contributions are mainly self-motivated. In the last two years he has mentored a few students contributing to Kubernetes through the LFX Mentorship program, some of whom got jobs due to their expertise and contributions on Kubernetes projects.
 
@@ -33,7 +33,7 @@ Andy is an active member of the China Kubernetes community. He adds that the Kub
 
 Shiming Zhang is a Software Engineer with DaoCloud in Shanghai, China. 
 
-He has mostly been involved with `SIG Node` as a reviewer.
+He has mostly been involved with SIG Node, as a reviewer.
 
 As of his prior experience, Shiming had been involved with Kubernetes at his company. His major contributions have mainly been bug fixes and feature improvements in an ongoing [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2712-pod-priority-based-graceful-node-shutdown), all revolving around SIG Node.
 
@@ -46,7 +46,7 @@ Paco Xu works at DaoCloud, a Shanghai-based cloud-native firm. He works with the
 
 He started with Kubernetes in early 2017 and his first contribution was in March 2018. He started with a bug that he found, but his solution was not that graceful, hence wasn't accepted. He then started with some good first issues, which helped him to a great extent. In addition to this, from 2016 to 2017, he made some minor contributions to Docker.
 
-Currently, Paco is a reviewer for `kubeadm` and `SIG Node`. He states that the maintainers have helped him a lot in learning and contributing to the project.
+Currently, Paco is a reviewer for `kubeadm` (a SIG Cluster Lifecycle product), and for SIG Node.
 
 Paco says that you should contribute to open source projects you use. For him, an open source project is like a book to learn, getting inspired through discussions with the project maintainers.
 
@@ -58,7 +58,7 @@ Jintao Zhang is presently employed at API7, where he focuses on ingress and serv
 
 In 2017, he encountered an issue which led to a community discussion and his contributions to Kubernetes started. Before contributing to Kubernetes, Jintao was a long-time contributor to Docker-related open source projects. 
 
-Currently Jintao is a reviewer for the `Ingress-nginx` project.
+Currently Jintao is a reviewer for the [ingress-nginx](https://kubernetes.github.io/ingress-nginx/) project.
 
 He suggests to follow open source commercial companies, if one wants to do open source full-time. For new contributors Jintao says that if anyone wants to make a significant contribution to an open source project, then they should choose the project based on their interests and should generously invest time.
 
