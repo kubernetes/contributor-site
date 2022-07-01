@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Meet Our Contributors - APAC (China region)"
-date: 2022-06-15
+date: 2022-07-04
 slug: meet-our-contributors-chn-ep-03
 ---
 
@@ -31,11 +31,9 @@ Andy is an active member of the China Kubernetes community. He adds that the Kub
 
 ## [Shiming Zhang](https://github.com/wzshiming)
 
-Shiming Zhang is a Software Engineer with DaoCloud in Shanghai, China. 
+Shiming Zhang is a Software Engineer working on Kubernetes for DaoCloud in Shanghai, China. 
 
-He has mostly been involved with SIG Node, as a reviewer.
-
-As of his prior experience, Shiming had been involved with Kubernetes at his company. His major contributions have mainly been bug fixes and feature improvements in an ongoing [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2712-pod-priority-based-graceful-node-shutdown), all revolving around SIG Node.
+He has mostly been involved with SIG Node, as a reviewer. His major contributions have mainly been bug fixes and feature improvements in an ongoing [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2712-pod-priority-based-graceful-node-shutdown), all revolving around SIG Node.
 
 Some of his major PRs are [fixing watchForLockfileContention memory leak](https://github.com/kubernetes/kubernetes/pull/100326), [fixing startupProbe behaviour](https://github.com/kubernetes/kubernetes/pull/101093), [adding Field status.hostIPs for Pod](https://github.com/kubernetes/enhancements/pull/2661).
 
@@ -60,7 +58,7 @@ In 2017, he encountered an issue which led to a community discussion and his con
 
 Currently Jintao is a reviewer for the [ingress-nginx](https://kubernetes.github.io/ingress-nginx/) project.
 
-He suggests to follow open source commercial companies, if one wants to do open source full-time. For new contributors Jintao says that if anyone wants to make a significant contribution to an open source project, then they should choose the project based on their interests and should generously invest time.
+He suggests keeping track of job opportunities at open source companies so that you can find one that allows you to contribute full time. For new contributors Jintao says that if anyone wants to make a significant contribution to an open source project, then they should choose the project based on their interests and should generously invest time.
 
 
 ---
