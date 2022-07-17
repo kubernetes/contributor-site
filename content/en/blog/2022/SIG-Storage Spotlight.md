@@ -1,6 +1,7 @@
 ---
 layout: blog
-title: "SIG-Storage Spotlight"
+title: "Spotlight on SIG Storage"
+date: 2022-08-02
 slug: sig-storage-spotlight
 ---
 
