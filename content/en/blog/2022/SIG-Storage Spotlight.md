@@ -45,7 +45,7 @@ From the SIG Storage side, one most notable example is VolumeSnapshot. Volume sn
 
 **FSM**: That’s where CSI enters the game?
 
-**XY**: Exactly, then there comes [Container Storage Interface](https://kubernetes-csi.github.io/docs/) (CSI). This is an industry standard trying to design common storage interfaces so that a storage vendor can write one plugin and have it work across a range of container orchestration systems (CO). Now Kubernetes is the main CO, but back when CSI just started, there were Docker, Mesos, Cloud Foundry, in addition to Kubernetes. CSI drivers are out-of-tree so bug fixes and releases can happen at their own pace.
+**XY**: Exactly, then there comes [Container Storage Interface](https://kubernetes-csi.github.io/docs/) (CSI). This is an industry standard trying to design common storage interfaces so that a storage vendor can write one plugin and have it work across a range of container orchestration (CO) systems. Now Kubernetes is the main CO, but back when CSI just started, there were Docker, Mesos, Cloud Foundry, in addition to Kubernetes. CSI drivers are out-of-tree so bug fixes and releases can happen at their own pace.
 
 CSI is definitely a big improvement compared to in-tree volume plugins. Kubernetes implementation of CSI has been GA [since the 1.13 release](https://kubernetes.io/blog/2019/01/15/container-storage-interface-ga/).  It has come a long way.  SIG Storage has been working on moving in-tree volume plugins to out-of-tree CSI drivers for several releases now.
 
