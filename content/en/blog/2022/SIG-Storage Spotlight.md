@@ -23,7 +23,7 @@ In this SIG Storage spotlight, [Frederico Muñoz](https://twitter.com/fredericom
 
 We have bi-weekly meetings where we go through features we are working on for each particular release, getting the statuses, making sure each feature has dev owners and reviewers working on it, and reminding people about the release deadlines, etc. More information on the SIG is on the [community page](https://github.com/kubernetes/community/tree/master/sig-storage). People can also add PRs that need attention, design proposals that need discussion, and other topics to the meeting agenda doc. We will go over them after project tracking is done.
 
-We also have other regular meetings, i.e., CSI Implementation meeting, Object Bucket API design meeting, and one-off meetings for specific topics if needed. There is also a [K8s Data Protection Workgroup](https://github.com/kubernetes/community/blob/master/wg-data-protection/README.md) that is sponsored by SIG Storage and SIG Apps. SIG Storage owns or co-owns features that are being discussed at the Data Protection WG.
+We also have other regular meetings, i.e., CSI Implementation meeting, Object Bucket API design meeting, and one-off meetings for specific topics if needed. There is also a K8s [Data Protection Working Group](https://github.com/kubernetes/community/blob/master/wg-data-protection/README.md) that is sponsored by SIG Storage and SIG Apps. SIG Storage owns or co-owns features that are being discussed at the Data Protection WG.
 
 ## Storage and Kubernetes
 
