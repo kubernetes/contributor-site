@@ -3,6 +3,7 @@ layout: blog
 title: "Spotlight on SIG Storage"
 date: 2022-08-02
 slug: sig-storage-spotlight
+author: "Frederico Muñoz (SAS)"
 ---
 
 Since the very beginning of Kubernetes, the topic of persistent data and how to address the requirement of stateful applications has been an important topic. Support for stateless deployments was natural, present from the start, and garnered attention, becoming very well-known. Work on better support for stateful applications was also present from early on, with each release increasing the scope of what could be run on Kubernetes.
@@ -29,7 +30,7 @@ We also have other regular meetings, i.e., CSI Implementation meeting, Object Bu
 
 **FSM**: Storage is such a foundational component in so many things, not least in Kubernetes: what do you think are the Kubernetes-specific challenges in terms of storage management?
 
-**XY**: In Kubernetes, there are multiple components involved for a volume operation. For example, creating a Pod to use a PVC has multiple components involved. There are the Attach Detach Controller and the external-attacher working on attaching the PVC to the pod. There’s the Kubelet that works on mounting the PVC to the pod. Of course the CSI driver is involved as well. There could be race conditions sometimes when coordinating between multiple components.
+**XY**: In Kubernetes, there are multiple components involved for a volume operation. For example, creating a Pod to use a PVC has multiple components involved. There are the Attach Detach Controller and the external-attacher working on attaching the PVC to the pod. There’s the kubelet that works on mounting the PVC to the pod. Of course the CSI driver is involved as well. There could be race conditions sometimes when coordinating between multiple components.
 
 Another challenge is regarding core versus [CustomResourceDefinitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) (CRD), not really storage specific. CRD is a great way to extend Kubernetes capabilities while not adding too much code to the Kubernetes core itself. However, this also means there are many external components that are needed when running a Kubernetes cluster.
 
@@ -65,7 +66,7 @@ CSI is definitely a big improvement compared to in-tree volume plugins. Kubernet
 
 * [CSI Migration](https://kubernetes.io/blog/2021/12/10/storage-in-tree-to-csi-migration-status-update/#quick-recap-what-is-csi-migration-and-why-migrate) is an on-going effort that SIG Storage has been working on for a few releases now. The goal is to move in-tree volume plugins to out-of-tree CSI drivers and eventually remove the in-tree volume plugins.  There are 7 KEPs that we are targeting in 1.25 are related to CSI migration. There is one [core KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/625-csi-migration) for the general CSI Migration feature. That is targeting GA in 1.25. CSI Migration for GCE PD and AWS EBS are targeting GA. CSI Migration for vSphere is targeting to have the feature gate on by default while staying in 1.25 that are in Beta. Ceph RBD and PortWorx are targeting Beta, with feature gate off by default. Ceph FS is targeting Alpha.
 * The second one I want to highlight is [COSI, the Container Object Storage Interface](https://github.com/kubernetes-sigs/container-object-storage-interface-spec). This is a sub-project under SIG Storage. COSI proposes object storage Kubernetes APIs to support orchestration of object store operations for Kubernetes workloads. It also introduces gRPC interfaces for object storage providers to write drivers to provision buckets. The COSI team has been working on this project for more than two years now. The COSI feature is targeting Alpha in 1.25. The KEP just got merged. The COSI team is working on updating the implementation based on the updated KEP.
-* Another feature I want to mention is [CSI Ephemeral Volume](https://github.com/kubernetes/enhancements/issues/596) support. This feature allows CSI volumes to be specified directly in the pod specification for ephemeral use cases. They can be used to inject arbitrary states, such as configuration, secrets, identity, variables or similar information, directly inside pods using a mounted volume.  This was initially introduced in 1.15 as an alpha feature, and it is now targeting GA in 1.25.
+* Another feature I want to mention is [CSI Ephemeral Volume](https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/#csi-ephemeral-volumes) support. This feature allows CSI volumes to be specified directly in the pod specification for ephemeral use cases. They can be used to inject arbitrary states, such as configuration, secrets, identity, variables or similar information, directly inside pods using a mounted volume.  This was initially introduced in 1.15 as an alpha feature, and it is now [targeting GA](https://github.com/kubernetes/enhancements/issues/596) in 1.25.
 
 **FSM**: If you had to single something out, what would be the most pressing areas the SIG is working on?
 
