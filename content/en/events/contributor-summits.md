@@ -3,7 +3,7 @@ title: Contributor Summits
 description: >
   Contributor summits bring together new and current Kubernetes contributors to
   connect and learn from one another.
-weight: 2
+weight: 4
 ---
 
 Contributor Summits bring together new and current Kubernetes contributors to
