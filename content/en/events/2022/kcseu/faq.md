@@ -31,7 +31,7 @@ The in-person location at the
 <a href="https://www.feriavalencia.com/en/" rel="noopener noreferrer" target="_blank">Feria Valencia</a>,
 See the [Location & Venue] section for more information.
 
-[Location & Venue]: /events/kcseu/location/
+[Location & Venue]: /events/2022/kcseu/location/
 
 
 ### Will I be able to attend remotely?
@@ -115,7 +115,7 @@ Until then, here are some additional resources you may find useful:
 
 Contributors will be allowed to bring a single family member
 or partner to the social (a "plus one"). 
-[See the Social page to request a guest pass](https://www.kubernetes.dev/events/kcseu/social/).
+[See the Social page to request a guest pass](https://www.kubernetes.dev/events/2022/kcseu/social/).
 
 ### I have a question! How do I contact the event staff?
 

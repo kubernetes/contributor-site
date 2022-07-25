@@ -17,10 +17,10 @@ in Valencia, Spain alongside
 at the
 <a href="https://www.feriavalencia.com/en/" rel="noopener noreferrer" target="_blank">Feria Valencia</a>.
 
-The Summit will be a loosely organized event with a [relaxed schedule](/events/kcseu/schedule),
+The Summit will be a loosely organized event with a [relaxed schedule](/events/2022/kcseu/schedule),
  including a Steering AMA, three hours of [Unconference Sessions](https://github.com/kubernetes/community/issues/6633), 
 multiple SIG and WG meetings, and a Documentation Sprint.  This will be followed
-by a [Contributor Social](/events/kcseu/social) with games and refreshments.
+by a [Contributor Social](/events/2022/kcseu/social) with games and refreshments.
 
 This page will be updated as more activities are scheduled. If you have
 questions or comments, please reach out to the Summit Staff by emailing
@@ -28,7 +28,7 @@ community@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
-[location]: /events/kcseu/location/
+[location]: /events/2022/kcseu/location/
 
 
 ### Code of Conduct
