@@ -18,6 +18,6 @@ attending the summit or social evening event.
 - 5pm - 8pm - Evening social with bowling and billiards @ [Lucky Strike]
 
 
-[LACC]: /events/past-events/2021/kcsna/location/#los-angeles-convention-center-lacc
-[Marriott]: /events/past-events/2021/kcsna/location/#marriott
-[Lucky Strike]: /events/past-events/2021/kcsna/location/#lucky-strike
+[LACC]: /events/2021/kcsna/location/#los-angeles-convention-center-lacc
+[Marriott]: /events/2021/kcsna/location/#marriott
+[Lucky Strike]: /events/2021/kcsna/location/#lucky-strike

@@ -20,7 +20,7 @@ community@kubernetes.io.
 **Registration is currently closed.**
 
 
-[faq]: /events/past-events/2021/kcsna/faq/
+[faq]: /events/2021/kcsna/faq/
 [kubernetes]: https://github.com/kubernetes
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
 [applying for org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
