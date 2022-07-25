@@ -78,7 +78,7 @@ Discord server invites will be sent out closer to the event.
 There will be trivia and other games available. For more information see the
 [activities] page.
 
-[activities]: /events/kcc2020/activities/
+[activities]: /events/2020/kcc/activities/
 
 
 ## Discord Information
@@ -87,7 +87,7 @@ There will be trivia and other games available. For more information see the
 
 Please see the [How to join] page.
 
-[How to join]: /events/kcc2020/how-to-join/
+[How to join]: /events/2020/kcc/how-to-join/
 
 ### Why do I need to verify myself once I connect (complete captcha)?
 
