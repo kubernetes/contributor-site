@@ -29,7 +29,7 @@ Session.vim
 .netrwhist
 
 # Hugo-generated files and artifacts
-hugo_build.lock
+.hugo_build.lock
 /public/
 /resources/
 
