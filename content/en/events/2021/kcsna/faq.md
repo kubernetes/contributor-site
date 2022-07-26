@@ -27,7 +27,7 @@ The in-person location at the
 JW Marriott LA Live</a>, a 5 minute walk away from the LA Convention Center. See
 the [Location & Venue] section for more information.
 
-[Location & Venue]: /events/past-events/2021/kcsna/location/
+[Location & Venue]: /events/2021/kcsna/location/
 
 
 ### Will I be able to attend remotely?

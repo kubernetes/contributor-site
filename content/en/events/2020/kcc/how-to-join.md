@@ -123,7 +123,7 @@ For instructions on creating an account and installing the client, see the
    categories you're interested in and mute the others.
 
 
-[YAGPDB.xyz]: /events/kcc2020/faq/#what-is-this-yagpdbxyz-and-why-is-it-messaging-me
+[YAGPDB.xyz]: /events/2020/kcc/faq/#what-is-this-yagpdbxyz-and-why-is-it-messaging-me
 [Code of Conduct]: https://www.kubernetes.dev/resources/code-of-conduct/
 
 
@@ -180,7 +180,7 @@ video settings.
 If you are continuing to have problems, check our [FAQ] or see the official
 [Discord Voice and Video Troubleshooting Guide][dg]
 
-[FAQ]: /events/kcc2020/faq/
+[FAQ]: /events/2020/kcc/faq/
 [dg]: https://support.discord.com/hc/en-us/articles/360045138471
 
 

@@ -9,7 +9,7 @@ type: docs
 
 {{% alert title="Notice" color="warning" %}}
 This event has passed. Recordings from the event can be found on the
-[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
+[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP1nRmC5ks6szxfDN69ZZFcS).
 {{% /alert %}}
 
 - [General Information](#general-information)
@@ -27,8 +27,8 @@ This event has passed. Recordings from the event can be found on the
   - [Why can I only see the instructions-to-connect and info channels?](#why-can-i-only-see-the-instructions-to-connect-and-info-channels)
   - [What is this YAGPDB.xyz and why is it messaging me?](#what-is-this-yagpdbxyz-and-why-is-it-messaging-me)
   - [How do I display my pronouns in Discord?](#how-do-i-display-my-pronouns-in-discord)
-  - [What are the `#<channel>-info` channels for?](#what-are-the-channel-info-channels-for)
-  - [What are the `#<channel>-links` channels for?](#what-are-the-channel-links-channels-for)
+  - [Information on each channel in Discord](#information-on-each-channel-in-discord)
+  - [What is the `HORIZONTAL VOICE AUTOSCALER` channel for?](#what-is-the-horizontal-voice-autoscaler-channel-for)
   - [How do I know if someone is a Moderator, Staff Member or an Admin?](#how-do-i-know-if-someone-is-a-moderator-staff-member-or-an-admin)
   - [Someone is spamming/harassing me, what should I do?](#someone-is-spammingharassing-me-what-should-i-do)
   - [Discord is running slowly or stuttering, what should I do?](#discord-is-running-slowly-or-stuttering-what-should-i-do)
@@ -44,14 +44,13 @@ fun with your fellow contributors!
 
 ### When is it?
 
-It will be from the afternoon (Pacific Time) December 10th through the weekend,
-ending on December 13th.
+It will be the week of December 13th.
 
 ### How do I register?
 
 Please fill out the [registration form].
 
-[registration form]: https://forms.gle/51tqQgxuHxLaeU1P8
+[registration form]: https://forms.gle/oAppmLDggEEGx5tz5
 
 ### Are friends and family allowed?
 
@@ -78,7 +77,7 @@ Discord server invites will be sent out closer to the event.
 There will be trivia and other games available. For more information see the
 [activities] page.
 
-[activities]: /events/kcc2020/activities/
+[activities]: /events/2021/kcc/activities/
 
 
 ## Discord Information
@@ -87,7 +86,7 @@ There will be trivia and other games available. For more information see the
 
 Please see the [How to join] page.
 
-[How to join]: /events/kcc2020/how-to-join/
+[How to join]: /events/2021/kcc/how-to-join/
 
 ### Why do I need to verify myself once I connect (complete captcha)?
 
@@ -115,7 +114,7 @@ everything. If you need assistance, join the `#help` channel.
 
 ### What is this YAGPDB.xyz and why is it messaging me?
 
-<img align="left" src="/events/past-events/2020/kcc2020/yagpdb.png" width="40" height="40">
+<img align="left" src="/events/2021/kcc/yagpdb.png" width="40" height="40">
 
 [YAGPDB] (Yet Another General Purpose Discord Bot) is a verified discord bot
 that we use to manage a variety of services within discord, from verification
@@ -133,34 +132,47 @@ overlays. A few examples of what this would look like:
 
 1 ) To do so, click the server dropdown (Top Left)
 
-<img align="center" src="/events/past-events/2020/kcc2020/server.png" width="40%">
+<img align="center" src="/events/2021/kcc/server.png" width="40%">
 <br>
 <br>
 2 ) Select “Change Nickname”
 <br>
 <br>
-<img align="center" src="/events/past-events/2020/kcc2020/nickname.png" width="40%">
+<img align="center" src="/events/2021/kcc/nickname.png" width="40%">
 <br>
 <br>
 3 ) Then follow the template of “nickname (pro/noun)” like so:
 <br>
 <br>
-<img align="center" src="/events/past-events/2020/kcc2020/name.png" width="40%">
+<img align="center" src="/events/2021/kcc/name.png" width="40%">
 
+### Information on each channel in Discord
 
-### What are the `#<channel>-info` channels for?
+- `announcements` : Announcements for any new events/updates will be done here
+- `code-of-conduct` : Make sure to accept the code of conduct by reacting with the Kubernetes emoji to the message!
+- `instructions-to-connect` : Follow the steps mentioned therre to enable all the existing channels
+- `faq` : Have a question or having a problem? Your question may be answered here :)
+- `help` : Need help? Have a question? Ask them here!
+- `feedback` : We would love to here your thoughts on what we can improve on and we can do a better job next time.
+- `general` : General chat for folks to chat
+- `awwwwww` : Show us pictures of your pets and other fluffy things that are cute. Humans allowed.
+- `food` : Show us food pictures and other tasty items around you.
+- `lfg` : Looking for a people to play a game with? Post your invite here!
+- `games` : Share links to play online games with each other.
+- `board-games` : Any board games enthusiast, this is your place to be!
+- `theater` : Let's watch movies and stuff and chat about it here.
+- `links-from-voice` : Use this channel to share links from various voice channels.
+- `main-events-chat` :  Text discussion related to events taking place in the main event channel
+- `main-events` : [Main events](https://www.kubernetes.dev/events/2021/kcc/activities/#events) will be kicked off here
+- `hallway-1`/`hallway-2` : Voice channels for random discussions
+- `games-1`/`games-2` : People can team up to play online games using these channels
+- `k8s-ttrpg` : Kubernetes on the Tabletop RPG event will be kicked off here
+- `+ HORIZONTAL POD AUTOSCALER` : Creates your own voice channel
 
-For games that are popular enough to have their own category, the info channel
-in them will describe the game, links to where it can be downloaded, and will
-provide guidance on reporting people for that game/platform.
+### What is the HORIZONTAL VOICE AUTOSCALER channel for?
 
-### What are the `#<channel>-links` channels for?
-
-Often when you’re having a conversation in one of the voice channels you’ll want
-to share a link with the other people on voice. You can’t do this directly in
-the voice channels, and it can clutter up the main text-chat channels, so the
-`#<channel>-links` channels are a scratch-pad for links or other things that
-are only relevant to the conversation carrying on in voice chat.
+Under this channel, a `+ create voice channel` channel can be seen, joining which will create your own voice channel (just as similar as creating a pod!). 
+For more information on the bot, check the pinned message in the `ac-commands` channel.
 
 ### How do I know if someone is a Moderator, Staff Member or an Admin?
 
