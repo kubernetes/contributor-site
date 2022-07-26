@@ -40,7 +40,7 @@ localization are currently being spearheaded by students in India.
 
 In addition to that, there are two other subprojects: [reference-docs](https://github.com/kubernetes-sigs/reference-docs) and the [website](https://github.com/kubernetes/website), which is built with Hugo and is an important ownership area.
 
-### Recently there has been a lot of buzz around the Kubernetes ecosystem as well as the industry regarding the removal of Dockershim in the latest 1.24 release. How has SIG Docs’ helped the project to ensure a smooth change among the end-users?
+### Recently there has been a lot of buzz around the Kubernetes ecosystem as well as the industry regarding the removal of dockershim in the latest 1.24 release. How has SIG Docs helped the project to ensure a smooth change among the end-users? {#dockershim-removal}
 
 Documenting the removal of Dockershim was a mammoth task, requiring the revamping of existing documentation 
 and communicating to the various stakeholders regarding the deprecation efforts. It needed a community effort, 
