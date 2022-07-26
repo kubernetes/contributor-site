@@ -7,8 +7,11 @@ slug: sig-docs-spotlight-2022
 
 ## Spotlight on SIG-Docs
 
-The official documentation is the go-to source for any open source project. For Kubernetes, it's an                                                                 ever-evolving Special Interest Group(SIG) with people constantly putting in their efforts to make                                                                details about the project easier to consume for new contributors and users . SIG Docs publishes the                                                             official documentation on kubernetes.io which includes, but is not limited to, documentation of the                                                                 core APIs, core architectural details, and CLI tools shipped with the Kubernetes release.
-To learn more about the work of SIG-Docs and its future ahead in shaping the community, I have summarised                                                             my conversation with the co-chairs, [Divya Mohan(DM)](https://twitter.com/Divya_Mohan02),                                                                           [Rey Lejano(RL)](https://twitter.com/reylejano) and Natali Vlatko(NV), who walk us through the SIGs goals and how fellow contributors can help.
+The official documentation is the go-to source for any open source project. For Kubernetes, it's an                                                                 ever-evolving Special Interest Group(SIG) with people constantly putting in their efforts to make                                                                details about the project easier to consume for new contributors and users. SIG Docs publishes the official documentation on 
+[kubernetes.io](https://kubernetes.io) which includes, but is not limited to, 
+documentation of the core APIs, core architectural details, and CLI tools shipped with the Kubernetes release. 
+
+To learn more about the work of SIG Docs and its future ahead in shaping the community, I have summarised                                                             my conversation with the co-chairs, [Divya Mohan](https://twitter.com/Divya_Mohan02)(DM),                                                                           [Rey Lejano](https://twitter.com/reylejano)(RL) and Natali Vlatko (NV), who walk us through the SIG's goals and how fellow contributors can help.
 
 ## A summary of the conversation
 
@@ -94,8 +97,9 @@ being set up to help current contributors become reviewers. This definitely is a
 
 ## Wrap Up
 
-SIG Docs hosted a [talk on KubeCon + CloudNativeCon North America 2021](https://www.youtube.com/watch?v=GDfcBF5et3Q) 
-with a deep dive into their awesome SIG. They are very welcoming and have been the starting ground into Kubernetes 
+SIG Docs hosted a [deep dive talk](https://www.youtube.com/watch?v=GDfcBF5et3Q) 
+during  on KubeCon + CloudNativeCon North America 2021, covering their awesome SIG. 
+They are very welcoming and have been the starting ground into Kubernetes 
 for a lot of new folks who want to contribute to the project. 
 Join the [SIG's meetings](https://github.com/kubernetes/community/blob/master/sig-docs/README.md) to find out 
 about the most recent research results, their plans for the forthcoming year, and how to get involved in the upstream Docs team as a contributor!
