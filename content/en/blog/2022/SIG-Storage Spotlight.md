@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on SIG Storage"
 date: 2022-08-02
-slug: sig-storage-spotlight
+slug: sig-storage-spotlight-2022
 author: "Frederico Muñoz (SAS)"
 ---
 
