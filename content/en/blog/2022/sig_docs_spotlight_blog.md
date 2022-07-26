@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Spotlight on SIG Docs"
-date: 29-07-2022
+date: 2022-07-29
 slug: sig-docs-spotlight-2022
 ---
 
