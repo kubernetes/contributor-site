@@ -1,0 +1,86 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+<style>
+  .kep-milestone {
+    font-weight: bold;
+  }
+</style>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#keps-table').DataTable({
+      lengthMenu: [
+        [10, 25, 50, -1],
+        [10, 25, 50, 'All'],
+      ],
+      order: [[2, 'asc'], [0, 'asc']],
+    });
+});
+</script>
+
+<div>
+  <table id="keps-table" class="table table-hover mt-2 col-md-12 table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col" class="col-md-1">KEP Number</th>
+        <th scope="col" class="col-md-3">Title</th>
+        <th scope="col" class="col-md-2">SIG</th>
+        <th scope="col" class="col-md-2">Author</th>
+        <th scope="col" class="col-md-1">Created</th>
+        <th scope="col" class="col-md-1">Last Updated</th>
+        <th scope="col" class="col-md-1">Milestone</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range $index, $data := getJSON "https://storage.googleapis.com/k8s-keps/keps.json" }}
+          <tr>
+            <td>
+              <a href="https://features.k8s.io/{{ $data.kepNumber }}">
+                {{ printf "%s" $data.kepNumber }}
+              </a>
+            </td>
+            <td>
+              <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owningSig}}/{{$data.name}}#summary">
+                {{ printf "%s" $data.title }}
+              </a>
+            </td>
+            <td>
+              <a href=" https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}">
+                {{ strings.TrimPrefix "sig-" $data.owningSig | humanize | title }}
+              </a>
+            </td>
+            <td>
+              {{ range $index, $author := $data.authors }}
+              {{- if $index -}}, {{ end -}}
+              <a href="https://github.com/{{ trim $author "@" }}">
+                <span class="github-user">@{{ trim $author "@" }}</span>
+              </a>
+              {{ end }}
+            </td>
+            <td>
+                {{ if $data.creationDate }}
+                  <time datetime="{{ $data.creationDate }}">{{ $data.creationDate }}</time>
+                {{ end }}
+            </td>
+            <td>
+                {{ if $data.lastUpdated }}
+                  <time datetime="{{ $data.lastUpdated }}">{{ $data.lastUpdated }}</time>
+                {{ end }}
+              </span>
+            </td>
+            <td>
+              <ul class="list-unstyled">
+                {{ range $stage, $milestone := $data.milestone }}
+                  {{ if $milestone }}
+                  <li>
+                    {{ $stage }}:<span class="kep-milestone">{{ $milestone }}</span>
+                  </li>
+                  {{ end }}
+                {{ end }}
+              </ul>
+            </td>
+          </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
