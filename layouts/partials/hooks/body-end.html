@@ -1,0 +1,25 @@
+{{/*
+    This file is a 1:1 copy of the one in docsy but with adding scripts
+    for enabling Datatables on the KEP page.
+
+    Remove this notice if a better way is found to include the scripts.
+*/}}
+
+{{ with .Site.Params.algolia_docsearch }}
+<!-- scripts for algolia docsearch -->
+{{ end }}
+
+{{ if .HasShortcode "keps-data" }}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#keps-table').DataTable({
+            lengthMenu: [
+                [10, 25, 50, -1],
+                [10, 25, 50, 'All'],
+            ],
+            order: [[2, 'asc'], [0, 'asc']],
+        });
+    });
+</script>
+{{ end }}

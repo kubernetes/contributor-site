@@ -1,0 +1,20 @@
+{{/*
+    This file is a 1:1 copy of the one in docsy but with adding stylesheets
+    for enabling Datatables on the KEP page.
+
+    Remove this notice if a better way is found to include the stylesheets.
+*/}}
+
+{{ with .Site.Params.algolia_docsearch }}
+<!-- stylesheet for algolia docsearch -->
+{{ end }}
+
+{{ if .HasShortcode "keps-data" }}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+<style>
+    .kep-milestone {
+        font-weight: bold;
+    }
+
+</style>
+{{ end }}
