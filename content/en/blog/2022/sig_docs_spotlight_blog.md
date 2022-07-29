@@ -5,7 +5,6 @@ date: 2022-07-29
 slug: sig-docs-spotlight-2022
 ---
 
-## Spotlight on SIG-Docs
 
 The official documentation is the go-to source for any open source project. For Kubernetes, 
 it's an ever-evolving Special Interest Group(SIG) with people constantly putting in their efforts 
