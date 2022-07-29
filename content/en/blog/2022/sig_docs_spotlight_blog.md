@@ -7,7 +7,7 @@ slug: sig-docs-spotlight-2022
 
 
 The official documentation is the go-to source for any open source project. For Kubernetes, 
-it's an ever-evolving Special Interest Group(SIG) with people constantly putting in their efforts 
+it's an ever-evolving Special Interest Group (SIG) with people constantly putting in their efforts
 to make details about the project easier to consume for new contributors and users. SIG Docs publishes 
 the official documentation on [kubernetes.io](https://kubernetes.io) which includes, 
 but is not limited to, documentation of the core APIs, core architectural details, and CLI tools 
