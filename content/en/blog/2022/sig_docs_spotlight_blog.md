@@ -14,8 +14,8 @@ but is not limited to, documentation of the core APIs, core architectural detail
 shipped with the Kubernetes release. 
 
 To learn more about the work of SIG Docs and its future ahead in shaping the community, I have summarised 
-my conversation with the co-chairs, [Divya Mohan](https://twitter.com/Divya_Mohan02)(DM), 
-[Rey Lejano](https://twitter.com/reylejano)(RL) and Natali Vlatko (NV), who walk us through the 
+my conversation with the co-chairs, [Divya Mohan](https://twitter.com/Divya_Mohan02) (DM), 
+[Rey Lejano](https://twitter.com/reylejano) (RL) and Natali Vlatko (NV), who ran through the
 SIG's goals and how fellow contributors can help.
 
 ## A summary of the conversation
