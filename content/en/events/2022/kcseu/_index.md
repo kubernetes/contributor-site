@@ -1,7 +1,7 @@
 ---
 title: "Contributor Summit Europe 2022"
 type: docs
-aliases: [ "/summit", "/kcseu2022" ]
+aliases: [ "/kcseu2022" ]
 weight: 1
 description: >
   Kubernetes Contributor Summit Europe, hosted in Valencia Spain.
