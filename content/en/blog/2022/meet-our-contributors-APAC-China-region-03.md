@@ -1,8 +1,9 @@
 ---
 layout: blog
 title: "Meet Our Contributors - APAC (China region)"
-date: 2022-07-11
-slug: meet-our-contributors-chn-ep-03
+date: 2022-08-15
+slug: meet-our-contributors-china-ep-03
+canonicalUrl: https://www.kubernetes.dev/blog/2022/07/11/meet-our-contributors-chn-ep-03/
 ---
 
 **Authors & Interviewers:** [Avinesh Tripathi](https://github.com/AvineshTripathi), [Debabrata Panigrahi](https://github.com/Debanitrkl), [Jayesh Srivastava](https://github.com/jayesh-srivastava), [Priyanka Saggu](https://github.com/Priyankasaggu11929/), [Purneswar Prasad](https://github.com/PurneswarPrasad), [Vedant Kakde](https://github.com/vedant-kakde)
@@ -11,12 +12,11 @@ slug: meet-our-contributors-chn-ep-03
 
 Hello, everyone 👋
 
-Welcome back to the third episode of the "Meet Our Contributors" blog post series for APAC.
+Welcome back to the third edition of the "Meet Our Contributors" blog post series for APAC.
 
-This post features four outstanding contributors from  China, who have played diverse leadership and community roles in the upstream Kubernetes project.
+This post features four outstanding contributors from China, who have played diverse leadership and community roles in the upstream Kubernetes project.
 
 So, without further ado, let's get straight to the article.
-
 
 ## [Andy Zhang](https://github.com/andyzhangx)
 
@@ -33,7 +33,7 @@ Andy is an active member of the China Kubernetes community. He adds that the Kub
 
 Shiming Zhang is a Software Engineer working on Kubernetes for DaoCloud in Shanghai, China. 
 
-He has mostly been involved with SIG Node, as a reviewer. His major contributions have mainly been bug fixes and feature improvements in an ongoing [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2712-pod-priority-based-graceful-node-shutdown), all revolving around SIG Node.
+He has mostly been involved with SIG Node as a reviewer. His major contributions have mainly been bug fixes and feature improvements in an ongoing [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2712-pod-priority-based-graceful-node-shutdown), all revolving around SIG Node.
 
 Some of his major PRs are [fixing watchForLockfileContention memory leak](https://github.com/kubernetes/kubernetes/pull/100326), [fixing startupProbe behaviour](https://github.com/kubernetes/kubernetes/pull/101093), [adding Field status.hostIPs for Pod](https://github.com/kubernetes/enhancements/pull/2661).
 
@@ -64,7 +64,7 @@ He suggests keeping track of job opportunities at open source companies so that 
 ---
 
 
-If you have any recommendations/suggestions for who we should interview next, please let us know in the #sig-contribex channel on the Kubernetes Slack. Your suggestions would be much appreciated. We're thrilled to have additional folks assisting us in reaching out to even more wonderful individuals of the community.
+If you have any recommendations/suggestions for who we should interview next, please let us know in the [#sig-contribex channel](https://kubernetes.slack.com/archives/C1TU9EB9S) channel on the Kubernetes Slack. Your suggestions would be much appreciated. We're thrilled to have additional folks assisting us in reaching out to even more wonderful individuals of the community.
 
 
 We'll see you all in the next one. Everyone, till then, have a happy contributing! 👋
