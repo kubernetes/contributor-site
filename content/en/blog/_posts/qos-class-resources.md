@@ -7,12 +7,13 @@ slug: qos-class-resources
 
 **Author:** Markus Lehtonen (Intel)
 
-QoS-class resources is an [enhancement proposal][kep] to improve the quality of
-service of applications by reducing contention on resources that have
-traditionally been out of control in a Kubernetes environment, such as cache
-allocation, memory, and I/O bandwidth. This blog post introduces the concept of
-QoS-class resources, talks about the plan to integrate them into Kubernetes,
-and describes what is already possible with the latest container runtimes.
+QoS-class resources is an [enhancement proposal][kep] (provisional, under
+review) to improve the quality of service of applications by reducing
+contention on resources that have traditionally been out of control in a
+Kubernetes environment, such as cache allocation, memory, and I/O bandwidth.
+This blog post introduces the concept of QoS-class resources, talks about the
+plan to integrate them into Kubernetes, and describes what is already possible
+with the latest container runtimes.
 
 ## What are QoS-class resources
 
@@ -86,7 +87,8 @@ can be assigned to the same class):
 | **rdt**     | gold        | gold        | platinum
 | **blockio** | high-prio   | low-prio    | normal
 
-See the [enhancement proposal][kep] for more more technical details.
+See the [enhancement proposal][kep] (provisional, under review) for more more
+technical details.
 
 ### Implementation phases
 
@@ -123,7 +125,8 @@ broader context and understand what the full solution would look like.
 - Access control: mechanism to control which QoS-class resource types (and
   classes within) are available for different users
 
-More details about the future steps are available in the [KEP][kep].
+More details about the future steps are available in the [KEP][kep]
+(provisional).
 
 ## Early access with container runtimes
 
@@ -282,14 +285,14 @@ The enhancement proposal includes more details of the feature and the planned
 implementation.
 
 Please join SIG Node to get involved in the design and development. You can
-participate for example by commenting the [KEP][kep] directly, in
-[#sig-node][sig-node-slack] slack or replying to the
-[discussion thread in google groups][google-groups-thread]. We’d be delighted
-to hear more opinions and ideas how and where QoS-class resources could be used
-and how the support should be implemented.
+participate for example by commenting the [KEP][kep] (under review at the time
+of this writing) directly, in [#sig-node][sig-node-slack] slack or replying to
+the [discussion thread in google groups][google-groups-thread].
+We’d be delighted to hear more opinions and ideas how and where QoS-class
+resources could be used and how the support should be implemented.
 
 <!-- References -->
-[kep]: https://github.com/kubernetes/enhancements/pull/3004
+[kep]: https://github.com/kubernetes/enhancements/pull/3008
 [resctrlfs]: https://docs.kernel.org/x86/resctrl.html
 [linux-blkio]: https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v1/blkio-controller.html
 [crio-release]: https://github.com/cri-o/cri-o/releases/tag/v1.22.0
