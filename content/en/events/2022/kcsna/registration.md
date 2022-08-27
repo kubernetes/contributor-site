@@ -13,9 +13,10 @@ docs for more information. If your application to join is pending, please
 contact us at community@kubernetes.io about registering.
 
 **NOTE:** The summit adheres to KubeCon’s [Health & Safety Guidelines] requiring
-**ALL** in-person attendees to be fully vaccinated against the COVID-19 virus.
+**ALL** in-person attendees to be fully vaccinated against the COVID-19 virus or
+to show proof of a negative COVID-19 test administered by a verified provider.
 
-If you acknowledge the above, please go ahead click below to register:
+If you acknowledge the above, please go ahead and click below to register:
 
 <h3>
 <a href="https://cvent.me/b8BnzD" rel="noopener noreferrer" target="_blank">Register Here</a>
