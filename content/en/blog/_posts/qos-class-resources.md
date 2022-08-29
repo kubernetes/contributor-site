@@ -149,7 +149,8 @@ Requirements:
     with blockio support is available, yet)
   - runc [v1.0][runc-release-10] (or later)
 
-Pod annotations used for assigning the QoS-class resources:
+Pod annotations supported by container runtimes (CRI-O and containerd) that can
+be used for assigning the QoS-class resources:
 
 | Annotation  | Description
 | :---------- | :----------
@@ -158,13 +159,17 @@ Pod annotations used for assigning the QoS-class resources:
 | `blockio.resources.beta.kubernetes.io/pod` | set a Pod-level default blockio class for all containers
 | `blockio.resources.beta.kubernetes.io/container.<container-name>` | set blockio class of one container
 
+> NOTE: these annotations are interpreted by the container runtimes and no
+> Kubernetes support is required (or involved)
+
 Configuration file format is described in detail with more examples
 [here for RDT][rdt-config-doc], and [here for blockio][blockio-config-doc].
 
 ### An example
 
 The following example demonstrates the configuration of RDT and blockio
-QoS-class resources with CRI-O runtime.
+QoS-class resources with CRI-O runtime and their usage with runtime-interpreted
+Pod annotations.
 
 #### RDT configuration
 
@@ -232,8 +237,11 @@ blockio_config_file = "/etc/crio/blockio.conf.yaml"
 
 #### Assigning QoS-class resources
 
-Below is a referential example leveraging both RDT and blockio resources. It
-creates a Pod of three containers with:
+Below is a referential example leveraging both RDT and blockio resources using
+the classes we specified above. The container runtime interprets Pod
+annotations and assign containers accordingly.
+
+We create a Pod of three containers with:
 
 - all containers are assigned to the “limited” RDT class by default, except for
   the “data-path” container getting assigned to “unlimited” class allowing full
