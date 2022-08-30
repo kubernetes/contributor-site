@@ -12,8 +12,6 @@ found within the [`content`][ct] directory. To update the site's content,
 make changes to the Markdown sources and [submit a pull request][pr] to this
 repository.
 
-**Note**: If the site's content needs to be published at the future date, please use `publishDate` as the front matter variable instead of `date`.
-
 Some content is externally sourced and changes to that must be made in the
 original location. A list of sources and their locations within the
 [`content`][ct] is available below:
