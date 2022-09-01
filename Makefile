@@ -125,6 +125,7 @@ production-build: ## Builds the production site (this command used only by Netli
 	hack/gen-content.sh
 	hugo \
 		--verbose \
+		--buildFuture \
 		--ignoreCache \
 		--minify
 
