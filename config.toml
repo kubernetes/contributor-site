@@ -63,8 +63,11 @@ languageName ="English"
     [markup.goldmark.renderer]
       unsafe = true
 
-# Everything below this are Site Params
 
+[frontmatter]
+date = ["date", ":filename", "publishDate", "lastmod"]
+
+# Everything below this are Site Params
 [params]
 copyright = "The Kubernetes Authors"
 privacy_policy = ""
