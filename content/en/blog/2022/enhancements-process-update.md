@@ -19,7 +19,7 @@ The board is populated with a script gathering all KEP issues in the `kubernetes
 
 ## What does this mean for the community?
 
-If you are not a SIG lead, not much will change beside the view of the enhancements collections and the change of platform. KEP authors will continue working with their respective SIG leads to opt in to the release.
+If you are not a SIG lead, nothing will change beside the view of the enhancements collections and the change of platform. KEP authors will continue working with their respective SIG leads to opt in to the release.
 
 For SIG leads, opting in is simple. The KEP issue will be the single source of truth so ensure that all metadata are up to date. Simply comment `/label lead-opted-in` on the enhancement tracking issue to opt it into the current release. That's all you need to do to opt in! Since the script runs periodically, kindly come back to check that the KEP is on the board and that there is an enhancements team member assigned to it.
 
