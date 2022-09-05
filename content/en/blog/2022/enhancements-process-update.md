@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Enhancements Opt-in Process Change for v1.26"
-date: 2022-09-03
+date: 2022-09-06
 slug: enhancements-opt-in
 ---
 
