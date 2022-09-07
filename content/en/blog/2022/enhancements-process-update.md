@@ -3,6 +3,7 @@ layout: blog
 title: "Enhancements Opt-in Process Change for v1.26"
 date: 2022-09-06
 slug: enhancements-opt-in
+author: Grace Nguyen
 ---
 
 # Enhancements Opt-in Process Change for v1.26 
