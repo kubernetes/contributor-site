@@ -17,11 +17,12 @@ Starting at the beginning of the 1.26 release, we are replacing the sheet with a
 
 The board is populated with a script gathering all KEP issues in the `kubernetes/enhancements` repo that have the tag `lead-opted-in`. The enhancements' stage and SIG information will also be automatically pulled from the KEP issue.
 
+After the KEP is populated on the Github Project Board, the Enhancements team will manually update the KEP with the label `tracked/yes`, `tracked/no` and on occasions, `tracked/out-of-tree`. The `tracked` label signify qualification to the closest milestone. For example, at the beginning of enhancements collections, `tracked/yes` means that the KEP is verified to have opted in by the Enhancements team. Closer to Enhancements Freeze, `tracked/yes` means that the KEP has satisfied all Enhancements Freeze requirements and similarly for Code Freeze, `tracked/yes` means that all code related to the KEP have been merged. The `tracked` label is reserved for the Enhancements team use only.
 
 ## What does this mean for the community?
 
 If you are not a SIG lead, nothing will change beside the view of the enhancements collections and the change of platform. KEP authors will continue working with their respective SIG leads to opt in to the release.
 
-For SIG leads, opting in is simple. The KEP issue will be the single source of truth so ensure that all metadata are up to date. Simply comment `/label lead-opted-in` on the enhancement tracking issue to opt it into the current release. That's all you need to do to opt in! Since the script runs periodically, kindly come back to check that the KEP is on the board and that there is an enhancements team member assigned to it.
+For SIG leads, opting in is simple. The KEP issue will be the single source of truth so ensure that all metadata are up to date. Simply comment `/label lead-opted-in` on the enhancement tracking issue to opt it into the current release. That's all you need to do to opt in! Since the script runs periodically, kindly come back to check that the KEP is on the board, labelled with `tracked/yes`, and that there is an Enhancements team member assigned to it.
 
 We are excited to bring this highly requested feature into our release process and appreciate your patience. Email us at [release-enhancements-team@kubernetes.io](mailto:release-enhancements-team@kubernetes.io) or find us on Slack at [#release-enhancements](https://kubernetes.slack.com/archives/C02BY55KV7E) if you have any feedback, questions or concern.
