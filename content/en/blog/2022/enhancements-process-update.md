@@ -18,7 +18,7 @@ Starting at the beginning of the 1.26 release, we are replacing the sheet with a
 
 The board is populated with a script gathering all KEP issues in the `kubernetes/enhancements` repo that have the tag `lead-opted-in`. The enhancements' stage and SIG information will also be automatically pulled from the KEP issue.
 
-After the KEP is populated on the Github Project Board, the Enhancements team will manually update the KEP with the label `tracked/yes`, `tracked/no` and on occasions, `tracked/out-of-tree`. The `tracked` label signify qualification to the closest milestone. For example, at the beginning of enhancements collections, `tracked/yes` means that the KEP is verified to have opted in by the Enhancements team. Closer to Enhancements Freeze, `tracked/yes` means that the KEP has satisfied all Enhancements Freeze requirements and similarly for Code Freeze, `tracked/yes` means that all code related to the KEP have been merged. The `tracked` label is reserved for the Enhancements team use only.
+After the KEP is populated on the Github Project Board, the Enhancements team will manually update the KEP with the label `tracked/yes`, `tracked/no` and on occasions, `tracked/out-of-tree`. The `tracked` label signifies qualification for the closest approaching milestone. For example, at the beginning of enhancements collections, `tracked/yes` means that the KEP is verified to have opted in by the Enhancements team. Closer to Enhancements Freeze, `tracked/yes` means that the KEP has satisfied all Enhancements Freeze requirements and similarly for Code Freeze, `tracked/yes` means that all code related to the KEP has been merged. The `tracked` label is reserved for the Enhancements team use only.
 
 ## What does this mean for the community?
 
