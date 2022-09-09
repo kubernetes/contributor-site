@@ -11,7 +11,7 @@ slug: enhancements-opt-in
 
 Since the inception of the Kubernetes release team, we have used a spreadsheet to keep track of enhancements for the release. The project has scaled massively in the past few years, with almost a hundred enhancements collected for the 1.24 release. This process has become error-prone and time consuming. A lot of manual work is required from the release team and the SIG leads to populate KEPs data in the sheet. We have received continuous feedback from our contributors to streamline the process.
 
-Starting at the beginning of the 1.26 release, we are replacing the sheet with an automated [GitHub project board](https://github.com/orgs/kubernetes/projects/98).
+Starting with the 1.26 release, we are replacing the enhancements tracking spreadsheet with an automated [GitHub project board](https://github.com/orgs/kubernetes/projects/98).
 
 ## How does the Github Project Board work?
 
