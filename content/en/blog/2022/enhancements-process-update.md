@@ -15,7 +15,7 @@ Starting with the 1.26 release, we are replacing the enhancements tracking sprea
 
 ## How does the Github Project Board work?
 
-The board is populated with a script gathering all KEP issues in the `kubernetes/enhancements` repo that have the tag `lead-opted-in`. The enhancements' stage and SIG information will also be automatically pulled from the KEP issue.
+The board is populated with a script gathering all KEP issues in the `kubernetes/enhancements` repo that have the label `lead-opted-in`. The enhancements' stage and SIG information will also be automatically pulled from the KEP issue.
 
 After the KEP is populated on the Github Project Board, the Enhancements team will manually update the KEP with the label `tracked/yes`, `tracked/no` and on occasions, `tracked/out-of-tree`. The `tracked` label signifies qualification for the closest approaching milestone. For example, at the beginning of the release, `tracked/yes` means that the KEP has satisfied all Enhancements Freeze requirements and similarly for Code Freeze, `tracked/yes` means that all code related to the KEP has been merged. The `tracked` label is reserved for the Enhancements team use only.
 
