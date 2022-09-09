@@ -4,7 +4,7 @@ type: docs
 weight: 3
 ---
 
-Check back soon for more info!
+CFP is open! More information available here: [CFP](/events/2022/kcsna/cfp.md)
 
 {{% schedule
   text="Kubernetes Contributor Summit Europe 2022"
