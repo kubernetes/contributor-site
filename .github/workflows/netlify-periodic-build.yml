@@ -1,7 +1,9 @@
 name: Trigger netlify build
 on:
   schedule:
-  - cron: '30 3 * * *'
+  # The build is triggered every 6 hours so that the KEP page remains fresh.
+  # TODO(future): Revisit the cadence.
+  - cron: '0 */6 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
