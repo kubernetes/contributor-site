@@ -7,7 +7,7 @@ weight: 5
 <img align="right" src="/events/2022/kcsna/deluxx-fluxx-1.png" width="30%">
 Join us at 
 <a href="https://www.deluxxfluxx.com/deluxx-fluxx-detroit" rel="noopener noreferrer" target="_blank">Deluxx Fluxx Detroit</a>
-from 6pm to 9pm for an evening celebration after the Contributor Summit!
+from 6pm to 9pm for an evening celebration after the Contributor Summit on October 24th!
 
 There will be arcade cabinets, foosball, karaoke, trivia and more!
 
@@ -27,4 +27,4 @@ them.
 
 **NOTE:** Guests must adhere to all KubeCon health & safety requirements.
 
-To bring a guest, please email community@kubernetes.io with their information.
+To bring a guest, please email community@kubernetes.io with their information by October 17th.
