@@ -11,6 +11,10 @@ from 6pm to 9pm for an evening celebration after the Contributor Summit on Octob
 
 There will be arcade cabinets, foosball, karaoke, trivia and more!
 
+*The contributor social is _not_ a public event.  You must be [registered] in advance to attend the Contributor Summit in order to attend the Social, and must be a Kubernetes contributor.  Community members who are not registered and show up at the Social will be turned away.*
+
+[registered]: /events/2022/kcsna/registration/
+
 ### Location
 
 1274 Library St<br>
