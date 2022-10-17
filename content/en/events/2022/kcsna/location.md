@@ -4,6 +4,7 @@ type: docs
 weight: 4
 ---
 
+<img align="right" src="/events/2022/kcsna/venue-map.png" width="50%">
 
 ### Huntington Place
 
