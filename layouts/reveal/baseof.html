@@ -14,6 +14,7 @@
         </section>
       </div>
       <div class='footer'>
+        <span id="footer-title">{{ .Title }}</span> |
         Use left and right arrows to navigate. |
         Press "?" for help. |
         <a href="/onboarding">Return to onboarding index.</a>
@@ -34,7 +35,7 @@
        controls: true,
        controlsTutorial: true,
        minScale: 0.1,
-       slideNumber: true,
+       slideNumber: 'c/t',
        showSlideNumber: 'all',
        plugins: [ RevealMarkdown, RevealHighlight ]
      });
