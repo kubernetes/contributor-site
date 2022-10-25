@@ -45,13 +45,13 @@ Arda joined SIG CLI at the end of 2021 and almost from the beginning caught our 
 
 #### Cluster Lifecycle
 
-*Stefan Büeringer, [sbueringer](https://github.com/sbueringer)*
+*Stefan Büeringer, [@sbueringer](https://github.com/sbueringer)*
 We love Stefan because he is not only an amazing contributor, but also  such a lovely and nice person that truly represent the spirit of this community by being relentless in trying to help people, on every issue, PR, slack thread, always providing valuable and constructive feedback. Thanks Stefan for all your hard work and enjoy this well deserved award!
 
 
 #### Contributor Experience
 
-*Marky Jackson,	[@markyjackson-taulia](https://github.com/markyjackson-taulia)*
+*Marky Jackson, [@markyjackson-taulia](https://github.com/markyjackson-taulia)*
 For stepping up to do the unglamorous but necessary work of community management
 
 *Nabarun Pal, [@palnabarun](https://github.com/palnabarun)*
@@ -62,13 +62,13 @@ For driving continuous improvement of community github administration
 *Shannon Kularathna, [@shannonxtreme](https://github.com/shannonxtreme)*
 For high-quality contributions, both to content and processes, across SIG Docs and achieving reviewer status
 
-*Seokho Son, [@seokho-son]https://github.com/seokho-son)*
+*Seokho Son, [@seokho-son](https://github.com/seokho-son)*
 For consistently leading and maintaining the Korean Localization
 
 *Anubhav Vardhan, [@anubha-v-ardhan](https://github.com/anubha-v-ardhan)*
 For leading the launch of the Hindi Localization, our first using the Devanagari script
 
-*Yung-Hsiang (Sean) Wei, [@Sea-n](https://github.com/Sea-n)*
+*Yung-Hsiang Wei, [@Sea-n](https://github.com/Sea-n)*
 For achieving reviewer status on the Chinese Localization team and continued contributions to SIG Docs English PRs
 
 #### Instrumentation
@@ -76,7 +76,7 @@ For achieving reviewer status on the Chinese Localization team and continued con
 *Patrick Ohly, [@pohly](https://github.com/pohly)*
 For their continued contributions to WG Structured Logging and for driving the contextual logging effort
 
-*Sally O'Malley, [@sallyom])https://github.com/sallyom)*
+*Sally O'Malley, [@sallyom](https://github.com/sallyom)*
 For driving the kubelet tracing effort and sticking with it through a years-long review process
 
 #### K8s Infra
@@ -120,7 +120,7 @@ Marko is a profound current Release Manager and has been a long term contributor
 
 #### Scalability
 
-*Maciek Borsz, [mborsz](https://github.com/mborsz)*
+*Maciek Borsz, [@mborsz](https://github.com/mborsz)*
 For outstanding contributions to SIG Scalability
 
 #### Security
@@ -150,7 +150,7 @@ of sig-scheduling sub-projects. We hope to use this chance to thank their effort
 
 #### Storage
 
-*Jing Xu, [@jingxu97](https://github.com/jingxu97*
+*Jing Xu, [@jingxu97](https://github.com/jingxu97)*
 Jing Xu worked on many projects in SIG Storage, including GA features such as CSI Volume Snapshots and CSI Windows, etc. Most recently in 1.25, she moved Local Storage Capacity Isolation to GA. Jing has been helping with hosting CSI Implementation meetings, tracking features in Kubernetes releases, reviewing KEPs and PRs, as well as fixing bugs such as mount issues.
 
 *Andy Zhang, [@andyzhangx](https://github.com/andyzhangx)*
@@ -159,19 +159,19 @@ Andy Zhang is the maintainer of CSI drivers for Azure Disk and Azure File. He ma
 
 #### Testing
 
-* Dave Chen, [@chendave](https://github.com/)*
+*Dave Chen, [@chendave](https://github.com/)*
 For the huge Kubernetes e2e test ginkgo v2 migration
 
-* Michelle Shepardson, [@michelle192837](https://github.com/michelle192837)*
+*Michelle Shepardson, [@michelle192837](https://github.com/michelle192837)*
 For helping run the SIG: a huge help running meetings, organizing the SIG annual report etc
 
-* Antonio Ojea, [@aojea](https://github.com/aojea)*
+*Antonio Ojea, [@aojea](https://github.com/aojea)*
 For the huge Kubernetes e2e test ginkgo v2 migration
 
-* Patrick Ohly, [@pohly](https://github.com/pohly)*
+*Patrick Ohly, [@pohly](https://github.com/pohly)*
 For the huge Kubernetes e2e test ginkgo v2 migration
 
-* Eddie Zane, [@eddiezane](https://github.com/eddiezane)*
+*Eddie Zane, [@eddiezane](https://github.com/eddiezane)*
 For helping run the SIG: a huge help running meetings, organizing the SIG annual report etc
 
 #### UI
