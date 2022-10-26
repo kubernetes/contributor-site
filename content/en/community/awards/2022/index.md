@@ -7,14 +7,14 @@ slug: "2022"
 description: "2022 Contributor Award Recipients"
 ---
 
-By Special Interest Group (SIG) with listed message/nomination reason   
+By Special Interest Group (SIG) with listed message/nomination reason
 
 #### API Machinery
 
 *Joe Betz, [@jpbetz](https://github.com/jpbetz)*
-For his leadership and contributions introducing CEL as a powerful feature for Kubernetes, and leading the strategy and execution of all the subsequent projects like CRD Validation, Admission Control, and more to come. 
+For his leadership and contributions introducing CEL as a powerful feature for Kubernetes, and leading the strategy and execution of all the subsequent projects like CRD Validation, Admission Control, and more to come.
 
-*Antonio Ojea, [@aojea](https://github.com/aojea)*  
+*Antonio Ojea, [@aojea](https://github.com/aojea)*
 For the long list of sustained contributions, especially for the cross-over from networking to apimachinery/client-go, picking up bug fixes, backports, and code reviews.
 
 #### Apps
@@ -62,7 +62,7 @@ For driving continuous improvement of community github administration
 *Shannon Kularathna, [@shannonxtreme](https://github.com/shannonxtreme)*
 For high-quality contributions, both to content and processes, across SIG Docs and achieving reviewer status
 
-*Seokho Son, [@seokho-son]https://github.com/seokho-son)*
+*Seokho Son, [@seokho-son](https://github.com/seokho-son)*
 For consistently leading and maintaining the Korean Localization
 
 *Anubhav Vardhan, [@anubha-v-ardhan](https://github.com/anubha-v-ardhan)*
@@ -76,7 +76,7 @@ For achieving reviewer status on the Chinese Localization team and continued con
 *Patrick Ohly, [@pohly](https://github.com/pohly)*
 For their continued contributions to WG Structured Logging and for driving the contextual logging effort
 
-*Sally O'Malley, [@sallyom])https://github.com/sallyom)*
+*Sally O'Malley, [@sallyom](https://github.com/sallyom)*
 For driving the kubelet tracing effort and sticking with it through a years-long review process
 
 #### K8s Infra
@@ -135,8 +135,8 @@ For oustanding contributions to SIG Security with the third-party security audit
 Rory is a thought leader and an amazing example of how to be inclusive, share knowledge in public and improve the project through community collaboration. This is one of those cases where Kubernetes Org is lucky that Rory would like to be its member
 
 *Mahé Tardy, [@mtardy](https://github.com/mtardy)*
-Mahé as been a regular member of SIG Security and a repeat contributor on 
-Kubernetes security related issues and PRs. He has also presented a 
+Mahé as been a regular member of SIG Security and a repeat contributor on
+Kubernetes security related issues and PRs. He has also presented a
 learning session to the community on an opensource pentest tool - kdigger that he co-created!"
 
 #### Scheduling
@@ -145,12 +145,12 @@ learning session to the community on an opensource pentest tool - kdigger that h
 For being a top contributor in scheduler, making continuous and diligent work on PR reviews, issue triaging, KEP design/impl., as well as maintaining some of sig-scheduling sub-projects. We hope to use this chance to thank their efforts to the community.
 
 *Kante Yin, [@kerthcet](https://github.com/kerthcet)*
-For being a top contributor in scheduler, making continuous and diligent work on PR reviews, issue triaging, KEP design/impl., as well as maintaining some 
+For being a top contributor in scheduler, making continuous and diligent work on PR reviews, issue triaging, KEP design/impl., as well as maintaining some
 of sig-scheduling sub-projects. We hope to use this chance to thank their efforts to the community.
 
 #### Storage
 
-*Jing Xu, [@jingxu97](https://github.com/jingxu97*
+*Jing Xu, [@jingxu97](https://github.com/jingxu97)*
 Jing Xu worked on many projects in SIG Storage, including GA features such as CSI Volume Snapshots and CSI Windows, etc. Most recently in 1.25, she moved Local Storage Capacity Isolation to GA. Jing has been helping with hosting CSI Implementation meetings, tracking features in Kubernetes releases, reviewing KEPs and PRs, as well as fixing bugs such as mount issues.
 
 *Andy Zhang, [@andyzhangx](https://github.com/andyzhangx)*
