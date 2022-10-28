@@ -97,37 +97,37 @@ For keeping an eye on the ideal future, and trying hard to make it happen one st
 
 #### Node
 
-*Elana Hashman, @ehashdn*
+*Elana Hashman, @ehashdn*  
 Driving broad community participation, improving and sustaining the health of SIG Node CI, helping new contributors.
   
-*Sergey Kanzhelev, @sergeykanzhelev*
+*Sergey Kanzhelev, @sergeykanzhelev*  
 Driving broad community participation, improving and sustaining the health of SIG Node CI, helping new contributors.
   
-*Mrunal Patel, @mrunalp*
+*Mrunal Patel, @mrunalp*  
 New maintainer in the SIG Node kubelet sub-project and coordinating release feature goals.
 
 #### Release
 *Karen Chu* 
 For stepping up to be the 1.23 communications lead, reaching all deadlines in the 1.23 release cycle, and mentoring shadows that could succeed as communications lead in 1.24 and beyond.
   
-*Jesse Butler*
+*Jesse Butler*  
 For stepping up to be the 1.22 communications lead as a first time shadow and stepping up to be the 1.23 docs lead without release docs experience, reorienting the incoming communication lead, and for being a great mentor.
   
-*Nabarun Pal*
+*Nabarun Pal*  
 For being a huge impact in SIG Release as the lead for the 1.21 release, as a release manager associate, as a branch manager shadow for the 1.23 release, for bringing the CI Signal tool into a Kubernetes community repository, and for being willing to contribute to the success of the project and the SIG.
   
-*Rey Lejano*
+*Rey Lejano*  
 For being a consistent contributor to SIG Release for some time across many releases and roles. When the 1.23 Release came around, he volunteered to lead the release when we were unable to identify a release lead.
 
 
 #### Scalability
-*Wojciech Tyczyński*
+*Wojciech Tyczyński*  
 Outstanding cross-SIG work working on P&F and Efficient watch resumption which required cross-SIG collaboration and were large contributions to multiple Kubernetes releases.
 
 #### Security
 
-*Savitha Raghunathan, @coffeeartgirl*
-*Pushkar Joglekar, @PuDiJoglekar*
+*Savitha Raghunathan, @coffeeartgirl*  
+*Pushkar Joglekar, @PuDiJoglekar*  
 Building a welcoming, encouraging community for new and experienced contributors, for being great examples on how we help each other grow, for seeing what needs to be done and putting in the work to do it while bringing others along.
 
 #### Scheduling
@@ -137,10 +137,10 @@ Leading the descheduler project, leading the refactoring effort to cut unneeded 
 
 #### Storage
 
-*Hemant Kumar, @gnufied*
+*Hemant Kumar, @gnufied*  
 Working on difficult bugs, long-standing reliability issues such as uncertain mounts, and slow mounts due to recursive fsgroup and fixing issues in order to move the volume expansion feature to GA 
 
-*Jiawei Wang*
+*Jiawei Wang*  
 Driving the CSI migration effort that has been ongoing for several releases and hosting meetings and working with maintainers across many cloud providers to move in-tree volume plugins to out-of-tree CSI drivers.
 
 #### Testing
