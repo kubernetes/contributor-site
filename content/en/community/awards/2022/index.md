@@ -45,7 +45,7 @@ Arda joined SIG CLI at the end of 2021 and almost from the beginning caught our 
 
 #### Cluster Lifecycle
 
-*Stefan Büeringer, [@sbueringer](https://github.com/sbueringer)*  
+*Stefan Büringer, [@sbueringer](https://github.com/sbueringer)*  
 We love Stefan because he is not only an amazing contributor, but also  such a lovely and nice person that truly represent the spirit of this community by being relentless in trying to help people, on every issue, PR, slack thread, always providing valuable and constructive feedback. Thanks Stefan for all your hard work and enjoy this well deserved award!
 
 
