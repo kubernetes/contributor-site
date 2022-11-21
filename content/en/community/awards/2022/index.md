@@ -126,7 +126,7 @@ For outstanding contributions to SIG Scalability
 #### Security
 
 *Cailyn Edwards, [@cailynse](https://github.com/cailynse)*  
-Cailyn as done stellar job in making SIG Security related artifacts better through their hands on expertise and review comments! Cailyn has also brought in new contributors into the community and made the group richer through their valuable contributions!"
+Cailyn has done a stellar job in making SIG Security related artifacts better through their hands on expertise and review comments! Cailyn has also brought in new contributors into the community and made the group richer through their valuable contributions!
 
 *Robert Ficcagilia, [@rficcaglia](https://github.com/rficcaglia)*  
 For oustanding contributions to SIG Security with the third-party security audit subproject and Cluster API security self-assessment
@@ -137,7 +137,7 @@ Rory is a thought leader and an amazing example of how to be inclusive, share kn
 *Mahé Tardy, [@mtardy](https://github.com/mtardy)*  
 Mahé as been a regular member of SIG Security and a repeat contributor on 
 Kubernetes security related issues and PRs. He has also presented a 
-learning session to the community on an opensource pentest tool - kdigger that he co-created!"
+learning session to the community on an opensource pentest tool - kdigger that he co-created!
 
 #### Scheduling
 
