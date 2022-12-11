@@ -31,6 +31,14 @@ slack channel.
 [location]: /events/2022/kcsna/location/
 [Contributor Social]: /events/2022/kcsna/social
 
+### Recordings
+
+This event has passed. Find materials here:
+
+- [recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2g8N_HeFEvkv23jPwg9Lhm)
+- [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720303158891)
+
+
 
 ### Code of Conduct
 
