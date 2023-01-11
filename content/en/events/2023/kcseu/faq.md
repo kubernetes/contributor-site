@@ -83,10 +83,9 @@ Please [email us] to make arrangements.
 ### I have an idea for a session
 
 Most of the Summit will be unconference-style, so you will have an opportunity
-to propose a session the morning of the Summit.  However, we have a couple of
-time slots for plenary sessions around the unconference ones, so if you have 
-a topic that you think needs the whole community's attention, please [add it to
-the issue](TODO).
+to propose a session closer to the Summit itself. If you have an idea for a talk,
+workshop or panel please post your idea to the unconference issue or the CFP
+form once they become available.  
 
 ### My SIG wants to meet at the Summit
 
