@@ -5,33 +5,9 @@ weight: 5
 draft: true
 ---
 
-# Contributor Social at La Casa Del Mar
+# Contributor Social
 
-<img align="right" src="/events/2023/kcseu/TODO.jpg" width="30%">
-
-From 6:30 to 8:30pm (and beyond), Kubernetes contributors will be schmoozing,
-eating, playing boardgames, and competing in a pub quiz at [La Casa Del Mar](https://lacasadelamar.com/espacios-patacona/), 
-a cafe and bar by the beach in Valencia.
-
-The Social is open only to registered attendees of the Kubernetes Contributor
-Summit and possibly their guests (see below).  You must be [registered](https://cvent.me/384mb9)
-before attending.
-
-## Location And Transportation
-
-The Contributor Social will be held at the
-<a href="https://lacasadelamar.com/espacios-patacona/" rel="noopener noreferrer" target="_blank">La Casa de la Mar</a>
-several kilometers from the Feria.
-
-As such, a bus will leave from The Fira (conference venue) at 6pm on May 16th
-to take contributors to the Social.  The bus will return after 8:30pm.
-
-Some contributors will leave from their hotels; if you want to share a cab from
-your hotel or another location, 
-[sign up on the cab-sharing sheet](https://bit.ly/cseu22carpools).
-
-You are also welcome to get there on your own.  There aren't any good public 
-transportation links to the venue.
+We are still reviewing locations, but should have more info soon! You can expect good food, fun activities and of course, the best company!
 
 ## Activities
 
