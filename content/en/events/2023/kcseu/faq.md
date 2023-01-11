@@ -90,9 +90,9 @@ the issue](TODO).
 
 ### My SIG wants to meet at the Summit
 
-We will provide space for SIG, WG, Committee, and other Kubernetes team meetings
-at the Summit.  If you think your team will want to hold one of these, please 
-add your team to [the meeting schedule](TODO).
+We do not know yet if we will be able to request additional space outside of
+the colo event space on Tuesday, April 18th. We will update this page and send
+out community wide messages about it once the details are available.
 
 ### Will there be a doc sprint?
 
