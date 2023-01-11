@@ -2,7 +2,6 @@
 title: Schedule
 type: docs
 weight: 3
-draft: true
 ---
 
 **NOTE:** You must go through vaccine verification and pick up your badge before
@@ -24,12 +23,6 @@ needs and unpredictable travel schedules.
 
 If you have a topic in mind, hold on to it for just a bit longer. A collection issue / form will be launched soon!
 
-## SIG Meetings
-
-SIGs, Working Groups, and teams will be meeting during the Summit.  See if your
-team is meeting and mark your attendance on our 
-[SIG Meetings Schedule](https://docs.google.com/spreadsheets/d/1LS1q4VJajZkNZODdMnJ4eH3XnTsE_4em6pjQgToHyfw/edit?usp=sharing).
-
 ## Doc Sprint
 
 SIG-Docs will have a full-day Documentation working session during the Summit.
@@ -40,6 +33,6 @@ do it better, join them.
 
 {{% schedule
   text="Kubernetes Contributor Summit Europe 2023"
-  link="https://kcseu22.sched.com"
-  script="https://kcseu22.sched.com/js/embed.js"
+  link="https://kcseu23.sched.com"
+  script="https://kcseu23.sched.com/js/embed.js"
 %}}

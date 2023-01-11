@@ -11,15 +11,15 @@ description: >
 
 ### About
 
-The Europe Summit will be a lightweight event taking place on May 16th
+The Europe Summit will be a lightweight event taking place on April 18th
 in Amsterdam, The Netherlands alongside 
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" rel="noopener noreferrer" target="_blank">KubeCon</a>
 at the
 <a href="https://www.rai.nl/en" rel="noopener noreferrer" target="_blank">RAI Amsterdam</a>.
 
 The Summit will be a loosely organized event with a [relaxed schedule](/events/2023/kcseu/schedule),
- including a Steering AMA, three hours of Unconference Sessions, 
-multiple SIG and WG meetings, and a Documentation Sprint.  This will be followed
+ including a Steering AMA, several hours of Unconference Sessions, 
+potential SIG and WG meetings, and a Documentation Sprint.  This will be followed
 by a [Contributor Social](/events/2023/kcseu/social) with games and refreshments.
 
 This page will be updated as more activities are scheduled. If you have

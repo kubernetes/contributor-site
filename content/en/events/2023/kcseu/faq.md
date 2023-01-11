@@ -7,8 +7,7 @@ weight: 7
 - [When is the summit taking place?](#when-is-the-summit-taking-place)
 - [Where is the summit located?](#where-is-the-summit-located)
 - [Will I be able to attend remotely?](#will-i-be-able-to-attend-remotely)
-- [Why is vaccination required to attend in-person?](#why-is-vaccination-required-to-attend-in-person)
-- [Do I need to wear a mask?](#do-i-need-to-wear-a-mask)
+- [What are the Health and Safety protocols](#what-are-the-health-and-safety-protocols)
 - [Why do I need to be a Kubernetes Org member to attend in-person?](#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person)
 - [What is a sponsored attendee?](#what-is-a-sponsored-attendee)
 - [I have an idea for a session](#i-have-an-idea-for-a-session)
@@ -37,17 +36,13 @@ See the [Location & Venue] section for more information.
 No, based on our experience with Kubecon NA 2021, we do not expect to be able
 to support remote access for this event.
 
-### Why is vaccination required to attend in-person?
+### What are the Health and Safety protocols?
 
 As a co-located event, the summit is required to adhere to KubeCon’s
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/health-and-safety/" rel="noopener noreferrer" target="_blank">
 Health & Safety Guidelines</a>. There may be additional restrictions that
 develop closer to the event, and we will update the event accordingly to follow
 venue, municipality and CDC guidelines at a minimum.
-
-### Do I need to wear a mask?
-
-Masks are recommended, but not required for event attendees.
 
 ### Why do I need to be a Kubernetes Org member to attend in-person?
 
