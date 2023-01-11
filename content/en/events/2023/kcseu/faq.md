@@ -20,7 +20,7 @@ weight: 7
 
 ### When is the summit taking place?
 
-May 18th, the Tuesday of [KubeCon Europe].
+April 18th, the first day of [KubeCon Europe].
 
 [KubeCon Europe]: https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/
 
