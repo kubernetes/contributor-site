@@ -100,9 +100,9 @@ full day from 11am to 5pm.
 
 ### Will there be a New Contributor Workshop?
 
-No, with uncertain attendance and staffing, we made this decision to ensure we
-can put on an event to the best of our ability. For those that are interested
-in becoming a contributor, SIG ContribEx plans to launch a course later this year.
+No, they are very time, person and resource intensive. We encourage those
+interested in becoming a contributor to use the New Contributor Course 
+slated to launch later this year.
 
 Until then, here are some additional resources you may find useful:
 - [New Contributor Workshop 2019 - Barcelona](https://www.youtube.com/watch?v=BQ7y2TFOzF4&list=PL69nYSiGNLP2WTJ6P8sQenhf0RY-JqF5L)
