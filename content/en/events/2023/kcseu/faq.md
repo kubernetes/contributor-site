@@ -51,8 +51,15 @@ Masks are recommended, but not required for event attendees.
 
 ### Why do I need to be a Kubernetes Org member to attend in-person?
 
-With uncertain attendance and staffing, we made this decision to ensure we can
-put on an event to the best of our ability.
+We welcome everyone to start contributing to the project, but with 1600+
+Kubernetes Org members and limited space and budget requirements we've
+made the decision to limit attendance to those that are already actively
+engaged with the project.
+
+If you are not yet a member, but active within the project, please consider
+joining! The process of joining is straight forward. See our [org membership]
+docs for more information. If your application to join is pending, please
+contact us at community@kubernetes.io about registering.
 
 Kubernetes Orgs:
 
@@ -63,10 +70,6 @@ Kubernetes Orgs:
 <li><a href="https://github.com/kubernetes-sigs" rel="noopener noreferrer" target="_blank">kubernetes-sigs</a></li>
 </ul>
 
-If you are not yet a member, but active within the project, please consider
-joining! The process of joining is straight forward. See our [org membership]
-docs for more information. If your application to join is pending, please
-contact us at community@kubernetes.io about registering.
 
 [org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 
