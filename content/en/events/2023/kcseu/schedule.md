@@ -40,6 +40,6 @@ do it better, join them.
 
 {{% schedule
   text="Kubernetes Contributor Summit Europe 2023"
-  link="https://kcseu22.sched.com"
-  script="https://kcseu22.sched.com/js/embed.js"
+  link="https://kcseu23.sched.com"
+  script="https://kcseu23.sched.com/js/embed.js"
 %}}
