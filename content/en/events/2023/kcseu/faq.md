@@ -20,7 +20,7 @@ weight: 7
 
 ### When is the summit taking place?
 
-May 18th, the Tuesday of [KubeCon Europe].
+April 18th, the first day of [KubeCon Europe].
 
 [KubeCon Europe]: https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/
 
@@ -51,8 +51,15 @@ Masks are recommended, but not required for event attendees.
 
 ### Why do I need to be a Kubernetes Org member to attend in-person?
 
-With uncertain attendance and staffing, we made this decision to ensure we can
-put on an event to the best of our ability.
+We welcome everyone to start contributing to the project, but with 1600+
+Kubernetes Org members and limited space and budget requirements we've
+made the decision to limit attendance to those that are already actively
+engaged with the project.
+
+If you are not yet a member, but active within the project, please consider
+joining! The process of joining is straight forward. See our [org membership]
+docs for more information. If your application to join is pending, please
+contact us at community@kubernetes.io about registering.
 
 Kubernetes Orgs:
 
@@ -63,10 +70,6 @@ Kubernetes Orgs:
 <li><a href="https://github.com/kubernetes-sigs" rel="noopener noreferrer" target="_blank">kubernetes-sigs</a></li>
 </ul>
 
-If you are not yet a member, but active within the project, please consider
-joining! The process of joining is straight forward. See our [org membership]
-docs for more information. If your application to join is pending, please
-contact us at community@kubernetes.io about registering.
 
 [org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 
@@ -80,16 +83,15 @@ Please [email us] to make arrangements.
 ### I have an idea for a session
 
 Most of the Summit will be unconference-style, so you will have an opportunity
-to propose a session the morning of the Summit.  However, we have a couple of
-time slots for plenary sessions around the unconference ones, so if you have 
-a topic that you think needs the whole community's attention, please [add it to
-the issue](TODO).
+to propose a session closer to the Summit itself. If you have an idea for a talk,
+workshop or panel please post your idea to the unconference issue or the CFP
+form once they become available.  
 
 ### My SIG wants to meet at the Summit
 
-We will provide space for SIG, WG, Committee, and other Kubernetes team meetings
-at the Summit.  If you think your team will want to hold one of these, please 
-add your team to [the meeting schedule](TODO).
+We do not know yet if we will be able to request additional space outside of
+the colo event space on Tuesday, April 18th. We will update this page and send
+out community wide messages about it once the details are available.
 
 ### Will there be a doc sprint?
 
@@ -98,9 +100,9 @@ full day from 11am to 5pm.
 
 ### Will there be a New Contributor Workshop?
 
-No, with uncertain attendance and staffing, we made this decision to ensure we
-can put on an event to the best of our ability. For those that are interested
-in becoming a contributor, SIG ContribEx plans to launch a course later this year.
+No, they are very time, person and resource intensive. We encourage those
+interested in becoming a contributor to use the New Contributor Course 
+slated to launch later this year.
 
 Until then, here are some additional resources you may find useful:
 - [New Contributor Workshop 2019 - Barcelona](https://www.youtube.com/watch?v=BQ7y2TFOzF4&list=PL69nYSiGNLP2WTJ6P8sQenhf0RY-JqF5L)
