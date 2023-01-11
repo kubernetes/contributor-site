@@ -22,10 +22,7 @@ in the morning, and then hold sessions in the afternoon, after the Steering AMA.
 This is the format used at many [DevOps Days](https://devopsdays.org/open-space-format/), and helps us accommodate changing 
 needs and unpredictable travel schedules.
 
-If you already have a topic in mind, we urge you to [add it to the Topics issue](https://github.com/kubernetes/community/issues/6633)
-so that other contributors can arrive mentally prepared for it.  This is
-especially crucial if you think you might not make it to the Summit until 
-afternoon.
+If you have a topic in mind, hold on to it for just a bit longer. A collection issue / form will be launched soon!
 
 ## SIG Meetings
 
