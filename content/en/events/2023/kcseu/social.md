@@ -4,7 +4,6 @@ type: docs
 weight: 5
 ---
 
-# Contributor Social
 
 We are still reviewing locations, but should have more info soon! You can expect good food, fun activities and of course, the best company!
 
