@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on SIG Instrumentation"
 slug: sig-instrumentation-spotlight-2023
-date: 2023-01-31
+date: 2023-02-03
 author: "Imran Noor Mohamed(Delivery Hero)"
 ---
 
