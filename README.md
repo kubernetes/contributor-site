@@ -92,13 +92,14 @@ You can reach the maintainers of this project at:
 
 We’re building out this site in real-time! Want to join us and help? Here’s what we have in store for next iterations:
 
-* [x] An Events page showcasing all current and future happenings within the Kubernetes community. We hope to launch this feature by November 2019. Want to help us hit this target? Help us [work on this project](https://github.com/kubernetes-sigs/contributor-site/issues/15) by forking the repo and submitting a pull request!
-* [x] Contributor guide/handbook: Feature launch date estimated November 2019
-* [ ] Developers' guide/handbook: Feature launch date estimated April 2020
-* [ ] Role Board: Feature launch date estimated April 2020
+* [ ] Contributor guide/handbook: Feature launch date estimated January 2023
+* [ ] Developers' guide/handbook
 * [ ] Directory of Kubernetes SIGs and other community groups
-* [x] Pathways to success for [new Kubernetes contributors](https://git.k8s.io/community/community-membership.md) and mentoring programs
-* [ ] Workshop videos
+* [ ] Listing events beyond just Contributor Summits
+* [ ] Pathways to success for [new Kubernetes contributors](https://git.k8s.io/community/community-membership.md) and mentoring programs
+* [ ] Refactoring the hugo code and glue code behind the site
+
+See the [Issues] for tasks and projects in progress
 
 ### Code of conduct
 
@@ -120,3 +121,4 @@ Participation in the Kubernetes community is governed by the
 [postcss-cli]: https://postcss.org/
 [autoprefixer]: https://github.com/postcss/autoprefixer
 [git submodule]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
+[Issues]: https://github.com/kubernetes/contributor-site/issues
