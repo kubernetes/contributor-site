@@ -122,7 +122,7 @@ You should run tests locally or in your development environment before submittin
 * When the tests fail, your pull request will stall.
 * You will need to use the **/ok-to-test** command to tell the bot to run tests again.
 
-[Read about the ok-to-test label in the Pull Request Process documentation.](https://www.kubernetes.dev/docs/guide/pull-requests/#more-about-ok-to-test)
+[Read about the ok-to-test label in the Pull Request Process documentation.](/docs/guide/pull-requests/#more-about-ok-to-test)
 
 ---
 
@@ -135,7 +135,7 @@ We've covered a lot of ground in this unit, and if you want to go deeper, here i
 * [The Testing Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md#unit-tests)
 * [Integration Testing in Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/integration-tests.md)
 * [End-to-End Testing Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
-* [Pull Request documentation](https://www.kubernetes.dev/docs/guide/pull-requests/#more-about-ok-to-test)
+* [Pull Request documentation](/docs/guide/pull-requests/#more-about-ok-to-test)
 
 <div class="bottom-nav">
     <a href="/docs/onboarding">Onboarding Index</a> | <a href="../07-code-review/">Next Section</a>

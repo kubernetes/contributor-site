@@ -122,7 +122,7 @@ That list of labels is really long, but you won't need to worry about most of th
 * Triage can happen asynchronously and continuously, or in regularly scheduled meetings. 
 * Each SIG may have its own approach to triaging.
 
-Triaging is critical for keeping track of new issues, bugs, and problems. [Read the Issue Triage Guidelines for more information.](https://www.kubernetes.dev/docs/guide/issue-triage/)
+Triaging is critical for keeping track of new issues, bugs, and problems. [Read the Issue Triage Guidelines for more information.](/docs/guide/issue-triage/)
 
 ---
 

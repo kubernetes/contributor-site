@@ -53,7 +53,7 @@ No! Kubernetes contributors take on all kinds of responsibilities and roles, inc
           <li> Public relations</li>
           <li> Community education</li>
           <li> New contributor training</li>
-          <li> <a href="https://www.kubernetes.dev/docs/guide/non-code-contributions/">And the list goes on!</a></li>
+          <li> <a href="/docs/guide/non-code-contributions/">And the list goes on!</a></li>
       </ul>
   </div>
 </div>
@@ -82,7 +82,7 @@ Community-wide notifications and discussions are always sent to the [Kubernetes 
 
 The Kubernetes Slack server has over 500 channels! 
 
-* First, get familiar with our [Slack communication guidelines](https://www.kubernetes.dev/docs/comms/slack/).
+* First, get familiar with our [Slack communication guidelines](/docs/comms/slack/).
 * Then [join our Slack server here](slack.k8s.io)!
 
 ---
@@ -92,7 +92,7 @@ The Kubernetes Slack server has over 500 channels!
 Each SIG and Working Group has its favored method of communication. You can start in their Slack channel and ask around.
 
 * By working with a SIG, you will learn how its members communicate.
-* [The Community Groups list](https://www.kubernetes.dev/community/community-groups/) is a great place to learn about communication preferences.
+* [The Community Groups list](/community/community-groups/) is a great place to learn about communication preferences.
     * This is also where you will learn about each group’s regularly scheduled meetings and how to attend.
 
 ---
@@ -111,7 +111,7 @@ Slack is excellent for most discussion and questions.
 While KubeCon is organized by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/), we like to host a Contributor Summit alongside KubeCon.
 
 * You can learn more about the next Contributor Summit on our [#contributor-summit Slack channel](https://kubernetes.slack.com/messages/contributor-summit).
-* [Find out more on our Events page.](https://www.kubernetes.dev/events/)
+* [Find out more on our Events page.](/events/)
 
 ---
 
@@ -119,7 +119,7 @@ While KubeCon is organized by the [Cloud Native Computing Foundation (CNCF)](htt
 
 We have extensive guidelines and policies around our various communication channels.
 
-* [Read the Kubernetes Communication Platform Guidelines and Policies.](https://www.kubernetes.dev/docs/comms/)
+* [Read the Kubernetes Communication Platform Guidelines and Policies.](/docs/comms/)
 
 <div class="bottom-nav">
     <a href="/docs/onboarding">Onboarding Index</a> | <a href="../09-documentation/">Next Section</a>
