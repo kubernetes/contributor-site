@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+  <head>
+    {{ partial "head.html" . }}
+    {{ partial "revealjs.html" . }}
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown>
+          <textarea data-markdown>
+            {{ .RawContent }}
+          </textarea>
+        </section>
+      </div>
+      <div class='footer'>
+        <span id="footer-title">{{ .Title }}</span> |
+        Use left and right arrows to navigate. |
+        Press "?" for help. |
+        <a href="/docs/onboarding">Return to onboarding index.</a>
+      </div>
+    </div>
+    <script>
+     // If the query includes 'print-pdf', include the PDF print stylesheet.
+     if( window.location.search.match( /print-pdf/gi ) ) {
+       var link = document.createElement( 'link' );
+       link.rel = 'stylesheet';
+       link.type = 'text/css';
+       link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+       document.getElementsByTagName( 'head' )[0].appendChild( link );
+     }
+     
+     Reveal.initialize({
+       hash: true,
+       controls: true,
+       controlsTutorial: true,
+       minScale: 0.1,
+       slideNumber: 'c/t',
+       showSlideNumber: 'all',
+       plugins: [ RevealMarkdown, RevealHighlight ]
+     });
+    </script>
+  </body>
+</html>
