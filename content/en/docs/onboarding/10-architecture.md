@@ -62,5 +62,5 @@ First, we call it KEP for short. And second, the KEP process is managed by the A
 * To learn more, [read the SIG Architecture documentation](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md).
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a>
+    <a href="/docs/onboarding">Onboarding Index</a>
 </div>

@@ -113,5 +113,5 @@ Of course the last slide is the million dollar question.
 * Pay attention to any visible changes your contributions are making! Always ask yourself, "How will this affect the documentation?"
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../10-architecture/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../10-architecture/">Next Section</a>
 </div>

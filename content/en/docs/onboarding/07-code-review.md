@@ -80,5 +80,5 @@ If you need help finding reviewers for your pull request, try one of the followi
 * Ask for assistance on the [#pr-reviews Slack channel](https://kubernetes.slack.com/messages/pr-reviews).
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../08-community/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../08-community/">Next Section</a>
 </div>

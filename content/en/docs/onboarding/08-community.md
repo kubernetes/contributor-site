@@ -122,5 +122,5 @@ We have extensive guidelines and policies around our various communication chann
 * [Read the Kubernetes Communication Platform Guidelines and Policies.](https://www.kubernetes.dev/docs/comms/)
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../09-documentation/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../09-documentation/">Next Section</a>
 </div>

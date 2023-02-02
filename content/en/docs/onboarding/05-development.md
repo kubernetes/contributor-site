@@ -72,5 +72,5 @@ But first, we recommend that you [become familiar with the Development Guide](ht
 
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../06-testing/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../06-testing/">Next Section</a>
 </div>

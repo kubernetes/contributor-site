@@ -90,5 +90,5 @@ Once you are ready to contribute, you will have to jump through one small legal 
 6. Back on GitHub, [create a pull request from your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../03-pull-requests/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../03-pull-requests/">Next Section</a>
 </div>

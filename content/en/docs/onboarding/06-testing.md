@@ -138,5 +138,5 @@ We've covered a lot of ground in this unit, and if you want to go deeper, here i
 * [Pull Request documentation](https://www.kubernetes.dev/docs/guide/pull-requests/#more-about-ok-to-test)
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../07-code-review/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../07-code-review/">Next Section</a>
 </div>

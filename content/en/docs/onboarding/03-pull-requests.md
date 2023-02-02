@@ -91,5 +91,5 @@ You can respond to comments from reviewers through comments or additional change
 We will cover tests in more detail [in a later unit](../06-testing/).
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../04-issues-management/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../04-issues-management/">Next Section</a>
 </div>

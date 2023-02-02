@@ -144,5 +144,5 @@ Each SIG is responsible for triaging and deciding on the priority of issues that
 You can learn more about [Kubernetes security disclosure and reporting here](https://kubernetes.io/docs/reference/issues-security/security/).
 
 <div class="bottom-nav">
-    <a href="/onboarding">Onboarding Index</a> | <a href="../05-development/">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../05-development/">Next Section</a>
 </div>
