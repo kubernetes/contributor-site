@@ -1,7 +1,8 @@
 ---
-title: "E-Learning for Contributors"
+title: "New Contributor Course"
 type: docs
-weight: 9
+weight: 2
+aliases: [ "/course" ]
 description: |
     A high-level, multi-part course for those who are just starting out
 ---

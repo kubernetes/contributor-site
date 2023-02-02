@@ -8,7 +8,7 @@ description: |
 
 # Welcome to Kubernetes!
 
-Welcome to the E-Learning for Contributors course for Kubernetes!
+Welcome to the New Contributor course for Kubernetes!
 
 ---
 
