@@ -75,12 +75,17 @@ docker-server:
 	$(MAKE) container-server
 
 container-server: ## Run Hugo locally within a container, available at http://localhost:1313/
+	# no build lock to allow for read-only mounts
 	git submodule update --init --recursive --depth 1
 	$(CONTAINER_RUN) -p 1313:1313 \
 		--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
+		--read-only \
+		--cap-drop=ALL \
+		--cap-drop=AUDIT_WRITE \
 		$(CONTAINER_IMAGE) \
 	hugo server \
 		--verbose \
+		--noBuildLock \
 		--bind 0.0.0.0 \
 		--buildDrafts \
 		--buildFuture \
