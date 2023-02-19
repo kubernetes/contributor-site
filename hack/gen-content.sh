@@ -44,14 +44,14 @@ fi
 # $2 - path to destination directory for cloned repo
 init_src() {
   if [[ ! -d "$2" ]]; then
-    echo "Cloning $1"
+    echo "Cloning $1" 1>&2
     git clone --depth=1 "$1" "$2"
   elif [[ $(git -C "$2" rev-parse --show-toplevel) == "$2" ]]; then
-    echo "Syncing with latest content from master."
+    echo "Syncing with latest content from master." 1>&2
     git -C "$2" checkout .
     git -C "$2" pull
   else
-    echo "Destination $2 already exists and is not a git repository."
+    echo "Destination $2 already exists and is not a git repository." 1>&2
     exit 1
   fi
 }
@@ -343,14 +343,14 @@ main() {
         # skip updating.
         if [[ "$file" != "$filename" ]]; then
           mv "$file" "$filename"
-          echo "Renamed: $file to $filename"
+          echo "Renamed: $file to $filename" 1>&2
         fi
       fi
     done < <(find_md_files "${TEMP_DIR}${srcs[i]}")
   done
 
 
-  echo "Copying to hugo content directory."
+  echo "Copying to hugo content directory." 1>&2
   for (( i=0; i < ${#renamed_srcs[@]}; i++ )); do
     if [[ -d "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
       # OWNERS files are excluded when copied to prevent potential overwriting of desired
@@ -359,8 +359,8 @@ main() {
     elif [[ -f "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
       rsync -av "${TEMP_DIR}${renamed_srcs[i]}" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
     fi
-  done 
-  echo "Content synced."
+  done
+  echo "Content synced." 1>&2
 }
 
 
