@@ -95,7 +95,6 @@ Most community activity is organized into four areas:
 * Special Interest Groups (SIGs), 
 * Working Groups
 * Committees
-* The community meeting
 
 ---
 
@@ -125,16 +124,6 @@ Some topics, such as Security or Code of Conduct, require discretion. Committees
 * The steering committee forms committees as needed.
 * All committee members must be community members. 
 * Like a SIG, a committee has a charter and a chair.
-
----
-
-# What is the community meeting and when does it happen?
-
-The Kubernetes community has a [monthly public, recorded meeting](/community/community-meeting/). 
-
-* Currently, that meeting is held third Thursday of the month at 10am PT
-* With the exception of December!
-* Or in the event it clashes with KubeCon or CloudNativeCon.
 
 ---
 
