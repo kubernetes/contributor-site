@@ -72,5 +72,6 @@ There are many ways you can stay involved with the Kubernetes Contributor commun
 
 {{% /blocks/section %}}
 
-
+# Mastodon Account Verification Code
+<a rel="me" href="https://hachyderm.io/@K8sContributors"></a>
 
