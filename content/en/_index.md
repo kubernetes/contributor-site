@@ -10,3 +10,5 @@ description: Welcome to the Kubernetes Contributor Community!
     color="orange" >}}
 
 {{< /blocks/cover >}}
+
+<a rel="me" href="https://hachyderm.io/@K8sContributors"></a>
