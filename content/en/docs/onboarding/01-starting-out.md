@@ -90,7 +90,7 @@ The Code of Conduct Committee oversees and handles all incidents and responses r
 
 # How is the Kubernetes community organized?
 
-Most community activity is organized into four areas:
+Most community activity is organized into three areas:
 
 * Special Interest Groups (SIGs), 
 * Working Groups
