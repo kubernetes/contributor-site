@@ -30,6 +30,12 @@ slack channel.
 
 [location]: /events/2023/kcseu/location/
 
+### Call for Papers
+
+A [CFP] for sessions will be open through Friday, March 31st.
+
+[CFP]: https://docs.google.com/forms/d/1z7TnjixN9fiuQulF-EU9rw7_U9I-I8HNOv28IAFsHZc/viewform
+
 ### Code of Conduct
 
 Attendees agree to abide by Kubernetes [Code of Conduct]. To report an incident
