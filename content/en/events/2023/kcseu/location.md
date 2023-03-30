@@ -9,10 +9,9 @@ weight: 4
 
 Registration and badge pick-up will be available at the
 <a href="https://www.rai.nl/en" rel="noopener noreferrer" target="_blank">RAI Amsterdam</a>. 
-You **MUST** go through vaccination verification and pick up your badge before
-attending the summit or evening social event.
+You **MUST** pick up your badge before attending the summit or evening social event.
 
-The summit itself will be in the RAI Amsterdam Convention Centre. Masks are recommended, but not required for event attendees.
+The summit itself will be in the RAI Amsterdam Convention Centre. Masks are recommended, but not required for event attendees.  Some masks will be available.
 
 **Address**<br>
 Europaplein 24, 1078 GZ<br>
@@ -20,7 +19,10 @@ Amsterdam, Netherlands<br>
 
 ### Contributor Social Location
 
-The Contributor Social will be held at a TBD location. Details to be posted later.  Masking and vaccination are required for the party.
+The Contributor [Social] will be held at Strandzuid, next to the Convention Centre.
 
 **Address**<br>
-TBD<br>
+Europaplein 22, 1078 GZ<br>
+Amsterdam, Netherlands<br>
+
+[Social]: /events/2023/kcseu/social/

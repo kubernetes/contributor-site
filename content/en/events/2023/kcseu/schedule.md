@@ -4,8 +4,7 @@ type: docs
 weight: 3
 ---
 
-**NOTE:** You must go through vaccine verification and pick up your badge before
-attending the summit or social evening event.
+**NOTE:** You **MUST** pick up your badge before attending the summit or social evening event.
 
 ## Steering AMA
 
