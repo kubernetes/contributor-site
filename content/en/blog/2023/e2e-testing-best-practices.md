@@ -173,7 +173,7 @@ before the test ran. [`ginkgo.DeferCleanup`
 this because it can be called similar to `defer` directly after setting up
 something. It is better than `defer` because Ginkgo will show additional
 details about which cleanup code is running and (if possible) handle timeouts
-for that code (see next section). Is is better than `ginkgo.AfterEach` because
+for that code (see next section). It is better than `ginkgo.AfterEach` because
 it is not necessary to define additional variables and because
 `ginkgo.DeferCleanup` executes code in the more useful last-in-first-out order,
 i.e. things that get set up first get removed last.
@@ -281,7 +281,13 @@ When waiting for something to happen, use a reasonable timeout. Without it, a
 test might keep running until the entire test suite gets killed by the
 CI. Beware that the CI under load may take a lot longer to complete some
 operation compared to running the same test locally. On the other hand, a too
-long timeout can be annoying when trying to debug tests locally.
+long timeout also has drawbacks:
+- When a feature is broken so that the expected state doesn't get reached, a test
+  waiting for that state first needs to time out before the test fails.
+- If a state is expected to be reached within a certain time frame, then a
+  timeout that is much higher will cause test runs to be considered successful
+  although the feature was too slow. A dedicated performance test in a well-know
+  environment may be a better solution for testing such performance expectations.
 
 The framework provides some [common
 timeouts](https://github.com/kubernetes/kubernetes/blob/eba98af1d8b19b120e39f3/test/e2e/framework/timeouts.go#L44-L109)
@@ -292,9 +298,10 @@ timeout in the test.
 
 Good code that waits for something to happen meets the following criteria:
 - accepts a context for test timeouts
-- informative during interactive use (i.e. intermediate reports, either
-  periodically or on demand)
-- little to no output during a CI run except when it fails
+- depending on how the test suite was invoked:
+  - informative during interactive use (i.e. intermediate reports, either
+    periodically or on demand)
+  - little to no output during a CI run except when it fails
 - full explanation when it fails: when it observes some state and then
   encounters errors reading the state, then dumping both the latest
   observed state and the latest error is useful
