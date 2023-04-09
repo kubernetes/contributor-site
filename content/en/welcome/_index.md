@@ -64,8 +64,6 @@ There are many ways you can stay involved with the Kubernetes Contributor commun
   <li>Join one of our <a href="/community/community-groups">community groups</a></li>
   <li>Contribute to and explore our <a href="/docs/guide">contributor</a> and <a href=" https://git.k8s.io/community/contributors/devel/">developer</a> guides</li>
   <li>Voice your thoughts and have them heard at one of our weekly <a href="https://git.k8s.io/community/sig-contributor-experience#meetings">Contributor Experience meetings</a></li>
-  <li>Meet our contributors by joining our <a href="/events/meet-our-contributors">monthly one hour meeting</a></li>
-  <li>Learn more about our community by joining in our <a href="/community/community-meeting">monthly community meeting</a></li>
   <li>Take a journey to <a href="https://git.k8s.io/community/community-membership.md">becoming a reviewer or approver</a></li>
   <li>Find out how we make decisions, organize, and how to get involved in <a href="http://git.k8s.io/community/governance.md">governance</a></li>
 </ul>
