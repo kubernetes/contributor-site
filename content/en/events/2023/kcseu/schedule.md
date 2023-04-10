@@ -38,6 +38,6 @@ Unconference sessions should use the GitHub issue referenced above.
 
 {{% schedule
   text="Kubernetes Contributor Summit Europe 2023"
-  link="https://kcseu23.sched.com"
-  script="https://kcseu23.sched.com/js/embed.js"
+  link="https://kcseu2023.sched.com"
+  script="https://kcseu2023.sched.com/js/embed.js"
 %}}
