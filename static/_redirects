@@ -1,0 +1,10 @@
+###############################################
+# set server-side redirects in this file      #
+# see https://www.netlify.com/docs/redirects/ #
+# test at https://play.netlify.com/redirects  #
+###############################################
+
+/unconf https://github.com/kubernetes/community/issues/7157 302
+/notes  https://drive.google.com/drive/u/0/folders/1f-GChvcrbGW4TOOz2RTV6wRKOAyJRO-j  302
+
+
