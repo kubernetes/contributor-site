@@ -2,7 +2,6 @@
 title: "New Contributor Course"
 type: docs
 weight: 2
-aliases: [ "/course" ]
 description: |
     A high-level, multi-part course for those who are just starting out
 ---

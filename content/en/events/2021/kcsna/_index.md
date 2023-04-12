@@ -1,7 +1,6 @@
 ---
 title: "Contributor Summit North America 2021"
 type: docs
-aliases: [ "/kcsna2021" ]
 weight: 1
 description: >
   The Kubernetes Contributor Summits are returning for 2021!

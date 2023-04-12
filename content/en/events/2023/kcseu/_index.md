@@ -1,7 +1,6 @@
 ---
 title: "Contributor Summit Europe 2023"
 type: docs
-aliases: [ "/kcseu2023" , "/summit" ]
 weight: 1
 description: >
   Kubernetes Contributor Summit Europe, hosted in Amsterdam Netherlands.

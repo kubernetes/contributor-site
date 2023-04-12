@@ -1,7 +1,6 @@
 ---
 title: "Contributor Summit North America 2022"
 type: docs
-aliases: [ "/kcsna2022", "/summit" ]
 weight: 1
 description: >
   Kubernetes Contributor Summit North America, hosted in Detroit Michigan.
