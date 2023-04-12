@@ -1,10 +1,37 @@
-###############################################
-# set server-side redirects in this file      #
-# see https://www.netlify.com/docs/redirects/ #
-# test at https://play.netlify.com/redirects  #
-###############################################
+####################################################
+# set server-side redirects in this file            #
+# see https://docs.netlify.com/routing/redirects/   #
+# test at https://redirects-playground.netlify.app/ #
+#####################################################
 
-/unconf https://github.com/kubernetes/community/issues/7157 302
-/notes  https://drive.google.com/drive/u/0/folders/1f-GChvcrbGW4TOOz2RTV6wRKOAyJRO-j  302
+/awards           /community/awards 301
+/awards/2019      /community/awards/2019 301
+/awards/2020      /community/awards/2020 301
+/awards/2021      /community/awards/2021 301
+/awards/2021      /community/awards/2022 301
 
+/calendar         /resources/calendar    301
 
+/coc              /community/code-of-conduct 301
+/code-of-conduct  /community/code-of-conduct  301
+
+/comms            /docs/comms  301
+/communication    /docs/comms  301
+
+/course           /docs/onboarding  301
+
+/kcc2020          /events/2020/kcc  301
+/kcc2021          /events/2021/kcc  301
+/celebration      /events/2021/kcc  302
+
+/kcsna2021        /events/2021/kcsna  301
+/kcseu2022        /events/2022/kcseu  301
+/kcsna2022        /events/2022/kcsna  301
+/kcsna2023        /events/2023/kcsna  301
+
+/services         /resources/services 301
+/requests         /resources/services 301
+
+/summit           /events/2023/kcsna  302
+/summit/unconf    https://github.com/kubernetes/community/issues/7157 302
+/summit/notes     https://drive.google.com/drive/u/0/folders/1f-GChvcrbGW4TOOz2RTV6wRKOAyJRO-j  302
