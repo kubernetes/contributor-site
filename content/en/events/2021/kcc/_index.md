@@ -2,7 +2,6 @@
 title: "Contributor Celebration"
 weight: 1
 slug: "kcc2021"
-aliases: [ "/celebration", "/kcc2021" ]
 description: |
    The Kubernetes Contributor Celebration is an annual end of year celebration
    where we recognize our accomplishments and have some fun! It's a time for us

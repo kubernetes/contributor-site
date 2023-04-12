@@ -1,7 +1,6 @@
 ---
 title: "Contributor Awards"
 weight: 4
-aliases: [ "/awards" ]
 slug: "awards"
 description: |
   The Kubernetes Contributor Awards are an annual recognition of excellence

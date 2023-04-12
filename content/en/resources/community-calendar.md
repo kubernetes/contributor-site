@@ -4,7 +4,6 @@ linkTitle: Community Calendar
 description: Meetings in the Kubernetes Community
 weight: 1
 type: calendar
-aliases: [ "/calendar" ]
 slug: calendar
 ---
 

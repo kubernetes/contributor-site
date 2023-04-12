@@ -1,7 +1,6 @@
 ---
 title: "2021 Awards"
 weight: 1
-aliases: [ "/awards/2021" ]
 type: docs
 slug: "2021"
 description: "2021 Contributor Award Recipients"

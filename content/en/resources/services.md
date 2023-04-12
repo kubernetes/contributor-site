@@ -6,7 +6,6 @@ description: |
   as slack channels, github repos, tweets, netlify sites and more.
 weight: 1
 type: docs
-aliases: [ "/services", "/requests" ]
 slug: services
 ---
 
