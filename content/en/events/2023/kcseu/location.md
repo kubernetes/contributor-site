@@ -19,7 +19,7 @@ Amsterdam, Netherlands<br>
 
 ### Contributor Social Location
 
-The Contributor [Social] will be held at Strandzuid, next to the Convention Centre.
+The Contributor [Social] will be held at [Strandzuid](https://strand-zuid.nl/en/restaurant/), **next to** the Convention Centre.
 
 **Address**<br>
 Europaplein 22, 1078 GZ<br>
