@@ -53,11 +53,12 @@ For instructions on installing and using Hugo, see the [Hugo Documentation][hugo
 Note that the extended version is required.
 
 In addition to Hugo, the [postcss-cli] and [autoprefixer] JavaScript packages are
-required. These can be installed via the [Node Package Manager] (`npm`) from a
+required. These can be installed via the [Node Package Manager][npm] (`npm`) from a
 recent version of [nodejs] with `npm install -g postcss-cli autoprefixer`.
 
 The Contributor Site uses the [docsy] theme. It is included as a [git submodule].
-To fetch docsy and it's requirements, run the command:
+To fetch docsy and its requirements, run the command:
+
 ```
 git submodule update --init --recursive --depth 1
 ```
@@ -65,18 +66,20 @@ git submodule update --init --recursive --depth 1
 To ensure you can view the site with externally sourced content, run
 `make gen-content` before previewing the site by with `make server`.
 
-**NOTE to OSX Users**
+**NOTE to MacOS Users**
 
- The `hack/gen-content.sh` script requires the gnu version
+The `hack/gen-content.sh` script requires the gnu version
 of base packages such as `find`, `grep`, and `sed`. 
+
 ```
 brew install coreutils findutils grep gnu-sed gnu-tar make readlink
 ```
+
 You will then need to update your path to include these:
+
 ```
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 ```
-
 
 ## Community, discussion, contribution, and support
 
@@ -111,6 +114,7 @@ Participation in the Kubernetes community is governed by the
 [ct]: ./content/
 [pr]: https://help.github.com/en/articles/about-pull-requests
 [hugo-docs]: https://gohugo.io/getting-started/installing
+[npm]: https://nodejs.org/en/download/package-manager
 [frontmatter]: https://gohugo.io/content-management/front-matter/
 [docker]: https://www.docker.com/get-started
 [sig-contribex]: https://git.k8s.io/community/sig-contributor-experience/README.md
