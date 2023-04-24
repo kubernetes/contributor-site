@@ -29,6 +29,12 @@ slack channel.
 
 [location]: /events/2023/kcseu/location/
 
+### Recordings
+
+This event has passed. Find materials here:
+
+- [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720307711329)
+
 ### Call for Papers
 
 A [CFP] for sessions will be open through Friday, March 31st.
