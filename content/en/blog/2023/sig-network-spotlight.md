@@ -56,11 +56,11 @@ Kubernetes users and workloads. The [charter][net-charter] is a pretty good
 indication of our scope, but I can add some additional highlights on some of our
 current areas of focus (this is a non-exhaustive list of sub-projects):
 
-**kube-proxy & KPNG**
+_**kube-proxy & KPNG**_
 
-Those familiar with Kubernetes will know the `Service` API, which enables
-exposing a group of `Pods` over a network. The current standard implementation
-of `Service` is known as `kube-proxy`, but what may be unfamiliar to people is
+Those familiar with Kubernetes will know the Service API, which enables
+exposing a group of pods over a network. The current standard implementation
+of Service is known as `kube-proxy`, but what may be unfamiliar to people is
 that there are a growing number of disparate alternative implementations on the
 rise in recent years. To try and give provisions to these implementations (and
 also provide some areas of alignment so that implementations do not become too
@@ -74,20 +74,20 @@ interesting to you, please join us in the KPNG [community meetings][meet] and
 [meet]:https://github.com/kubernetes/community/blob/master/sig-network/README.md#meetings
 [kslack]:https://kubernetes.slack.com/
 
-**Multi-Network**
+_**Multi-Network**_
 
 Today one of the primary requirements for Kubernetes networking is to achieve
-connectivity between `Pods` in a cluster, satisfying a large number of
+connectivity between pods in a cluster, satisfying a large number of
 Kubernetes end-users. However, some use cases require isolated networks and
 special interfaces for performance-oriented needs (e.g. `AF_XDP`, `memif`,
 `SR-IOV`). There's a growing need for special networking configurations in
 Kubernetes in general. The Multi-Network project exists to improve the
-management of multiple different networks for `Pods`: anyone interested in some
-of the lower-level details of `Pod` networking (or anyone having relevant use
+management of multiple different networks for pods: anyone interested in some
+of the lower-level details of pod networking (or anyone having relevant use
 cases) can join us in the Multi-Network community meetings and
 `#sig-network-multi-network` on Kubernetes Slack.
 
-**Network Policy**
+_**Network Policy**_
 
 The `NetworkPolicy` API sub-group was formed to address network security beyond
 the well-known version 1 of the `NetworkPolicy` resource. We've also been
@@ -98,30 +98,27 @@ particularly interested in security and CNI, please feel free to join our
 community meetings and the `#sig-network-policy-api` channel on Kubernetes
 Slack.
 
-**Gateway API**
+_**Gateway API**_
 
-If you're specially interested in **ingress** or **mesh** networking the Gateway
-API may be a sub-project you would enjoy. In Gateway API , we're actively
-developing the successor to the illustrious `Ingress` API, which includes a
-`Gateway` resource which defines the addresses and listeners of the gateway and
+If you're specially interested in **ingress** or **mesh** networking the [Gateway
+API](https://gateway-api.sigs.k8s.io/) may be a sub-project you would enjoy. In Gateway API , we're actively
+developing the successor to the illustrious Ingress API, which includes a
+Gateway resource which defines the addresses and listeners of the gateway and
 various routing types (e.g. `HTTPRoute`, `GRPCRoute`, `TLSRoute`, `TCPRoute`,
-`UDPRoute`, etc.) that attach to `Gateways`. We also have an initiative within
+`UDPRoute`, etc.) that attach to Gateways. We also have an initiative within
 this project called GAMMA, geared towards using Gateway API resources in a mesh
 network context. There are some up-and-coming side projects within Gateway API
 as well, including `ingress2gateway` which is a tool for compiling existing
-`Ingress` resources to equivalent Gateway API resources and `Blixt`, a Layer4
+Ingress objects to equivalent Gateway API resources, and Blixt, a Layer4
 implementation of Gateway API using Rust/eBPF for the data plane, intended as a
 testing and reference implementation. If this sounds interesting, we would love
 to have readers join us in our Gateway API community meetings and
 `#sig-network-gateway-api` on Kubernetes Slack.
 
-
-
 **Sujay**: Couldn’t agree more! That was a very informative description, thanks
 for highlighting them so nicely. As you have already mentioned about the SIG
 channels to get involved, would you like to add anything about where people like
 beginners can jump in and contribute?
-
 
 **Shane**: For help getting started [Kubernetes Slack][kslack] is a great place
 to talk to community members and includes several `#sig-network-<project>`
@@ -139,10 +136,10 @@ the individual what they _want_ to learn. However, if you just intend to learn
 as much as you possibly can about networking, SIG Network is a great place to
 join in and grow your knowledge.
 
-If you've ever wondered how Kubernetes `Service` API works or wanted to
+If you've ever wondered how Kubernetes Service API works or wanted to
 implement an ingress controller, this is a great place to join in. If you wanted
 to dig down deep into the inner workings of CNI, or how the network interfaces
-at the `Pod` level are configured, you can do that here as well.
+at the pod level are configured, you can do that here as well.
 
 We have an awesome and diverse community of people from just about every kind of
 background you can imagine. This is a great place to share ideas and raise
