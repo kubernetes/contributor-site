@@ -8,7 +8,7 @@ author: "Sujay Dey"
 ---
 
 Networking is one of the core pillars of Kubernetes, and the Special Interest
-Group for Networking(SIG Network) is responsible for developing and maintaining
+Group for Networking (SIG Network) is responsible for developing and maintaining
 the networking features of Kubernetes. It covers all aspects to ensure
 Kubernetes provides a reliable and scalable network infrastructure for
 containerized applications.
@@ -54,9 +54,9 @@ please highlight its scope and current focus areas?
 components, interfaces, and APIs which expose networking capabilities to
 Kubernetes users and workloads. The [charter][net-charter] is a pretty good
 indication of our scope, but I can add some additional highlights on some of our
-current areas of focus (this is a non-exaustive list of sub-projects):
+current areas of focus (this is a non-exhaustive list of sub-projects):
 
-**KubeProxy/KPNG**
+**kube-proxy & KPNG**
 
 Those familiar with Kubernetes will know the `Service` API, which enables
 exposing a group of `Pods` over a network. The current standard implementation
