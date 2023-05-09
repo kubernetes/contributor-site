@@ -33,6 +33,7 @@ slack channel.
 
 This event has passed. Find materials here:
 
+- [recordings](https://youtube.com/playlist?list=PL69nYSiGNLP06HYgwMWJJZmJHreLCrd21)
 - [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720307711329)
 
 ### Call for Papers
