@@ -17,8 +17,7 @@ Resource calculations and scoring of nodes is currently done quite nicely and wi
 
 ### Ctrl-C, Ctrl-V
 
-> **Warning**
-> The simplest and probably most frowned upon code-reuse practice is of course copy-paste. Due to well known issues with copy-paste code, this approach can't be recommended, and is mentioned here only as an example of what not to do. Copy-pasting won't be any faster anyway, as you will see below.
+The simplest and probably most frowned upon code-reuse practice is of course copy-paste. Due to well known issues with copy-paste code, this approach can't be recommended, and is mentioned here only as an example of what not to do. Copy-pasting won't be any faster anyway, as you will see below.
 
 ### Plugin composition
 
@@ -81,7 +80,7 @@ Going through the exercise of building a new plugin via composition and realizin
 These questions had the author thinking about finding a better solution than just composition. Also the documentation of the [framework.CycleState](https://github.com/kubernetes/kubernetes/blob/2f977fd8c400971deed365dcc437e519bce475f0/pkg/scheduler/framework/cycle_state.go#L42-L47) was looking rather tempting.
 
 > **Warning**
-> The following section is speculative and based on proof-of-concepting by the author. It doesn't represent what you can do with the Kubernetes scheduler at the time of writing. Some day the concept below might be part of Kubernetes, should the PoC develop into a successful KEP. For now, this is merely a scheduling-sig discussion item which shows the potential of the CycleState.
+> The following section is speculative and based on proof-of-concepting by the author. It doesn't represent what you can do with the Kubernetes scheduler at the time of writing. Some day the concept below might be part of Kubernetes, should the PoC develop into a successful KEP. For now, this is merely a sig-scheduling discussion item which shows the potential of the CycleState.
 
 Ideally, a new plugin could ask for getting the scores from another plugin, or multiple plugins, without rerunning them. The tricky thing is, that plugins run highly parallel in order to execute faster. Thus proper synchronization would be needed. Also it would be ideal, if no changes to existing plugins would be required, and the framework would provide for plugins in need of reusing other plugins' results.
 
@@ -104,7 +103,45 @@ However, the real use-case has a much more simplistic graph:
 
 {{< figure src="diagram2.svg" alt="Plugins NodeResourcesFit and TopologyScorer with connection NodeResourcesFit->TopologyScorer">}}
 
-But even such a simple graph can reveal a lot of potential over simple composition. Namely:
+As pseudo-code, the topology scoring would work like this, directly at `NormalizeScore` step. The `Score` step which runs before it can return zeros.
+
+```go
+// error handling omitted in this pseudo-code example
+func (f *TopologyScorer) NormalizeScore(ctx context.Context, cycleState *framework.CycleState,
+    p *v1.Pod, scores framework.NodeScoreList) *framework Status {
+	// fetch score channel from cycleState by configured piped plugin name as the key
+	c, _ := cycleState.Read(f.pipedPluginNameAsKey)
+	// type assert as ScoreChannel
+	s := c.(*frameworkruntime.ScoreChannel)
+	// receive scores from channel (blocks until the scores are ready)
+	inputScores := <-s.C
+
+	// calculate score sums over all nodes with the selected topology key and same value for that key.
+	// One sum for each topologyKey=value pair of the one topology key. Stored in map[topologyValue]int64.
+	topologyScoreSums, _ := sumTopologyScores(f.frameworkHandle, inputScores, f.topologyKey)
+
+	// from all the score sums for topologyKey=value pairs (for one topology key)
+	// find minimum and maximum topology score sums (worst and best topology)
+	minTopologyScoreSum, maxTopologyScoreSum := getMinAndMax(topologyScoreSums)
+
+	// go through the given nodes and output normalized scores based on which topology
+	// any given node belongs to
+	for i := range scores {
+		nodeName = scores[i].Name
+		// based on the topology where the node belongs, fetch its topology score sum
+		currentNodeTopologyScoreSum = getTopologyScoreSumOfNode(nodeName, topologyScoreSums,
+		    f.frameworkHandle, f.topologyKey)
+		// calculate score between 0-100 linearly based on distance from min and max
+		scores[i].Score := linearize(currentNodeTopologyScoreSum, minTopologyScoreSum, maxTopologyScoreSum)
+	}
+
+	return nil
+}
+```
+
+With `NodeResourcesFit` as the piped plugin, such a `TopologyScorer` could give scores based on overall resource status of the rack the nodes belong to, assuming a rack topology key would be used in configuring the `TopologyScorer`.
+
+Even such a simple graph can reveal a lot of potential over simple composition. Namely:
  * It doesn't run node resource scoring twice
  * It doesn't require configuring node resource scoring for two plugins
  * It only depends on the reused plugin being able to provide node scores. Internal changes to the reused plugin won't break the plugin which reuses the results, as long as scores are created.
