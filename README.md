@@ -46,6 +46,15 @@ To ensure you can view the site with externally sourced content, run
 `make container-gen-content` before previewing the site by with
 `make container-server`.
 
+**NOTE to Apple Silicon Mac Users**
+
+Before proceeding with the build steps, please ensure that you set the
+`DOCKER_DEFAULT_PLATFORM` environment variable to `linux/amd64` by using the 
+following command: 
+
+```
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+```
 
 ### Natively
 
