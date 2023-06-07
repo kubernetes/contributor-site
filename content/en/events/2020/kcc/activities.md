@@ -199,7 +199,7 @@ able to head to “The Tower”.
 
 **Reporting:** Reporting can be done via the “Roster” tab in game. Generally
 speaking chat is done via third party tools so other than player usernames you
-don’t typically chat with other players. If there is an issue with a Kuberntes
+don’t typically chat with other players. If there is an issue with a Kubernetes
 community member, please use the `/report` command or contact the [CoCC directly].
 
 **Guides / New Player Coaches:** Jorge Castro (PC), Allison Downey(PC),and Wayne
