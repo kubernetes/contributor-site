@@ -19,9 +19,7 @@ Chicago, Illinois, 60616-9985, USA<br>
 
 ### Contributor Social Location
 
-TODO: Update the link and address below:
-
-The Contributor [Social] will be held at [...]
+The Contributor [Social] will be held at TBD.
 
 **Address**<br>
 

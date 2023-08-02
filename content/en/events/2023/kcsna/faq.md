@@ -54,7 +54,7 @@ engaged with the project.
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
 docs for more information. If your application to join is pending, please
-contact us at community@kubernetes.io about registering.
+contact us at summit-team@kubernetes.io about registering.
 
 Kubernetes Orgs:
 
@@ -116,4 +116,4 @@ You can [email us] or pop into the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">
 #contributor-summit</a> Slack channel to ask a question. :)
 
-[email us]: mailto:community@kubernetes.io
+[email us]: mailto:summit-team@kubernetes.io

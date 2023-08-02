@@ -3,9 +3,8 @@ title: Contributor Social
 type: docs
 weight: 5
 ---
-TODO: update location and URL below: 
-Join us at <a href="https://strand-zuid.nl/en/events/" rel="noopener noreferrer" target="_blank">Strandzuid</a> 
-from 6pm to 9pm for an evening celebration after the Contributor Summit on April 18th!
+Join us at TBD
+from 6pm to 9pm for an evening celebration after the Contributor Summit on November 6th!
 
 There will be food, fresh air, puzzles, and more!
 
@@ -15,8 +14,7 @@ There will be food, fresh air, puzzles, and more!
 
 ### Location
 
-Europaplein 22, 1078 GZ<br>
-Amsterdam, Netherlands<br>
+TBD
 
 ## Bringing A Guest
 
@@ -27,4 +25,4 @@ them.
 
 **NOTE:** Guests must adhere to all KubeCon health & safety requirements.
 
-To bring a guest, please email community@kubernetes.io with their information.
+To bring a guest, please email summit-team@kubernetes.io with their information.

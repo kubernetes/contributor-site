@@ -23,7 +23,7 @@ by a [Contributor Social](/events/2023/kcsna/social) with games and refreshments
 
 This page will be updated as more activities are scheduled. If you have
 questions or comments, please reach out to the Summit Staff by emailing
-community@kubernetes.io or asking in the
+summit-team@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
@@ -36,7 +36,6 @@ The links to recordings and photos will be published after the event.
 
 ### Call for Papers
 
-TODO: update the date and CFP link below:
 A [CFP] for sessions will be open through Friday, October 6th.
 
 [CFP]: https://docs.google.com/forms/d/1z7TnjixN9fiuQulF-EU9rw7_U9I-I8HNOv28IAFsHZc/viewform
@@ -49,4 +48,4 @@ please reach out to the [CNCF event staff].
 [Code of Conduct]: /community/code-of-conduct
 [CNCF event staff]: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/attend/code-of-conduct/#unacceptable-behavior
 
-[email us]: mailto:community@kubernetes.io
+[email us]: mailto:summit-team@kubernetes.io

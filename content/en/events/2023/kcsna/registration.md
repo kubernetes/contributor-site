@@ -10,7 +10,7 @@ sponsored attendees.
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
 docs for more information. If your application to join is pending, please
-contact us at community@kubernetes.io about registering.
+contact us at summit-team@kubernetes.io about registering.
 
 
 
@@ -18,7 +18,6 @@ contact us at community@kubernetes.io about registering.
 
 If you acknowledge the above, please go ahead and click below to register:
 
-TODO: update the registration link below:
 
 <h3>
 <a href="https://cvent.me/rQmr4Q" rel="noopener noreferrer" target="_blank">Register Here</a>

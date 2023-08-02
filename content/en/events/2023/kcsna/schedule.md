@@ -29,7 +29,6 @@ If you contribute to the docs -- and who doesn't -- or you want to learn to
 do it better, join them.
 
 ## CFP
-TODO: update the link and the date for CFP deadline
 If you would like to submit a formal session, please use the [CFP Form](https://docs.google.com/forms/d/1z7TnjixN9fiuQulF-EU9rw7_U9I-I8HNOv28IAFsHZc/viewform).
 This form will be open through Friday, October 6th, and covers presentation, workshop, and collaboration style sessions.  
 Unconference sessions should use the GitHub issue referenced above.
