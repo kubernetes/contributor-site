@@ -91,7 +91,7 @@ out community wide messages about it once the details are available.
 ### Will there be a doc sprint?
 
 Yes, SIG-Docs plans to hold a Doc Sprint at the Summit, which will run for the
-full day from 11am to 5pm.
+full day from 11am to 4pm.
 
 ### Will there be a New Contributor Workshop?
 
