@@ -70,7 +70,7 @@ Kubernetes Orgs:
 
 ### What is a sponsored attendee?
 
-If you are a SIG lead or subproject owner and there is someone that is not yet
+If you are a SIG lead or subproject lead and there is someone that is not yet
 an org member or from another project that might take part in a panel,
 SIG face-to-face meeting etc, you can sponsor them to attend the summit.
 Please [email us] to make arrangements.
