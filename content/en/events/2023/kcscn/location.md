@@ -5,7 +5,7 @@ weight: 4
 ---
 
 
-### RAI Amsterdam
+### Shanghai Convention & Exhibition Center Of International Sourcing
 
 Registration and badge pick-up will be available at the
 <a href="https://en.shcec.com.cn/" rel="noopener noreferrer" target="_blank">Shanghai Convention & Exhibition Center Of International Sourcing</a>.

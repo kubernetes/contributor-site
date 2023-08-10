@@ -11,7 +11,7 @@ description: >
 ### About
 
 The China Summit will be a lightweight event taking place on September 26th
-in Shanghai, The China alongside 
+in Shanghai, China alongside 
 <a href="https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/" rel="noopener noreferrer" target="_blank">KubeCon + CloudNativeCon + Open Source Summit</a>
 at the
 <a href="https://en.shcec.com.cn/" rel="noopener noreferrer" target="_blank">Shanghai Convention & Exhibition Center Of International Sourcing</a>.
@@ -30,14 +30,14 @@ slack channel.
 
 ### Recordings
 
-This event is in plan. Find materials here later:
+This event is in planning. Find materials here later:
 
 - recordings
 - photos
 
 ### Call for Papers
 
-A [CFP] for sessions will be open through Monday, August 14th.
+A [CFP] for sessions will be open from Monday, August 14th.
 
 [CFP]:  TODO-Add-link
 

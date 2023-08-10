@@ -4,8 +4,7 @@ type: docs
 weight: 2
 ---
 
-Registration is open to all members of one of the [Kubernetes orgs] or
-developer that is planning to contirbute to Kubernetes.
+Registration is open to all members of one of the [Kubernetes orgs].
 
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
