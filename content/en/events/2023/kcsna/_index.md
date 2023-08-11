@@ -10,7 +10,7 @@ description: >
 
 ### About
 
-The North America Summit will be a lightweight event taking place on November 6th
+The North America summit will be a full contributor summit event taking place on November 6th
 in Chicago, Illinois alongside 
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon</a>
 at the
