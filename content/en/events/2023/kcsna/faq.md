@@ -83,10 +83,8 @@ workshop or panel please post your idea to the unconference issue or the CFP
 form once they become available.  
 
 ### My SIG wants to meet at the Summit
-
-We do not know yet if we will be able to request additional space outside of
-the colo event space on Tuesday, November 7th. We will update this page and send
-out community wide messages about it once the details are available.
+We will have some space for SIG/WG meetings during the summit, please submit
+your request via the CFP form once it becomes available.
 
 ### Will there be a doc sprint?
 
