@@ -4,8 +4,7 @@ type: docs
 weight: 2
 ---
 
-Registration is open to all members of one of the [Kubernetes orgs] or 
-sponsored attendees.
+Registration is open to all members of one of the [Kubernetes orgs], Etcd contributors with 50 or more contributions, or sponsored attendees.
 
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
