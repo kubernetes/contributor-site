@@ -36,9 +36,8 @@ The links to recordings and photos will be published after the event.
 
 ### Call for Papers
 
-A [CFP] for sessions will be open through Friday, October 6th.
+The CFP will be launching soon, check back here for more info!
 
-[CFP]: https://docs.google.com/forms/d/1z7TnjixN9fiuQulF-EU9rw7_U9I-I8HNOv28IAFsHZc/viewform
 
 ### Code of Conduct
 
