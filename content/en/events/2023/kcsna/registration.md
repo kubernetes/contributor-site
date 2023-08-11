@@ -19,9 +19,7 @@ contact us at summit-team@kubernetes.io about registering.
 If you acknowledge the above, please go ahead and click below to register:
 
 
-<h3>
-<a href="https://cvent.me/rQmr4Q" rel="noopener noreferrer" target="_blank">Register Here</a>
-</h3>
+**Registration launching soon!**
 
 [Kubernetes orgs]: /events/2023/kcsna/faq/#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person
 [org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
