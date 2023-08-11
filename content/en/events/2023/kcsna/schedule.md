@@ -20,7 +20,7 @@ in the morning, and then hold sessions in the afternoon, after the Steering AMA.
 This is the format used at many [DevOps Days](https://devopsdays.org/open-space-format/), and helps us accommodate changing 
 needs and unpredictable travel schedules.
 
-If you have a topic in mind, please add it to the [GitHub Issue](https://github.com/kubernetes/community/issues/7157).
+If you have a topic in mind, please check back soon - we'll launch a tracking issue for submissions closer to the event.
 
 ## Doc Sprint
 
