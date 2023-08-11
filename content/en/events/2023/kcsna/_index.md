@@ -16,10 +16,10 @@ in Chicago, Illinois alongside
 at the
 <a href="https://www.hyatt.com/en-US/hotel/illinois/hyatt-regency-mccormick-place/chimc" rel="noopener noreferrer" target="_blank">Hyatt Regency McCormick Place</a>.
 
-The Summit will be a loosely organized event with a [relaxed schedule](/events/2023/kcsna/schedule),
- including a Steering AMA, several hours of Unconference Sessions, 
-potential SIG and WG meetings, and a Documentation Sprint.  This will be followed
-by a [Contributor Social](/events/2023/kcsna/social) with games and refreshments.
+The Summit will be a healthy mix of [submitted talks](/events/2023/kcsna/schedule/#cfp),
+several hours of unconference sessions, potential SIG and WG meetings, and a documentation
+sprint.  This will be followed by a [Contributor Social](/events/2023/kcsna/social) with games
+and refreshments.
 
 This page will be updated as more activities are scheduled. If you have
 questions or comments, please reach out to the Summit Staff by emailing
