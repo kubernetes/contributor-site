@@ -50,6 +50,9 @@ offering more opportunities to those who have been contributing to the community
 We will strive to ensure fairness and inclusivity in the event to the best of our abilities.
 Thank you for your understanding and support.
 
+This year etcd org members, or those who contribute a lot to etcd, are also eligible for priority registration,
+as [etcd is expected to soon become a Kubernetes SIG](https://github.com/kubernetes/community/pull/7372).
+
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
 docs for more information. If your application to join is pending, please
@@ -62,6 +65,7 @@ Kubernetes Orgs:
 <li><a href="https://github.com/kubernetes-client" rel="noopener noreferrer" target="_blank">kubernetes-client</a></li>
 <li><a href="https://github.com/kubernetes-csi rel="noopener noreferrer" target="_blank">kubernetes-csi</a></li>
 <li><a href="https://github.com/kubernetes-sigs" rel="noopener noreferrer" target="_blank">kubernetes-sigs</a></li>
+<li><a href="https://github.com/etcd-io" rel="noopener noreferrer" target="_blank">etcd-io</a></li>
 </ul>
 
 [org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
@@ -90,4 +94,4 @@ You can [email us] or pop into the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">
 #contributor-summit</a> Slack channel to ask a question. :)
 
-[email us]: mailto:community@kubernetes.io
+[email us]: mailto:summit-staff@kubernetes.io

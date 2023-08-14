@@ -22,7 +22,7 @@ potential SIG and WG group meetings.
 
 This page will be updated as more activities are scheduled. If you have
 questions or comments, please reach out to the Summit Staff by emailing
-community@kubernetes.io or asking in the
+summit-staff@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
@@ -37,9 +37,7 @@ This event is in planning. Find materials here later:
 
 ### Call for Papers
 
-A [CFP] for sessions will be open from Monday, August 14th.
-
-[CFP]:  TODO-Add-link
+The CFP will go live soon!
 
 ### Code of Conduct
 
@@ -47,6 +45,5 @@ Attendees agree to abide by Kubernetes [Code of Conduct]. To report an incident
 please reach out to the [CNCF event staff].
 
 [Code of Conduct]: /community/code-of-conduct
-[CNCF event staff]: https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/contact-us/
+[CNCF event staff]: https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/attend/code-of-conduct/#if-you-witness-unacceptable-behavior-cn
 
-[email us]: mailto:community@kubernetes.io or mailto:community@cncf.io

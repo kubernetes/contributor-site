@@ -9,7 +9,7 @@ Registration is open to all members of one of the [Kubernetes orgs].
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
 docs for more information. If your application to join is pending, please
-contact us at community@kubernetes.io about registering.
+contact us at summit-staff@kubernetes.io about registering.
 
 **NOTE:** The summit adheres to KubeCon’s [Health & Safety Guidelines]
 
