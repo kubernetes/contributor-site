@@ -35,6 +35,7 @@ This event has passed. Find materials here:
 
 - [recordings](https://youtube.com/playlist?list=PL69nYSiGNLP06HYgwMWJJZmJHreLCrd21)
 - [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720307711329)
+- [notes](https://drive.google.com/drive/u/0/folders/1f-GChvcrbGW4TOOz2RTV6wRKOAyJRO-j)
 
 ### Call for Papers
 

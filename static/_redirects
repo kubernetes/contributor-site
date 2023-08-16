@@ -35,6 +35,4 @@
 /services         /resources/services 301
 /requests         /resources/services 301
 
-/summit           /events/2023/kcseu  302
-/summit/unconf    https://github.com/kubernetes/community/issues/7157 302
-/summit/notes     https://drive.google.com/drive/u/0/folders/1f-GChvcrbGW4TOOz2RTV6wRKOAyJRO-j  302
+/summit           /events/2023/kcsna  302
