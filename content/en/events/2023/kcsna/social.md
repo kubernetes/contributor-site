@@ -3,7 +3,7 @@ title: Contributor Social
 type: docs
 weight: 5
 ---
-Join us at TBD
+Join us for the Contributor Social
 from 6pm to 9pm for an evening celebration after the Contributor Summit on November 6th!
 
 There will be food, fresh air, puzzles, and more!
@@ -14,7 +14,7 @@ There will be food, fresh air, puzzles, and more!
 
 ### Location
 
-TBD
+TBD, check back soon!
 
 ## Bringing A Guest
 
