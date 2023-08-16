@@ -10,7 +10,7 @@ weight: 3
 
 A [CFP] for sessions is open through Friday, September 15th.
 
-[CFP]: https://docs.google.com/forms/d/1snd7NAteizul1qQFs5iWewdQzSiGY0GEXMhhlAKSzfs/edit
+[CFP]: https://forms.gle/htQSHpot9rp1csDz8
 
 ## Steering AMA
 
