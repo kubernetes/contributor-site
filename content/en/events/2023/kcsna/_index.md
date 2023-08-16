@@ -11,7 +11,7 @@ description: >
 ### About
 
 The North America summit will be a full contributor summit event taking place on November 6th
-in Chicago, Illinois alongside 
+in Chicago, Illinois alongside
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon</a>
 at the
 <a href="https://www.hyatt.com/en-US/hotel/illinois/hyatt-regency-mccormick-place/chimc" rel="noopener noreferrer" target="_blank">Hyatt Regency McCormick Place</a>.
@@ -34,11 +34,11 @@ slack channel.
 The links to recordings and photos will be published after the event.
 
 
-### Call for Papers
+### Call for Session Proposals
 
 A [CFP] for sessions will be open through Friday, September 15th.
 
-[CFP]: https://docs.google.com/forms/d/1snd7NAteizul1qQFs5iWewdQzSiGY0GEXMhhlAKSzfs/edit
+[CFP]: https://forms.gle/htQSHpot9rp1csDz8
 
 ### Code of Conduct
 
