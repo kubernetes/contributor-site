@@ -7,6 +7,7 @@ RUN apk add --no-cache \
     curl \
     git \
     grep \
+    gcompat \
     libc6-compat \
     rsync \
     sed \
