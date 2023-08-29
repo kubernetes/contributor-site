@@ -37,7 +37,9 @@ This event is in planning. Find materials here later:
 
 ### Call for Papers
 
-The CFP will go live soon!
+A [CFP] for sessions is open through Sunday, September 10th.
+
+[CFP]: https://wj.qq.com/s2/12996651/2260/
 
 ### Code of Conduct
 
