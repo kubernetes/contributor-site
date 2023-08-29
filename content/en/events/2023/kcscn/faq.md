@@ -94,4 +94,4 @@ You can [email us] or pop into the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">
 #contributor-summit</a> Slack channel to ask a question. :)
 
-[email us]: mailto:summit-staff@kubernetes.io
+[email us]: mailto:summit-team@kubernetes.io

@@ -22,7 +22,7 @@ potential SIG and WG group meetings.
 
 This page will be updated as more activities are scheduled. If you have
 questions or comments, please reach out to the Summit Staff by emailing
-summit-staff@kubernetes.io or asking in the
+summit-team@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
 slack channel.
 
