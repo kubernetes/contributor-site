@@ -9,14 +9,14 @@ Registration is open to all members of one of the [Kubernetes orgs].
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
 docs for more information. If your application to join is pending, please
-contact us at summit-staff@kubernetes.io about registering.
+contact us at summit-team@kubernetes.io about registering.
 
 **NOTE:** The summit adheres to KubeCon’s [Health & Safety Guidelines]
 
 If you acknowledge the above, please go ahead and click below to register:
 
 <h3>
-<a href="TODO" rel="noopener noreferrer" target="_blank">Register Here</a>
+<a href="https://wj.qq.com/s2/12996651/2260/" rel="noopener noreferrer" target="_blank">Register Here</a>
 </h3>
 
 [Kubernetes orgs]: /events/2023/kcscn/faq/#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person

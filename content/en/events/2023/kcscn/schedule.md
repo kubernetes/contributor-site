@@ -8,7 +8,9 @@ weight: 3
 
 ## CFP
 
-Check back later! The CFP coming soon!
+A [CFP] for sessions is open through Sunday, September 10th.
+
+[CFP]: https://wj.qq.com/s2/12996651/2260/
 
 ## Unconference
 
