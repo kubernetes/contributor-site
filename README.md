@@ -7,7 +7,7 @@ https://kubernetes.dev/ (served via Netlify).
 ## Site content
 
 The content for the Contributor Site is sourced from multiple locations.
-Content managed within this repository is generated from generated from [Markdown]
+Content managed within this repository is generated from [Markdown]
 found within the [`content`][ct] directory. To update the site's content,
 make changes to the Markdown sources and [submit a pull request][pr] to this
 repository.
