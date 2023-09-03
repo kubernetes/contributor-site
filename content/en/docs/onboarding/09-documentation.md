@@ -66,14 +66,12 @@ Each SIG is in control of some aspect of Kubernetes development, infrastructure,
 
 # Is the documentation available in other languages?
 
-Είσαι τυχερός που τα έγγραφα είναι διαθέσιμα στα Αγγλικά!*
+You are lucky that the documents are available in English!
 
 Kubernetes is used by developers and DevOps people _all over the world._ It is important that the documentation is available in other languages.
 
 * Can you write documentation in a language that isn't English? We would love your help!
 * Access user-facing documentation in other languages [from the documentation pages](https://kubernetes.io/docs/home/).
-
-<small>* Translation: "You're lucky the documentation is available in English!"</small>
 
 ---
 
