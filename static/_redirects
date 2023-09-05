@@ -37,3 +37,7 @@
 /requests         /resources/services 301
 
 /summit           /events/2023/kcsna  302
+/summit/reg       https://cvent.me/qRPey3 302
+/summit/cfp       https://forms.gle/htQSHpot9rp1csDz8 302
+# /summit/unconf    LINK UNCONFERENCE GITHUB ISSUE HERE 302
+# /summit/notes     LINK GOOGLE DRIVE NOTES FOLDER HERE 302
