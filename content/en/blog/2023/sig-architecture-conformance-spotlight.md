@@ -11,7 +11,7 @@ that will cover the different subprojects. We start with the SIG
 Architecture: Conformance subproject_
 
 In this [SIG
-Architecture(https://github.com/kubernetes/community/blob/master/sig-architecture/README.md)
+Architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md)
 spotlight, we talked with [Riaan
 Kleinhans](https://github.com/Riaankl) (ii-Team), Lead for the
 [Conformance
