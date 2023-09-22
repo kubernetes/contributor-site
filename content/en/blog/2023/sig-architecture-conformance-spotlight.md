@@ -12,8 +12,12 @@ _This is the first interview of a SIG Architecture Spotlight series
 that will cover the different subprojects. We start with the SIG
 Architecture: Conformance subproject_
 
-In this SIG Architecture spotlight we talked with Riaan Kleinhans
-(ii-Team), lead for the Conformance sub-project.
+In this [SIG
+Architecture(https://github.com/kubernetes/community/blob/master/sig-architecture/README.md)
+spotlight, we talked with [Riaan
+Kleinhans](https://github.com/Riaankl) (ii-Team), Lead for the
+[Conformance
+sub-project](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#conformance-definition-1).
 
 ## About SIG Architecture and the Conformance subproject
 
@@ -21,7 +25,7 @@ In this SIG Architecture spotlight we talked with Riaan Kleinhans
 bit about yourself, your role and how you got involved in Kubernetes.
 
 **Riaan Kleinhans (RK)**: Hi! My name is Riaan Kleinhans and I live in
-South Africa. I am the Project manager for the ii-Team (ii.nz) in New
+South Africa. I am the Project manager for the [ii-Team](ii.nz) in New
 Zealand. When I joined ii the plan was to move to New Zealand in April
 2020 and then Covid happened. Fortunately, being a flexible and
 dynamic team we were able to make it work remotely and in very
@@ -29,22 +33,23 @@ different time zones.
 
 The ii team have been tasked with managing the Kubernetes Conformance
 testing technical debt and writing tests to clear the technical
-debt. I stepped into the role as project manager to be the link
+debt. I stepped into the role of project manager to be the link
 between monitoring, test writing and the community. Through that work
-I had the privilege of meeting Dan Kohn in those first months, his
-enthusiasm about the work we were doing was a great inspiration.
+I had the privilege of meeting [Dan Kohn](https://github.com/dankohn)
+in those first months, his enthusiasm about the work we were doing was
+a great inspiration.
 
 **FSM**: Thank you - so, your involvement in SIG Architecture started
 because of the conformance work?
 
 **RK**: SIG Architecture is the home for the Kubernetes Conformance
 subproject. Initially, most of my interactions were directly with SIG
-Architecture through the Conformance sub-project . However, as we
+Architecture through the Conformance sub-project. However, as we
 began organizing the work by SIG, we started engaging directly with
 each individual SIG. These engagements with the SIGs that own the
 untested APIs have helped us accelerate our work.
 
-**FSM**: As an introduction, how would you describe the main goals and
+**FSM**: How would you describe the main goals and
 areas of intervention of the Conformance sub-project?
 
 **RM**: The Kubernetes Conformance sub-project focuses on guaranteeing
@@ -54,15 +59,16 @@ main goals include assuring compatibility across different Kubernetes
 implementations, verifying adherence to the API specification,
 supporting the ecosystem by encouraging conformance certification, and
 fostering collaboration within the Kubernetes community. By providing
-standardized tests and promoting consistent behavior and
+standardised tests and promoting consistent behaviour and
 functionality, the Conformance subproject ensures a reliable and
 compatible Kubernetes ecosystem for developers and users alike.
 
 ## More on the Conformance Test Suite
 
-**FSM**: A part of providing those standardized tests is, I belienve,
-the Conformance Test Suite. Could you explain what it is and its
-importance?
+**FSM**: A part of providing those standardised tests is, I believe,
+the [Conformance Test
+Suite](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/conformance-tests.md). Could
+you explain what it is and its importance?
 
 **RK**: The Kubernetes Conformance Test Suite checks if Kubernetes
 distributions meet the project's specifications, ensuring
@@ -71,7 +77,7 @@ features like APIs, networking, storage, scheduling, and
 security. Passing the tests confirms proper implementation and
 promotes a consistent and portable container orchestration platform.
 
-**FSM**: Right, the tests are important in the way they defines the
+**FSM**: Right, the tests are important in the way they define the
 minimum features that any Kubernetes cluster must support. Could you
 describe the process around determining which features are considered
 for inclusion? Is there any tension between a more minimal approach,
@@ -97,14 +103,14 @@ Ensuring transparency and incorporating community input regarding the
 eligibility or ineligibility of endpoints is of utmost importance to
 SIG Architecture.
 
-**FSM**: Writing tests for new features is something that is not
-universally done, not without some kind of enforcement. How do you see
-the evolution of this in Kubernetes? Was there a specific effort to
-improve the process in a way that required tests would be a
-first-class citizen, or was that never an issue?
+**FSM**: Writing tests for new features is something generally
+requires some kind of enforcement. How do you see the evolution of
+this in Kubernetes? Was there a specific effort to improve the process
+in a way that required tests would be a first-class citizen, or was
+that never an issue?
 
 **RK**: When discussions surrounding the Kubernetes conformance
-program began in 2018, only approximately 11% of endpoints were
+programme began in 2018, only approximately 11% of endpoints were
 covered by tests. At that time, the CNCF's governing board requested
 that if funding were to be provided for the work to cover missing
 conformance tests, the Kubernetes Community should adopt a policy of
@@ -112,12 +118,12 @@ not allowing new features to be added unless they include conformance
 tests for their stable APIs.
 
 SIG Architecture is responsible for stewarding this requirement, and
-APISnoop has proven to be an invaluable tool in this regard. Through
-automation, APISnoop generates a pull request every weekend to
-highlight any discrepancies in Conformance coverage. If any endpoints
-are promoted to General Availability without a conformance test, it
-would be promptly identified. This approach helps prevent the
-accumulation of new technical debt.
+[APISnoop](https://apisnoop.cncf.io/) has proven to be an invaluable
+tool in this regard. Through automation, APISnoop generates a pull
+request every weekend to highlight any discrepancies in Conformance
+coverage. If any endpoints are promoted to General Availability
+without a conformance test, it will be promptly identified. This
+approach helps prevent the accumulation of new technical debt.
 
 Additionally, there are plans in the near future to create a release
 informing job, which will add an additional layer to prevent any new
@@ -128,11 +134,12 @@ there. What are, in your opinion, the areas that, conformance-wise,
 still require some work to be done? In other words, what are the
 current priority areas marked for improvement?
 
-**RK**: We have reached the “100% Conformance Tested” milestone in release 1.27!
+**RK**: We have reached the “100% Conformance Tested” milestone in
+release 1.27!
 
-At that point the community took another look at all the endpoints
+At that point, the community took another look at all the endpoints
 that were listed as ineligible for conformance. The list was populated
-through community input over a number of years.  Several endpoints
+through community input over several years.  Several endpoints
 that were previously deemed ineligible for conformance have been
 identified and relocated to a new dedicated list, which is currently
 receiving focused attention for conformance test development. Again,
@@ -169,7 +176,7 @@ we are ready.
 **FSM**: That's very helpful, thank you. Any final comments you would
 like to share with our readers?
 
-**RK**: Conformance testing is a collaborative community endeavor that
+**RK**: Conformance testing is a collaborative community endeavour that
 involves extensive cooperation among SIGs. SIG Architecture has
 spearheaded the initiative and provided guidance. However, the
 progress of the work relies heavily on the support of all SIGs in
@@ -177,11 +184,12 @@ reviewing, enhancing, and endorsing the tests.
 
 I would like to extend my sincere appreciation to the ii team for
 their unwavering commitment to resolving technical debt over the
-years. In particular, Hippie Hacker's guidance and stewardship of the
-vision has been invaluable. Additionally, I want to give special
-recognition to Stephen Heywood for shouldering the majority of the
-test writing workload in recent releases, as well as to Zach
-Mandeville for his contributions to APISnoop.
+years. In particular, [Hippie Hacker](https://github.com/hh)'s
+guidance and stewardship of the vision has been
+invaluable. Additionally, I want to give special recognition to
+Stephen Heywood for shouldering the majority of the test writing
+workload in recent releases, as well as to Zach Mandeville for his
+contributions to APISnoop.
 
 **FSM**: Many thanks for your availability and insightful comments,
 I've personally learned quite a bit with it and I'm sure our readers
