@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on SIG Architecture: Conformance"
 slug: sig-architecture-conformance-spotlight-2023
-date: 2023-09-28
+date: 2023-10-05
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
@@ -29,13 +29,14 @@ Zealand. When I joined ii the plan was to move to New Zealand in April
 dynamic team we were able to make it work remotely and in very
 different time zones.
 
-The ii team have been tasked with managing the Kubernetes Conformance
-testing technical debt and writing tests to clear the technical
-debt. I stepped into the role of project manager to be the link
-between monitoring, test writing and the community. Through that work
-I had the privilege of meeting [Dan Kohn](https://github.com/dankohn)
-in those first months, his enthusiasm about the work we were doing was
-a great inspiration.
+The ii.nz team have been tasked with managing the Kubernetes
+Conformance testing technical debt and writing tests to clear the
+technical debt. I stepped into the role of project manager to be the
+link between monitoring, test writing and the community. Through that
+work I had the privilege of meeting the late [Dan
+Kohn](https://github.com/cncf/memorials/blob/main/dan-kohn.md) in
+those first months, his enthusiasm about the work we were doing was a
+great inspiration.
 
 **FSM**: Thank you - so, your involvement in SIG Architecture started
 because of the conformance work?
@@ -135,13 +136,15 @@ current priority areas marked for improvement?
 **RK**: We have reached the “100% Conformance Tested” milestone in
 release 1.27!
 
-At that point, the community took another look at all the endpoints
-that were listed as ineligible for conformance. The list was populated
-through community input over several years.  Several endpoints
-that were previously deemed ineligible for conformance have been
-identified and relocated to a new dedicated list, which is currently
-receiving focused attention for conformance test development. Again,
-that list can also be checked on apisnoop.cncf.io.
+At that point, the community took another look at [all the endpoints
+that were listed as ineligible for
+conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/pending_eligible_endpoints.yaml).
+The list was populated through community input over several years.
+Several endpoints that were previously deemed ineligible for
+conformance have been identified and relocated to a new dedicated
+list, which is currently receiving focused attention for conformance
+test development. Again, that list can also be checked on
+[apisnoop.cncf.io](apisnoop.cncf.io.).
 
 To ensure the avoidance of new technical debt in the conformance
 project, there are upcoming plans to establish a release informing job
