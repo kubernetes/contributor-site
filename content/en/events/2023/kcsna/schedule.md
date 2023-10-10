@@ -9,6 +9,7 @@ weight: 3
 ## CFP
 
 A [CFP] for sessions is open through Friday, September 15th.
+Please, expect the schedule to be announced on October 6th, 2023.
 
 [CFP]: https://forms.gle/htQSHpot9rp1csDz8
 
