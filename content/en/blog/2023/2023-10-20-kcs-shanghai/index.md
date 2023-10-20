@@ -10,7 +10,7 @@ On September 26, 2023, the first day of
 [KubeCon + CloudNativeCon + Open Source Summit China 2023](https://www.lfasiallc.com/kubecon-cloudnativecon-open-source-summit-china/),
 nearly 50 contributors gathered in Shanghai for the Kubernetes Contributor Summit.
 
-{{< figure src="/blog/2023/10/20/kcs-shanghai/kcs04.jpeg" alt="All participants in the 2023 Kubernetes Contributor Summit" caption="All participants in the 2023 Kubernetes Contributor Summit" >}}
+{{< figure src="/blog/2023/10/20/kcs-shanghai/kcs04.jpeg" alt="Kubernetes contributors posing for a group photo" caption="All participants in the 2023 Kubernetes Contributor Summit" >}}
 
 This marked the first in-person offline gathering held in China after three years of the pandemic.
 
@@ -27,7 +27,7 @@ European or American accents or if conversations were carried out in authentic C
 an atmosphere of comfort, joy, respect, and anticipation. Past contributions brought everyone closer, and
 mutual recognition and accomplishments made this offline gathering possible.
 
-{{< figure src="/blog/2023/10/20/kcs-shanghai/kcs06.jpeg" alt="Face to face meeting in Shanghai" caption="Face to face meeting in Shanghai" >}}
+{{< figure src="/blog/2023/10/20/kcs-shanghai/kcs06.jpeg" alt="A group of Kubernetes contributors sat around circular tables" caption="Face to face meeting in Shanghai" >}}
 
 The attending contributors were no longer just GitHub IDs; they transformed into vivid faces.
 From sitting together and capturing group photos to attempting to identify "Who is who,"
@@ -58,7 +58,7 @@ Next, there were three technical sharing sessions:
   future plans of SIG Scheduling. This SIG is responsible for designing, developing, and testing
   components related to Pod scheduling.
 
-{{< figure src="/blog/2023/10/20/kcs-shanghai/kcs03.jpeg" alt="A technical session about sig-multi-cluster" caption="A technical session about sig-multi-cluster" >}}
+{{< figure src="/blog/2023/10/20/kcs-shanghai/kcs03.jpeg" alt="A group of contributors sat at tables, listening to a presenter speaking at a podium" caption="A technical session about SIG Multicluster" >}}
 
 Following the sessions, a video featuring a call for contributors by [Sergey Kanzhelev](https://github.com/SergeyKanzhelev),
 the SIG-Node Chair, was played. The purpose was to encourage more contributors to join the Kubernetes community,
