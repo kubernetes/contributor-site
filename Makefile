@@ -83,7 +83,9 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 		--cap-drop=ALL \
 		--cap-drop=AUDIT_WRITE \
 		$(CONTAINER_IMAGE) \
-	hugo server \
+	bash -c 'cd /src && hack/gen-content.sh --in-container && \
+		 cd /tmp/src && \
+		hugo server \
 		--verbose \
 		--noBuildLock \
 		--bind 0.0.0.0 \
@@ -92,7 +94,7 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 		--disableFastRender \
 		--ignoreCache \
 		--destination /tmp/hugo \
-		--cleanDestinationDir
+		--cleanDestinationDir'
 
 clean: ## Cleans build artifacts.
 	rm -rf public/ resources/ _tmp/

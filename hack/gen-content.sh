@@ -18,18 +18,39 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly DEBUG=${DEBUG:-"false"}
-readonly REPO_ROOT="$(git rev-parse --show-toplevel)"
-readonly CONTENT_DIR="$REPO_ROOT/content/en"
-readonly TEMP_DIR="$REPO_ROOT/_tmp"
+# Switch to top of Git repository. May fail if current directory is not top
+# of Git repository and there are also ownership mismatches.
+if ! git -c safe.directory="$( pwd )" rev-parse --show-toplevel >/dev/null; then
+  printf "Could not find Git repository\n" 1>&2
+  exit 1
+fi
+
+readonly REPO_ROOT="$(git -c safe.directory="$( pwd )" rev-parse --show-toplevel)"
+readonly CONTENT_PATH="/content/en"
 readonly EXTERNAL_SOURCES="${EXTERNAL_SOURCES:-"$REPO_ROOT/external-sources"}"
 readonly HEADER_TMPLT="---\ntitle: __TITLE__\n---\n"
+readonly DEBUG=${DEBUG:-"false"}
+readonly CONTAINER_TMP_SRC="/tmp/src"
 
+# Allow container build to be readonly: copy to /tmp
+if [ $# -ne 0 ] && [ "$1" = --in-container ]; then
+  shift
+  readonly TEMP_DIR="/tmp/fetchcontent"
+  readonly IN_CONTAINER="true"
+else
+  readonly TEMP_DIR="$REPO_ROOT/_tmp"
+  readonly IN_CONTAINER="false"
+fi
+
+VERBOSE=""
+if [ "${DEBUG}" != false ]; then
+  VERBOSE='-v'
+fi
 
 cd "$REPO_ROOT"
 
 cleanup() {
-	rm -rf "$TEMP_DIR"
+  rm -rf "$TEMP_DIR"
 }
 
 if [[ "$DEBUG" == false ]]; then
@@ -44,14 +65,14 @@ fi
 # $2 - path to destination directory for cloned repo
 init_src() {
   if [[ ! -d "$2" ]]; then
-    echo "Cloning $1"
+    echo "Cloning $1" 1>&2
     git clone --depth=1 "$1" "$2"
   elif [[ $(git -C "$2" rev-parse --show-toplevel) == "$2" ]]; then
-    echo "Syncing with latest content from master."
+    echo "Syncing with latest content from master." 1>&2
     git -C "$2" checkout .
     git -C "$2" pull
   else
-    echo "Destination $2 already exists and is not a git repository."
+    echo "Destination $2 already exists and is not a git repository." 1>&2
     exit 1
   fi
 }
@@ -273,7 +294,15 @@ insert_header() {
 
 
 main() {
-  mkdir -p "$TEMP_DIR"
+  local TARGET
+
+  if [ "$IN_CONTAINER" = "true" ]; then
+    TARGET="${CONTAINER_TMP_SRC}${CONTENT_PATH}"
+  else
+    TARGET="${REPO_ROOT}${CONTENT_PATH}"
+  fi
+
+  mkdir $VERBOSE -p "$TEMP_DIR"
 
   local repos=() # array of kubernetes repos containing content to be synced
   local srcs=() # array of sources of content to be synced 
@@ -343,25 +372,29 @@ main() {
         # skip updating.
         if [[ "$file" != "$filename" ]]; then
           mv "$file" "$filename"
-          echo "Renamed: $file to $filename"
+          echo "Renamed: $file to $filename" 1>&2
         fi
       fi
     done < <(find_md_files "${TEMP_DIR}${srcs[i]}")
   done
 
 
-  echo "Copying to hugo content directory."
+  echo "Copying to hugo content directory." 1>&2
   for (( i=0; i < ${#renamed_srcs[@]}; i++ )); do
     if [[ -d "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
       # OWNERS files are excluded when copied to prevent potential overwriting of desired
       # owner config.
-      rsync -av "${TEMP_DIR}${renamed_srcs[i]}/" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
+      rsync -a ${VERBOSE} "${TEMP_DIR}${renamed_srcs[i]}/" "${TARGET}${dsts[i]}" --exclude "OWNERS"
     elif [[ -f "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
-      rsync -av "${TEMP_DIR}${renamed_srcs[i]}" "${CONTENT_DIR}${dsts[i]}" --exclude "OWNERS"
+      rsync -a ${VERBOSE} "${TEMP_DIR}${renamed_srcs[i]}" "${TARGET}${dsts[i]}" --exclude "OWNERS"
     fi
-  done 
-  echo "Content synced."
+  done
+  echo "Content synced." 1>&2
 }
 
+if [ "$IN_CONTAINER" = "true" ]; then
+  printf "Copying source repository\n" 1>&2
+  rsync -a $VERBOSE  "${REPO_ROOT}/" "${CONTAINER_TMP_SRC}/"
+fi
 
 main "$@"
