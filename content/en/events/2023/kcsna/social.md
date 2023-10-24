@@ -19,7 +19,7 @@ There will be food, live music, activities, and more!
 Chicago, IL 60616
 
 ### Poetry Slam
-This year the contributor summit social will host a Kubernetes themed poetry slam. To register ahead of the event, please add your name to [this list](https://docs.google.com/spreadsheets/d/1NiPRrT5HpM42O8DQTv41DRufFiVXNcO39BFm50Uj1Ac/edit#gid=0).
+This year the contributor summit social will host a Kubernetes themed poetry slam. To register ahead of the event, please add your name to [Kubernetes Contributor Summit Social Poetry Slam Registration](https://docs.google.com/spreadsheets/d/1NiPRrT5HpM42O8DQTv41DRufFiVXNcO39BFm50Uj1Ac/edit#gid=0).
 
 ## Bringing A Guest
 
