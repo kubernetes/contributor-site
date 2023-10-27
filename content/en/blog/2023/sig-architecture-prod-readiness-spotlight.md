@@ -2,14 +2,14 @@
 layout: blog
 title: "Spotlight on SIG Architecture: Production Readiness"
 slug: sig-architecture-production-readiness-spotlight-2023
-date: 2023-10-24
+date: 2023-11-02
+canonicalUrl: https://www.k8s.dev/blog/2023/24/05/sig-architecture-prod-readiness-spotlight-2023/
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
-
 _This is the second interview of a SIG Architecture Spotlight series that will cover the different
-subprojects. We will cover the [SIG Architecture: Production Readiness
-subproject](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#production-readiness-1)_
+subprojects. In this blog, we will cover the [SIG Architecture: Production Readiness
+subproject](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#production-readiness-1)_.
 
 In this SIG Architecture spotlight, we talked with [Wojciech Tyczynski](https://github.com/wojtek-t)
 (Google), lead of the Production Readiness subproject.
@@ -27,23 +27,23 @@ the seeding engineers for that team.
 After two months of onboarding and helping with different tasks across the project towards 1.0
 launch, I took ownership of the scalability area and I was leading Kubernetes to support clusters
 with 5000 nodes. I’m still involved in [SIG Scalability](https://github.com/kubernetes/community/blob/master/sig-scalability/README.md)
-as its Technical Lead. That was the start of a journey since scalability is such a cross-cutting topic, 
+as its Technical Lead. That was the start of a journey since scalability is such a cross-cutting topic,
 and I started contributing to many other areas including, over time, to SIG Architecture.
 
 **FSM**: In SIG Architecture, why specifically the Production Readiness subproject? Was it something
 you had in mind from the start, or was it an unexpected consequence of your initial involvement in
 scalability?
 
-**WT**: After reaching that milestone of [Kubernetes supporting 5000-node clusters](https://kubernetes.io/blog/2017/03/scalability-updates-in-kubernetes-1-6/), 
+**WT**: After reaching that milestone of [Kubernetes supporting 5000-node clusters](https://kubernetes.io/blog/2017/03/scalability-updates-in-kubernetes-1-6/),
 one of the goals was to ensure that Kubernetes would not degrade its scalability properties over time. While
 non-scalable implementation is always fixable, designing non-scalable APIs or contracts is
 problematic. I was looking for a way to ensure that people are thinking about
 scalability when they create new features and capabilities without introducing too much overhead.
 
-This is when I joined forces with [John Belamaric](https://github.com/johnbelamaric) and 
+This is when I joined forces with [John Belamaric](https://github.com/johnbelamaric) and
 [David Eads](https://github.com/deads2k) and created a Production Readiness subproject within SIG
 Architecture. While setting the bar for scalability was only one of a few motivations for it, it
-ended up fitting quite well. At the same time, I was already involved in the overall reliability of 
+ended up fitting quite well. At the same time, I was already involved in the overall reliability of
 the system internally, so other goals of Production Readiness were also close to my heart.
 
 **FSM**: To anyone new to how SIG Architecture works, how would you describe the main goals and
@@ -57,7 +57,7 @@ also disabled.
 ## Production readiness and the Kubernetes project
 
 **FSM**: Architectural consistency being one of the goals of the SIG, is this made more challenging
-by the [distributed and open nature of Kubernetes](https://www.cncf.io/reports/kubernetes-project-journey-report/)? 
+by the [distributed and open nature of Kubernetes](https://www.cncf.io/reports/kubernetes-project-journey-report/)?
 Do you feel this impacts the approach that Production Readiness has to take?
 
 **WT**: The distributed nature of Kubernetes certainly impacts Production Readiness, because it
