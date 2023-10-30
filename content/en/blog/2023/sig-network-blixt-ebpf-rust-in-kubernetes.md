@@ -1,11 +1,10 @@
 ---
 layout: blog
 title: Blixt - A load-balancer written in Rust, using eBPF, born from Gateway API
-date: 2023-10-26
+date: 2023-11-08
 slug: blixt-load-balancer-rust-ebpf-gateway-api
+author: "Shane Utt (Kong), Andrew Stoycos (Red Hat)"
 ---
-
-**Author:** Shane Utt (Kong), Andrew Stoycos (Red Hat)
 
 In [SIG Network][signet] we now have a layer 4 load-balancer named [Blixt][blixt]. This
 project started as a fun experiment using emerging technologies and is intended
