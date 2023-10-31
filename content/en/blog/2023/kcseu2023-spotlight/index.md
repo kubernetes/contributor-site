@@ -2,7 +2,7 @@
 layout: blog
 title: "Kubernetes Contributor Summit: Behind-the-scenes"
 slug: k8s-contributor-summit-behind-the-scenes
-date: 2023-11-02
+date: 2023-11-03
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
@@ -28,6 +28,8 @@ joined the release team, was doing booth duty for the CNCF, became an ambassador
 today.
 
 ## The Contributor Summit
+
+![KCSEU 2023 group photo](kcseu2023-group.jpg)
 
 **FM**: Before leading the organisation of the KCSEU 2023, how many other Contributor Summits were
 you a part of?
