@@ -6,7 +6,7 @@ slug: blixt-load-balancer-rust-ebpf-gateway-api
 author: "Shane Utt (Kong), Andrew Stoycos (Red Hat)"
 ---
 
-In [SIG Network][signet] we now have a layer 4 load-balancer named [Blixt][blixt]. This
+In [SIG Network][signet] we now have a layer 4 (“L4”) load balancer named [Blixt][blixt]. This
 project started as a fun experiment using emerging technologies and is intended
 to become a utility for CI and testing to help facilitate the continued
 development of [Gateway API][gwapi]. Are you interested in developing networking
@@ -28,21 +28,21 @@ dataplane. Around the time of Kubecon Detroit (2022) we (the [Gateway
 API][gwapi] maintainers) realized it had significant potential to help us move
 our `TCPRoute` and `UDPRoute` support forward, which had been sort of "stuck in
 alpha" at the time due to a lack of conformance tests being developed for them.
-At the same time various others in the SIG Network community developed an
+At the same time, various others in the SIG Network community developed an
 interest in the project due to the rapid growth of eBPFs use on Kubernetes.
 Given the potential for benefit to the Kubernetes ecosystem and the growing
 interest, Kong decided it would be helpful to [donate the project to Kubernetes
 SIGs][donation] to benefit upstream Kubernetes.
 
-Over several months we rewrote the project in [Rust][rust] (from C) due to a
+Over several months we rewrote the project in [Rust][rust] (from C), due to a
 strong contingency of Rust knowledge (and interest) between us developing the
 project and an active interest in the burgeoning [Aya project][aya] (a Rust
 framework for developing eBPF programs). We did eventually move the
-control-plane (specifically) to [Golang][go] however, so that we could take
+control plane (specifically) to [Golang][go] however, so that we could take
 advantage of the [Kubebuilder][kb] and [controller-runtime][ctrl] ecosystems.
 Additionally, we augmented our custom program loader (in eBPF, you generally
 write "loaders" which load your BPF byte code into the Kernel) with
-[Bpfd][bpfd]: a project adjacent to us in the Rust + eBPF ecosystem which
+[Bpfd][bpfd]: a project adjacent to us in the Rust + eBPF ecosystem, which
 [solves several security and ergonomic problems with managing BPF programs on
 Linux systems][bpfdwhy].
 
@@ -125,7 +125,6 @@ the community: You can reach us on [Kubernetes Slack][k8slack] on the
 topic of discussion at the [Gateway API community meetings][meets], and the
 monthly [SIG Network Code Jam][cjam] as well.
 
-Cheers, and happy holidays!
 
 [repo]:https://github.com/kubernetes-sigs/blixt
 [k8slack]:https://kubernetes.slack.com
