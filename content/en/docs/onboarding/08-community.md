@@ -83,7 +83,7 @@ Community-wide notifications and discussions are always sent to the [Kubernetes 
 The Kubernetes Slack server has over 500 channels! 
 
 * First, get familiar with our [Slack communication guidelines](/docs/comms/slack/).
-* Then [join our Slack server here](slack.k8s.io)!
+* Then [join our Slack server here](https://slack.k8s.io)!
 
 ---
 
