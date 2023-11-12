@@ -117,7 +117,7 @@ process_content() {
   local ref_link_matches=()
 
   mapfile -t inline_link_matches < \
-    <(grep -o -i -P '\[(?!a\-z0\-9).+?\]\((?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*|\))\K\S+?(?=\))' "$1")
+    <(grep -o -i -P '/\[(?!a\-z0\-9).+?\]\((?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*|\))\K\S+?(?=\))/' "$1")
 
  if [[ -v inline_link_matches ]]; then
     for match in "${inline_link_matches[@]}"; do
@@ -136,7 +136,7 @@ process_content() {
   fi
 
   mapfile -t ref_link_matches < \
-    <(grep -o -i -P '^\[.+\]:\s*(?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*)\K\S+$' "$1")
+    <(grep -o -i -P '/^\[.+\]:\s*(?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*)\K\S+$/' "$1")
 
   if [[ -v ref_link_matches ]]; then
     for match in "${ref_link_matches[@]}"; do
@@ -176,7 +176,7 @@ expand_path() {
   filename="$(basename "$2")"
   [[ "$dirpath" == '.' || "$dirpath" == "/" ]] && dirpath=""
   expanded_path="$dirpath/$filename"
-  if echo "$2" | grep -q -P "^\.?\/?$expanded_path"; then
+  if echo "$2" | grep -q -P "/^\.?\/?$expanded_path/"; then
     echo "$expanded_path"
   else
     echo "${expanded_path##"$3"}"
@@ -202,7 +202,7 @@ gen_link() {
   # appended for generation of correct url rewrites. It may need to be further
   # updated if the external org/repo uses their own domain shortener similar to
   # git.k8s.io.
-  if echo "$generated_link" | grep -q -i -E "https?:\/\/((sigs|git)\.k8s\.io|(www\.)?github\.com\/(kubernetes(-(client|csi|incubator|sigs))?|cncf))"; then
+  if echo "$generated_link" | grep -q -i -E "/https?:\/\/((sigs|git)\.k8s\.io|(www\.)?github\.com\/(kubernetes(-(client|csi|incubator|sigs))?|cncf))/"; then
     local i; i=0
     while (( i < ${#glsrcs[@]} )); do
       local repo=""
