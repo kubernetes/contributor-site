@@ -93,7 +93,7 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 ## Community, discussion, contribution, and support
 
 This project is managed by [SIG Contributor Experience][sig-contribex] as a
-part of [KEP-0005][kep-0005]
+part of [KEP-2225][kep-2225]
 
 You can reach the maintainers of this project at:
 
@@ -129,7 +129,7 @@ Participation in the Kubernetes community is governed by the
 [sig-contribex]: https://git.k8s.io/community/sig-contributor-experience/README.md
 [sig-contribex-slack]: http://slack.k8s.io/#sig-contribex
 [sig-contribex-list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
-[kep-0005]: https://git.k8s.io/enhancements/keps/sig-contributor-experience/0005-contributor-site.md
+[kep-2225]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-contributor-experience/2225-contributor-site
 [docsy]: https://docsy.dev
 [postcss-cli]: https://postcss.org/
 [autoprefixer]: https://github.com/postcss/autoprefixer
