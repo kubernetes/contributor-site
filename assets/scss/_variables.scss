@@ -132,3 +132,11 @@ $navbar-dark-disabled-color: rgba($white, 0.25);
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light".
 $yiq-contrasted-threshold: 200;
+
+// This is a hack to fix the CSS issues post-Docsy Upgrade
+.font-weight-bold, h1.display-1{
+    font-weight: $font-weight-bold !important;
+}
+div.d-none{
+    display: none !important;
+}
