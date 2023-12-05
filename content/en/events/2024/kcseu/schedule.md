@@ -24,9 +24,7 @@ do it better, join them.
 
 ## CFP
 
-If you would like to submit a formal session, please use the [CFP Form]().
-This form will be open through Sunday, February 4th, and covers presentation, workshop, and collaboration style sessions.  
-Unconference sessions should use the GitHub issue referenced above.
+The CFP will open soon and will cover presentation, workshop and collaboration style sessions. Unconference sessions should use the Github issue referenced above.
 
 ## Schedule
 

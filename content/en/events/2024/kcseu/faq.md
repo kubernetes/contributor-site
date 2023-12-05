@@ -19,11 +19,11 @@ weight: 7
 
 ### When is the summit taking place?
 
-TBD
+March 19, 2024
 
 ### Where is the summit located?
 
-TBD
+1 Place de la Porte de Versailles, 75015 Paris, France
 
 ### Will I be able to attend remotely?
 
