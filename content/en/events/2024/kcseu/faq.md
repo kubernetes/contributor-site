@@ -101,7 +101,7 @@ Until then, here are some additional resources you may find useful:
 
 Contributors will be allowed to bring a single family member
 or partner to the social (a "plus one"). 
-[See the Social page to request a guest pass](https://www.kubernetes.dev/events/2023/kcseu/social/).
+[See the Social page to request a guest pass](/events/2024/kcseu/social/).
 
 ### I have a question! How do I contact the event staff?
 
