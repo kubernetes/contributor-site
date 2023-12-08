@@ -27,7 +27,7 @@ March 19, 2024
 
 ### Will I be able to attend remotely?
 
-No, based on our experience with Kubecon NA 2021, we do not expect to be able
+No, based on our experience with Kubecon EU 2023, we do not expect to be able
 to support remote access for this event.
 
 ### What are the Health and Safety protocols?
