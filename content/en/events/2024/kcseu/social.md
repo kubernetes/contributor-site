@@ -4,7 +4,9 @@ type: docs
 weight: 5
 ---
 
-TBD
+The Summit will include a social event open only to Contributors (and their family members, see Guests below).  This event will take place somewhere near the Summit venue, and will include food, drink, entertainment, and games.  More information will be available once the venue is booked.
+
+**Contributors must be registered for the Summit in order to attend the Social.**
 
 ### Location
 
