@@ -22,6 +22,6 @@ If you acknowledge the above, please go ahead and click below to register:
 Registration Link TBD
 </h3>
 
-[Kubernetes orgs]: /events/2023/kcseu/faq/#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person
+[Kubernetes orgs]: /events/2024/kcseu/faq/#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person
 [org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 [Health & Safety Guidelines]: https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/health-and-safety/
