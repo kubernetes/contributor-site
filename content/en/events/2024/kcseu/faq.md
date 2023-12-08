@@ -78,9 +78,7 @@ form once they become available.
 
 ### My SIG wants to meet at the Summit
 
-We do not know yet if we will be able to request additional space outside of
-the colo event space on Tuesday, April 18th. We will update this page and send
-out community wide messages about it once the details are available.
+We plan to include SIG meetings as part of the schedule for the Summit.  Please watch for the CfP, and submit your proposed SIG meeting as a Summit session.
 
 ### Will there be a doc sprint?
 
