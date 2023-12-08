@@ -26,4 +26,4 @@ please reach out to the [CNCF event staff].
 [Code of Conduct]: /community/code-of-conduct
 [CNCF event staff]: https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/attend/code-of-conduct/#if-you-witness-unacceptable-behavior
 
-[email us]: mailto:community@kubernetes.io
+[email us]: mailto:summit-team@kubernetes.io
