@@ -19,4 +19,4 @@ them.
 
 **NOTE:** Guests must adhere to all KubeCon health & safety requirements.
 
-To bring a guest, please email community@kubernetes.io with their information.
+More information on Guest registration to come, closer to the event.
