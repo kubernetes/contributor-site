@@ -14,7 +14,7 @@ ongoing efforts & issues, and whatever you'd like to discuss with Steering.
 
 ## Unconference
 
-TBD
+The Summit will include Unconference sessions, probably in the afternoon.  If important discussions arise after the close of the CfP, plan to pitch them as Unconference sessions.  More details to come.
 
 ## Doc Sprint
 
