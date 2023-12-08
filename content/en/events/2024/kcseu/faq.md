@@ -23,7 +23,7 @@ March 19, 2024
 
 ### Where is the summit located?
 
-1 Place de la Porte de Versailles, 75015 Paris, France
+TBD 
 
 ### Will I be able to attend remotely?
 
