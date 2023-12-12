@@ -25,9 +25,3 @@ do it better, join them.
 ## CFP
 
 The CFP will open soon and will cover presentation, workshop and collaboration style sessions. Unconference sessions should use the Github issue referenced above.
-
-## Schedule
-
-{{% schedule
-  text="Kubernetes Contributor Summit Europe 2024"
-%}}
