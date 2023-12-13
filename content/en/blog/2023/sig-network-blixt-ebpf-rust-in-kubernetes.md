@@ -42,9 +42,9 @@ control plane (specifically) to [Golang][go] however, so that we could take
 advantage of the [Kubebuilder][kb] and [controller-runtime][ctrl] ecosystems.
 Additionally, we augmented our custom program loader (in eBPF, you generally
 write "loaders" which load your BPF byte code into the Kernel) with
-[Bpfd][bpfd]: a project adjacent to us in the Rust + eBPF ecosystem, which
+[bpfman][bpfman]: a project adjacent to us in the Rust + eBPF ecosystem, which
 [solves several security and ergonomic problems with managing BPF programs on
-Linux systems][bpfdwhy].
+Linux systems][bpfman].
 
 [After the license review process, which provided a blanket exception
 for the use of dual licensed eBPF in CNCF, completed recently][lrev] the project
@@ -62,8 +62,7 @@ and `TCPRoute`).
 [go]:https://go.dev
 [kb]:https://book.kubebuilder.io/
 [ctrl]:https://github.com/kubernetes-sigs/controller-runtime
-[bpfd]:https://bpfd.dev/
-[bpfdwhy]:https://bpfd.dev/#what-is-bpfd
+[bpfman]:https://bpfman.io/
 [lrev]:https://github.com/cncf/foundation/issues/474
 
 ## Goals
