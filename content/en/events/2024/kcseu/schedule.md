@@ -24,4 +24,5 @@ do it better, join them.
 
 ## CFP
 
-The CFP will open soon and will cover presentation, workshop and collaboration style sessions. Unconference sessions should use the Github issue referenced above.
+A [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA) for sessions is open through Sunday, February 4th. Please, expect the schedule to be announced on February 25th, 2023.
+It will cover presentation, workshop and collaboration style sessions. Unconference sessions should use the Github issue referenced above.
