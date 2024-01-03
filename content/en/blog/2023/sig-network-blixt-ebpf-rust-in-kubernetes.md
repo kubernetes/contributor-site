@@ -85,8 +85,9 @@ working towards:
   conformance requirements for these APIs.
 
 We have some significant progress on the above in that we have a **basic**
-level of support for creating a `GatewayClass` and `Gateway` and then attaching
-`UDPRoute` and `TCPRoute` resources to them, with the underlying dataplane
+level of support for creating a GatewayClass and at least one Gateway, and
+then attaching UDPRoute and TCPRoute resources to that Gateway. Doing that drives a
+process of the underlying data plane
 receiving corresponding configuration and traffic then flowing as expected. We
 emphasize the **basic**: as the project is still quite early on, and being
 developed in a highly iterative fashion. That said the fundamentals are there
