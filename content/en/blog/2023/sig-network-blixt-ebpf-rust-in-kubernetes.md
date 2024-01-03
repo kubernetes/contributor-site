@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Blixt - A load-balancer written in Rust, using eBPF, born from Gateway API
-date: 2023-11-15
+date: 2024-01-08
 slug: blixt-load-balancer-rust-ebpf-gateway-api
 author: "Shane Utt (Kong), Andrew Stoycos (Red Hat)"
 ---
