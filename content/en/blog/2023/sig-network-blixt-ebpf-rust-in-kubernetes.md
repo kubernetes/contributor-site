@@ -26,7 +26,7 @@ might benefit you.
 load-balancing ingress traffic for Kubernetes clusters using eBPF for the
 dataplane. Around the time of Kubecon Detroit (2022) we (the [Gateway
 API][gwapi] maintainers) realized it had significant potential to help us move
-our `TCPRoute` and `UDPRoute` support forward, which had been sort of "stuck in
+our TCPRoute and UDPRoute support forward, which had been sort of "stuck in
 alpha" at the time due to a lack of conformance tests being developed for them.
 At the same time, various others in the SIG Network community developed an
 interest in the project due to the rapid growth of eBPFs use on Kubernetes.
@@ -41,10 +41,10 @@ framework for developing eBPF programs). We did eventually move the
 control plane (specifically) to [Golang][go] however, so that we could take
 advantage of the [Kubebuilder][kb] and [controller-runtime][ctrl] ecosystems.
 Additionally, we augmented our custom program loader (in eBPF, you generally
-write "loaders" which load your BPF byte code into the Kernel) with
+write _loaders_ that load your BPF byte code into the kernel) with
 [bpfman][bpfman]: a project adjacent to us in the Rust + eBPF ecosystem, which
-[solves several security and ergonomic problems with managing BPF programs on
-Linux systems][bpfman].
+helps solve several security and ergonomic problems with managing BPF programs on
+Linux systems.
 
 After the recently completed [license review process][lrev], which provided a blanket
 exception for the use of dual licensed eBPF in CNCF code, the project
@@ -101,7 +101,7 @@ center of a lot of learning, community building and fun. We have maintained a
 policy with this project that it shall never be intended for production use
 cases which means development of the project is more of a sandbox and a safe
 space for people to learn and experiment. If any of this sounds interesting to
-you now is a great time to get involved!
+you, now is a great time to get involved!
 
 [gwapi]:https://github.com/kubernetes-sigs/gateway-api
 [gwc]:https://gateway-api.sigs.k8s.io/api-types/gatewayclass/
