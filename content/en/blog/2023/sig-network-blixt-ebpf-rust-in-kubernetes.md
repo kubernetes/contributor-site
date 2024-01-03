@@ -16,7 +16,7 @@ might benefit you.
 
 [signet]:https://github.com/kubernetes/community/tree/master/sig-network
 [blixt]:https://github.com/kubernetes-sigs/blixt
-[gwapi]:https://github.com/kubernetes-sigs/gateway-api
+[gwapi]:https://kubernetes.io/docs/concepts/services-networking/gateway/
 [rust]:https://www.rust-lang.org/
 [ebpf]:https://www.kernel.org/doc/html/latest/bpf/index.html
 
