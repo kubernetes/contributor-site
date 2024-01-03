@@ -50,8 +50,8 @@ After the recently completed [license review process][lrev], which provided a bl
 exception for the use of dual licensed eBPF in CNCF code, the project
 became officially part of Kubernetes and interest has been growing. We have several
 goals for the project which revolve around the continued development of Gateway
-API, with a specific focus on helping mature Layer 4 support (e.g. `UDPRoute`
-and `TCPRoute`).
+API, with a specific focus on helping mature Layer 4 support (e.g. the UDPRoute
+and TCPRoute API kinds).
 
 [blixt]:https://github.com/kubernetes-sigs/blixt
 [kong]:https://konghq.com
