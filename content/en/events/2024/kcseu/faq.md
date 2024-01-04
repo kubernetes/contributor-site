@@ -74,12 +74,12 @@ Please [email us] to make arrangements.
 
 Most of the Summit will be unconference-style, so you will have an opportunity
 to propose a session closer to the Summit itself. If you have an idea for a talk,
-workshop or panel please post your idea to the unconference issue or the CFP
-form once they become available.  
+workshop or panel please post your idea to the unconference issue, when it becomes available, or the [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA)
+form.  
 
 ### My SIG wants to meet at the Summit
 
-We plan to include SIG meetings as part of the schedule for the Summit.  Please watch for the CfP, and submit your proposed SIG meeting as a Summit session.
+We plan to include SIG meetings as part of the schedule for the Summit.  Please use the [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA), and submit your proposed SIG meeting as a Summit session.
 
 ### Will there be a doc sprint?
 

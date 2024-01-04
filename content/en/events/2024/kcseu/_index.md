@@ -14,9 +14,9 @@ TBD
 
 ### Call for Papers
 
-A [CFP]() for sessions will be open through Sunday, February 4th.
+A [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA) for sessions will be open through Sunday, February 4th.
 
-[CFP]: Link TBD
+[CFP]: (https://forms.gle/mkJ7Q18LoQwRV1LPA)
 
 ### Code of Conduct
 
