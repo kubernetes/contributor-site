@@ -11,7 +11,7 @@ description: >
 ### About
 
 
-The European summit will be a full contributor summit event taking place on March the 19th in Paris, France
+The European edition of the Contributor Summit will take place on March 19th in Paris, France
 alongside
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" rel="noopener noreferrer" target="_blank">KubeCon + CloudNativeCon Europe 2024</a>
 at the
