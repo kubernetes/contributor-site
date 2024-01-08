@@ -7,7 +7,7 @@ weight: 4
 
 ### Porte de Paris - Paris Convention Center
 
-You **MUST** pick up your badge before attending the summit or evening social event.
+You **MUST** pick up your badge before attending the Contributor Summit or evening social event.
 
 The summit will be in the <a href="https://www.viparis.com/en/our-venues/paris-convention-centre-en/access" rel="noopener noreferrer" target="_blank">Porte de Paris - Paris Convention Center</a>. Masks are recommended, but not required for event attendees.  Some masks will be available.
 
