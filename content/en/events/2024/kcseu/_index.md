@@ -26,7 +26,7 @@ This page will be updated as more activities are scheduled. If you have
 questions or comments, please reach out to the Summit Staff by emailing
 summit-team@kubernetes.io or asking in the
 <a href="https://kubernetes.slack.com/messages/contributor-summit" rel="noopener noreferrer" target="_blank">#contributor-summit</a>
-slack channel.
+Slack channel.
 
 [location]: /events/2024/kcseu/location/
 
