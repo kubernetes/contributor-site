@@ -19,7 +19,7 @@ contact us at community@kubernetes.io about registering.
 If you acknowledge the above, please go ahead and click below to register:
 
 <h3>
-Registration Link TBD
+<a href="https://cvent.me/mQ38my" rel="noopener noreferrer" target="_blank">Register Here</a>
 </h3>
 
 [Kubernetes orgs]: /events/2024/kcseu/faq/#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person
