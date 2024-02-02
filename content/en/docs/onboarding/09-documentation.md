@@ -66,8 +66,6 @@ Each SIG is in control of some aspect of Kubernetes development, infrastructure,
 
 # Is the documentation available in other languages?
 
-You are lucky that the documents are available in English!
-
 Kubernetes is used by developers and DevOps people _all over the world._ It is important that the documentation is available in other languages.
 
 * Can you write documentation in a language that isn't English? We would love your help!
