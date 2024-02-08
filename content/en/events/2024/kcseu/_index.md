@@ -32,7 +32,7 @@ Slack channel.
 
 ### Call for Papers
 
-A [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA) for sessions will be open through Sunday, February 4th.
+A [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA) for sessions will be open through <s>Sunday, February 4th</s> Wednesday, February 14th.
 
 [CFP]: (https://forms.gle/mkJ7Q18LoQwRV1LPA)
 
