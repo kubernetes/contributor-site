@@ -14,7 +14,17 @@ ongoing efforts & issues, and whatever you'd like to discuss with Steering.
 
 ## Unconference
 
-The Summit will include Unconference sessions, probably in the afternoon.  If important discussions arise after the close of the CfP, plan to pitch them as Unconference sessions.  More details to come.
+The Contributor Summit will include one track of
+[Unconference-style sessions](https://blog.crisp.se/2016/08/30/henrikkniberg/what-is-an-unconference).  
+After the CfP closes, contributors will be able to pitch and vote on last-minute
+sessions in a GitHub Issue, and final selection of those topics will be made
+at the Summit itself.  This allows us to incorporate community issues and ideas
+that come to light after the CfP ends.
+
+This is the format used at many [DevOps Days](https://devopsdays.org/open-space-format/), and helps us accommodate changing
+needs and unpredictable travel schedules.
+
+If you have a topic in mind, please add it to the [Unconference Topics Issue](https://github.com/kubernetes/community/issues/7692)
 
 ## Doc Sprint
 

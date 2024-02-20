@@ -23,7 +23,9 @@ March 19, 2024
 
 ### Where is the summit located?
 
-TBD 
+1 Place de la Porte de Versailles<br>
+75015 Paris, France<br>
+In Pavilion 7 Floor 3 West
 
 ### Will I be able to attend remotely?
 
@@ -55,9 +57,9 @@ Kubernetes Orgs:
 <ul>
 <li><a href="https://github.com/kubernetes" rel="noopener noreferrer" target="_blank">kubernetes</a></li>
 <li><a href="https://github.com/kubernetes-client" rel="noopener noreferrer" target="_blank">kubernetes-client</a></li>
-<li><a href="https://github.com/kubernetes-csi rel="noopener noreferrer" target="_blank">kubernetes-csi</a></li>
+<li><a href="https://github.com/kubernetes-csi" rel="noopener noreferrer" target="_blank">kubernetes-csi</a></li>
 <li><a href="https://github.com/kubernetes-sigs" rel="noopener noreferrer" target="_blank">kubernetes-sigs</a></li>
-<li><a href=“https://github.com/etcd-io” rel=“noopener noreferrer” target=“_blank”>etcd-io</a></li>
+<li><a href=“https://github.com/etcd-io” rel="noopener noreferrer" target=“_blank”>etcd-io</a></li>
 </ul>
 
 
@@ -74,7 +76,7 @@ Please [email us] to make arrangements.
 
 Most of the Summit will be unconference-style, so you will have an opportunity
 to propose a session closer to the Summit itself. If you have an idea for a talk,
-workshop or panel please post your idea to the unconference issue, when it becomes available, or the [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA)
+workshop or panel please post your idea to the [unconference issue](https://github.com/kubernetes/community/issues/7692), when it becomes available, or the [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA)
 form.  
 
 ### My SIG wants to meet at the Summit
