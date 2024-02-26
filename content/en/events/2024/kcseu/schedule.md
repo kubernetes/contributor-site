@@ -36,3 +36,11 @@ do it better, join them.
 
 A [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA) for sessions is open through <s>Sunday, February 4th</s> Wednesday, February 14th. Please, expect the schedule to be announced on February 25th, 2023.
 It will cover presentation, workshop and collaboration style sessions. Unconference sessions should use the Github issue referenced above.
+
+## Schedule
+
+{{% schedule
+  text="Kubernetes Contributor Summit Europe 2024"
+  link="https://kcseu2024.sched.com"
+  script="https://kcseu2024.sched.com/js/embed.js"
+%}}
