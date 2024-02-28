@@ -31,7 +31,7 @@ Bicycle: Vélib' station in avenue Ernest Renan. <br>
 
 ### Contributor Social Location
 
-The Contributor [Social] will be held on the evening of Tuesday, 19th March, at a location to be determined.
+The Contributor [Social] will be held on the evening of Tuesday, 19th March, at La Serre, Paris, France.
 
 **Address**<br>
 

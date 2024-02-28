@@ -4,13 +4,24 @@ type: docs
 weight: 5
 ---
 
+Join us at <a href="https://www.viparis.com/en/our-venues/la-serre-en" rel="noopener noreferrer" target="_blank">La Serre</a> from 6pm to 9pm for an evening celebration after the Contributor Summit on March 19th!
+
+There will be food, fresh air, puzzles, and more!
+
 The Summit will include a social event open only to Contributors (and their family members, see Guests below).  This event will take place somewhere near the Summit venue, and will include food, drink, entertainment, and games.  More information will be available once the venue is booked.
 
 **Contributors must be registered for the Summit in order to attend the Social.**
 
+There will be food, live music, activities, and more!
+
+*The contributor social is _not_ a public event.  You must be [registered] in advance to attend the Contributor Summit in order to attend the Social, and must be a Kubernetes contributor.  Community members who are not registered and show up at the Social will be turned away.*
+
+[registered]: /events/2024/kcseu/registration/
+
 ### Location
 
-TBD
+[La Serre](https://www.viparis.com/en/our-venues/la-serre-en)<br>
+75019 Paris, France<br>
 
 ## Bringing A Guest
 
@@ -21,4 +32,4 @@ them.
 
 **NOTE:** Guests must adhere to all KubeCon health & safety requirements.
 
-More information on Guest registration to come, closer to the event.
+To bring a guest, please email community@kubernetes.io with their information.
