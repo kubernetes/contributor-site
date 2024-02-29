@@ -21,7 +21,11 @@ There will be food, live music, activities, and more!
 ### Location
 
 [La Serre](https://www.viparis.com/en/our-venues/la-serre-en)<br>
-75019 Paris, France<br>
+
+2 avenue de la porte de la plaine 
+Pavilion 6 - Paris Expo Porte de Versailles
+Entrance Door B
+75015 Paris
 
 ## Bringing A Guest
 
