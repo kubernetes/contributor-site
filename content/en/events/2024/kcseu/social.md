@@ -20,12 +20,14 @@ There will be food, live music, activities, and more!
 
 ### Location
 
-[La Serre](https://www.viparis.com/en/our-venues/la-serre-en)<br>
+[La Serre](https://www.viparis.com/en/our-venues/la-serre-en)
 
 2 avenue de la porte de la plaine 
 Pavilion 6 - Paris Expo Porte de Versailles
 Entrance Door B
 75015 Paris
+
+[![Directions to Kubernetes Contributor Social](KCS-walking-directions-to-Pavilion-6_La-Serre-small.webp)](KCS-walking-directions-to-Pavilion-6_La-Serre.webp)
 
 ## Bringing A Guest
 
