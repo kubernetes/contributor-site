@@ -27,7 +27,7 @@ Pavilion 6 - Paris Expo Porte de Versailles
 Entrance Door B
 75015 Paris
 
-[![Directions to Kubernetes Contributor Social](KCS-walking-directions-to-Pavilion-6_La-Serre-small.webp)](KCS-walking-directions-to-Pavilion-6_La-Serre.webp)
+[![Directions to Kubernetes Contributor Social](../KCS-walking-directions-to-Pavilion-6_La-Serre-small.webp)](../KCS-walking-directions-to-Pavilion-6_La-Serre.webp)
 
 ## Bringing A Guest
 
