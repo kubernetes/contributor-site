@@ -31,8 +31,8 @@ slack channel.
 
 ### Recordings
 
-The links to recordings and photos will be published after the event.
-
+- [recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2uAhWJc3ssttnoltmO9GNQ)
+- [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720312580120)
 
 ### Call for Session Proposals
 
