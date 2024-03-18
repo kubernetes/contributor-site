@@ -35,4 +35,4 @@ The Contributor [Social] will be held on the evening of Tuesday, 19th March, at 
 
 **Address**<br>
 
-[Social]: /events/2023/kcsna/social/
+[Social]: /events/2024/kcseu/social/
