@@ -1,5 +1,8 @@
 FROM alpine:latest
-ARG HUGO_VERSION=0.69.2
+
+# Specify HUGO_VERSION, or work it out automatically by using
+# "make container-image"
+ARG HUGO_VERSION
 
 RUN apk add --no-cache \
     bash \
