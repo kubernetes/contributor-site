@@ -86,6 +86,7 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 	bash -c 'cd /src && hack/gen-content.sh --in-container && \
 		 cd /tmp/src && \
 		hugo server \
+		--environment preview \
 		--verbose \
 		--noBuildLock \
 		--bind 0.0.0.0 \
@@ -131,6 +132,7 @@ production-build: ## Builds the production site (this command used only by Netli
 	git submodule update --init --recursive --depth 1
 	hack/gen-content.sh
 	hugo \
+		--environment production \
 		--verbose \
 		--ignoreCache \
 		--minify
@@ -140,6 +142,7 @@ preview-build: ## Builds a deploy preview of the site (this command used only by
 	git submodule update --init --recursive --depth 1
 	hack/gen-content.sh
 	hugo \
+		--environment preview \
 		--verbose \
 		--baseURL $(DEPLOY_PRIME_URL) \
 		--buildDrafts \
