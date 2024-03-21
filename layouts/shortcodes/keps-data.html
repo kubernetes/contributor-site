@@ -1,3 +1,4 @@
+{{- $kepDataSourceUrl := "https://storage.googleapis.com/k8s-keps/keps.json" -}}
 {{/*
   Datatables is used in the page to enrich the list of KEPs.
   The stylesheets and scripts required are in `partials/hooks/head-end.html`
@@ -7,6 +8,24 @@
   the `DataTable` initialization in `partials/hooks/body-end.html`
 
 */}}
+{{- $kepData := "" -}}
+{{- with resources.GetRemote $kepDataSourceUrl -}}
+  {{- with .Err -}}
+    {{- if eq hugo.Environment "production" }}
+      {{ errorf "Unable to load CVE Feed: %s" }}
+    {{- else -}}
+      {{- warnf "Cannot load CVE Feed: %s" -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $kepData = .Content | transform.Unmarshal -}}
+  {{- end -}}
+{{- else -}}
+  {{- if eq hugo.Environment "production" }}
+    {{- errorf "Unable to load CVE Feed: %s (source URL was %q)" $kepDataSourceUrl -}}
+  {{- else -}}
+    {{- warnf "Cannot load CVE Feed: %s" -}}
+  {{- end -}}
+{{- end -}}
 
 <div>
   <table id="keps-table" class="table table-hover mt-2 col-md-12 table-sm">
@@ -22,7 +41,7 @@
       </tr>
     </thead>
     <tbody>
-      {{range $index, $data := getJSON "https://storage.googleapis.com/k8s-keps/keps.json" }}
+      {{range $index, $data := $kepData}}
           <tr>
             <td>
               <a href="https://features.k8s.io/{{ $data.kepNumber }}">
