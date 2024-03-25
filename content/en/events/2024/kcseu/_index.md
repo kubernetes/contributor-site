@@ -30,6 +30,11 @@ Slack channel.
 
 [location]: /events/2024/kcseu/location/
 
+### Recordings
+
+- [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720315666206/)
+- Upcoming: talk recordings
+
 ### Call for Papers
 
 A [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA) for sessions will be open through <s>Sunday, February 4th</s> Wednesday, February 14th.
