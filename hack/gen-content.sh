@@ -47,6 +47,29 @@ if [ "${DEBUG}" != false ]; then
   VERBOSE='-v'
 fi
 
+# discover GNU grep on the system (macOS by default has BSD grep,
+# which does not support perl regex via the -P flag)
+GREP="grep"
+if $GREP --version | $GREP "BSD" >/dev/null; then
+    if command -v ggrep >/dev/null; then
+        GREP="ggrep"
+    else
+        echo "could not find GNU grep on system"
+        exit 1
+    fi
+fi
+
+# discover GNU sed on the system
+SED="sed"
+if ! $SED --version >/dev/null; then
+    if command -v gsed >/dev/null; then
+        SED="gsed"
+    else
+        echo "could not find GNU sed on system"
+        exit 1
+    fi
+fi
+
 cd "$REPO_ROOT"
 
 cleanup() {
@@ -117,12 +140,12 @@ process_content() {
   local ref_link_matches=()
 
   mapfile -t inline_link_matches < \
-    <(grep -o -i -P '\[(?!a\-z0\-9).+?\]\((?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*|\))\K\S+?(?=\))' "$1")
+    <($GREP -o -i -P '\[(?!a\-z0\-9).+?\]\((?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*|\))\K\S+?(?=\))' "$1")
 
  if [[ -v inline_link_matches ]]; then
     for match in "${inline_link_matches[@]}"; do
       local replacement_link=""
-      if echo "$match" | grep -i -q "^http"; then
+      if echo "$match" | $GREP -i -q "^http"; then
         replacement_link="$match"
       else
         replacement_link="$(expand_path "$1" "$match" "$2")"
@@ -130,18 +153,18 @@ process_content() {
       replacement_link=$(gen_link "$replacement_link" "$2" "$3" "$4")
       if [[ "$match" != "$replacement_link" ]]; then
         echo "Update link: File: $1 Original: $match Updated: $replacement_link"
-        sed -i -e "s|]($match)|]($replacement_link)|g" "$1"
+        $SED -i -e "s|]($match)|]($replacement_link)|g" "$1"
       fi
     done
   fi
 
   mapfile -t ref_link_matches < \
-    <(grep -o -i -P '^\[.+\]:\s*(?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*)\K\S+$' "$1")
+    <($GREP -o -i -P '^\[.+\]:\s*(?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*)\K\S+$' "$1")
 
   if [[ -v ref_link_matches ]]; then
     for match in "${ref_link_matches[@]}"; do
       local replacement_link=""
-      if echo "$match" | grep -i -q "^http"; then
+      if echo "$match" | $GREP -i -q "^http"; then
         replacement_link="$match"
       else
         replacement_link="$(expand_path "$1" "$match" "$2")"
@@ -149,7 +172,7 @@ process_content() {
       replacement_link=$(gen_link "$replacement_link" "$2" "$3" "$4")
       if [[ "$match" != "$replacement_link" ]]; then
         echo "Update link: File: $1 Original: $match Updated: $replacement_link"
-        sed -i -e "s|]:\s*$match|]: $replacement_link|g" "$1"
+        $SED -i -e "s|]:\s*$match|]: $replacement_link|g" "$1"
       fi
     done
   fi
@@ -176,7 +199,7 @@ expand_path() {
   filename="$(basename "$2")"
   [[ "$dirpath" == '.' || "$dirpath" == "/" ]] && dirpath=""
   expanded_path="$dirpath/$filename"
-  if echo "$2" | grep -q -P "^\.?\/?$expanded_path"; then
+  if echo "$2" | $GREP -q -P "^\.?\/?$expanded_path"; then
     echo "$expanded_path"
   else
     echo "${expanded_path##"$3"}"
@@ -202,14 +225,14 @@ gen_link() {
   # appended for generation of correct url rewrites. It may need to be further
   # updated if the external org/repo uses their own domain shortener similar to
   # git.k8s.io.
-  if echo "$generated_link" | grep -q -i -E "https?:\/\/((sigs|git)\.k8s\.io|(www\.)?github\.com\/(kubernetes(-(client|csi|incubator|sigs))?|cncf))"; then
+  if echo "$generated_link" | $GREP -q -i -E "https?:\/\/((sigs|git)\.k8s\.io|(www\.)?github\.com\/(kubernetes(-(client|csi|incubator|sigs))?|cncf))"; then
     local i; i=0
     while (( i < ${#glsrcs[@]} )); do
       local repo=""
       local src=""
       repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${glsrcs[i]}" | cut -d '/' -f3)"
       src="${glsrcs[i]#/${repo}}"
-      if echo "$generated_link" | grep -q -i -E "/${repo}(/(blob|tree)/master)?${src}"; then
+      if echo "$generated_link" | $GREP -q -i -E "/${repo}(/(blob|tree)/master)?${src}"; then
         generated_link="$src"
         break
       fi
@@ -220,7 +243,7 @@ gen_link() {
   # If the link's path matches against one of the source locations, update it
   # to use the matching destination path. If no match is found, expand to
   # a full github.com/$org/$repo address
-  if echo "$generated_link" | grep -q -i -v "^http"; then
+  if echo "$generated_link" | $GREP -q -i -v "^http"; then
     local internal_link; internal_link="false"
     local i; i=0
     while (( i < ${#glsrcs[@]} )); do
@@ -228,23 +251,23 @@ gen_link() {
       local src=""
       repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${glsrcs[i]}" | cut -d '/' -f3)"
       src="${glsrcs[i]#/${repo}}"
-      if echo "$generated_link" | grep -i -q "^${src}"; then
+      if echo "$generated_link" | $GREP -i -q "^${src}"; then
         generated_link="${generated_link/${src}/${gldsts[i]}}"
-        if basename "$generated_link" | grep -i -q 'readme\.md'; then
+        if basename "$generated_link" | $GREP -i -q 'readme\.md'; then
           # shellcheck disable=SC2001 # prefer sed for native ignorecase
-          generated_link="$(echo "$generated_link" | sed -e 's|/readme\.md|/|I')"
+          generated_link="$(echo "$generated_link" | $SED -e 's|/readme\.md|/|I')"
           internal_link="true"
           break
         # If the destination is intended to be the root for a directory and the
         # source was not a README, set the generated link to the "root" of the
         # destination.
-        elif basename "$generated_link" | grep -i -q '_index.md'; then
+        elif basename "$generated_link" | $GREP -i -q '_index.md'; then
           generated_link="$(dirname "${gldsts[i]}")"
           internal_link="true"
           break
         else
           # shellcheck disable=SC2001 # prefer sed for native ignorecase
-          generated_link="$(echo "$generated_link" | sed -e 's|\.md||I')"
+          generated_link="$(echo "$generated_link" | $SED -e 's|\.md||I')"
           internal_link="true"
           break
         fi
@@ -253,11 +276,11 @@ gen_link() {
       # GitHub will display the README in a directory if no file is specified.
       # This updates those types of links to reference the destination file
       # path.
-      elif basename "$generated_link" | grep -q -v -i -E ".+\..+" && \
-           basename "$src" | grep -q -i "^readme\.md" && \
+      elif basename "$generated_link" | $GREP -q -v -i -E ".+\..+" && \
+           basename "$src" | $GREP -q -i "^readme\.md" && \
            [[ "$generated_link" == $(dirname "$src") ]]; then
         # shellcheck disable=SC2001 # prefer sed for native ignorecase
-        generated_link="$(echo "${gldsts[i]}" | sed -e 's|\.md||I')"
+        generated_link="$(echo "${gldsts[i]}" | $SED -e 's|\.md||I')"
         internal_link="true"
       fi
      ((i++))
@@ -287,8 +310,8 @@ insert_header() {
   else
     title="${filename%.md}"
   fi
-  title="$(echo "${title//[-|_]/ }" | sed -r 's/\<./\U&/g')"
-  sed -i "1i${HEADER_TMPLT//__TITLE__/$title}" "$1"
+  title="$(echo "${title//[-|_]/ }" | $SED -r 's/\<./\U&/g')"
+  $SED -i "1i${HEADER_TMPLT//__TITLE__/$title}" "$1"
   echo "Header inserted into: $1"
 }
 
@@ -331,8 +354,8 @@ main() {
     org="$(basename "$(dirname "$repo")")"
     # shellcheck disable=SC2094 # false detection on read/write to $repo at the same time
     while IFS=, read -re src dst || [ -n "$src" ]; do
-      srcs+=("/$org/$(basename "$repo")$(echo "$src" | sed -e 's/^\"//g;s/\"$//g')")
-      dsts+=("$(echo "$dst" | sed -e 's/^\"//g;s/\"$//g')")
+      srcs+=("/$org/$(basename "$repo")$(echo "$src" | $SED -e 's/^\"//g;s/\"$//g')")
+      dsts+=("$(echo "$dst" | $SED -e 's/^\"//g;s/\"$//g')")
     done < "$repo"
     init_src "https://github.com/$org/$(basename "$repo").git" "${TEMP_DIR}/$org/$(basename "$repo")"
   done
@@ -353,12 +376,12 @@ main() {
       # if the source file is a readme, or the destination is a singular file it
       # should be evaluated and if needed renamed.
       if [[ $(basename "${file,,}") == 'readme.md' ]] \
-          || echo "${dsts[i]}" | grep -q "\.md$"; then
+          || echo "${dsts[i]}" | $GREP -q "\.md$"; then
         filename=""
         # if file is a readme and the destination is NOT a file, assume it is
         # the "root" of a directory.
         if [[ $(basename "${file,,}") == 'readme.md' ]] \
-            && echo "${dsts[i]}" | grep -v -q "\.md$" ; then
+            && echo "${dsts[i]}" | $GREP -v -q "\.md$" ; then
           filename="$(dirname "$file")/_index.md"
         else
           # If not a readme, assume its a singular file that should be moved.
