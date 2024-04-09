@@ -33,7 +33,7 @@ Slack channel.
 ### Recordings
 
 - [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720315666206/)
-- Upcoming: talk recordings
+- [recordings](https://www.youtube.com/playlist?list=PLj6h78yzYM2NYSuce30SLlMyQ65xMgU0U)
 
 ### Call for Papers
 
