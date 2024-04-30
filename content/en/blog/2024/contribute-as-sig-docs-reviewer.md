@@ -35,7 +35,7 @@ there's a place for you in the open-source pantheon. And who knows? Maybe one da
 your documentation will be the guiding light for a lost soul in the Kubernetes sea,
 making you the unsung hero of their open-source odyssey.
 
-## Why Become a SIG Docs Reviewer?
+## Why become a SIG Docs reviewer?
 
 The Kubernetes project depends substantially on the SIG Docs team to ensure that documentation
 is accurate, up to date, and easily accessible. By becoming a reviewer, you can help users
