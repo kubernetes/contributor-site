@@ -1,7 +1,7 @@
 ---
 layout: blog
-title: "From Code to Quill: Embark on a Legendary Kubernetes Quest with SIG-Docs"
-date: 2024-04-28
+title: "From Code to Quill: Embark on a Legendary Kubernetes Quest with SIG Docs"
+date: 2024-05-16
 slug: contribute-as-sig-docs-reviewer
 author: "Ricardo Amaro (Acquia)"
 ---
@@ -92,6 +92,10 @@ Kubernetes documentation contribution process. Here are the steps to get you sta
 1. **Shadow an Experienced Reviewer**: If possible, shadow an 
    [experienced reviewer](/docs/contribute/participate/roles-and-responsibilities/) 
    to learn best practices and tips for reviewing efficiently and effectively.
+
+1. **Contributor Ladder**: Familiarize yourself with the
+   [CNCF contributor ladder](https://github.com/cncf/project-template/blob/main/CONTRIBUTOR_LADDER.md),
+   which guides your progression from newcomer to advanced contributor roles in the Kubernetes community.
 
 ## What's Next?
 
