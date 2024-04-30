@@ -100,7 +100,7 @@ of Kubernetes documentation standards, you can express your interest in becoming
 SIG Docs reviewer. Engage with the SIG Docs chairs or leads on Slack or during SIG Docs
 meetings to discuss the next steps.
 
-## See YOU in the Docs!
+## See _you_ in the docs!
 
 Becoming a SIG Docs reviewer is more than contributing; it's embracing the heart of the
 Kubernetes community 🚀. Enhance your knowledge and writing skills while contributing
