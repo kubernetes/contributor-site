@@ -64,7 +64,7 @@ We're seeking open-source enthusiasts with:
 Prior experience in technical writing or documentation review in any open-source project
 will be beneficial but not mandatory.
 
-## How to Get Started
+## How to get started
 
 Becoming a SIG Docs reviewer is a journey that starts with familiarizing yourself with the
 Kubernetes documentation contribution process. Here are the steps to get you started:
