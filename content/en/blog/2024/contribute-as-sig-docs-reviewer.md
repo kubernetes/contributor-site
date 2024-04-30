@@ -64,7 +64,7 @@ We're seeking open-source enthusiasts with:
 Prior experience in technical writing or documentation review in any open-source project
 will be beneficial but not mandatory.
 
-## How to Get Started
+## How to get started
 
 Becoming a SIG Docs reviewer is a journey that starts with familiarizing yourself with the
 Kubernetes documentation contribution process. Here are the steps to get you started:
@@ -97,7 +97,7 @@ Kubernetes documentation contribution process. Here are the steps to get you sta
    [CNCF contributor ladder](https://github.com/cncf/project-template/blob/main/CONTRIBUTOR_LADDER.md),
    which guides your progression from newcomer to advanced contributor roles in the Kubernetes community.
 
-## What's Next?
+## What's next?
 
 After consistently contributing to documentation reviews and demonstrating your understanding
 of Kubernetes documentation standards, you can express your interest in becoming an official
