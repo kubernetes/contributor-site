@@ -51,7 +51,7 @@ documentation provides unique opportunities for:
 - **Build your network**: Expanding your professional network, and getting together with
   contributors from around the globe.
 
-## Who Are We Looking For?
+## Who are we looking for?
 
 We're seeking open-source enthusiasts with:
 
