@@ -97,7 +97,7 @@ Kubernetes documentation contribution process. Here are the steps to get you sta
    [CNCF contributor ladder](https://github.com/cncf/project-template/blob/main/CONTRIBUTOR_LADDER.md),
    which guides your progression from newcomer to advanced contributor roles in the Kubernetes community.
 
-## What's Next?
+## What's next?
 
 After consistently contributing to documentation reviews and demonstrating your understanding
 of Kubernetes documentation standards, you can express your interest in becoming an official
