@@ -15,7 +15,7 @@ technical masterpieces for her projects than a knight's sword in battle. Sarah's
 a smooth relationship with Git, that she could `git commit` and `git push` in her sleep,
 and her etiquette in pull-requests was so polished, it could make a silver spoon look tarnished.
 
-But here's the twist: when it came to the mysterious _art-of-coding_, Sarah felt more
+But here's the twist: when it came to the mysterious _art of programming_, Sarah felt more
 like a fish out of water — or more accurately, like trying to navigate a Kubernetes cluster
 with a compass and a star map. The very thought of diving into the codebase made her feel like
 she was trying to read ancient hieroglyphs without a Rosetta Stone.
