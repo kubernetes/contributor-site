@@ -7,7 +7,7 @@ author: "Ricardo Amaro (Acquia)"
 ---
 
 You've likely heard the adage, "Contributing isn't just about writing code",
-whispered in forums or seen etched into the digital walls of open-source communities.
+whispered in forums or seen etched into the digital walls of open source communities.
 But what depth of truth lies within this ancient wisdom, especially in the vast,
 evolving world of Kubernetes?
 
@@ -22,8 +22,8 @@ of the Kubernetes ecosystem. This is a real opportunity for you to shine, to mak
 an indelible mark on a project that powers some of the most critical infrastructure
 in the world today.
 
-Your journey begins with a single step: joining the Special Interest Group (SIG) Docs
-team. Here, your talent for articulating complex concepts, your keen eye for detail,
+Your journey begins with a single step: joining the Special Interest Group (SIG) Docs. 
+Here, your talent for articulating complex concepts, your keen eye for detail,
 and your unwavering commitment to clarity become your most powerful tools. As a contributor,
 you can transform dense technical landscapes into navigable pathways, making Kubernetes
 accessible to all.
@@ -34,7 +34,7 @@ empowering a global community of users and contributors.
 
 ## Why become a SIG Docs reviewer?
 
-The Kubernetes project depends substantially on the SIG Docs team to ensure that documentation
+The Kubernetes project depends substantially on the SIG Docs to ensure that documentation
 is accurate, up to date, and easily accessible. By becoming a reviewer, you can help users
 and contributors navigate and understand Kubernetes more effectively. In addition, reviewing
 documentation provides unique opportunities for:
@@ -50,7 +50,7 @@ documentation provides unique opportunities for:
 
 ## Who are we looking for?
 
-We're seeking open-source enthusiasts with:
+We're seeking open source enthusiasts with:
 
 - Experience with Git and GitHub, comfortable with the process of reviewing pull requests
   and providing constructive feedback.
@@ -58,7 +58,7 @@ We're seeking open-source enthusiasts with:
   not required).
 - A passion for making complex technical concepts understandable and accessible.
 
-Prior experience in technical writing or documentation review in any open-source project
+Prior experience in technical writing or documentation review in any open source project
 will be beneficial but not mandatory.
 
 ## How to get started
@@ -86,9 +86,10 @@ Kubernetes documentation contribution process. Here are the steps to get you sta
    meetings are an excellent opportunity to meet fellow contributors, discuss documentation
    improvements, and volunteer for reviewing tasks.
 
-1. **Shadow an Experienced Reviewer**: If possible, shadow an 
-   [experienced reviewer](/docs/contribute/participate/roles-and-responsibilities/) 
-   to learn best practices and tips for reviewing efficiently and effectively.
+1. **Shadow an Experienced Reviewer**: To better understand the review process, sign up for our official
+   [PR Wrangling shadow program](/docs/contribute/participate/pr-wranglers/#pr-wrangler-shadow-program)
+   where you will be able to shadow an [experienced reviewer](/docs/contribute/participate/roles-and-responsibilities/) 
+   and learn best practices and tips for reviewing efficiently and effectively.
 
 1. **Contributor Ladder**: Familiarize yourself with the
    [CNCF contributor ladder](https://github.com/cncf/project-template/blob/main/CONTRIBUTOR_LADDER.md),
