@@ -6,34 +6,31 @@ slug: contribute-as-sig-docs-reviewer
 author: "Ricardo Amaro (Acquia)"
 ---
 
-You've probably come across the saying, "Contributing doesn't always mean writing lines of code"
-whispered to the wind or glimpsed in the margins of a sacred open-source tome.
-What is the truth behind this tale as old as time (or at least as old as Kubernetes itself)?
+You've likely heard the adage, "Contributing isn't just about writing code",
+whispered in forums or seen etched into the digital walls of open-source communities.
+But what depth of truth lies within this ancient wisdom, especially in the vast,
+evolving world of Kubernetes?
 
-Imagine Sarah: an enthusiast of open-source whose keyboard had seen more action crafting
-technical masterpieces for her projects than a knight's sword in battle. Sarah's had such
-a smooth relationship with Git, that she could `git commit` and `git push` in her sleep,
-and her etiquette in pull-requests was so polished, it could make a silver spoon look tarnished.
+Today, contributing to open source extends far beyond the realm of coding.
+It's an inclusive journey that welcomes the diverse skills of all who wish
+to be part of it. Whether you're a seasoned developer or someone whose strengths
+lie outside traditional programming, your contributions hold immense value.
 
-But here's the twist: when it came to the mysterious _art of programming_, Sarah felt more
-like a fish out of water — or more accurately, like trying to navigate a Kubernetes cluster
-with a compass and a star map. The very thought of diving into the codebase made her feel like
-she was trying to read ancient hieroglyphs without a Rosetta Stone.
+Imagine yourself embarking on a journey that leverages your expertise and love
+for free software to strengthen your capabilities and strengthen the very foundation
+of the Kubernetes ecosystem. This is a real opportunity for you to shine, to make
+an indelible mark on a project that powers some of the most critical infrastructure
+in the world today.
 
-Did Sarah let this stop her? Not at all. She discovered a path as impactful as a well-placed
-line of code: joining the Special Interest Group (SIG) Docs team. It was there that Sarah found her true calling,
-helping transform the dense field of Kubernetes documentation into a well-tended garden of knowledge.
+Your journey begins with a single step: joining the Special Interest Group (SIG) Docs
+team. Here, your talent for articulating complex concepts, your keen eye for detail,
+and your unwavering commitment to clarity become your most powerful tools. As a contributor,
+you can transform dense technical landscapes into navigable pathways, making Kubernetes
+accessible to all.
 
-Sarah's odyssey from a mere mortal Kubernetes user to a demigod of documentation didn't
-just prove that contributions of knowledge and expertise are as valuable as code
-contributions—it also showed that you don't need to be a coding wizard to make a significant
-impact. Her journey is a beacon of hope for all who fear the merge conflict, a testament
-to the power of the written word in the realm of open-source.
-
-So, let Sarah's story inspire you. No matter if you're a code ninja or a prose maestro,
-there's a place for you in the open-source pantheon. And who knows? Maybe one day,
-your documentation will be the guiding light for a lost soul in the Kubernetes sea,
-making you the unsung hero of their open-source odyssey.
+This is your call to adventure, an invitation to expand beyond the familiar territories
+of code and into the rich, uncharted domains of documentation and collaboration,
+empowering a global community of users and contributors.
 
 ## Why become a SIG Docs reviewer?
 
@@ -42,13 +39,13 @@ is accurate, up to date, and easily accessible. By becoming a reviewer, you can 
 and contributors navigate and understand Kubernetes more effectively. In addition, reviewing
 documentation provides unique opportunities for:
 
-- **Expand your Kubernetes knowledge**: Engage deeply with new features and functionalities
+- **Expanding your Kubernetes knowledge**: Engage deeply with new features and functionalities
   by reviewing their documentation.
-- **Improve your technical writing skills**: Develop an eye for detail and clarity in technical
+- **Improving your technical writing skills**: Develop an eye for detail and clarity in technical
   writing.
-- **Strengthen the Kubernetes community**: Help maintain the high quality of Kubernetes
+- **Strengthening the Kubernetes community**: Help maintain the high quality of Kubernetes
   documentation, supporting both new and experienced users.
-- **Build your network**: Expanding your professional network, and getting together with
+- **Building your network**: Expanding your professional network, and getting together with
   contributors from around the globe.
 
 ## Who are we looking for?
