@@ -67,7 +67,7 @@ Becoming a SIG Docs reviewer is a journey that starts with familiarizing yoursel
 Kubernetes documentation contribution process. Here are the steps to get you started:
 
 1. **Familiarize Yourself with SIG Docs**: Start by reading the
-   [SIG Docs contributor guide](/docs/contribute/) to understand
+   [SIG Docs contributor guide](https://kubernetes.io/docs/contribute/) to understand
    how documentation contributions are made.
 
 1. **Join the Kubernetes Slack**: Connect with the SIG Docs community on the
