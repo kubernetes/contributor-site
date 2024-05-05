@@ -77,7 +77,7 @@ Kubernetes documentation contribution process. Here are the steps to get you sta
 1. **Start Reviewing Pull Requests**: Look for open pull requests labeled with
    `good first issue` or `help wanted`. These are great for beginners. Leave constructive
    feedback and suggestions. Familiarize yourself with the
-   [content guide](/docs/contribute/style/content-guide/) and the 
+   [content guide](https://kubernetes.io/docs/contribute/style/content-guide/) and the 
    [style guide](/docs/contribute/style/style-guide/) to provide more effectively 
    [reviewing Pull Requests](/docs/contribute/review/reviewing-prs/).
 
