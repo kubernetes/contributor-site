@@ -79,7 +79,7 @@ Kubernetes documentation contribution process. Here are the steps to get you sta
    feedback and suggestions. Familiarize yourself with the
    [content guide](https://kubernetes.io/docs/contribute/style/content-guide/) and the 
    [style guide](https://kubernetes.io/docs/contribute/style/style-guide/) to provide more effectively 
-   [reviewing Pull Requests](/docs/contribute/review/reviewing-prs/).
+   [reviewing Pull Requests](https://kubernetes.io/docs/contribute/review/reviewing-prs/).
 
 1. **Attend SIG Docs Meetings**: Participate in the 
    [SIG Docs meetings](https://github.com/kubernetes/community/tree/master/sig-docs). These
