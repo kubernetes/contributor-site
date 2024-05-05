@@ -87,7 +87,7 @@ Kubernetes documentation contribution process. Here are the steps to get you sta
    improvements, and volunteer for reviewing tasks.
 
 1. **Shadow an Experienced Reviewer**: To better understand the review process, sign up for our official
-   [PR Wrangling shadow program](/docs/contribute/participate/pr-wranglers/#pr-wrangler-shadow-program)
+   [PR Wrangling shadow program](https://kubernetes.io/docs/contribute/participate/pr-wranglers/#pr-wrangler-shadow-program)
    where you will be able to shadow an [experienced reviewer](https://kubernetes.io/docs/contribute/participate/roles-and-responsibilities/) 
    and learn best practices and tips for reviewing efficiently and effectively.
 
