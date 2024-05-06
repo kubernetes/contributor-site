@@ -13,11 +13,11 @@ evolving world of Kubernetes?
 
 Today, contributing to open source extends far beyond the realm of coding.
 It's an inclusive journey that welcomes the diverse skills of all who wish
-to be part of it. Whether you're a seasoned developer or someone whose strengths
+to be a part of it. Whether you're a seasoned developer or someone whose strengths
 lie outside traditional programming, your contributions hold immense value.
 
 Imagine yourself embarking on a journey that leverages your expertise and love
-for free software to strengthen your capabilities and strengthen the very foundation
+for free software to enhance your capabilities and strengthen the very foundation
 of the Kubernetes ecosystem. This is a real opportunity for you to shine, to make
 an indelible mark on a project that powers some of the most critical infrastructure
 in the world today.
