@@ -52,7 +52,7 @@ documentation provides unique opportunities for:
 
 We're seeking open source enthusiasts with:
 
-- Experience with Git and GitHub, comfortable with the process of reviewing pull requests
+- Experience of Git and GitHub, comfortable with the process of reviewing pull requests
   and providing constructive feedback.
 - Familiarity with Markdown and documentation frameworks (Hugo experience is a plus but
   not required).
