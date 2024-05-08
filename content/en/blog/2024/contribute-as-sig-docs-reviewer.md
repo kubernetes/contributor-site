@@ -58,8 +58,11 @@ We're seeking open source enthusiasts with:
   not required).
 - A passion for making complex technical concepts understandable and accessible.
 
-Prior experience in technical writing or documentation review in any open source project
-will be beneficial but not mandatory.
+Experience in technical writing or documentation review in open source projects is beneficial, 
+but not mandatory. Kubernetes experience is welcome at all levels. Those less familiar 
+with Kubernetes or containers can provide valuable fresh perspectives for beginners accessibility. 
+We value diversity of experiences and the fresh eyes you can provide to make sure our content 
+is clear and understandable for everyone.
 
 ## How to get started
 
