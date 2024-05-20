@@ -54,8 +54,8 @@ go install sigs.k8s.io/hydrophone@latest
 
 Running `hydrophone` by default will:
 
-- Create a pod, and supporting resources in the `conformance` namespace on your cluster
-- Execute the entire conformance test suite for the cluster version you're running
+- Create a pod, and supporting resources in the `conformance` namespace on your cluster.
+- Execute the entire conformance test suite for the cluster version you're running.
 - Output the test results and export `e2e.log` and `junit_01.xml` needed for conformance validation.
 
 There are supporting flags to specify which tests to run, which to skip, the cluster you're targeting and much more!
