@@ -10,7 +10,7 @@ There will be food, live music, activities, and more!
 
 *The contributor social is _not_ a public event.  You must be [registered] in advance to attend the Contributor Summit in order to attend the Social, and must be a Kubernetes contributor.  Community members who are not registered and show up at the Social will be turned away.*
 
-[registered]: /events/2023/kcsna/registration/
+[registered]: /events/2024/kcsna/registration/
 
 ### Location
 
