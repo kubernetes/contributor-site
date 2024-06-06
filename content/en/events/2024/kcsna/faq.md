@@ -109,6 +109,11 @@ Contributors will be allowed to bring a single family member
 or partner to the social (a "plus one"). 
 [See the Social page to request a guest pass](https://www.kubernetes.dev/events/2024/kcsna/social/).
 
+### What about Utah HB 257?
+
+Recent laws passed by the state of Utah may cause problems for some members of our community.  Please see the [legal information] on the Venue page.
+
+[legal information]: link-to-Laws-section-of-venue-page
 ### I have a question! How do I contact the event staff?
 
 You can [email us] or pop into the
