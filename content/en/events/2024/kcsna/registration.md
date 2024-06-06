@@ -12,14 +12,14 @@ joining! The process of joining is straight forward. See our [org membership]
 docs for more information. If your application to join is pending, please
 contact us at summit-team@kubernetes.io about registering.
 
-
+If you are sponsored by a SIG Lead please fill in the SIG in the registration form. All registrations by non Org members will be declined. 
 
 **NOTE:** The summit adheres to KubeCon’s [Health & Safety Guidelines]
 
 If you acknowledge the above, please go ahead and click below to register:
 
 <h3>
-<a href="https://cvent.me/Ak8z00?locale=en-US&tm=5BFaB2eHY0xZyx_vVZdfLzrXFWPJJsz___EvVtztajE&rp=D599C1DE-92F0-4EC4-8DA2-82B18574E7EF" rel="noopener noreferrer" target="_blank">Register Here</a>
+<a href="https://cvent.me/ANnKw0" rel="noopener noreferrer" target="_blank">Register Here</a>
 </h3>
 
 [Kubernetes orgs]: /events/2024/kcsna/faq/#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person
