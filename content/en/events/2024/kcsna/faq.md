@@ -83,6 +83,7 @@ workshop or panel please post your idea to the unconference issue or the CFP
 form once they become available.  
 
 ### My SIG wants to meet at the Summit
+
 We will have some space for SIG/WG meetings during the summit, please submit
 your request via the CFP form once it becomes available.
 
