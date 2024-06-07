@@ -8,7 +8,8 @@
 /awards/2019      /community/awards/2019 301
 /awards/2020      /community/awards/2020 301
 /awards/2021      /community/awards/2021 301
-/awards/2021      /community/awards/2022 301
+/awards/2022      /community/awards/2022 301
+/awards/2023      /community/awards/2023 301
 
 /calendar         /resources/calendar    301
 
@@ -34,13 +35,14 @@
 /kcsna2023        /events/2023/kcsna  301
 
 /kcseu2024        /events/2024/kcseu 301
+/kcsna2024        /events/2024/kcsna 301
 
 /services         /resources/services 301
 /requests         /resources/services 301
 
-/summit           /events/2024/kcseu  302
-/summit/reg       /events/2024/kcseu/registration 302
-/summit/cfp       https://forms.gle/mkJ7Q18LoQwRV1LPA 302
-/summit/unconf    /events/2024/kcseu 302
-/summit/notes     https://drive.google.com/drive/folders/1GWoURQlOwm0y-3pBwHH5Y2VQ_RQK1pYO 302
+/summit           /events/2024/kcsna  302
+/summit/reg       /events/2024/kcsna/registration 302
+/summit/cfp       /events/2024/kcsna/schedule 302
+/summit/unconf    /events/2024/kcsna 302
+/summit/notes     https://drive.google.com/drive/folders/1j3i9I4a3lbmjqQNTYKxK0Gc6JgooDn14 302
 /summit/sched     /events/2024/kcseu/schedule 302
