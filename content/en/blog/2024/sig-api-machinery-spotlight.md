@@ -13,15 +13,15 @@ this Kubernetes Special Interest Group.
 ## Introductions
 
 **Frederico (FSM)**: Hello, and thank your time. To start with, could you tell us about
-yourselvesand how you got involved in Kubernetes?
+yourselves and how you got involved in Kubernetes?
 
 **David**: I started working on
 [OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift) (the Red Hat
-distribution of Kubernetes) in the fall of 2014 and got involved pretty quickly in apimachinery.  My
+distribution of Kubernetes) in the fall of 2014 and got involved pretty quickly in API Machinery.  My
 first PRs were fixing kube-apiserver error messages and from there I branched out to `kubectl`
 (_kubeconfigs_ are my fault!), `auth` ([RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) and `*Review` APIs are ports
 from OpenShift), `apps` (_workqueues_ and _sharedinformers_ for example).  Don’t tell the others,
-but apimachinery is still my favorite :)
+but API Machinery is still my favorite :)
 
 **Federico**: I was not as early in Kubernetes as David, but now it's been more than six years. At
 my previous company we were starting to use Kubernetes for our own products, and when I came across
@@ -79,9 +79,8 @@ CLI](https://github.com/kubernetes/community/tree/master/sig-cli) manages that u
 other SIGs and let them move at their own pace.  If the impact is global in immediate effect without
 a natural incentive, we’ve found a need to press for adoption directly.
 
-
-**FSM**: SIG Architecture has an API Governance subproject, is it mostly independent from SIG API
-Machinery or are there important connection points?
+**FSM**: Still on that note, SIG Architecture has an API Governance subproject, is it mostly
+independent from SIG API Machinery or are there important connection points?
 
 **David**: The projects have similar sounding names and carry some impacts on each other, but have
 different missions and scopes.  API Machinery owns the how and API Governance owns the what.  API
@@ -109,11 +108,11 @@ activity.
 
 2. **Scaling to meet the need**: `v1.3-1.9` (up to shared informers in controllers) or so.  When we
    started trying to meet customer needs as we gained adoption, we found severe scale limitations in
-   terms of CPU and memory. This where we broadened API machinery to include access patterns, but
+   terms of CPU and memory. This was where we broadened API machinery to include access patterns, but
    were still heavily focused on in-tree types.  We built the watch cache, protobuf serialization,
    and shared caches.
 
-3. **Fostering the ecosystem**: `v1.8-1.21` (up to CRD v1) or so.  This when we designed and wrote
+3. **Fostering the ecosystem**: `v1.8-1.21` (up to CRD v1) or so.  This was when we designed and wrote
    CRDs (the considered replacement for third-party-resources), the immediate needs we knew were
    coming (admission webhooks), and evolution to best practices we knew we needed (API schemas).
    This enabled an explosion of early adopters willing to work very carefully within the constraints
@@ -147,9 +146,11 @@ At the same time, the increased usage has made us more aware of scaling limitati
 improve both server and client-side.  Efforts here include more efficient serialization (CBOR),
 reduced etcd load (consistent reads from cache), and reduced peak memory usage (streaming lists).
 
-And finally, the increased usage has highlighted some long existing gaps that we’re closing.  Things
-like field selectors for CRDs which wg-batch is eager to leverage and will eventually form the basis
-for a new way to prevent trampoline pod attacks from exploited nodes.
+And finally, the increased usage has highlighted some long existing
+gaps that we’re closing.  Things like field selectors for CRDs which
+the [Batch Working Group](https://github.com/kubernetes/community/blob/master/wg-batch/README.md)
+is eager to leverage and will eventually form the basis for a new way
+to prevent trampoline pod attacks from exploited nodes.
 
 ## Joining the fun
 
