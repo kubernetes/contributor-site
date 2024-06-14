@@ -30,9 +30,9 @@ intended). I joined Google and Kubernetes in early 2018, and have been involved 
 
 ## SIG Machinery's scope
 
-**FSM**: It only takes a quick look at the SIG API Machinery charter to see that it has quite a
+**FSM: It only takes a quick look at the SIG API Machinery charter to see that it has quite a
 significant scope, nothing less than the Kubernetes control plane. Could you describe this scope in
-your own words?
+your own words?**
 
 **David**: We own the `kube-apiserver` and how to efficiently use it. On the backend, that includes
 its contract with backend storage and how it allows API schema evolution over time.  On the
@@ -44,7 +44,7 @@ critical mission: it's your communication layer with the cluster and also owns a
 mechanisms that make Kubernetes so powerful. We can't make mistakes like a regression, or an
 incompatible change, because the blast radius is huge.
 
-**FSM**: Given this breadth, how do you manage the different aspects of it?
+**FSM: Given this breadth, how do you manage the different aspects of it?**
 
 **Federico**: We try to organize the large amount of work into smaller areas. The working groups and
 subprojects are part of it. Different people on the SIG have their own areas of expertise, and if
@@ -55,8 +55,8 @@ release to release.
 
 ## An evolving collaboration model
 
-**FSM**: Was the existing model always like this, or did it evolve with time - and if so, what would
-you consider the main changes and the reason behind them?
+**FSM: Was the existing model always like this, or did it evolve with time - and if so, what would
+you consider the main changes and the reason behind them?**
 
 **David**: API Machinery has evolved over time both growing and contracting in scope.  When trying
 to satisfy client access patterns it’s very easy to add scope both in terms of features and applying
@@ -73,14 +73,14 @@ server-side apply), `kubectl` expanded to take ownership of leveraging the serve
 capability.  The transition isn’t yet complete, but [SIG
 CLI](https://github.com/kubernetes/community/tree/master/sig-cli) manages that usage and owns it.
 
-**FSM**: And for the boundary between approaches, do you have any guidelines?
+**FSM: And for the boundary between approaches, do you have any guidelines?**
 
 **David**: I think much depends on the impact. If the impact is local in immediate effect, we advise
 other SIGs and let them move at their own pace.  If the impact is global in immediate effect without
 a natural incentive, we’ve found a need to press for adoption directly.
 
-**FSM**: Still on that note, SIG Architecture has an API Governance subproject, is it mostly
-independent from SIG API Machinery or are there important connection points?
+**FSM: Still on that note, SIG Architecture has an API Governance subproject, is it mostly
+independent from SIG API Machinery or are there important connection points?**
 
 **David**: The projects have similar sounding names and carry some impacts on each other, but have
 different missions and scopes.  API Machinery owns the how and API Governance owns the what.  API
@@ -92,8 +92,8 @@ the what"*: we don't own the actual APIs, but the actual APIs live through us.
 
 ## The challenges of Kubernetes popularity
 
-**FSM**: With the growth in Kubernetes adoption we have certainly seen increased demands from the
-Control Plane: how is this felt and how does it influence the work of the SIG?
+**FSM: With the growth in Kubernetes adoption we have certainly seen increased demands from the
+Control Plane: how is this felt and how does it influence the work of the SIG?**
 
 **David**: It’s had a massive influence on API Machinery.  Over the years we have often responded to
 and many times enabled the evolutionary stages of Kubernetes.  As the central orchestration hub of
@@ -131,8 +131,8 @@ area to work for those able to make a significant time investment on a long time
 
 ## The road ahead
 
-**FSM**: With those different evolutionary stages in mind, what would you pinpoint as the top
-priorities for the SIG at this time?
+**FSM: With those different evolutionary stages in mind, what would you pinpoint as the top
+priorities for the SIG at this time?**
 
 **David: **Reliability, efficiency, and capability** in roughly that order.
 
@@ -154,7 +154,7 @@ to prevent trampoline pod attacks from exploited nodes.
 
 ## Joining the fun
 
-**FSM**: For anyone wanting to start contributing, what's your suggestions?
+**FSM: For anyone wanting to start contributing, what's your suggestions?**
 
 **Federico**: SIG API Machinery is not an exception to the Kubernetes motto: **Chop Wood and Carry
 Water**. There are multiple weekly meetings that are open to everybody, and there is always more
@@ -174,7 +174,7 @@ etc. Tuesday's it's at 1 PM (PST) and Thursday is on an EMEA friendly time (9:30
 always looking to improve, and we hope to be able to provide more concrete opportunities to join and
 participate in the future.
 
-**FSM** Excellent, thank you! Any final comments you would like to share with our readers?
+**FSM: Excellent, thank you! Any final comments you would like to share with our readers?**
 
 **Federico**: As I mentioned, the first steps might be hard, but the reward is also larger. Working
 on API Machinery is working on an area of huge impact (millions of users?), and your contributions
