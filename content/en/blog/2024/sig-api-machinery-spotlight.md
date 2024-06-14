@@ -12,8 +12,8 @@ this Kubernetes Special Interest Group.
 
 ## Introductions
 
-**Frederico (FSM)**: Hello, and thank your time. To start with, could you tell us about
-yourselves and how you got involved in Kubernetes?
+**Frederico (FSM): Hello, and thank your time. To start with, could you tell us about
+yourselves and how you got involved in Kubernetes?**
 
 **David**: I started working on
 [OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift) (the Red Hat
@@ -134,7 +134,7 @@ area to work for those able to make a significant time investment on a long time
 **FSM: With those different evolutionary stages in mind, what would you pinpoint as the top
 priorities for the SIG at this time?**
 
-**David: **Reliability, efficiency, and capability** in roughly that order.
+**David:** **Reliability, efficiency, and capability** in roughly that order.
 
 With the increased usage of our `kube-apiserver` and extensions mechanisms, we find that our first
 set of extensions mechanisms, while fairly complete in terms of capability, carry significant risks
