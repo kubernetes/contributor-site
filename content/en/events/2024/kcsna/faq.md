@@ -33,8 +33,8 @@ See the [Location & Venue] section for more information.
 
 ### Will I be able to attend remotely?
 
-No, based on our experience with previous Contributor Summits, we do not expect to be able
-to support remote access for this event.
+Based on our experience with previous Contributor Summits, we do not expect to be able
+to support remote access for this event.  Because of the specific issues with Salt Lake City, we investigated the possibility of streaming parts of the Summit, but event staff assessed doing so as logistically prohibitive.
 
 ### What are the Health and Safety protocols?
 
@@ -96,7 +96,7 @@ full day from 11am to 4pm.
 ### Will there be a New Contributor Workshop?
 
 No, they are very time, person and resource intensive. We encourage those
-interested in becoming a contributor to use the New Contributor Course 
+interested in becoming a contributor to use the New Contributor Course
 slated to launch later this year.
 
 Until then, here are some additional resources you may find useful:
@@ -107,7 +107,7 @@ Until then, here are some additional resources you may find useful:
 ### Can I bring a guest to the Social?
 
 Contributors will be allowed to bring a single family member
-or partner to the social (a "plus one"). 
+or partner to the social (a "plus one").
 [See the Social page to request a guest pass](https://www.kubernetes.dev/events/2024/kcsna/social/).
 
 ### What about Utah HB 257?
