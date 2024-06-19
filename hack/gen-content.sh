@@ -172,7 +172,7 @@ process_content() {
       replacement_link=$(gen_link "$replacement_link" "$2" "$3" "$4")
       if [[ "$match" != "$replacement_link" ]]; then
         echo "Update link: File: $1 Original: $match Updated: $replacement_link"
-        $SED -i -e "s|]:\s*$match|]: $replacement_link|g" "$1"
+        $SED -i -e "s|]:\s*$match\$|]: $replacement_link|g" "$1"
       fi
     done
   fi
