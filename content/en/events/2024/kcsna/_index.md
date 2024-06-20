@@ -31,7 +31,9 @@ slack channel.
 
 ### Call for Session Proposals
 
-A CFP for sessions will be opened at a later point in time.
+A [CFP] for sessions will be open through Sunday, September 15th.
+
+[CFP]: https://forms.gle/5RJBiKtuYsBDYAsVA
 
 ### Code of Conduct
 
