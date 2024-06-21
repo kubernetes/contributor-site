@@ -8,7 +8,9 @@ weight: 3
 
 ## CFP
 
-A for sessions will be opened in the coming days.
+Submit session proposals through [our form].  We will accept proposals until September 15th.  Topics that come up after that can be included in the Unconference sessions.  See below for the kinds of session proposals which are appropriate.
+
+[our form]: https://forms.gle/5RJBiKtuYsBDYAsVA
 
 
 ## Steering AMA
@@ -49,5 +51,3 @@ If you have a topic in mind, please check back soon - we'll launch a tracking is
 SIG-Docs will have a full-day Documentation working session during the Summit.
 If you contribute to the docs -- and who doesn't -- or you want to learn to
 do it better, join them.
-
-
