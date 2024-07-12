@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on SIG API Machinery"
 slug: sig-api-machinery-spotlight-2024
-date: 2024-06-04
+date: 2024-07-18
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
