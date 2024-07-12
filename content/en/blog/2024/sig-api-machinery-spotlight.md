@@ -12,7 +12,7 @@ this Kubernetes Special Interest Group.
 
 ## Introductions
 
-**Frederico (FSM): Hello, and thank your time. To start with, could you tell us about
+**Frederico (FSM): Hello, and thank your for your time. To start with, could you tell us about
 yourselves and how you got involved in Kubernetes?**
 
 **David**: I started working on
