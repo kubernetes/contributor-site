@@ -17,10 +17,10 @@ yourselves and how you got involved in Kubernetes?**
 
 **David**: I started working on
 [OpenShift](https://www.redhat.com/en/technologies/cloud-computing/openshift) (the Red Hat
-distribution of Kubernetes) in the fall of 2014 and got involved pretty quickly in API Machinery.  My
+distribution of Kubernetes) in the fall of 2014 and got involved pretty quickly in API Machinery. My
 first PRs were fixing kube-apiserver error messages and from there I branched out to `kubectl`
 (_kubeconfigs_ are my fault!), `auth` ([RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) and `*Review` APIs are ports
-from OpenShift), `apps` (_workqueues_ and _sharedinformers_ for example).  Don’t tell the others,
+from OpenShift), `apps` (_workqueues_ and _sharedinformers_ for example). Don’t tell the others,
 but API Machinery is still my favorite :)
 
 **Federico**: I was not as early in Kubernetes as David, but now it's been more than six years. At
