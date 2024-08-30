@@ -28,7 +28,7 @@ two SIG subprojects,
 **AP: That's awesome! You've been involved with the project since a long time. Can you provide a
 brief overview of SIG Scheduling and explain its role within the Kubernetes ecosystem?**
 
-**K**: As the name implies, our responsibility is to enhance scheduling within
+**KN**: As the name implies, our responsibility is to enhance scheduling within
 Kubernetes. Specifically, we develop the components that determine which Node is the best place for
 each Pod. In Kubernetes, our main focus is on maintaining the
 [kube-scheduler](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/), along
@@ -37,7 +37,7 @@ with other scheduling-related components as part of our SIG subprojects.
 **AP: I see, got it! That makes me curious--what recent innovations or developments has SIG
 Scheduling introduced to Kubernetes scheduling?**
 
-**K**: From a feature perspective, there have been [several
+**KN**: From a feature perspective, there have been [several
 enhancements](https://kubernetes.io/blog/2023/04/17/fine-grained-pod-topology-spread-features-beta/)
 to `PodTopologySpread` recently. `PodTopologySpread` is a relatively new feature in the scheduler,
 and we are still in the process of gathering feedback and making improvements.
@@ -52,7 +52,7 @@ reducing the likelihood of wasting scheduling cycles.
 **A: That sounds interesting! Are there any other interesting topics or projects you are currently
 working on within SIG Scheduling?**
 
-**K**: I’m leading the development of `QueueingHint` which I just shared.  Given that it’s a big new
+**KN**: I’m leading the development of `QueueingHint` which I just shared.  Given that it’s a big new
 challenge for us, we’ve been facing many unexpected challenges, especially around the scalability,
 and we’re trying to solve each of them to eventually enable it by default.
 
@@ -77,7 +77,7 @@ useful broadly within the community, beyond sig-scheduling.
 **A: Definitely! Now, there are currently 8 subprojects inside SIG Scheduling. Would you like to
 talk about them? Are there some interesting contributions by those teams you want to highlight?**
 
-**K**: Let me pick up three sub projects; Kueue, KWOK and descheduler.
+**KN**: Let me pick up three sub projects; Kueue, KWOK and descheduler.
 
 [Kueue](https://github.com/kubernetes-sigs/kueue):
 : Recently, many people have been trying to manage batch workloads with Kubernetes, and in 2022,
@@ -111,7 +111,7 @@ that they’re recreated and rescheduled.
 **AP: Thank you for letting us know! And I have to ask, what are some of your favorite things about
 this SIG?**
 
-**K**: What I really like about this SIG is how actively engaged everyone is. We come from various
+**KN**: What I really like about this SIG is how actively engaged everyone is. We come from various
 companies and industries, bringing diverse perspectives to the table. Instead of these differences
 causing division, they actually generate a wealth of opinions. Each view is respected, and this
 makes our discussions both rich and productive.
@@ -124,7 +124,7 @@ improving our components over the years.
 **AP: Kubernetes is a community-driven project. Any recommendations for new contributors or
 beginners looking to get involved and contribute to SIG scheduling? Where should they start?**
 
-**K**: Let me start with a general recommendation for contributing to any SIG: a common approach is
+**KN**: Let me start with a general recommendation for contributing to any SIG: a common approach is
 to look for
 [good-first-issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22).
 However, you'll soon realize that many people worldwide are trying to contribute to the Kubernetes
@@ -163,7 +163,7 @@ ecosystem forward.
 getting started, and what skills are contributors likely to learn by participating in SIG
 Scheduling?**
 
-**K**: Our maintainers are available to answer your questions in the #sig-scheduling Slack
+**KN**: Our maintainers are available to answer your questions in the #sig-scheduling Slack
 channel. By participating, you'll gain a deeper understanding of Kubernetes scheduling and have the
 opportunity to collaborate and network with maintainers from diverse backgrounds. You'll learn not
 just how to write code, but also how to maintain a large project, design and discuss new features,
@@ -174,7 +174,7 @@ address bugs, and much more.
 **AP: What are some Kubernetes-specific challenges in terms of scheduling? Are there any particular
 pain points?**
 
-**K**: Scheduling in Kubernetes can be quite challenging because of the diverse needs of different
+**KN**: Scheduling in Kubernetes can be quite challenging because of the diverse needs of different
 organizations with different business requirements. Supporting all possible use cases in
 kube-scheduler is impossible. Therefore, extensibility is a key focus for us. A few years ago, we
 rearchitected kube-scheduler with [Scheduling
@@ -191,7 +191,7 @@ difficult as even small changes, which look irrelevant to performance, can lead 
 
 **AP:  What are some upcoming goals or initiatives for SIG Scheduling? How do you envision the SIG evolving in the future?**
 
-**K**: Our primary goal is always to build and maintain _extensible_ and _stable_ scheduling
+**KN**: Our primary goal is always to build and maintain _extensible_ and _stable_ scheduling
 runtime, and I bet this goal will remain unchanged forever.
 
 As already mentioned, extensibility is key to solving the challenge of the diverse needs of
@@ -213,7 +213,7 @@ encourage feedback and alerts regarding performance issues!
 **AP: Finally, what message would you like to convey to those who are interested in learning more
 about SIG Scheduling?**
 
-**K**: Scheduling is one of the most complicated areas in Kubernetes, and you may find it difficult
+**KN**: Scheduling is one of the most complicated areas in Kubernetes, and you may find it difficult
 at first. But, as I shared earlier, you can find many opportunities for contributions, and many
 maintainers are willing to help you understand things. We know your unique perspective and skills
 are what makes our open source so powerful :)
