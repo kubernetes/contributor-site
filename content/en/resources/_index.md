@@ -1,5 +1,5 @@
 ---
-title:  "Resources"
+title: "Resources"
 description: "Kubernetes Community Resources"
 type: docs
 menu:
