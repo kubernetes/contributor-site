@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on SIG Architecture: Enhancements"
 slug: sig-architecture-enhancements
-date: 2024-09-18
+date: 2024-09-26
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
