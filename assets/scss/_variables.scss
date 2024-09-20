@@ -19,12 +19,12 @@ $dark: #403f4c;  // TODO: consider using BS value
 
 $code-color: shade-color($secondary, 40%);
 
-// UI element colors
+:root,
+[data-bs-theme="light"] {
+  --td-pre-bg: var(--bs-tertiary-bg);
+}
 
-$border-color: $gray-300;
-$td-sidebar-tree-root-color: $primary;
-$td-sidebar-bg-color: rgba($primary, 0.03);
-$td-sidebar-border-color: $border-color;
+// UI element colors
 
 // Background colors for the sections on home page etc. It is a paint by number
 // system, starting at 0, where the number is taken from the shortcode's ordinal
@@ -78,11 +78,6 @@ $td-block-space-bottom-base: 4 * $spacer;
 
 $pagination-color: $gray-600;
 $pagination-disabled-color: $gray-300;
-
-// Navbar
-
-$navbar-dark-color: rgba($white, 0.75);
-$navbar-dark-hover-color: rgba($white, 0.5);
 
 // Footer
 
