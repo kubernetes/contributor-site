@@ -1,33 +1,40 @@
 baseURL: 'https://www.kubernetes.dev/'
-title: Kubernetes Contributors
+title: &title Kubernetes Contributors # Create a reference to use later
 theme:
   - docsy
 enableRobotsTXT: true
 # This is a default
 #enableGitInfo: false
 contentDir: content/en
+
 # These are defaults
 #defaultContentLanguage: en
 #defaultContentLanguageInSubdir: false
+
 enableMissingTranslationPlaceholders: true
 disableKinds:
   - taxonomy
   - taxonomyTerm
+
 # Pygments is no longer used
 #pygmentsCodeFences: true
 #pygmentsUseClasses: false
 #pygmentsUseClassic: false
 #pygmentsStyle: tango
+
 permalinks:
   blog: '/:section/:year/:month/:day/:slug/'
+
 imaging:
   resampleFilter: CatmullRom
 # These are defaults
 #  quality: 75
 #  anchor: smart
+
 services:
   googleAnalytics:
     id: UA-00000000-0
+
 caches:
   assets:
     dir: ':cacheDir/_gen'
@@ -44,57 +51,69 @@ caches:
   modules:
     dir: ':cacheDir/modules'
     maxAge: -1
+
 languages:
   en:
-    title: Kubernetes Contributors
     languageName: English
+    title: *title # Use the YAML reference instead of repeating
+
 markup:
   goldmark:
     renderer:
       unsafe: true
   highlight:
     style: tango
+
 frontmatter:
   date:
     - date
     - ':filename'
     - publishDate
     - lastmod
+
 params:
   # This is used instead of the built-in top level `copyright` to utilize
   # Docsy's partial which adds the copyright year automatically
   copyright: The Kubernetes Authors
-  privacy_policy: ''
-  version_menu: Releases
-  archived_version: false
-  version: '0.0'
+#  These are defaults
+#  privacy_policy: ''
+#  version_menu: Releases
+#  archived_version: false
+#  version: '0.0'
   gcs_engine_id: 8ad0f1b8442fece81
-  algolia_docsearch: false
-  offlineSearch: false
+#  This is deprecated and the new method doesn't need to be explicitly disabled
+#  algolia_docsearch: false
+#  TOffline search is disabled by default
+#  offlineSearch: false
   ui:
     sidebar_menu_compact: true
-    breadcrumb_disable: false
+#    Breadcrumbs are enabled by default
+#    breadcrumb_disable: false
     sidebar_search_disable: false
-    navbar_logo: true
-    footer_about_disable: false
+#    Navbar logo is enabled by default
+#    navbar_logo: true
+#    This is deprecated and footer about is hidden by default
+#    but enabling it is not required as we don't have an about page
+#    footer_about_disable: false
     feedback:
       enable: true
   links:
+#   Updated icons to use latest syntax from FA.
     user:
       - name: Kubernetes Dev Mailing List
         url: 'https://groups.google.com/a/kubernetes.io/group/dev'
-        icon: fa fa-envelope
+        icon: fa-solid fa-envelope
         desc: Discussion and help from your fellow users
       - name: Twitter
         url: 'https://twitter.com/K8sContributors'
-        icon: fab fa-twitter
+        icon: fa-brands fa-x-twitter # Updated the bird icon to the X icon
         desc: Follow us on Twitter to get the latest news!
     developer:
       - name: GitHub
         url: 'https://github.com/kubernetes/community'
-        icon: fab fa-github
+        icon: fa-brands fa-github
         desc: Home of the Kubernetes Community!
       - name: Slack
         url: 'https://slack.k8s.io'
-        icon: fab fa-slack
+        icon: fa-brands fa-slack
         desc: Chat with other project developers
