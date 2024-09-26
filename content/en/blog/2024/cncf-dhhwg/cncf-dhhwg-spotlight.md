@@ -25,6 +25,7 @@ Currently, I'm the co-chair of the [TAG Contributor Strategy](https://contribute
 **SK: Speaking of history, since its launch, how has the DHHWG evolved? Could you highlight some of the key milestones or achievements the group has reached recently?**
 
 **CP**: Our WG is about a year old. It started with a few deaf engineers and me brainstorming how to make KubeCon more accessible. We published an initial draft of [Best practices for an inclusive conference](https://contribute.cncf.io/accessibility/deaf-and-hard-of-hearing/conference-best-practices/) and shared it with the LF events team. KubeCon Chicago was two months later, and we had a couple of deaf attendees. It was the **first** KubeCon accessible to deaf signers. [Destiny](https://www.linkedin.com/in/destiny-o-connor-28b2a5255/), one of our co-chairs, even participated in a [keynote panel](https://youtu.be/3WJ_s4Jvbsk?si=iscthTiCyMxoMUqY&t=347). It was incredible how quickly everything happened!
+
 ![DHHWG members at KubeCon Chicago](/blog/2024/cncf-dhhwg/cncf-dhhwg-chicago.jpg)
 *DHHWG members at KubeCon Chicago*
 
@@ -49,7 +50,7 @@ Interpreters are most valuable during networking, not in talks (with captions). 
 
 **SK: In your view, how crucial is the role of allies within the DHHWG, and what contributions have they made to the group’s success?**
 
-**CP**: Deaf and hard of hearing individuals are a minority and can only do so much. ***Allies are key to any diversity and inclusion initiative***. As a majority, allies can help spread the word and educate their peers, playing a key role in scaling advocacy efforts. They also have the power to demand change. It's easy for companies to ignore minorities, but if the majority demands that their employers be accessible, environmentally conscious, and good citizens, they will ultimately be pushed to adapt to new societal values. 
+**CP**: Deaf and hard of hearing individuals are a minority and can only do so much. ***Allies are the key to any diversity and inclusion initiative***. As a majority, allies can help spread the word and educate their peers, playing a key role in scaling advocacy efforts. They also have the power to demand change. It's easy for companies to ignore minorities, but if the majority demands that their employers be accessible, environmentally conscious, and good citizens, they will ultimately be pushed to adapt to new societal values. 
 
 ## Expanding DEI efforts and future vision
 **SK: The importance of allies in driving change is clear. Beyond the DHHWG, are you involved in any other DEI groups or initiatives within the tech community?**
@@ -59,6 +60,7 @@ Interpreters are most valuable during networking, not in talks (with captions). 
 **SK: What does the future hold for the DHHWG? Can you share details about any ongoing or upcoming initiatives?**
 
 **CP**: I think we've been very successful in terms of visibility and awareness so far. We can't stop, though. Awareness work is ongoing, and most people in our community haven't heard about us or met anyone on our team yet, so a lot of work still lies ahead. 
+
 ![DHHWG members at KubeCon Paris](/blog/2024/cncf-dhhwg/cncf-dhhwg-paris.jpg)
 *DHHWG members at KubeCon Paris*
 
