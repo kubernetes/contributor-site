@@ -106,7 +106,7 @@ params:
         desc: Discussion and help from your fellow users
       - name: Twitter
         url: 'https://twitter.com/K8sContributors'
-        icon: fa-brands fa-x-twitter # Updated the bird icon to the X icon
+        icon: fa-brands fa-x-twitter
         desc: Follow us on Twitter to get the latest news!
     developer:
       - name: GitHub
