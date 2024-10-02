@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Announcing the 2024 Steering Committee Election Results"
-date: 2024-10-02
+date: 2024-10-02T15:10:00-05:00
 slug: steering-committee-results-2024
 author: "Bridget Kromhout"
 ---
