@@ -52,7 +52,7 @@ This governing body, like all of Kubernetes, is open to all. You can follow alon
 
 You can see what the Steering Committee meetings are all about by watching past meetings on the [YouTube Playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
 
-If you want to meet some of the newly elected Steering Committee members, join us for the Steering AMA at the [Kubernetes Contributor Summit North America 2024 in Salt Lake City](https://www.kubernetes.dev/events/2024/kcsna/schedule/#steering-ama).
+If you want to meet some of the newly elected Steering Committee members, join us for the [Steering AMA](https://www.kubernetes.dev/events/2024/kcsna/schedule/#steering-ama) at the Kubernetes Contributor Summit North America 2024 in Salt Lake City.
 
 ---
 
