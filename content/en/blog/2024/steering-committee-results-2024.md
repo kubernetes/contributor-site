@@ -46,7 +46,7 @@ Thanks to the Emeritus Steering Committee Members. Your service is appreciated b
 
 And thank you to all the candidates who came forward to run for election.
 
-## Get Involved with the Steering Committee
+## Get involved with the Steering Committee
 
 This governing body, like all of Kubernetes, is open to all. You can follow along with Steering Committee [meeting notes](https://bit.ly/k8s-steering-wd) and weigh in by filing an issue or creating a PR against their [repo](https://github.com/kubernetes/steering). They have an open meeting on [the first Monday at 8am PT of every month](https://github.com/kubernetes/steering). They can also be contacted at their public mailing list steering@kubernetes.io.
 
