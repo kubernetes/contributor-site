@@ -29,7 +29,7 @@ They join continuing members:
 
 Benjamin Elder is a returning Steering Committee Member.
 
-## Big Thanks!
+## Big thanks!
 
 Thank you and congratulations on a successful election to this round’s election officers:
 
