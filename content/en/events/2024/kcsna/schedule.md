@@ -8,9 +8,7 @@ weight: 3
 
 ## CFP
 
-Submit session proposals through [our form].  We will accept proposals until September 15th.  Topics that come up after that can be included in the Unconference sessions.  See below for the kinds of session proposals which are appropriate.
-
-[our form]: https://forms.gle/5RJBiKtuYsBDYAsVA
+The Cfp is closed. You can still propose topics in the Unconference sessions.  See below for the kinds of session proposals which are appropriate.
 
 
 ## Steering AMA
@@ -51,3 +49,18 @@ If you have a topic in mind, feel free to submit it under the [Unconference Issu
 SIG-Docs will have a full-day Documentation working session during the Summit.
 If you contribute to the docs -- and who doesn't -- or you want to learn to
 do it better, join them.
+
+## CNCF Q&A
+
+The CNCF does its best to build and sustain communities of open source projects. It also does its best to try and stay 
+connected to those contributors that make all of gesture this, possible. 
+So, the CNCF want to connect with y'all and make sure your voices are heard. 
+Join CNCF Staff and have your Questions answered.
+
+## Schedule
+
+{{% schedule
+text="Kubernetes Contributor Summit Europe 2024"
+link="https://kcsna2024.sched.com/"
+script="https://kcsna2024.sched.com/js/embed.js"
+%}}
