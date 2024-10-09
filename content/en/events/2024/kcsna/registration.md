@@ -16,6 +16,8 @@ If you are sponsored by a SIG Lead please fill in the SIG in the registration fo
 
 **NOTE:** The summit adheres to KubeCon’s [Health & Safety Guidelines]
 
+KubeCon registration is required for Contributor Summit attendees.
+
 If you acknowledge the above, please go ahead and click below to register:
 
 <h3>
