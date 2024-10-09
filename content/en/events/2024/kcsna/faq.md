@@ -10,6 +10,7 @@ weight: 7
 - [What are the Health and Safety protocols](#what-are-the-health-and-safety-protocols)
 - [Why do I need to be a Kubernetes Org member to attend in-person?](#why-do-i-need-to-be-a-kubernetes-org-member-to-attend-in-person)
 - [What is a sponsored attendee?](#what-is-a-sponsored-attendee)
+- [Do I need to be registered for KubeCon to attend the Contributor Summit](#do-i-need-to-registered-for-kubecon-to-attend-the-contributor-summit)
 - [I have an idea for a session](#i-have-an-idea-for-a-session)
 - [My SIG wants to meet at the Summit](#my-sig-wants-to-meet-at-the-summit)
 - [Will there be a doc sprint?](#will-there-be-a-doc-sprint)
@@ -75,6 +76,10 @@ If you are a SIG lead or subproject lead and there is someone that is not yet
 an org member or from another project that might take part in a panel,
 SIG face-to-face meeting etc, you can sponsor them to attend the summit.
 Please [email us] to make arrangements.
+
+### Do I need to be registered for KubeCon to attend the Contributor Summit
+
+KubeCon registration is required for Contributor Summit attendees.
 
 ### I have an idea for a session
 
