@@ -33,6 +33,10 @@ container-targets: container-image container-gen-content container-render contai
 help: ## Show this help text.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
+dependencies:
+	npm ci
+	cd themes/docsy/ && npm i
+
 gen-content: ## Generates content from external sources.
 	hack/gen-content.sh
 
@@ -137,7 +141,7 @@ production-build: ## Builds the production site (this command used only by Netli
 		--ignoreCache \
 		--minify
 
-preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
+preview-build: dependencies ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
 	git submodule update --init --recursive --depth 1
 	hack/gen-content.sh
