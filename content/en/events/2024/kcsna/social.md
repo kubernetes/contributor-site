@@ -11,6 +11,24 @@ There will be food, live music, activities, and more!
 
 **You must bring your Kubecon badge to get into the Social.**
 
+**21+ Admission Requirement:** Flanker Kitchen & Sporting Club is strictly a 21+ venue. No individual under the age of 21 will be permitted entry, without exception.
+
+**Acceptable Identification:** In compliance with Utah Code Section 32B-1-102, the following forms of identification are accepted for verifying age:
+* A valid Driver's License issued by any **U.S. state or territory**.
+* A valid **U.S. Military** Photo Identification Card.
+* A valid Passport.
+* A U.S.-issued Passport Card.
+
+**Unacceptable Identification:** The following forms of identification are not accepted for entry, as per Utah Code Section 32B-1-102:
+* Expired or invalid forms of identification.
+* Foreign or U.S.-issued Driver Privilege Cards.
+* Any foreign Driver's Licenses, ID cards, or other government-issued forms of ID, **except for foreign passports**
+* Fraudulent forms of identification.
+* Concealed Carry Permits.
+* Green cards, Consular Cards, or American/foreign-issued Visas.
+* Foreign passport **cards**.
+* Non-government-issued IDs (including student IDs, membership cards, and payment cards).
+
 [registered]: /events/2024/kcsna/registration/
 
 ### Location
@@ -20,7 +38,9 @@ There will be food, live music, activities, and more!
 6 N Rio Grande St Suite 35<br/>
 Salt Lake City, UT, 84101<br/>
 
-![Walking directions from Salt Palace to Flanker](kcs_na_social_walking_directions.png)
+![Walking directions from Salt Palace to Flanker](/content/en/events/2024/kcsna/kcs_na_social_walking_directions.png)
+
+
 
 ## Bringing A Guest
 
