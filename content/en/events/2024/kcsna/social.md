@@ -20,7 +20,7 @@ There will be food, live music, activities, and more!
 6 N Rio Grande St Suite 35<br/>
 Salt Lake City, UT, 84101<br/>
 
-![Walking directions from Salt Palace to Flanker](/content/en/events/2024/kcsna/kcs_na_social_walking_directions.png)
+![Walking directions from Salt Palace to Flanker](../kcs_na_social_walking_directions.png)
 
 ## Bringing A Guest
 
