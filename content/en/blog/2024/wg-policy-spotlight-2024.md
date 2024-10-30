@@ -30,7 +30,7 @@ These co-chairs will let us know what the Policy working group is all about.
 
 **Andy Suderman**: My name is Andy Suderman and I am the CTO of Fairwinds, a managed Kubernetes-as-a-Service provider. I began working with Kubernetes in 2016 building a web conferencing platform. I am an author and/or maintainer of several Kubernetes-related open-source projects such as Goldilocks, Pluto, and Polaris. Polaris is a JSON-schema-based policy engine, which started Fairwinds' journey into the policy space and my involvement in the Policy Working Group.
 
-**Poonam Lamba**: My name is Poonam Lamba, and I currently work as a Product Manager for Google Kubernetes Engine(GKE) at Google. My journey with Kubernetes began back in 2017 when I was building an SRE platform for a large enterprise, using a private cloud built on Kubernetes. Intrigued by its potential to revolutionize the way we deployed and managed applications at the time, I dove headfirst into learning everything I could about it.
+**Poonam Lamba**: My name is Poonam Lamba, and I currently work as a Product Manager for Google Kubernetes Engine (GKE) at Google. My journey with Kubernetes began back in 2017 when I was building an SRE platform for a large enterprise, using a private cloud built on Kubernetes. Intrigued by its potential to revolutionize the way we deployed and managed applications at the time, I dove headfirst into learning everything I could about it.
 
 Since then, I've had the opportunity to build the policy and compliance products for GKE. I lead and contribute to GKE CIS benchmarks. I am involved with the Gatekeeper project as well as I have contributed to Policy-WG for over 2 years currently I serve as a co-chair for K8s policy WG.
 
