@@ -31,7 +31,7 @@ them. **Flanker is a 21+ venue, and as such we will not be able to accommodate c
 
 **NOTE:** Guests must adhere to all KubeCon health & safety requirements.
 
-To bring a guest, please email summit-team@kubernetes.io with their information.
+To bring a guest, please email summit-team@kubernetes.io with their information **no later than Sunday, November 10th at noon Mountain time**.
 
 ## ID Requirements
 
