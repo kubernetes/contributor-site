@@ -29,6 +29,11 @@ slack channel.
 
 [location]: /events/2024/kcsna/location/
 
+### Recordings
+
+- [photos](https://www.flickr.com/photos/143247548@N03/albums/72177720321919003/)
+- [meeting notes](https://drive.google.com/drive/folders/15sgNO5_DTu9-IxN4vQk5vjySRtqFD9uL)
+
 ### Call for Session Proposals
 
 A [CFP] for sessions will be open through Sunday, September 15th.
