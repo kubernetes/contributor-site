@@ -116,8 +116,9 @@ Dave has been a prolific contributor to the Gateway API sub-project. Not only do
 *Peter Hunt, [@haircommander](https://github.com/haircommander)*  
 For the tireless and continuous pull request reviews and triage for SIG Node
 
-*Francesco Romani, [@pacoxu](https://github.com/ffromani)*  
-For continuous contributions to SIG Node and representing SIG Node at KubeCon China 2023
+*Francesco Romani, [@ffromani](https://github.com/ffromani)*
+In recognition of prolonged contributions in the domain of resource management, unwavering commitment,
+and persistent endeavors towards continuous enhancements.
 
 #### Release
 
