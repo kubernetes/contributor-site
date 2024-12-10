@@ -46,6 +46,7 @@ Their hard work was entirely responsible for this feature making it to beta, and
 Kensei's work here was a glowing example of seeing a problem and proactively solving it for all users of k8s."
 
 #### CLI
+
 *Marly Puckett, [@mpuckett159](https://github.com/mpuckett159)*  
 Marly has been helping with SIG-CLI for several months, tackling almost impossible problems (like jsonpath support for config, kuberc among many others). For the past several months she's also been active and recently taking over leading our monthly bug scrubs.  
 

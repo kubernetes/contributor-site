@@ -6,7 +6,7 @@ slug: "2024"
 description: "2024 Contributor Award Recipients"
 ---
 
-By Special Interest Group (SIG) with listed message/nomination reason   
+By Special Interest Group (SIG) with listed message/nomination reason
 
 #### API Machinery
 
@@ -51,10 +51,10 @@ For boosting so many messages both to and about our contributors, and taking on 
 *Noah Kantrowitz, [@coderanger](https://github.com/coderanger)*  
 For doing all the little tasks to keep contributor systems running.
 
-Sandeep Kanabar, [@sandeepkanabar](https://github.com/sandeepkanabar)*
+Sandeep Kanabar, [@sandeepkanabar](https://github.com/sandeepkanabar)*  
 For outstanding contributions to the KCS and SIG ContribEx Comms teams. Sandeep went above and beyond to pick up tasks and learn to lead comms as a shadow for KCSNA24.
 
-Arvind Parekh, [@ArvindParekh](https://github.com/ArvindParekh)*
+Arvind Parekh, [@ArvindParekh](https://github.com/ArvindParekh)*  
 For outstanding contributions to the KCS and SIG ContribEx Comms teams. Arvind went above and beyond to pick up tasks and learn to lead comms as a shadow for KCSNA24.
 
 #### Docs
@@ -62,7 +62,7 @@ For outstanding contributions to the KCS and SIG ContribEx Comms teams. Arvind w
 *Dipesh Rawat, [@dipesh-rawat](https://github.com/dipesh-rawat)*  
 For his awesome journey in advancing through the SIG Docs contributor ladder, where he has now become a regular approver and reviewer for the Kubernetes Documentation community. His expertise in web development and localization, alongside his great application of the Kubernetes documentation guidelines for other SIGs, has been exemplary for those wishing to become leaders in the project.
 
-*Abigail McCarthy, [@a-mccarthy](https://github.com/a-mccarthy)*
+*Abigail McCarthy, [@a-mccarthy](https://github.com/a-mccarthy)*  
 For her stewardship of the Localization subproject, where she has been able to guide new language teams and improve processes for existing teams. SIG Docs leads have been able to let the Localization subproject run independently thanks to the leadership of Abbie and her co-owner, Seokho. She has set a high bar for leadership across SIG Docs for current and promising subproject owners.
 
 #### SIG etcd
@@ -70,19 +70,21 @@ For her stewardship of the Localization subproject, where she has been able to g
 *Ivan Valdes, [@ivanvc](https://github.com/ivanvc)*  
 Ivan has been extremely active across a number of etcd-io subprojects since getting involved with the project 12 months ago at our ContribFest in Chicago in November 2023 and has helped take sig-etcd tooling to another level. Ivan adding to your code & review contributions we are deeply appreciative of your focus on helping other community members and being active in our regular community and triage meetings, thank you for all your hard work. 
 
-*Siyuan Zhang, [@siyuanfoundation](https://github.com/siyuanfoundation)*
+*Siyuan Zhang, [@siyuanfoundation](https://github.com/siyuanfoundation)*  
 Siyuan has been making crucial contributions to some of our most important roadmap items for etcd, both within the etcd-io repository but also across a number of kubernetes subprojects relating to etcd. Siyuan the amount of progress you've contributed towards etcd 3.6 since your first pr just over a year ago is extraordinary. Thank you for your help towards making etcd 3.6 a reality and helping to bridge the divide between Kubernetes and etcd. Your efforts on livez/readyz, downgrades and etcd feature gates are making a huge difference.
 
-*Wei Fu, [@fuweid](https://github.com/fuweid)*
+*Wei Fu, [@fuweid](https://github.com/fuweid)*  
 Fu Wei has demonstrated extraordinary knowledge in crucial areas of etcd and bbolt. They were instrumental in landing etcd's extremely complex upgrade from grpc gateway from v1 to v2 and creating our new robustness testing suite for bbolt.
 
 #### Instrumentation
 
-*Manuel Rüger, [@mrueg](https://github.com/mrueg)*  
-Richa has made significant contributions to SIG Instrumentation, driving forward the Component SLI KEP as well as Kubelet Resource Metrics (not to mention her cross-SIG activity in API-Machinery via work on the MVP KEP).
-
 *Catherine Fang, [@catherineF-dev](https://github.com/CatherineF-dev)*  
 Catherine has easily been one of the most prominent contributors in Kube State Metrics since her involvement from the v2.6.0 release (August, 2022). Since then, she has not only unblocked us on various fronts by contributing crucial patches, but also been an excellent all-rounder, keeping the tooling and documentation in shape, as well as actively seeking out issues that affect the community, and addressing them timely. She has helped out with 204 pull request to date, while driving 34 pull requests of her own.
+
+*Manuel Rüger, [@mrueg](https://github.com/mrueg)*  
+Manuel has landed 144 pull requests to date, with patothes entailing major features, as well as keeping the release machineTV in shape which enabled him to deliver new releases ofn time.
+He has been active in the project since v1.5.0 (January, 2019), and been a major help ever since (involved in reviewing ~555 pull requests) Kube State Metrics could never have gotten to
+the pedestal which it is on today without his efforts.
 
 #### K8s Infra
 
@@ -94,7 +96,7 @@ Ensure a transparent and robust integration between our CI and AWS.
 
 #### Multicluster
 
-*Mike Morris, [@mikemorris](https://github.com/mikemorris)*
+*Mike Morris, [@mikemorris](https://github.com/mikemorris)*  
 For significant contributions to shaping both the Multi-Cluster Service API and the new Cluster Inventory project, and for being a consistently active participant in the sig-multicluster community.
 
 #### Network
@@ -114,9 +116,9 @@ Dave has been a prolific contributor to the Gateway API sub-project. Not only do
 #### Node
 
 *Peter Hunt, [@haircommander](https://github.com/haircommander)*  
-For the tireless and continuous pull request reviews and triage for SIG Node
+In recognition of your longstanding contributions and unwavering commitment to continuous improvement initiatives.
 
-*Francesco Romani, [@ffromani](https://github.com/ffromani)*
+*Francesco Romani, [@ffromani](https://github.com/ffromani)*  
 In recognition of prolonged contributions in the domain of resource management, unwavering commitment,
 and persistent endeavors towards continuous enhancements.
 
@@ -130,25 +132,14 @@ Vyom has gone above and beyond in supporting the new Release Signal sub team ove
 
 #### Scalability
 
-*Harish Kuna, [@hakuna-matatah](https://github.com/hakuna-matatah)*
+*Harish Kuna, [@hakuna-matatah](https://github.com/hakuna-matatah)*  
 Harish helped ramp up Kubernetes scalability testing on AWS to 5000-node cluster by working closely with SIG testing. This helps distribute the cost of scale-testing and the responsibility of ensuring scalability readiness of Kubernetes releases across cloud providers. He also strives to maintain the health of these jobs and improve test coverage.
 
-*Prateek Gogia, [@prateekgogia](https://github.com/prateekgogia)*
+*Prateek Gogia, [@prateekgogia](https://github.com/prateekgogia)*  
 Prateek played a foundational role in enabling scalability tests on AWS by ensuring the right capabilities/configurations are in place with our tooling (kops, test-infra).
 
-*Justin Santa Barbara, [@justinsb](https://github.com/justinsb)*
+*Justin Santa Barbara, [@justinsb](https://github.com/justinsb)*  
 Prateek played a foundational role in enabling scalability tests on AWS by ensuring the right capabilities/configurations are in place with our tooling (kops, test-infra).
-
-#### Security
-
-*Rey Lejano, [@reylejano](https://github.com/reylejano)*  
-For the third-party audit, especially the post-audit follow-up, and so many other things across SIGs
-
-*Ashish Malik, [@ashish493](https://github.com/ashish493)*  
-For detailed and and collaborative work on the SIG Security Docs hardening guide
-
-*Kris Nóva, [@krisnova](https://github.com/krisnova)*  
-For so much Kubernetes security work, especially work that was done anonymously or was uncredited. We see you, we love you, and we miss you
 
 #### Scheduling
 

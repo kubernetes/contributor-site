@@ -91,7 +91,7 @@ Outstanding contributions pushing the ClusterProperty and Multicluster services 
 *Antonio Ojea, @aojea*  
 For always volunteering for the dirtiest jobs and demonstrating an exemplary leadership attitude.
   
-*Kal Henidak*    
+*Kal Henidak*  
 For keeping an eye on the ideal future, and trying hard to make it happen one step at a time.
 
 #### Node
@@ -106,7 +106,8 @@ Driving broad community participation, improving and sustaining the health of SI
 New maintainer in the SIG Node kubelet sub-project and coordinating release feature goals.
 
 #### Release
-*Karen Chu* 
+
+*Karen Chu*  
 For stepping up to be the 1.23 communications lead, reaching all deadlines in the 1.23 release cycle, and mentoring shadows that could succeed as communications lead in 1.24 and beyond.
   
 *Jesse Butler*  
@@ -118,8 +119,8 @@ For being a huge impact in SIG Release as the lead for the 1.21 release, as a re
 *Rey Lejano*  
 For being a consistent contributor to SIG Release for some time across many releases and roles. When the 1.23 Release came around, he volunteered to lead the release when we were unable to identify a release lead.
 
-
 #### Scalability
+
 *Wojciech Tyczyński*  
 Outstanding cross-SIG work working on P&F and Efficient watch resumption which required cross-SIG collaboration and were large contributions to multiple Kubernetes releases.
 
@@ -130,14 +131,14 @@ Outstanding cross-SIG work working on P&F and Efficient watch resumption which r
 Building a welcoming, encouraging community for new and experienced contributors, for being great examples on how we help each other grow, for seeing what needs to be done and putting in the work to do it while bringing others along.
 
 #### Scheduling
+
 *Mike Dame*  
 Leading the descheduler project, leading the refactoring effort to cut unneeded dependencies, for designing and implementing a new simplified scheduler plugin configuration API.
-
 
 #### Storage
 
 *Hemant Kumar, @gnufied*  
-Working on difficult bugs, long-standing reliability issues such as uncertain mounts, and slow mounts due to recursive fsgroup and fixing issues in order to move the volume expansion feature to GA 
+Working on difficult bugs, long-standing reliability issues such as uncertain mounts, and slow mounts due to recursive fsgroup and fixing issues in order to move the volume expansion feature to GA
 
 *Jiawei Wang*  
 Driving the CSI migration effort that has been ongoing for several releases and hosting meetings and working with maintainers across many cloud providers to move in-tree volume plugins to out-of-tree CSI drivers.
@@ -147,12 +148,11 @@ Driving the CSI migration effort that has been ongoing for several releases and 
 *Arnaud Meukam, @ameukam*  
 k8s-infra prow and migrating scalability jobs
   
-*Chao Dai*   
+*Chao Dai*  
 Automating prow updates
   
-*Claudiu Belu*    
+*Claudiu Belu*  
 Migrating Kubernetes to k8s.gcr.io/e2e-test-images
-
 
 #### UI
 
@@ -165,17 +165,16 @@ Both of their efforts maintaining Kubernetes Dashboard for over five years and k
 *Cleopatra Enjeck*  
 Helping SIG Usability operationalize how the SIG weighs feedback in the jobs-to-be-done study and helping the SIG make progress in analyzing the results of the study
   
-*Josie Pynadath*   
+*Josie Pynadath*  
 Interviewing and collecting results for SIG Usability’s study 
   
-*Carl J. Pearson, @carljpearson*     
+*Carl J. Pearson, @carljpearson*  
 Creating and presenting a framework on how to “code” results from the jobs-to-be-done study that enables new contributors
-
 
 #### Windows
 
-*Ravi Gudimetla*     
+*Ravi Gudimetla*  
 Established and runs the weekly SIG Windows CI/Triage meeting and for cross-SIG collaboration to get a new OS field added to Pod specs (alpha in v1.23) which will help solve many SIG Windows related issues such as being able to enforce OS specific policies during admission time.  
   
-*Amim Knabben, @ak_ndb*    
+*Amim Knabben, @ak_ndb*  
 Improving the developer experience for Windows related changes in Kubernetes which eases the on-ramp of developers to be involved with SIG Windows.
