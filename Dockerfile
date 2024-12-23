@@ -18,10 +18,9 @@ RUN apk add --no-cache \
 
 WORKDIR /src
 
-# Required for PostCSS
-RUN npm install -G \
-    autoprefixer \
-    postcss-cli
+COPY package*.json ./
+
+RUN npm ci
 
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \

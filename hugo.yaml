@@ -2,6 +2,7 @@ baseURL: 'https://www.kubernetes.dev/'
 title: Kubernetes Contributors
 theme:
   - docsy
+themesDir: node_modules
 enableRobotsTXT: true
 enableGitInfo: false
 
@@ -13,7 +14,6 @@ enableMissingTranslationPlaceholders: true
 
 disableKinds:
   - taxonomy
-  - taxonomyTerm
 
 # Highlighting config
 pygmentsCodeFences: true
@@ -140,7 +140,7 @@ params:
 # The responses that the user sees after clicking "yes" (the page was helpful) or "no" (the page was not helpful).
 # yes = 'Glad to hear it! Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
 # no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY/issues/new">tell us how we can improve</a>.'
-  
+
   links:
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
     user:
