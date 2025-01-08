@@ -13,7 +13,7 @@
 # limitations under the License.
 
 CONTAINER_ENGINE	?= docker
-CONTAINER_RUN		:= $(CONTAINER_ENGINE) run --user : --rm -it -v "$(CURDIR):/src"
+CONTAINER_RUN		:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
 HUGO_VERSION		:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 CONTAINER_IMAGE		:= k8s-contrib-site-hugo
 REPO_ROOT	:=${CURDIR}
