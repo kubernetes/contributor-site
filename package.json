@@ -2,10 +2,9 @@
   "name": "contributor-site",
   "version": "0.0.1",
   "description": "Kubernetes Contributor Site",
-  "main": "none.js",
-  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.7.6",
+    "docsy": "github:google/docsy#semver:0.5.1",
     "postcss-cli": "^7.1.0"
   },
   "scripts": {
@@ -15,8 +14,8 @@
     "type": "git",
     "url": "git+https://github.com/kubernetes-sigs/contributor-site.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "The Kubernetes Authors",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/kubernetes-sigs/contributor-site/issues"
   },
