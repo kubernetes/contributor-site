@@ -19,11 +19,11 @@ Salt Lake City, Utah 84101 <br/>
 
 ### Contributor Social Location
 
-The Contributor [Social] will be held on the evening of the 11th, at a location to be determined.
+The Contributor [Social](social.md) will be held from 6pm - 9pm on November 11th, at Flanker.
 
 **Address**<br>
-
-[Social]: /events/2024/kcsna/social/
+6 N Rio Grande St Suite 35<br/>
+Salt Lake City, UT, 84101<br/>
 
 ### Issues with Utah Laws
 

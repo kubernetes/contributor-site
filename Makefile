@@ -13,13 +13,25 @@
 # limitations under the License.
 
 CONTAINER_ENGINE	?= docker
-CONTAINER_RUN		:= $(CONTAINER_ENGINE) run --user : --rm -it -v $(CURDIR):/src
+CONTAINER_RUN		:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
+CONTAINER_RUN_TTY	:= $(CONTAINER_ENGINE) run --rm -it
 HUGO_VERSION		:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 CONTAINER_IMAGE		:= k8s-contrib-site-hugo
-REPO_ROOT	:=${CURDIR}
 
-# Fast NONBlOCKING IO to stdout caused by the hack/gen-content.sh script can
-# cause Netlify builds to terminate unexpectantly. This forces stdout to block.
+CONTAINER_HUGO_MOUNTS = \
+	--read-only \
+	--mount type=bind,source=$(CURDIR)/.git,target=/src/.git,readonly \
+	--mount type=bind,source=$(CURDIR)/assets,target=/src/assets,readonly \
+	--mount type=bind,source=$(CURDIR)/content,target=/src/content,readonly \
+	--mount type=bind,source=$(CURDIR)/external-sources,target=/src/external-sources,readonly \
+	--mount type=bind,source=$(CURDIR)/hack,target=/src/hack,readonly \
+	--mount type=bind,source=$(CURDIR)/layouts,target=/src/layouts,readonly \
+	--mount type=bind,source=$(CURDIR)/static,target=/src/static,readonly \
+	--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
+	--mount type=bind,source=$(CURDIR)/hugo.yaml,target=/src/hugo.yaml,readonly
+
+# Fast NONBLOCKING IO to stdout caused by the hack/gen-content.sh script can
+# cause Netlify builds to terminate unexpectedly. This forces stdout to block.
 BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 					flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); \
 					fcntl.fcntl(sys.stdout, fcntl.F_SETFL, flags&~os.O_NONBLOCK);"
@@ -27,30 +39,32 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets container-targets
-targets: help gen-content render serve clean clean-all sproduction preview-build
+targets: help gen-content render server clean clean-all production-build preview-build
 container-targets: container-image container-gen-content container-render container-server
 
 help: ## Show this help text.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
+dependencies:
+	npm ci
+
 gen-content: ## Generates content from external sources.
 	hack/gen-content.sh
 
-render: ## Build the site using Hugo on the host.
-	git submodule update --init --recursive --depth 1
-	hugo --verbose --ignoreCache --minify
+render: dependencies ## Build the site using Hugo on the host.
+	hugo --logLevel info --ignoreCache --minify
 
-server: ## Run Hugo locally (if Hugo "extended" is installed locally)
-	git submodule update --init --recursive --depth 1
+server: dependencies ## Run Hugo locally (if Hugo "extended" is installed locally)
 	hugo server \
-		--verbose \
+		--logLevel info \
 		--buildDrafts \
 		--buildFuture \
 		--disableFastRender \
 		--ignoreCache
 
-docker-image: container-image
+docker-image:
 	@echo -e "**** The use of docker-image is deprecated. Use container-image instead. ****" 1>&2
+	$(MAKE) container-image
 
 container-image: ## Build container image for use with container-* targets.
 	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --build-arg HUGO_VERSION=$(HUGO_VERSION)
@@ -67,8 +81,7 @@ docker-render:
 	$(MAKE) container-render
 
 container-render: ## Build the site using Hugo within a container (equiv to render).
-	git submodule update --init --recursive --depth 1
-	$(CONTAINER_RUN) $(CONTAINER_IMAGE) hugo --verbose --ignoreCache --minify
+	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_MOUNTS) $(CONTAINER_IMAGE) hugo --logLevel info --ignoreCache --minify
 
 docker-server:
 	@echo -e "**** The use of docker-server is deprecated. Use container-server instead. ****" 1>&2
@@ -76,10 +89,8 @@ docker-server:
 
 container-server: ## Run Hugo locally within a container, available at http://localhost:1313/
 	# no build lock to allow for read-only mounts
-	git submodule update --init --recursive --depth 1
-	$(CONTAINER_RUN) -p 1313:1313 \
-		--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
-		--read-only \
+	$(CONTAINER_RUN_TTY) -p 1313:1313 \
+		$(CONTAINER_HUGO_MOUNTS) \
 		--cap-drop=ALL \
 		--cap-drop=AUDIT_WRITE \
 		$(CONTAINER_IMAGE) \
@@ -87,7 +98,7 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 		 cd /tmp/src && \
 		hugo server \
 		--environment preview \
-		--verbose \
+		--logLevel info \
 		--noBuildLock \
 		--bind 0.0.0.0 \
 		--buildDrafts \
@@ -100,7 +111,7 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 clean: ## Cleans build artifacts.
 	rm -rf public/ resources/ _tmp/
 
-clean-all: ## Cleans both build artifacts and files sycned to content directory
+clean-all: ## Cleans both build artifacts and files synced to content directory
 	rm -rf public/ resources/ _tmp/
 	rm -f content/en/events/community-meeting.md
 	rm -f content/en/events/meet-our-contributors.md
@@ -129,21 +140,19 @@ clean-all: ## Cleans both build artifacts and files sycned to content directory
 
 production-build: ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
-	git submodule update --init --recursive --depth 1
 	hack/gen-content.sh
 	hugo \
 		--environment production \
-		--verbose \
+		--logLevel info \
 		--ignoreCache \
 		--minify
 
 preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
-	git submodule update --init --recursive --depth 1
 	hack/gen-content.sh
 	hugo \
 		--environment preview \
-		--verbose \
+		--logLevel info \
 		--baseURL $(DEPLOY_PRIME_URL) \
 		--buildDrafts \
 		--buildFuture \

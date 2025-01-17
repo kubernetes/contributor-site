@@ -1,18 +1,14 @@
+{{/*
+This is a temporary customisation to override docsy's use of deprecated Site.GoogleAnalytics and Site.DisqusShortname.
+This file needs to be removed once Docsy has been updated to 0.10.0.
+*/}}
+
 {{ define "main" }}
 <div class="td-content">
 	<h1>{{ .Title }}</h1>
-  {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
+	{{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
 	<header class="article-meta">
-		{{ $context := . }}
-		{{ if .Site.Params.Taxonomy.taxonomyPageHeader }}
-			{{ range $index, $taxo := .Site.Params.Taxonomy.taxonomyPageHeader }}
-				{{ partial "taxonomy_terms_article.html" (dict "context" $context "taxo" $taxo ) }}
-			{{ end }}
-		{{ else }}
-			{{ range $taxo, $taxo_map := .Site.Taxonomies }}
-				{{ partial "taxonomy_terms_article.html" (dict "context" $context "taxo" $taxo ) }}
-			{{ end }}
-		{{ end }}
+		{{ partial "taxonomy_terms_article_wrapper.html" . }}
 		{{ if (and (not .Params.hide_readingtime) (.Site.Params.ui.readingtime.enable)) }}
 			{{ partial "reading-time.html" . }}
 		{{ end }}

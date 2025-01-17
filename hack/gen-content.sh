@@ -225,7 +225,7 @@ gen_link() {
   # appended for generation of correct url rewrites. It may need to be further
   # updated if the external org/repo uses their own domain shortener similar to
   # git.k8s.io.
-  if echo "$generated_link" | $GREP -q -i -E "https?:\/\/((sigs|git)\.k8s\.io|(www\.)?github\.com\/(kubernetes(-(client|csi|incubator|sigs))?|cncf))"; then
+  if echo "$generated_link" | $GREP -q -i -E "https?://((sigs|git)\.k8s\.io|(www\.)?github\.com/(kubernetes(-(client|csi|incubator|sigs))?|cncf))"; then
     local i; i=0
     while (( i < ${#glsrcs[@]} )); do
       local repo=""
