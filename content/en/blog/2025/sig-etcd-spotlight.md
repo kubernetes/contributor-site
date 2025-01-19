@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on SIG Etcd"
 slug: sig-etcd-spotlight
-date: 2024-02-05
+date: 2025-02-05
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
