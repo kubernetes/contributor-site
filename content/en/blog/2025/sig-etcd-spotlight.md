@@ -2,13 +2,15 @@
 layout: blog
 title: "Spotlight on SIG Etcd"
 slug: sig-etcd-spotlight
-date: 2024-xx-xx
+date: 2024-02-05
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
 In this SIG Etcd spotlight we talked with James, Marek, Wenjia, and
 Benjamin to learn a bit more about this Kubernetes Special Interest
 Group.
+
+## Introducing SIG Etcd
 
 **Frederico: Hello, thank you for the time! Let’s start with some
 introductions, could you tell us a bit about yourself, your role and
@@ -51,6 +53,7 @@ Kubernetes because of my job, but what keeps me in the space is the
 charm of the container orchestration technology, and more importantly,
 the awesome open source community.
 
+## Becoming a Kubernetes Special Interest Group (SIG)
 
 **Frederico: SIG etcd is a very recent SIG, could you quickly go
 through the history and reasons behind its creation?**
@@ -107,6 +110,8 @@ Additionally looking at our overall contributions across all etcd
 project repositories we are also observing a positive trend showing a
 resurgence in etcd project activity:
 
+## The road ahead
+
 **Frederico: That's quite telling! In terms of the near future, what
 are the current priorities for SIG etcd?**
 
@@ -140,6 +145,8 @@ challenges for SIG etcd in the evolving cloud native landscape?**
 **Marek**: Well, reliability is always a challenge when you're dealing
 with critical data. The cloud-native world is evolving so fast that
 scaling to meet those demands is a constant effort.
+
+## Getting involved
 
 **Frederico: Indeed, thank you. For those interested, how can they get
 involved?**
@@ -196,17 +203,22 @@ SIGs, and focus on building a strong community.
 
 **Wenjia**: Here are some tips I myself found very helpful in my OSS
 journey:
-- Be patient: Open source development can take time. Don't get
+- _Be patient_: Open source development can take time. Don't get
   discouraged if your contributions aren't accepted immediately or if
   you encounter challenges.
-- Be respectful: The etcd community values collaboration and
+- _Be respectful_: The etcd community values collaboration and
 respect. Be mindful of others' opinions and work together to achieve
-common goals.  Have Fun: Contributing to open source should be
+common goals.
+- _Have fun_: Contributing to open source should be
 enjoyable. Find areas that interest you and contribute in ways that
 you find fulfilling.
 
+**Frederico: A great way to end this spotlight, thank you all!**
 
 ---
-For more information and resources: etcd website: https://etcd.io/
-etcd GitHub repository: https://github.com/etcd-io/etcd etcd
-community: https://etcd.io/community/
+
+For more information and resources, please take a look at :
+
+1. etcd website: https://etcd.io/
+2. etcd GitHub repository: https://github.com/etcd-io/etcd 
+3. etcd community: https://etcd.io/community/
