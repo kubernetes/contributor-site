@@ -4,7 +4,7 @@
   "description": "Kubernetes Contributor Site",
   "devDependencies": {
     "autoprefixer": "^9.7.6",
-    "docsy": "github:google/docsy#semver:0.6.0",
+    "docsy": "github:google/docsy#semver:0.7.2",
     "postcss-cli": "^7.1.0"
   },
   "scripts": {
