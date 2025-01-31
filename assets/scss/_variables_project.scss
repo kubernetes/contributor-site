@@ -1,2 +1,11 @@
 $primary: #326ce5;
 $secondary: #303030;
+
+$display-font-sizes: (
+        1: 3rem,
+        2: 2.5rem,
+        3: 2rem,
+        4: 1.75rem
+);
+
+$display-font-weight: $font-weight-bold;
