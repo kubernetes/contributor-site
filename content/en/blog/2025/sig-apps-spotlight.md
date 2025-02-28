@@ -68,13 +68,15 @@ working groups we’ve sponsored over the past years:
 Kubernetes. Can you share some of these best practices and how they help improve application
 lifecycle management?**
 
-1. Implementing health checks and readiness probes ensures that your applications are healthy and
-   ready to serve traffic, leading to improved reliability and uptime. The above, combined with
-   comprehensive logging, monitoring, and tracing solutions, will provide insights into your
-   application's behavior, enabling you to identify and resolve issues quickly.
+1. Implementing [health checks and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
+ensures that your applications are healthy and ready to serve traffic, leading to improved
+reliability and uptime. The above, combined with comprehensive logging, monitoring, and tracing
+solutions, will provide insights into your application's behavior, enabling you to identify and
+resolve issues quickly.
 
-2. Auto-scale your application based on resource utilization or custom metrics, optimizing resource
-   usage and ensuring your application can handle varying loads.
+2. [Auto-scale your application](https://kubernetes.io/docs/concepts/workloads/autoscaling/) based
+   on resource utilization or custom metrics, optimizing resource usage and ensuring your
+   application can handle varying loads.
 
 3. Use ``Deployment`` for stateless applications, ``StatefulSet`` for stateful applications, ``Job``
    and ``CronJob`` for batch workloads, and ``DaemonSet`` for running a daemon on each node. Use
@@ -88,16 +90,15 @@ The biggest challenge we’re facing all the time is the need to reject a lot of
 improvements. This requires a lot of discipline and patience to be able to explain the reasons
 behind those decisions.
 
-
 **Sandipan: How has the evolution of Kubernetes influenced the work of SIG Apps? Are there any
 recent changes or upcoming features in Kubernetes that you find particularly relevant or beneficial
 for SIG Apps?**
 
 The main benefit for both us and the whole community around SIG Apps is the ability to extend
-kubernetes with Custom Resource Definitions and the fact that users can build their own custom
-controllers leveraging the built-in ones to achieve whatever sophisticated use cases they might have
-and we, as the core maintainers, haven’t considered or weren’t able to efficiently resolve inside
-Kubernetes.
+kubernetes with [Custom Resource Definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
+and the fact that users can build their own custom controllers leveraging the built-in ones to
+achieve whatever sophisticated use cases they might have and we, as the core maintainers, haven’t
+considered or weren’t able to efficiently resolve inside Kubernetes.
 
 ## Contributing to SIG Apps
 
