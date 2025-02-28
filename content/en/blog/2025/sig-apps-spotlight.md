@@ -3,7 +3,7 @@ layout: blog
 title: "Spotlight on SIG Apps"
 slug: sig-apps-spotlight-2025
 date: 2025-03-05
-author: "Sandipan Panda (Devzero)"
+author: "Sandipan Panda (DevZero)"
 ---
 
 In our ongoing SIG Spotlight series, we dive into the heart of the Kubernetes project by talking to
