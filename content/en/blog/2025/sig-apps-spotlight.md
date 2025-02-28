@@ -11,7 +11,7 @@ the leaders of its various Special Interest Groups (SIGs). This time, we focus o
 **[SIG Apps](https://github.com/kubernetes/community/tree/master/sig-apps#apps-special-interest-group)**,
 the group responsible for everything related to developing, deploying, and operating applications on
 Kubernetes. [Sandipan Panda](https://www.linkedin.com/in/sandipanpanda)
-([DevZero](https://www.devzero.io/)) had the pleasure of interviewing [Maciej
+([DevZero](https://www.devzero.io/)) had the opportunity to interview [Maciej
 Szulik](https://github.com/soltysh) ([Defense Unicorns](https://defenseunicorns.com/)) and [Janet
 Kuo](https://github.com/janetkuo) ([Google](https://about.google/)), the chairs and tech leads of
 SIG Apps. They shared their experiences, challenges, and visions for the future of application
