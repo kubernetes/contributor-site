@@ -22,9 +22,9 @@ management within the Kubernetes ecosystem.
 **Sandipan: Hello, could you start by telling us a bit about yourself, your role, and your journey
 within the Kubernetes community that led to your current roles in SIG Apps?**
 
-**Maciej**: Hey, my name is Maciej, and I’m one of the leads for SIG-Apps. Aside from this role, you
+**Maciej**: Hey, my name is Maciej, and I’m one of the leads for SIG Apps. Aside from this role, you
 can also find me helping
-[SIG-CLI](https://github.com/kubernetes/community/tree/master/sig-cli#readme) and also being one of
+[SIG CLI](https://github.com/kubernetes/community/tree/master/sig-cli#readme) and also being one of
 the Steering Committee members. I’ve been contributing to Kubernetes since late 2014 in various
 areas, including controllers, apiserver, and kubectl.
 
@@ -57,9 +57,9 @@ At this point in time, the main factors driving the development of our controlle
 challenges coming from running various AI-related workloads. It’s worth giving credit here to two
 working groups we’ve sponsored over the past years:
 
-1. [The batch work group](https://github.com/kubernetes/community/tree/master/wg-batch), which is
+1. [The Batch Working Group](https://github.com/kubernetes/community/tree/master/wg-batch), which is
    looking at running HPC, AI/ML, and data analytics jobs on top of Kubernetes.
-2. [The serving work group](https://github.com/kubernetes/community/tree/master/wg-serving), which
+2. [The Serving Working Group](https://github.com/kubernetes/community/tree/master/wg-serving), which
    is focusing on hardware-accelerated AI/ML inference.
 
 ## Best practices and challenges
