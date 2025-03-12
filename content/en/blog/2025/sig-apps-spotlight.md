@@ -122,7 +122,7 @@ successful with one controller, you’ll need to repeat that same process with o
 integrated into your work?**
 
 We always encourage everyone to show up and present their problems and solutions during our
-bi-weekly [meetings](https://github.com/kubernetes/community/tree/master/sig-cli#meetings). As long
+bi-weekly [meetings](https://github.com/kubernetes/community/tree/master/sig-apps#meetings). As long
 as you’re solving an interesting problem on top of Kubernetes and you can provide valuable feedback
 about any of the core controllers, we’re always happy to hear from everyone.
 
@@ -137,7 +137,7 @@ groups, each covering a different aspect of it.
 **Sandipan: What are some of your favorite things about this SIG?**
 
 Without a doubt, the people that participate in our meetings and on
-[Slack](https://kubernetes.slack.com/messages/sig-cli), who tirelessly help triage issues, pull
+[Slack](https://kubernetes.slack.com/messages/sig-apps), who tirelessly help triage issues, pull
 requests and invest a lot of their time (very frequently their private time) into making kubernetes
 great!
 
@@ -150,8 +150,7 @@ modern application developers and operators. Whether you’re a new contributor 
 developer, there’s always an opportunity to get involved and make an impact.
 
 If you’re interested in learning more or contributing to SIG Apps, be sure to check out their [SIG
-README](https://github.com/kubernetes/community/tree/master/sig-apps) and join their bi-weekly
-meetings:
+README](https://github.com/kubernetes/community/tree/master/sig-apps) and join their bi-weekly [meetings](https://github.com/kubernetes/community/tree/master/sig-apps#meetings).
 
-- [Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-apps)
-- [Slack Channel](https://kubernetes.slack.com/messages/sig-apps)
+- SIG Apps Mailing List: https://groups.google.com/a/kubernetes.io/g/sig-apps
+- SIG Apps on Slack: https://kubernetes.slack.com/messages/sig-apps
