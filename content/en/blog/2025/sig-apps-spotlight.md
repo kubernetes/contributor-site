@@ -152,5 +152,5 @@ developer, there’s always an opportunity to get involved and make an impact.
 If you’re interested in learning more or contributing to SIG Apps, be sure to check out their [SIG
 README](https://github.com/kubernetes/community/tree/master/sig-apps) and join their bi-weekly [meetings](https://github.com/kubernetes/community/tree/master/sig-apps#meetings).
 
-- SIG Apps Mailing List: https://groups.google.com/a/kubernetes.io/g/sig-apps
-- SIG Apps on Slack: https://kubernetes.slack.com/messages/sig-apps
+- [SIG Apps Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-apps)
+- [SIG Apps on Slack](https://kubernetes.slack.com/messages/sig-apps)
