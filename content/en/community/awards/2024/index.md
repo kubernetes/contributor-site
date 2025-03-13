@@ -166,3 +166,57 @@ Raunak has been contributing to SIG Storage for a while. He has helped with CSI 
 
 *Ritika Gupta, [@ritikaguptams](https://github.com/ritikaguptams)*  
 Ritika has been a tremendous help in migrating the SIG-Windows test passes to the community infra clusters!
+
+#### Shinning in the CNCF Awards
+
+**Salt Lake City, UT – KubeCon + CloudNativeCon North America 2024 – November 14, 2024** –
+The [Cloud Native Computing Foundation®](https://www.cncf.io/) (CNCF®) has announced the winners of the annual
+[CNCF Community Awards](https://github.com/cncf/awards), with many honorees emerging from the Kubernetes community:
+
+- **Lifetime Achievement Award**
+
+  Recognizing outstanding, long-term contributions to the cloud-native ecosystem.
+
+  **Tim Hockin** ([thockin](https://github.com/thockin)), Kubernetes co-founder and Google Distinguished Software Engineer.
+
+- **Chop Wood Carry Water Award**
+
+  Presented to community members who work tirelessly behind the scenes, dedicating countless hours to open source projects,
+  organizing community meetups, and handling crucial but often unrecognized tasks that benefit the entire ecosystem.
+
+  - **Priyanka Saggu** ([Priyankasaggu11929](https://github.com/Priyankasaggu11929))
+  - **Stefan Schimanski** ([sttts](https://github.com/sttts))
+  - **James Spurin** ([spurin](https://github.com/spurin))
+
+- **Lorem Ipsum** (previously Documentarian Award)
+
+  Recognizing excellence in documentation contributions to CNCF and its projects,
+  including [k/website](https://kubernetes.io/).
+  Excellent technical documentation is one of the best ways projects can
+  lower the barrier to contribution and build a more inclusive community.
+
+  - **Qiming Teng** ([tengqm](https://github.com/tengqm))
+  - **Michael Yao** ([windsonsea](https://github.com/windsonsea))
+
+- **Lift and Shift Award**
+
+  Celebrating the great efforts put in to support CNCF project infrastructure,
+  in this instance, specifically moving the **Kubernetes testing infrastructure** from Google internal
+  resources to fully community-owned infrastructure; a project that took 6 years to complete!
+
+  - **Aaron Crickenberger** ([spiffxp](https://github.com/spiffxp))
+  - **Arnaud Meukam** ([ameukam](https://github.com/ameukam))
+  - **Ben Elder** ([bentheelder](https://github.com/bentheelder))
+  - **Caleb Woodbine** ([bobymcbobs](http://bobymcbobs/))
+  - **Cole Wagner** ([cjwagner](https://github.com/cjwagner))
+  - **Davanum Srinivas** ([dims](https://github.com/dims))
+  - **Hippie Hacker** ([hh](https://github.com/hh))
+  - **Justin Santa Barbara** ([justinsb](https://github.com/justinsb))
+  - **Koray Oksay** ([koksay](https://github.com/koksay))
+  - **Linus Arver** ([listx](https://github.com/listx))
+  - **Mahamed Ali** ([upodroid](https://github.com/upodroid))
+  - **Marko Mudrinić** ([xmudrii](https://github.com/xmudrii))
+  - **Michelle Shepardson** ([michelle192837](https://github.com/michelle192837))
+  - **Patryk Przekwas** ([pkprzekwas](https://github.com/pkprzekwas))
+  - **Ricky Sadowski** ([rjsadow](https://github.com/rjsadow))
+  - **Tim Hockin** ([thockin](https://github.com/thockin))
