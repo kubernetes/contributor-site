@@ -1,13 +1,19 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
-approvers:
-  - jberkus
-  - jeefy
-  - mrbobbytables
-  - natalisucks
-  - nimbinatus
-  - reylejano
-  - sftim
-  - stmcginnis
-  - tokt
-  - sig-contributor-experience-leads
+filters:
+  ".*":
+    approvers:
+      - jberkus
+      - jeefy
+      - mrbobbytables
+      - natalisucks
+      - nimbinatus
+      - reylejano
+      - sftim
+      - stmcginnis
+      - tokt
+      - sig-contributor-experience-leads
+  # files/directories related to static site generator 
+  "^(assets|layouts|static|package-lock\\.json|package\\.json|netlify\\.toml|hugo\\.yaml)$":
+    reviewers:
+      - SayakMukhopadhyay
