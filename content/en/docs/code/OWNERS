@@ -1,0 +1,10 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+options:
+  # we allow both set of approvers:
+  # - root approvers for style and format,
+  # - and sig-architecture-approvers for content updates
+  # no_parent_owners: true
+reviewers:
+approvers:
+  -  sig-architecture-approvers

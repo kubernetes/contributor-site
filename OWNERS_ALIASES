@@ -1,0 +1,11 @@
+aliases:
+  sig-architecture-approvers:
+    - dims
+    - derekwaynecarr
+    - johnbelamaric
+  sig-contributor-experience-leads:
+    - kaslin
+    - MadhavJivrajani
+    - mfahlandt
+    - palnabarun
+    - Priyankasaggu11929
