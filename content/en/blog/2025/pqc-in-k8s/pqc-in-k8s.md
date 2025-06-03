@@ -12,7 +12,8 @@ theoretical for many applications, their potential to break current
 cryptographic standards is a serious concern, especially for long-lived
 systems. This is where _Post-Quantum Cryptography_ (PQC) comes in. In this
 article, I\'ll dive into what PQC means for TLS and, more specifically, for the
-Kubernetes ecosystem.
+Kubernetes ecosystem. We will learn what the (suprising) state of PQC in
+Kubernetes is and what the implications are for current and future clusters.
 
 ## What is Post-Quantum Cryptography
 
@@ -24,7 +25,7 @@ Elliptic Curve Cryptography (ECC), which underpin much of today\'s secure
 communication, including TLS. The industry is actively working on standardizing
 and adopting PQC algorithms. One of the first to be standardized by [NIST] is
 the Module-Lattice Key Encapsulation Mechanism (`ML-KEM`), formerly known as
-Kyber, and now standardized as [`FIPS-203`].
+Kyber, and now standardized as [`FIPS-203`] (PDF download).
 
 It is difficult to predict when quantum computers will be able to break
 classical algorithms. However, it is clear that we need to start migrating to
@@ -187,7 +188,7 @@ platform.
 [NIST]: https://www.nist.gov/
 [`FIPS-203`]: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf
 [NIST report]: https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf
-[tldr.fail]: https://tldr.fail/tls-client-hello-packet-size
+[tldr.fail]: https://tldr.fail/
 [presents challenges]: https://blog.cloudflare.com/another-look-at-pq-signatures/#the-algorithms
 [can be substantially slower]: https://pqshield.github.io/nist-sigs-zoo/
 [(as of May 2025)]: https://github.com/golang/go/issues/64537#issuecomment-2877714729
