@@ -4,6 +4,7 @@ title: "Post-Quantum Cryptography in Kubernetes"
 slug: pqc-in-k8s
 date: 2025-06-03
 author: "Fabian Kammel (ControlPlane)"
+draft: true
 ---
 
 The world of cryptography is on the cusp of a major shift with the advent of
