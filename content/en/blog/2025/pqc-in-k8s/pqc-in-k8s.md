@@ -13,7 +13,7 @@ theoretical for many applications, their potential to break current
 cryptographic standards is a serious concern, especially for long-lived
 systems. This is where _Post-Quantum Cryptography_ (PQC) comes in. In this
 article, I\'ll dive into what PQC means for TLS and, more specifically, for the
-Kubernetes ecosystem. We will learn what the (suprising) state of PQC in
+Kubernetes ecosystem. I'll explain what the (suprising) state of PQC in
 Kubernetes is and what the implications are for current and future clusters.
 
 ## What is Post-Quantum Cryptography
@@ -35,7 +35,7 @@ predicted timeline we can look at a [NIST report] covering the transition to
 post-quantum cryptography standards. It declares that system with classical
 crypto should be deprecated after 2030 and disallowed after 2035.
 
-## Key Exchange vs. Digital Signatures: Different Needs, Different Timelines
+## Key exchange vs. digital signatures: different needs, different timelines {#timelines}
 
 In TLS, there are two main cryptographic operations we need to secure:
 
@@ -60,7 +60,7 @@ Elliptic Curve Diffie-Hellman Ephemeral (ECDHE)) with a PQC algorithm (such as
 component algorithms remains unbroken. The `X25519MLKEM768` hybrid scheme is the
 most widely supported one.
 
-## State of PQC Key Exchange Mechanisms (KEMs) Today
+## State of PQC key exchange mechanisms (KEMs) today {#state-of-kems}
 
 Support for PQC KEMs is rapidly improving across the ecosystem.
 
@@ -73,7 +73,7 @@ enabled by default when there is no explicit configuration, i.e.,
 and Firefox (version 135, February 2025), as well as OpenSSL (version 3.5.0,
 April 2025), have also added support for the `ML-KEM` based hybrid scheme.
 
-## PQC KEMs in Kubernetes: An Unexpected Arrival
+## Post-quantum KEMs in Kubernetes: an unexpected arrival
 
 So, what does this mean for Kubernetes? Kubernetes components, including the
 API server and kubelet, are built with Go.
@@ -91,7 +91,7 @@ v1.33.0, you can connect to the API server using a recent OpenSSL client:
 minikube start --kubernetes-version=v1.33.0
 kubectl cluster-info
 # Kubernetes control plane is running at https://127.0.0.1:<PORT>
-kubectl config view --minify --raw -o jsonpath=\'{.clusters[0].cluster.certificate-authority-data}\' | base64 -d > ca.crt
+kubectl config view --minify --raw -o jsonpath='{.clusters[0].cluster.certificate-authority-data}' | base64 -d > ca.crt
 openssl version
 # OpenSSL 3.5.0 8 Apr 2025 (Library: OpenSSL 3.5.0 8 Apr 2025)
 echo -n "Q" | openssl s_client -connect 127.0.0.1:<PORT> -CAfile ca.crt
@@ -105,7 +105,7 @@ Lo and behold, the negotiated group is `X25519MLKEM768`! This is a significant
 step towards making Kubernetes quantum-safe, seemingly without a major
 announcement or dedicated KEP.
 
-## The Go Version Mismatch Pitfall
+## The Go version mismatch pitfall
 
 An interesting wrinkle emerged with Go versions 1.23 and 1.24. Go 1.23
 included experimental support for a draft version of `ML-KEM`, identified as
@@ -130,7 +130,7 @@ losing the PQC protection that has been in place. This highlights the
 importance of understanding the implications of Go version upgrades, and the
 details of the TLS stack.
 
-## Limitations: Packet Size
+## Limitations: packet size {#limitation-packet-size}
 
 One practical consideration with `ML-KEM` is the size of its public keys
 (around 1.184 bytes for `ML-KEM-768`). This can cause the initial TLS Client
@@ -174,7 +174,7 @@ is not yet part of the mainstream Kubernetes or Go distributions.
 
 The journey to a post-quantum secure Kubernetes is underway, and perhaps
 further along than many realize, thanks to the proactive adoption of `ML-KEM`
-in Go. Kubernetes v1.33 users are already benefiting from hybrid PQC key
+in Go. With Kubernetes v1.33, users are already benefiting from hybrid post-quantum key
 exchange in many TLS connections by default.
 
 However, awareness of potential pitfalls, such as Go version mismatches leading
@@ -185,9 +185,9 @@ mainstream use. As Kubernetes maintainers and contributors, staying informed
 about these developments will be key to ensuring the long-term security of the
 platform.
 
-[Shor\'s Algorithm]: https://en.wikipedia.org/wiki/Shor%27s_algorithm
+[Shor's Algorithm]: https://en.wikipedia.org/wiki/Shor%27s_algorithm
 [NIST]: https://www.nist.gov/
-[`FIPS-203`]: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf
+[FIPS-203]: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf
 [NIST report]: https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf
 [tldr.fail]: https://tldr.fail/
 [presents challenges]: https://blog.cloudflare.com/another-look-at-pq-signatures/#the-algorithms
