@@ -88,17 +88,17 @@ You can test this yourself. If you set up a Minikube cluster running Kubernetes
 v1.33.0, you can connect to the API server using a recent OpenSSL client:
 
 ```console
-minikube start --kubernetes-version=v1.33.0
-kubectl cluster-info
-# Kubernetes control plane is running at https://127.0.0.1:<PORT>
-kubectl config view --minify --raw -o jsonpath='{.clusters[0].cluster.certificate-authority-data}' | base64 -d > ca.crt
-openssl version
-# OpenSSL 3.5.0 8 Apr 2025 (Library: OpenSSL 3.5.0 8 Apr 2025)
-echo -n "Q" | openssl s_client -connect 127.0.0.1:<PORT> -CAfile ca.crt
-# [...]
-# Negotiated TLS1.3 group: X25519MLKEM768
-# [...]
-# DONE
+$ minikube start --kubernetes-version=v1.33.0
+$ kubectl cluster-info
+Kubernetes control plane is running at https://127.0.0.1:<PORT>
+$ kubectl config view --minify --raw -o jsonpath=\'{.clusters[0].cluster.certificate-authority-data}\' | base64 -d > ca.crt
+$ openssl version
+OpenSSL 3.5.0 8 Apr 2025 (Library: OpenSSL 3.5.0 8 Apr 2025)
+$ echo -n "Q" | openssl s_client -connect 127.0.0.1:<PORT> -CAfile ca.crt
+[...]
+Negotiated TLS1.3 group: X25519MLKEM768
+[...]
+DONE
 ```
 
 Lo and behold, the negotiated group is `X25519MLKEM768`! This is a significant
