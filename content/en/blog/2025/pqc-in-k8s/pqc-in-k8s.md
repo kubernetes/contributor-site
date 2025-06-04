@@ -133,8 +133,10 @@ details of the TLS stack.
 ## Limitations: packet size {#limitation-packet-size}
 
 One practical consideration with `ML-KEM` is the size of its public keys
-(around 1.184 bytes for `ML-KEM-768`). This can cause the initial TLS Client
-Hello message to exceed the typical single TCP packet limit (around 1500
+with encoded key sizes of around 1.2 kilobytes for `ML-KEM-768`.
+This can cause the initial TLS `ClientHello` message not to fit inside
+a single TCP/IP packet, given the typical networking constraints
+(most commonly, the standard Ethernet frame size limit of 1500
 bytes). Some TLS libraries or network appliances might not handle this
 gracefully, assuming the Client Hello always fits in one packet. This issue
 has been observed in some Kubernetes-related projects and networking
