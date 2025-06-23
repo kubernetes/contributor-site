@@ -26,7 +26,7 @@ Elliptic Curve Cryptography (ECC), which underpin much of today\'s secure
 communication, including TLS. The industry is actively working on standardizing
 and adopting PQC algorithms. One of the first to be standardized by [NIST] is
 the Module-Lattice Key Encapsulation Mechanism (`ML-KEM`), formerly known as
-Kyber, and now standardized as [`FIPS-203`] (PDF download).
+Kyber, and now standardized as [FIPS\-203] (PDF download).
 
 It is difficult to predict when quantum computers will be able to break
 classical algorithms. However, it is clear that we need to start migrating to
@@ -187,9 +187,9 @@ mainstream use. As Kubernetes maintainers and contributors, staying informed
 about these developments will be key to ensuring the long-term security of the
 platform.
 
-[Shor's Algorithm]: https://en.wikipedia.org/wiki/Shor%27s_algorithm
+[Shor\'s Algorithm]: https://en.wikipedia.org/wiki/Shor%27s_algorithm
 [NIST]: https://www.nist.gov/
-[FIPS-203]: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf
+[FIPS\-203]: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf
 [NIST report]: https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf
 [tldr.fail]: https://tldr.fail/
 [presents challenges]: https://blog.cloudflare.com/another-look-at-pq-signatures/#the-algorithms
