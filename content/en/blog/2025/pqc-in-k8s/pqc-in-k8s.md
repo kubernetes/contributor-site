@@ -73,6 +73,9 @@ enabled by default when there is no explicit configuration, i.e.,
 and Firefox (version 135, February 2025), as well as OpenSSL (version 3.5.0,
 April 2025), have also added support for the `ML-KEM` based hybrid scheme.
 
+For a more detailed overview of the state of PQC in the wider industry,
+see [this blog post by Cloudflare][PQC2024].
+
 ## Post-quantum KEMs in Kubernetes: an unexpected arrival
 
 So, what does this mean for Kubernetes? Kubernetes components, including the
@@ -197,3 +200,4 @@ platform.
 [(as of May 2025)]: https://github.com/golang/go/issues/64537#issuecomment-2877714729
 [Cloudflare\'s CIRCL]: https://github.com/cloudflare/circl
 [fork of Go (cfgo)]: https://github.com/cloudflare/go
+[PQC2024]: https://blog.cloudflare.com/pq-2024/
