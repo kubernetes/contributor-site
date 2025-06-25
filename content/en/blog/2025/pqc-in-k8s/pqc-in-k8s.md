@@ -160,8 +160,10 @@ Ed25519 or RSA. For instance, Dilithium2 keys can be 30 times larger than
 Ed25519 keys, and certificates can be 12 times larger.
 
 **Performance**: Signing and verification operations [can be substantially slower].
-We are talking on the order of 10x to 1000x worse performance, compared to
-classical algorithms.
+While some algorithms are on par with classical algorithms, others may have a
+much higher overhead, sometimes on the order of 10x to 1000x worse performance.
+To improve this situation, NIST is running a
+[second round of standardization][NIST2ndRound] for PQC signatures.
 
 **Toolchain Support**: Mainstream TLS libraries and CA software do not yet have
 mature, built-in support for these new signature algorithms. The Go team, for
@@ -201,3 +203,4 @@ platform.
 [Cloudflare\'s CIRCL]: https://github.com/cloudflare/circl
 [fork of Go (cfgo)]: https://github.com/cloudflare/go
 [PQC2024]: https://blog.cloudflare.com/pq-2024/
+[NIST2ndRound]: https://csrc.nist.gov/news/2024/pqc-digital-signature-second-round-announcement
