@@ -53,6 +53,10 @@ after the fact. Additionally, current PQC signature schemes often come with
 significant computational overhead and larger key/signature sizes compared to
 their classical counterparts.
 
+Another significant hurdle in the migration to PQ certificates is the upgrade
+of root certificates. These certificates have long validity periods and are
+installed in many devices and operating systems as trust anchors.
+
 Given these differences, the focus for immediate PQC adoption in TLS has been
 on hybrid key exchange mechanisms. These combine a classical algorithm (such as
 Elliptic Curve Diffie-Hellman Ephemeral (ECDHE)) with a PQC algorithm (such as
@@ -72,6 +76,10 @@ enabled by default when there is no explicit configuration, i.e.,
 **Browsers & OpenSSL**: Major browsers like Chrome (version 131, November 2024)
 and Firefox (version 135, February 2025), as well as OpenSSL (version 3.5.0,
 April 2025), have also added support for the `ML-KEM` based hybrid scheme.
+
+Apple is also [rolling out support][ApplePQC] for `X25519MLKEM768` in version
+26 of their operating systems. Given the proliferation of Apple devices, this
+will have a significant impact on the global PQC adoption.
 
 For a more detailed overview of the state of PQC in the wider industry,
 see [this blog post by Cloudflare][PQC2024].
@@ -204,3 +212,4 @@ platform.
 [fork of Go (cfgo)]: https://github.com/cloudflare/go
 [PQC2024]: https://blog.cloudflare.com/pq-2024/
 [NIST2ndRound]: https://csrc.nist.gov/news/2024/pqc-digital-signature-second-round-announcement
+[ApplePQC]: https://support.apple.com/en-lb/122756
