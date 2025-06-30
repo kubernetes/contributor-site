@@ -114,7 +114,7 @@ DONE
 
 Lo and behold, the negotiated group is `X25519MLKEM768`! This is a significant
 step towards making Kubernetes quantum-safe, seemingly without a major
-announcement or dedicated KEP.
+announcement or dedicated KEP (Kubernetes Enhancement Proposal).
 
 ## The Go version mismatch pitfall
 
