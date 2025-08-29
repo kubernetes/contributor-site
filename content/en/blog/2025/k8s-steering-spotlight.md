@@ -10,17 +10,18 @@ author: "Arpit Agrawal"
 The [Kubernetes Steering Committee](https://github.com/kubernetes/steering) is the backbone of the
 Kubernetes project, ensuring that its vibrant community and governance structures operate smoothly
 and effectively. While the technical brilliance of Kubernetes is often spotlighted through its
-Special Interest Groups (SIGs) and Working Groups (WGs), the unsung heroes quietly steering the ship
-are the members of the Steering Committee. They tackle complex organizational challenges, empower
-contributors, and foster the thriving open source ecosystem that Kubernetes is celebrated for.
+[Special Interest Groups (SIGs) and Working Groups (WGs)](https://github.com/kubernetes/community),
+the unsung heroes quietly steering the ship are the members of the Steering Committee. They tackle
+complex organizational challenges, empower contributors, and foster the thriving open source
+ecosystem that Kubernetes is celebrated for.
 
 But what does it really take to lead one of the world’s largest open source communities? What are
 the hidden challenges, and what drives these individuals to dedicate their time and effort to such
-an impactful role? In this exclusive conversation, we sit down with current Steering Committee
-members—Ben, Nabarun, Paco, Patrick, and Maciej—to uncover the rewarding, and sometimes demanding,
-realities of steering Kubernetes. From their personal journeys and motivations to the committee’s
-vital responsibilities and future outlook, this Spotlight offers a rare behind-the-scenes glimpse
-into the people who keep Kubernetes on course.
+an impactful role? In this exclusive conversation, we sit down with current Steering Committee (SC)
+members --- Ben, Nabarun, Paco, Patrick, and Maciej --- to uncover the rewarding, and sometimes
+demanding, realities of steering Kubernetes. From their personal journeys and motivations to the
+committee’s vital responsibilities and future outlook, this Spotlight offers a rare
+behind-the-scenes glimpse into the people who keep Kubernetes on course.
 
 ## Introductions
 
@@ -54,12 +55,12 @@ helped in KCD China and was co-chair of the recent [KubeCon+CloudNativeCon China
 
 **Maciej**: Hey, my name is [Maciej](https://www.linkedin.com/in/maciejszulik/) and I've been working on Kubernetes since late 2014 in various areas, including controllers, apiserver and kubectl. Aside from being part of the Steering Committee, I’m also helping guide [SIG CLI](https://github.com/kubernetes/community/blob/master/sig-cli/README.md), [SIG Apps](https://github.com/kubernetes/community/blob/master/sig-apps/README.md) and [WG Batch](https://github.com/kubernetes/community/blob/master/wg-batch/README.md). 
 
-## About SIG Steering
+## About the Steering Committee
 
 **Sandipan: What does Steering do?**
 
 **Ben:** The charter is the definitive answer, but I see Steering as helping resolve
-Kubernetes-organization-level “people problems” (as opposed to technical problems), such as
+Kubernetes-organization-level "people problems" (as opposed to technical problems), such as
 clarifying project governance and liaising with the Cloud Native Computing Foundation (for example,
 to request additional resources and support) and other CNCF projects.
 
@@ -75,9 +76,9 @@ it or when conflicts need to be resolved.
 **Sandipan: And how is Steering different from SIGs?
 
 **Ben**: From a governance perspective: Steering delegates all of the ownership of subprojects to
-the SIGs and/or committees (Security Response, Code Of Conduct, etc.). They’re very different. The
-SIGs own pieces of the project, and Steering handles some of the overarching people and policy
-issues. You’ll find ~all of the software development, releasing, communications and documentation
+the SIGs and/or committees (_Security Response_, _Code Of Conduct_, etc.). They’re very different.
+The SIGs own pieces of the project, and Steering handles some of the overarching people and policy
+issues. You’ll find all of the software development, releasing, communications and documentation
 work happening in the SIGs and committees.
 
 **Maciej**: SIGs or WGs are primarily concerned with the technical direction of a particular area in
@@ -90,9 +91,11 @@ the way to supporting individual maintainers in various inquiries.
 on recently?
 
 **Ben**: We’ve been discussing the logistics to sync a better definition of the project’s official
-maintainers to the CNCF, which are used, for example, to vote for TOC. Currently that list is the
-Steering Committee, with SIG Contributor Experience and Infra + Release leads having access to the
-CNCF service desk. This isn’t well standardized yet across CNCF projects but I think it’s important.
+maintainers to the CNCF, which are used, for example, to vote for the [Technical Oversight
+Committee](https://www.cncf.io/people/technical-oversight-committee/) (TOC). Currently that list is
+the Steering Committee, with SIG Contributor Experience and Infra + Release leads having access to
+the CNCF service desk. This isn’t well standardized yet across CNCF projects but I think it’s
+important.
 
 **Maciej**: For the past year I’ve been sitting on the SC, I believe the majority of tasks we’ve
 been involved in were around providing letters supporting visa applications. Also, like every year,
@@ -109,7 +112,7 @@ SIG Testing, or more specifically about releasing for subprojects that we redire
 / SIG Release.
 
 
-## The road to SIG Steering
+## The road to the Steering Committee
 
 **Sandipan: What motivated you to be part of the Steering Committee? What has your journey been
 like?**
@@ -119,12 +122,13 @@ this community and the project. I think we have something really special going h
 deeply about the ongoing success. I’ve been involved in this space my whole career and while there’s
 always rough edges, this community has been really supportive and I hope we can keep it that way.
 
-**Paco**: After my journey to KCS EU 2023, I met and chatted with many maintainers and members
-there, and attended the steering AMA there for the first time as there hadn’t been a contributor
-summit in China since 2019, and I started to connect with contributors in China to make it later the
-year. Through conversations at KCS EU and with local contributors, I realized that it is quite
-important to make it easy to start a contributor journey for APAC contributors and want to attract
-more contributors to the community. Then, I was elected just after the KCS CN 2023.
+**Paco**: After my journey to the [Kubernetes Contributor Summit EU
+2023](https://www.kubernetes.dev/events/2023/kcseu/), I met and chatted with many maintainers and
+members there, and attended the steering AMA there for the first time as there hadn’t been a
+contributor summit in China since 2019, and I started to connect with contributors in China to make
+it later the year. Through conversations at KCS EU and with local contributors, I realized that it
+is quite important to make it easy to start a contributor journey for APAC contributors and want to
+attract more contributors to the community. Then, I was elected just after the [KCS CN 2023](https://www.kubernetes.dev/events/2023/kcscn/).
 
 **Patrick**: I had done a lot of technical work, of which some affects and (hopefully) benefits all
 contributors to Kubernetes (linting and testing) and users (better log output). I saw joining the
@@ -144,7 +148,7 @@ support. When we get to just purely help out Kubernetes contributors, that’s m
 **Patrick**: It’s a good place to learn more about how the project is actually run, directly from
 the other great people who are doing it.
 
-**Maciej**: The same thing as with the project--it’s always the people that surround us, that give
+**Maciej**: The same thing as with the project --- it’s always the people that surround us, that give
 us opportunities to collaborate and create something interesting and exciting.
 
 **Sandipan: What do you think is most challenging about being part of Steering?**
@@ -176,7 +180,7 @@ the previous SC had to deal with, so far.
 **Sandipan: For folks who might want to run for Steering in the future, what are the most important
 things you think they should know?**
 
-**Ben**: A lot of what Steering does is "interrupt driven" … something comes up and needs resolution
+**Ben**: A lot of what Steering does is "interrupt driven"... something comes up and needs resolution
 – Make sure you’re committed and prepared to set aside the time. Otherwise I hope you think calmly
 about issues and listen to our community with empathy.
 
@@ -195,11 +199,11 @@ smoothly, and the Kubernetes Steering Committee does just that. They work quietl
 tackling challenges, supporting contributors, and ensuring the community remains inclusive and
 vibrant.
 
-What makes them stand out is their focus on people—empowering contributors, resolving governance
+What makes them stand out is their focus on people --- empowering contributors, resolving governance
 issues, and creating an environment where innovation can thrive. It’s not always easy, but as
 they’ve shared, it’s deeply rewarding.
 
 Whether you’re a long-time contributor or thinking about getting involved, the Kubernetes community
-is open to you. At its heart, Kubernetes is about more than just technology—it’s about the people
+is open to you. At its heart, Kubernetes is about more than just technology --- it’s about the people
 who make it all happen. There’s always room for one more voice to help shape the future.
 
