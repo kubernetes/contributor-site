@@ -1,8 +1,9 @@
 ---
 layout: blog
-title: "Spotlight on SIG Steering"
-slug: sig-steering-spotlight-2025
-date: 2025-08-14
+title: "Spotlight on the Kubernetes Steering Committee"
+slug: k8s-steering-spotlight-2025
+date: 2025-09-09
+draft: true
 author: "Arpit Agrawal"
 ---
 
