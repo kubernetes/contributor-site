@@ -2,10 +2,16 @@
 layout: blog
 title: "Spotlight on the Kubernetes Steering Committee"
 slug: k8s-steering-spotlight-2025
-date: 2025-09-09
+date: 2025-09-17
 draft: true
 author: "Arpit Agrawal"
 ---
+
+_This interview was originally made last year, and due to the dynamic nature of the Steering
+Committee membership and election process it might not represent the actual composition accurately.
+The topics covered are, however, overwhelmingly relevant to understand its scope of work. As we
+approach the Steering Committee elections, it provides useful insights into the workings of the
+Committee._
 
 The [Kubernetes Steering Committee](https://github.com/kubernetes/steering) is the backbone of the
 Kubernetes project, ensuring that its vibrant community and governance structures operate smoothly
