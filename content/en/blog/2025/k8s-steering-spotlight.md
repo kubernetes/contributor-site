@@ -7,7 +7,7 @@ draft: true
 author: "Arpit Agrawal"
 ---
 
-_This interview was originally made last year, and due to the dynamic nature of the Steering
+_This interview was conducted in August 2024, and due to the dynamic nature of the Steering
 Committee membership and election process it might not represent the actual composition accurately.
 The topics covered are, however, overwhelmingly relevant to understand its scope of work. As we
 approach the Steering Committee elections, it provides useful insights into the workings of the
