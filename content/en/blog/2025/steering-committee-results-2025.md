@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Announcing the 2025 Steering Committee Election Results"
-date: 2025-11-08T15:10:00-05:00
+date: 2025-11-09T15:10:00-05:00
 slug: steering-committee-results-2025
 author: "Arujjwal Negi"
 ---
