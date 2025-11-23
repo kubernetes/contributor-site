@@ -67,7 +67,7 @@ For his excellent work in aligning the Kubernetes website with upstream Docsy, w
 *Graziano Casto, [@graz-dev](https://github.com/graz-dev)*  
 For his helpful work on the Kubernetes Blog, which has led him to become a co-maintainer of our blog in a helpful, efficient, and kind manner. Graziano's reviews for authors are well-received, and he has generally mastered our blog guidelines to become a definitive authority within our small SIG Docs Blog team, which was sorely needed. We're incredibly grateful for Graziano's step-up into blog maintainer for the SIG.
 
-#### etcd
+#### SIG etcd
 
 *Joshua James, [@joshjms](https://github.com/joshjms)*  
 Joshua documented the process for bumping etcd versions in Kubernetes, has been working toward unifying etcd image management in Kubernetes, and has contributed to various project chores such as release and dependency updates.
