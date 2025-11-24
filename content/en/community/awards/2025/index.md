@@ -127,3 +127,11 @@ Drew Sirenko has been a key contributor to the VolumeAttributesClass feature, de
 
 *Sunny Song, [@sunnylovestiramisu](https://github.com/sunnylovestiramisu)*   
 Sunny has led the design and implementation of the VolumeAttributesClass feature, a major enhancement targeted for GA in Kubernetes 1.34, coordinating with multiple cloud providers and storage vendors. She was also instrumental in bringing volume populators to GA in Kubernetes 1.33. In addition, she continues to support CSI sidecar releases and tackle important bug fixes, further strengthening Kubernetes storage capabilities.
+
+## WG etcd-operator
+
+*Arka Saha, [@ArkaSaha30](https://github.com/ArkaSaha30)*
+Arka has led the development of the key feature for etcd-operator version 0.2, certificate management, and has continued mentoring security feature development.
+
+*Abdur Rehman, [@abdurrehman107](https://github.com/abdurrehman107)*
+Abdur launched the E2E test suite for etcd-operator, enabling the first release of the operator as well as anchoring future test work.
