@@ -1,9 +1,10 @@
 [build]
+image = "ubuntu-22.04"
 publish = "public"
 command = "make production-build"
 
 [build.environment]
-HUGO_VERSION = "0.133.0"
+HUGO_VERSION = "0.152.2"
 NODE_VERSION = "20.16.0"
 HUGO_ENV = "production"
 
