@@ -9,21 +9,22 @@
 
 */}}
 {{- $kepData := "" -}}
-{{- with resources.GetRemote $kepDataSourceUrl -}}
-  {{- with .Err -}}
+{{- $remote := try (resources.GetRemote $kepDataSourceUrl) -}}
+{{- with $remote.Err -}}
     {{- if eq hugo.Environment "production" }}
-      {{ errorf "Unable to load CVE Feed: %s" }}
+{{ errorf "Unable to load KEPs data: %s" . }}
     {{- else -}}
-      {{- warnf "Cannot load CVE Feed: %s" -}}
+{{- warnf "Cannot load KEPs data: %s" . -}}
     {{- end -}}
   {{- else -}}
+{{- with $remote.Value -}}
     {{- $kepData = .Content | transform.Unmarshal -}}
-  {{- end -}}
 {{- else -}}
   {{- if eq hugo.Environment "production" }}
-    {{- errorf "Unable to load CVE Feed: %s (source URL was %q)" $kepDataSourceUrl -}}
+{{- errorf "Unable to load KEPs data: %s (source URL was %q)" "Resource is nil" $kepDataSourceUrl -}}
   {{- else -}}
-    {{- warnf "Cannot load CVE Feed: %s" -}}
+{{- warnf "Cannot load KEPs data: %s" "Resource is nil" -}}
+{{- end -}}
   {{- end -}}
 {{- end -}}
 
