@@ -12,11 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CONTAINER_ENGINE	?= docker
-CONTAINER_RUN		:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
-CONTAINER_RUN_TTY	:= $(CONTAINER_ENGINE) run --rm -it
-HUGO_VERSION		:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
-CONTAINER_IMAGE		:= k8s-contrib-site-hugo
+CONTAINER_ENGINE		?= docker
+STAGING_IMAGE_REGISTRY	:= us-central1-docker.pkg.dev/k8s-staging-images
+IMAGE_REGISTRY			?= ${STAGING_IMAGE_REGISTRY}/contributor-site
+IMAGE_NAME				:= k8s-contrib-site-hugo
+IMAGE_REPO				:= $(IMAGE_REGISTRY)/$(IMAGE_NAME)
+IMAGE_VERSION			:= $(shell git rev-parse --short HEAD)
+CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
+CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
+HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
+GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
+CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
 
 CONTAINER_HUGO_MOUNTS = \
 	--read-only \
@@ -40,7 +46,7 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 
 .PHONY: targets container-targets
 targets: help gen-content render server clean clean-all production-build preview-build
-container-targets: container-image container-gen-content container-render container-server
+container-targets: container-image container-push container-gen-content container-render container-server
 
 help: ## Show this help text.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -68,6 +74,9 @@ docker-image:
 
 container-image: ## Build container image for use with container-* targets.
 	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --build-arg HUGO_VERSION=$(HUGO_VERSION)
+
+container-push: container-image ## Push container image for the preview of the website
+	$(CONTAINER_ENGINE) push $(CONTAINER_IMAGE)
 
 docker-gen-content:
 	@echo -e "**** The use of docker-gen-content is deprecated. Use container-gen-content instead. ****" 1>&2
