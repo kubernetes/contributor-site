@@ -17,7 +17,8 @@ STAGING_IMAGE_REGISTRY	:= us-central1-docker.pkg.dev/k8s-staging-images
 IMAGE_REGISTRY			?= ${STAGING_IMAGE_REGISTRY}/contributor-site
 IMAGE_NAME				:= k8s-contrib-site-hugo
 IMAGE_REPO				:= $(IMAGE_REGISTRY)/$(IMAGE_NAME)
-IMAGE_VERSION			:= $(shell git rev-parse --short HEAD)
+IMAGE_VERSION			:= $(shell scripts/hash-files.sh Dockerfile Makefile netlify.toml .dockerignore cloudbuild.yaml package.json package-lock.json | cut -c 1-12)
+COMMIT					:= $(shell git rev-parse --short HEAD)
 CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
 CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
@@ -73,7 +74,7 @@ docker-image:
 	$(MAKE) container-image
 
 container-image: ## Build container image for use with container-* targets.
-	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --build-arg HUGO_VERSION=$(HUGO_VERSION)
+	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --label git_commit=$(COMMIT) --build-arg HUGO_VERSION=$(HUGO_VERSION)
 
 container-push: container-image ## Push container image for the preview of the website
 	$(CONTAINER_ENGINE) push $(CONTAINER_IMAGE)
