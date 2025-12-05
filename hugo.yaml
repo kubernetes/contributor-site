@@ -99,6 +99,10 @@ params:
         url: 'https://twitter.com/K8sContributors'
         icon: fab fa-twitter
         desc: Follow us on Twitter to get the latest news!
+      - name: LinkedIn
+        url: 'https://www.linkedin.com/company/kubernetes'
+        icon: fab fa-linkedin
+        desc: "Kubernetes on LinkedIn"
     # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
     developer:
       - name: GitHub
