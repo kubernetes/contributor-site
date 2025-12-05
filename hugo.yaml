@@ -97,7 +97,7 @@ params:
         desc: Discussion and help from your fellow users
       - name: X
         url: 'https://x.com/K8sContributors'
-        icon: fab fa-x-twitter
+        icon: fa-brands fa-x-twitter
         desc: Follow us on X to get the latest news!
     # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
     developer:

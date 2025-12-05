@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Kubernetes Contributor Site",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "autoprefixer": "^10.4.20",
     "docsy": "github:google/docsy#semver:0.7.2",
     "postcss-cli": "^10.1.0"
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/kubernetes-sigs/contributor-site/issues"
   },
-  "homepage": "https://github.com/kubernetes-sigs/contributor-site#readme"
+  "homepage": "https://github.com/kubernetes-sigs/contributor-site#readme",
+  "overrides": {
+    "@fortawesome/fontawesome-free": "^6.6.0"
+  }
 }
