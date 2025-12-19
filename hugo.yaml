@@ -95,10 +95,10 @@ params:
         url: 'https://groups.google.com/a/kubernetes.io/group/dev'
         icon: fa fa-envelope
         desc: Discussion and help from your fellow users
-      - name: Twitter
-        url: 'https://twitter.com/K8sContributors'
-        icon: fab fa-twitter
-        desc: Follow us on Twitter to get the latest news!
+      - name: X
+        url: 'https://x.com/K8sContributors'
+        icon: fa-brands fa-x-twitter
+        desc: Follow us on X to get the latest news!
       - name: LinkedIn
         url: 'https://www.linkedin.com/company/kubernetes'
         icon: fab fa-linkedin
