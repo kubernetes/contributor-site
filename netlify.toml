@@ -5,6 +5,8 @@ command = "make production-build"
 [build.environment]
 HUGO_VERSION = "0.133.0"
 NODE_VERSION = "20.16.0"
+
+[context.production.environment]
 HUGO_ENV = "production"
 
 [context.deploy-preview]
