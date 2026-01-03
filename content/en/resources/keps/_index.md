@@ -3,7 +3,7 @@ linktitle: Enhancements
 title: Kubernetes Enhancement Proposals (KEPs)
 description: |
   List of Kubernetes enhancements
-type: docs
+type: keps
 ---
 
 These data come from the [kubernetes/enhancements]
