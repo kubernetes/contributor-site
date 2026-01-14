@@ -1,7 +1,6 @@
 ---
 title: "Announcing the Checkpoint/Restore Working Group"
-date: 2026-XX-XX
-draft: true
+date: 2026-01-21
 slug: introducing-checkpoint-restore-wg
 author: >
   [Radostin Stoyanov](https://github.com/rst0git),
