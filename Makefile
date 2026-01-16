@@ -79,6 +79,16 @@ container-image: ## Build container image for use with container-* targets.
 container-push: container-image ## Push container image for the preview of the website
 	$(CONTAINER_ENGINE) push $(CONTAINER_IMAGE)
 
+container-buildx-push: ## Build and push multi-arch container image
+	# Ensure a builder instance is ready (creates one if not using default that supports multi-arch)
+	# We use || true to ignore error if it already exists or if we are using default
+	$(CONTAINER_ENGINE) buildx create --use --name builder --node builder0 || $(CONTAINER_ENGINE) buildx use builder || true
+	$(CONTAINER_ENGINE) buildx build --platform linux/amd64,linux/arm64 \
+		-t $(CONTAINER_IMAGE) \
+		--label git_commit=$(COMMIT) \
+		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
+		--push .
+
 docker-gen-content:
 	@echo -e "**** The use of docker-gen-content is deprecated. Use container-gen-content instead. ****" 1>&2
 	$(MAKE) container-gen-content
