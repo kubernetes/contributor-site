@@ -4,11 +4,23 @@ function openEvent(event) {
     return false;
   };
 
-function renderCalendar() {
+function renderCalendar(apiKey) {
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
+    
+    if (!calendarEl) {
+      console.error('Calendar element not found. Cannot render calendar.');
+      return;
+    }
+    
+    if (!apiKey || apiKey === 'PLACEHOLDER_VALUE') {
+      console.warn('Google Calendar API key is missing. Calendar will not render.');
+      calendarEl.innerHTML = '<div style="padding: 20px; border: 1px solid #ccc; background: #f9f9f9; text-align: center;">Community Calendar is not available in this environment (missing API Key).</div>';
+      return;
+    }
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      googleCalendarApiKey: 'AIzaSyDn_UhFPLDgxouI5nc8hOULFY25EjwGR44',
+      googleCalendarApiKey: apiKey,
       events: {
         googleCalendarId: 'calendar@kubernetes.io'
       },
