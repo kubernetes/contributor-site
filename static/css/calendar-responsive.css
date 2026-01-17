@@ -1,26 +1,11 @@
-/* ============================================
-   CRITICAL FIX: Docsy Table Conflict
-   ============================================ */
-/* 
- * PROBLEM: Docsy forces display:block on tables to make them responsive
- * SOLUTION: Force display:table on all FullCalendar tables
- * 
- * Docsy applies aggressive styles to tables (<table>) to make them responsive
- * on mobile devices, forcing display: block. FullCalendar uses tables internally
- * to draw the grid. If Docsy forces display: block, FullCalendar's internal
- * structure collapses and the height becomes 0, creating a blank space.
- */
-
-/* Force display:table on all FullCalendar tables */
+/* Fix Docsy conflict: Docsy forces display:block on tables for mobile responsiveness,
+   but FullCalendar requires display:table for its internal grid structure */
 #calendar table {
-  display: table !important;    /* Docsy forces 'block', this reverts it */
+  display: table !important;
 }
 
-/* ============================================
-   RESPONSIVE STYLES
-   ============================================ */
+/* Responsive Styles */
 
-/* Container adjustments - Make calendar fill available height */
 body:has(.calendar-container) {
   display: flex;
   flex-direction: column;
@@ -72,26 +57,24 @@ body:has(.calendar-container) main[role="main"] {
   }
 }
 
-/* Calendar container - Responsive container */
+/* Calendar container */
 .calendar-container {
   display: flex;
   flex-direction: column;
   width: 100%;
   overflow-x: auto;
   min-height: 0;
-  flex: 0 1 auto; /* Don't grow to fill all space - leave room for footer/feedback */
+  flex: 0 1 auto;
 }
 
-/* Desktop: Calendar fits in viewport but allows footer/feedback to show */
 @media screen and (min-width: 768px) {
   .calendar-container {
     min-height: 0;
-    max-height: none; /* Allow natural height */
+    max-height: none;
   }
   
-  /* Don't hide overflow - allow footer and feedback to show */
   body:has(.calendar-container) {
-    overflow: visible; /* Allow page scroll if needed for footer */
+    overflow: visible;
   }
   
   /* Fallback for browsers that don't support :has() */
@@ -103,7 +86,7 @@ body:has(.calendar-container) main[role="main"] {
   }
 }
 
-/* Mobile: Allow page scroll but calendar takes available space */
+/* Mobile */
 @media screen and (max-width: 767px) {
   .calendar-container {
     min-height: 400px;
@@ -111,11 +94,10 @@ body:has(.calendar-container) main[role="main"] {
   }
 }
 
-/* Make calendar fill available height */
 #calendar {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto; /* Fill available space */
+  flex: 1 1 auto;
   min-height: 0;
   width: 100%;
   max-width: 100%;
@@ -136,8 +118,7 @@ body:has(.calendar-container) main[role="main"] {
   min-height: 0;
 }
 
-/* Mobile: Stack header toolbar buttons vertically */
-/* Bootstrap breakpoint: < 768px (sm) */
+/* Mobile */
 @media screen and (max-width: 767px) {
   .fc-header-toolbar {
     flex-direction: column;
@@ -154,41 +135,36 @@ body:has(.calendar-container) main[role="main"] {
   .fc-button {
     font-size: 0.875rem;
     padding: 0.375rem 0.75rem;
-    min-width: auto; /* Allow buttons to shrink */
+    min-width: auto;
   }
   
   .fc-toolbar-title {
     font-size: 1.25rem !important;
     margin: 0.5rem 0;
-    text-align: center; /* Center title on mobile */
+    text-align: center;
   }
   
-  /* Adjust calendar height for mobile */
   .fc {
     font-size: 0.875rem;
   }
   
-  /* Make events more touch-friendly on mobile */
   .fc-event {
     min-height: 32px;
     padding: 6px 8px;
     font-size: 0.9rem;
-    cursor: pointer; /* Better UX on touch devices */
+    cursor: pointer;
   }
   
-  /* Adjust time slots for better readability */
   .fc-timegrid-slot {
     height: 2.5em;
   }
   
-  /* List view adjustments */
   .fc-list-event {
     padding: 12px;
     min-height: 56px;
     cursor: pointer;
   }
   
-  /* Month view - reduce day cell padding */
   .fc-daygrid-day-frame {
     padding: 2px;
   }
@@ -199,13 +175,12 @@ body:has(.calendar-container) main[role="main"] {
     cursor: pointer;
   }
   
-  /* Improve scrolling on mobile */
   .fc-scroller {
     -webkit-overflow-scrolling: touch;
   }
 }
 
-/* Tablet adjustments - Bootstrap breakpoint: 768px - 1023px (md) */
+/* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .fc {
     font-size: 0.95rem;
@@ -220,35 +195,32 @@ body:has(.calendar-container) main[role="main"] {
     font-size: 1.5rem !important;
   }
   
-  /* Optimize calendar container for tablets */
   .calendar-container {
     max-width: 100%;
   }
 }
 
-/* Small mobile devices - Bootstrap breakpoint: < 576px (xs) */
+/* Small mobile devices */
 @media screen and (max-width: 575px) {
   .fc-header-toolbar {
-    padding: 0.5rem 0; /* Bootstrap: py-2 */
+    padding: 0.5rem 0;
   }
   
   .fc-button-group .fc-button {
-    font-size: 0.75rem; /* Extra small - no exact Bootstrap equivalent */
-    padding: 0.25rem 0.5rem; /* Smaller than Bootstrap's smallest */
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
   }
   
   .fc-toolbar-title {
-    font-size: 1rem !important; /* Bootstrap: h6 */
+    font-size: 1rem !important;
   }
   
-  /* Hide some less critical buttons on very small screens */
   .fc-prev-button,
   .fc-next-button {
-    min-width: 32px; /* Touch target minimum */
-    padding: 0.25rem; /* Bootstrap: p-1 */
+    min-width: 32px;
+    padding: 0.25rem;
   }
   
-  /* Compact event display */
   .fc-event-title {
     font-size: 0.85rem;
     line-height: 1.2;
@@ -259,25 +231,23 @@ body:has(.calendar-container) main[role="main"] {
   }
 }
 
-/* Additional responsive improvements */
-/* Prevent horizontal scroll on small screens */
 @media screen and (max-width: 575px) {
   .calendar-container {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
   
   #calendar {
-    min-width: 0; /* Allow shrinking below content size */
+    min-width: 0;
   }
 }
 
-/* Improve touch targets for mobile devices */
+/* Touch device optimizations */
 @media (hover: none) and (pointer: coarse) {
   .fc-button {
-    min-height: 44px; /* WCAG touch target minimum */
+    min-height: 44px;
     min-width: 44px;
-    touch-action: manipulation; /* Prevent double-tap zoom */
+    touch-action: manipulation;
   }
   
   .fc-event {
@@ -294,32 +264,31 @@ body:has(.calendar-container) main[role="main"] {
     touch-action: manipulation;
   }
   
-  /* Improve list view touch targets */
   .fc-list-event {
     min-height: 48px;
   }
 }
 
-/* Landscape mobile optimization */
+/* Landscape mobile */
 @media screen and (max-width: 767px) and (orientation: landscape) {
   .fc-header-toolbar {
-    flex-direction: row; /* Stack horizontally in landscape */
+    flex-direction: row;
     flex-wrap: wrap;
   }
   
   .calendar-container {
-    min-height: 300px; /* Reduced height for landscape */
+    min-height: 300px;
   }
 }
 
-/* Large desktop optimization */
+/* Large desktop */
 @media screen and (min-width: 1200px) {
   .calendar-container {
     max-width: 100%;
   }
   
   .fc {
-    font-size: 1rem; /* Slightly larger on large screens */
+    font-size: 1rem;
   }
 }
 
