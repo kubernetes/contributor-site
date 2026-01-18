@@ -66,7 +66,6 @@ frontmatter:
 
 # Everything below this are Site Params
 params:
-  google_calendar_api_key: 'PLACEHOLDER_VALUE'
   # This is used instead of the built-in top level `copyright` to utilize
   # Docsy's partial which adds the copyright year automatically
   copyright: The Kubernetes Authors

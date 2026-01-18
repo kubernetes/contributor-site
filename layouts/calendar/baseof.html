@@ -6,8 +6,12 @@
     <script src='{{ .Site.BaseURL }}/js/fullcalendar/main.min.js'></script>
     <script src='{{ .Site.BaseURL }}/js/calendar.js'></script>
     <script>
-      {{ $apiKey := getenv "HUGO_GOOGLE_CALENDAR_API_KEY" | default .Site.Params.google_calendar_api_key | default "" }}
-      renderCalendar({{ $apiKey | js }});
+      {{ if hugo.IsProduction }}
+        {{ $apiKey := getenv "HUGO_GOOGLE_CALENDAR_API_KEY" | default "" }}
+        renderCalendar({{ $apiKey | js }});
+      {{ else }}
+        renderCalendar("");
+      {{ end }}
     </script>
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
