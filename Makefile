@@ -80,8 +80,6 @@ container-push: container-image ## Push container image for the preview of the w
 	$(CONTAINER_ENGINE) push $(CONTAINER_IMAGE)
 
 container-buildx-push: ## Build and push multi-arch container image
-	# Ensure a builder instance is ready (creates one if not using default that supports multi-arch)
-	# We use || true to ignore error if it already exists or if we are using default
 	$(CONTAINER_ENGINE) buildx create --use --name builder --node builder0 || $(CONTAINER_ENGINE) buildx use builder || true
 	$(CONTAINER_ENGINE) buildx build --platform linux/amd64,linux/arm64 \
 		-t $(CONTAINER_IMAGE) \
