@@ -1,17 +1,18 @@
 <!doctype html>
-<html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
+<html {{ if hugo.IsProduction }}data-isproduction="true"{{ end }} itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
   <head>
     {{ partial "head.html" . }}
     <link href='{{ .Site.BaseURL }}/css/fullcalendar/main.min.css' rel='stylesheet' />
     <script src='{{ .Site.BaseURL }}/js/fullcalendar/main.min.js'></script>
     <script src='{{ .Site.BaseURL }}/js/calendar.js'></script>
     <script>
+      {{ $apiKey := getenv "HUGO_GOOGLE_CALENDAR_API_KEY" | default "" }}
       {{ if hugo.IsProduction }}
-        {{ $apiKey := getenv "HUGO_GOOGLE_CALENDAR_API_KEY" | default "" }}
-        renderCalendar({{ $apiKey | js }});
-      {{ else }}
-        renderCalendar("");
+        {{ if not $apiKey }}
+          {{ errorf "HUGO_GOOGLE_CALENDAR_API_KEY environment variable is required for production builds" }}
+        {{ end }}
       {{ end }}
+      renderCalendar({{ $apiKey | js }});
     </script>
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">

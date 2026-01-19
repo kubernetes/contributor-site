@@ -13,8 +13,14 @@ function renderCalendar(apiKey) {
       return;
     }
     
+    var isProduction = document.documentElement.getAttribute('data-isproduction') === 'true';
+    
     if (!apiKey) {
-      console.warn('Google Calendar API key is missing. Calendar will not render.');
+      if (isProduction) {
+        console.error('Google Calendar API key is missing in production. Calendar will not render.');
+      } else {
+        console.warn('Google Calendar API key is missing. Calendar will not render.');
+      }
       calendarEl.innerHTML = '<div>Community Calendar is not available in this environment (missing API Key).</div>';
       return;
     }
