@@ -2,7 +2,8 @@
 layout: blog
 title: "Spotlight on SIG Architecture: API Governance"
 slug: sig-architecture-api
-date: 2026-01-29
+date: 2026-12-31 # placeholder
+draft: true
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
