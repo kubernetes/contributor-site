@@ -34,7 +34,7 @@ authorization capabilities, and got involved in the definition and evolution of 
 APIs from early beta APIs, like `v1beta3` to `v1`. I got tagged as an API reviewer in 2016 based on
 those contributions, and was added as an API approver in 2017.
 
-Today, I help lead the API governance and code organization subprojects for SIG Architecture, and I
+Today, I help lead the API Governance and code organization subprojects for SIG Architecture, and I
 am a tech lead for SIG Auth.
 
 **FM: And when did you get specifically involved in the API Governance project?**
@@ -55,7 +55,7 @@ still require consideration.
 
 The goals are to be stable while still enabling innovation. Stability is easy if you never change
 anything, but that contradicts the goal of evolution and growth. So we balance "be stable" with
-"allow change."
+"allow change".
 
 **FM: Speaking of changes, in terms of ensuring consistency and quality (which is clearly one of the
 reasons this project exists), what are the specific quality gates in the lifecycle of a Kubernetes
@@ -73,7 +73,7 @@ and there may be substantial feedback. So we get involved when a new API is crea
 API is changed, either at design or implementation.
 
 **FM: Is this during the Kubernetes Enhancement Proposal (KEP) process? Since KEPs are mandatory for
-enhancements, I assume part of the work intersects with API governance?**
+enhancements, I assume part of the work intersects with API Governance?**
 
 **JL**: It can. [KEPs](https://github.com/kubernetes/enhancements/blob/master/keps/README.md) vary
 in how detailed they are. Some include literal API definitions. When they do, we can perform an API
