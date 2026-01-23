@@ -6,7 +6,7 @@ date: 2026-01-29
 author: "Frederico Muñoz (SAS Institute)"
 ---
 
-_This is the fifth interview of a SIG Architecture Spotlight series covers the different
+_This is the fifth interview of a SIG Architecture Spotlight series that covers the different
 subprojects, and we will be covering [SIG Architecture: API
 Governance](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#architecture-and-api-governance-1)._
 
@@ -19,23 +19,23 @@ of the API Governance sub-project.
 you got involved in Kubernetes.**
 
 **JL**: My name is Jordan Liggitt. I'm a Christian, husband, father of four, software engineer at
-[Google](https://about.google/) by day, and [amateurmusician](https://www.youtube.com/watch?v=UDdr-VIWQwo) by stealth. I was born in Texas (and still
+[Google](https://about.google/) by day, and [amateur musician](https://www.youtube.com/watch?v=UDdr-VIWQwo) by stealth. I was born in Texas (and still
 like to claim it as my point of origin), but I've lived in North Carolina for most of my life.
 
 I've been working on Kubernetes since 2014. At that time, I was working on authentication and
 authorization at Red Hat, and my very first pull request to Kubernetes attempted to [add an OAuth
 server](https://github.com/kubernetes/kubernetes/pull/2328) to the Kubernetes API server. It never
-exited work-in-progress status, I ended up going with a different approach that layered on top of
+exited work-in-progress status. I ended up going with a different approach that layered on top of
 the core Kubernetes API server in a different project (spoiler alert: this is foreshadowing), and I
-closed it without merging 6 months later.
+closed it without merging six months later.
 
 Undeterred by that start, I stayed involved, helped build Kubernetes authentication and
 authorization capabilities, and got involved in the definition and evolution of the core Kubernetes
-APIs from early beta APIs like `v1beta3` to `v1`. I got tagged as an API reviewer in 2016 based on
+APIs from early beta APIs, like `v1beta3` to `v1`. I got tagged as an API reviewer in 2016 based on
 those contributions, and was added as an API approver in 2017.
 
-Today, I help lead the API governance and code organization subprojects for sig-architecture, and I
-am a tech lead for sig-auth.
+Today, I help lead the API governance and code organization subprojects for SIG Architecture, and I
+am a tech lead for SIG Auth.
 
 **FM: And when did you get specifically involved in the API Governance project?**
 
@@ -91,7 +91,7 @@ at implementation time.
 integrity being central to product quality... No matter how you structure the process, there must be
 a point where someone looks at what is coming and ensures conceptual integrity. Kubernetes uses APIs
 everywhere -- externally and internally -- so API Governance is critical to maintaining that
-integrity, how is this captured?**
+integrity. How is this captured?**
 
 **JL**: Yes, the conventions document captures patterns we’ve learned over time: what to do in
 various situations. We also have automated linters and checks to ensure correctness around patterns
@@ -127,7 +127,7 @@ only just reached GA in the last few releases.
 So CRDs opened the "anything is possible" era. Built-in validation rules are the second major
 milestone: bringing consistency back.
 
-The three major themes have been: defining schemas, validating data, and handling pre-existing
+The three major themes have been defining schemas, validating data, and handling pre-existing
 invalid data. With ratcheting validation (allowing data to improve without breaking existing
 objects), we can now guide CRD authors toward conventions without breaking the world.
 
@@ -152,7 +152,7 @@ for work targeting future releases. Between those intense periods, we often have
 long-term design work.
 
 An anti-pattern we see is teams thinking about a large feature for months and then presenting it
-three weeks before enhancements freeze saying, "Here is the design, please review." For big changes
+three weeks before enhancements freeze, saying, "Here is the design, please review." For big changes
 with API impact, it’s much better to involve API Governance early.
 
 And there are good times in the cycle for this -- between freezes -- when people have bandwidth.
@@ -182,7 +182,7 @@ tedious work... but users integrated with our system, and we made a promise to t
 trust that we won’t break that contract. So even when it requires more work, moves slower, or
 involves duplication, we choose stability.
 
-We are not trying to be obstructive, we are trying to make life good for users.
+We are not trying to be obstructive; we are trying to make life good for users.
 
 A lot of our questions focus on the future: you want to do something now... how will you evolve it
 later without breaking it? We assume we will know more in the future, and we want the design to
@@ -191,7 +191,7 @@ leave room for that.
 We also assume we will make mistakes. The question then is: how do we leave ourselves avenues to
 improve while keeping compatibility promises?
 
-**FM: Exactly. Jordan, thank you, I think we’ve covered everything. this has been an extraordinarily
-insightful view into the API Governance project and it's roles in the wider Kubernetes project.**
+**FM: Exactly. Jordan, thank you, I think we’ve covered everything. This has been an insightful view
+into the API Governance project and its role in the wider Kubernetes project.**
 
 **JL**: Thank you.
