@@ -12,13 +12,16 @@ steps:
     entrypoint: 'bash'
     env:
       - DOCKER_CLI_EXPERIMENTAL=enabled
+      - DOCKER_BUILDKIT=1
+      - DOCKER_BUILDX=/root/.docker/cli-plugins/docker-buildx
       - TAG=$_GIT_TAG
       - BASE_REF=$_PULL_BASE_REF
     args:
       - -c
       - |
         gcloud auth configure-docker \
-        && make container-push
+        && apk add sed \
+        && make docker-push
 substitutions:
   # _GIT_TAG will be filled with a git-based tag for the image, of the form vYYYYMMDD-hash, and
   # can be used as a substitution
