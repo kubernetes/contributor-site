@@ -25,6 +25,9 @@ HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
 
+# Docker buildx related settings for multi-arch images
+DOCKER_BUILDX ?= docker buildx
+
 CONTAINER_HUGO_MOUNTS = \
 	--read-only \
 	--mount type=bind,source=$(CURDIR)/.git,target=/src/.git,readonly \
@@ -78,6 +81,23 @@ container-image: ## Build container image for use with container-* targets.
 
 container-push: container-image ## Push container image for the preview of the website
 	$(CONTAINER_ENGINE) push $(CONTAINER_IMAGE)
+
+PLATFORMS ?= linux/arm64,linux/amd64
+docker-push: ## Build a multi-architecture image and push that into the registry
+	docker run --rm --privileged tonistiigi/binfmt:qemu-v8.1.5-43@sha256:46c5a036f13b8ad845d6703d38f8cce6dd7c0a1e4d42ac80792279cabaeff7fb --install all
+	docker version
+	$(DOCKER_BUILDX) version
+	$(DOCKER_BUILDX) inspect image-builder > /dev/null 2>&1 || $(DOCKER_BUILDX) create --name image-builder --use
+	# copy existing Dockerfile and insert --platform=${TARGETPLATFORM} into Dockerfile.cross, and preserve the original Dockerfile
+	sed -e 's/\(^FROM\)/FROM --platform=\$$\{TARGETPLATFORM\}/' Dockerfile > Dockerfile.cross
+	$(DOCKER_BUILDX) build \
+		--push \
+		--platform=$(PLATFORMS) \
+		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
+		--tag $(CONTAINER_IMAGE) \
+		-f Dockerfile.cross .
+	$(DOCKER_BUILDX) stop image-builder
+	rm Dockerfile.cross
 
 docker-gen-content:
 	@echo -e "**** The use of docker-gen-content is deprecated. Use container-gen-content instead. ****" 1>&2
