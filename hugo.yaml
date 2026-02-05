@@ -99,7 +99,7 @@ module:
         - source: code-of-conduct.md
           target: content/en/includes/code-of-conduct.md
   mounts:
-    - source: content
+    - source: content/en
       target: content
     - source: static
       target: static
