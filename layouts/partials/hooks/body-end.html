@@ -24,5 +24,15 @@
 </script>
 {{ end }}
 
-<!-- Sticky header scroll behavior -->
-<script src="{{ "js/sticky-header.js" | relURL }}"></script>
+{{/* Sticky header scroll behavior */}}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.querySelector('.td-navbar');
+  if (!navbar) return;
+  const handleScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 10);
+  };
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+});
+</script>
