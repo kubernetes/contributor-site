@@ -26,13 +26,29 @@
 
 {{/* Sticky header scroll behavior */}}
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+function initStickyHeader() {
   const navbar = document.querySelector('.td-navbar');
   if (!navbar) return;
-  const handleScroll = () => {
+
+  const updateNavbar = () => {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
   };
-  window.addEventListener('scroll', handleScroll);
-  handleScroll();
-});
+
+  window.addEventListener('scroll', updateNavbar);
+  updateNavbar();
+
+  const observer = new MutationObserver(() => {
+    if (!navbar.classList.contains('scrolled') && window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    }
+  });
+  observer.observe(navbar, { attributes: true, childList: true, subtree: true });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initStickyHeader);
+} else {
+  setTimeout(initStickyHeader, 500);
+  setTimeout(initStickyHeader, 1500);
+}
 </script>
