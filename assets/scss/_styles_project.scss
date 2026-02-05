@@ -2,11 +2,18 @@
   text-transform: uppercase;
 }
 
-// Improve homepage readability (PR #629)
-div.lead > p.lead:first-of-type {
+// Improve homepage readability
+div.lead {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
   color: #000 !important;
-  background-color: rgba(255, 255, 255, 0.85) !important;
-  padding: 0.3rem 0.6rem !important;
-  border-radius: 4px !important;
-  display: inline-block !important;
+}
+
+div.lead *,
+div.lead b,
+div.lead p {
+  color: #000 !important;
+  margin: 0.5rem 0 !important;
+  display: block !important;
 }
