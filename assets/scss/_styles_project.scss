@@ -1,3 +1,12 @@
 .navbar-brand__name {
   text-transform: uppercase;
 }
+
+// Improve homepage readability (PR #629)
+div.lead > p.lead:first-of-type {
+  color: #000 !important;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  padding: 0.3rem 0.6rem !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+}
