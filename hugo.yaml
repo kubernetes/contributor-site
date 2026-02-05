@@ -51,7 +51,7 @@ module:
     - path: github.com/cncf/foundation
       mounts:
         - source: code-of-conduct.md
-          target: content/en/includes/cncf-code-of-conduct.md
+          target: content/includes/cncf-code-of-conduct.md
     
     - path: github.com/kubernetes/sig-release
       mounts:
@@ -97,7 +97,7 @@ module:
         - source: github-management/default-branch-migration.md
           target: content/en/resources/rename.md
         - source: code-of-conduct.md
-          target: content/en/includes/code-of-conduct.md
+          target: content/includes/code-of-conduct.md
   mounts:
     - source: content/en
       target: content
