@@ -302,5 +302,5 @@ body:has(.calendar-container) main[role="main"] {
   position: sticky !important;
   top: 0;
   background: var(--fc-page-bg-color, #fff) !important;
-  z-index: 99;
+  z-index: 5;
 }
