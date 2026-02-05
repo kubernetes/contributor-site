@@ -292,3 +292,9 @@ body:has(.calendar-container) main[role="main"] {
   }
 }
 
+.fc .fc-list-sticky .fc-list-day>* {
+  position: sticky !important;
+  top: 0;
+  background: var(--fc-page-bg-color, #fff) !important;
+  z-index: 99;
+}
