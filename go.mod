@@ -1,6 +1,6 @@
 module github.com/kubernetes-sigs/contributor-site
 
-go 1.22.4
+go 1.22
 
 require (
 	github.com/cncf/foundation v0.0.0-20260202205210-94f5c56dccf4 // indirect
