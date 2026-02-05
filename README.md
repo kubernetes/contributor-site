@@ -12,18 +12,15 @@ found within the [`content`][ct] directory. To update the site's content,
 make changes to the Markdown sources and [submit a pull request][pr] to this
 repository.
 
-Some content is externally sourced and changes to that must be made in the
-original location. A list of sources and their locations within the
-[`content`][ct] is available below:
+Some content is externally sourced via Hugo Modules and changes to that must be made in the
+original location. The site uses Hugo Modules to automatically pull content from:
 
-### External sources
+- **github.com/kubernetes/community** - Contributor guides, community resources, and communication guidelines
+- **github.com/kubernetes/sig-release** - Release information
+- **github.com/cncf/foundation** - CNCF Code of Conduct
 
-- **Source:** https://git.k8s.io/community/contributors/guide <br>
-  **Destination:** `/guide`
-- **Source:** https://github.com/cncf/foundation/blob/master/code-of-conduct.md <br>
-  **Destination:** `/code-of-conduct.md`
-- **Source:** https://git.k8s.io/sig-release/releases/release-1.18/README.md <br>
-  **Destination:** `/release.md`
+Content is mapped from these repositories to the site's content directory using Hugo Module mounts
+configured in `hugo.yaml`. See the `module.mounts` section for the complete mapping configuration.
 
 ## Running the site locally
 
@@ -42,9 +39,8 @@ The easiest and most cross-system-compatible way to run the Contributor
 Site is to use [Docker][docker]. To begin, create the docker image to be used
 with generating the site by executing `make container-image`.
 
-To ensure you can view the site with externally sourced content, run
-`make container-gen-content` before previewing the site by with
-`make container-server`.
+Hugo will automatically download modules when you run `make container-server`.
+If you need to update modules manually, run `make modules-get` or `make modules-download`.
 
 **NOTE to Apple Silicon Mac Users**
 
@@ -72,23 +68,14 @@ To fetch docsy and its requirements, run the command:
 git submodule update --init --recursive --depth 1
 ```
 
-To ensure you can view the site with externally sourced content, run
-`make gen-content` before previewing the site by with `make server`.
+Hugo will automatically download modules when you run `make server`.
+If you need to update modules manually, run `make modules-get` or `make modules-download`.
 
-**NOTE to MacOS Users**
+**Hugo Module Commands**
 
-The `hack/gen-content.sh` script requires the gnu version
-of base packages such as `find`, `grep`, and `sed`. 
-
-```
-brew install coreutils findutils grep gnu-sed gnu-tar make readlink
-```
-
-You will then need to update your path to include these:
-
-```
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-```
+- `make modules-get` - Download and update Hugo modules to latest versions
+- `make modules-tidy` - Clean up Hugo module dependencies
+- `make modules-download` - Download Hugo modules (also runs automatically during build)
 
 ## Community, discussion, contribution, and support
 

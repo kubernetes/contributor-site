@@ -10,6 +10,7 @@ RUN apk add --no-cache \
     build-base \
     curl \
     git \
+    go \
     grep \
     gcompat \
     libc6-compat \
