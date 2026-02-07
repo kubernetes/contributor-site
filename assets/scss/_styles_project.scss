@@ -1,3 +1,11 @@
 .navbar-brand__name {
   text-transform: uppercase;
 }
+
+.td-navbar {
+  transition: background-color 0.3s ease;
+}
+
+.td-navbar.scrolled {
+  background-color: rgba($primary, 0.95) !important;
+}
