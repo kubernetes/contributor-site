@@ -8,7 +8,7 @@ description: >
 
 ### About
 
-The European edition of the Maintainer Summit will take place on **March 23, 2026**, in Amsterdam, Netherlands, alongside 
+The European edition of the Maintainer Summit will take place on **Sunday, March 22, 2026**, in Amsterdam, Netherlands, alongside 
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" rel="noopener noreferrer" target="_blank">KubeCon + CloudNativeCon Europe 2026</a>.
 
 The Summit is a dedicated day for Kubernetes maintainers to collaborate in person. The event will feature:
@@ -20,6 +20,7 @@ The Summit is a dedicated day for Kubernetes maintainers to collaborate in perso
 
 ### 📅 Schedule & Participation
 
+- **Volunteer & Staffing:** If you are interested in volunteering or staffing for this event, please see [kubernetes/community#8819](https://github.com/kubernetes/community/issues/8819).
 - **Call for Proposals (CFP):** Check the [event schedule](https://maintainersummiteu2026.sched.com/) for submission deadlines.
 - **Registration:** [Register here](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/maintainer-summit/#registration).
 
