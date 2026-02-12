@@ -62,6 +62,8 @@ module:
       mounts:
         - source: contributors/guide
           target: content/en/docs/guide
+        - source: contributors/guide/README.md
+          target: content/en/docs/guide/_index.md
         - source: contributors/guide/coding-conventions.md
           target: content/en/docs/guide/coding-convention.md
         - source: contributors/guide/contributor-cheatsheet/README.md
