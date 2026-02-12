@@ -3,7 +3,6 @@ title: Events
 description: Events in the Kubernetes Community
 type: docs
 sort_by: date_desc
-sidebar_keep_open: true
 sidebar_sort: date_desc
 ---
 
