@@ -111,7 +111,7 @@ Slack is excellent for most discussion and questions.
 While KubeCon is organized by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/), we like to host a Contributor Summit alongside KubeCon.
 
 * You can learn more about the next Contributor Summit on our [#contributor-summit Slack channel](https://kubernetes.slack.com/messages/contributor-summit).
-* [Find out more on our Events page.](/events/)
+* [Find out more on our Events page.](/community/events/)
 
 ---
 

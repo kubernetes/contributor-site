@@ -129,12 +129,12 @@ deeply about the ongoing success. I’ve been involved in this space my whole ca
 always rough edges, this community has been really supportive and I hope we can keep it that way.
 
 **Paco**: After my journey to the [Kubernetes Contributor Summit EU
-2023](https://www.kubernetes.dev/events/2023/kcseu/), I met and chatted with many maintainers and
+2023](https://www.kubernetes.dev/community/events/2023/kcseu/), I met and chatted with many maintainers and
 members there, and attended the steering AMA there for the first time as there hadn’t been a
 contributor summit in China since 2019, and I started to connect with contributors in China to make
 it later the year. Through conversations at KCS EU and with local contributors, I realized that it
 is quite important to make it easy to start a contributor journey for APAC contributors and want to
-attract more contributors to the community. Then, I was elected just after the [KCS CN 2023](https://www.kubernetes.dev/events/2023/kcscn/).
+attract more contributors to the community. Then, I was elected just after the [KCS CN 2023](https://www.kubernetes.dev/community/events/2023/kcscn/).
 
 **Patrick**: I had done a lot of technical work, of which some affects and (hopefully) benefits all
 contributors to Kubernetes (linting and testing) and users (better log output). I saw joining the
