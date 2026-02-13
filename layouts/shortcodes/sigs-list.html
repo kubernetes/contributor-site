@@ -160,8 +160,22 @@
                   </div>
                   {{ end }}
                   
-                  <div class="mt-4 d-flex gap-2">
-                    <a href="https://slack.k8s.io" class="btn btn-sm btn-outline-info rounded-pill px-3">#sig-{{ .label }}</a>
+                  <div class="mt-4 d-flex flex-wrap gap-2">
+                    {{ if .contact.slack }}
+                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-info rounded-pill px-3" target="_blank">
+                      <i class="fab fa-slack me-1"></i> #{{ .contact.slack }}
+                    </a>
+                    {{ else if .label }}
+                    <a href="https://kubernetes.slack.com/messages/sig-{{ .label }}" class="btn btn-sm btn-outline-info rounded-pill px-3" target="_blank">
+                      <i class="fab fa-slack me-1"></i> #sig-{{ .label }}
+                    </a>
+                    {{ end }}
+
+                    {{ if .contact.mailing_list }}
+                    <a href="{{ .contact.mailing_list }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3" target="_blank">
+                      <i class="fas fa-envelope me-1"></i> Mailing List
+                    </a>
+                    {{ end }}
                   </div>
                 </div>
               </div>
@@ -197,7 +211,19 @@
                   </div>
                   {{ end }}
                   
-                  <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-success text-white rounded-pill px-4 align-self-start mt-auto">View Group</a>
+                  <div class="d-flex flex-wrap gap-2 mt-auto">
+                    {{ if .contact.slack }}
+                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-success rounded-pill px-3" target="_blank">
+                      <i class="fab fa-slack me-1"></i> #{{ .contact.slack }}
+                    </a>
+                    {{ end }}
+                    {{ if .contact.mailing_list }}
+                    <a href="{{ .contact.mailing_list }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3" target="_blank">
+                      <i class="fas fa-envelope me-1"></i> Mailing List
+                    </a>
+                    {{ end }}
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-success text-white rounded-pill px-4 align-self-start">View Project</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -214,7 +240,18 @@
                 <div class="card-body p-4 d-flex flex-column">
                   <h5 class="h6 fw-bold text-warning mb-3">{{ .name }}</h5>
                   <p class="card-text text-secondary small flex-grow-1">{{ .mission_statement | markdownify }}</p>
-                  <div class="mt-4 pt-3 border-top">
+                  
+                  <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top">
+                    {{ if .contact.slack }}
+                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-warning text-dark rounded-pill px-3" target="_blank">
+                      <i class="fab fa-slack me-1"></i> #{{ .contact.slack }}
+                    </a>
+                    {{ end }}
+                    {{ if .contact.mailing_list }}
+                    <a href="mailto:{{ .contact.mailing_list }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3" target="_blank">
+                      <i class="fas fa-envelope me-1"></i> Mailing List
+                    </a>
+                    {{ end }}
                     <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-warning">Committee Details</a>
                   </div>
                 </div>
