@@ -16,6 +16,7 @@
 "/contributors/guide/contributor-cheatsheet/README.md","/docs/contributor-cheatsheet.md"
 "/contributors/guide/platforms.md","/docs/guide/platforms.md"
 "/sigs.yaml","/community/sigs.yaml"
+"/sig-list.md","/community/community-groups.md"
 "/sig-architecture/api-review-process.md","/docs/code/api-review.md"
 "/sig-architecture/production-readiness.md","/docs/code/production-readiness.md"
 "/mentoring/README.md","/community/mentoring.md"
