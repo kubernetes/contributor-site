@@ -358,6 +358,22 @@ main() {
       dsts+=("$(echo "$dst" | $SED -e 's/^\"//g;s/\"$//g')")
     done < "$repo"
     init_src "https://github.com/$org/$(basename "$repo").git" "${TEMP_DIR}/$org/$(basename "$repo")"
+    
+    # Auto-ingest SIGs if this is the kubernetes/community repo
+    if [[ "$org" == "kubernetes" && "$(basename "$repo")" == "community" ]]; then
+      echo "Auto-detecting SIGs from sigs.yaml..."
+      local sig_dirs
+      # Extract directories from sigs.yaml (basic YAML parsing with grep/sed)
+      sig_dirs=$($GREP "dir:" "${TEMP_DIR}/kubernetes/community/sigs.yaml" | $SED 's/.*dir: //')
+      for sig in $sig_dirs; do
+        echo "  Adding SIG: $sig"
+        # Map SIG README to index and charter to charter.md
+        srcs+=("/kubernetes/community/$sig/README.md")
+        dsts+=("/community/sigs/${sig#sig-}/_index.md")
+        srcs+=("/kubernetes/community/$sig/charter.md")
+        dsts+=("/community/sigs/${sig#sig-}/charter.md")
+      done
+    fi
   done
 
   # Duplicate of the srcs array used to reference the file paths of the source
