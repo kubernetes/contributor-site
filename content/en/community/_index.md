@@ -6,3 +6,5 @@ menu:
   main:
     weight: 40
 ---
+
+[**Community Events**](/events)
