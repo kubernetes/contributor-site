@@ -162,11 +162,11 @@
                   
                   <div class="mt-4 d-flex flex-wrap gap-2">
                     {{ if .contact.slack }}
-                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-info rounded-pill px-3" target="_blank">
+                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-slack rounded-pill px-3" target="_blank">
                       <i class="fab fa-slack me-1"></i> #{{ .contact.slack }}
                     </a>
                     {{ else if .label }}
-                    <a href="https://kubernetes.slack.com/messages/sig-{{ .label }}" class="btn btn-sm btn-outline-info rounded-pill px-3" target="_blank">
+                    <a href="https://kubernetes.slack.com/messages/sig-{{ .label }}" class="btn btn-sm btn-slack rounded-pill px-3" target="_blank">
                       <i class="fab fa-slack me-1"></i> #sig-{{ .label }}
                     </a>
                     {{ end }}
@@ -213,7 +213,7 @@
                   
                   <div class="d-flex flex-wrap gap-2 mt-auto">
                     {{ if .contact.slack }}
-                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-success rounded-pill px-3" target="_blank">
+                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-slack rounded-pill px-3" target="_blank">
                       <i class="fab fa-slack me-1"></i> #{{ .contact.slack }}
                     </a>
                     {{ end }}
@@ -243,7 +243,7 @@
                   
                   <div class="d-flex flex-wrap gap-2 mt-4 pt-3 border-top">
                     {{ if .contact.slack }}
-                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-warning text-dark rounded-pill px-3" target="_blank">
+                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-slack rounded-pill px-3" target="_blank">
                       <i class="fab fa-slack me-1"></i> #{{ .contact.slack }}
                     </a>
                     {{ end }}
@@ -309,6 +309,17 @@ document.addEventListener('DOMContentLoaded', function() {
   .bg-github-handle:hover {
     background-color: #e1e4e8;
     color: #0366d6;
+  }
+
+  .btn-slack {
+    background-color: #4A154B; /* Slack Purple */
+    color: white;
+    border: none;
+    font-weight: 600;
+  }
+  .btn-slack:hover {
+    background-color: #611f69;
+    color: white;
   }
   
   .last-child-no-border:last-child { border-bottom: none !important; }
