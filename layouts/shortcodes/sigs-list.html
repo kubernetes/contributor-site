@@ -110,7 +110,9 @@
                           {{ if or (strings.Contains .tz "PT") (strings.Contains .tz "Pacific") }}
                              / 
                              {{ $t := split .time ":" }}
-                             {{ $h := int (index $t 0) }}
+                             {{ $h_str := index $t 0 }}
+                             {{/* Handle leading zeros which cause casting errors in some Hugo versions */}}
+                             {{ $h := int (strings.TrimLeft "0" $h_str | default "0") }}
                              {{ $m := index $t 1 }}
                              {{ $et_h := add $h 3 }}
                              {{ if ge $et_h 24 }}{{ $et_h = sub $et_h 24 }}{{ end }}
