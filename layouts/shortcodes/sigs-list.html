@@ -34,14 +34,15 @@
         </button>
       </div>
       
-      <div class="mt-4 d-none d-md-block">
+      <div class="mt-4">
         <div class="card bg-light border-0 shadow-sm">
-          <div class="card-body p-3">
-            <h6 class="card-title fw-bold small text-uppercase">Quick Tips</h6>
-            <ul class="list-unstyled small text-muted mb-0">
-              <li class="mb-1"><i class="fas fa-video text-primary me-1"></i> Zoom icons link to live calls.</li>
-              <li><i class="fas fa-file-alt text-secondary me-1"></i> File icons link to notes.</li>
-            </ul>
+          <div class="card-body p-3 text-center">
+             <div class="fw-bold small text-uppercase mb-2">Meeting Resources</div>
+             <div class="d-flex justify-content-around">
+               <span title="Live Meeting Link"><i class="fas fa-video text-primary fa-lg"></i></span>
+               <span title="Meeting Notes"><i class="fas fa-file-alt text-secondary fa-lg"></i></span>
+               <span title="YouTube Recordings"><i class="fab fa-youtube text-danger fa-lg"></i></span>
+             </div>
           </div>
         </div>
       </div>
@@ -49,10 +50,24 @@
     
     <!-- Content Area -->
     <div class="col-md-9">
-      <!-- Search Box -->
-      <div class="input-group mb-4 shadow-sm border rounded">
-        <span class="input-group-text bg-white border-0"><i class="fas fa-search text-muted"></i></span>
-        <input type="text" id="sigSearchInput" class="form-control border-0 py-3" placeholder="Filter groups by name, label, or description..." aria-label="Search SIGs">
+      <!-- Filters Row -->
+      <div class="row g-2 mb-4">
+        <div class="col-md-8">
+          <div class="input-group shadow-sm border rounded">
+            <span class="input-group-text bg-white border-0"><i class="fas fa-search text-muted"></i></span>
+            <input type="text" id="sigSearchInput" class="form-control border-0 py-2" placeholder="Search by name or description..." aria-label="Search SIGs">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <select id="dayFilter" class="form-select border shadow-sm py-2" aria-label="Filter by day">
+            <option value="">All Meeting Days</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+          </select>
+        </div>
       </div>
 
       <div class="tab-content" id="sigsTabContent">
@@ -60,7 +75,14 @@
         <div class="tab-pane fade show active" id="sigs" role="tabpanel" aria-labelledby="sigs-tab">
           <div class="row g-4" id="sigsGrid">
             {{ range sort $sigsData.sigs "name" }}
-            <div class="col-xl-6 sig-card-wrapper" data-name="{{ .name | lower }}" data-description="{{ .mission_statement | lower }}" data-label="{{ .label | lower }}">
+            {{ $meetings := .meetings }}
+            {{ $meetingDays := "" }}
+            {{ range $meetings }}{{ $meetingDays = printf "%s %s" $meetingDays (.day | lower) }}{{ end }}
+            <div class="col-xl-6 sig-card-wrapper" 
+                 data-name="{{ .name | lower }}" 
+                 data-description="{{ .mission_statement | lower }}" 
+                 data-label="{{ .label | lower }}"
+                 data-days="{{ $meetingDays }}">
               <div class="card h-100 border-0 shadow-sm transition-hover border-top border-primary border-4">
                 <div class="card-body d-flex flex-column p-4">
                   <div class="d-flex justify-content-between align-items-start mb-3">
@@ -85,20 +107,25 @@
 
                   {{ if .meetings }}
                   <div class="bg-light p-3 rounded-3">
-                    <h6 class="fw-bold small text-uppercase text-muted mb-2"><i class="far fa-clock me-1"></i> Meetings</h6>
-                    {{ range first 2 .meetings }}
+                    <h6 class="fw-bold small text-uppercase text-muted mb-2"><i class="far fa-clock me-1"></i> Meetings (All)</h6>
+                    {{ range .meetings }}
                     <div class="mb-2 last-child-no-margin border-bottom border-white pb-2 last-child-no-border">
                       <div class="d-flex justify-content-between align-items-start mb-1">
                         <div class="fw-bold small">{{ .description }}</div>
                         <div class="d-flex gap-2">
                           {{ if .url }}
-                          <a href="{{ .url }}" target="_blank" class="text-primary" title="Join Meeting (Zoom/Link)">
+                          <a href="{{ .url }}" target="_blank" class="text-primary" title="Join Meeting">
                             <i class="fas fa-video"></i>
                           </a>
                           {{ end }}
                           {{ if .archive_url }}
                           <a href="{{ .archive_url }}" target="_blank" class="text-secondary" title="Meeting Notes">
                             <i class="fas fa-file-alt"></i>
+                          </a>
+                          {{ end }}
+                          {{ if .recordings_url }}
+                          <a href="{{ .recordings_url }}" target="_blank" class="text-danger" title="YouTube Recordings">
+                            <i class="fab fa-youtube"></i>
                           </a>
                           {{ end }}
                         </div>
@@ -111,7 +138,6 @@
                              / 
                              {{ $t := split .time ":" }}
                              {{ $h_str := index $t 0 }}
-                             {{/* Handle leading zeros which cause casting errors in some Hugo versions */}}
                              {{ $h := int (strings.TrimLeft "0" $h_str | default "0") }}
                              {{ $m := index $t 1 }}
                              {{ $et_h := add $h 3 }}
@@ -119,9 +145,6 @@
                              {{ printf "%02d:%s" $et_h $m }} ET
                           {{ end }}
                         </span>
-                        <div class="mt-1">
-                          {{ if .recordings_url }}<a href="{{ .recordings_url }}" class="text-danger text-decoration-none small"><i class="fab fa-youtube"></i> Recordings</a>{{ end }}
-                        </div>
                       </div>
                     </div>
                     {{ end }}
@@ -130,9 +153,6 @@
                   
                   <div class="mt-4 d-flex gap-2">
                     <a href="https://slack.k8s.io" class="btn btn-sm btn-outline-info rounded-pill px-3">#sig-{{ .label }}</a>
-                    {{ if .mailing_list }}
-                    <a href="https://groups.google.com/a/kubernetes.io/g/{{ .mailing_list }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3">Mailing List</a>
-                    {{ end }}
                   </div>
                 </div>
               </div>
@@ -145,11 +165,29 @@
         <div class="tab-pane fade" id="wg" role="tabpanel" aria-labelledby="wg-tab">
           <div class="row g-4" id="wgGrid">
             {{ range sort $sigsData.workinggroups "name" }}
-            <div class="col-xl-6 sig-card-wrapper" data-name="{{ .name | lower }}" data-description="{{ .mission_statement | lower }}">
+            {{ $meetings := .meetings }}
+            {{ $meetingDays := "" }}
+            {{ range $meetings }}{{ $meetingDays = printf "%s %s" $meetingDays (.day | lower) }}{{ end }}
+            <div class="col-xl-6 sig-card-wrapper" 
+                 data-name="{{ .name | lower }}" 
+                 data-description="{{ .mission_statement | lower }}"
+                 data-days="{{ $meetingDays }}">
               <div class="card h-100 border-0 shadow-sm border-top border-success border-4">
                 <div class="card-body p-4 d-flex flex-column">
                   <h5 class="fw-bold text-success mb-3">WG {{ .name }}</h5>
                   <p class="card-text text-secondary mb-4 flex-grow-1">{{ .mission_statement | markdownify }}</p>
+                  
+                  {{ if .meetings }}
+                  <div class="bg-light p-3 rounded-3 mb-4">
+                    <h6 class="fw-bold small text-uppercase text-muted mb-2">Meetings</h6>
+                    {{ range .meetings }}
+                    <div class="small text-dark mb-1">
+                       <span class="fw-bold">{{ .day }}:</span> {{ .time }} {{ .tz }}
+                    </div>
+                    {{ end }}
+                  </div>
+                  {{ end }}
+                  
                   <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-success text-white rounded-pill px-4 align-self-start mt-auto">View Group</a>
                 </div>
               </div>
@@ -182,23 +220,32 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.getElementById('sigSearchInput');
+  const dayFilter = document.getElementById('dayFilter');
   const cardWrappers = document.querySelectorAll('.sig-card-wrapper');
   
-  searchInput.addEventListener('input', function() {
-    const term = this.value.toLowerCase().trim();
+  function applyFilters() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const dayTerm = dayFilter.value.toLowerCase();
     
     cardWrappers.forEach(wrapper => {
-      const name = wrapper.dataset.name;
-      const desc = wrapper.dataset.description;
+      const name = wrapper.dataset.name || '';
+      const desc = wrapper.dataset.description || '';
       const label = wrapper.dataset.label || '';
+      const days = wrapper.dataset.days || '';
       
-      if (name.includes(term) || desc.includes(term) || label.includes(term)) {
+      const matchesSearch = name.includes(searchTerm) || desc.includes(searchTerm) || label.includes(searchTerm);
+      const matchesDay = dayTerm === '' || days.includes(dayTerm);
+      
+      if (matchesSearch && matchesDay) {
         wrapper.classList.remove('d-none');
       } else {
         wrapper.classList.add('d-none');
       }
     });
-  });
+  }
+  
+  searchInput.addEventListener('input', applyFilters);
+  dayFilter.addEventListener('change', applyFilters);
 });
 </script>
 
@@ -219,10 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .last-child-no-border:last-child { border-bottom: none !important; }
   .last-child-no-margin:last-child { margin-bottom: 0 !important; }
   
-  .border-top-dashed { border-top: 1px dashed #dee2e6; }
-  
   @media (max-width: 767px) {
-    .nav-pills .nav-link { font-size: 0.9rem; }
     .sticky-md-top { position: static !important; }
   }
 </style>
