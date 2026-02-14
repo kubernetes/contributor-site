@@ -59,6 +59,12 @@ CONTAINER_HUGO_MOUNTS = \
 # Writable mount for container-render output (Hugo writes to /out -> host public/)
 CONTAINER_RENDER_MOUNT	:= --mount type=bind,source=$(CURDIR)/public,target=/out$(MOUNT_OPTS)
 
+# Command to ensure the container image is available locally (pull or build)
+IMAGE_ENSURE := $(CONTAINER_ENGINE) pull $(CONTAINER_IMAGE) || $(MAKE) container-image
+
+# Base command for running Hugo in the container with all shared mounts and env vars
+CONTAINER_HUGO_RUN := $(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_ENV) $(CONTAINER_HUGO_MOUNTS)
+
 # Fast NONBLOCKING IO to stdout caused by the hack/gen-content.sh script can
 # cause Netlify builds to terminate unexpectedly. This forces stdout to block.
 BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
@@ -129,8 +135,8 @@ docker-render:
 	$(MAKE) container-render
 
 container-render: ## Build the site using Hugo within a container (equiv to render).
-	$(CONTAINER_ENGINE) pull $(CONTAINER_IMAGE) || $(MAKE) container-image
-	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_ENV) $(CONTAINER_HUGO_MOUNTS) $(CONTAINER_RENDER_MOUNT) $(CONTAINER_IMAGE) bash -c 'cd /src && hugo mod get && hugo --noBuildLock --destination /out --logLevel info --ignoreCache --minify'
+	@$(IMAGE_ENSURE)
+	$(CONTAINER_HUGO_RUN) $(CONTAINER_RENDER_MOUNT) $(CONTAINER_IMAGE) bash -c 'cd /src && hugo mod get && hugo --noBuildLock --destination /out --logLevel info --ignoreCache --minify'
 
 docker-server:
 	@echo -e "**** The use of docker-server is deprecated. Use container-server instead. ****" 1>&2
@@ -138,10 +144,8 @@ docker-server:
 
 container-server: ## Run Hugo locally within a container, available at http://localhost:1313/
 	# no build lock to allow for read-only mounts
-	$(CONTAINER_ENGINE) pull $(CONTAINER_IMAGE) || $(MAKE) container-image
-	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_ENV) -p 1313:1313 \
-		$(CONTAINER_HUGO_MOUNTS) \
-		$(CONTAINER_IMAGE) \
+	@$(IMAGE_ENSURE)
+	$(CONTAINER_HUGO_RUN) -p 1313:1313 $(CONTAINER_IMAGE) \
 	bash -c 'cd /src && hugo mod get && \
 		hugo server \
 		--environment preview \
