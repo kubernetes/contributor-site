@@ -115,7 +115,8 @@ docker-render:
 	@echo -e "**** The use of docker-render is deprecated. Use container-render instead. ****" 1>&2
 	$(MAKE) container-render
 
-container-render: container-image ## Build the site using Hugo within a container (equiv to render).
+container-render: ## Build the site using Hugo within a container (equiv to render).
+	$(CONTAINER_ENGINE) pull $(CONTAINER_IMAGE) || $(MAKE) container-image
 	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_ENV) $(CONTAINER_HUGO_MOUNTS) $(CONTAINER_RENDER_MOUNT) $(CONTAINER_IMAGE) bash -c 'cd /src && hugo mod get && hugo --noBuildLock --destination /out --logLevel info --ignoreCache --minify'
 
 docker-server:
