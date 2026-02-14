@@ -19,8 +19,21 @@ IMAGE_NAME				:= k8s-contrib-site-hugo
 IMAGE_REPO				:= $(IMAGE_REGISTRY)/$(IMAGE_NAME)
 IMAGE_VERSION			:= $(shell scripts/hash-files.sh Dockerfile Makefile netlify.toml .dockerignore cloudbuild.yaml package.json package-lock.json hugo.yaml go.mod go.sum 2>/dev/null | cut -c 1-12)
 COMMIT					:= $(shell git rev-parse --short HEAD)
-CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
-CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
+CONTAINER_BASE_OPTS := --rm -it --security-opt=no-new-privileges --cap-drop=ALL
+ifeq ($(CONTAINER_ENGINE),podman)
+	# Rootless Podman requires userns mapping and SELinux relabeling
+	CONTAINER_BASE_OPTS += --userns=keep-id
+	MOUNT_OPTS := ,relabel=shared
+else
+	# Docker hardening: run as non-root user (assuming UID 1000 matches common dev setups)
+	# Note: In rootless Podman, keep-id maps the host user to the same UID inside,
+	# so we don't need (and shouldn't use) --user 1000:1000 there.
+	CONTAINER_BASE_OPTS += --user 1000:1000
+endif
+
+CONTAINER_RUN			:= $(CONTAINER_ENGINE) run $(CONTAINER_BASE_OPTS) -v "$(CURDIR):/src$(if $(filter podman,$(CONTAINER_ENGINE)),:z)"
+CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run $(CONTAINER_BASE_OPTS)
+
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
@@ -33,18 +46,18 @@ GOMODCACHE_HOST		?= $(HOME)/go/pkg/mod
 CONTAINER_HUGO_ENV	:= -e GOMODCACHE=/tmp/gomod
 CONTAINER_HUGO_MOUNTS = \
 	--read-only \
-	--mount type=bind,source=$(CURDIR)/.git,target=/src/.git,readonly \
-	--mount type=bind,source=$(CURDIR)/go.mod,target=/src/go.mod,readonly \
-	--mount type=bind,source=$(CURDIR)/go.sum,target=/src/go.sum,readonly \
-	--mount type=bind,source=$(GOMODCACHE_HOST),target=/tmp/gomod \
-	--mount type=bind,source=$(CURDIR)/assets,target=/src/assets,readonly \
-	--mount type=bind,source=$(CURDIR)/content,target=/src/content,readonly \
-	--mount type=bind,source=$(CURDIR)/layouts,target=/src/layouts,readonly \
-	--mount type=bind,source=$(CURDIR)/static,target=/src/static,readonly \
+	--mount type=bind,source=$(CURDIR)/.git,target=/src/.git,readonly$(MOUNT_OPTS) \
+	--mount type=bind,source=$(CURDIR)/go.mod,target=/src/go.mod$(MOUNT_OPTS) \
+	--mount type=bind,source=$(CURDIR)/go.sum,target=/src/go.sum$(MOUNT_OPTS) \
+	--mount type=bind,source=$(GOMODCACHE_HOST),target=/tmp/gomod$(MOUNT_OPTS) \
+	--mount type=bind,source=$(CURDIR)/assets,target=/src/assets,readonly$(MOUNT_OPTS) \
+	--mount type=bind,source=$(CURDIR)/content,target=/src/content,readonly$(MOUNT_OPTS) \
+	--mount type=bind,source=$(CURDIR)/layouts,target=/src/layouts,readonly$(MOUNT_OPTS) \
+	--mount type=bind,source=$(CURDIR)/static,target=/src/static,readonly$(MOUNT_OPTS) \
 	--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
-	--mount type=bind,source=$(CURDIR)/hugo.yaml,target=/src/hugo.yaml,readonly
+	--mount type=bind,source=$(CURDIR)/hugo.yaml,target=/src/hugo.yaml,readonly$(MOUNT_OPTS)
 # Writable mount for container-render output (Hugo writes to /out -> host public/)
-CONTAINER_RENDER_MOUNT	:= --mount type=bind,source=$(CURDIR)/public,target=/out
+CONTAINER_RENDER_MOUNT	:= --mount type=bind,source=$(CURDIR)/public,target=/out$(MOUNT_OPTS)
 
 # Fast NONBLOCKING IO to stdout caused by the hack/gen-content.sh script can
 # cause Netlify builds to terminate unexpectedly. This forces stdout to block.
@@ -127,8 +140,6 @@ container-server: container-image ## Run Hugo locally within a container, availa
 	# no build lock to allow for read-only mounts
 	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_ENV) -p 1313:1313 \
 		$(CONTAINER_HUGO_MOUNTS) \
-		--cap-drop=ALL \
-		--cap-drop=AUDIT_WRITE \
 		$(CONTAINER_IMAGE) \
 	bash -c 'cd /src && hugo mod get && \
 		hugo server \
