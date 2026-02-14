@@ -4,6 +4,7 @@ FROM alpine:latest
 # "make container-image"
 ARG HUGO_VERSION
 ARG TARGETARCH
+ARG GO_VERSION=1.22.5
 
 RUN apk add --no-cache \
     bash \
@@ -17,6 +18,11 @@ RUN apk add --no-cache \
     sed \
     npm
 
+RUN curl -sSfL "https://go.dev/dl/go${GO_VERSION}.linux-${TARGETARCH}.tar.gz" -o /tmp/go.tgz \
+    && tar -xz -C /usr/local -f /tmp/go.tgz \
+    && rm /tmp/go.tgz
+
+ENV PATH="/usr/local/go/bin:${PATH}"
 WORKDIR /src
 
 COPY package*.json ./

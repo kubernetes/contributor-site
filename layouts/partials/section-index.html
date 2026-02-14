@@ -1,0 +1,36 @@
+{{/*
+  Custom section-index partial to handle pages without File objects (e.g. from modules).
+*/}}
+<div class="section-index">
+  {{ $parent := . }}
+  {{ $pages := slice }}
+  
+  {{/* Try to get children safely */}}
+  {{ if $parent.File }}
+      {{/* If parent has a file, we can try the original Docsy logic but safer */}}
+      {{ $candidates := (where .Site.Pages "Section" .Section).ByWeight }}
+      {{ $candidates = (where $candidates "Type" "!=" "search") }}
+      {{ $candidates = (where $candidates ".Params.hide_summary" "!=" true) }}
+      {{ $candidates = (where $candidates ".Parent" "!=" nil) }}
+      
+      {{ range $candidates }}
+        {{ if and .File .Parent.File }}
+          {{ if eq .Parent.File.UniqueID $parent.File.UniqueID }}
+            {{ $pages = $pages | append . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+  {{ else }}
+      {{/* Fallback for virtual pages: use .Pages */}}
+      {{ $pages = .Pages }}
+  {{ end }}
+
+  {{ range $pages }}
+      <div class="entry">
+          <h5>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </h5>
+          <p>{{ .Description | markdownify }}</p>
+      </div>
+  {{ end }}
+</div>
