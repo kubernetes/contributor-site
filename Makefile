@@ -136,8 +136,9 @@ docker-server:
 	@echo -e "**** The use of docker-server is deprecated. Use container-server instead. ****" 1>&2
 	$(MAKE) container-server
 
-container-server: container-image ## Run Hugo locally within a container, available at http://localhost:1313/
+container-server: ## Run Hugo locally within a container, available at http://localhost:1313/
 	# no build lock to allow for read-only mounts
+	$(CONTAINER_ENGINE) pull $(CONTAINER_IMAGE) || $(MAKE) container-image
 	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_ENV) -p 1313:1313 \
 		$(CONTAINER_HUGO_MOUNTS) \
 		$(CONTAINER_IMAGE) \
