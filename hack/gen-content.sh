@@ -330,6 +330,75 @@ insert_header() {
   echo "Header inserted into: $1"
 }
 
+# generate_hierarchy
+# Creates the necessary index files for the community groups hierarchy
+# $1 - The target content directory
+generate_hierarchy() {
+  local target="$1"
+  local groups_dir="${target}/community/community-groups"
+  mkdir -p "${groups_dir}/sigs" "${groups_dir}/wg" "${groups_dir}/committees" "${groups_dir}/ug"
+
+  # community-groups/_index.md
+  cat <<EOF > "${groups_dir}/_index.md"
+---
+title: Community Groups
+linkTitle: Community Groups
+description:  |
+  A list of our community groups: Special Interest Groups, Working Groups and Committees.
+weight: 99
+type: docs
+aliases: [ "/groups", "/sigs" ]
+slug: community-groups
+---
+
+Most community activity is organized into Special Interest Groups (SIGs) and time bounded Working Groups.
+
+SIGs follow these [guidelines](https://github.com/kubernetes/community/blob/master/governance.md) although each of these groups may operate a little differently depending on their needs and workflow.
+
+Each group's material is in its subdirectory in this project.
+
+When the need arises, a [new SIG can be created](https://github.com/kubernetes/community/blob/master/sig-wg-lifecycle.md)
+
+{{< sigs-list >}}
+EOF
+
+  # sigs/_index.md
+  cat <<EOF > "${groups_dir}/sigs/_index.md"
+---
+title: "Special Interest Groups"
+description: "Special Interest Groups (SIGs) focus on specific parts of the Kubernetes project."
+weight: 10
+---
+EOF
+
+  # wg/_index.md
+  cat <<EOF > "${groups_dir}/wg/_index.md"
+---
+title: Working Groups
+description: "Working Groups (WBs) are temporary groups created to achieve a specific goal spanning multiple SIGs."
+weight: 20
+---
+EOF
+
+  # committees/_index.md
+  cat <<EOF > "${groups_dir}/committees/_index.md"
+---
+title: Committees
+description: "Committees are groups with specific delegated authority for the project."
+weight: 30
+---
+EOF
+
+  # ug/_index.md
+  cat <<EOF > "${groups_dir}/ug/_index.md"
+---
+title: User Groups
+description: "User Groups provide a way for users to group together and discuss their needs."
+weight: 40
+---
+EOF
+}
+
 
 main() {
   local TARGET
@@ -341,6 +410,8 @@ main() {
   fi
 
   mkdir $VERBOSE -p "$TEMP_DIR"
+
+  generate_hierarchy "${TARGET}"
 
   local repos=() # array of kubernetes repos containing content to be synced
   local srcs=() # array of sources of content to be synced 
