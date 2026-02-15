@@ -33,7 +33,7 @@
     
     <!-- Sidebar / Filters -->
     <div class="col-lg-3 mb-4">
-      <div class="sticky-lg-top" style="top: 2rem;">
+      <div class="sticky-lg-top" style="top: 6rem;">
         <div class="card shadow-sm border-0 mb-4">
           <div class="card-body p-3">
             <h6 class="fw-bold mb-3 d-flex align-items-center"><i class="fas fa-filter me-2 text-primary"></i> Find your Group</h6>
@@ -61,14 +61,14 @@
             <div>
               <label class="form-label small text-muted d-block">Quick Topics</label>
               <div class="d-flex flex-wrap gap-1" id="topicFilters">
-                <button type="button" data-tag="architecture" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#Arch</button>
-                <button type="button" data-tag="cloud" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#Cloud</button>
-                <button type="button" data-tag="dev" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#DevEx</button>
-                <button type="button" data-tag="storage" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#Storage</button>
-                <button type="button" data-tag="network" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#Network</button>
-                <button type="button" data-tag="scheduling" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#Scale</button>
-                <button type="button" data-tag="ui" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#UX</button>
-                <button type="button" data-tag="security" class="badge bg-light text-dark border-0 py-1 px-2 topic-tag">#Security</button>
+                <button type="button" data-tag="architecture" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Arch</button>
+                <button type="button" data-tag="cloud" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Cloud</button>
+                <button type="button" data-tag="dev" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#DevEx</button>
+                <button type="button" data-tag="storage" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Storage</button>
+                <button type="button" data-tag="network" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Network</button>
+                <button type="button" data-tag="scheduling" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Scale</button>
+                <button type="button" data-tag="ui" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#UX</button>
+                <button type="button" data-tag="security" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Security</button>
                 <button type="button" id="clearFilters" class="badge bg-danger bg-opacity-10 text-danger border-0 py-1 px-2 d-none">Clear</button>
               </div>
             </div>
@@ -127,7 +127,7 @@
                     <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
                     <div class="d-flex flex-wrap gap-1">
                       {{ range .leadership.chairs }}
-                      <a href="https://github.com/{{ .github }}" class="badge bg-light text-dark border text-decoration-none py-1 px-2">
+                      <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
                         <span class="small">@{{ .github }}</span>
                       </a>
                       {{ end }}
@@ -136,16 +136,16 @@
                   {{ end }}
 
                   {{ if gt (len $allMeetings) 0 }}
-                  <div class="bg-light p-2 rounded-3 mb-3">
-                    <h6 class="fw-bold small text-uppercase text-muted mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
-                    <div style="max-height: 180px; overflow-y: auto;">
-                      {{ range $allMeetings }}
-                      <div class="mb-2 border-bottom border-white pb-2 last-child pe-2" style="border-bottom: none !important;">
-                        <div class="d-flex justify-content-between align-items-start mb-1">
-                          <div class="fw-bold small">{{ .description }}</div>
+                  <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
+                    <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
+                    <div style="max-height: 180px; overflow-y: auto;" class="pe-2">
+                      {{ range $index, $meeting := $allMeetings }}
+                      <div class="mb-2 {{ if lt (add $index 1) (len $allMeetings) }}border-bottom border-primary border-opacity-10 pb-2{{ end }}">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                          <div class="fw-bold small text-dark">{{ .description }}</div>
                           <div class="d-flex gap-2">
                             {{ if .url }}<a href="{{ .url }}" target="_blank" class="text-primary" title="Join"><i class="fas fa-video fa-xs"></i></a>{{ end }}
-                            {{ if .archive_url }}<a href="{{ .archive_url }}" target="_blank" class="text-secondary" title="Notes"><i class="fas fa-file-alt fa-xs"></i></a>{{ end }}
+                            {{ if .archive_url }}<a href="{{ .archive_url }}" target="_blank" class="text-dark" title="Notes"><i class="fas fa-file-alt fa-xs"></i></a>{{ end }}
                             {{ if .recordings_url }}<a href="{{ .recordings_url }}" target="_blank" class="text-danger" title="Recordings"><i class="fab fa-youtube fa-xs"></i></a>{{ end }}
                           </div>
                       </div>
@@ -319,6 +319,16 @@ document.addEventListener('DOMContentLoaded', function() {
     dayFilter.value = '';
     applyFilters();
   });
+
+  // Handle URL hash for tab activation
+  if (window.location.hash) {
+    const hash = window.location.hash;
+    const tabEl = document.querySelector(`button[data-bs-target="${hash}"]`);
+    if (tabEl) {
+      const tab = new bootstrap.Tab(tabEl);
+      tab.show();
+    }
+  }
 });
 </script>
 {{ end }}
