@@ -387,6 +387,10 @@ main() {
     local src=""
     repo="$(echo "${srcs[i]}" | cut -d '/' -f2)/$(echo "${srcs[i]}" | cut -d '/' -f3)"
     src="${srcs[i]#/${repo}}"
+    if [[ ! -e "${TEMP_DIR}${srcs[i]}" ]]; then
+      echo "Warning: Source path ${TEMP_DIR}${srcs[i]} does not exist, skipping." 1>&2
+      continue
+    fi
     while IFS= read -r -d $'\0' file; do
       process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts
       # if the source file is a readme, or the destination is a singular file it
@@ -420,6 +424,7 @@ main() {
 
   echo "Copying to hugo content directory." 1>&2
   for (( i=0; i < ${#renamed_srcs[@]}; i++ )); do
+    mkdir -p "$(dirname "${TARGET}${dsts[i]}")"
     if [[ -d "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
       # OWNERS files are excluded when copied to prevent potential overwriting of desired
       # owner config.
