@@ -420,9 +420,6 @@ main() {
     fi
     while IFS= read -r -d $'\0' file; do
       local hide_sidebar="false"
-      if [[ "${dsts[i]}" == /community/community-groups/* ]]; then
-        hide_sidebar="true"
-      fi
       process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts "$hide_sidebar"
       # if the source file is a readme, or the destination is a singular file it
       # should be evaluated and if needed renamed.
