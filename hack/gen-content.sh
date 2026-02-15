@@ -366,12 +366,24 @@ main() {
       # Extract directories from sigs.yaml (basic YAML parsing with grep/sed)
       sig_dirs=$($GREP "dir:" "${TEMP_DIR}/kubernetes/community/sigs.yaml" | $SED 's/.*dir: //')
       for sig in $sig_dirs; do
-        echo "  Adding SIG: $sig"
-        # Map SIG README to index and charter to charter.md
+        local type="sigs"
+        local name="${sig#sig-}"
+        if [[ $sig == wg-* ]]; then
+          type="wg"
+          name="${sig#wg-}"
+        elif [[ $sig == committee-* ]]; then
+          type="committees"
+          name="${sig#committee-}"
+        elif [[ $sig == ug-* ]]; then
+          type="ug"
+          name="${sig#ug-}"
+        fi
+        echo "  Adding $type: $sig"
+        # Map group README to index and charter to charter.md
         srcs+=("/kubernetes/community/$sig/README.md")
-        dsts+=("/community/sigs/${sig#sig-}/_index.md")
+        dsts+=("/community/community-groups/$type/$name/_index.md")
         srcs+=("/kubernetes/community/$sig/charter.md")
-        dsts+=("/community/sigs/${sig#sig-}/charter.md")
+        dsts+=("/community/community-groups/$type/$name/charter.md")
       done
     fi
   done
@@ -424,12 +436,13 @@ main() {
 
   echo "Copying to hugo content directory." 1>&2
   for (( i=0; i < ${#renamed_srcs[@]}; i++ )); do
-    mkdir -p "$(dirname "${TARGET}${dsts[i]}")"
     if [[ -d "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
+      mkdir -p "${TARGET}${dsts[i]}"
       # OWNERS files are excluded when copied to prevent potential overwriting of desired
       # owner config.
       rsync -a ${VERBOSE} "${TEMP_DIR}${renamed_srcs[i]}/" "${TARGET}${dsts[i]}" --exclude "OWNERS"
     elif [[ -f "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
+      mkdir -p "$(dirname "${TARGET}${dsts[i]}")"
       rsync -a ${VERBOSE} "${TEMP_DIR}${renamed_srcs[i]}" "${TARGET}${dsts[i]}" --exclude "OWNERS"
     fi
   done
