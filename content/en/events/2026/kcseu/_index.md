@@ -3,7 +3,7 @@ title: "Maintainer Summit Europe 2026"
 type: docs
 weight: 1
 description: >
-  Kubernetes Maintainer Summit Europe, hosted in Amsterdam, Netherlands.
+  CNCF Maintainer Summit Europe, hosted in Amsterdam, Netherlands.
 ---
 
 ### About
@@ -11,7 +11,7 @@ description: >
 The European edition of the Maintainer Summit will take place on **Sunday, March 22, 2026**, in Amsterdam, Netherlands, alongside 
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/" rel="noopener noreferrer" target="_blank">KubeCon + CloudNativeCon Europe 2026</a>.
 
-The Summit is a dedicated day for Kubernetes maintainers to collaborate in person. The event will feature:
+The Summit is a dedicated day for CNCF maintainers to collaborate in person. The event will feature:
 
 * **Submitted Talks:** Technical deep dives and project health updates.
 * **Unconference Sessions:** Open-space discussions for spontaneous problem-solving and SIG alignment.
