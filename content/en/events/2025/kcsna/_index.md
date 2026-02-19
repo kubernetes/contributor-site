@@ -3,7 +3,7 @@ title: "Maintainer Summit North America 2025"
 type: docs
 weight: 1
 description: >
-  Kubernetes Maintainer Summit North America, hosted in Atlanta, Georgia.
+  CNCF Maintainer Summit North America, hosted in Atlanta, Georgia.
 ---
 
 ### Event Summary
