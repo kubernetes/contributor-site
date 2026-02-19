@@ -3,7 +3,7 @@ title: "Maintainer Summit Europe 2026"
 type: docs
 weight: 1
 description: >
-  Kubernetes Maintainer Summit Europe, hosted in Amsterdam, Netherlands.
+  CNCF Maintainer Summit Europe, hosted in Amsterdam, Netherlands.
 ---
 
 ### About
