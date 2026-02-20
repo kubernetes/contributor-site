@@ -135,7 +135,6 @@ find_md_files() {
 # $2 - Full file system path to root of cloned git repo
 # $3 - srcs array name 
 # $4 - dest array name
-# $5 - hide from sidebar (true/false)
 process_content() {
   local inline_link_matches=()
   local ref_link_matches=()
@@ -179,12 +178,7 @@ process_content() {
   fi
 
   if [[ $(head -n 1 "$1") != "---" ]]; then
-    insert_header "$1" "$5"
-  elif [[ "$5" == "true" ]]; then
-    # ensure it's hidden even if it has existing frontmatter
-    if ! grep -q "sidebar_hide:" "$1"; then
-       $SED -i '1a sidebar_hide: true' "$1"
-    fi
+    insert_header "$1"
   fi
 }
 
@@ -305,7 +299,6 @@ gen_link() {
 # Inserts the base hugo header needed to render a page correctly. This should
 # only be called if -no- header is already detected.
 # $1 - The full path to the markdown file.
-# $2 - hide from sidebar (true/false)
 insert_header() {
   local title
   local filename
@@ -318,15 +311,7 @@ insert_header() {
     title="${filename%.md}"
   fi
   title="$(echo "${title//[-|_]/ }" | $SED -r 's/\<./\U&/g')"
-  
-  local header=""
-  if [[ "$2" == "true" ]]; then
-    header="---\ntitle: $title\nsidebar_hide: true\n---\n"
-  else
-    header="${HEADER_TMPLT//__TITLE__/$title}"
-  fi
-  
-  $SED -i "1i$header" "$1"
+  $SED -i "1i${HEADER_TMPLT//__TITLE__/$title}" "$1"
   echo "Header inserted into: $1"
 }
 
@@ -419,8 +404,7 @@ main() {
       continue
     fi
     while IFS= read -r -d $'\0' file; do
-      local hide_sidebar="false"
-      process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts "$hide_sidebar"
+      process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts
       # if the source file is a readme, or the destination is a singular file it
       # should be evaluated and if needed renamed.
       if [[ $(basename "${file,,}") == 'readme.md' ]] \
