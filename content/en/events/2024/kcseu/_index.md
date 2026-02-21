@@ -2,6 +2,7 @@
 title: "Contributor Summit Europe 2024"
 type: docs
 weight: 1
+date: 2024-03-19
 description: >
   Kubernetes Contributor Summit Europe, hosted in Paris, France.
 

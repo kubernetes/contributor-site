@@ -2,6 +2,7 @@
 title: "Contributor Summit China 2023"
 type: docs
 weight: 1
+date: 2023-09-26
 description: >
   Kubernetes Contributor Summit China, hosted in Shanghai.
 
