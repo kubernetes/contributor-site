@@ -43,6 +43,79 @@ caches:
     dir: ':cacheDir/modules'
     maxAge: -1
 
+# Hugo Modules configuration
+# Note: Hugo modules are imported and mounted from external GitHub repositories.
+# Each module has its own mounts section that maps files/directories to local content paths.
+module:
+  imports:
+    - path: github.com/cncf/foundation
+      mounts:
+        - source: code-of-conduct.md
+          target: content/includes/cncf-code-of-conduct.md
+    
+    - path: github.com/kubernetes/sig-release
+      mounts:
+        - source: releases/release-1.36/README.md
+          target: content/en/resources/release/index.md
+    
+    - path: k8s.io/community
+      mounts:
+        - source: contributors/guide
+          target: content/en/docs/guide
+        - source: contributors/guide/README.md
+          target: content/en/docs/guide/_index.md
+        - source: contributors/guide/coding-conventions.md
+          target: content/en/docs/guide/coding-convention.md
+        - source: contributors/guide/contributor-cheatsheet/README.md
+          target: content/en/docs/contributor-cheatsheet.md
+        - source: sig-list.md
+          target: content/en/community/community-groups.md
+        - source: mentoring/README.md
+          target: content/en/community/mentoring.md
+        - source: values.md
+          target: content/en/community/values.md
+        - source: committee-code-of-conduct/incident-process.md
+          target: content/en/community/code-of-conduct-incident-process.md
+        - source: communication/best-practices.md
+          target: content/en/docs/comms/notifications.md
+        - source: communication/calendar-guidelines.md
+          target: content/en/docs/comms/calendars.md
+        - source: communication/discuss-guidelines.md
+          target: content/en/docs/comms/discuss.md
+        - source: communication/mailing-list-guidelines.md
+          target: content/en/docs/comms/mailing-lists.md
+        - source: communication/moderation.md
+          target: content/en/docs/comms/moderation.md
+        - source: communication/moderators.md
+          target: content/en/docs/comms/moderators.md
+        - source: communication/requesting-survey.md
+          target: content/en/docs/comms/surveys.md
+        - source: communication/slack-guidelines.md
+          target: content/en/docs/comms/slack.md
+        - source: communication/zoom-guidelines.md
+          target: content/en/docs/comms/zoom.md
+        - source: communication/youtube/youtube-guidelines.md
+          target: content/en/docs/comms/youtube.md
+        - source: github-management/default-branch-migration.md
+          target: content/en/resources/rename.md
+        - source: code-of-conduct.md
+          target: content/includes/code-of-conduct.md
+  mounts:
+    - source: content/en
+      target: content
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets
+    - source: data
+      target: data
+    - source: i18n
+      target: i18n
+    - source: archetypes
+      target: archetypes
+
 # Language configuration
 languages:
   en:
@@ -63,6 +136,9 @@ frontmatter:
     - ':filename'
     - publishDate
     - lastmod
+  title:
+    - title
+    - ':filename'
 
 # Everything below this are Site Params
 params:

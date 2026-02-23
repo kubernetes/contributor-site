@@ -33,6 +33,9 @@ Session.vim
 /public/
 /resources/
 
+# Hugo modules vendor directory (do not commit external content)
+_vendor/
+
 # Temp directory for processing content
 _tmp/
 
