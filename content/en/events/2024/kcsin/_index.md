@@ -2,6 +2,7 @@
 title: "Maintainer Summit India 2024"
 type: docs
 weight: 1
+date: 2024-12-10
 description: >
   CNCF Maintainer Summit India, hosted in Delhi, India.
 ---

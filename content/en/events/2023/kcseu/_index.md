@@ -2,6 +2,7 @@
 title: "Contributor Summit Europe 2023"
 type: docs
 weight: 1
+date: 2023-04-18
 description: >
   Kubernetes Contributor Summit Europe, hosted in Amsterdam Netherlands.
 

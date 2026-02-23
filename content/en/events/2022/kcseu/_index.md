@@ -2,6 +2,7 @@
 title: "Contributor Summit Europe 2022"
 type: docs
 weight: 1
+date: 2022-05-16
 description: >
   Kubernetes Contributor Summit Europe, hosted in Valencia Spain.
 

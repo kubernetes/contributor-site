@@ -2,6 +2,7 @@
 title: "Maintainer Summit Europe 2025"
 type: docs
 weight: 1
+date: 2025-03-31
 description: >
   CNCF Maintainer Summit Europe, hosted in London, United Kingdom.
 ---

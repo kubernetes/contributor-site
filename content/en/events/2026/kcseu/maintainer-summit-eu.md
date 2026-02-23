@@ -2,6 +2,7 @@
 title: "Maintainer Summit Europe 2026"
 type: docs
 weight: 1
+date: 2026-03-22
 description: >
   CNCF Maintainer Summit Europe, hosted in Amsterdam, Netherlands.
 ---
