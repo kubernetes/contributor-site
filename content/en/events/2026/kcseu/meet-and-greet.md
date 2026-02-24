@@ -4,6 +4,7 @@ type: docs
 weight: 1
 description: >
   Kubernetes Meet and Greet at KubeCon EU
+date: 2026-03-25
 ---
 
 ### About
