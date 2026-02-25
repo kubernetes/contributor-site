@@ -46,15 +46,21 @@
     </thead>
     <tbody>
       {{range $index, $data := $kepData}}
+          {{- $isValidStage := in $validStages $data.stage -}}
+          {{- $isValidStatus := in $validStatuses $data.status -}}
           <tr>
             <td>
-              <a href="https://kep.k8s.io/{{ $data.kepNumber }}">
+              {{- if or $isValidStage $isValidStatus -}}
+              <a href="/resources/keps/{{ $data.kepNumber }}/">
                 {{ printf "%s" $data.kepNumber }}
               </a>
+              {{- else -}}
+              <a href="https://features.k8s.io/{{ $data.kepNumber }}">
+                {{ printf "%s" $data.kepNumber }}
+              </a>
+              {{- end -}}
             </td>
             <td>
-              {{- $isValidStage := in $validStages $data.stage -}}
-              {{- $isValidStatus := in $validStatuses $data.status -}}
               {{- if or $isValidStage $isValidStatus -}}
               <a href="/resources/keps/{{ $data.kepNumber }}/">
                 {{ printf "%s" $data.title }}
@@ -93,8 +99,12 @@
               <ul class="list-unstyled">
                 {{ range $stage, $milestone := $data.milestone }}
                   {{ if $milestone }}
+                  {{- $version := strings.TrimPrefix "v" $milestone -}}
                   <li>
-                    {{ $stage }}:<span class="kep-milestone">{{ $milestone }}</span>
+                    {{ $stage }}:
+                    <a href="https://github.com/kubernetes/sig-release/tree/master/releases/release-{{ $version }}" class="kep-milestone" target="_blank" rel="noopener noreferrer">
+                      {{ $milestone }}
+                    </a>
                   </li>
                   {{ end }}
                 {{ end }}

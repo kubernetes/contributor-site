@@ -16,10 +16,10 @@
 
   {{/* External links section */}}
   <div class="kep-links mt-4">
-    <h2>Links</h2>
+    <h2 id="links">Links</h2>
     <ul>
       <li>
-        <a href="https://features.k8s.io/{{ .Params.kepNumber }}" target="_blank" rel="noopener">
+        <a href="https://kep.k8s.io/{{ .Params.kepNumber }}" target="_blank" rel="noopener">
           Enhancement Issue #{{ .Params.kepNumber }}
         </a>
       </li>
@@ -33,20 +33,18 @@
 
   {{/* SIG information */}}
   <div class="kep-sigs mt-4">
-    <h2>SIGs</h2>
-    <p>
-      <strong>Owning SIG:</strong>
+    <h2 id="sigs">SIGs</h2>
+      <p class="kep-sigs-owner">Owning SIG:</p>
       <a href="https://github.com/kubernetes/community/tree/master/{{ .Params.owningSig }}">
-        {{ strings.TrimPrefix "sig-" .Params.owningSig | humanize | title }}
+        SIG {{ strings.TrimPrefix "sig-" .Params.owningSig | humanize | title }}
       </a>
-    </p>
     {{ with .Params.participatingSigs }}
     <p>
       <strong>Participating SIGs:</strong>
       {{ range $i, $sig := . }}
         {{- if $i }}, {{ end -}}
         <a href="https://github.com/kubernetes/community/tree/master/{{ $sig }}">
-          {{ strings.TrimPrefix "sig-" $sig | humanize | title }}
+          SIG {{ strings.TrimPrefix "sig-" $sig | humanize | title }}
         </a>
       {{ end }}
     </p>
@@ -56,7 +54,7 @@
   {{/* Milestone information */}}
   {{ with .Params.milestone }}
   <div class="kep-milestones mt-4">
-    <h2>Milestones</h2>
+    <h2 id="milestones">Milestones</h2>
     <table class="table table-sm">
       <tbody>
         {{ with .alpha }}<tr><td>Alpha</td><td>{{ . }}</td></tr>{{ end }}
@@ -71,8 +69,11 @@
   {{/* Feature gates */}}
   {{ with .Params.featureGates }}
   <div class="kep-feature-gates mt-4">
-    <h2>Feature Gates</h2>
+    <h2 id="feature-gates">Feature Gates</h2>
+    <p>This enhancement was designed with opt-in or opt-out at the feature level;
+       there are <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/">feature gates</a> associated with it.</p>
     <table class="table table-sm">
+      <caption>Feature gates for this KEP</caption>
       <thead>
         <tr>
           <th>Name</th>
@@ -98,7 +99,7 @@
 
   {{/* Authors and contributors */}}
   <div class="kep-people mt-4">
-    <h2>People</h2>
+    <h2 id="people">People</h2>
 
     {{ with .Params.authors }}
     <p>
@@ -106,16 +107,6 @@
       {{ range $i, $author := . }}
         {{- if $i }}, {{ end -}}
         <a href="https://github.com/{{ trim $author "@" }}">{{ $author }}</a>
-      {{ end }}
-    </p>
-    {{ end }}
-
-    {{ with .Params.approvers }}
-    <p>
-      <strong>Approvers:</strong>
-      {{ range $i, $approver := . }}
-        {{- if $i }}, {{ end -}}
-        <a href="https://github.com/{{ trim $approver "@" }}">{{ $approver }}</a>
       {{ end }}
     </p>
     {{ end }}
@@ -129,11 +120,21 @@
       {{ end }}
     </p>
     {{ end }}
+
+    {{ with .Params.approvers }}
+    <p>
+      <strong>Approvers:</strong>
+      {{ range $i, $approver := . }}
+        {{- if $i }}, {{ end -}}
+        <a href="https://github.com/{{ trim $approver "@" }}">{{ $approver }}</a>
+      {{ end }}
+    </p>
+    {{ end }}
   </div>
 
   {{/* Dates */}}
   <div class="kep-dates mt-4">
-    <h2>Timeline</h2>
+    <h2 id="timeline">Timeline</h2>
     {{ with .Params.creationDate }}
     <p><strong>Created:</strong> <time datetime="{{ . }}">{{ . }}</time></p>
     {{ end }}
@@ -148,12 +149,10 @@
   {{/* See Also */}}
   {{ with .Params.seeAlso }}
   <div class="kep-see-also mt-4">
-    <h2>Related KEPs</h2>
+    <h2 id="related-keps">Related KEPs</h2>
     <ul>
       {{ range . }}
-      <li>
-        <a href="https://github.com/kubernetes/enhancements/tree/master{{ . }}">{{ . }}</a>
-      </li>
+      <li>{{ . }}</li>
       {{ end }}
     </ul>
   </div>
