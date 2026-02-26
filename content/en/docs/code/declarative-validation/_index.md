@@ -2,14 +2,12 @@
 title: "Declarative Validation"
 weight: 50
 description: |
-  Overview and architecture of the Declarative Validation (`validation-gen`) project.
+  Overview and architecture of declarative API validation in Kubernetes.
 ---
-
-# Declarative Validation (`validation-gen`)
 
 This document provides an overview of the Declarative Validation project in Kubernetes, also known as `validation-gen`. This feature allows developers to define validation logic for native Kubernetes API types using Go comment tags (e.g., `+k8s:minimum=0`).
 
-## Architecture Overview
+## Architecture overview
 
 The declarative validation system consists of two main components:
 
@@ -48,6 +46,6 @@ The declarative validation system consists of two main components:
 
 ## Learn More
 
-*   [Usage and Migration](./usage-and-migration) - Learn how to use declarative validation for new APIs and how to migrate existing handwritten validation.
-*   [Validation Tags](./validation-tags) - See the full catalog of available validation tags.
-*   [API Reviewers Guide](./api-reviewers-guide) - Guidelines for API reviewers on reviewing PRs that use declarative validation.
+* [Usage and Migration](/docs/code/declarative-validation/usage-and-migration/) - Learn how to use declarative validation for new APIs and how to migrate existing handwritten validation.
+* [Validation Tags](/docs/code/declarative-validation/validation-tags/) - See the full catalog of available validation tags.
+* [API Reviewers Guide](/docs/code/declarative-validation/api-reviewers-guide/) - Guidelines for API reviewers on reviewing PRs that use declarative validation.

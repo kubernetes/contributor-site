@@ -5,8 +5,6 @@ description: |
   How to use Declarative Validation for new APIs and how to migrate existing handwritten validation.
 ---
 
-# Usage and Migration
-
 This guide explains the Declarative Validation (DV) Lifecycle, how to add validation to new APIs without handwriting Go code, and how to migrate existing handwritten logic to DV tags.
 
 ## The Validation Lifecycle

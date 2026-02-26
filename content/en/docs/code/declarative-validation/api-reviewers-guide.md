@@ -5,9 +5,11 @@ description: |
   Guidelines for API reviewers on reviewing PRs that use Declarative Validation for new APIs and migrations.
 ---
 
-# API Reviewers Guide for Declarative Validation
-
-Starting in Kubernetes v1.36, Declarative Validation (DV) is the recommended way to author API validation logic. This means in v1.36+ there will be k8s API PRs that need API review which use Declarative Validation which means API reviewers need to understand how to review DV PRs.  The review should be straightforward as DV's goal is to moving validation logic out of procedural Go code (`validation.go`) and into vetted declarative comment tags directly on the API types (`types.go`).
+Starting in Kubernetes v1.36, _Declarative Validation_ (DV) is the recommended way to author API validation logic.
+This means that for v1.36 and later, there will be K8s API PRs that need API review and which use Declarative Validation.
+As a result, API reviewers need to understand how to review PRs that include DV.
+The review process should be straightforward as DV's goal is to moving validation logic out of procedural Go code (`validation.go`),
+and into vetted declarative comment tags directly on the API types (`types.go`).
 
 When reviewing a PR, you will generally encounter one of two scenarios:
 - **Scenario A -  New APIs/Fields**: Using DV as the authoritative source of truth from Day 1.
@@ -21,7 +23,7 @@ When reviewing a PR, you will generally encounter one of two scenarios:
 
 When a developer adds a new API or field and wants to use DV, the tags in `types.go` are the *only* validation logic. There should be no fallback handwritten code for these standard rules.
 
-### What to expect:
+### What to expect
 
 #### 1. `doc.go` (Enabling Code Generation)
 Before tags can be used, the developer must ensure code generation is enabled for the API package.

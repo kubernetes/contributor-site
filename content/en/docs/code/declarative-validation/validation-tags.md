@@ -19,7 +19,9 @@ optimized Go code for API validation.
 While primarily a feature impacting Kubernetes contributors and potentially developers of [extension API servers](/docs/concepts/extend-kubernetes/api-extension/apiserver-aggregation/), cluster administrators should understand its behavior, especially during its rollout phases.
 
 
-Declarative validation is being rolled out gradually using a Validation Lifecycle mechanism.
+## Rollout of declarative validation
+
+Declarative validation is being rolled out gradually using a _validation lifecycle_ mechanism.
 
 Declarative Validation tags can be used directly for net-new API fields (with net new validations) w/ no lifecycle mechanism - ex: `+k8s:minimum=1`.  For migration hand-written validations, the rollout is controlled by the Validation Lifecycle tags (`+k8s:alpha` & `+k8s:beta` - ex: `+k8s:alpha(since:v1.36)=+k8s:minimum=1)`) as well as one active feature gate `DeclarativeValidationBeta` (`DeclarativeValidation` is GA and `DeclarativeValidationTakeover` is deprecated):
 
@@ -27,7 +29,7 @@ Declarative Validation tags can be used directly for net-new API fields (with ne
 *   `DeclarativeValidationBeta`: (Beta, Default: `true`) Introduced in v1.36. This gate acts as the global safety switch for Beta-stage validation rules. It determines whether validation rules marked as `+k8s:beta` are enforced (authoritative) or remain in shadow mode. It has no effect if `DeclarativeValidation` is disabled.
 *   `DeclarativeValidationTakeover`: (Deprecated in v1.36). Previously used to determine whether declarative validation results were authoritative. It is no longer honored but can still be set during upgrades to prevent "gate not recognized" errors.
 
-**Default Behavior (Kubernetes v1.36+):**
+### Default behavior (Kubernetes v1.36+) {#default-behavior}
 
 *   With `DeclarativeValidation=true` and `DeclarativeValidationBeta=true` (the default values for the gates), both validation systems run for Alpha and shadowed rules. Beta rules are enforced.
 *   **The results of the *hand-written* validation are used for Alpha rules.** The declarative validation runs in a mismatch mode for comparison.
