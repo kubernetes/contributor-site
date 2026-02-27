@@ -42,3 +42,7 @@ _tmp/
 
 # Added yarn dependecies
 node_modules/
+
+# Ingested documents
+content/en/docs/code/api-review.md
+content/en/docs/code/production-readiness.md

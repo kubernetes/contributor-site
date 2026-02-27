@@ -1,0 +1,333 @@
+{{- $sigsDataSourceUrl := "https://raw.githubusercontent.com/kubernetes/community/master/sigs.yaml" -}}
+{{- $sigsData := "" -}}
+{{- with resources.GetRemote $sigsDataSourceUrl -}}
+  {{- if .Err -}}
+    {{- warnf "Unable to load SIGs data: %s" .Err -}}
+  {{- else -}}
+    {{- $sigsData = .Content | transform.Unmarshal -}}
+  {{- end -}}
+{{- end -}}
+
+{{ if $sigsData }}
+<div class="sigs-container my-4">
+  <div class="row">
+    <!-- Navigation Area -->
+    <div class="col-lg-12 mb-4">
+      <div class="nav nav-pills shadow-sm rounded bg-white p-2 border flex-nowrap overflow-auto justify-content-lg-center" id="sigsTab" role="tablist" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <button class="nav-link active text-nowrap me-2" id="sigs-tab" data-bs-toggle="pill" data-bs-target="#sigs" type="button" role="tab" aria-controls="sigs" aria-selected="true">
+          <i class="fas fa-users-cog me-1"></i> SIGs <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len $sigsData.sigs }}</span>
+        </button>
+        <button class="nav-link text-nowrap me-2" id="wg-tab" data-bs-toggle="pill" data-bs-target="#wg" type="button" role="tab" aria-controls="wg" aria-selected="false">
+          <i class="fas fa-project-diagram me-1"></i> Working Groups <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len $sigsData.workinggroups }}</span>
+        </button>
+        {{ if $sigsData.usergroups }}
+        <button class="nav-link text-nowrap me-2" id="ug-tab" data-bs-toggle="pill" data-bs-target="#ug" type="button" role="tab" aria-controls="ug" aria-selected="false">
+          <i class="fas fa-users me-1"></i> User Groups <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len $sigsData.usergroups }}</span>
+        </button>
+        {{ end }}
+        <button class="nav-link text-nowrap" id="committees-tab" data-bs-toggle="pill" data-bs-target="#committees" type="button" role="tab" aria-controls="committees" aria-selected="false">
+          <i class="fas fa-shield-alt me-1"></i> Committees <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len $sigsData.committees }}</span>
+        </button>
+      </div>
+    </div>
+    
+            <!-- Sidebar / Filters -->
+            <div class="col-lg-3 mb-4">
+              <div class="sticky-lg-top" style="top: 6rem;">
+                <div class="card shadow-sm border-0 mb-4">
+                  <div class="card-body p-3">
+                    <h6 class="fw-bold mb-3 d-flex align-items-center"><i class="fas fa-filter me-2 text-primary"></i> Find your Group</h6>
+                    
+                    <div class="mb-3">
+                      <label for="sigSearchInput" class="form-label small text-muted">Search</label>
+                      <div class="input-group input-group-sm border rounded">
+                        <span class="input-group-text bg-white border-0"><i class="fas fa-search"></i></span>
+                        <input type="text" id="sigSearchInput" class="form-control border-0" placeholder="Type name, tag, area..." aria-label="Search SIGs">
+                      </div>
+                    </div>
+        
+                    <div class="mb-3">
+                      <label for="dayFilter" class="form-label small text-muted">Meeting Day</label>
+                      <select id="dayFilter" class="form-select form-select-sm border shadow-none" aria-label="Filter by day">
+                        <option value="">Any day</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                      </select>
+                    </div>
+        
+                    <div>
+                      <label class="form-label small text-muted d-block">Quick Topics</label>
+                      <div class="d-flex flex-wrap gap-1" id="topicFilters">
+                        <button type="button" data-tag="architecture" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Arch</button>
+                        <button type="button" data-tag="cloud" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Cloud</button>
+                        <button type="button" data-tag="dev" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#DevEx</button>
+                        <button type="button" data-tag="storage" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Storage</button>
+                        <button type="button" data-tag="network" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Network</button>
+                        <button type="button" data-tag="scheduling" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Scale</button>
+                        <button type="button" data-tag="ui" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#UX</button>
+                        <button type="button" data-tag="security" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Security</button>
+                        <button type="button" id="clearFilters" class="badge bg-danger bg-opacity-10 text-danger border-0 py-1 px-2 d-none">Clear</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Content Area -->
+            <div class="col-lg-9">      <div class="tab-content" id="sigsTabContent">
+        <!-- SIGs Pane -->
+        <div class="tab-pane fade show active" id="sigs" role="tabpanel" aria-labelledby="sigs-tab">
+          <div class="row g-3" id="sigsGrid">
+            {{ range sort $sigsData.sigs "name" }}
+            
+            {{/* Aggregate all meetings */}}
+            {{ $allMeetings := slice }}
+            {{ if .meetings }}{{ $allMeetings = $allMeetings | append .meetings }}{{ end }}
+            {{ if .contact.meetings }}{{ $allMeetings = $allMeetings | append .contact.meetings }}{{ end }}
+            {{ range .subprojects }}
+              {{ if .meetings }}{{ $allMeetings = $allMeetings | append .meetings }}{{ end }}
+            {{ end }}
+
+            {{ $meetingDays := "" }}
+            {{ range $allMeetings }}{{ $meetingDays = printf "%s %s" $meetingDays (.day | lower) }}{{ end }}
+            
+            <div class="col-xxl-4 col-xl-6 col-md-6 col-12 sig-card-wrapper" 
+                 data-name="{{ .name | lower }}" 
+                 data-description="{{ .mission_statement | lower }}" 
+                 data-label="{{ .label | lower }}"
+                 data-days="{{ $meetingDays }}">
+              <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                <div class="card-body d-flex flex-column p-3">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="fw-bold mb-0 text-primary h6">
+                      <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="text-decoration-none text-primary">SIG {{ .name }}</a>
+                    </h5>
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <div class="card-text text-secondary mb-0 small">
+                      {{ .mission_statement | markdownify }}
+                    </div>
+                  </div>
+                  
+                  {{ if .leadership }}
+                  <div class="mb-3 mt-auto">
+                    <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
+                    <div class="d-flex flex-wrap gap-1">
+                      {{ range .leadership.chairs }}
+                      <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
+                        <span class="small">@{{ .github }}</span>
+                      </a>
+                      {{ end }}
+                    </div>
+                  </div>
+                  {{ end }}
+
+                  {{ if gt (len $allMeetings) 0 }}
+                  <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
+                    <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
+                    <div style="max-height: 180px; overflow-y: auto;" class="pe-2">
+                      {{ range $index, $meeting := $allMeetings }}
+                      <div class="mb-2 {{ if lt (add $index 1) (len $allMeetings) }}border-bottom border-primary border-opacity-10 pb-2{{ end }}">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                          <div class="fw-bold small text-dark">{{ .description }}</div>
+                          <div class="d-flex gap-2">
+                            {{ if .url }}<a href="{{ .url }}" target="_blank" class="text-primary" title="Join"><i class="fas fa-video fa-xs"></i></a>{{ end }}
+                            {{ if .archive_url }}<a href="{{ .archive_url }}" target="_blank" class="text-dark" title="Notes"><i class="fas fa-file-alt fa-xs"></i></a>{{ end }}
+                            {{ if .recordings_url }}<a href="{{ .recordings_url }}" target="_blank" class="text-danger" title="Recordings"><i class="fab fa-youtube fa-xs"></i></a>{{ end }}
+                          </div>
+                      </div>
+                      <div class="small text-dark">
+                        {{ .day }} at 
+                        <span class="fw-bold">
+                          {{ .time }} {{ .tz }}
+                          {{ if or (strings.Contains .tz "PT") (strings.Contains .tz "Pacific") }}
+                             / 
+                             {{ $t := split .time ":" }}{{ $h_str := index $t 0 }}{{ $h := int (strings.TrimLeft "0" $h_str | default "0") }}{{ $m := index $t 1 }}{{ $et_h := add $h 3 }}{{ if ge $et_h 24 }}{{ $et_h = sub $et_h 24 }}{{ end }}
+                             {{ printf "%02d:%s" $et_h $m }} ET
+                          {{ end }}
+                        </span>
+                      </div>
+                    </div>
+                    {{ end }}
+                    </div>
+                  </div>
+                  {{ end }}
+                  
+                  <div class="d-flex flex-wrap gap-3 mt-auto">
+                    {{ if .contact.slack }}
+                    <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-dark rounded-pill px-3 flex-grow-1 flex-md-grow-0" target="_blank">
+                      <i class="fab fa-slack me-1"></i> #{{ .contact.slack }}
+                    </a>
+                    {{ else if .label }}
+                    <a href="https://kubernetes.slack.com/messages/sig-{{ .label }}" class="btn btn-sm btn-outline-dark rounded-pill px-3 flex-grow-1 flex-md-grow-0" target="_blank">
+                      <i class="fab fa-slack me-1"></i> #sig-{{ .label }}
+                    </a>
+                    {{ end }}
+
+                    {{ if .contact.mailing_list }}
+                    <a href="{{ .contact.mailing_list }}" class="btn btn-sm btn-outline-secondary rounded-pill px-3" target="_blank">
+                      <i class="fas fa-envelope me-1"></i> Mailing List
+                    </a>
+                    {{ end }}
+                    
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                      Get Started <i class="fas fa-arrow-right ms-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        
+        <!-- Other Panes -->
+        <div class="tab-pane fade" id="wg" role="tabpanel" aria-labelledby="wg-tab">
+          <div class="row g-3" id="wgGrid">
+            {{ range sort $sigsData.workinggroups "name" }}
+            <div class="col-xxl-4 col-xl-6 col-md-6 col-12 sig-card-wrapper" 
+                 data-name="{{ .name | lower }}" 
+                 data-description="{{ .mission_statement | lower }}">
+              <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                <div class="card-body p-3 d-flex flex-column">
+                  <h5 class="fw-bold text-primary mb-3 h6">
+                    <a href="/community/community-groups/wg/{{ .dir | replaceRE "^sig-" "" | replaceRE "^wg-" "" }}/" class="text-decoration-none text-primary">WG {{ .name }}</a>
+                  </h5>
+                  <div class="card-text text-secondary mb-4 flex-grow-1 small">{{ .mission_statement | markdownify }}</div>
+                  <div class="d-flex flex-wrap gap-2 mt-auto">
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-primary text-white rounded-pill px-3 w-100 w-md-auto">GitHub</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="committees" role="tabpanel" aria-labelledby="committees-tab">
+          <div class="row g-3" id="committeesGrid">
+            {{ range sort $sigsData.committees "name" }}
+            <div class="col-xxl-4 col-xl-6 col-md-6 col-12 sig-card-wrapper" data-name="{{ .name | lower }}">
+              <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                <div class="card-body p-3 d-flex flex-column">
+                  <h5 class="h6 fw-bold text-primary mb-3">
+                    <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
+                  </h5>
+                  <div class="card-text text-secondary small flex-grow-1">{{ .mission_statement | markdownify }}</div>
+                  <div class="mt-4 pt-3 border-top">
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-outline-primary rounded-pill px-3 w-100 w-md-auto">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="ug" role="tabpanel" aria-labelledby="ug-tab">
+          {{ if $sigsData.usergroups }}
+          <div class="row g-3" id="ugGrid">
+            {{ range sort $sigsData.usergroups "name" }}
+            <div class="col-xxl-4 col-xl-6 col-md-6 col-12 sig-card-wrapper" data-name="{{ .name | lower }}">
+              <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                <div class="card-body p-3 d-flex flex-column">
+                  <h5 class="h6 fw-bold text-primary mb-3">
+                    <a href="/community/community-groups/ug/{{ .dir | replaceRE "^sig-" "" | replaceRE "^ug-" "" }}/" class="text-decoration-none text-primary">UG {{ .name }}</a>
+                  </h5>
+                  <div class="card-text text-secondary small flex-grow-1">{{ .mission_statement | markdownify }}</div>
+                  <div class="mt-4 pt-3 border-top">
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="btn btn-sm btn-outline-primary rounded-pill px-3 w-100 w-md-auto">Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('sigSearchInput');
+  const dayFilter = document.getElementById('dayFilter');
+  const cardWrappers = document.querySelectorAll('.sig-card-wrapper');
+  const topicTags = document.querySelectorAll('.topic-tag');
+  const clearBtn = document.getElementById('clearFilters');
+  
+  function applyFilters() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    const dayTerm = dayFilter.value.toLowerCase();
+    
+    if (searchTerm !== '' || dayTerm !== '') {
+      clearBtn.classList.remove('d-none');
+    } else {
+      clearBtn.classList.add('d-none');
+    }
+
+    cardWrappers.forEach(wrapper => {
+      const name = wrapper.dataset.name || '';
+      const desc = wrapper.dataset.description || '';
+      const label = wrapper.dataset.label || '';
+      const days = wrapper.dataset.days || '';
+      
+      const matchesSearch = name.includes(searchTerm) || desc.includes(searchTerm) || label.includes(searchTerm);
+      const matchesDay = dayTerm === '' || days.includes(dayTerm);
+      
+      if (matchesSearch && matchesDay) {
+        wrapper.classList.remove('d-none');
+      } else {
+        wrapper.classList.add('d-none');
+      }
+    });
+
+    // Update active state of tags
+    topicTags.forEach(tag => {
+      if (searchTerm === tag.dataset.tag) {
+        tag.classList.replace('bg-light', 'bg-primary');
+        tag.classList.replace('text-dark', 'text-white');
+      } else {
+        tag.classList.replace('bg-primary', 'bg-light');
+        tag.classList.replace('text-white', 'text-dark');
+      }
+    });
+  }
+  
+  searchInput.addEventListener('input', applyFilters);
+  dayFilter.addEventListener('change', applyFilters);
+  
+  topicTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      searchInput.value = tag.dataset.tag;
+      applyFilters();
+    });
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    dayFilter.value = '';
+    applyFilters();
+  });
+
+  // Handle URL hash for tab activation
+  if (window.location.hash) {
+    const hash = window.location.hash;
+    const tabEl = document.querySelector(`button[data-bs-target="${hash}"]`);
+    if (tabEl) {
+      const tab = new bootstrap.Tab(tabEl);
+      tab.show();
+    }
+  }
+});
+</script>
+{{ end }}

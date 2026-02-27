@@ -1,5 +1,15 @@
 code-of-conduct-incident-process.md
-community-groups.md
 community-meeting.md
 mentoring.md
 values.md
+sigs.yaml
+community-groups/**
+!community-groups/_index.md
+!community-groups/sigs/
+!community-groups/sigs/_index.md
+!community-groups/wg/
+!community-groups/wg/_index.md
+!community-groups/committees/
+!community-groups/committees/_index.md
+!community-groups/ug/
+!community-groups/ug/_index.md
