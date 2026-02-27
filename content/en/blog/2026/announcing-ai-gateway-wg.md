@@ -75,7 +75,7 @@ AI Gateway working group members will be presenting at [KubeCon + CloudNativeCon
 This event will showcase how our proposals enable the infrastructure needed for next-generation AI deployments and communication patterns.
 The session will include the initial designs, early prototypes, and emerging directions shaping the WG’s roadmap.
 For more details see our session here:
-- [AI'm at the Gate! Introducing the AI Gateway Working Group in Kubernetes](https://kccnceu2026.sched.com/event/2EF5t/aim-at-the-gate-introducing-the-ai-gateway-working-group-in-kubernetes-kellen-swain-google-morgan-foster-nir-rozenbaum-red-hat-shachar-tal-palo-alto-networks?iframe=yes&w=&sidebar=yes&bg=no)
+- [AI'm at the Gate! Introducing the AI Gateway Working Group in Kubernetes](https://kccnceu2026.sched.com/event/2EF5t/aim-at-the-gate-introducing-the-ai-gateway-working-group-in-kubernetes-morgan-foster-nir-rozenbaum-red-hat-shachar-tal-palo-alto-networks?iframe=yes&w=100%&sidebar=yes&bg=no)
 
 ## Get involved
 
