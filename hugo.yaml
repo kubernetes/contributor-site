@@ -4,6 +4,7 @@ theme:
   - docsy
 themesDir: node_modules
 enableRobotsTXT: true
+buildFuture: true
 
 # Language settings
 contentDir: content/en
@@ -103,6 +104,18 @@ params:
         url: 'https://www.linkedin.com/company/kubernetes'
         icon: fab fa-linkedin
         desc: "Kubernetes on LinkedIn"
+      - name: YouTube
+        url: 'https://youtube.com/kubernetescommunity'
+        icon: fab fa-youtube
+        desc: Kubernetes Community on YouTube
+      - name: Mastodon
+        url: 'https://hachyderm.io/@K8sContributors'
+        icon: fab fa-mastodon
+        desc: Follow us on Mastodon
+      - name: BlueSky
+        url: 'https://bsky.app/profile/kubernetes.dev'
+        icon: fab fa-bluesky
+        desc: Follow us on BlueSky
     # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
     developer:
       - name: GitHub

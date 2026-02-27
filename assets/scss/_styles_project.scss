@@ -12,7 +12,7 @@
 
 // Improve homepage readability (white on gray, per accessibility)
 div.lead {
-  background-color: rgba(50, 50, 50, 0.9) !important; /* dark gray */
+  background-color: rgba(50, 50, 50, 0.9) !important;
   color: #fff !important;
   padding: 1rem !important;
   border-radius: 8px !important;
@@ -24,4 +24,53 @@ div.lead p {
   color: #fff !important;
   margin: 0.5rem 0 !important;
   display: block !important;
+}
+
+/* KEP page styles */
+.kep-page {
+  .kep-stage-badge {
+    margin-bottom: 1rem;
+
+    .badge {
+      font-size: 0.9rem;
+      padding: 0.5em 1em;
+      border-radius: 4px;
+    }
+  }
+
+  .kep-stage-alpha .badge {
+    background-color: #ffc107;
+    color: #000;
+  }
+
+  .kep-stage-beta .badge {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+
+  .kep-stage-stable .badge {
+    background-color: #28a745;
+    color: #fff;
+  }
+
+  .kep-stage-deprecated .badge {
+    background-color: #6c757d;
+    color: #fff;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .kep-sigs-owner {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+
+  .table {
+    max-width: 600px;
+  }
 }

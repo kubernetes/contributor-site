@@ -2,13 +2,6 @@
 <html itemscope itemtype="http://schema.org/WebPage" lang="{{ .Site.Language.Lang }}" class="no-js">
   <head>
     {{ partial "head.html" . }}
-    <link href='{{ .Site.BaseURL }}/css/fullcalendar/main.min.css' rel='stylesheet' />
-    <link href='{{ .Site.BaseURL }}/css/calendar-responsive.css' rel='stylesheet' />
-    <script src='{{ .Site.BaseURL }}/js/fullcalendar/main.min.js'></script>
-    <script src='{{ .Site.BaseURL }}/js/calendar.js'></script>
-    <script>
-      renderCalendar();
-    </script>
   </head>
   <body class="td-{{ .Kind }}{{ with .Page.Params.body_class }} {{ . }}{{ end }}">
     <header>

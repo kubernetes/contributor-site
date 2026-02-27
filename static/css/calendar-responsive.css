@@ -1,0 +1,306 @@
+/* Fix Docsy conflict: Docsy forces display:block on tables for mobile responsiveness,
+   but FullCalendar requires display:table for its internal grid structure */
+#calendar table {
+  display: table !important;
+}
+
+/* Responsive Styles */
+
+body:has(.calendar-container) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body:has(.calendar-container) .td-outer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+body:has(.calendar-container) .td-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+body:has(.calendar-container) main[role="main"] {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Fallback for browsers that don't support :has() */
+@supports not selector(:has(*)) {
+  .td-outer {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .td-main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  main[role="main"] {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+}
+
+/* Calendar container */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: auto;
+  min-height: 0;
+  flex: 0 1 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .calendar-container {
+    min-height: 0;
+    max-height: none;
+  }
+
+  body:has(.calendar-container) {
+    overflow: visible;
+  }
+
+  /* Fallback for browsers that don't support :has() */
+  @supports not selector(:has(*)) {
+
+    body.td-resources,
+    body.td-community {
+      overflow: visible;
+    }
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+  .calendar-container {
+    min-height: 400px;
+    flex: 1 1 auto;
+  }
+}
+
+#calendar {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: auto;
+}
+
+.fc {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fc-view-harness {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+  .fc-col-header .fc-timegrid-axis {
+    display: none;
+  }
+
+  .fc-header-toolbar {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .fc-header-toolbar .fc-toolbar-chunk {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .fc-button {
+    font-size: 0.875rem;
+    padding: 0.375rem 0.75rem;
+    min-width: auto;
+  }
+
+  .fc-toolbar-title {
+    font-size: 1.25rem !important;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .fc {
+    font-size: 0.875rem;
+  }
+
+  .fc-event {
+    min-height: 32px;
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .fc-timegrid-slot {
+    height: 2.5em;
+  }
+
+  .fc-list-event {
+    padding: 12px;
+    min-height: 56px;
+    cursor: pointer;
+  }
+
+  .fc-daygrid-day-frame {
+    padding: 2px;
+  }
+
+  .fc-daygrid-event {
+    font-size: 0.8rem;
+    padding: 2px 4px;
+    cursor: pointer;
+  }
+
+  .fc-scroller {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .fc {
+    font-size: 0.95rem;
+  }
+
+  .fc-button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .fc-toolbar-title {
+    font-size: 1.5rem !important;
+  }
+
+  .calendar-container {
+    max-width: 100%;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 575px) {
+  .fc-header-toolbar {
+    padding: 0.5rem 0;
+  }
+
+  .fc-button-group .fc-button {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .fc-toolbar-title {
+    font-size: 1rem !important;
+  }
+
+  .fc-prev-button,
+  .fc-next-button {
+    min-width: 32px;
+    padding: 0.25rem;
+  }
+
+  .fc-event-title {
+    font-size: 0.85rem;
+    line-height: 1.2;
+  }
+
+  .fc-list-event-time {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .calendar-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #calendar {
+    min-width: 0;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .fc-button {
+    min-height: 44px;
+    min-width: 44px;
+    touch-action: manipulation;
+  }
+
+  .fc-event {
+    min-height: 36px;
+    touch-action: manipulation;
+  }
+
+  .fc-daygrid-day-number {
+    min-height: 32px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+  }
+
+  .fc-list-event {
+    min-height: 48px;
+  }
+}
+
+/* Landscape mobile */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+  .fc-header-toolbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .calendar-container {
+    min-height: 300px;
+  }
+}
+
+/* Large desktop */
+@media screen and (min-width: 1200px) {
+  .calendar-container {
+    max-width: 100%;
+  }
+
+  .fc {
+    font-size: 1rem;
+  }
+}
+
+.fc .fc-list-sticky .fc-list-day>* {
+  position: sticky !important;
+  top: 0;
+  background: var(--fc-page-bg-color, #fff) !important;
+  z-index: 5;
+}

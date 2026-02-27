@@ -2,6 +2,7 @@
 title: "Contributor Summit North America 2023"
 type: docs
 weight: 1
+date: 2023-11-06
 description: >
   Kubernetes Contributor Summit North America, hosted in Chicago, Illinois.
 
