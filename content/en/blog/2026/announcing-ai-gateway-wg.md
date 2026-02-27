@@ -39,13 +39,14 @@ AI workload networking:
 The [payload processing proposal](https://github.com/kubernetes-sigs/wg-ai-gateway/tree/main/proposals/7-payload-processing.md) addresses the critical need for AI workloads to inspect and transform full HTTP request and response payloads.
 This enables:
 #### AI Inference Security
-- Guard against malicious prompts and prompt injection attacks
-- Content filtering for AI responses
-- Signature-based detection and anomaly detection for AI traffic
+- Guard against malicious prompts and prompt injection attacks.
+- Content filtering for AI responses.
+- Signature-based detection and anomaly detection for AI traffic.
 #### AI Inference Optimization
-- Semantic routing based on request content
-- Intelligent caching to reduce inference costs and improve response times
-- RAG (Retrieval-Augmented Generation) system integration for context enhancement
+- Semantic routing based on request content.
+- Intelligent caching to reduce inference costs and improve response times.
+- RAG (Retrieval-Augmented Generation) system integration for context enhancement.
+
 The proposal defines standards for declarative payload processor configuration, ordered processing pipelines, and configurable failure modes - all essential for production AI workload deployments.
 
 ### Egress gateways (Proposal 10)
@@ -55,18 +56,18 @@ failover scenarios, or cost optimization.
 The [egress gateways proposal](https://github.com/kubernetes-sigs/wg-ai-gateway/tree/main/proposals/10-egress-gateways.md) aims to define standards for securely routing traffic outside the cluster.
 Key features include:
 #### External AI Service Integration
-- Secure access to cloud-based AI services (OpenAI, Vertex AI, Bedrock, etc.)
-- Managed authentication and token injection for third-party AI APIs
-- Regional compliance and failover capabilities
+- Secure access to cloud-based AI services (OpenAI, Vertex AI, Bedrock, etc.).
+- Managed authentication and token injection for third-party AI APIs.
+- Regional compliance and failover capabilities.
 #### Advanced Traffic Management
-- Backend resource definitions for external FQDNs and services
-- TLS policy management and certificate authority control
-- Cross-cluster routing for centralized AI infrastructure
+- Backend resource definitions for external FQDNs and services.
+- TLS policy management and certificate authority control.
+- Cross-cluster routing for centralized AI infrastructure.
 #### User Stories We're Addressing
-- Platform operators providing managed access to external AI services
-- Developers requiring inference failover across multiple cloud providers
-- Compliance engineers enforcing regional restrictions on AI traffic
-- Organizations centralizing AI workloads on dedicated clusters
+- Platform operators providing managed access to external AI services.
+- Developers requiring inference failover across multiple cloud providers.
+- Compliance engineers enforcing regional restrictions on AI traffic.
+- Organizations centralizing AI workloads on dedicated clusters.
 
 ## Upcoming events
 
