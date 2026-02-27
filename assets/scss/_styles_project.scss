@@ -10,6 +10,22 @@
   background-color: rgba($primary, 0.95) !important;
 }
 
+// Improve homepage readability (white on gray, per accessibility)
+div.lead {
+  background-color: rgba(50, 50, 50, 0.9) !important;
+  color: #fff !important;
+  padding: 1rem !important;
+  border-radius: 8px !important;
+}
+
+div.lead *,
+div.lead b,
+div.lead p {
+  color: #fff !important;
+  margin: 0.5rem 0 !important;
+  display: block !important;
+}
+
 /* KEP page styles */
 .kep-page {
   .kep-stage-badge {
