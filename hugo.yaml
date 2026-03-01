@@ -4,7 +4,6 @@ theme:
   - docsy
 themesDir: node_modules
 enableRobotsTXT: true
-buildFuture: true
 
 # Language settings
 contentDir: content/en
