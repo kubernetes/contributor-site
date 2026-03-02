@@ -7,7 +7,8 @@
 }
 
 .td-navbar.scrolled {
-  background-color: rgba($primary, 0.95) !important;
+  background-color: rgba($primary, 0.9) !important;
+  backdrop-filter: blur(10px);
 }
 
 /* KEP page styles */
