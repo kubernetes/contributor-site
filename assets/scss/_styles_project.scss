@@ -11,16 +11,16 @@
 }
 
 // Improve homepage readability (white on gray, per accessibility)
-div.lead {
+body.homepage div.lead {
   background-color: rgba(50, 50, 50, 0.9) !important;
   color: #fff !important;
   padding: 1rem !important;
   border-radius: 8px !important;
 }
 
-div.lead *,
-div.lead b,
-div.lead p {
+body.homepage div.lead *,
+body.homepage div.lead b,
+body.homepage div.lead p {
   color: #fff !important;
   margin: 0.5rem 0 !important;
   display: block !important;
