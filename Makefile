@@ -62,7 +62,7 @@ gen-content: ## Generates content from external sources.
 	hack/gen-content.sh
 
 render: dependencies ## Build the site using Hugo on the host.
-	hugo --logLevel info --ignoreCache --minify --buildFuture
+	hugo --logLevel info --ignoreCache --minify
 
 server: dependencies ## Run Hugo locally (if Hugo "extended" is installed locally)
 	hugo server \
@@ -175,8 +175,7 @@ production-build: ## Builds the production site (this command used only by Netli
 		--environment production \
 		--logLevel info \
 		--ignoreCache \
-		--minify \
-		--buildFuture
+		--minify
 
 preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
