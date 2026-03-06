@@ -1,7 +1,6 @@
 ---
 title: "Announcing the AI Gateway Working Group"
-date: 2026-03-02T10:00:00-08:00
-draft: true
+date: 2026-03-09
 slug: announcing-ai-gateway-wg
 author: >
   [Keith Mattix](https://github.com/keithmattix),
