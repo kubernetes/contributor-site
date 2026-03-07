@@ -2,6 +2,8 @@
 title: "Contributor Events at KubeCon EU 2026"
 type: docs
 weight: 1
+eventDate: 2026-03-22
+date: 2026-01-01
 description: >
   Contributor events at KubeCon, hosted in Amsterdam, Netherlands.
 ---
