@@ -72,8 +72,8 @@ to a Kubernetes project owned GitHub organization.
 For more information, see the Kubernetes [GitHub Repository Guidelines].
 
 
-[creation, migration]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-repo&template=repo-create.md&title=
-[archival]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-repo&template=repo-archive.md&title=
+[creation, migration]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-repo&template=repo-create.yml&title=
+[archival]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-repo&template=repo-archive.yml&title=
 [issue templates]: https://github.com/kubernetes/org/issues/new/choose
 [Donated repos]: http://git.k8s.io/community/github-management/kubernetes-repositories.md#rules-for-donated-repositories
 [GitHub Repository Guidelines]: http://git.k8s.io/community/github-management/kubernetes-repositories.md
@@ -89,7 +89,7 @@ filling out the [Contributor Comms Request] form in the [kubernetes/community]
 repo.
 
 [@K8sContributors]: https://twitter.com/K8sContributors
-[Contributor Comms Request]: https://github.com/kubernetes/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=marketing-request.md&title=REQUEST%3A+New+communication+about+%3Ctopic%3E
+[Contributor Comms Request]: https://github.com/kubernetes/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=comms-request.yaml&title=REQUEST%3A+New+communication+about+%3Ctopic%3E
 
 
 
@@ -120,7 +120,7 @@ For more information, see the [Slack Guidelines].
 
 
 [slack-config]: https://git.k8s.io/community/communication/slack-config
-[Slack Request]: https://github.com/kubernetes/community/issues/new?assignees=&labels=area%2Fcommunity-management%2C+area%2Fslack-management%2C+sig%2Fcontributor-experience&template=slack-request.md&title=REQUEST%3A+New+Slack+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D%3E+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D+name%3E
+[Slack Request]: https://github.com/kubernetes/community/issues/new?assignees=&labels=area%2Fcommunity-management%2C+area%2Fslack-management%2C+sig%2Fcontributor-experience&template=slack-request.yml&title=REQUEST%3A+New+Slack+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D%3E+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D+name%3E
 [Slack Guidelines]: https://git.k8s.io/community/communication/slack-guidelines.md
 
 
@@ -136,7 +136,7 @@ repo.
 For additional information, on survey services, see the community
 [Survey request guidelines].
 
-[Community Survey Request]: https://github.com/kubernetes/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=survey-request.md&title=SURVEY+REQUEST%3A+%3Ctopic%3E
+[Community Survey Request]: https://github.com/kubernetes/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=survey-request.yml&title=SURVEY+REQUEST%3A+%3Ctopic%3E
 [Survey request guidelines]: https://git.k8s.io/community/communication/requesting-survey.md
 
 
@@ -189,7 +189,7 @@ can be be reviewed in the [Netlify subproject site guidelines].
 [Netlify]: https://netlify.com
 [config]: http://git.k8s.io/community/github-management/subproject-site-requests.md#example-netlify-configuration
 [issue]: https://github.com/kubernetes/k8s.io/issues/new?assignees=&labels=wg%2Fk8s-infra%2C+area%2Fdns&template=dns-request.md&title=DNS+REQUEST%3A+%3Cyour-dns-record%3E
-[Netlify Site Request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-integration&template=site-create.md&title=
+[Netlify Site Request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-integration&template=site-request.yml&title=
 [Netlify subproject site guidelines]: http://git.k8s.io/community/github-management/subproject-site-requests.md#subproject-domain-reques
 
 
