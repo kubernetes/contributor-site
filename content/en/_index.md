@@ -2,9 +2,6 @@
 title: Welcome
 linkTitle: Welcome
 description: "Welcome to the Kubernetes Contributor Community!"
-menu:
-  main:
-    weight: 10
 ---
 
 {{< blocks/cover title="Welcome" image_anchor="center" height="auto" color="primary">}}
