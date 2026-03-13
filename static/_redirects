@@ -13,6 +13,8 @@
 
 /calendar         /resources/calendar    301
 
+/welcome          /                      301
+
 /coc              /community/code-of-conduct 301
 /code-of-conduct  /community/code-of-conduct  301
 
