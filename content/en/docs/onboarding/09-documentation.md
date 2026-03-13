@@ -46,7 +46,7 @@ The user-facing documentation deals with how to install, configure, and operate 
 
 The [community documentation](https://www.kubernetes.dev/) is an informal collection of docs maintained by contributors. It consists of:
 
-* [The Contributor Guide](/docs/)
+* [The Contributor Guide](https://github.com/kubernetes/community/tree/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452/contributors/guide)
 * [The Developer Guide](https://github.com/kubernetes/community/tree/master/contributors/devel/)
 * [The Community website](https://www.kubernetes.dev/)
 

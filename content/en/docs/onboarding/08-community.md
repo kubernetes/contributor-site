@@ -92,7 +92,7 @@ The Kubernetes Slack server has over 500 channels!
 Each SIG and Working Group has its favored method of communication. You can start in their Slack channel and ask around.
 
 * By working with a SIG, you will learn how its members communicate.
-* [The Community Groups list](/community/community-groups/) is a great place to learn about communication preferences.
+* [The Community Groups list](https://github.com/kubernetes/community/blob/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452/sig-list.md) is a great place to learn about communication preferences.
     * This is also where you will learn about each group’s regularly scheduled meetings and how to attend.
 
 ---
@@ -119,7 +119,7 @@ While KubeCon is organized by the [Cloud Native Computing Foundation (CNCF)](htt
 
 We have extensive guidelines and policies around our various communication channels.
 
-* [Read the Kubernetes Communication Platform Guidelines and Policies.](/docs/comms/)
+* [Read the Kubernetes Communication Platform Guidelines and Policies.](https://github.com/kubernetes/contributor-site/blob/fc260cf10a5d736e2941a854fd1fab8f66f068a3/content/en/docs/comms/_index.md)
 
 <div class="bottom-nav">
     <a href="/docs/onboarding">Onboarding Index</a> | <a href="../09-documentation/">Next Section</a>
