@@ -142,7 +142,7 @@ process_content() {
   mapfile -t inline_link_matches < \
     <($GREP -o -i -P '\[(?!a\-z0\-9).+?\]\((?!mailto|\S+?@|<|>|\?|\!|@|#|\$|%|\^|&|\*|\))\K\S+?(?=\))' "$1")
 
- if [[ -v inline_link_matches ]]; then
+  if [[ -v inline_link_matches ]]; then
     for match in "${inline_link_matches[@]}"; do
       local replacement_link=""
       if echo "$match" | $GREP -i -q "^http"; then
@@ -358,6 +358,34 @@ main() {
       dsts+=("$(echo "$dst" | $SED -e 's/^\"//g;s/\"$//g')")
     done < "$repo"
     init_src "https://github.com/$org/$(basename "$repo").git" "${TEMP_DIR}/$org/$(basename "$repo")"
+    
+    # Auto-ingest SIGs if this is the kubernetes/community repo
+    if [[ "$org" == "kubernetes" && "$(basename "$repo")" == "community" ]]; then
+      echo "Auto-detecting SIGs from sigs.yaml..."
+      local sig_dirs
+      # Extract directories from sigs.yaml (basic YAML parsing with grep/sed)
+      sig_dirs=$($GREP "dir:" "${TEMP_DIR}/kubernetes/community/sigs.yaml" | $SED 's/.*dir: //')
+      for sig in $sig_dirs; do
+        local type="sigs"
+        local name="${sig#sig-}"
+        if [[ $sig == wg-* ]]; then
+          type="wg"
+          name="${sig#wg-}"
+        elif [[ $sig == committee-* ]]; then
+          type="committees"
+          name="${sig#committee-}"
+        elif [[ $sig == ug-* ]]; then
+          type="ug"
+          name="${sig#ug-}"
+        fi
+        echo "  Adding $type: $sig"
+        # Map group README to index and charter to charter.md
+        srcs+=("/kubernetes/community/$sig/README.md")
+        dsts+=("/community/community-groups/$type/$name/_index.md")
+        srcs+=("/kubernetes/community/$sig/charter.md")
+        dsts+=("/community/community-groups/$type/$name/charter.md")
+      done
+    fi
   done
 
   # Duplicate of the srcs array used to reference the file paths of the source
@@ -371,6 +399,10 @@ main() {
     local src=""
     repo="$(echo "${srcs[i]}" | cut -d '/' -f2)/$(echo "${srcs[i]}" | cut -d '/' -f3)"
     src="${srcs[i]#/${repo}}"
+    if [[ ! -e "${TEMP_DIR}${srcs[i]}" ]]; then
+      echo "Warning: Source path ${TEMP_DIR}${srcs[i]} does not exist, skipping." 1>&2
+      continue
+    fi
     while IFS= read -r -d $'\0' file; do
       process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts
       # if the source file is a readme, or the destination is a singular file it
@@ -405,10 +437,12 @@ main() {
   echo "Copying to hugo content directory." 1>&2
   for (( i=0; i < ${#renamed_srcs[@]}; i++ )); do
     if [[ -d "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
+      mkdir -p "${TARGET}${dsts[i]}"
       # OWNERS files are excluded when copied to prevent potential overwriting of desired
       # owner config.
       rsync -a ${VERBOSE} "${TEMP_DIR}${renamed_srcs[i]}/" "${TARGET}${dsts[i]}" --exclude "OWNERS"
     elif [[ -f "${TEMP_DIR}${renamed_srcs[i]}" ]]; then
+      mkdir -p "$(dirname "${TARGET}${dsts[i]}")"
       rsync -a ${VERBOSE} "${TEMP_DIR}${renamed_srcs[i]}" "${TARGET}${dsts[i]}" --exclude "OWNERS"
     fi
   done
