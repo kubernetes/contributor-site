@@ -1,17 +1,28 @@
 <div class="section-index">
     {{ $parent := .Page }}
-    {{ $pages := (where .Site.Pages "Section" .Section).ByWeight }}
-    
+    {{ $pages := slice }}
+
+    {{ if $parent.File }}
+        {{ $candidates := (where .Site.Pages "Section" .Section).ByWeight }}
+        {{ $candidates = (where $candidates "Type" "!=" "search") }}
+        {{ $candidates = (where $candidates ".Params.hide_summary" "!=" true) }}
+        {{ $candidates = (where $candidates ".Parent" "!=" nil) }}
+        
+        {{ range $candidates }}
+            {{ if and .File .Parent.File }}
+                {{ if eq .Parent.File.UniqueID $parent.File.UniqueID }}
+                    {{ $pages = $pages | append . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+    {{ else }}
+        {{/* Fallback for virtual pages (e.g. from modules) */}}
+        {{ $pages = .Pages }}
+    {{ end }}
+
     {{/* Sort events by eventDate descending */}}
     {{ if eq .Section "events" }}
         {{ $pages = sort $pages "Params.eventdate" "desc" }}
-    {{ end }}
-
-    {{ $pages = (where $pages "Type" "!=" "search") }}
-    {{ $pages = (where $pages ".Params.hide_summary" "!=" true) }}
-    {{ $pages = (where $pages ".Parent" "!=" nil) }}
-    {{ if $parent.File }}
-        {{ $pages = (where $pages "Parent.File.UniqueID" "==" $parent.File.UniqueID) }}
     {{ end }}
     
     {{ if or $parent.Params.no_list (eq (len $pages) 0) }}
