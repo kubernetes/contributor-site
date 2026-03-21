@@ -71,6 +71,8 @@ params:
   copyright: The Kubernetes Authors
   gcs_engine_id: 8ad0f1b8442fece81
 
+  google_calendar_api_key: ""
+
   # User interface configuration
   ui:
     # Enable to show the sidebar menu in its compact state.

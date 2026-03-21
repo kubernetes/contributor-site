@@ -21,7 +21,7 @@ function renderCalendar(apiKey) {
       } else {
         console.warn('Google Calendar API key is missing. Calendar will not render.');
       }
-      calendarEl.innerHTML = '<div>Community Calendar is not available in this environment (missing API Key).</div>';
+      calendarEl.innerHTML = '<div class="alert alert-warning">Community Calendar is not available in this environment (missing API Key).</div>';
       return;
     }
 
