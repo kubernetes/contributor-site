@@ -2,8 +2,10 @@
 title: "Maintainer Summit Europe 2025"
 type: docs
 weight: 1
+eventDate: 2025-03-31
+date: 2025-03-31
 description: >
-  Kubernetes Maintainer Summit Europe, hosted in London, United Kingdom.
+  CNCF Maintainer Summit Europe, hosted in London, United Kingdom.
 ---
 
 ### Event Summary

@@ -1,0 +1,72 @@
+{{- $kepDataSourceUrl := "https://storage.googleapis.com/k8s-keps/keps.json" -}}
+{{- $kepData := slice -}}
+
+{{/* Fetch remote KEP data */}}
+{{- with resources.GetRemote $kepDataSourceUrl -}}
+  {{- with .Err -}}
+    {{- if eq hugo.Environment "production" -}}
+      {{- errorf "Unable to load KEP data: %s" . -}}
+    {{- else -}}
+      {{- warnf "Cannot load KEP data: %s" . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $kepData = .Content | transform.Unmarshal -}}
+  {{- end -}}
+{{- else -}}
+  {{- if eq hugo.Environment "production" -}}
+    {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
+  {{- else -}}
+    {{- warnf "Cannot load KEP data from %s" $kepDataSourceUrl -}}
+  {{- end -}}
+{{- end -}}
+
+{{/* Define stages that are "beyond provisional" */}}
+{{- $validStages := slice "alpha" "beta" "stable" "deprecated" -}}
+{{- $validStatuses := slice "implementable" "implemented" -}}
+
+{{/* Generate pages for each valid KEP */}}
+{{- range $kep := $kepData -}}
+  {{/* Filter: only include KEPs beyond provisional */}}
+  {{- $isValidStage := in $validStages $kep.stage -}}
+  {{- $isValidStatus := in $validStatuses $kep.status -}}
+
+  {{- if or $isValidStage $isValidStatus -}}
+    {{/* Build page params with all KEP metadata */}}
+    {{- $params := dict
+      "kepNumber" $kep.kepNumber
+      "name" $kep.name
+      "stage" $kep.stage
+      "status" $kep.status
+      "owningSig" $kep.owningSig
+      "participatingSigs" $kep.participatingSigs
+      "authors" $kep.authors
+      "reviewers" $kep.reviewers
+      "approvers" $kep.approvers
+      "creationDate" $kep.creationDate
+      "lastUpdated" $kep.lastUpdated
+      "latestMilestone" $kep.latestMilestone
+      "milestone" $kep.milestone
+      "featureGates" $kep.featureGates
+      "disableSupported" $kep.disableSupported
+      "seeAlso" $kep.seeAlso
+      "replaces" $kep.replaces
+      "supersededBy" $kep.supersededBy
+      "metrics" $kep.metrics
+      "toc_hide" true
+    -}}
+
+    {{/* Build page path: /resources/keps/{kepNumber}/ */}}
+    {{- $pagePath := $kep.kepNumber -}}
+
+    {{/* Create page dict */}}
+    {{- $page := dict
+      "path" $pagePath
+      "title" $kep.title
+      "kind" "page"
+      "type" "keps"
+      "params" $params
+    -}}
+
+    {{- $.AddPage $page -}}
+  {{- end -}}
+{{- end -}}

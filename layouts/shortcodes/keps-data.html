@@ -12,20 +12,24 @@
 {{- with resources.GetRemote $kepDataSourceUrl -}}
   {{- with .Err -}}
     {{- if eq hugo.Environment "production" }}
-      {{ errorf "Unable to load CVE Feed: %s" }}
+      {{ errorf "Unable to load KEP data: %s" . }}
     {{- else -}}
-      {{- warnf "Cannot load CVE Feed: %s" -}}
+      {{- warnf "Cannot load KEP data: %s" . -}}
     {{- end -}}
   {{- else -}}
     {{- $kepData = .Content | transform.Unmarshal -}}
   {{- end -}}
 {{- else -}}
   {{- if eq hugo.Environment "production" }}
-    {{- errorf "Unable to load CVE Feed: %s (source URL was %q)" $kepDataSourceUrl -}}
+    {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
   {{- else -}}
-    {{- warnf "Cannot load CVE Feed: %s" -}}
+    {{- warnf "Cannot load KEP data from %s" $kepDataSourceUrl -}}
   {{- end -}}
 {{- end -}}
+
+{{/* Define stages that are "beyond provisional" for linking to internal pages */}}
+{{- $validStages := slice "alpha" "beta" "stable" "deprecated" -}}
+{{- $validStatuses := slice "implementable" "implemented" -}}
 
 <div>
   <table id="keps-table" class="table table-hover mt-2 col-md-12 table-sm">
@@ -42,16 +46,30 @@
     </thead>
     <tbody>
       {{range $index, $data := $kepData}}
+          {{- $isValidStage := in $validStages $data.stage -}}
+          {{- $isValidStatus := in $validStatuses $data.status -}}
           <tr>
             <td>
-              <a href="https://kep.k8s.io/{{ $data.kepNumber }}">
+              {{- if or $isValidStage $isValidStatus -}}
+              <a href="/resources/keps/{{ $data.kepNumber }}/">
                 {{ printf "%s" $data.kepNumber }}
               </a>
+              {{- else -}}
+              <a href="https://features.k8s.io/{{ $data.kepNumber }}">
+                {{ printf "%s" $data.kepNumber }}
+              </a>
+              {{- end -}}
             </td>
             <td>
+              {{- if or $isValidStage $isValidStatus -}}
+              <a href="/resources/keps/{{ $data.kepNumber }}/">
+                {{ printf "%s" $data.title }}
+              </a>
+              {{- else -}}
               <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owningSig}}/{{$data.name}}#summary">
                 {{ printf "%s" $data.title }}
               </a>
+              {{- end -}}
             </td>
             <td>
               <a href=" https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}">
@@ -81,8 +99,12 @@
               <ul class="list-unstyled">
                 {{ range $stage, $milestone := $data.milestone }}
                   {{ if $milestone }}
+                  {{- $version := strings.TrimPrefix "v" $milestone -}}
                   <li>
-                    {{ $stage }}:<span class="kep-milestone">{{ $milestone }}</span>
+                    {{ $stage }}:
+                    <a href="https://github.com/kubernetes/sig-release/tree/master/releases/release-{{ $version }}" class="kep-milestone" target="_blank" rel="noopener noreferrer">
+                      {{ $milestone }}
+                    </a>
                   </li>
                   {{ end }}
                 {{ end }}

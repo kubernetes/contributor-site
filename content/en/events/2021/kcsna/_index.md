@@ -2,6 +2,8 @@
 title: "Contributor Summit North America 2021"
 type: docs
 weight: 1
+eventDate: 2021-10-11
+date: 2021-10-11
 description: >
   The Kubernetes Contributor Summits are returning for 2021!
 

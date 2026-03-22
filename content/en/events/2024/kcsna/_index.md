@@ -2,6 +2,8 @@
 title: "Contributor Summit North America 2024"
 type: docs
 weight: 1
+eventDate: 2024-11-11
+date: 2024-11-11
 description: >
   Kubernetes Contributor Summit North America, hosted in Salt Lake City, Utah.
 

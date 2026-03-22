@@ -2,6 +2,8 @@
 title: "Contributor Summit North America 2022"
 type: docs
 weight: 1
+eventDate: 2022-10-24
+date: 2022-10-24
 description: >
   Kubernetes Contributor Summit North America, hosted in Detroit Michigan.
 
