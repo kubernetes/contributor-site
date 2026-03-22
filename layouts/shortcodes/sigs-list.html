@@ -1,0 +1,457 @@
+{{/* layouts/shortcodes/sigs-list.html */}}
+
+{{- $showOnly := .Get "show_only" | default "all" -}}
+{{- $sigsUrl := "https://raw.githubusercontent.com/kubernetes/community/master/sigs.yaml" -}}
+
+{{ with resources.GetRemote $sigsUrl | transform.Unmarshal }}
+<div class="sigs-container my-4">
+  <div class="row">
+    
+    {{ if eq $showOnly "all" }}
+    <!-- Navigation Area -->
+    <div class="col-lg-12 mb-3">
+      <div class="nav nav-pills shadow-sm rounded bg-white p-2 border flex-nowrap overflow-auto justify-content-lg-center" id="sigsTab" role="tablist" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <button class="nav-link active text-nowrap me-2" id="sigs-tab" data-bs-toggle="pill" data-bs-target="#sigs" type="button" role="tab" aria-controls="sigs" aria-selected="true">
+          <i class="fas fa-users-cog me-1"></i> SIGs <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .sigs }}</span>
+        </button>
+        <button class="nav-link text-nowrap me-2" id="wg-tab" data-bs-toggle="pill" data-bs-target="#wg" type="button" role="tab" aria-controls="wg" aria-selected="false">
+          <i class="fas fa-project-diagram me-1"></i> Working Groups <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .workinggroups }}</span>
+        </button>
+        <button class="nav-link text-nowrap" id="committees-tab" data-bs-toggle="pill" data-bs-target="#committees" type="button" role="tab" aria-controls="committees" aria-selected="false">
+          <i class="fas fa-shield-alt me-1"></i> Committees <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .committees }}</span>
+        </button>
+      </div>
+    </div>
+    {{ end }}
+
+    <!-- Sticky Filter Bar -->
+    <div class="col-lg-12 mb-4 sticky-top" style="top: 4rem; z-index: 1020;">
+      <div class="card shadow-sm border-0">
+        <div class="card-body p-2 d-flex flex-column flex-md-row align-items-md-center gap-2">
+          <div class="fw-bold d-none d-lg-flex align-items-center me-2 text-nowrap">
+            <i class="fas fa-filter me-2 text-primary"></i> Filter:
+          </div>
+          
+          <div class="input-group input-group-sm border rounded flex-grow-1" style="max-width: 300px;">
+            <span class="input-group-text bg-white border-0"><i class="fas fa-search"></i></span>
+            <input type="text" id="sigSearchInput" class="form-control border-0" placeholder="Type name, tag, area..." aria-label="Search">
+          </div>
+
+          <div class="d-flex align-items-center gap-2">
+            <select id="dayFilter" class="form-select form-select-sm border shadow-none" style="width: auto;" aria-label="Filter by day">
+              <option value="">Any day</option>
+              <option value="monday">Mon</option>
+              <option value="tuesday">Tue</option>
+              <option value="wednesday">Wed</option>
+              <option value="thursday">Thu</option>
+              <option value="friday">Fri</option>
+            </select>
+          </div>
+
+          <div class="d-flex flex-wrap gap-1 align-items-center ms-md-auto" id="topicFilters">
+            <span class="small text-muted me-1 d-none d-md-inline">Topics:</span>
+            <button type="button" data-tag="architecture" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Arch</button>
+            <button type="button" data-tag="cloud" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Cloud</button>
+            <button type="button" data-tag="dev" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#DevEx</button>
+            <button type="button" data-tag="storage" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Storage</button>
+            <button type="button" data-tag="network" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Network</button>
+            <button type="button" id="clearFilters" class="badge bg-danger bg-opacity-10 text-danger border-0 py-1 px-2 d-none">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+            
+    <!-- Content Area -->
+    <div class="col-lg-12">
+      <div class="tab-content" id="sigsTabContent">
+        
+        <!-- SIGs Pane -->
+        {{ if or (eq $showOnly "all") (eq $showOnly "sigs") }}
+        <div class="tab-pane fade {{ if or (eq $showOnly "all") (eq $showOnly "sigs") }}show active{{ end }}" id="sigs" role="tabpanel" aria-labelledby="sigs-tab">
+          <div class="row g-3" id="sigsGrid">
+            {{ range sort .sigs "name" }}
+            
+            {{/* Aggregate all meetings */}}
+            {{ $allMeetings := slice }}
+            {{ if .meetings }}{{ $allMeetings = $allMeetings | append .meetings }}{{ end }}
+            {{ range .subprojects }}
+              {{ if .meetings }}{{ $allMeetings = $allMeetings | append .meetings }}{{ end }}
+            {{ end }}
+
+            {{ $meetingDays := "" }}
+            {{ range $allMeetings }}{{ $meetingDays = printf "%s %s" $meetingDays (.day | lower) }}{{ end }}
+            
+            <div class="col-xxl-4 col-xl-6 col-md-6 col-12 sig-card-wrapper" 
+                 data-name="{{ .name | lower }}" 
+                 data-description="{{ .mission_statement | lower }}" 
+                 data-label="{{ .label | lower }}"
+                 data-days="{{ $meetingDays }}">
+              <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                <div class="card-body d-flex flex-column p-3">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="fw-bold mb-0 text-primary h6">
+                      <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
+                    </h5>
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <div class="card-text text-secondary mb-0 small">
+                      {{ .mission_statement | markdownify }}
+                    </div>
+                  </div>
+                  
+                  <!-- Collapsible Details -->
+                  <div class="collapse mt-auto" id="collapse-{{ .dir | urlize }}">
+                    {{ if .leadership }}
+                    <div class="mb-3">
+                      <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
+                      <div class="d-flex flex-wrap gap-1">
+                        {{ range .leadership.chairs }}
+                        <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
+                          <span class="small">@{{ .github }}</span>
+                        </a>
+                        {{ end }}
+                      </div>
+                    </div>
+                    {{ end }}
+
+                    {{ if gt (len $allMeetings) 0 }}
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
+                      <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
+                      <div style="max-height: 180px; overflow-y: auto;" class="pe-2">
+                        {{ range $index, $meeting := $allMeetings }}
+                        <div class="mb-2 {{ if lt (add $index 1) (len $allMeetings) }}border-bottom border-primary border-opacity-10 pb-2{{ end }}">
+                          <div class="d-flex justify-content-between align-items-center mb-1">
+                            <div class="fw-bold small text-dark">{{ .description }}</div>
+                            <div class="d-flex gap-2">
+                              {{ if .url }}<a href="{{ .url }}" target="_blank" class="text-primary" title="Join"><i class="fas fa-video fa-xs"></i></a>{{ end }}
+                              {{ if .archive_url }}<a href="{{ .archive_url }}" target="_blank" class="text-dark" title="Notes"><i class="fas fa-file-alt fa-xs"></i></a>{{ end }}
+                              {{ if .recordings_url }}<a href="{{ .recordings_url }}" target="_blank" class="text-danger" title="Recordings"><i class="fab fa-youtube fa-xs"></i></a>{{ end }}
+                            </div>
+                        </div>
+                        <div class="small text-dark">
+                          {{ .day }} at <span class="fw-bold">{{ .time }} {{ .tz }}</span>
+                        </div>
+                      </div>
+                      {{ end }}
+                      </div>
+                    </div>
+                    {{ end }}
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-2 mt-auto align-items-center justify-content-between pt-2">
+                    <button class="btn btn-sm btn-light text-primary rounded-pill px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ .dir | urlize }}" aria-expanded="false" aria-controls="collapse-{{ .dir | urlize }}">
+                      <i class="fas fa-chevron-down me-1 toggle-icon"></i> <span class="toggle-text">Show Details</span>
+                    </button>
+                    <div class="d-flex gap-2">
+                      {{ if .contact.slack }}
+                      <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-dark rounded-pill px-2" target="_blank" title="Slack">
+                        <i class="fab fa-slack"></i>
+                      </a>
+                      {{ else if .label }}
+                      <a href="https://kubernetes.slack.com/messages/sig-{{ .label }}" class="btn btn-sm btn-outline-dark rounded-pill px-2" target="_blank" title="Slack">
+                        <i class="fab fa-slack"></i>
+                      </a>
+                      {{ end }}
+
+                      <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                        Visit <i class="fas fa-arrow-right ms-1"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- Working Groups Pane -->
+        {{ if or (eq $showOnly "all") (eq $showOnly "wg") }}
+        <div class="tab-pane fade {{ if eq $showOnly "wg" }}show active{{ end }}" id="wg" role="tabpanel" aria-labelledby="wg-tab">
+          <div class="row g-3" id="wgGrid">
+            {{ range sort .workinggroups "name" }}
+            
+            {{/* Aggregate all meetings */}}
+            {{ $allMeetings := slice }}
+            {{ if .meetings }}{{ $allMeetings = $allMeetings | append .meetings }}{{ end }}
+            {{ if .contact.meetings }}{{ $allMeetings = $allMeetings | append .contact.meetings }}{{ end }}
+            {{ $meetingDays := "" }}
+            {{ range $allMeetings }}{{ $meetingDays = printf "%s %s" $meetingDays (.day | lower) }}{{ end }}
+
+            <div class="col-xxl-4 col-xl-6 col-md-6 col-12 sig-card-wrapper" 
+                 data-name="{{ .name | lower }}" 
+                 data-description="{{ .mission_statement | lower }}"
+                 data-days="{{ $meetingDays }}">
+              <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                <div class="card-body d-flex flex-column p-3">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="fw-bold mb-0 text-primary h6">
+                      <a href="/community/community-groups/wg/{{ .dir | replaceRE "^sig-" "" | replaceRE "^wg-" "" }}/" class="text-decoration-none text-primary">WG {{ .name }}</a>
+                    </h5>
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <div class="card-text text-secondary mb-0 small">
+                      {{ .mission_statement | markdownify }}
+                    </div>
+                  </div>
+                  
+                  <!-- Collapsible Details -->
+                  <div class="collapse mt-auto" id="collapse-{{ .dir | urlize }}">
+                    {{ if gt (len $allMeetings) 0 }}
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
+                      <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
+                      <div style="max-height: 180px; overflow-y: auto;" class="pe-2">
+                        {{ range $index, $meeting := $allMeetings }}
+                        <div class="mb-2 {{ if lt (add $index 1) (len $allMeetings) }}border-bottom border-primary border-opacity-10 pb-2{{ end }}">
+                          <div class="d-flex justify-content-between align-items-center mb-1">
+                            <div class="fw-bold small text-dark">{{ .description }}</div>
+                            <div class="d-flex gap-2">
+                              {{ if .url }}<a href="{{ .url }}" target="_blank" class="text-primary" title="Join"><i class="fas fa-video fa-xs"></i></a>{{ end }}
+                              {{ if .archive_url }}<a href="{{ .archive_url }}" target="_blank" class="text-dark" title="Notes"><i class="fas fa-file-alt fa-xs"></i></a>{{ end }}
+                              {{ if .recordings_url }}<a href="{{ .recordings_url }}" target="_blank" class="text-danger" title="Recordings"><i class="fab fa-youtube fa-xs"></i></a>{{ end }}
+                            </div>
+                        </div>
+                        <div class="small text-dark">
+                          {{ .day }} at <span class="fw-bold">{{ .time }} {{ .tz }}</span>
+                        </div>
+                      </div>
+                      {{ end }}
+                      </div>
+                    </div>
+                    {{ end }}
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-2 mt-auto align-items-center justify-content-between pt-2">
+                    <button class="btn btn-sm btn-light text-primary rounded-pill px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ .dir | urlize }}" aria-expanded="false" aria-controls="collapse-{{ .dir | urlize }}">
+                      <i class="fas fa-chevron-down me-1 toggle-icon"></i> <span class="toggle-text">Show Details</span>
+                    </button>
+                    <div class="d-flex gap-2">
+                      {{ if .contact.slack }}
+                      <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-dark rounded-pill px-2" target="_blank" title="Slack">
+                        <i class="fab fa-slack"></i>
+                      </a>
+                      {{ end }}
+
+                      <a href="/community/community-groups/wg/{{ .dir | replaceRE "^wg-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                        Visit <i class="fas fa-arrow-right ms-1"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        <!-- Committees Pane -->
+        {{ if or (eq $showOnly "all") (eq $showOnly "committees") }}
+        <div class="tab-pane fade {{ if eq $showOnly "committees" }}show active{{ end }}" id="committees" role="tabpanel" aria-labelledby="committees-tab">
+          <div class="row g-3" id="committeesGrid">
+            {{ range sort .committees "name" }}
+            
+            {{/* Aggregate all meetings */}}
+            {{ $allMeetings := slice }}
+            {{ if .meetings }}{{ $allMeetings = $allMeetings | append .meetings }}{{ end }}
+            {{ if .contact.meetings }}{{ $allMeetings = $allMeetings | append .contact.meetings }}{{ end }}
+            {{ $meetingDays := "" }}
+            {{ range $allMeetings }}{{ $meetingDays = printf "%s %s" $meetingDays (.day | lower) }}{{ end }}
+
+            <div class="col-xxl-4 col-xl-6 col-md-6 col-12 sig-card-wrapper" 
+                 data-name="{{ .name | lower }}" 
+                 data-description="{{ .mission_statement | lower }}"
+                 data-days="{{ $meetingDays }}">
+              <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
+                <div class="card-body d-flex flex-column p-3">
+                  <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h5 class="fw-bold mb-0 text-primary h6">
+                      <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
+                    </h5>
+                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                  </div>
+                  
+                  <div class="mb-3">
+                    <div class="card-text text-secondary mb-0 small">
+                      {{ .mission_statement | markdownify }}
+                    </div>
+                  </div>
+                  
+                  <!-- Collapsible Details -->
+                  <div class="collapse mt-auto" id="collapse-{{ .dir | urlize }}">
+                    {{ if gt (len $allMeetings) 0 }}
+                    <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
+                      <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
+                      <div style="max-height: 180px; overflow-y: auto;" class="pe-2">
+                        {{ range $index, $meeting := $allMeetings }}
+                        <div class="mb-2 {{ if lt (add $index 1) (len $allMeetings) }}border-bottom border-primary border-opacity-10 pb-2{{ end }}">
+                          <div class="d-flex justify-content-between align-items-center mb-1">
+                            <div class="fw-bold small text-dark">{{ .description }}</div>
+                            <div class="d-flex gap-2">
+                              {{ if .url }}<a href="{{ .url }}" target="_blank" class="text-primary" title="Join"><i class="fas fa-video fa-xs"></i></a>{{ end }}
+                              {{ if .archive_url }}<a href="{{ .archive_url }}" target="_blank" class="text-dark" title="Notes"><i class="fas fa-file-alt fa-xs"></i></a>{{ end }}
+                              {{ if .recordings_url }}<a href="{{ .recordings_url }}" target="_blank" class="text-danger" title="Recordings"><i class="fab fa-youtube fa-xs"></i></a>{{ end }}
+                            </div>
+                        </div>
+                        <div class="small text-dark">
+                          {{ .day }} at <span class="fw-bold">{{ .time }} {{ .tz }}</span>
+                        </div>
+                      </div>
+                      {{ end }}
+                      </div>
+                    </div>
+                    {{ end }}
+                    {{ if .leadership }}
+                    <div class="mb-3">
+                      <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
+                      <div class="d-flex flex-wrap gap-1">
+                        {{ range .leadership.chairs }}
+                        <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
+                          <span class="small">@{{ .github }}</span>
+                        </a>
+                        {{ end }}
+                      </div>
+                    </div>
+                    {{ end }}
+                  </div>
+
+                  <div class="d-flex flex-wrap gap-2 mt-auto align-items-center justify-content-between pt-2">
+                    <button class="btn btn-sm btn-light text-primary rounded-pill px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ .dir | urlize }}" aria-expanded="false" aria-controls="collapse-{{ .dir | urlize }}">
+                      <i class="fas fa-chevron-down me-1 toggle-icon"></i> <span class="toggle-text">Show Details</span>
+                    </button>
+                    <div class="d-flex gap-2">
+                      {{ if .contact.slack }}
+                      <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-dark rounded-pill px-2" target="_blank" title="Slack">
+                        <i class="fab fa-slack"></i>
+                      </a>
+                      {{ end }}
+
+                      <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                        Visit <i class="fas fa-arrow-right ms-1"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('sigSearchInput');
+  const dayFilter = document.getElementById('dayFilter');
+  const cardWrappers = document.querySelectorAll('.sig-card-wrapper');
+  const topicTags = document.querySelectorAll('.topic-tag');
+  const clearBtn = document.getElementById('clearFilters');
+  
+  function applyFilters() {
+    const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const dayTerm = dayFilter ? dayFilter.value.toLowerCase() : '';
+    
+    if (clearBtn) {
+      if (searchTerm !== '' || dayTerm !== '') {
+        clearBtn.classList.remove('d-none');
+      } else {
+        clearBtn.classList.add('d-none');
+      }
+    }
+
+    cardWrappers.forEach(wrapper => {
+      const name = wrapper.dataset.name || '';
+      const desc = wrapper.dataset.description || '';
+      const label = wrapper.dataset.label || '';
+      const days = wrapper.dataset.days || '';
+      
+      const matchesSearch = name.includes(searchTerm) || desc.includes(searchTerm) || label.includes(searchTerm);
+      const matchesDay = dayTerm === '' || days.includes(dayTerm);
+      
+      if (matchesSearch && matchesDay) {
+        wrapper.classList.remove('d-none');
+      } else {
+        wrapper.classList.add('d-none');
+      }
+    });
+
+    // Update active state of tags
+    topicTags.forEach(tag => {
+      if (searchTerm === tag.dataset.tag) {
+        tag.classList.replace('bg-opacity-10', 'bg-opacity-100');
+        tag.classList.replace('text-primary', 'text-white');
+      } else {
+        tag.classList.replace('bg-opacity-100', 'bg-opacity-10');
+        tag.classList.replace('text-white', 'text-primary');
+      }
+    });
+  }
+  
+  if(searchInput) searchInput.addEventListener('input', applyFilters);
+  if(dayFilter) dayFilter.addEventListener('change', applyFilters);
+  
+  topicTags.forEach(tag => {
+    tag.addEventListener('click', () => {
+      if(searchInput) {
+        searchInput.value = tag.dataset.tag;
+        applyFilters();
+      }
+    });
+  });
+
+  if(clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      if(searchInput) searchInput.value = '';
+      if(dayFilter) dayFilter.value = '';
+      applyFilters();
+    });
+  }
+
+  // Handle URL hash for tab activation
+  if (window.location.hash) {
+    const hash = window.location.hash;
+    const tabEl = document.querySelector(`button[data-bs-target="${hash}"]`);
+    if (tabEl) {
+      // Check if bootstrap is available
+      if (typeof bootstrap !== 'undefined') {
+        const tab = new bootstrap.Tab(tabEl);
+        tab.show();
+      }
+    }
+  }
+
+  // Handle Expand/Collapse toggle text and icons
+  const collapsibles = document.querySelectorAll('.collapse');
+  collapsibles.forEach(coll => {
+    coll.addEventListener('show.bs.collapse', function (e) {
+      const btn = document.querySelector(`[data-bs-target="#${e.target.id}"]`);
+      if(btn) {
+        const icon = btn.querySelector('.toggle-icon');
+        const text = btn.querySelector('.toggle-text');
+        if(icon) { icon.classList.remove('fa-chevron-down'); icon.classList.add('fa-chevron-up'); }
+        if(text) { text.textContent = 'Hide Details'; }
+      }
+    });
+    coll.addEventListener('hide.bs.collapse', function (e) {
+      const btn = document.querySelector(`[data-bs-target="#${e.target.id}"]`);
+      if(btn) {
+        const icon = btn.querySelector('.toggle-icon');
+        const text = btn.querySelector('.toggle-text');
+        if(icon) { icon.classList.remove('fa-chevron-up'); icon.classList.add('fa-chevron-down'); }
+        if(text) { text.textContent = 'Show Details'; }
+      }
+    });
+  });
+});
+</script>
+{{ end }}

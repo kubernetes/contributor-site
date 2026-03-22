@@ -12,6 +12,8 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
 
+<link rel="canonical" href="{{ .Permalink }}">
+
 {{ $outputFormat := partial "outputformat.html" . -}}
 {{ if and hugo.IsProduction (ne $outputFormat "print") -}}
 <meta name="robots" content="index, follow">

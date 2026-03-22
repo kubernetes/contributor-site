@@ -42,3 +42,6 @@ _tmp/
 
 # Added yarn dependecies
 node_modules/
+
+# Ingested documents
+data/sigs.yaml
