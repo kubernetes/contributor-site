@@ -82,7 +82,7 @@ fi
 
 # init_src
 # Intializes source repositores by pulling the latest content. If the repo
-# is already present, fetch the latest content from the master branch.
+# is already present, fetch the latest content.
 # Args:
 # $1 - git repo to be cloned/fetched
 # $2 - path to destination directory for cloned repo
@@ -91,7 +91,7 @@ init_src() {
     echo "Cloning $1" 1>&2
     git clone --depth=1 "$1" "$2"
   elif [[ $(git -C "$2" rev-parse --show-toplevel) == "$2" ]]; then
-    echo "Syncing with latest content from master." 1>&2
+    echo "Syncing with latest content from upstream." 1>&2
     git -C "$2" checkout .
     git -C "$2" pull
   else
@@ -126,8 +126,8 @@ find_md_files() {
 #   Links:
 #   ./bug-bounty.md -> /guide/bug-bounty
 #   contributor-cheatsheet/README.md -> /guide/contributor-cheatsheet
-#   ../../sig-list.md -> https://github.com/kubernetes/community/blob/master/sig-list.md
-#   /contributors/devel/README.md -> https://github.com/kubernetes/community/blob/master/contributors/devel/README.md
+#   ../../sig-list.md -> https://github.com/kubernetes/community/blob/<default-branch>/sig-list.md
+#   /contributors/devel/README.md -> https://github.com/kubernetes/community/blob/<default-branch>/contributors/devel/README.md
 #   http://git.k8s.io/cotributors/guide/collab.md -> /guide/collab
 # 
 # Args:
@@ -232,7 +232,7 @@ gen_link() {
       local src=""
       repo="$(echo "${glsrcs[i]}" | cut -d '/' -f2)/$(echo "${glsrcs[i]}" | cut -d '/' -f3)"
       src="${glsrcs[i]#/${repo}}"
-      if echo "$generated_link" | $GREP -q -i -E "/${repo}(/(blob|tree)/master)?${src}"; then
+      if echo "$generated_link" | $GREP -q -i -E "/${repo}(/(blob|tree)/(master|main))?${src}"; then
         generated_link="$src"
         break
       fi
@@ -288,7 +288,9 @@ gen_link() {
     if [[ "$internal_link" == "false" ]]; then
       local org
       org="$(echo "$2" | rev | cut -d '/' -f2 | rev)" # reverse the string to trim from the "right"
-      generated_link="https://github.com/$org/$(basename "$2")/blob/master${generated_link}"
+      local default_branch
+      default_branch="$(git -C "$2" rev-parse --abbrev-ref HEAD)"
+      generated_link="https://github.com/$org/$(basename "$2")/blob/${default_branch}${generated_link}"
     fi
   fi
 
