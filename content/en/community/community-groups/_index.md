@@ -7,6 +7,7 @@ weight: 99
 type: docs
 aliases: [ "/groups", "/sigs" ]
 slug: community-groups
+hide_section_index: true
 ---
 
 Most community activity is organized into Special Interest Groups (SIGs) and time bounded Working Groups.

@@ -302,17 +302,45 @@ gen_link() {
 insert_header() {
   local title
   local filename
+  local description=""
   filename="$(basename "$1")"
-  # If its README, assume the title should be that of the parent dir.
-  # Otherwise use the name of the file.
-  if [[ "${filename,,}" == 'readme.md' || "${filename,,}" == '_index.md' ]]; then
-    title="$(basename "$(dirname "$1")")"
+  
+  # Check if we have a custom title and description passed via environment variables
+  # (which we set in the main loop for SIGs/WGs)
+  if [[ -n "${CUSTOM_TITLE:-}" ]]; then
+    title="$CUSTOM_TITLE"
   else
-    title="${filename%.md}"
+    # If its README, assume the title should be that of the parent dir.
+    # Otherwise use the name of the file.
+    if [[ "${filename,,}" == 'readme.md' || "${filename,,}" == '_index.md' ]]; then
+      title="$(basename "$(dirname "$1")")"
+    else
+      title="${filename%.md}"
+    fi
+    title="$(echo "${title//[-|_]/ }" | $SED -r 's/\<./\U&/g')"
   fi
-  title="$(echo "${title//[-|_]/ }" | $SED -r 's/\<./\U&/g')"
-  $SED -i "1i${HEADER_TMPLT//__TITLE__/$title}" "$1"
+  
+  if [[ -n "${CUSTOM_DESCRIPTION:-}" ]]; then
+    description="description: \"$CUSTOM_DESCRIPTION\"\n"
+  fi
+
+  # Special handling for Charters to have better titles
+  if [[ "${filename,,}" == "charter.md" && "$title" == "Charter" ]]; then
+     local parent
+     parent=$(basename "$(dirname "$1")")
+     parent="$(echo "${parent//[-|_]/ }" | $SED -r 's/\<./\U&/g')"
+     # Acronyms
+     parent=$(echo "$parent" | $SED 's/Api/API/g;s/Cli/CLI/g;s/Lts/LTS/g')
+     title="$parent Charter"
+  fi
+
+  $SED -i "1i---\ntitle: $title\n${description}---" "$1"
   echo "Header inserted into: $1"
+
+  # Demote H1 headings in the content to H2 to avoid multiple H1s on the page
+  # The theme renders the page title as an H1, so we don't want another one in the content.
+  # We look for lines starting with # followed by a space.
+  $SED -i 's/^# /## /g' "$1"
 }
 
 
@@ -368,20 +396,41 @@ main() {
       for sig in $sig_dirs; do
         local type="sigs"
         local name="${sig#sig-}"
+        local display_type="SIG"
         if [[ $sig == wg-* ]]; then
           type="wg"
           name="${sig#wg-}"
+          display_type="WG"
         elif [[ $sig == committee-* ]]; then
           type="committees"
           name="${sig#committee-}"
-        elif [[ $sig == ug-* ]]; then
-          type="ug"
-          name="${sig#ug-}"
+          display_type="Committee"
         fi
+        
+        # Extract mission statement for SEO description
+        # This is a bit fragile with bash/sed but works for simple YAML
+        local mission
+        mission=$($SED -n "/- name: $(echo "$name" | $SED 's/-/ /g;s/\b\(.\)/\u\1/g')/,/mission_statement:/p" "${TEMP_DIR}/kubernetes/community/sigs.yaml" | $GREP "mission_statement:" | $SED 's/.*mission_statement: //;s/^\"//;s/\"$//')
+        # Fallback if name matching fails due to case or dashes
+        if [[ -z "$mission" ]]; then
+           mission=$($GREP -A 5 "dir: $sig" "${TEMP_DIR}/kubernetes/community/sigs.yaml" | $GREP "mission_statement:" | $SED 's/.*mission_statement: //;s/^\"//;s/\"$//')
+        fi
+
         echo "  Adding $type: $sig"
+        
+        # Create a custom header for the index page with description and better title
+        local clean_name
+        clean_name=$(echo "$name" | $SED 's/-/ /g;s/\b\(.\)/\u\1/g')
+        # Handle special cases for acronyms
+        clean_name=$(echo "$clean_name" | $SED 's/Api/API/g;s/Cli/CLI/g;s/Lts/LTS/g')
+        
+        local index_header="---\ntitle: $display_type $clean_name\ndescription: \"$mission\"\n---"
+        
         # Map group README to index and charter to charter.md
         srcs+=("/kubernetes/community/$sig/README.md")
         dsts+=("/community/community-groups/$type/$name/_index.md")
+        # We'll use a special flag or handle these specifically to insert custom headers
+        
         srcs+=("/kubernetes/community/$sig/charter.md")
         dsts+=("/community/community-groups/$type/$name/charter.md")
       done
@@ -403,6 +452,30 @@ main() {
       echo "Warning: Source path ${TEMP_DIR}${srcs[i]} does not exist, skipping." 1>&2
       continue
     fi
+    
+    # Check if this is a SIG/WG/Committee index page to set custom metadata
+    export CUSTOM_TITLE=""
+    export CUSTOM_DESCRIPTION=""
+    if [[ "${dsts[i]}" == *"/_index.md" ]]; then
+        # We need to find the corresponding display_type and clean_name we calculated earlier
+        # Since we didn't store them in a map, we re-calculate or infer
+        local group_dir
+        group_dir=$(echo "${srcs[i]}" | cut -d '/' -f4)
+        if [[ -n "$group_dir" ]]; then
+           # Re-extract mission statement and title for this specific directory
+           CUSTOM_DESCRIPTION=$($GREP -A 5 "dir: $group_dir" "${TEMP_DIR}/kubernetes/community/sigs.yaml" | $GREP "mission_statement:" | $SED 's/.*mission_statement: //;s/^\"//;s/\"$//')
+           
+           local display_type="SIG"
+           if [[ $group_dir == wg-* ]]; then display_type="WG"; fi
+           if [[ $group_dir == committee-* ]]; then display_type="Committee"; fi
+           
+           local clean_name
+           clean_name=$(echo "${group_dir#*-}" | $SED 's/-/ /g;s/\b\(.\)/\u\1/g')
+           clean_name=$(echo "$clean_name" | $SED 's/Api/API/g;s/Cli/CLI/g;s/Lts/LTS/g')
+           CUSTOM_TITLE="$display_type $clean_name"
+        fi
+    fi
+
     while IFS= read -r -d $'\0' file; do
       process_content "$file" "${TEMP_DIR}/${repo}" srcs dsts
       # if the source file is a readme, or the destination is a singular file it
