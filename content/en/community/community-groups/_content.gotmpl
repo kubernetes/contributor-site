@@ -4,7 +4,14 @@
 {{ $sigsUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch }}
 {{ $githubBaseUrl := printf "https://github.com/kubernetes/community/tree/%s/" $defaultBranch }}
 
-{{ with resources.GetRemote $sigsUrl | transform.Unmarshal }}
+{{- $opts := dict -}}
+{{- with os.Getenv "HUGO_GITHUB_TOKEN" -}}
+  {{- $opts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) -}}
+{{- end -}}
+{{- $cacheOpts := dict "key" "sigs-yaml-adapter" -}}
+{{- $opts = merge $opts $cacheOpts -}}
+
+{{ with resources.GetRemote $sigsUrl $opts | transform.Unmarshal }}
   
   {{/* SIGs */}}
   {{ range .sigs }}
