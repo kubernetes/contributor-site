@@ -18,3 +18,10 @@
 
 </style>
 {{ end }}
+
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{ if .HasShortcode "sigs-list" }}
+  {{ $js := resources.Get "js/sigs-filter.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ end }}

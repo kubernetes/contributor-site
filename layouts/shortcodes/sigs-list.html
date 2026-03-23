@@ -1,9 +1,21 @@
 {{/* layouts/shortcodes/sigs-list.html */}}
 
 {{- $showOnly := .Get "show_only" | default "all" -}}
-{{- $sigsUrl := "https://raw.githubusercontent.com/kubernetes/community/master/sigs.yaml" -}}
+{{- $shouldShowSigs := or (eq $showOnly "all") (eq $showOnly "sigs") -}}
+{{- $shouldShowWgs := or (eq $showOnly "all") (eq $showOnly "wgs") -}}
+{{- $shouldShowCommittees := or (eq $showOnly "all") (eq $showOnly "committees") -}}
 
-{{ with resources.GetRemote $sigsUrl | transform.Unmarshal }}
+{{- $defaultBranch := "master" -}}
+{{- $sigsUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch -}}
+
+{{- $opts := dict -}}
+{{- with os.Getenv "HUGO_GITHUB_TOKEN" -}}
+  {{- $opts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) -}}
+{{- end -}}
+{{- $cacheOpts := dict "key" "sigs-yaml" -}}
+{{- $opts = merge $opts $cacheOpts -}}
+
+{{ with resources.GetRemote $sigsUrl $opts | transform.Unmarshal }}
 <div class="sigs-container my-4">
   <div class="row">
     
@@ -50,11 +62,11 @@
 
           <div class="d-flex flex-wrap gap-1 align-items-center ms-md-auto" id="topicFilters">
             <span class="small text-muted me-1 d-none d-md-inline">Topics:</span>
-            <button type="button" data-tag="architecture" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Arch</button>
-            <button type="button" data-tag="cloud" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Cloud</button>
-            <button type="button" data-tag="dev" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#DevEx</button>
-            <button type="button" data-tag="storage" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Storage</button>
-            <button type="button" data-tag="network" class="badge bg-primary bg-opacity-10 text-primary border-0 py-1 px-2 topic-tag">#Network</button>
+            <button type="button" data-tag="architecture" class="badge border-0 py-1 px-2 topic-tag">#Arch</button>
+            <button type="button" data-tag="cloud" class="badge border-0 py-1 px-2 topic-tag">#Cloud</button>
+            <button type="button" data-tag="dev" class="badge border-0 py-1 px-2 topic-tag">#DevEx</button>
+            <button type="button" data-tag="storage" class="badge border-0 py-1 px-2 topic-tag">#Storage</button>
+            <button type="button" data-tag="network" class="badge border-0 py-1 px-2 topic-tag">#Network</button>
             <button type="button" id="clearFilters" class="badge bg-danger bg-opacity-10 text-danger border-0 py-1 px-2 d-none">Clear</button>
           </div>
         </div>
@@ -66,8 +78,8 @@
       <div class="tab-content" id="sigsTabContent">
         
         <!-- SIGs Pane -->
-        {{ if or (eq $showOnly "all") (eq $showOnly "sigs") }}
-        <div class="tab-pane fade {{ if or (eq $showOnly "all") (eq $showOnly "sigs") }}show active{{ end }}" id="sigs" role="tabpanel" aria-labelledby="sigs-tab">
+        {{ if $shouldShowSigs }}
+        <div class="tab-pane fade {{ if $shouldShowSigs }}show active{{ end }}" id="sigs" role="tabpanel" aria-labelledby="sigs-tab">
           <div class="row g-3" id="sigsGrid">
             {{ range sort .sigs "name" }}
             
@@ -92,7 +104,7 @@
                     <h5 class="fw-bold mb-0 text-primary h6">
                       <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
                     </h5>
-                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
                   </div>
                   
                   <div class="mb-3">
@@ -169,8 +181,8 @@
         {{ end }}
 
         <!-- Working Groups Pane -->
-        {{ if or (eq $showOnly "all") (eq $showOnly "wg") }}
-        <div class="tab-pane fade {{ if eq $showOnly "wg" }}show active{{ end }}" id="wg" role="tabpanel" aria-labelledby="wg-tab">
+        {{ if $shouldShowWgs }}
+        <div class="tab-pane fade {{ if not $shouldShowSigs }}show active{{ end }}" id="wg" role="tabpanel" aria-labelledby="wg-tab">
           <div class="row g-3" id="wgGrid">
             {{ range sort .workinggroups "name" }}
             
@@ -191,7 +203,7 @@
                     <h5 class="fw-bold mb-0 text-primary h6">
                       <a href="/community/community-groups/wg/{{ .dir | replaceRE "^sig-" "" | replaceRE "^wg-" "" }}/" class="text-decoration-none text-primary">WG {{ .name }}</a>
                     </h5>
-                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
                   </div>
                   
                   <div class="mb-3">
@@ -251,8 +263,8 @@
         {{ end }}
 
         <!-- Committees Pane -->
-        {{ if or (eq $showOnly "all") (eq $showOnly "committees") }}
-        <div class="tab-pane fade {{ if eq $showOnly "committees" }}show active{{ end }}" id="committees" role="tabpanel" aria-labelledby="committees-tab">
+        {{ if $shouldShowCommittees }}
+        <div class="tab-pane fade {{ if not (or $shouldShowSigs $shouldShowWgs) }}show active{{ end }}" id="committees" role="tabpanel" aria-labelledby="committees-tab">
           <div class="row g-3" id="committeesGrid">
             {{ range sort .committees "name" }}
             
@@ -273,7 +285,7 @@
                     <h5 class="fw-bold mb-0 text-primary h6">
                       <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
                     </h5>
-                    <a href="https://github.com/kubernetes/community/tree/master/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
                   </div>
                   
                   <div class="mb-3">
@@ -348,7 +360,4 @@
     </div>
   </div>
 </div>
-
-{{ $js := resources.Get "js/sigs-filter.js" | minify | fingerprint }}
-<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
 {{ end }}

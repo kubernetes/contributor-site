@@ -36,11 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active state of tags
     topicTags.forEach(tag => {
       if (searchTerm === tag.dataset.tag) {
-        tag.classList.replace('bg-opacity-10', 'bg-opacity-100');
-        tag.classList.replace('text-primary', 'text-white');
+        tag.classList.add('active');
       } else {
-        tag.classList.replace('bg-opacity-100', 'bg-opacity-10');
-        tag.classList.replace('text-white', 'text-primary');
+        tag.classList.remove('active');
       }
     });
   }

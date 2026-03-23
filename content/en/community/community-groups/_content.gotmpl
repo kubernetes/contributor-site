@@ -1,7 +1,8 @@
 {{/* content/en/community/community-groups/_content.gotmpl */}}
 
-{{ $sigsUrl := "https://raw.githubusercontent.com/kubernetes/community/master/sigs.yaml" }}
-{{ $githubBaseUrl := "https://github.com/kubernetes/community/tree/master/" }}
+{{ $defaultBranch := "master" }}
+{{ $sigsUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch }}
+{{ $githubBaseUrl := printf "https://github.com/kubernetes/community/tree/%s/" $defaultBranch }}
 
 {{ with resources.GetRemote $sigsUrl | transform.Unmarshal }}
   

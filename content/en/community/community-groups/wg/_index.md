@@ -5,4 +5,4 @@ weight: 20
 hide_section_index: true
 ---
 
-{{< sigs-list show_only="wg" >}}
+{{< sigs-list show_only="wgs" >}}
