@@ -5,7 +5,7 @@ description:  |
   A list of our community groups: Special Interest Groups, Working Groups and Committees.
 weight: 99
 type: docs
-aliases: [ "/groups", "/sigs" ]
+aliases: [ "/groups" ]
 slug: community-groups
 hide_section_index: true
 ---

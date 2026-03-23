@@ -1,7 +1,7 @@
 {{/* content/en/community/community-groups/_content.gotmpl */}}
 
 {{ $sigsUrl := "https://raw.githubusercontent.com/kubernetes/community/master/sigs.yaml" }}
-{{ $baseUrl := "https://raw.githubusercontent.com/kubernetes/community/master/" }}
+{{ $githubBaseUrl := "https://github.com/kubernetes/community/tree/master/" }}
 
 {{ with resources.GetRemote $sigsUrl | transform.Unmarshal }}
   
@@ -11,17 +11,6 @@
     {{ $dir := .dir }}
     {{ $slug := replace $dir "sig-" "" }}
     
-    {{/* Main Index Page */}}
-    {{ $readmeUrl := printf "%s%s/README.md" $baseUrl $dir }}
-    {{ $content := "" }}
-    {{ with resources.GetRemote $readmeUrl }}
-      {{ if .Err }}
-        {{ warnf "Unable to load README for %s: %s" $dir .Err }}
-      {{ else }}
-        {{ $content = replace .Content "\u200b" "" }}
-      {{ end }}
-    {{ end }}
-
     {{ $page := dict
       "kind" "section"
       "path" (printf "sigs/%s" $slug)
@@ -34,31 +23,22 @@
         "subprojects" .subprojects
         "label" .label
         "dir" .dir
-      )
-      "content" (dict
-        "mediaType" "text/markdown"
-        "value" $content
+        "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
+        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
       )
     }}
     {{ $.AddPage $page }}
 
-    {{/* Charter Page */}}
-    {{ $charterUrl := printf "%s%s/charter.md" $baseUrl $dir }}
-    {{ with resources.GetRemote $charterUrl }}
-      {{ if not .Err }}
-        {{ $charterContent := replace .Content "\u200b" "" }}
-        {{ $charterPage := dict
-          "kind" "page"
-          "path" (printf "sigs/%s/charter" $slug)
-          "title" (printf "SIG %s Charter" $name)
-          "content" (dict
-            "mediaType" "text/markdown"
-            "value" $charterContent
-          )
-        }}
-        {{ $.AddPage $charterPage }}
-      {{ end }}
-    {{ end }}
+    {{/* Charter Page Placeholder */}}
+    {{ $charterPage := dict
+      "kind" "page"
+      "path" (printf "sigs/%s/charter" $slug)
+      "title" (printf "SIG %s Charter" $name)
+      "params" (dict
+        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+      )
+    }}
+    {{ $.AddPage $charterPage }}
   {{ end }}
 
   {{/* Working Groups */}}
@@ -67,15 +47,6 @@
     {{ $dir := .dir }}
     {{ $slug := replace $dir "wg-" "" }}
     
-    {{/* Main Index Page */}}
-    {{ $readmeUrl := printf "%s%s/README.md" $baseUrl $dir }}
-    {{ $content := "" }}
-    {{ with resources.GetRemote $readmeUrl }}
-      {{ if not .Err }}
-        {{ $content = replace .Content "\u200b" "" }}
-      {{ end }}
-    {{ end }}
-
     {{ $page := dict
       "kind" "section"
       "path" (printf "wg/%s" $slug)
@@ -86,31 +57,22 @@
         "meetings" .meetings
         "contact" .contact
         "dir" .dir
-      )
-      "content" (dict
-        "mediaType" "text/markdown"
-        "value" $content
+        "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
+        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
       )
     }}
     {{ $.AddPage $page }}
 
-    {{/* Charter Page */}}
-    {{ $charterUrl := printf "%s%s/charter.md" $baseUrl $dir }}
-    {{ with resources.GetRemote $charterUrl }}
-      {{ if not .Err }}
-        {{ $charterContent := replace .Content "\u200b" "" }}
-        {{ $charterPage := dict
-          "kind" "page"
-          "path" (printf "wg/%s/charter" $slug)
-          "title" (printf "WG %s Charter" $name)
-          "content" (dict
-            "mediaType" "text/markdown"
-            "value" $charterContent
-          )
-        }}
-        {{ $.AddPage $charterPage }}
-      {{ end }}
-    {{ end }}
+    {{/* Charter Page Placeholder */}}
+    {{ $charterPage := dict
+      "kind" "page"
+      "path" (printf "wg/%s/charter" $slug)
+      "title" (printf "WG %s Charter" $name)
+      "params" (dict
+        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+      )
+    }}
+    {{ $.AddPage $charterPage }}
   {{ end }}
 
   {{/* Committees */}}
@@ -119,15 +81,6 @@
     {{ $dir := .dir }}
     {{ $slug := replace $dir "committee-" "" }}
     
-    {{/* Main Index Page */}}
-    {{ $readmeUrl := printf "%s%s/README.md" $baseUrl $dir }}
-    {{ $content := "" }}
-    {{ with resources.GetRemote $readmeUrl }}
-      {{ if not .Err }}
-        {{ $content = replace .Content "\u200b" "" }}
-      {{ end }}
-    {{ end }}
-
     {{ $page := dict
       "kind" "section"
       "path" (printf "committees/%s" $slug)
@@ -138,31 +91,22 @@
         "meetings" .meetings
         "contact" .contact
         "dir" .dir
-      )
-      "content" (dict
-        "mediaType" "text/markdown"
-        "value" $content
+        "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
+        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
       )
     }}
     {{ $.AddPage $page }}
 
-    {{/* Charter Page */}}
-    {{ $charterUrl := printf "%s%s/charter.md" $baseUrl $dir }}
-    {{ with resources.GetRemote $charterUrl }}
-      {{ if not .Err }}
-        {{ $charterContent := replace .Content "\u200b" "" }}
-        {{ $charterPage := dict
-          "kind" "page"
-          "path" (printf "committees/%s/charter" $slug)
-          "title" (printf "%s Charter" $name)
-          "content" (dict
-            "mediaType" "text/markdown"
-            "value" $charterContent
-          )
-        }}
-        {{ $.AddPage $charterPage }}
-      {{ end }}
-    {{ end }}
+    {{/* Charter Page Placeholder */}}
+    {{ $charterPage := dict
+      "kind" "page"
+      "path" (printf "committees/%s/charter" $slug)
+      "title" (printf "%s Charter" $name)
+      "params" (dict
+        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+      )
+    }}
+    {{ $.AddPage $charterPage }}
   {{ end }}
 
 {{ end }}
