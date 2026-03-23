@@ -5,7 +5,7 @@
 {{- $shouldShowWgs := or (eq $showOnly "all") (eq $showOnly "wgs") -}}
 {{- $shouldShowCommittees := or (eq $showOnly "all") (eq $showOnly "committees") -}}
 
-{{- $defaultBranch := "master" -}}
+{{ $defaultBranch := "main" }}
 {{- $sigsUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch -}}
 
 {{- $opts := dict -}}
