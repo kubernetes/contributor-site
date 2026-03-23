@@ -26,10 +26,12 @@
       <a href="{{ $charterPage.RelPermalink }}" class="btn btn-sm btn-primary rounded-pill">
         <i class="fas fa-file-contract me-1"></i> View Charter
       </a>
-      {{ else with .Params.remote_charter_url }}
-      <a href="{{ . }}" target="_blank" class="btn btn-sm btn-outline-secondary rounded-pill">
-        <i class="fab fa-github me-1"></i> View Charter Source
-      </a>
+      {{ else }}
+        {{ with .Params.remote_charter_url }}
+        <a href="{{ . }}" target="_blank" class="btn btn-sm btn-outline-secondary rounded-pill">
+          <i class="fab fa-github me-1"></i> View Charter Source
+        </a>
+        {{ end }}
       {{ end }}
     </div>
   {{ end }}
