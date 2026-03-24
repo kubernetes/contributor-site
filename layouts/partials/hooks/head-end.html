@@ -19,11 +19,7 @@
 </style>
 {{ end }}
 
-{{ with .Params.canonicalUrl }}
-<link rel="canonical" href="{{ . }}">
-{{ else }}
-<link rel="canonical" href="{{ .Permalink }}">
-{{ end }}
+<link rel="canonical" href="{{ with .Params.canonicalURL }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}">
 
 {{ if .HasShortcode "sigs-list" }}
   {{ $js := resources.Get "js/sigs-filter.js" | minify | fingerprint }}
