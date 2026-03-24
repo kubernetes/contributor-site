@@ -36,6 +36,9 @@ caches:
   getjson:
     dir: ':cacheDir/:project'
     maxAge: 60s
+  getresource:
+    dir: ':cacheDir/:project'
+    maxAge: 2h
   images:
     dir: ':cacheDir/_images'
     maxAge: -1
