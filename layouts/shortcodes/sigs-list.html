@@ -26,26 +26,26 @@
   {{ with .Content | transform.Unmarshal }}
 <div class="sigs-container my-4">
   <div class="row">
-    
-    {{ if eq $showOnly "all" }}
-    <!-- Navigation Area -->
-    <div class="col-lg-12 mb-3">
-      <div class="nav nav-pills shadow-sm rounded bg-white p-2 border flex-nowrap overflow-auto justify-content-lg-center" id="sigsTab" role="tablist">
-        <button class="nav-link active text-nowrap me-2" id="sigs-tab" data-bs-toggle="pill" data-bs-target="#sigs" type="button" role="tab" aria-controls="sigs" aria-selected="true">
-          <i class="fas fa-users-cog me-1"></i> SIGs <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .sigs }}</span>
-        </button>
-        <button class="nav-link text-nowrap me-2" id="wg-tab" data-bs-toggle="pill" data-bs-target="#wg" type="button" role="tab" aria-controls="wg" aria-selected="false">
-          <i class="fas fa-project-diagram me-1"></i> Working Groups <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .workinggroups }}</span>
-        </button>
-        <button class="nav-link text-nowrap" id="committees-tab" data-bs-toggle="pill" data-bs-target="#committees" type="button" role="tab" aria-controls="committees" aria-selected="false">
-          <i class="fas fa-shield-alt me-1"></i> Committees <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .committees }}</span>
-        </button>
+    <!-- Sticky Header Wrapper -->
+    <div class="col-lg-12 sticky-top bg-white pt-3 pb-1 mb-4 sigs-sticky-header" style="top: 4rem; z-index: 1020;">
+      {{ if eq $showOnly "all" }}
+      <!-- Navigation Area -->
+      <div class="mb-3">
+        <div class="nav nav-pills shadow-sm rounded bg-white p-2 border flex-nowrap overflow-auto justify-content-lg-center" id="sigsTab" role="tablist">
+          <button class="nav-link active text-nowrap me-2" id="sigs-tab" data-bs-toggle="pill" data-bs-target="#sigs" type="button" role="tab" aria-controls="sigs" aria-selected="true" aria-label="Show Special Interest Groups">
+            <i class="fas fa-users-cog me-1"></i> SIGs <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .sigs }}</span>
+          </button>
+          <button class="nav-link text-nowrap me-2" id="wg-tab" data-bs-toggle="pill" data-bs-target="#wg" type="button" role="tab" aria-controls="wg" aria-selected="false" aria-label="Show Working Groups">
+            <i class="fas fa-project-diagram me-1"></i> Working Groups <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .workinggroups }}</span>
+          </button>
+          <button class="nav-link text-nowrap" id="committees-tab" data-bs-toggle="pill" data-bs-target="#committees" type="button" role="tab" aria-controls="committees" aria-selected="false" aria-label="Show Committees">
+            <i class="fas fa-shield-alt me-1"></i> Committees <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .committees }}</span>
+          </button>
+        </div>
       </div>
-    </div>
-    {{ end }}
+      {{ end }}
 
-    <!-- Sticky Filter Bar -->
-    <div class="col-lg-12 mb-4 sticky-top" style="top: 4rem; z-index: 1020;">
+      <!-- Filter Bar -->
       <div class="card shadow-sm border-0">
         <div class="card-body p-2 d-flex flex-column flex-md-row align-items-md-center gap-2">
           <div class="fw-bold d-none d-lg-flex align-items-center me-2 text-nowrap">
@@ -54,11 +54,11 @@
           
           <div class="input-group input-group-sm border rounded flex-grow-1" style="max-width: 300px;">
             <span class="input-group-text bg-white border-0"><i class="fas fa-search"></i></span>
-            <input type="text" id="sigSearchInput" class="form-control border-0" placeholder="Type name, tag, area..." aria-label="Filter community groups by name or tag">
+            <input type="text" id="sigSearchInput" class="form-control border-0" placeholder="Type name, tag, area..." aria-label="Filter community groups by name, tag, or label">
           </div>
 
-          <div class="d-flex align-items-center gap-2">
-            <select id="dayFilter" class="form-select form-select-sm border shadow-none" style="width: auto;" aria-label="Filter by day">
+          <div class="d-none d-md-flex align-items-center gap-2">
+            <select id="dayFilter" class="form-select form-select-sm border shadow-none" style="width: auto;" aria-label="Filter community groups by meeting day">
               <option value="">Any day</option>
               <option value="monday">Mon</option>
               <option value="tuesday">Tue</option>
@@ -68,7 +68,7 @@
             </select>
           </div>
 
-          <div class="d-flex flex-wrap gap-1 align-items-center ms-md-auto" id="topicFilters">
+          <div class="d-none d-md-flex flex-wrap gap-1 align-items-center ms-md-auto" id="topicFilters" role="group" aria-label="Filter by topic">
             <span class="small text-muted me-1 d-none d-md-inline">Topics:</span>
             <button type="button" data-tag="architecture" class="badge border-0 py-1 px-2 topic-tag">#Arch</button>
             <button type="button" data-tag="cloud" class="badge border-0 py-1 px-2 topic-tag">#Cloud</button>
@@ -80,6 +80,9 @@
         </div>
       </div>
     </div>
+
+{{ $styles := resources.Get "scss/sigs-list.scss" | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
             
     <!-- Content Area -->
     <div class="col-lg-12">
