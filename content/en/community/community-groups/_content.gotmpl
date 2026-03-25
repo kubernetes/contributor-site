@@ -85,9 +85,10 @@
             "title" (printf "SIG %s Charter" $name)
             "params" (dict
               "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+              "hide_summary" true
+              "toc_hide" true
             )
-            "content" (dict
-              "mediaType" "text/markdown"
+            "content" (dict              "mediaType" "text/markdown"
               "value" $charterContent
             )
           }}
@@ -156,9 +157,10 @@
             "title" (printf "WG %s Charter" $name)
             "params" (dict
               "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+              "hide_summary" true
+              "toc_hide" true
             )
-            "content" (dict
-              "mediaType" "text/markdown"
+            "content" (dict              "mediaType" "text/markdown"
               "value" $charterContent
             )
           }}
@@ -227,9 +229,10 @@
             "title" (printf "%s Charter" $name)
             "params" (dict
               "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+              "hide_summary" true
+              "toc_hide" true
             )
-            "content" (dict
-              "mediaType" "text/markdown"
+            "content" (dict              "mediaType" "text/markdown"
               "value" $charterContent
             )
           }}
