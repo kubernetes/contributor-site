@@ -15,7 +15,15 @@
 {{- $cacheOpts := dict "key" "sigs-yaml" -}}
 {{- $opts = merge $opts $cacheOpts -}}
 
-{{ with resources.GetRemote $sigsUrl $opts | transform.Unmarshal }}
+{{ with resources.GetRemote $sigsUrl $opts }}
+  {{ with .Err }}
+    {{ if eq hugo.Environment "production" }}
+      {{ errorf "Unable to load sigs.yaml: %s" . }}
+    {{ else }}
+      {{ warnf "Unable to load sigs.yaml: %s" . }}
+    {{ end }}
+  {{ end }}
+  {{ with .Content | transform.Unmarshal }}
 <div class="sigs-container my-4">
   <div class="row">
     

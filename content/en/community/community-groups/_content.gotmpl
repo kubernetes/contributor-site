@@ -13,187 +13,229 @@
 
 {{- $sigsOpts := merge $globalOpts (dict "key" "sigs-yaml-adapter") -}}
 
-{{ with resources.GetRemote $sigsUrl $sigsOpts | transform.Unmarshal }}
-  
-  {{/* SIGs */}}
-  {{ range .sigs }}
-    {{ $name := .name }}
-    {{ $dir := .dir }}
-    {{ $slug := replace $dir "sig-" "" }}
-    
-    {{/* Fetch README Content */}}
-    {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
-    {{ $readmeContent := "" }}
-    {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
-    {{ with resources.GetRemote $readmeUrl $readmeOpts }}
-      {{ if .Err }}
-        {{ warnf "Unable to load README for %s: %s" $dir .Err }}
-      {{ else }}
-        {{ $readmeContent = replace .Content "\u200b" "" }}
-      {{ end }}
-    {{ end }}
-
-    {{ $page := dict
-      "kind" "section"
-      "path" (printf "sigs/%s" $slug)
-      "title" (printf "SIG %s" $name)
-      "params" (dict
-        "description" .mission_statement
-        "leadership" .leadership
-        "meetings" .meetings
-        "contact" .contact
-        "subprojects" .subprojects
-        "label" .label
-        "dir" .dir
-        "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
-        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-      )
-      "content" (dict
-        "mediaType" "text/markdown"
-        "value" $readmeContent
-      )
-    }}
-    {{ $.AddPage $page }}
-
-    {{/* Fetch Charter Content */}}
-    {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
-    {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
-    {{ with resources.GetRemote $charterUrl $charterOpts }}
-      {{ if not .Err }}
-        {{ $charterContent := replace .Content "\u200b" "" }}
-        {{ $charterPage := dict
-          "kind" "page"
-          "path" (printf "sigs/%s/charter" $slug)
-          "title" (printf "SIG %s Charter" $name)
-          "params" (dict
-            "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-          )
-          "content" (dict
-            "mediaType" "text/markdown"
-            "value" $charterContent
-          )
-        }}
-        {{ $.AddPage $charterPage }}
-      {{ end }}
+{{ with resources.GetRemote $sigsUrl $sigsOpts }}
+  {{ with .Err }}
+    {{ if eq hugo.Environment "production" }}
+      {{ errorf "Unable to load sigs.yaml: %s" . }}
+    {{ else }}
+      {{ warnf "Unable to load sigs.yaml: %s" . }}
     {{ end }}
   {{ end }}
 
-  {{/* Working Groups */}}
-  {{ range .workinggroups }}
-    {{ $name := .name }}
-    {{ $dir := .dir }}
-    {{ $slug := replace $dir "wg-" "" }}
-    
-    {{/* Fetch README Content */}}
-    {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
-    {{ $readmeContent := "" }}
-    {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
-    {{ with resources.GetRemote $readmeUrl $readmeOpts }}
-      {{ if not .Err }}
-        {{ $readmeContent = replace .Content "\u200b" "" }}
+  {{ with .Content | transform.Unmarshal }}
+    {{/* SIGs */}}
+    {{ range .sigs }}
+      {{ $name := .name }}
+      {{ $dir := .dir }}
+      {{ $slug := replace $dir "sig-" "" }}
+      
+      {{/* Fetch README Content */}}
+      {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
+      {{ $readmeContent := "" }}
+      {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
+      {{ with resources.GetRemote $readmeUrl $readmeOpts }}
+        {{ if .Err }}
+          {{ if eq hugo.Environment "production" }}
+            {{ errorf "Unable to load README for %s: %s" $dir .Err }}
+          {{ else }}
+            {{ warnf "Unable to load README for %s: %s" $dir .Err }}
+          {{ end }}
+        {{ else }}
+          {{ $readmeContent = replace .Content "\u200b" "" }}
+        {{ end }}
+      {{ end }}
+
+      {{ $page := dict
+        "kind" "section"
+        "path" (printf "sigs/%s" $slug)
+        "title" (printf "SIG %s" $name)
+        "params" (dict
+          "description" .mission_statement
+          "leadership" .leadership
+          "meetings" .meetings
+          "contact" .contact
+          "subprojects" .subprojects
+          "label" .label
+          "dir" .dir
+          "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
+          "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+        )
+        "content" (dict
+          "mediaType" "text/markdown"
+          "value" $readmeContent
+        )
+      }}
+      {{ $.AddPage $page }}
+
+      {{/* Fetch Charter Content */}}
+      {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
+      {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
+      {{ with resources.GetRemote $charterUrl $charterOpts }}
+        {{ if .Err }}
+          {{ if eq hugo.Environment "production" }}
+            {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+          {{ else }}
+            {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
+          {{ end }}
+        {{ else }}
+          {{ $charterContent := replace .Content "\u200b" "" }}
+          {{ $charterPage := dict
+            "kind" "page"
+            "path" (printf "sigs/%s/charter" $slug)
+            "title" (printf "SIG %s Charter" $name)
+            "params" (dict
+              "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+            )
+            "content" (dict
+              "mediaType" "text/markdown"
+              "value" $charterContent
+            )
+          }}
+          {{ $.AddPage $charterPage }}
+        {{ end }}
       {{ end }}
     {{ end }}
 
-    {{ $page := dict
-      "kind" "section"
-      "path" (printf "wg/%s" $slug)
-      "title" (printf "WG %s" $name)
-      "params" (dict
-        "description" .mission_statement
-        "leadership" .leadership
-        "meetings" .meetings
-        "contact" .contact
-        "dir" .dir
-        "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
-        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-      )
-      "content" (dict
-        "mediaType" "text/markdown"
-        "value" $readmeContent
-      )
-    }}
-    {{ $.AddPage $page }}
+    {{/* Working Groups */}}
+    {{ range .workinggroups }}
+      {{ $name := .name }}
+      {{ $dir := .dir }}
+      {{ $slug := replace $dir "wg-" "" }}
+      
+      {{/* Fetch README Content */}}
+      {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
+      {{ $readmeContent := "" }}
+      {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
+      {{ with resources.GetRemote $readmeUrl $readmeOpts }}
+        {{ if .Err }}
+          {{ if eq hugo.Environment "production" }}
+            {{ errorf "Unable to load README for %s: %s" $dir .Err }}
+          {{ else }}
+            {{ warnf "Unable to load README for %s: %s" $dir .Err }}
+          {{ end }}
+        {{ else }}
+          {{ $readmeContent = replace .Content "\u200b" "" }}
+        {{ end }}
+      {{ end }}
 
-    {{/* Fetch Charter Content */}}
-    {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
-    {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
-    {{ with resources.GetRemote $charterUrl $charterOpts }}
-      {{ if not .Err }}
-        {{ $charterContent := replace .Content "\u200b" "" }}
-        {{ $charterPage := dict
-          "kind" "page"
-          "path" (printf "wg/%s/charter" $slug)
-          "title" (printf "WG %s Charter" $name)
-          "params" (dict
-            "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-          )
-          "content" (dict
-            "mediaType" "text/markdown"
-            "value" $charterContent
-          )
-        }}
-        {{ $.AddPage $charterPage }}
+      {{ $page := dict
+        "kind" "section"
+        "path" (printf "wg/%s" $slug)
+        "title" (printf "WG %s" $name)
+        "params" (dict
+          "description" .mission_statement
+          "leadership" .leadership
+          "meetings" .meetings
+          "contact" .contact
+          "dir" .dir
+          "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
+          "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+        )
+        "content" (dict
+          "mediaType" "text/markdown"
+          "value" $readmeContent
+        )
+      }}
+      {{ $.AddPage $page }}
+
+      {{/* Fetch Charter Content */}}
+      {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
+      {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
+      {{ with resources.GetRemote $charterUrl $charterOpts }}
+        {{ if .Err }}
+          {{ if eq hugo.Environment "production" }}
+            {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+          {{ else }}
+            {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
+          {{ end }}
+        {{ else }}
+          {{ $charterContent := replace .Content "\u200b" "" }}
+          {{ $charterPage := dict
+            "kind" "page"
+            "path" (printf "wg/%s/charter" $slug)
+            "title" (printf "WG %s Charter" $name)
+            "params" (dict
+              "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+            )
+            "content" (dict
+              "mediaType" "text/markdown"
+              "value" $charterContent
+            )
+          }}
+          {{ $.AddPage $charterPage }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Committees */}}
+    {{ range .committees }}
+      {{ $name := .name }}
+      {{ $dir := .dir }}
+      {{ $slug := replace $dir "committee-" "" }}
+      
+      {{/* Fetch README Content */}}
+      {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
+      {{ $readmeContent := "" }}
+      {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
+      {{ with resources.GetRemote $readmeUrl $readmeOpts }}
+        {{ if .Err }}
+          {{ if eq hugo.Environment "production" }}
+            {{ errorf "Unable to load README for %s: %s" $dir .Err }}
+          {{ else }}
+            {{ warnf "Unable to load README for %s: %s" $dir .Err }}
+          {{ end }}
+        {{ else }}
+          {{ $readmeContent = replace .Content "\u200b" "" }}
+        {{ end }}
+      {{ end }}
+
+      {{ $page := dict
+        "kind" "section"
+        "path" (printf "committees/%s" $slug)
+        "title" (printf "%s" $name)
+        "params" (dict
+          "description" .mission_statement
+          "leadership" .leadership
+          "meetings" .meetings
+          "contact" .contact
+          "dir" .dir
+          "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
+          "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+        )
+        "content" (dict
+          "mediaType" "text/markdown"
+          "value" $readmeContent
+        )
+      }}
+      {{ $.AddPage $page }}
+
+      {{/* Fetch Charter Content */}}
+      {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
+      {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
+      {{ with resources.GetRemote $charterUrl $charterOpts }}
+        {{ if .Err }}
+          {{ if eq hugo.Environment "production" }}
+            {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+          {{ else }}
+            {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
+          {{ end }}
+        {{ else }}
+          {{ $charterContent := replace .Content "\u200b" "" }}
+          {{ $charterPage := dict
+            "kind" "page"
+            "path" (printf "committees/%s/charter" $slug)
+            "title" (printf "%s Charter" $name)
+            "params" (dict
+              "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+            )
+            "content" (dict
+              "mediaType" "text/markdown"
+              "value" $charterContent
+            )
+          }}
+          {{ $.AddPage $charterPage }}
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}
-
-  {{/* Committees */}}
-  {{ range .committees }}
-    {{ $name := .name }}
-    {{ $dir := .dir }}
-    {{ $slug := replace $dir "committee-" "" }}
-    
-    {{/* Fetch README Content */}}
-    {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
-    {{ $readmeContent := "" }}
-    {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
-    {{ with resources.GetRemote $readmeUrl $readmeOpts }}
-      {{ if not .Err }}
-        {{ $readmeContent = replace .Content "\u200b" "" }}
-      {{ end }}
-    {{ end }}
-
-    {{ $page := dict
-      "kind" "section"
-      "path" (printf "committees/%s" $slug)
-      "title" (printf "%s" $name)
-      "params" (dict
-        "description" .mission_statement
-        "leadership" .leadership
-        "meetings" .meetings
-        "contact" .contact
-        "dir" .dir
-        "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
-        "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-      )
-      "content" (dict
-        "mediaType" "text/markdown"
-        "value" $readmeContent
-      )
-    }}
-    {{ $.AddPage $page }}
-
-    {{/* Fetch Charter Content */}}
-    {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
-    {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
-    {{ with resources.GetRemote $charterUrl $charterOpts }}
-      {{ if not .Err }}
-        {{ $charterContent := replace .Content "\u200b" "" }}
-        {{ $charterPage := dict
-          "kind" "page"
-          "path" (printf "committees/%s/charter" $slug)
-          "title" (printf "%s Charter" $name)
-          "params" (dict
-            "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-          )
-          "content" (dict
-            "mediaType" "text/markdown"
-            "value" $charterContent
-          )
-        }}
-        {{ $.AddPage $charterPage }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-
 {{ end }}
