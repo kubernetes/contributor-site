@@ -49,7 +49,7 @@ You’ll want to review the basic pull request process you learned at the end of
 
 * Every pull request [starts with a branch on your fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) of a Kubernetes project.
 * You can create pull requests using the GitHub website, any of the GitHub tools, or some third-party GitHub interfaces.
-* Take time to review the [GitHub Workflow documentation](/docs/guide/github-workflow/).
+* Take time to review the [GitHub Workflow documentation](https://github.com/kubernetes/community/blob/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452/contributors/guide/github-workflow.md).
 
 ---
 
@@ -59,7 +59,7 @@ Kubernetes generally follows the standard GitHub pull request process, but there
 
 * Right away, a bot starts adding automated labels to your PR.
 * The bot helps you facilitate PR review. You can use [these commands to interact with the bot](https://prow.k8s.io/command-help).
-* [You can learn more about the Kubernetes pull request process here.](/docs/guide/pull-requests/)
+* [You can learn more about the Kubernetes pull request process here.](https://github.com/kubernetes/community/blob/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452/contributors/guide/pull-requests.md)
 
 ---
 
@@ -71,7 +71,7 @@ Kubernetes generally follows the standard GitHub pull request process, but there
     * Content
     * Potential website changes
 
-You can respond to comments from reviewers through comments or additional changes that you push to your development branch. [We will cover code review in a later unit.](../07-code-review)
+You can respond to comments from reviewers through comments or additional changes that you push to your development branch. [We will cover code review in a later unit.](https://github.com/kubernetes/contributor-site/blob/master/content/en/docs/onboarding/07-code-review.md)
 
 ---
 
@@ -79,16 +79,16 @@ You can respond to comments from reviewers through comments or additional change
 
 * A bot runs your PR through a few pre-commit tests automatically.
 * The results of these tests will be posted to your pull request’s discussion automatically.
-* Once a reviewer adds the **ok-to-test** label, [the bot will run your changes through end-to-end (e2e) tests](/docs/guide/pull-requests/#how-the-e2e-tests-work).
+* Once a reviewer adds the **ok-to-test** label, [the bot will run your changes through end-to-end (e2e) tests](https://github.com/kubernetes/community/blob/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452/contributors/guide/pull-requests.md#how-the-e2e-tests-work).
 
 ---
 
 ## What do I do if my test fails?
 
 * The test results should give some indication of what went wrong.
-* Make changes, push them to your branch, and [continue iterating through the pull request process](/docs/guide/pull-requests/).
+* Make changes, push them to your branch, and [continue iterating through the pull request process](https://github.com/kubernetes/community/blob/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452/contributors/guide/pull-requests.md).
 
-We will cover tests in more detail [in a later unit](../06-testing/).
+We will cover tests in more detail [in a later unit](https://github.com/kubernetes/contributor-site/blob/master/content/en/docs/onboarding/06-testing.md).
 
 <div class="bottom-nav">
     <a href="/docs/onboarding">Onboarding Index</a> | <a href="../04-issues-management/">Next Section</a>

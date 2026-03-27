@@ -54,7 +54,7 @@ The Kubernetes community adheres to the following principles:
 * Inclusive is better than exclusive
 * Evolution is better than stagnation
 
-[Read more about our community values.](/community/values/)
+[Read more about our community values.](https://github.com/kubernetes/community/blob/master/values.md)
 
 ---
 
@@ -62,11 +62,11 @@ The Kubernetes community adheres to the following principles:
 
 The Kubernetes community strives to be safe, respectful and inclusive. We expect all contributors to:
 
-* Abide by the [CNCF Code of Conduct](/community/code-of-conduct/)
+* Abide by the [CNCF Code of Conduct](https://github.com/kubernetes/community/blob/master/code-of-conduct.md)
 * Help foster an open and welcoming community
 * Respect their fellow contributors.
 
-[Learn more about the Kubernetes community values.](/community/values/)
+[Learn more about the Kubernetes community values.](https://github.com/kubernetes/community/blob/master/values.md)
 
 ---
 
@@ -84,7 +84,7 @@ The Code of Conduct serves as a set of rules used by the Kubernetes community to
 
 The Code of Conduct Committee oversees and handles all incidents and responses regarding code of conduct issues and violations.
 
-* [Read about the committee's reporting and response process.](/community/code-of-conduct-incident-process/)
+* [Read about the committee's reporting and response process.](https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/incident-process.md)
 
 ---
 
@@ -129,9 +129,9 @@ Some topics, such as Security or Code of Conduct, require discretion. Committees
 
 # Where can I learn more?
 
-The [Kubernetes Community Resources page](/community/) has links to documents that describe our community structure and governance.
+The [Kubernetes Community Resources page](https://github.com/kubernetes/community/tree/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452) has links to documents that describe our community structure and governance.
 
-* [The Community Groups page](/community/community-groups/) lists all current SIGs, working groups, and committees.
+* [The Community Groups page](https://github.com/kubernetes/community/blob/62e4d0e54af58c2fc7ca39b7a885e13f30ffe452/sig-list.md) lists all current SIGs, working groups, and committees.
 * [The governance document](https://github.com/kubernetes/community/blob/master/governance.md) drills down into more of the specifics.
 
 <div class="bottom-nav">
