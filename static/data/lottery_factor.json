@@ -1,0 +1,3029 @@
+{
+  "sig": "sig-contributor-experience",
+  "subprojects": [
+    {
+      "name": "community",
+      "repos": [
+        "kubernetes/community"
+      ]
+    },
+    {
+      "name": "contributors-documentation",
+      "repos": [
+        "kubernetes/community",
+        "kubernetes/contributor-site"
+      ]
+    },
+    {
+      "name": "github-management",
+      "repos": [
+        "kubernetes/org",
+        "kubernetes-sigs/maintainers",
+        "kubernetes/kubernetes-template-project",
+        "kubernetes-sigs/sigs-github-actions"
+      ]
+    },
+    {
+      "name": "slack-infra",
+      "repos": [
+        "kubernetes-sigs/slack-infra"
+      ]
+    },
+    {
+      "name": "contributor-comms",
+      "repos": [
+        "kubernetes-sigs/lwkd"
+      ]
+    },
+    {
+      "name": "elections",
+      "repos": [
+        "elekto-dev/elekto"
+      ]
+    },
+    {
+      "name": "mentoring",
+      "repos": [
+        "kubernetes-sigs/contributor-playground"
+      ]
+    }
+  ],
+  "repo_data": [
+    {
+      "repo": "kubernetes/community",
+      "lottery_factor": 17,
+      "total_points": 333,
+      "contributors": [
+        {
+          "author": "soltysh",
+          "points": 41
+        },
+        {
+          "author": "Priyankasaggu11929",
+          "points": 16
+        },
+        {
+          "author": "dims",
+          "points": 15
+        },
+        {
+          "author": "terrytangyuan",
+          "points": 13
+        },
+        {
+          "author": "chris-short",
+          "points": 12
+        },
+        {
+          "author": "janetkuo",
+          "points": 9
+        },
+        {
+          "author": "palnabarun",
+          "points": 8
+        },
+        {
+          "author": "jberkus",
+          "points": 7
+        },
+        {
+          "author": "shaneutt",
+          "points": 6
+        },
+        {
+          "author": "pohly",
+          "points": 6
+        },
+        {
+          "author": "Aryan-Bagale",
+          "points": 6
+        },
+        {
+          "author": "tenzen-y",
+          "points": 5
+        },
+        {
+          "author": "rst0git",
+          "points": 5
+        },
+        {
+          "author": "CodesbyUnnati",
+          "points": 5
+        },
+        {
+          "author": "richabanker",
+          "points": 5
+        },
+        {
+          "author": "ritazh",
+          "points": 4
+        },
+        {
+          "author": "macsko",
+          "points": 4
+        },
+        {
+          "author": "cblecker",
+          "points": 4
+        },
+        {
+          "author": "bowei",
+          "points": 4
+        },
+        {
+          "author": "helayoty",
+          "points": 4
+        },
+        {
+          "author": "chadmcrowell",
+          "points": 4
+        },
+        {
+          "author": "aojea",
+          "points": 4
+        },
+        {
+          "author": "BenTheElder",
+          "points": 3
+        },
+        {
+          "author": "ardaguclu",
+          "points": 3
+        },
+        {
+          "author": "viktoriaas",
+          "points": 3
+        },
+        {
+          "author": "SergeyKanzhelev",
+          "points": 3
+        },
+        {
+          "author": "katcosgrove",
+          "points": 3
+        },
+        {
+          "author": "mengqiy",
+          "points": 3
+        },
+        {
+          "author": "liggitt",
+          "points": 3
+        },
+        {
+          "author": "arnab-logs",
+          "points": 3
+        },
+        {
+          "author": "kaslin",
+          "points": 3
+        },
+        {
+          "author": "michelle192837",
+          "points": 3
+        },
+        {
+          "author": "haircommander",
+          "points": 3
+        },
+        {
+          "author": "cji",
+          "points": 3
+        },
+        {
+          "author": "reylejano",
+          "points": 3
+        },
+        {
+          "author": "lauralorenz",
+          "points": 3
+        },
+        {
+          "author": "joaquimrocha",
+          "points": 3
+        },
+        {
+          "author": "suyogchore",
+          "points": 3
+        },
+        {
+          "author": "qiyueyao",
+          "points": 3
+        },
+        {
+          "author": "mrbobbytables",
+          "points": 2
+        },
+        {
+          "author": "strongjz",
+          "points": 2
+        },
+        {
+          "author": "aaron-prindle",
+          "points": 2
+        },
+        {
+          "author": "tico88612",
+          "points": 2
+        },
+        {
+          "author": "maelvls",
+          "points": 2
+        },
+        {
+          "author": "apullo777",
+          "points": 2
+        },
+        {
+          "author": "amorey",
+          "points": 2
+        },
+        {
+          "author": "tabbysable",
+          "points": 2
+        },
+        {
+          "author": "ivanvc",
+          "points": 2
+        },
+        {
+          "author": "jackfrancis",
+          "points": 2
+        },
+        {
+          "author": "xing-yang",
+          "points": 2
+        },
+        {
+          "author": "sanposhiho",
+          "points": 2
+        },
+        {
+          "author": "zylxjtu",
+          "points": 2
+        },
+        {
+          "author": "TineoC",
+          "points": 2
+        },
+        {
+          "author": "nirrozenbaum",
+          "points": 2
+        },
+        {
+          "author": "adrianreber",
+          "points": 2
+        },
+        {
+          "author": "saschagrunert",
+          "points": 2
+        },
+        {
+          "author": "SwathiR03",
+          "points": 2
+        },
+        {
+          "author": "rytswd",
+          "points": 2
+        },
+        {
+          "author": "dipesh-rawat",
+          "points": 2
+        },
+        {
+          "author": "ajaysundark",
+          "points": 2
+        },
+        {
+          "author": "malcovaalena076-lab",
+          "points": 2
+        },
+        {
+          "author": "Hii-Arpit",
+          "points": 2
+        },
+        {
+          "author": "pgonin",
+          "points": 1
+        },
+        {
+          "author": "fedebongio",
+          "points": 1
+        },
+        {
+          "author": "yongruilin",
+          "points": 1
+        },
+        {
+          "author": "usize",
+          "points": 1
+        },
+        {
+          "author": "ameukam",
+          "points": 1
+        },
+        {
+          "author": "hakman",
+          "points": 1
+        },
+        {
+          "author": "mpuckett159",
+          "points": 1
+        },
+        {
+          "author": "rthallisey",
+          "points": 1
+        },
+        {
+          "author": "alaypatel07",
+          "points": 1
+        },
+        {
+          "author": "ahrtr",
+          "points": 1
+        },
+        {
+          "author": "neolit123",
+          "points": 1
+        },
+        {
+          "author": "elmiko",
+          "points": 1
+        },
+        {
+          "author": "bnallapeta",
+          "points": 1
+        },
+        {
+          "author": "chrishenzie",
+          "points": 1
+        },
+        {
+          "author": "maciaszczykm",
+          "points": 1
+        },
+        {
+          "author": "scruplelesswizard",
+          "points": 1
+        },
+        {
+          "author": "atiratree",
+          "points": 1
+        },
+        {
+          "author": "Jofre",
+          "points": 1
+        },
+        {
+          "author": "kflynn",
+          "points": 1
+        },
+        {
+          "author": "taha2samy",
+          "points": 1
+        },
+        {
+          "author": "gaurangkudale",
+          "points": 1
+        },
+        {
+          "author": "abhishek-8081",
+          "points": 1
+        },
+        {
+          "author": "seokho-son",
+          "points": 1
+        },
+        {
+          "author": "siyuanfoundation",
+          "points": 1
+        },
+        {
+          "author": "IanColdwater",
+          "points": 1
+        },
+        {
+          "author": "vpnachev",
+          "points": 1
+        },
+        {
+          "author": "bboreham",
+          "points": 1
+        },
+        {
+          "author": "willianpaixao",
+          "points": 1
+        },
+        {
+          "author": "pravk03",
+          "points": 1
+        },
+        {
+          "author": "Stevenjin8",
+          "points": 1
+        },
+        {
+          "author": "NickLiszewski",
+          "points": 1
+        },
+        {
+          "author": "alexandermarston",
+          "points": 1
+        },
+        {
+          "author": "kannon92",
+          "points": 1
+        },
+        {
+          "author": "kaovilai",
+          "points": 1
+        },
+        {
+          "author": "npolshakova",
+          "points": 1
+        },
+        {
+          "author": "LiorLieberman",
+          "points": 1
+        },
+        {
+          "author": "sreeram-venkitesh",
+          "points": 1
+        },
+        {
+          "author": "andreyvelich",
+          "points": 1
+        },
+        {
+          "author": "benjaminapetersen",
+          "points": 1
+        },
+        {
+          "author": "mhoran",
+          "points": 1
+        },
+        {
+          "author": "mfahlandt",
+          "points": 1
+        },
+        {
+          "author": "caskale",
+          "points": 1
+        },
+        {
+          "author": "aramase",
+          "points": 1
+        },
+        {
+          "author": "dharsanb",
+          "points": 1
+        },
+        {
+          "author": "benjimin",
+          "points": 1
+        },
+        {
+          "author": "mairucell667-hash",
+          "points": 1
+        },
+        {
+          "author": "legitYosal",
+          "points": 1
+        },
+        {
+          "author": "stenwt",
+          "points": 1
+        },
+        {
+          "author": "shu-mutou",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:17:54.649450Z",
+      "tech_stack": [
+        "Docker",
+        "Go",
+        "Python",
+        "Documentation",
+        "Bash"
+      ],
+      "owners": {
+        "approvers": [
+          "cblecker",
+          "jberkus",
+          "mrbobbytables",
+          "nikhita"
+        ],
+        "reviewers": []
+      },
+      "onboarding_url": "https://www.kubernetes.dev/docs/guide/",
+      "owners_url": "https://github.com/kubernetes/community/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes/community/issues",
+      "good_first_issues_url": "https://github.com/kubernetes/community/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes/contributor-site",
+      "lottery_factor": 2,
+      "total_points": 174,
+      "contributors": [
+        {
+          "author": "TineoC",
+          "points": 77
+        },
+        {
+          "author": "codeurluce",
+          "points": 20
+        },
+        {
+          "author": "nirrozenbaum",
+          "points": 12
+        },
+        {
+          "author": "Prajyot-Parab",
+          "points": 11
+        },
+        {
+          "author": "jberkus",
+          "points": 9
+        },
+        {
+          "author": "fsmunoz",
+          "points": 9
+        },
+        {
+          "author": "bupd",
+          "points": 8
+        },
+        {
+          "author": "yashasvimisra2798",
+          "points": 5
+        },
+        {
+          "author": "cblecker",
+          "points": 2
+        },
+        {
+          "author": "danwinship",
+          "points": 2
+        },
+        {
+          "author": "soltysh",
+          "points": 2
+        },
+        {
+          "author": "rst0git",
+          "points": 2
+        },
+        {
+          "author": "lmktfy",
+          "points": 2
+        },
+        {
+          "author": "VedantMadane",
+          "points": 1
+        },
+        {
+          "author": "SayakMukhopadhyay",
+          "points": 1
+        },
+        {
+          "author": "aaron-prindle",
+          "points": 1
+        },
+        {
+          "author": "musaprg",
+          "points": 1
+        },
+        {
+          "author": "graz-dev",
+          "points": 1
+        },
+        {
+          "author": "dipesh-rawat",
+          "points": 1
+        },
+        {
+          "author": "arujjval",
+          "points": 1
+        },
+        {
+          "author": "nataliesea",
+          "points": 1
+        },
+        {
+          "author": "kaslin",
+          "points": 1
+        },
+        {
+          "author": "CodesbyUnnati",
+          "points": 1
+        },
+        {
+          "author": "pacoxu",
+          "points": 1
+        },
+        {
+          "author": "mfahlandt",
+          "points": 1
+        },
+        {
+          "author": "chris-short",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:00.395504Z",
+      "tech_stack": [
+        "Hugo",
+        "Docsy",
+        "Docker",
+        "GitHub Actions",
+        "Bash"
+      ],
+      "owners": {
+        "approvers": [
+          "TineoC",
+          "jberkus",
+          "jeefy",
+          "lmktfy",
+          "mrbobbytables",
+          "natalisucks",
+          "nimbinatus",
+          "reylejano",
+          "stmcginnis",
+          "tokt"
+        ],
+        "reviewers": [
+          "SayakMukhopadhyay"
+        ]
+      },
+      "onboarding_url": "https://github.com/kubernetes/contributor-site/blob/master/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes/contributor-site/blob/master/OWNERS",
+      "issues_url": "https://github.com/kubernetes/contributor-site/issues",
+      "good_first_issues_url": "https://github.com/kubernetes/contributor-site/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes/org",
+      "lottery_factor": 39,
+      "total_points": 422,
+      "contributors": [
+        {
+          "author": "jasonbraganza",
+          "points": 55
+        },
+        {
+          "author": "MadhavJivrajani",
+          "points": 25
+        },
+        {
+          "author": "Priyankasaggu11929",
+          "points": 18
+        },
+        {
+          "author": "ivanvc",
+          "points": 9
+        },
+        {
+          "author": "palnabarun",
+          "points": 7
+        },
+        {
+          "author": "shivamerla",
+          "points": 5
+        },
+        {
+          "author": "j-skiba",
+          "points": 5
+        },
+        {
+          "author": "mrbobbytables",
+          "points": 4
+        },
+        {
+          "author": "jjk-g",
+          "points": 4
+        },
+        {
+          "author": "hdp617",
+          "points": 4
+        },
+        {
+          "author": "dipesh-rawat",
+          "points": 4
+        },
+        {
+          "author": "LiorLieberman",
+          "points": 4
+        },
+        {
+          "author": "Caesarsage",
+          "points": 3
+        },
+        {
+          "author": "hajiler",
+          "points": 3
+        },
+        {
+          "author": "pablo-ruth",
+          "points": 3
+        },
+        {
+          "author": "bhope",
+          "points": 3
+        },
+        {
+          "author": "jberkus",
+          "points": 3
+        },
+        {
+          "author": "nmn3m",
+          "points": 3
+        },
+        {
+          "author": "kfess",
+          "points": 3
+        },
+        {
+          "author": "fuweid",
+          "points": 3
+        },
+        {
+          "author": "pohly",
+          "points": 3
+        },
+        {
+          "author": "cblecker",
+          "points": 3
+        },
+        {
+          "author": "Stevenjin8",
+          "points": 3
+        },
+        {
+          "author": "andyzhangx",
+          "points": 3
+        },
+        {
+          "author": "kannon92",
+          "points": 3
+        },
+        {
+          "author": "mwanikiowen19-sys",
+          "points": 3
+        },
+        {
+          "author": "ritazh",
+          "points": 2
+        },
+        {
+          "author": "moshevayner",
+          "points": 2
+        },
+        {
+          "author": "ivelichkovich",
+          "points": 2
+        },
+        {
+          "author": "hiboyang",
+          "points": 2
+        },
+        {
+          "author": "pravk03",
+          "points": 2
+        },
+        {
+          "author": "yankay",
+          "points": 2
+        },
+        {
+          "author": "macsko",
+          "points": 2
+        },
+        {
+          "author": "RainbowMango",
+          "points": 2
+        },
+        {
+          "author": "porridge",
+          "points": 2
+        },
+        {
+          "author": "savirg",
+          "points": 2
+        },
+        {
+          "author": "cji",
+          "points": 2
+        },
+        {
+          "author": "haiyanmeng",
+          "points": 2
+        },
+        {
+          "author": "ronaldngounou",
+          "points": 2
+        },
+        {
+          "author": "Qqkyu",
+          "points": 2
+        },
+        {
+          "author": "soltysh",
+          "points": 2
+        },
+        {
+          "author": "Urvashi0109",
+          "points": 2
+        },
+        {
+          "author": "nerdeveloper",
+          "points": 2
+        },
+        {
+          "author": "vitorfloriano",
+          "points": 2
+        },
+        {
+          "author": "samuhale",
+          "points": 2
+        },
+        {
+          "author": "thaomike",
+          "points": 2
+        },
+        {
+          "author": "joaquimrocha",
+          "points": 2
+        },
+        {
+          "author": "brejman",
+          "points": 2
+        },
+        {
+          "author": "yashasvimisra2798",
+          "points": 2
+        },
+        {
+          "author": "aditya-shantanu",
+          "points": 2
+        },
+        {
+          "author": "strongjz",
+          "points": 2
+        },
+        {
+          "author": "bexxmodd",
+          "points": 2
+        },
+        {
+          "author": "aliok",
+          "points": 2
+        },
+        {
+          "author": "rexagod",
+          "points": 2
+        },
+        {
+          "author": "SophiaUgo",
+          "points": 2
+        },
+        {
+          "author": "u-kai",
+          "points": 2
+        },
+        {
+          "author": "dhanishaphadate",
+          "points": 2
+        },
+        {
+          "author": "clebs",
+          "points": 2
+        },
+        {
+          "author": "bnallapeta",
+          "points": 2
+        },
+        {
+          "author": "shaneutt",
+          "points": 1
+        },
+        {
+          "author": "sniok",
+          "points": 1
+        },
+        {
+          "author": "pacoxu",
+          "points": 1
+        },
+        {
+          "author": "aramase",
+          "points": 1
+        },
+        {
+          "author": "JoelSpeed",
+          "points": 1
+        },
+        {
+          "author": "liggitt",
+          "points": 1
+        },
+        {
+          "author": "ahmedtd",
+          "points": 1
+        },
+        {
+          "author": "johananl",
+          "points": 1
+        },
+        {
+          "author": "richabanker",
+          "points": 1
+        },
+        {
+          "author": "Eundms",
+          "points": 1
+        },
+        {
+          "author": "Prajyot-Parab",
+          "points": 1
+        },
+        {
+          "author": "jmickey",
+          "points": 1
+        },
+        {
+          "author": "sayanchowdhury",
+          "points": 1
+        },
+        {
+          "author": "wonyongg",
+          "points": 1
+        },
+        {
+          "author": "developowl",
+          "points": 1
+        },
+        {
+          "author": "chadmcrowell",
+          "points": 1
+        },
+        {
+          "author": "chaochn47",
+          "points": 1
+        },
+        {
+          "author": "lmktfy",
+          "points": 1
+        },
+        {
+          "author": "GiuseppeTT",
+          "points": 1
+        },
+        {
+          "author": "rytswd",
+          "points": 1
+        },
+        {
+          "author": "rikatz",
+          "points": 1
+        },
+        {
+          "author": "yadvr",
+          "points": 1
+        },
+        {
+          "author": "aripitek",
+          "points": 1
+        },
+        {
+          "author": "joshjms",
+          "points": 1
+        },
+        {
+          "author": "lentzi90",
+          "points": 1
+        },
+        {
+          "author": "DavidXU12345",
+          "points": 1
+        },
+        {
+          "author": "TortillaZHawaii",
+          "points": 1
+        },
+        {
+          "author": "mpatlasov",
+          "points": 1
+        },
+        {
+          "author": "richardcase",
+          "points": 1
+        },
+        {
+          "author": "kfswain",
+          "points": 1
+        },
+        {
+          "author": "robscott",
+          "points": 1
+        },
+        {
+          "author": "jakobmoellerdev",
+          "points": 1
+        },
+        {
+          "author": "nojnhuh",
+          "points": 1
+        },
+        {
+          "author": "Copilot",
+          "points": 1
+        },
+        {
+          "author": "graz-dev",
+          "points": 1
+        },
+        {
+          "author": "jpbetz",
+          "points": 1
+        },
+        {
+          "author": "HarshithaMS005",
+          "points": 1
+        },
+        {
+          "author": "barbacbd",
+          "points": 1
+        },
+        {
+          "author": "vmishra22",
+          "points": 1
+        },
+        {
+          "author": "jgehrcke",
+          "points": 1
+        },
+        {
+          "author": "cdesiniotis",
+          "points": 1
+        },
+        {
+          "author": "shengnuo",
+          "points": 1
+        },
+        {
+          "author": "guptaNswati",
+          "points": 1
+        },
+        {
+          "author": "visheshtanksale",
+          "points": 1
+        },
+        {
+          "author": "varunrsekar",
+          "points": 1
+        },
+        {
+          "author": "rajatchopra",
+          "points": 1
+        },
+        {
+          "author": "Tomy2e",
+          "points": 1
+        },
+        {
+          "author": "guicassolato",
+          "points": 1
+        },
+        {
+          "author": "cnvergence",
+          "points": 1
+        },
+        {
+          "author": "rxinui",
+          "points": 1
+        },
+        {
+          "author": "anndono",
+          "points": 1
+        },
+        {
+          "author": "ryan-mist",
+          "points": 1
+        },
+        {
+          "author": "damsien",
+          "points": 1
+        },
+        {
+          "author": "nox-404",
+          "points": 1
+        },
+        {
+          "author": "tiny-li",
+          "points": 1
+        },
+        {
+          "author": "mamrezb",
+          "points": 1
+        },
+        {
+          "author": "Behiuu",
+          "points": 1
+        },
+        {
+          "author": "0xMH",
+          "points": 1
+        },
+        {
+          "author": "mark-liu",
+          "points": 1
+        },
+        {
+          "author": "carmal891",
+          "points": 1
+        },
+        {
+          "author": "nataliesea",
+          "points": 1
+        },
+        {
+          "author": "panpan0000",
+          "points": 1
+        },
+        {
+          "author": "bwsalmon",
+          "points": 1
+        },
+        {
+          "author": "anson627",
+          "points": 1
+        },
+        {
+          "author": "BigDarkClown",
+          "points": 1
+        },
+        {
+          "author": "pierluigilenoci",
+          "points": 1
+        },
+        {
+          "author": "alexandear",
+          "points": 1
+        },
+        {
+          "author": "changminbark",
+          "points": 1
+        },
+        {
+          "author": "LogicalShark",
+          "points": 1
+        },
+        {
+          "author": "michaelhtm",
+          "points": 1
+        },
+        {
+          "author": "AutuSnow",
+          "points": 1
+        },
+        {
+          "author": "vovakrk",
+          "points": 1
+        },
+        {
+          "author": "danwinship",
+          "points": 1
+        },
+        {
+          "author": "thuanpham582002",
+          "points": 1
+        },
+        {
+          "author": "dims",
+          "points": 1
+        },
+        {
+          "author": "shachartal",
+          "points": 1
+        },
+        {
+          "author": "DamianSawicki",
+          "points": 1
+        },
+        {
+          "author": "kincoy",
+          "points": 1
+        },
+        {
+          "author": "skl",
+          "points": 1
+        },
+        {
+          "author": "igooch",
+          "points": 1
+        },
+        {
+          "author": "elmiko",
+          "points": 1
+        },
+        {
+          "author": "LiangquanLi930",
+          "points": 1
+        },
+        {
+          "author": "downfa11",
+          "points": 1
+        },
+        {
+          "author": "aoi1",
+          "points": 1
+        },
+        {
+          "author": "adinilfeld",
+          "points": 1
+        },
+        {
+          "author": "matzew",
+          "points": 1
+        },
+        {
+          "author": "arnab-logs",
+          "points": 1
+        },
+        {
+          "author": "Moh0ps",
+          "points": 1
+        },
+        {
+          "author": "norbertcyran",
+          "points": 1
+        },
+        {
+          "author": "Choraden",
+          "points": 1
+        },
+        {
+          "author": "Gregory-Pereira",
+          "points": 1
+        },
+        {
+          "author": "chw120",
+          "points": 1
+        },
+        {
+          "author": "tomergee",
+          "points": 1
+        },
+        {
+          "author": "SHRUTI6991",
+          "points": 1
+        },
+        {
+          "author": "shrutiyam-glitch",
+          "points": 1
+        },
+        {
+          "author": "vshkrabkov",
+          "points": 1
+        },
+        {
+          "author": "AvineshTripathi",
+          "points": 1
+        },
+        {
+          "author": "Sajid21",
+          "points": 1
+        },
+        {
+          "author": "rubambiza",
+          "points": 1
+        },
+        {
+          "author": "evaline-ju",
+          "points": 1
+        },
+        {
+          "author": "puertomontt",
+          "points": 1
+        },
+        {
+          "author": "Amulyam24",
+          "points": 1
+        },
+        {
+          "author": "skogta",
+          "points": 1
+        },
+        {
+          "author": "usize",
+          "points": 1
+        },
+        {
+          "author": "sats-23",
+          "points": 1
+        },
+        {
+          "author": "trieungoctam",
+          "points": 1
+        },
+        {
+          "author": "kkk777-7",
+          "points": 1
+        },
+        {
+          "author": "ngopalak-redhat",
+          "points": 1
+        },
+        {
+          "author": "jai",
+          "points": 1
+        },
+        {
+          "author": "lechiennn",
+          "points": 1
+        },
+        {
+          "author": "irapandey",
+          "points": 1
+        },
+        {
+          "author": "bitoku",
+          "points": 1
+        },
+        {
+          "author": "didiViking",
+          "points": 1
+        },
+        {
+          "author": "peppi-lotta",
+          "points": 1
+        },
+        {
+          "author": "TatianaSelezneva",
+          "points": 1
+        },
+        {
+          "author": "em-sav",
+          "points": 1
+        },
+        {
+          "author": "nikParasyr",
+          "points": 1
+        },
+        {
+          "author": "singh1203",
+          "points": 1
+        },
+        {
+          "author": "lasomethingsomething",
+          "points": 1
+        },
+        {
+          "author": "UtkarshUmre",
+          "points": 1
+        },
+        {
+          "author": "kirti763",
+          "points": 1
+        },
+        {
+          "author": "Singularity23x0",
+          "points": 1
+        },
+        {
+          "author": "bschaatsbergen",
+          "points": 1
+        },
+        {
+          "author": "TineoC",
+          "points": 1
+        },
+        {
+          "author": "vicentefb",
+          "points": 1
+        },
+        {
+          "author": "flpanbin",
+          "points": 1
+        },
+        {
+          "author": "vikasbolla",
+          "points": 1
+        },
+        {
+          "author": "tsj-30",
+          "points": 1
+        },
+        {
+          "author": "pjsharath28",
+          "points": 1
+        },
+        {
+          "author": "LukeAVanDrie",
+          "points": 1
+        },
+        {
+          "author": "floreks",
+          "points": 1
+        },
+        {
+          "author": "YangjinanHu",
+          "points": 1
+        },
+        {
+          "author": "smoshiur1237",
+          "points": 1
+        },
+        {
+          "author": "iamzili",
+          "points": 1
+        },
+        {
+          "author": "kshalot",
+          "points": 1
+        },
+        {
+          "author": "dkarczmarski",
+          "points": 1
+        },
+        {
+          "author": "KevinTMtz",
+          "points": 1
+        },
+        {
+          "author": "jbtk",
+          "points": 1
+        },
+        {
+          "author": "mpinchover",
+          "points": 1
+        },
+        {
+          "author": "dongjiang1989",
+          "points": 1
+        },
+        {
+          "author": "tukwila",
+          "points": 1
+        },
+        {
+          "author": "corentone",
+          "points": 1
+        },
+        {
+          "author": "janetkuo",
+          "points": 1
+        },
+        {
+          "author": "aojea",
+          "points": 1
+        },
+        {
+          "author": "lukasmetzner",
+          "points": 1
+        },
+        {
+          "author": "rahulgurnani",
+          "points": 1
+        },
+        {
+          "author": "BenjaminBraunDev",
+          "points": 1
+        },
+        {
+          "author": "pmengelbert",
+          "points": 1
+        },
+        {
+          "author": "Serenity611",
+          "points": 1
+        },
+        {
+          "author": "4rivappa",
+          "points": 1
+        },
+        {
+          "author": "LionelJouin",
+          "points": 1
+        },
+        {
+          "author": "olekzabl",
+          "points": 1
+        },
+        {
+          "author": "olderTaoist",
+          "points": 1
+        },
+        {
+          "author": "scaliby",
+          "points": 1
+        },
+        {
+          "author": "knee-berts",
+          "points": 1
+        },
+        {
+          "author": "knabben",
+          "points": 1
+        },
+        {
+          "author": "mayank-agrwl",
+          "points": 1
+        },
+        {
+          "author": "matthchr",
+          "points": 1
+        },
+        {
+          "author": "learner0810",
+          "points": 1
+        },
+        {
+          "author": "david-martin",
+          "points": 1
+        },
+        {
+          "author": "iltyty",
+          "points": 1
+        },
+        {
+          "author": "mariafromano-25",
+          "points": 1
+        },
+        {
+          "author": "GunaKKIBM",
+          "points": 1
+        },
+        {
+          "author": "izturn",
+          "points": 1
+        },
+        {
+          "author": "siftbits",
+          "points": 1
+        },
+        {
+          "author": "devikrishnamk0123",
+          "points": 1
+        },
+        {
+          "author": "tchap",
+          "points": 1
+        },
+        {
+          "author": "hyorimlee",
+          "points": 1
+        },
+        {
+          "author": "kamothi",
+          "points": 1
+        },
+        {
+          "author": "vflaux",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:10.443906Z",
+      "tech_stack": [
+        "Go",
+        "Python",
+        "Infrastructure",
+        "Bash",
+        "Makefile"
+      ],
+      "owners": {
+        "approvers": [
+          "MadhavJivrajani",
+          "Priyankasaggu11929",
+          "cblecker",
+          "jasonbraganza",
+          "mrbobbytables",
+          "nikhita",
+          "palnabarun"
+        ],
+        "reviewers": [
+          "MadhavJivrajani",
+          "Priyankasaggu11929",
+          "cblecker",
+          "jasonbraganza",
+          "mrbobbytables",
+          "nikhita",
+          "palnabarun"
+        ]
+      },
+      "onboarding_url": "https://github.com/kubernetes/org/blob/main/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes/org/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes/org/issues",
+      "good_first_issues_url": "https://github.com/kubernetes/org/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes-sigs/slack-infra",
+      "lottery_factor": 1,
+      "total_points": 3,
+      "contributors": [
+        {
+          "author": "TineoC",
+          "points": 2
+        },
+        {
+          "author": "Prajyot-Parab",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:13.631094Z",
+      "tech_stack": [
+        "Docker",
+        "Go",
+        "Bash",
+        "CSS",
+        "JavaScript"
+      ],
+      "owners": {
+        "approvers": [
+          "BenTheElder",
+          "coderanger",
+          "cpanato",
+          "jberkus",
+          "jeefy",
+          "mrbobbytables"
+        ],
+        "reviewers": [
+          "BenTheElder",
+          "coderanger",
+          "cpanato",
+          "jberkus",
+          "jeefy",
+          "mrbobbytables"
+        ]
+      },
+      "onboarding_url": "https://github.com/kubernetes-sigs/slack-infra/blob/main/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes-sigs/slack-infra/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes-sigs/slack-infra/issues",
+      "good_first_issues_url": "https://github.com/kubernetes-sigs/slack-infra/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes-sigs/lwkd",
+      "lottery_factor": 3,
+      "total_points": 242,
+      "contributors": [
+        {
+          "author": "Hii-Arpit",
+          "points": 62
+        },
+        {
+          "author": "jberkus",
+          "points": 45
+        },
+        {
+          "author": "darshansreenivas",
+          "points": 25
+        },
+        {
+          "author": "avni-mahajan",
+          "points": 22
+        },
+        {
+          "author": "kirti763",
+          "points": 18
+        },
+        {
+          "author": "yashasvimisra2798",
+          "points": 15
+        },
+        {
+          "author": "sreeram-venkitesh",
+          "points": 15
+        },
+        {
+          "author": "CodesbyUnnati",
+          "points": 11
+        },
+        {
+          "author": "sharmarahul8222",
+          "points": 9
+        },
+        {
+          "author": "inirah02",
+          "points": 4
+        },
+        {
+          "author": "ciarandg",
+          "points": 4
+        },
+        {
+          "author": "siddhant-khisty",
+          "points": 4
+        },
+        {
+          "author": "devikrishnamk0123",
+          "points": 2
+        },
+        {
+          "author": "arujjval",
+          "points": 2
+        },
+        {
+          "author": "sbueringer",
+          "points": 1
+        },
+        {
+          "author": "alvaroaleman",
+          "points": 1
+        },
+        {
+          "author": "priyaaakansha",
+          "points": 1
+        },
+        {
+          "author": "pacoxu",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:20.803382Z",
+      "tech_stack": [
+        "Go",
+        "GitHub Actions",
+        "Bash",
+        "HTML",
+        "Ruby"
+      ],
+      "owners": {
+        "approvers": [
+          "lwkd-maintainers"
+        ],
+        "reviewers": []
+      },
+      "onboarding_url": "https://github.com/kubernetes-sigs/lwkd/blob/main/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes-sigs/lwkd/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes-sigs/lwkd/issues",
+      "good_first_issues_url": "https://github.com/kubernetes-sigs/lwkd/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes-sigs/discuss-theme",
+      "lottery_factor": 0,
+      "total_points": 0,
+      "contributors": [],
+      "last_updated": "2026-04-11T03:18:23.900516Z",
+      "tech_stack": [
+        "HTML",
+        "SCSS"
+      ],
+      "owners": {
+        "approvers": [
+          "castrojo",
+          "mrbobbytables"
+        ],
+        "reviewers": [
+          "castrojo",
+          "mrbobbytables"
+        ]
+      },
+      "onboarding_url": "https://github.com/kubernetes-sigs/discuss-theme/blob/main/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes-sigs/discuss-theme/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes-sigs/discuss-theme/issues",
+      "good_first_issues_url": "https://github.com/kubernetes-sigs/discuss-theme/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes-sigs/maintainers",
+      "lottery_factor": 1,
+      "total_points": 6,
+      "contributors": [
+        {
+          "author": "Okabe-Junya",
+          "points": 5
+        },
+        {
+          "author": "hoteye",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:27.345996Z",
+      "tech_stack": [
+        "Go",
+        "GitHub Actions",
+        "Infrastructure",
+        "Bash",
+        "Makefile"
+      ],
+      "owners": {
+        "approvers": [
+          "MadhavJivrajani",
+          "dims",
+          "mrbobbytables",
+          "nikhita",
+          "palnabarun"
+        ],
+        "reviewers": [
+          "MadhavJivrajani",
+          "dims",
+          "mrbobbytables",
+          "nikhita",
+          "palnabarun"
+        ]
+      },
+      "onboarding_url": "https://github.com/kubernetes-sigs/maintainers",
+      "owners_url": "https://github.com/kubernetes-sigs/maintainers/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes-sigs/maintainers/issues",
+      "good_first_issues_url": "https://github.com/kubernetes-sigs/maintainers/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes-sigs/contributor-playground",
+      "lottery_factor": 92,
+      "total_points": 358,
+      "contributors": [
+        {
+          "author": "vklohiya",
+          "points": 7
+        },
+        {
+          "author": "masenergy",
+          "points": 5
+        },
+        {
+          "author": "samiKhairy",
+          "points": 4
+        },
+        {
+          "author": "johnnietse",
+          "points": 4
+        },
+        {
+          "author": "kennygt51",
+          "points": 4
+        },
+        {
+          "author": "smoliakoff",
+          "points": 3
+        },
+        {
+          "author": "bergerx",
+          "points": 3
+        },
+        {
+          "author": "danlanzi",
+          "points": 3
+        },
+        {
+          "author": "shamorasulov",
+          "points": 3
+        },
+        {
+          "author": "atoato88",
+          "points": 3
+        },
+        {
+          "author": "MarcoPenne",
+          "points": 2
+        },
+        {
+          "author": "GaneshBannur",
+          "points": 2
+        },
+        {
+          "author": "noahra",
+          "points": 2
+        },
+        {
+          "author": "The-Flash-Routine",
+          "points": 2
+        },
+        {
+          "author": "tomekwilk",
+          "points": 2
+        },
+        {
+          "author": "Svarrogh1337",
+          "points": 2
+        },
+        {
+          "author": "XeshSufferer",
+          "points": 2
+        },
+        {
+          "author": "DevanshTomar",
+          "points": 2
+        },
+        {
+          "author": "tgao26",
+          "points": 2
+        },
+        {
+          "author": "EtnDiaz",
+          "points": 2
+        },
+        {
+          "author": "arcatva",
+          "points": 2
+        },
+        {
+          "author": "praveen0raj",
+          "points": 2
+        },
+        {
+          "author": "dkennetzoracle",
+          "points": 2
+        },
+        {
+          "author": "YurDuiachenko",
+          "points": 2
+        },
+        {
+          "author": "Vineet0197",
+          "points": 2
+        },
+        {
+          "author": "m-alikhizar",
+          "points": 2
+        },
+        {
+          "author": "adri1197",
+          "points": 2
+        },
+        {
+          "author": "briantwatson",
+          "points": 2
+        },
+        {
+          "author": "zhanhank",
+          "points": 2
+        },
+        {
+          "author": "rikkkdipen",
+          "points": 2
+        },
+        {
+          "author": "ivanpasq",
+          "points": 2
+        },
+        {
+          "author": "Aeon-bytes",
+          "points": 2
+        },
+        {
+          "author": "malfusion",
+          "points": 2
+        },
+        {
+          "author": "hurtki",
+          "points": 2
+        },
+        {
+          "author": "ajaisw13",
+          "points": 2
+        },
+        {
+          "author": "GolfRider",
+          "points": 2
+        },
+        {
+          "author": "trozet",
+          "points": 2
+        },
+        {
+          "author": "mihai-cherechesu",
+          "points": 2
+        },
+        {
+          "author": "poyrazK",
+          "points": 2
+        },
+        {
+          "author": "cedrichopf",
+          "points": 2
+        },
+        {
+          "author": "pratik50",
+          "points": 2
+        },
+        {
+          "author": "thomasmarconi",
+          "points": 2
+        },
+        {
+          "author": "fedeflowers",
+          "points": 2
+        },
+        {
+          "author": "minsu2530",
+          "points": 2
+        },
+        {
+          "author": "serpab",
+          "points": 2
+        },
+        {
+          "author": "jacobsee",
+          "points": 2
+        },
+        {
+          "author": "Chaudhary-Harshit",
+          "points": 2
+        },
+        {
+          "author": "paucespedes",
+          "points": 2
+        },
+        {
+          "author": "asitsonawane",
+          "points": 2
+        },
+        {
+          "author": "vinayakray19",
+          "points": 2
+        },
+        {
+          "author": "andrejbella",
+          "points": 2
+        },
+        {
+          "author": "duckcatguineapig",
+          "points": 2
+        },
+        {
+          "author": "ps2181",
+          "points": 2
+        },
+        {
+          "author": "DefinedState",
+          "points": 2
+        },
+        {
+          "author": "Obasoro",
+          "points": 2
+        },
+        {
+          "author": "theharithsa",
+          "points": 2
+        },
+        {
+          "author": "hardikroongta8",
+          "points": 2
+        },
+        {
+          "author": "AshiqAbdulkhader",
+          "points": 2
+        },
+        {
+          "author": "Suknna",
+          "points": 2
+        },
+        {
+          "author": "ntdkhiem",
+          "points": 2
+        },
+        {
+          "author": "wirekang",
+          "points": 2
+        },
+        {
+          "author": "ghj114",
+          "points": 2
+        },
+        {
+          "author": "ShashwatHiregoudar",
+          "points": 2
+        },
+        {
+          "author": "Nikateen",
+          "points": 2
+        },
+        {
+          "author": "scootlin",
+          "points": 2
+        },
+        {
+          "author": "rajeshkothinti",
+          "points": 2
+        },
+        {
+          "author": "zehan12",
+          "points": 2
+        },
+        {
+          "author": "dwbcz",
+          "points": 2
+        },
+        {
+          "author": "codesmithtech",
+          "points": 2
+        },
+        {
+          "author": "willmroliver",
+          "points": 1
+        },
+        {
+          "author": "isErenG",
+          "points": 1
+        },
+        {
+          "author": "balaramganesh",
+          "points": 1
+        },
+        {
+          "author": "abrolraghav63",
+          "points": 1
+        },
+        {
+          "author": "LD07P",
+          "points": 1
+        },
+        {
+          "author": "JaiLakshmanKumar",
+          "points": 1
+        },
+        {
+          "author": "benturnkey",
+          "points": 1
+        },
+        {
+          "author": "Peterdu12345",
+          "points": 1
+        },
+        {
+          "author": "Skellman-io",
+          "points": 1
+        },
+        {
+          "author": "ellieayla",
+          "points": 1
+        },
+        {
+          "author": "Anne4188",
+          "points": 1
+        },
+        {
+          "author": "hassenius",
+          "points": 1
+        },
+        {
+          "author": "snowhanse",
+          "points": 1
+        },
+        {
+          "author": "omeryahud",
+          "points": 1
+        },
+        {
+          "author": "rags0908",
+          "points": 1
+        },
+        {
+          "author": "qiliRedHat",
+          "points": 1
+        },
+        {
+          "author": "BacklineAI",
+          "points": 1
+        },
+        {
+          "author": "SVanhull",
+          "points": 1
+        },
+        {
+          "author": "farazmd",
+          "points": 1
+        },
+        {
+          "author": "nickadair51",
+          "points": 1
+        },
+        {
+          "author": "ibm-adarsh",
+          "points": 1
+        },
+        {
+          "author": "benkermani",
+          "points": 1
+        },
+        {
+          "author": "nvanrymenant",
+          "points": 1
+        },
+        {
+          "author": "MohammadBafkar",
+          "points": 1
+        },
+        {
+          "author": "xoxonut",
+          "points": 1
+        },
+        {
+          "author": "icemc",
+          "points": 1
+        },
+        {
+          "author": "ksauraj",
+          "points": 1
+        },
+        {
+          "author": "estebanmilaho",
+          "points": 1
+        },
+        {
+          "author": "1wos",
+          "points": 1
+        },
+        {
+          "author": "CharudathGopal",
+          "points": 1
+        },
+        {
+          "author": "sergiy-slobodyan",
+          "points": 1
+        },
+        {
+          "author": "machichima",
+          "points": 1
+        },
+        {
+          "author": "Rey-han-24",
+          "points": 1
+        },
+        {
+          "author": "gaboh18",
+          "points": 1
+        },
+        {
+          "author": "jeffreydickison",
+          "points": 1
+        },
+        {
+          "author": "fbsolo",
+          "points": 1
+        },
+        {
+          "author": "NIRANJAN0125",
+          "points": 1
+        },
+        {
+          "author": "Vikrant-Dhir",
+          "points": 1
+        },
+        {
+          "author": "rahulkumar-choudhary",
+          "points": 1
+        },
+        {
+          "author": "arcceus",
+          "points": 1
+        },
+        {
+          "author": "savingoyal",
+          "points": 1
+        },
+        {
+          "author": "nedimjahic",
+          "points": 1
+        },
+        {
+          "author": "housengw",
+          "points": 1
+        },
+        {
+          "author": "NeetishPathak",
+          "points": 1
+        },
+        {
+          "author": "anhtranbk",
+          "points": 1
+        },
+        {
+          "author": "janekmichalik",
+          "points": 1
+        },
+        {
+          "author": "ysinghc",
+          "points": 1
+        },
+        {
+          "author": "guofeng1996",
+          "points": 1
+        },
+        {
+          "author": "R-2-J-2",
+          "points": 1
+        },
+        {
+          "author": "trevorchiks",
+          "points": 1
+        },
+        {
+          "author": "roli2py",
+          "points": 1
+        },
+        {
+          "author": "jeroenvandelockand",
+          "points": 1
+        },
+        {
+          "author": "kapil40",
+          "points": 1
+        },
+        {
+          "author": "ethancharles13",
+          "points": 1
+        },
+        {
+          "author": "Sanil2108",
+          "points": 1
+        },
+        {
+          "author": "andrew749",
+          "points": 1
+        },
+        {
+          "author": "3DSA",
+          "points": 1
+        },
+        {
+          "author": "bigangcoder",
+          "points": 1
+        },
+        {
+          "author": "asakatida",
+          "points": 1
+        },
+        {
+          "author": "vzahanych",
+          "points": 1
+        },
+        {
+          "author": "didiViking",
+          "points": 1
+        },
+        {
+          "author": "NBardelot",
+          "points": 1
+        },
+        {
+          "author": "OneUpWallStreet",
+          "points": 1
+        },
+        {
+          "author": "Jaksmiths",
+          "points": 1
+        },
+        {
+          "author": "em-sav",
+          "points": 1
+        },
+        {
+          "author": "chaijunkin",
+          "points": 1
+        },
+        {
+          "author": "prashanth30-n",
+          "points": 1
+        },
+        {
+          "author": "s1saurabh",
+          "points": 1
+        },
+        {
+          "author": "RofaidaAhmed-100",
+          "points": 1
+        },
+        {
+          "author": "prathija-t",
+          "points": 1
+        },
+        {
+          "author": "bkannadassan",
+          "points": 1
+        },
+        {
+          "author": "aqurilla",
+          "points": 1
+        },
+        {
+          "author": "rajyavardhan01",
+          "points": 1
+        },
+        {
+          "author": "bizio",
+          "points": 1
+        },
+        {
+          "author": "DavideRutigliano",
+          "points": 1
+        },
+        {
+          "author": "0xbakry",
+          "points": 1
+        },
+        {
+          "author": "robertoschiavone",
+          "points": 1
+        },
+        {
+          "author": "kimberlycollins",
+          "points": 1
+        },
+        {
+          "author": "taniaduggal60",
+          "points": 1
+        },
+        {
+          "author": "seponik",
+          "points": 1
+        },
+        {
+          "author": "seungwoo-ji-03",
+          "points": 1
+        },
+        {
+          "author": "yaten2302",
+          "points": 1
+        },
+        {
+          "author": "itsfarhan",
+          "points": 1
+        },
+        {
+          "author": "askiefer",
+          "points": 1
+        },
+        {
+          "author": "Anusha-pannati",
+          "points": 1
+        },
+        {
+          "author": "RatnakirtiKamble",
+          "points": 1
+        },
+        {
+          "author": "MohamedM216",
+          "points": 1
+        },
+        {
+          "author": "jdfc-io",
+          "points": 1
+        },
+        {
+          "author": "olliehcrook",
+          "points": 1
+        },
+        {
+          "author": "4sokol",
+          "points": 1
+        },
+        {
+          "author": "Ajanzz",
+          "points": 1
+        },
+        {
+          "author": "EslamElshaabany",
+          "points": 1
+        },
+        {
+          "author": "tetianakh",
+          "points": 1
+        },
+        {
+          "author": "archy-rock3t-cloud",
+          "points": 1
+        },
+        {
+          "author": "neeraj542",
+          "points": 1
+        },
+        {
+          "author": "JampaniTejasai",
+          "points": 1
+        },
+        {
+          "author": "CalebAckom",
+          "points": 1
+        },
+        {
+          "author": "atkandi111",
+          "points": 1
+        },
+        {
+          "author": "Mou887",
+          "points": 1
+        },
+        {
+          "author": "pranaykanjolia1006",
+          "points": 1
+        },
+        {
+          "author": "kmatsuo3225",
+          "points": 1
+        },
+        {
+          "author": "ik2478",
+          "points": 1
+        },
+        {
+          "author": "nisharas",
+          "points": 1
+        },
+        {
+          "author": "i-kenta",
+          "points": 1
+        },
+        {
+          "author": "rogowski-piotr",
+          "points": 1
+        },
+        {
+          "author": "laaksokatu",
+          "points": 1
+        },
+        {
+          "author": "el1shan",
+          "points": 1
+        },
+        {
+          "author": "oliverhatherton",
+          "points": 1
+        },
+        {
+          "author": "deneeshnarayanasamy",
+          "points": 1
+        },
+        {
+          "author": "ItsVigneshMurugan",
+          "points": 1
+        },
+        {
+          "author": "CLBRITTON2",
+          "points": 1
+        },
+        {
+          "author": "opp-13",
+          "points": 1
+        },
+        {
+          "author": "b13n1u",
+          "points": 1
+        },
+        {
+          "author": "hossamasr",
+          "points": 1
+        },
+        {
+          "author": "aki-motoki",
+          "points": 1
+        },
+        {
+          "author": "ehearne-redhat",
+          "points": 1
+        },
+        {
+          "author": "dnaeon",
+          "points": 1
+        },
+        {
+          "author": "nik-paushkin",
+          "points": 1
+        },
+        {
+          "author": "bliles",
+          "points": 1
+        },
+        {
+          "author": "robbiezhang",
+          "points": 1
+        },
+        {
+          "author": "dpacgdm",
+          "points": 1
+        },
+        {
+          "author": "darthsuburbus",
+          "points": 1
+        },
+        {
+          "author": "alekhyaku",
+          "points": 1
+        },
+        {
+          "author": "iamangus",
+          "points": 1
+        },
+        {
+          "author": "tnederlof",
+          "points": 1
+        },
+        {
+          "author": "AnthonySchool",
+          "points": 1
+        },
+        {
+          "author": "Nycto-c05",
+          "points": 1
+        },
+        {
+          "author": "jakweg",
+          "points": 1
+        },
+        {
+          "author": "droach282",
+          "points": 1
+        },
+        {
+          "author": "QuantumPooler",
+          "points": 1
+        },
+        {
+          "author": "stevenrhett",
+          "points": 1
+        },
+        {
+          "author": "palnabarun",
+          "points": 1
+        },
+        {
+          "author": "rajuj0",
+          "points": 1
+        },
+        {
+          "author": "towseef41",
+          "points": 1
+        },
+        {
+          "author": "lee-1104",
+          "points": 1
+        },
+        {
+          "author": "konippi",
+          "points": 1
+        },
+        {
+          "author": "vebaas",
+          "points": 1
+        },
+        {
+          "author": "ab0utbla-k",
+          "points": 1
+        },
+        {
+          "author": "AbdelhakRazi",
+          "points": 1
+        },
+        {
+          "author": "zhi-peng-zhou",
+          "points": 1
+        },
+        {
+          "author": "phoenix1712",
+          "points": 1
+        },
+        {
+          "author": "Johnsmith1111",
+          "points": 1
+        },
+        {
+          "author": "suhasramanand",
+          "points": 1
+        },
+        {
+          "author": "yu-min3",
+          "points": 1
+        },
+        {
+          "author": "pedroignacio13",
+          "points": 1
+        },
+        {
+          "author": "jgrancell",
+          "points": 1
+        },
+        {
+          "author": "c4bestan",
+          "points": 1
+        },
+        {
+          "author": "shivamwayal37",
+          "points": 1
+        },
+        {
+          "author": "Biking0",
+          "points": 1
+        },
+        {
+          "author": "nitesh237",
+          "points": 1
+        },
+        {
+          "author": "DnullP",
+          "points": 1
+        },
+        {
+          "author": "kolagag",
+          "points": 1
+        },
+        {
+          "author": "kachhuaa",
+          "points": 1
+        },
+        {
+          "author": "gbarr",
+          "points": 1
+        },
+        {
+          "author": "b1n4ry9h0S7",
+          "points": 1
+        },
+        {
+          "author": "vichekaoeun",
+          "points": 1
+        },
+        {
+          "author": "dpwns523",
+          "points": 1
+        },
+        {
+          "author": "agrawal-d",
+          "points": 1
+        },
+        {
+          "author": "yatoum",
+          "points": 1
+        },
+        {
+          "author": "n-enami",
+          "points": 1
+        },
+        {
+          "author": "seiichisakamoto",
+          "points": 1
+        },
+        {
+          "author": "jmakk0301",
+          "points": 1
+        },
+        {
+          "author": "Lab8010",
+          "points": 1
+        },
+        {
+          "author": "hana-boy",
+          "points": 1
+        },
+        {
+          "author": "pollenjp",
+          "points": 1
+        },
+        {
+          "author": "Jinyamyzk",
+          "points": 1
+        },
+        {
+          "author": "nnnkkk7",
+          "points": 1
+        },
+        {
+          "author": "joku717",
+          "points": 1
+        },
+        {
+          "author": "hassaku63",
+          "points": 1
+        },
+        {
+          "author": "tryuuu",
+          "points": 1
+        },
+        {
+          "author": "xyuichiz",
+          "points": 1
+        },
+        {
+          "author": "yuki681",
+          "points": 1
+        },
+        {
+          "author": "ziyi-xie",
+          "points": 1
+        },
+        {
+          "author": "VidhyaDivakar",
+          "points": 1
+        },
+        {
+          "author": "meomnzak",
+          "points": 1
+        },
+        {
+          "author": "endesapt",
+          "points": 1
+        },
+        {
+          "author": "laervn",
+          "points": 1
+        },
+        {
+          "author": "adi-sud",
+          "points": 1
+        },
+        {
+          "author": "turnerem",
+          "points": 1
+        },
+        {
+          "author": "FdHerrera",
+          "points": 1
+        },
+        {
+          "author": "dominik-lekse",
+          "points": 1
+        },
+        {
+          "author": "paulsbrookes",
+          "points": 1
+        },
+        {
+          "author": "SerjKol80",
+          "points": 1
+        },
+        {
+          "author": "MilindRastogi24",
+          "points": 1
+        },
+        {
+          "author": "ShaanveerS",
+          "points": 1
+        },
+        {
+          "author": "dap0am",
+          "points": 1
+        },
+        {
+          "author": "MatteoFari",
+          "points": 1
+        },
+        {
+          "author": "Divyapuja",
+          "points": 1
+        },
+        {
+          "author": "thakurnishu",
+          "points": 1
+        },
+        {
+          "author": "swatisehgal",
+          "points": 1
+        },
+        {
+          "author": "Aaina26",
+          "points": 1
+        },
+        {
+          "author": "alont01",
+          "points": 1
+        },
+        {
+          "author": "jrvaldes",
+          "points": 1
+        },
+        {
+          "author": "gurjaspreet",
+          "points": 1
+        },
+        {
+          "author": "onlineth",
+          "points": 1
+        },
+        {
+          "author": "thetechguyseth",
+          "points": 1
+        },
+        {
+          "author": "rakhmanov",
+          "points": 1
+        },
+        {
+          "author": "gaurab-khanal",
+          "points": 1
+        },
+        {
+          "author": "CyberWarBaby",
+          "points": 1
+        },
+        {
+          "author": "rwx-aen",
+          "points": 1
+        },
+        {
+          "author": "joelp172",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:37.948877Z",
+      "tech_stack": [
+        "Docker",
+        "Go",
+        "Makefile",
+        "Roff"
+      ],
+      "owners": {
+        "approvers": [
+          "MadhavJivrajani",
+          "Priyankasaggu11929",
+          "cblecker",
+          "jberkus",
+          "kaslin",
+          "nikhita",
+          "palnabarun",
+          "shu-mutou"
+        ],
+        "reviewers": []
+      },
+      "onboarding_url": "https://github.com/kubernetes-sigs/contributor-playground/blob/master/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes-sigs/contributor-playground/blob/master/OWNERS",
+      "issues_url": "https://github.com/kubernetes-sigs/contributor-playground/issues",
+      "good_first_issues_url": "https://github.com/kubernetes-sigs/contributor-playground/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes-sigs/sigs-github-actions",
+      "lottery_factor": 0,
+      "total_points": 0,
+      "contributors": [],
+      "last_updated": "2026-04-11T03:18:41.094220Z",
+      "tech_stack": [
+        "Documentation"
+      ],
+      "owners": {
+        "approvers": [
+          "github-admin-team"
+        ],
+        "reviewers": []
+      },
+      "onboarding_url": "https://github.com/kubernetes-sigs/sigs-github-actions/blob/main/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes-sigs/sigs-github-actions/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes-sigs/sigs-github-actions/issues",
+      "good_first_issues_url": "https://github.com/kubernetes-sigs/sigs-github-actions/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "kubernetes/kubernetes-template-project",
+      "lottery_factor": 1,
+      "total_points": 1,
+      "contributors": [
+        {
+          "author": "0000854453",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:44.868464Z",
+      "tech_stack": [
+        "Documentation"
+      ],
+      "owners": {
+        "approvers": [
+          "github-admin-team"
+        ],
+        "reviewers": []
+      },
+      "onboarding_url": "https://github.com/kubernetes/kubernetes-template-project/blob/main/CONTRIBUTING.md",
+      "owners_url": "https://github.com/kubernetes/kubernetes-template-project/blob/main/OWNERS",
+      "issues_url": "https://github.com/kubernetes/kubernetes-template-project/issues",
+      "good_first_issues_url": "https://github.com/kubernetes/kubernetes-template-project/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    },
+    {
+      "repo": "elekto-dev/elekto",
+      "lottery_factor": 2,
+      "total_points": 15,
+      "contributors": [
+        {
+          "author": "oduludo",
+          "points": 6
+        },
+        {
+          "author": "jberkus",
+          "points": 5
+        },
+        {
+          "author": "cblecker",
+          "points": 2
+        },
+        {
+          "author": "sreeram-venkitesh",
+          "points": 1
+        },
+        {
+          "author": "BenTheElder",
+          "points": 1
+        }
+      ],
+      "last_updated": "2026-04-11T03:18:48.169732Z",
+      "tech_stack": [
+        "Docker",
+        "Go",
+        "Python",
+        "GitHub Actions",
+        "Bash"
+      ],
+      "owners": {
+        "approvers": [],
+        "reviewers": []
+      },
+      "onboarding_url": "https://github.com/elekto-dev/elekto/blob/main/CONTRIBUTING.md",
+      "owners_url": "https://github.com/elekto-dev/elekto/graphs/contributors",
+      "issues_url": "https://github.com/elekto-dev/elekto/issues",
+      "good_first_issues_url": "https://github.com/elekto-dev/elekto/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+    }
+  ]
+}
