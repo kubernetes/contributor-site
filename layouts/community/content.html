@@ -39,7 +39,10 @@
   {{ if .Params.leadership }}
   <div class="mt-5">
     <h3 class="h4 fw-bold border-bottom pb-2 mb-4">Leadership</h3>
-    <div class="row g-4">
+    
+    {{ if .Params.leadership.chairs }}
+    <h4 class="h5 fw-semibold mb-3">Chairs</h4>
+    <div class="row g-4 mb-4">
       {{ range .Params.leadership.chairs }}
       <div class="col-md-6 col-lg-4">
         <div class="card h-100 border-0 shadow-sm bg-light">
@@ -58,6 +61,30 @@
       </div>
       {{ end }}
     </div>
+    {{ end }}
+
+    {{ if .Params.leadership.tech_leads }}
+    <h4 class="h5 fw-semibold mb-3">Tech Leads</h4>
+    <div class="row g-4 mb-4">
+      {{ range .Params.leadership.tech_leads }}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm bg-light">
+          <div class="card-body p-3 d-flex align-items-center">
+            <div class="flex-shrink-0 me-3">
+              <img src="https://github.com/{{ .github }}.png?size=48" class="rounded-circle shadow-sm" alt="{{ .github }}" width="48" height="48">
+            </div>
+            <div>
+              <h5 class="mb-0 h6 fw-bold text-dark">{{ .name }}</h5>
+              <a href="https://github.com/{{ .github }}" target="_blank" class="text-primary small text-decoration-none">
+                <i class="fab fa-github me-1"></i>@{{ .github }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    {{ end }}
   </div>
   {{ end }}
 
