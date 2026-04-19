@@ -1,17 +1,18 @@
 package main
 
 import (
-	"encoding/base64"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
 	"os"
-	"os/exec"
 	"sort"
 	"strings"
 	"time"
 
+	"github.com/google/go-github/v60/github"
+	"golang.org/x/oauth2"
 	"gopkg.in/yaml.v3"
 )
 
@@ -27,6 +28,7 @@ type Owners struct {
 
 type RepoStats struct {
 	Repo               string         `json:"repo"`
+	CreatedAt          string         `json:"created_at"`
 	LotteryFactor      int            `json:"lottery_factor"`
 	TotalPoints        int            `json:"total_points"`
 	Contributors       []Contribution `json:"contributors"`
@@ -65,9 +67,49 @@ type SubprojectYaml struct {
 	Owners []string `yaml:"owners"`
 }
 
+type Config struct {
+	TargetSigs      []string `yaml:"target_sigs"`
+	AdditionalRepos []struct {
+		Repo       string `yaml:"repo"`
+		Subproject string `yaml:"subproject"`
+	} `yaml:"additional_repos"`
+	Overrides map[string]RepoOverride `yaml:"overrides"`
+}
+
+type RepoOverride struct {
+	OnboardingURL string `yaml:"onboarding_url"`
+	OwnersURL     string `yaml:"owners_url"`
+}
+
+var client *github.Client
+var ctx = context.Background()
+var globalConfig Config
+
+func loadConfig() error {
+	data, err := os.ReadFile("dashboard-config.yaml")
+	if err != nil {
+		return err
+	}
+	return yaml.Unmarshal(data, &globalConfig)
+}
+
 func main() {
-	since := time.Now().AddDate(0, -6, 0).Format("2006-01-02")
-	sigName := "sig-contributor-experience"
+	if err := loadConfig(); err != nil {
+		fmt.Printf("Failed to load config: %v\n", err)
+		return
+	}
+
+	token := os.Getenv("GH_TOKEN")
+	if token == "" {
+		fmt.Println("GH_TOKEN not set. Using unauthenticated client (rate limits will be low).")
+		client = github.NewClient(nil)
+	} else {
+		ts := oauth2.StaticTokenSource(&oauth2.Token{AccessToken: token})
+		tc := oauth2.NewClient(ctx, ts)
+		client = github.NewClient(tc)
+	}
+
+	since := time.Now().AddDate(0, -6, 0)
 
 	fmt.Println("Fetching sigs.yaml...")
 	resp, err := http.Get("https://raw.githubusercontent.com/kubernetes/community/master/sigs.yaml")
@@ -92,8 +134,13 @@ func main() {
 	repoMap := make(map[string]bool)
 	var repos []string
 
+	targetSigsMap := make(map[string]bool)
+	for _, s := range globalConfig.TargetSigs {
+		targetSigsMap[s] = true
+	}
+
 	for _, sig := range sigsData.Sigs {
-		if sig.Dir == sigName {
+		if targetSigsMap[sig.Dir] {
 			for _, sp := range sig.Subprojects {
 				var spRepos []string
 				for _, ownerUrl := range sp.Owners {
@@ -115,15 +162,16 @@ func main() {
 		}
 	}
 
-	// Always add elekto if not already found (it's often under contribex but URL might differ)
-	elektoRepo := "elekto-dev/elekto"
-	if !repoMap[elektoRepo] {
-		repoMap[elektoRepo] = true
-		repos = append(repos, elektoRepo)
-		subprojects = append(subprojects, Subproject{
-			Name: "elections",
-			Repos: []string{elektoRepo},
-		})
+	// Add manual additions from config
+	for _, ar := range globalConfig.AdditionalRepos {
+		if !repoMap[ar.Repo] {
+			repoMap[ar.Repo] = true
+			repos = append(repos, ar.Repo)
+			subprojects = append(subprojects, Subproject{
+				Name:  ar.Subproject,
+				Repos: []string{ar.Repo},
+			})
+		}
 	}
 
 	var allRepoData []RepoStats
@@ -133,18 +181,21 @@ func main() {
 		allRepoData = append(allRepoData, stats)
 	}
 
+	// Sort RepoData oldest-first based on creation date
+	sort.Slice(allRepoData, func(i, j int) bool {
+		return allRepoData[i].CreatedAt < allRepoData[j].CreatedAt
+	})
+
 	data := SIGStats{
-		SIG:         sigName,
+		SIG:         strings.Join(globalConfig.TargetSigs, ", "),
 		Subprojects: subprojects,
 		RepoData:    allRepoData,
 	}
 
 	file, _ := json.MarshalIndent(data, "", "  ")
-	// Note: Action runs from hack dir, so path is ../static/data
-	// Locally it might be static/data. We handle both.
-	outputPath := "../static/data/lottery_factor.json"
-	if _, err := os.Stat("static"); err == nil {
-		outputPath = "static/data/lottery_factor.json"
+	outputPath := "../data/lottery_factor.json"
+	if _, err := os.Stat("data"); err == nil {
+		outputPath = "data/lottery_factor.json"
 	}
 	
 	_ = os.MkdirAll(strings.TrimSuffix(outputPath, "lottery_factor.json"), 0755)
@@ -152,222 +203,86 @@ func main() {
 	fmt.Printf("Successfully generated %s\n", outputPath)
 }
 
-func getBranch(repo string) string {
-	out, err := exec.Command("gh", "repo", "view", repo, "--json", "defaultBranchRef", "-q", ".defaultBranchRef.name").Output()
-	if err != nil {
-		return "main"
-	}
-	return strings.TrimSpace(string(out))
+func parseRepo(repo string) (string, string) {
+	parts := strings.Split(repo, "/")
+	return parts[0], parts[1]
 }
 
-func getOwnersMetadata(repo, branch string) Owners {
-	fmt.Printf("  Fetching OWNERS for %s\n", repo)
-
-	out, err := exec.Command("gh", "api", fmt.Sprintf("repos/%s/contents/OWNERS?ref=%s", repo, branch), "-q", ".content").Output()
-	if err != nil {
-		fmt.Printf("  No OWNERS file found for %s\n", repo)
-		return Owners{}
-	}
-
-	s := strings.ReplaceAll(string(out), "\n", "")
-	s = strings.ReplaceAll(s, "\r", "")
-	contentBytes, err := base64.StdEncoding.DecodeString(s)
-	if err != nil {
-		return Owners{}
-	}
-
-	var data struct {
-		Approvers []string `yaml:"approvers"`
-		Reviewers []string `yaml:"reviewers"`
-		Filters   map[string]struct {
-			Approvers []string `yaml:"approvers"`
-			Reviewers []string `yaml:"reviewers"`
-		} `yaml:"filters"`
-	}
-
-	yaml.Unmarshal(contentBytes, &data)
-
-	apprMap := make(map[string]bool)
-	revMap := make(map[string]bool)
-
-	for _, a := range data.Approvers {
-		apprMap[a] = true
-	}
-	for _, r := range data.Reviewers {
-		revMap[r] = true
-	}
-
-	for _, filter := range data.Filters {
-		for _, a := range filter.Approvers {
-			apprMap[a] = true
-		}
-		for _, r := range filter.Reviewers {
-			revMap[r] = true
-		}
-	}
-
-	var finalAppr, finalRev []string
-	for a := range apprMap {
-		if a != "" && !strings.HasPrefix(a, "sig-") && !strings.HasPrefix(a, "committee-") {
-			finalAppr = append(finalAppr, a)
-		}
-	}
-	for r := range revMap {
-		if r != "" && !strings.HasPrefix(r, "sig-") && !strings.HasPrefix(r, "committee-") {
-			finalRev = append(finalRev, r)
-		}
-	}
-
-	sort.Strings(finalAppr)
-	sort.Strings(finalRev)
-
-	return Owners{
-		Approvers: finalAppr,
-		Reviewers: finalRev,
-	}
-}
-
-func getTechStack(repo string) []string {
-	fmt.Printf("  Fetching tech stack for %s\n", repo)
+func getRepoStats(fullRepo string, since time.Time) RepoStats {
+	owner, repo := parseRepo(fullRepo)
 	
-	stackMap := make(map[string]bool)
-
-	// 1. Fetch Topics
-	outTopics, _ := exec.Command("gh", "repo", "view", repo, "--json", "repositoryTopics", "-q", ".repositoryTopics[].name").Output()
-	topics := strings.Split(strings.TrimSpace(string(outTopics)), "\n")
-	for _, t := range topics {
-		if t != "" && t != "kubernetes" && !strings.Contains(t, "sig-") && !strings.Contains(t, "k8s-") {
-			stackMap[strings.Title(t)] = true
-		}
+	r, _, err := client.Repositories.Get(ctx, owner, repo)
+	if err != nil {
+		return RepoStats{Repo: fullRepo}
 	}
 
-	// 2. Fetch Languages
-	outLangs, _ := exec.Command("gh", "api", fmt.Sprintf("repos/%s/languages", repo)).Output()
-	var langs map[string]int
-	json.Unmarshal(outLangs, &langs)
+	branch := r.GetDefaultBranch()
+	createdAt := r.GetCreatedAt().Format(time.RFC3339)
 
-	for l := range langs {
-		name := l
-		if l == "Dockerfile" { name = "Docker" }
-		if l == "Shell" { name = "Bash" }
-		if l == "Markdown" { name = "Documentation" }
-		if l == "YAML" { name = "Infrastructure" }
-		stackMap[name] = true
-	}
-
-	// 3. Framework & Tool Heuristics
-	// Check for Hugo
-	_, err := exec.Command("gh", "api", fmt.Sprintf("repos/%s/contents/hugo.yaml", repo)).Output()
-	if err == nil { stackMap["Hugo"] = true }
-	
-	// Check for GitHub Actions
-	_, err = exec.Command("gh", "api", fmt.Sprintf("repos/%s/contents/.github/workflows", repo)).Output()
-	if err == nil { stackMap["GitHub Actions"] = true }
-
-	// Check for Docsy in package.json
-	outPkg, err := exec.Command("gh", "api", fmt.Sprintf("repos/%s/contents/package.json", repo), "-q", ".content").Output()
-	if err == nil {
-		s := strings.ReplaceAll(string(outPkg), "\n", "")
-		content, _ := base64.StdEncoding.DecodeString(s)
-		if strings.Contains(string(content), "docsy") {
-			stackMap["Docsy"] = true
-		}
-	}
-
-	// 4. Community-specific Fallbacks
-	if strings.Contains(repo, "community") {
-		stackMap["Community Management"] = true
-		stackMap["Documentation"] = true
-	}
-	if strings.Contains(repo, "org") || strings.Contains(repo, "maintainers") {
-		stackMap["Prow"] = true
-		stackMap["Infrastructure"] = true
-	}
-
-	var result []string
-	// Prioritize frameworks and key technologies
-	priority := []string{"Hugo", "Docsy", "Docker", "Go", "TypeScript", "Python", "GitHub Actions", "Documentation", "Infrastructure"}
-	for _, p := range priority {
-		if stackMap[p] {
-			result = append(result, p)
-			delete(stackMap, p)
-		}
-	}
-
-	var remaining []string
-	for k := range stackMap { remaining = append(remaining, k) }
-	sort.Strings(remaining)
-	result = append(result, remaining...)
-
-	if len(result) == 0 {
-		return []string{"Documentation"}
-	}
-	if len(result) > 5 {
-		return result[:5]
-	}
-	return result
-}
-
-func getRepoStats(repo, since string) RepoStats {
 	counts := make(map[string]int)
 
 	// Fetch PRs
-	outPR, err := exec.Command("gh", "search", "prs", "--repo", repo, "--created", ">"+since, "--json", "author", "--limit", "500").Output()
-	if err == nil {
-		var prs []struct {
-			Author struct {
-				Login string `json:"login"`
-			} `json:"author"`
-		}
-		json.Unmarshal(outPR, &prs)
+	opts := &github.PullRequestListOptions{
+		State: "all",
+		ListOptions: github.ListOptions{PerPage: 100},
+	}
+	for {
+		prs, resp, err := client.PullRequests.List(ctx, owner, repo, opts)
+		if err != nil { break }
+		finished := false
 		for _, pr := range prs {
-			if pr.Author.Login != "" {
-				counts[pr.Author.Login]++
+			if pr.GetCreatedAt().Before(since) {
+				finished = true
+				break
+			}
+			if pr.User != nil {
+				counts[pr.User.GetLogin()]++
 			}
 		}
+		if finished || resp.NextPage == 0 { break }
+		opts.Page = resp.NextPage
 	}
 
 	// Fetch Issues
-	outIssue, err := exec.Command("gh", "search", "issues", "--repo", repo, "--created", ">"+since, "--json", "author", "--limit", "500").Output()
-	if err == nil {
-		var issues []struct {
-			Author struct {
-				Login string `json:"login"`
-			} `json:"author"`
-		}
-		json.Unmarshal(outIssue, &issues)
+	issueOpts := &github.IssueListByRepoOptions{
+		State: "all",
+		Since: since,
+		ListOptions: github.ListOptions{PerPage: 100},
+	}
+	for {
+		issues, resp, err := client.Issues.ListByRepo(ctx, owner, repo, issueOpts)
+		if err != nil { break }
 		for _, issue := range issues {
-			if issue.Author.Login != "" {
-				counts[issue.Author.Login]++
+			if issue.IsPullRequest() { continue }
+			if issue.User != nil {
+				counts[issue.User.GetLogin()]++
 			}
 		}
+		if resp.NextPage == 0 { break }
+		issueOpts.Page = resp.NextPage
 	}
 
 	// Fetch Commits
-	outCommits, err := exec.Command("gh", "api", fmt.Sprintf("repos/%s/commits?since=%sT00:00:00Z&per_page=100", repo, since)).Output()
-	if err == nil {
-		var commits []struct {
-			Author struct {
-				Login string `json:"login"`
-			} `json:"author"`
-		}
-		json.Unmarshal(outCommits, &commits)
+	commitOpts := &github.CommitsListOptions{
+		Since: since,
+		ListOptions: github.ListOptions{PerPage: 100},
+	}
+	for {
+		commits, resp, err := client.Repositories.ListCommits(ctx, owner, repo, commitOpts)
+		if err != nil { break }
 		for _, commit := range commits {
-			if commit.Author.Login != "" {
-				counts[commit.Author.Login]++
+			if commit.Author != nil {
+				counts[commit.Author.GetLogin()]++
 			}
 		}
+		if resp.NextPage == 0 { break }
+		commitOpts.Page = resp.NextPage
 	}
 
 	var contributors []Contribution
 	total := 0
 	for author, pts := range counts {
-		if author == "" {
-			continue
-		}
-		if strings.HasSuffix(author, "-bot") || strings.HasSuffix(author, "[bot]") || author == "k8s-ci-robot" || author == "k8s-triage-robot" || author == "k8s-infra-robot" {
-			continue
-		}
+		if author == "" || isBot(author) { continue }
 		contributors = append(contributors, Contribution{Author: author, Points: pts})
 		total += pts
 	}
@@ -386,24 +301,25 @@ func getRepoStats(repo, since string) RepoStats {
 		}
 	}
 
-	branch := getBranch(repo)
-	techStack := getTechStack(repo)
-	owners := getOwnersMetadata(repo, branch)
+	techStack := getTechStack(owner, repo, branch)
+	owners := getOwnersMetadata(owner, repo, branch)
 
-	onboardingUrl := fmt.Sprintf("https://github.com/%s/blob/%s/CONTRIBUTING.md", repo, branch)
-	if strings.Contains(repo, "community") {
-		onboardingUrl = "https://www.kubernetes.dev/docs/guide/"
-	} else if repo == "kubernetes-sigs/maintainers" {
-		onboardingUrl = fmt.Sprintf("https://github.com/%s", repo)
-	}
+	onboardingUrl := fmt.Sprintf("https://github.com/%s/blob/%s/CONTRIBUTING.md", fullRepo, branch)
+	ownersUrl := fmt.Sprintf("https://github.com/%s/blob/%s/OWNERS", fullRepo, branch)
 
-	ownersUrl := fmt.Sprintf("https://github.com/%s/blob/%s/OWNERS", repo, branch)
-	if repo == "elekto-dev/elekto" {
-		ownersUrl = fmt.Sprintf("https://github.com/%s/graphs/contributors", repo)
+	// Apply overrides from config
+	if override, ok := globalConfig.Overrides[fullRepo]; ok {
+		if override.OnboardingURL != "" {
+			onboardingUrl = override.OnboardingURL
+		}
+		if override.OwnersURL != "" {
+			ownersUrl = override.OwnersURL
+		}
 	}
 
 	return RepoStats{
-		Repo:               repo,
+		Repo:               fullRepo,
+		CreatedAt:          createdAt,
 		LotteryFactor:      lf,
 		TotalPoints:        total,
 		Contributors:       contributors,
@@ -412,7 +328,138 @@ func getRepoStats(repo, since string) RepoStats {
 		Owners:             owners,
 		OnboardingURL:      onboardingUrl,
 		OwnersURL:          ownersUrl,
-		IssuesURL:          fmt.Sprintf("https://github.com/%s/issues", repo),
-		GoodFirstIssuesURL: fmt.Sprintf("https://github.com/%s/issues?q=is%%3Aissue+is%%3Aopen+label%3A%%22good+first+issue%%22", repo),
+		IssuesURL:          fmt.Sprintf("https://github.com/%s/issues", fullRepo),
+		GoodFirstIssuesURL: fmt.Sprintf("https://github.com/%s/issues?q=is%%3Aissue+is%%3Aopen+label%%3A%%22good+first+issue%%22", fullRepo),
 	}
+}
+
+func isBot(author string) bool {
+	bots := map[string]bool{
+		"k8s-ci-robot": true, "k8s-triage-robot": true, "k8s-infra-robot": true,
+		"fejta-bot": true, "k8s-cherrypick-robot": true,
+	}
+	return bots[author] || strings.HasSuffix(author, "-bot") || strings.HasSuffix(author, "[bot]")
+}
+
+func getOwnersMetadata(owner, repo, branch string) Owners {
+	fileContent, _, _, err := client.Repositories.GetContents(ctx, owner, repo, "OWNERS", &github.RepositoryContentGetOptions{Ref: branch})
+	if err != nil {
+		return Owners{}
+	}
+
+	content, _ := fileContent.GetContent()
+	
+	var data struct {
+		Approvers []string `yaml:"approvers"`
+		Reviewers []string `yaml:"reviewers"`
+		Filters   map[string]struct {
+			Approvers []string `yaml:"approvers"`
+			Reviewers []string `yaml:"reviewers"`
+		} `yaml:"filters"`
+	}
+
+	yaml.Unmarshal([]byte(content), &data)
+
+	apprMap := make(map[string]bool)
+	revMap := make(map[string]bool)
+
+	for _, a := range data.Approvers { apprMap[a] = true }
+	for _, r := range data.Reviewers { revMap[r] = true }
+
+	for _, filter := range data.Filters {
+		for _, a := range filter.Approvers { apprMap[a] = true }
+		for _, r := range filter.Reviewers { revMap[r] = true }
+	}
+
+	var finalAppr, finalRev []string
+	for a := range apprMap {
+		if a != "" && !strings.HasPrefix(a, "sig-") && !strings.HasPrefix(a, "committee-") {
+			finalAppr = append(finalAppr, a)
+		}
+	}
+	for r := range revMap {
+		if r != "" && !strings.HasPrefix(r, "sig-") && !strings.HasPrefix(r, "committee-") {
+			finalRev = append(finalRev, r)
+		}
+	}
+
+	sort.Strings(finalAppr)
+	sort.Strings(finalRev)
+
+	return Owners{Approvers: finalAppr, Reviewers: finalRev}
+}
+
+func getTechStack(owner, repo, branch string) []string {
+	stackMap := make(map[string]bool)
+
+	// 1. Topics
+	r, _, _ := client.Repositories.Get(ctx, owner, repo)
+	for _, t := range r.Topics {
+		if t != "" && t != "kubernetes" && !strings.Contains(t, "sig-") && !strings.Contains(t, "k8s-") {
+			stackMap[strings.Title(t)] = true
+		}
+	}
+
+	// 2. Languages
+	langs, _, _ := client.Repositories.ListLanguages(ctx, owner, repo)
+	for l := range langs {
+		name := l
+		if l == "Dockerfile" { name = "Docker" }
+		if l == "Shell" { name = "Bash" }
+		stackMap[name] = true
+	}
+
+	// 3. Archetype Detection (Dependency Analysis)
+	goMod, _, _, err := client.Repositories.GetContents(ctx, owner, repo, "go.mod", &github.RepositoryContentGetOptions{Ref: branch})
+	if err == nil {
+		content, _ := goMod.GetContent()
+		if strings.Contains(content, "sigs.k8s.io/controller-runtime") {
+			stackMap["Operator"] = true
+		} else if strings.Contains(content, "k8s.io/client-go") {
+			stackMap["Controller"] = true
+		}
+		
+		if strings.Contains(content, "github.com/spf13/cobra") {
+			stackMap["CLI Tool"] = true
+		}
+		if strings.Contains(content, "github.com/prometheus/client_golang") {
+			stackMap["Metrics"] = true
+		}
+		if strings.Contains(content, "github.com/onsi/ginkgo") {
+			stackMap["E2E Tested"] = true
+		}
+		if strings.Contains(content, "k8s.io/code-generator") {
+			stackMap["API Machinery"] = true
+		}
+	}
+
+	// 4. Framework Heuristics
+	_, _, _, err = client.Repositories.GetContents(ctx, owner, repo, "hugo.yaml", &github.RepositoryContentGetOptions{Ref: branch})
+	if err == nil { stackMap["Hugo"] = true }
+	
+	pkgJson, _, _, err := client.Repositories.GetContents(ctx, owner, repo, "package.json", &github.RepositoryContentGetOptions{Ref: branch})
+	if err == nil {
+		content, _ := pkgJson.GetContent()
+		if strings.Contains(content, "docsy") {
+			stackMap["Docsy"] = true
+		}
+	}
+
+	var result []string
+	priority := []string{"Operator", "CLI Tool", "API Machinery", "Hugo", "Docsy", "Metrics", "E2E Tested", "Docker", "Go", "TypeScript"}
+	for _, p := range priority {
+		if stackMap[p] {
+			result = append(result, p)
+			delete(stackMap, p)
+		}
+	}
+
+	var remaining []string
+	for k := range stackMap { remaining = append(remaining, k) }
+	sort.Strings(remaining)
+	result = append(result, remaining...)
+
+	if len(result) == 0 { return []string{"Documentation"} }
+	if len(result) > 5 { return result[:5] }
+	return result
 }
