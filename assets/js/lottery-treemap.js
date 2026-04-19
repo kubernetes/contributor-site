@@ -14,10 +14,8 @@
       lastUpdatedEl.innerText = 'Last updated: ' + new Date(data.repo_data[0].last_updated).toLocaleString();
     }
 
-    // Dynamic Title based on SIGs in data
     const sigNames = data.sigs.map(s => s.name).join(' & ');
 
-    // 3-Level Hierarchy: SIG -> Subproject -> Repo
     const formattedData = data.sigs.map(sig => {
       return {
         name: sig.name,
@@ -28,16 +26,18 @@
               const stats = data.repo_data.find(r => r.repo === repoName);
               if (!stats) return null;
 
-              let color = '#198038'; // Healthy
-              if (stats.lottery_factor <= 2) color = '#da1e28'; // Critical
-              else if (stats.lottery_factor <= 4) color = '#f1c21b'; // Warning
+              let color = '#198038';
+              if (stats.lottery_factor <= 2) color = '#da1e28';
+              else if (stats.lottery_factor <= 4) color = '#f1c21b';
+
+              const contributors = stats.contributors || [];
 
               return {
                 name: repoName,
                 value: stats.total_points,
                 lotteryFactor: stats.lottery_factor,
                 itemStyle: { color: color },
-                contributors: stats.contributors || []
+                contributors: contributors.slice(0, 10)
               };
             }).filter(r => r !== null)
           };
@@ -127,6 +127,7 @@
         const contributors = stats.contributors || [];
         const owners = stats.owners || { approvers: [], reviewers: [] };
         const sigsInCharge = (stats.sigs || []).join(', ') || 'N/A';
+        const subprojects = (stats.subprojects || []).join(', ') || 'N/A';
 
         const topContributors = contributors.slice(0, 10).map(c =>
           `<li><a href="https://github.com/${c.author}" target="_blank" class="text-decoration-none">@${c.author}</a> (${c.points} pts)</li>`
@@ -182,11 +183,19 @@
               </ul>
             </div>
           </div>
-          <div class="mt-3 p-2 bg-light rounded border">
-            <div class="d-flex justify-content-between align-items-center">
-              <span><strong>Lottery Factor:</strong> <span class="badge bg-${stats.lottery_factor <= 2 ? 'danger' : (stats.lottery_factor <= 4 ? 'warning text-dark' : 'success')}">${stats.lottery_factor}</span></span>
-              <span class="small text-muted"><strong>SIG in charge:</strong> ${sigsInCharge}</span>
-            </div>
+          <div class="mt-3 p-3 bg-light rounded border">
+             <div class="row g-2">
+                <div class="col-12">
+                   <div class="d-flex justify-content-between align-items-center mb-2">
+                      <span><strong>Lottery Factor:</strong> <span class="badge bg-${stats.lottery_factor <= 2 ? 'danger' : (stats.lottery_factor <= 4 ? 'warning text-dark' : 'success')}">${stats.lottery_factor}</span></span>
+                      <span class="small text-muted"><strong>Activity Score:</strong> ${stats.total_points}</span>
+                   </div>
+                </div>
+                <div class="col-12 border-top pt-2">
+                   <div class="small text-muted mb-1"><strong>SIG(s):</strong> ${sigsInCharge}</div>
+                   <div class="small text-muted"><strong>Subproject(s):</strong> ${subprojects}</div>
+                </div>
+             </div>
           </div>
         `;
 

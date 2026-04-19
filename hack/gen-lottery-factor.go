@@ -39,7 +39,8 @@ type RepoStats struct {
 	OwnersURL          string         `json:"owners_url"`
 	IssuesURL          string         `json:"issues_url"`
 	GoodFirstIssuesURL string         `json:"good_first_issues_url"`
-	SIGs               []string       `json:"sigs"` // Added to track which SIGs own this repo
+	SIGs               []string       `json:"sigs"`
+	Subprojects        []string       `json:"subprojects"` // Track subprojects that own this repo
 }
 
 type Subproject struct {
@@ -136,7 +137,7 @@ func main() {
 	}
 
 	var sigResults []SIGData
-	repoMap := make(map[string]*RepoStats)
+	repoStatsMap := make(map[string]*RepoStats)
 	var repos []string
 
 	targetSigsMap := make(map[string]bool)
@@ -147,42 +148,49 @@ func main() {
 	for _, sig := range sigsData.Sigs {
 		if targetSigsMap[sig.Dir] {
 			currentSIG := SIGData{Name: sig.Name}
+			// De-duplication map for the current SIG to ensure a repo only appears once in the treemap hierarchy
+			assignedInSIG := make(map[string]bool)
+
 			for _, sp := range sig.Subprojects {
 				var spRepos []string
 				for _, ownerUrl := range sp.Owners {
 					parts := strings.Split(ownerUrl, "/")
 					if len(parts) >= 6 && parts[2] == "raw.githubusercontent.com" {
 						repoName := parts[3] + "/" + parts[4]
-						spRepos = append(spRepos, repoName)
-						if repoMap[repoName] == nil {
-							repoMap[repoName] = &RepoStats{Repo: repoName}
+						
+						// Initialize metadata if repo not seen before
+						if repoStatsMap[repoName] == nil {
+							repoStatsMap[repoName] = &RepoStats{Repo: repoName}
 							repos = append(repos, repoName)
 						}
-						// Append this SIG to the repo metadata
-						alreadyAdded := false
-						for _, s := range repoMap[repoName].SIGs {
-							if s == sig.Name { alreadyAdded = true; break }
-						}
-						if !alreadyAdded {
-							repoMap[repoName].SIGs = append(repoMap[repoName].SIGs, sig.Name)
+
+						// Metadata: Track all SIGs and Subprojects that own this repo
+						repoStatsMap[repoName].SIGs = appendUnique(repoStatsMap[repoName].SIGs, sig.Name)
+						repoStatsMap[repoName].Subprojects = appendUnique(repoStatsMap[repoName].Subprojects, sp.Name)
+
+						// Visualization: Only add to the first subproject that claims it within this SIG
+						if !assignedInSIG[repoName] {
+							spRepos = append(spRepos, repoName)
+							assignedInSIG[repoName] = true
 						}
 					}
 				}
-				currentSIG.Subprojects = append(currentSIG.Subprojects, Subproject{
-					Name:  sp.Name,
-					Repos: spRepos,
-				})
+				if len(spRepos) > 0 {
+					currentSIG.Subprojects = append(currentSIG.Subprojects, Subproject{
+						Name:  sp.Name,
+						Repos: spRepos,
+					})
+				}
 			}
 			sigResults = append(sigResults, currentSIG)
 		}
 	}
 
 	// Add manual additions from config
-	// Create a "Manual Additions" virtual SIG if not present or add to elections
 	for _, ar := range globalConfig.AdditionalRepos {
 		repoName := ar.Repo
-		if repoMap[repoName] == nil {
-			repoMap[repoName] = &RepoStats{Repo: repoName}
+		if repoStatsMap[repoName] == nil {
+			repoStatsMap[repoName] = &RepoStats{Repo: repoName}
 			repos = append(repos, repoName)
 		}
 		
@@ -192,7 +200,7 @@ func main() {
 				subfound := false
 				for j, sp := range s.Subprojects {
 					if sp.Name == ar.Subproject {
-						sigResults[i].Subprojects[j].Repos = append(sigResults[i].Subprojects[j].Repos, repoName)
+						sigResults[i].Subprojects[j].Repos = appendUnique(sigResults[i].Subprojects[j].Repos, repoName)
 						subfound = true; break
 					}
 				}
@@ -217,12 +225,12 @@ func main() {
 	for _, repoName := range repos {
 		fmt.Printf("Processing repository: %s\n", repoName)
 		stats := getRepoStats(repoName, since)
-		// Preserve SIGs found during discovery
-		stats.SIGs = repoMap[repoName].SIGs
+		// Merge discovered metadata
+		stats.SIGs = repoStatsMap[repoName].SIGs
+		stats.Subprojects = repoStatsMap[repoName].Subprojects
 		allRepoData = append(allRepoData, stats)
 	}
 
-	// Sort RepoData oldest-first based on creation date
 	sort.Slice(allRepoData, func(i, j int) bool {
 		return allRepoData[i].CreatedAt < allRepoData[j].CreatedAt
 	})
@@ -241,6 +249,13 @@ func main() {
 	_ = os.MkdirAll(strings.TrimSuffix(outputPath, "lottery_factor.json"), 0755)
 	_ = os.WriteFile(outputPath, file, 0644)
 	fmt.Printf("Successfully generated %s\n", outputPath)
+}
+
+func appendUnique(slice []string, val string) []string {
+	for _, item := range slice {
+		if item == val { return slice }
+	}
+	return append(slice, val)
 }
 
 func parseRepo(repo string) (string, string) {
@@ -438,14 +453,29 @@ func getTechStack(owner, repo, branch string) []string {
 		}
 	}
 
+	// 2. Languages (Ranked by size)
 	langs, _, _ := client.Repositories.ListLanguages(ctx, owner, repo)
-	for l := range langs {
+	type langItem struct {
+		name string
+		size int
+	}
+	var sortedLangs []langItem
+	for l, s := range langs {
 		name := l
 		if l == "Dockerfile" { name = "Docker" }
 		if l == "Shell" { name = "Bash" }
-		stackMap[name] = true
+		sortedLangs = append(sortedLangs, langItem{name, s})
+	}
+	sort.Slice(sortedLangs, func(i, j int) bool {
+		return sortedLangs[i].size > sortedLangs[j].size
+	})
+
+	// Add top 3 languages regardless of priority
+	for i := 0; i < len(sortedLangs) && i < 3; i++ {
+		stackMap[sortedLangs[i].name] = true
 	}
 
+	// 3. Archetype Detection (Dependency Analysis)
 	goMod, _, _, err := client.Repositories.GetContents(ctx, owner, repo, "go.mod", &github.RepositoryContentGetOptions{Ref: branch})
 	if err == nil {
 		content, _ := goMod.GetContent()
@@ -481,7 +511,7 @@ func getTechStack(owner, repo, branch string) []string {
 	}
 
 	var result []string
-	priority := []string{"Operator", "CLI Tool", "API Machinery", "Hugo", "Docsy", "Metrics", "E2E Tested", "Docker", "Go", "TypeScript"}
+	priority := []string{"Operator", "CLI Tool", "API Machinery", "Hugo", "Docsy", "Metrics", "E2E Tested", "Python", "Go", "TypeScript", "Docker"}
 	for _, p := range priority {
 		if stackMap[p] {
 			result = append(result, p)
