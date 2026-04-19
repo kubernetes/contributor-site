@@ -27,12 +27,14 @@
           if (stats.lottery_factor <= 2) color = '#da1e28'; // Red (Critical)
           else if (stats.lottery_factor <= 4) color = '#f1c21b'; // Yellow (Warning)
 
+          const contributors = stats.contributors || [];
+
           return {
             name: repoName,
             value: stats.total_points,
             lotteryFactor: stats.lottery_factor,
             itemStyle: { color: color },
-            contributors: stats.contributors.slice(0, 10)
+            contributors: contributors.slice(0, 10)
           };
         }).filter(r => r !== null)
       };
@@ -48,9 +50,12 @@
         confine: true,
         formatter: function (info) {
           const stats = info.data;
-          if (!stats || !stats.contributors) return info.name;
+          if (!stats) return info.name;
 
-          const displayContribs = stats.contributors.slice(0, 5);
+          const contributors = stats.contributors || [];
+
+          // Limit to top 5 in tooltip for readability
+          const displayContribs = contributors.slice(0, 5);
           const contribList = displayContribs.map(c =>
             `<div style="display:flex; justify-content:space-between; gap: 15px; font-size: 11px;">
               <span>@${c.author}</span>
@@ -68,7 +73,7 @@
             </div>
             <div style="font-size: 11px;">
               <div style="color: #ccc; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.5px;">Top Contributors:</div>
-              ${contribList}
+              ${contribList.length > 0 ? contribList : '<div class="text-muted small">No recent activity</div>'}
               <div style="color: #aaa; font-style: italic; margin-top: 4px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4px;">Click for maintainers & stack</div>
             </div>
           `;
@@ -129,16 +134,18 @@
       const stats = data.repo_data.find(r => r.repo === params.data.name);
       if (stats) {
         const modalBody = document.getElementById('projectInfoBody');
+        const contributors = stats.contributors || [];
+        const owners = stats.owners || { approvers: [], reviewers: [] };
 
-        const topContributors = stats.contributors.slice(0, 10).map(c =>
+        const topContributors = contributors.slice(0, 10).map(c =>
           `<li><a href="https://github.com/${c.author}" target="_blank" class="text-decoration-none">@${c.author}</a> (${c.points} pts)</li>`
-        ).join('');
+        ).join('') || '<li class="text-muted small">No recent activity detected</li>';
 
-        const approvers = (stats.owners.approvers || []).map(a =>
+        const approvers = (owners.approvers || []).map(a =>
           `<a href="https://github.com/${a}" target="_blank" class="badge bg-primary bg-opacity-10 text-primary text-decoration-none me-1 mb-1">@${a}</a>`
         ).join('');
 
-        const reviewers = (stats.owners.reviewers || []).map(r =>
+        const reviewers = (owners.reviewers || []).map(r =>
           `<a href="https://github.com/${r}" target="_blank" class="badge bg-secondary bg-opacity-10 text-secondary text-decoration-none me-1 mb-1">@${r}</a>`
         ).join('');
 
