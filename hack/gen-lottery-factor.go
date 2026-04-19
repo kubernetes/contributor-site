@@ -39,6 +39,7 @@ type RepoStats struct {
 	OwnersURL          string         `json:"owners_url"`
 	IssuesURL          string         `json:"issues_url"`
 	GoodFirstIssuesURL string         `json:"good_first_issues_url"`
+	SIGs               []string       `json:"sigs"` // Added to track which SIGs own this repo
 }
 
 type Subproject struct {
@@ -46,10 +47,14 @@ type Subproject struct {
 	Repos []string `json:"repos"`
 }
 
-type SIGStats struct {
-	SIG         string       `json:"sig"`
+type SIGData struct {
+	Name        string       `json:"name"`
 	Subprojects []Subproject `json:"subprojects"`
-	RepoData    []RepoStats  `json:"repo_data"`
+}
+
+type SIGStats struct {
+	SIGs     []SIGData   `json:"sigs"`
+	RepoData []RepoStats `json:"repo_data"`
 }
 
 type SigsYaml struct {
@@ -130,8 +135,8 @@ func main() {
 		return
 	}
 
-	var subprojects []Subproject
-	repoMap := make(map[string]bool)
+	var sigResults []SIGData
+	repoMap := make(map[string]*RepoStats)
 	var repos []string
 
 	targetSigsMap := make(map[string]bool)
@@ -141,43 +146,79 @@ func main() {
 
 	for _, sig := range sigsData.Sigs {
 		if targetSigsMap[sig.Dir] {
+			currentSIG := SIGData{Name: sig.Name}
 			for _, sp := range sig.Subprojects {
 				var spRepos []string
 				for _, ownerUrl := range sp.Owners {
 					parts := strings.Split(ownerUrl, "/")
 					if len(parts) >= 6 && parts[2] == "raw.githubusercontent.com" {
-						repo := parts[3] + "/" + parts[4]
-						spRepos = append(spRepos, repo)
-						if !repoMap[repo] {
-							repoMap[repo] = true
-							repos = append(repos, repo)
+						repoName := parts[3] + "/" + parts[4]
+						spRepos = append(spRepos, repoName)
+						if repoMap[repoName] == nil {
+							repoMap[repoName] = &RepoStats{Repo: repoName}
+							repos = append(repos, repoName)
+						}
+						// Append this SIG to the repo metadata
+						alreadyAdded := false
+						for _, s := range repoMap[repoName].SIGs {
+							if s == sig.Name { alreadyAdded = true; break }
+						}
+						if !alreadyAdded {
+							repoMap[repoName].SIGs = append(repoMap[repoName].SIGs, sig.Name)
 						}
 					}
 				}
-				subprojects = append(subprojects, Subproject{
+				currentSIG.Subprojects = append(currentSIG.Subprojects, Subproject{
 					Name:  sp.Name,
 					Repos: spRepos,
 				})
 			}
+			sigResults = append(sigResults, currentSIG)
 		}
 	}
 
 	// Add manual additions from config
+	// Create a "Manual Additions" virtual SIG if not present or add to elections
 	for _, ar := range globalConfig.AdditionalRepos {
-		if !repoMap[ar.Repo] {
-			repoMap[ar.Repo] = true
-			repos = append(repos, ar.Repo)
-			subprojects = append(subprojects, Subproject{
-				Name:  ar.Subproject,
-				Repos: []string{ar.Repo},
+		repoName := ar.Repo
+		if repoMap[repoName] == nil {
+			repoMap[repoName] = &RepoStats{Repo: repoName}
+			repos = append(repos, repoName)
+		}
+		
+		found := false
+		for i, s := range sigResults {
+			if strings.Contains(strings.ToLower(s.Name), "contributor experience") {
+				subfound := false
+				for j, sp := range s.Subprojects {
+					if sp.Name == ar.Subproject {
+						sigResults[i].Subprojects[j].Repos = append(sigResults[i].Subprojects[j].Repos, repoName)
+						subfound = true; break
+					}
+				}
+				if !subfound {
+					sigResults[i].Subprojects = append(sigResults[i].Subprojects, Subproject{
+						Name: ar.Subproject,
+						Repos: []string{repoName},
+					})
+				}
+				found = true; break
+			}
+		}
+		if !found {
+			sigResults = append(sigResults, SIGData{
+				Name: "Additional Projects",
+				Subprojects: []Subproject{{Name: ar.Subproject, Repos: []string{repoName}}},
 			})
 		}
 	}
 
 	var allRepoData []RepoStats
-	for _, repo := range repos {
-		fmt.Printf("Processing repository: %s\n", repo)
-		stats := getRepoStats(repo, since)
+	for _, repoName := range repos {
+		fmt.Printf("Processing repository: %s\n", repoName)
+		stats := getRepoStats(repoName, since)
+		// Preserve SIGs found during discovery
+		stats.SIGs = repoMap[repoName].SIGs
 		allRepoData = append(allRepoData, stats)
 	}
 
@@ -187,9 +228,8 @@ func main() {
 	})
 
 	data := SIGStats{
-		SIG:         strings.Join(globalConfig.TargetSigs, ", "),
-		Subprojects: subprojects,
-		RepoData:    allRepoData,
+		SIGs:     sigResults,
+		RepoData: allRepoData,
 	}
 
 	file, _ := json.MarshalIndent(data, "", "  ")
@@ -307,7 +347,6 @@ func getRepoStats(fullRepo string, since time.Time) RepoStats {
 	onboardingUrl := fmt.Sprintf("https://github.com/%s/blob/%s/CONTRIBUTING.md", fullRepo, branch)
 	ownersUrl := fmt.Sprintf("https://github.com/%s/blob/%s/OWNERS", fullRepo, branch)
 
-	// Apply overrides from config
 	if override, ok := globalConfig.Overrides[fullRepo]; ok {
 		if override.OnboardingURL != "" {
 			onboardingUrl = override.OnboardingURL
@@ -392,7 +431,6 @@ func getOwnersMetadata(owner, repo, branch string) Owners {
 func getTechStack(owner, repo, branch string) []string {
 	stackMap := make(map[string]bool)
 
-	// 1. Topics
 	r, _, _ := client.Repositories.Get(ctx, owner, repo)
 	for _, t := range r.Topics {
 		if t != "" && t != "kubernetes" && !strings.Contains(t, "sig-") && !strings.Contains(t, "k8s-") {
@@ -400,7 +438,6 @@ func getTechStack(owner, repo, branch string) []string {
 		}
 	}
 
-	// 2. Languages
 	langs, _, _ := client.Repositories.ListLanguages(ctx, owner, repo)
 	for l := range langs {
 		name := l
@@ -409,7 +446,6 @@ func getTechStack(owner, repo, branch string) []string {
 		stackMap[name] = true
 	}
 
-	// 3. Archetype Detection (Dependency Analysis)
 	goMod, _, _, err := client.Repositories.GetContents(ctx, owner, repo, "go.mod", &github.RepositoryContentGetOptions{Ref: branch})
 	if err == nil {
 		content, _ := goMod.GetContent()
@@ -433,7 +469,6 @@ func getTechStack(owner, repo, branch string) []string {
 		}
 	}
 
-	// 4. Framework Heuristics
 	_, _, _, err = client.Repositories.GetContents(ctx, owner, repo, "hugo.yaml", &github.RepositoryContentGetOptions{Ref: branch})
 	if err == nil { stackMap["Hugo"] = true }
 	

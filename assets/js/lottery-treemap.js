@@ -3,7 +3,6 @@
   if (!chartDom) return;
   const myChart = echarts.init(chartDom);
 
-  // Dynamic injection of the Close button to the modal footer
   const modalFooter = document.getElementById('projectInfoModalFooter');
   if (modalFooter) {
     modalFooter.innerHTML = '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>';
@@ -15,46 +14,49 @@
       lastUpdatedEl.innerText = 'Last updated: ' + new Date(data.repo_data[0].last_updated).toLocaleString();
     }
 
-    const formattedData = data.subprojects.map(sub => {
-      const subData = {
-        name: sub.name,
-        children: sub.repos.map(repoName => {
-          const stats = data.repo_data.find(r => r.repo === repoName);
-          if (!stats) return null;
+    // Dynamic Title based on SIGs in data
+    const sigNames = data.sigs.map(s => s.name).join(' & ');
 
-          // Map Lottery Factor to color (Accessible Palette - IBM Design Language)
-          let color = '#198038'; // Green (Safe)
-          if (stats.lottery_factor <= 2) color = '#da1e28'; // Red (Critical)
-          else if (stats.lottery_factor <= 4) color = '#f1c21b'; // Yellow (Warning)
-
-          const contributors = stats.contributors || [];
-
+    // 3-Level Hierarchy: SIG -> Subproject -> Repo
+    const formattedData = data.sigs.map(sig => {
+      return {
+        name: sig.name,
+        children: sig.subprojects.map(sub => {
           return {
-            name: repoName,
-            value: stats.total_points,
-            lotteryFactor: stats.lottery_factor,
-            itemStyle: { color: color },
-            contributors: contributors.slice(0, 10)
+            name: sub.name,
+            children: sub.repos.map(repoName => {
+              const stats = data.repo_data.find(r => r.repo === repoName);
+              if (!stats) return null;
+
+              let color = '#198038'; // Healthy
+              if (stats.lottery_factor <= 2) color = '#da1e28'; // Critical
+              else if (stats.lottery_factor <= 4) color = '#f1c21b'; // Warning
+
+              return {
+                name: repoName,
+                value: stats.total_points,
+                lotteryFactor: stats.lottery_factor,
+                itemStyle: { color: color },
+                contributors: stats.contributors || []
+              };
+            }).filter(r => r !== null)
           };
-        }).filter(r => r !== null)
+        }).filter(s => s.children.length > 0)
       };
-      return subData;
     });
 
     const option = {
       title: {
-        text: 'SIG ContribEx Community Resilience Treemap',
+        text: `${sigNames} Community Resilience`,
         left: 'center'
       },
       tooltip: {
         confine: true,
         formatter: function (info) {
           const stats = info.data;
-          if (!stats) return info.name;
+          if (!stats || !stats.contributors) return info.name;
 
           const contributors = stats.contributors || [];
-
-          // Limit to top 5 in tooltip for readability
           const displayContribs = contributors.slice(0, 5);
           const contribList = displayContribs.map(c =>
             `<div style="display:flex; justify-content:space-between; gap: 15px; font-size: 11px;">
@@ -84,11 +86,7 @@
           name: 'Lottery Factor',
           type: 'treemap',
           visibleMin: 300,
-          // Fixed: Limit zoom to prevent inaccuracy and unreadability
-          zoomLimit: {
-            min: 1,
-            max: 3
-          },
+          zoomLimit: { min: 1, max: 3 },
           label: {
             show: true,
             formatter: '{b}\n(LF: {c})',
@@ -105,21 +103,13 @@
           },
           levels: [
             {
-              itemStyle: {
-                borderWidth: 0,
-                gapWidth: 5
-              }
+              itemStyle: { borderWidth: 0, gapWidth: 5 }
             },
             {
-              itemStyle: {
-                gapWidth: 1
-              }
+              itemStyle: { gapWidth: 1 }
             },
             {
-              // Removed colorSaturation and borderColorSaturation to fix "Elections" bug
-              itemStyle: {
-                gapWidth: 1
-              }
+              itemStyle: { gapWidth: 1 }
             }
           ],
           data: formattedData
@@ -130,12 +120,13 @@
     myChart.setOption(option);
 
     myChart.on('click', function (params) {
-      if (!params.data || !params.data.name) return;
+      if (!params.data || !params.data.name || !params.data.contributors) return;
       const stats = data.repo_data.find(r => r.repo === params.data.name);
       if (stats) {
         const modalBody = document.getElementById('projectInfoBody');
         const contributors = stats.contributors || [];
         const owners = stats.owners || { approvers: [], reviewers: [] };
+        const sigsInCharge = (stats.sigs || []).join(', ') || 'N/A';
 
         const topContributors = contributors.slice(0, 10).map(c =>
           `<li><a href="https://github.com/${c.author}" target="_blank" class="text-decoration-none">@${c.author}</a> (${c.points} pts)</li>`
@@ -194,7 +185,7 @@
           <div class="mt-3 p-2 bg-light rounded border">
             <div class="d-flex justify-content-between align-items-center">
               <span><strong>Lottery Factor:</strong> <span class="badge bg-${stats.lottery_factor <= 2 ? 'danger' : (stats.lottery_factor <= 4 ? 'warning text-dark' : 'success')}">${stats.lottery_factor}</span></span>
-              <span class="small text-muted"><strong>SIG in charge:</strong> Contributor Experience</span>
+              <span class="small text-muted"><strong>SIG in charge:</strong> ${sigsInCharge}</span>
             </div>
           </div>
         `;
