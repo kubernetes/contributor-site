@@ -26,9 +26,9 @@
               const stats = data.repo_data.find(r => r.repo === repoName);
               if (!stats) return null;
 
-              let color = '#198038';
-              if (stats.lottery_factor <= 2) color = '#da1e28';
-              else if (stats.lottery_factor <= 4) color = '#f1c21b';
+              let color = '#1a9641';
+              if (stats.lottery_factor <= 2) color = '#d7191c';
+              else if (stats.lottery_factor <= 4) color = '#fdae61';
 
               const contributors = stats.contributors || [];
 

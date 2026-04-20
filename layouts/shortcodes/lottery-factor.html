@@ -3,10 +3,6 @@
   <div class="mt-2 text-muted small text-end" id="lastUpdated"></div>
 </div>
 
-<script>
-  window.lotteryData = {{ .Site.Data.lottery_factor | jsonify | safeJS }};
-</script>
-
 <!-- Project Info Modal -->
 <div class="modal fade" id="projectInfoModal" tabindex="-1" aria-labelledby="projectInfoModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">

@@ -23,7 +23,7 @@ Our Go-based ingestion engine analyzes activity from the last 6 months across re
     - <span style="color: #28a745; font-weight: bold;">Green (LF >= 5):</span> Healthy distribution.
 
 ### Take Action
-If you see a project with a low Lottery Factor, it's a great opportunity to get involved!
+If you see a project with a high risk (low Lottery Factor), it's a great opportunity to get involved!
 - Check out the [Good First Issues](https://github.com/kubernetes/community/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3A%22good+first+issue%22).
 - Read our [SIG Onboarding Guides](/docs/onboarding/).
 - Join the `#sig-contribex` channel on Slack to learn how you can help.
