@@ -72,9 +72,14 @@
               {{- end -}}
             </td>
             <td>
-              <a href=" https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}">
-                {{ strings.TrimPrefix "sig-" $data.owningSig | humanize | title }}
-              </a>
+              {{- $sigSlug := strings.TrimPrefix "sig-" $data.owningSig -}}
+              {{- with site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title }}</a>
+              {{- else -}}
+                <a href="https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}">
+                  SIG {{ $sigSlug | humanize | title }}
+                </a>
+              {{- end -}}
             </td>
             <td>
               {{ range $index, $author := $data.authors }}
