@@ -129,13 +129,32 @@
                     {{ if .leadership }}
                     <div class="mb-3">
                       <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
-                      <div class="d-flex flex-wrap gap-1">
-                        {{ range .leadership.chairs }}
-                        <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
-                          <span class="small">@{{ .github }}</span>
-                        </a>
-                        {{ end }}
+                      
+                      {{ if .leadership.chairs }}
+                      <div class="mb-2">
+                        <div class="small fw-semibold text-dark mb-1">Chairs</div>
+                        <div class="d-flex flex-wrap gap-1">
+                          {{ range .leadership.chairs }}
+                          <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
+                            <span class="small">@{{ .github }}</span>
+                          </a>
+                          {{ end }}
+                        </div>
                       </div>
+                      {{ end }}
+
+                      {{ if .leadership.tech_leads }}
+                      <div>
+                        <div class="small fw-semibold text-dark mb-1">Tech Leads</div>
+                        <div class="d-flex flex-wrap gap-1">
+                          {{ range .leadership.tech_leads }}
+                          <a href="https://github.com/{{ .github }}" class="badge bg-secondary bg-opacity-10 text-secondary border-0 text-decoration-none py-1 px-2">
+                            <span class="small">@{{ .github }}</span>
+                          </a>
+                          {{ end }}
+                        </div>
+                      </div>
+                      {{ end }}
                     </div>
                     {{ end }}
 
@@ -225,6 +244,38 @@
                   
                   <!-- Collapsible Details -->
                   <div class="collapse mt-auto" id="collapse-{{ .dir | urlize }}">
+                    {{ if .leadership }}
+                    <div class="mb-3">
+                      <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
+                      
+                      {{ if .leadership.chairs }}
+                      <div class="mb-2">
+                        <div class="small fw-semibold text-dark mb-1">Chairs</div>
+                        <div class="d-flex flex-wrap gap-1">
+                          {{ range .leadership.chairs }}
+                          <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
+                            <span class="small">@{{ .github }}</span>
+                          </a>
+                          {{ end }}
+                        </div>
+                      </div>
+                      {{ end }}
+
+                      {{ if .leadership.tech_leads }}
+                      <div>
+                        <div class="small fw-semibold text-dark mb-1">Tech Leads</div>
+                        <div class="d-flex flex-wrap gap-1">
+                          {{ range .leadership.tech_leads }}
+                          <a href="https://github.com/{{ .github }}" class="badge bg-secondary bg-opacity-10 text-secondary border-0 text-decoration-none py-1 px-2">
+                            <span class="small">@{{ .github }}</span>
+                          </a>
+                          {{ end }}
+                        </div>
+                      </div>
+                      {{ end }}
+                    </div>
+                    {{ end }}
+
                     {{ if gt (len $allMeetings) 0 }}
                     <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
                       <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
@@ -332,13 +383,32 @@
                     {{ if .leadership }}
                     <div class="mb-3">
                       <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
-                      <div class="d-flex flex-wrap gap-1">
-                        {{ range .leadership.chairs }}
-                        <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
-                          <span class="small">@{{ .github }}</span>
-                        </a>
-                        {{ end }}
+                      
+                      {{ if .leadership.chairs }}
+                      <div class="mb-2">
+                        <div class="small fw-semibold text-dark mb-1">Chairs</div>
+                        <div class="d-flex flex-wrap gap-1">
+                          {{ range .leadership.chairs }}
+                          <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
+                            <span class="small">@{{ .github }}</span>
+                          </a>
+                          {{ end }}
+                        </div>
                       </div>
+                      {{ end }}
+
+                      {{ if .leadership.tech_leads }}
+                      <div>
+                        <div class="small fw-semibold text-dark mb-1">Tech Leads</div>
+                        <div class="d-flex flex-wrap gap-1">
+                          {{ range .leadership.tech_leads }}
+                          <a href="https://github.com/{{ .github }}" class="badge bg-secondary bg-opacity-10 text-secondary border-0 text-decoration-none py-1 px-2">
+                            <span class="small">@{{ .github }}</span>
+                          </a>
+                          {{ end }}
+                        </div>
+                      </div>
+                      {{ end }}
                     </div>
                     {{ end }}
                   </div>
