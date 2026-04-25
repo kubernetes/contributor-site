@@ -30,6 +30,10 @@ function renderCalendar(apiKey) {
       events: {
         googleCalendarId: 'calendar@kubernetes.io'
       },
+      eventSourceFailure: function(errorObj) {
+        console.error('Failed to fetch Google Calendar events:', errorObj);
+        calendarEl.innerHTML = '<div class="alert alert-warning">Community Calendar is temporarily unavailable or access is restricted in this environment.</div>';
+      },
       themeSystem: 'bootstrap',
       initialView: 'listView',
       timezone: 'local',
