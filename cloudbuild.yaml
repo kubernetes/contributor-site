@@ -8,7 +8,7 @@ options:
   substitution_option: ALLOW_LOOSE
 steps:
     # It's fine to bump the tag to a recent version, as needed
-  - name: "gcr.io/k8s-staging-test-infra/gcb-docker-gcloud:v20250513-9264efb079"
+  - name: "gcr.io/k8s-staging-test-infra/gcb-docker-gcloud:v20260205-38cfa9523f"
     entrypoint: 'bash'
     env:
       - DOCKER_CLI_EXPERIMENTAL=enabled
