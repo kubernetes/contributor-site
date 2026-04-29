@@ -20,23 +20,23 @@ releases, and where storage in Kubernetes is headed as AI workloads become the n
 
 **Could you introduce yourself and share your role(s) within SIG Storage?**
 
-My name is Xing Yang, a software engineer at VMware by Broadcom. I'm a co-chair in SIG Storage,
-alongside another co-chair Saad Ali from Google. There are also two Tech Leads in SIG Storage:
-Michelle Au from Google and Jan Šafránek from Red Hat.
+My name is [Xing Yang](https://github.com/xing-yang), a software engineer at VMware by Broadcom. I'm a co-chair in SIG Storage,
+alongside another co-chair [Saad Ali](https://github.com/saad-ali) from Google. There are also two Tech Leads in SIG Storage:
+[Michelle Au](https://github.com/msau42) from Google and [Jan Šafránek](https://github.com/jsafrane) from Red Hat.
 
 **What first drew you to storage in Kubernetes, and how did you start contributing?**
 
 I have always been working in the storage domain, so SIG Storage was a natural place for me to get
-started when I began to learn Kubernetes. I started attending SIG Storage meetings, trying to figure
-out what I could do to help. This was before the first Container Storage Interface (CSI) release —
+started when I began to learn Kubernetes. I started attending [SIG Storage meetings](https://github.com/kubernetes/community/blob/main/sig-storage/README.md#meetings), trying to figure
+out what I could do to help. This was before the first [Container Storage Interface](https://github.com/container-storage-interface/spec/blob/master/spec.md) (CSI) release —
 lots of things were still evolving. It was a very exciting time.
 
 **What subprojects or areas do you actively maintain or review today?**
 
 I'm a maintainer in Kubernetes CSI. There are multiple CSI sidecars — such as `csi-provisioner`,
 `csi-attacher`, `csi-resizer`, and `csi-snapshotter` — that we need to release following every
-Kubernetes release. I'm also a co-chair for a Data Protection Working Group co-sponsored by SIG
-Storage and SIG Apps. Several features have come out of that WG aimed at filling gaps in data
+Kubernetes release. I'm also a co-chair for a [Data Protection Working Group](https://github.com/kubernetes/community/blob/main/wg-data-protection/README.md) co-sponsored by SIG
+Storage and [SIG Apps](https://github.com/kubernetes/community/tree/main/sig-apps). Several features have come out of that WG aimed at filling gaps in data
 protection support within Kubernetes. One is [Volume Group
 Snapshot](https://kubernetes.io/docs/concepts/storage/volume-group-snapshots/), which provides
 crash-consistent group snapshots for multiple volumes used by an application. [Changed Block
@@ -48,24 +48,24 @@ from the DP WG designed to support efficient backups.
 **For folks who are new: what is SIG Storage, in your own words? What problems in Kubernetes are
 you trying to solve?**
 
-SIG Storage is a Special Interest Group focused on how to provide storage to containers running in
+SIG Storage is a [Special Interest Group](https://github.com/kubernetes/community/blob/main/governance.md) focused on how to provide storage to containers running in
 your Kubernetes cluster. We define standard interfaces so that a storage vendor can write a driver
 and have its underlying storage system consumed by containers in Kubernetes.
 
-**Why does Kubernetes need a dedicated storage SIG — what makes storage hard in a distributed
+**Why does Kubernetes need a dedicated storage SIG? What makes storage hard in a distributed
 system?**
 
 When Kubernetes was first introduced, it was meant for stateless workloads only. Container
 applications were regarded as ephemeral and therefore did not need to persist data. However, that
 changed drastically. Stateful workloads started running in Kubernetes, and we needed a dedicated
-SIG to tackle the associated storage challenges. PersistentVolumeClaims, PersistentVolumes, and
-StorageClasses were all introduced to provision data volumes for applications running in Kubernetes.
+SIG to tackle the associated storage challenges. `PersistentVolumeClaims`, `PersistentVolumes`, and
+`StorageClasses` were all introduced to provision data volumes for applications running in Kubernetes.
 
 **How did SIG Storage originally form, and how has its mission changed over time?**
 
 SIG Storage was formed to address the challenges of handling persistent data within Kubernetes.
-Initially, PersistentVolumes were implemented as in-tree plugins, and the SIG managed those plugins
-while developing core storage primitives like PersistentVolumes and PersistentVolumeClaims.
+Initially, `PersistentVolumes` were implemented as in-tree plugins, and the SIG managed those plugins
+while developing core storage primitives like `PersistentVolumes` and `PersistentVolumeClaims`.
 
 Container Storage Interface (CSI) was introduced later and played a crucial role in simplifying
 storage integration, enabling third-party storage providers to develop and maintain their own
@@ -73,28 +73,27 @@ out-of-tree plugins without modifying Kubernetes core code.
 
 With basic integration addressed by CSI, the SIG's mission expanded to include advanced storage
 features that leverage the new interface. The SIG has also expanded its scope to support object
-storage through the Container Object Storage Interface (COSI).
+storage through the [Container Object Storage Interface](https://github.com/kubernetes-sigs/container-object-storage-interface) (COSI).
 
-## Current Work and Roadmap
+## Current work and roadmap
 
 **What are the top features SIG Storage is actively working on right now?**
 
 The Data Protection WG has been working on a couple of exciting features:
 
 - **VolumeGroupSnapshot** is a Kubernetes feature enabling a crash-consistent, point-in-time
-  snapshot of multiple PersistentVolumes simultaneously. This ensures data integrity for
+  snapshot of multiple `PersistentVolumes` simultaneously. This ensures data integrity for
   applications — like databases — that rely on multiple volumes by capturing all volumes in the
-  group atomically, at the exact same point in time. We are targeting GA in the Kubernetes 1.36
-  release.
+  group atomically, at the exact same point in time. It just moved to GA in Kubernetes v1.36.
 
 - **CSI Changed Block Tracking (CBT)** enables efficient, incremental backups. By allowing storage
   systems to report only the blocks that have changed since the last snapshot, it significantly
-  reduces the amount of data that needs to be transferred. We are targeting Beta in Kubernetes 1.36.
+  reduces the amount of data that needs to be transferred. It just moved to Beta in Kubernetes v1.36.
 
 Another feature worth highlighting is **Container Object Storage Interface (COSI)**. COSI provides
 a standard interface for provisioning and consuming object storage buckets in Kubernetes —
 standardizing object storage for containerized applications much like CSI did for block and file
-storage. COSI is now transitioning to v1alpha2, with plans for promotion to Beta in a future
+storage. COSI is now transitioning to `v1alpha2`, with plans for promotion to Beta in a future
 release.
 
 **What recent work from SIG Storage do you consider a "win" for users?**
@@ -106,14 +105,13 @@ operations. Now, users can dynamically tune storage properties such as IOPS or t
 through the Kubernetes API — scaling up for peak loads or down to optimize costs — without external
 processes or downtime.
 
-VolumeAttributesClass enables dynamic modification of storage characteristics without recreating
+`VolumeAttributesClass` enables dynamic modification of storage characteristics without recreating
 the volume. This completes the picture by allowing users to tune both capacity and other storage
 properties dynamically, just as they can now tune both CPU and memory for compute.
 
 **Looking ahead one or two releases, what's on the roadmap that people should watch for?**
 
-I'd like to draw attention to the [Volume Health
-feature](https://github.com/kubernetes/enhancements/issues/1432). This feature is designed to offer
+I'd like to draw attention to the [Volume Health](https://github.com/kubernetes/enhancements/issues/1432) feature. This feature is designed to offer
 critical visibility into the operational status and integrity of persistent volumes. By enabling
 storage drivers and the Kubernetes control plane to report issues, it allows for proactive
 monitoring and identification of volume-related problems.
@@ -131,7 +129,7 @@ Affinity](https://github.com/kubernetes/enhancements/issues/4762), which was int
 Kubernetes v1.35. Use cases include migrating volumes from zonal to regional storage or migrating
 from one disk type to another.
 
-Another topic is **volume replication**. It was raised at KubeCon Atlanta and has been discussed
+Another topic is **volume replication**. It was raised at [KubeCon Atlanta](https://www.cncf.io/reports/kubecon-cloudnativecon-north-america-2025/) and has been discussed
 in the Data Protection WG. Community members interested in this topic are encouraged to join the DP
 WG meetings.
 
@@ -196,6 +194,6 @@ meetings](https://github.com/kubernetes/community/tree/master/sig-storage#meetin
 find the SIG on Slack at
 [#sig-storage](https://kubernetes.slack.com/messages/sig-storage).
 
-- [SIG Storage Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
+- [SIG Storage Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-storage)
 - [SIG Storage on Slack](https://kubernetes.slack.com/messages/sig-storage)
 - [Data Protection WG](https://github.com/kubernetes/community/blob/master/wg-data-protection/README.md)
