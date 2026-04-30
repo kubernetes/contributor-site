@@ -1,8 +1,16 @@
 {{- $kepDataSourceUrl := "https://storage.googleapis.com/k8s-keps/keps.json" -}}
+{{- $rawBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/" -}}
 {{- $kepData := slice -}}
 
+{{/* Global Options for GetRemote */}}
+{{- $globalOpts := dict -}}
+{{- with os.Getenv "HUGO_GITHUB_TOKEN" -}}
+  {{- $globalOpts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) -}}
+{{- end -}}
+
 {{/* Fetch remote KEP data */}}
-{{- with resources.GetRemote $kepDataSourceUrl -}}
+{{- $kepDataOpts := merge $globalOpts (dict "key" "keps-json-data") -}}
+{{- with resources.GetRemote $kepDataSourceUrl $kepDataOpts -}}
   {{- with .Err -}}
     {{- if eq hugo.Environment "production" -}}
       {{- errorf "Unable to load KEP data: %s" . -}}
@@ -55,6 +63,51 @@
       "toc_hide" true
     -}}
 
+    {{/* Fetch README Content */}}
+    {{- $readmeUrl := printf "%s%s/%s/README.md" $rawBaseUrl $kep.owningSig $kep.name -}}
+    {{- $readmeContent := "" -}}
+    {{- $readmeOpts := merge $globalOpts (dict "key" (printf "kep-readme-%s" $kep.kepNumber)) -}}
+    
+    {{- $resource := resources.GetRemote $readmeUrl $readmeOpts -}}
+    
+    {{- /* Fallback to README.MD if README.md fails or is nil */ -}}
+    {{- $needsFallback := false -}}
+    {{- if not $resource -}}
+      {{- $needsFallback = true -}}
+    {{- else if $resource.Err -}}
+      {{- $needsFallback = true -}}
+    {{- end -}}
+
+    {{- if $needsFallback -}}
+      {{- $readmeUrlUpper := printf "%s%s/%s/README.MD" $rawBaseUrl $kep.owningSig $kep.name -}}
+      {{- $readmeOptsUpper := merge $globalOpts (dict "key" (printf "kep-readme-%s-upper" $kep.kepNumber)) -}}
+      {{- $resource = resources.GetRemote $readmeUrlUpper $readmeOptsUpper -}}
+    {{- end -}}
+
+    {{- if $resource -}}
+      {{- if $resource.Err -}}
+        {{- warnf "Unable to load README for KEP %s (tried .md and .MD): %s" $kep.kepNumber $resource.Err -}}
+      {{- else -}}
+        {{- /* Fix common markdown link errors in KEP READMEs to avoid build failures */ -}}
+        {{- $readmeContent = replace $resource.Content "]((http" "](http" -}}
+        {{- $readmeContent = replace $readmeContent "/))" "/)" -}}
+        {{- $readmeContent = replace $readmeContent "((http" "(http" -}}
+        
+        {{- /* Fix relative image and link paths to point to GitHub */ -}}
+        {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/" -}}
+        {{- $kepDirUrl := printf "%skeps/%s/%s/" $repoBaseUrl $kep.owningSig $kep.name -}}
+        
+        {{- /* 1. Fix absolute-looking paths (starting with /) */ -}}
+        {{- $readmeContent = replaceRE `!\[(.*?)\]\(/(.*?)\)` (printf "![${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
+        {{- $readmeContent = replaceRE `\[(.*?)\]\(/(.*?)\)` (printf "[${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
+        
+        {{- /* 2. Fix relative paths (not starting with http, #, or / and not containing :) */ -}}
+        {{- $readmeContent = replaceRE `!\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "![${1}](%s${2})" $kepDirUrl) $readmeContent -}}
+        {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
+        {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
+      {{- end -}}
+    {{- end -}}
+
     {{/* Build page path: /resources/keps/{kepNumber}/ */}}
     {{- $pagePath := $kep.kepNumber -}}
 
@@ -65,6 +118,10 @@
       "kind" "page"
       "type" "keps"
       "params" $params
+      "content" (dict
+        "mediaType" "text/markdown"
+        "value" $readmeContent
+      )
     -}}
 
     {{- $.AddPage $page -}}

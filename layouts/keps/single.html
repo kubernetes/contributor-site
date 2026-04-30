@@ -2,179 +2,156 @@
 <div class="td-content kep-page">
   <h1>KEP-{{ .Params.kepNumber }}: {{ .Title }}</h1>
 
-  {{/* Stage badge */}}
-  {{ with .Params.stage }}
-  <div class="kep-stage-badge kep-stage-{{ . }}">
-    <span class="badge">{{ . | upper }}</span>
-  </div>
-  {{ end }}
-
-  {{/* Status info */}}
-  {{ with .Params.status }}
-  <p class="kep-status"><strong>Status:</strong> {{ . | humanize | title }}</p>
-  {{ end }}
-
-  {{/* External links section */}}
-  <div class="kep-links mt-4">
-    <h2 id="links">Links</h2>
-    <ul>
-      <li>
-        <a href="https://kep.k8s.io/{{ .Params.kepNumber }}" target="_blank" rel="noopener">
-          Enhancement Issue #{{ .Params.kepNumber }}
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{ .Params.owningSig }}/{{ .Params.name }}" target="_blank" rel="noopener">
-          KEP Documentation
-        </a>
-      </li>
-    </ul>
-  </div>
-
-  {{/* SIG information */}}
-  <div class="kep-sigs mt-4">
-    <h2 id="sigs">SIGs</h2>
-      <p class="kep-sigs-owner">Owning SIG:</p>
-      {{- $owningSigSlug := strings.TrimPrefix "sig-" .Params.owningSig -}}
-      {{- with .Site.GetPage (printf "community/community-groups/sigs/%s" $owningSigSlug) -}}
-        <a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title }}</a>
-      {{- else -}}
-        <a href="https://github.com/kubernetes/community/tree/master/{{ $.Params.owningSig }}">
-          SIG {{ $owningSigSlug | humanize | title }}
-        </a>
-      {{- end -}}
-
-    {{ with .Params.participatingSigs }}
-    <p>
-      <strong>Participating SIGs:</strong>
-      {{ range $i, $sig := . }}
-        {{- if $i }}, {{ end -}}
-        {{- $sigSlug := strings.TrimPrefix "sig-" $sig -}}
-        {{- with $.Site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
-          <a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title }}</a>
-        {{- else -}}
-          <a href="https://github.com/kubernetes/community/tree/master/{{ $sig }}">
-            SIG {{ $sigSlug | humanize | title }}
-          </a>
-        {{- end -}}
-      {{ end }}
-    </p>
-    {{ end }}
-  </div>
-
-  {{/* Milestone information */}}
-  {{ with .Params.milestone }}
-  <div class="kep-milestones mt-4">
-    <h2 id="milestones">Milestones</h2>
-    <table class="table table-sm">
-      <tbody>
-        {{ with .alpha }}<tr><td>Alpha</td><td>{{ . }}</td></tr>{{ end }}
-        {{ with .beta }}<tr><td>Beta</td><td>{{ . }}</td></tr>{{ end }}
-        {{ with .stable }}<tr><td>Stable</td><td>{{ . }}</td></tr>{{ end }}
-        {{ with .deprecated }}<tr><td>Deprecated</td><td>{{ . }}</td></tr>{{ end }}
-      </tbody>
-    </table>
-  </div>
-  {{ end }}
-
-  {{/* Feature gates */}}
-  {{ with .Params.featureGates }}
-  <div class="kep-feature-gates mt-4">
-    <h2 id="feature-gates">Feature Gates</h2>
-    <p>This enhancement was designed with opt-in or opt-out at the feature level;
-       there are <a href="https://kubernetes.io/docs/reference/command-line-tools-reference/feature-gates/">feature gates</a> associated with it.</p>
-    <table class="table table-sm">
-      <caption>Feature gates for this KEP</caption>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Components</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{ range . }}
-        <tr>
-          <td><code>{{ .name }}</code></td>
-          <td>
-            {{ range $i, $comp := .components }}
-              {{- if $i }}, {{ end -}}
-              <code>{{ $comp }}</code>
+  {{/* Technical Editorial Metadata Banner */}}
+  <div class="kep-banner-container mb-5">
+    <div class="kep-banner-grid">
+      
+      {{/* Column 1: Implementation & History */}}
+      <div class="kep-banner-col">
+        <div class="kep-banner-label">Implementation History</div>
+        
+        <div class="kep-status-group mb-4">
+          <div class="d-flex flex-wrap gap-2">
+            {{ with .Params.stage }}
+            <span class="kep-badge-refined kep-stage-{{ . }}">{{ . | upper }}</span>
             {{ end }}
-          </td>
-        </tr>
+            {{ with .Params.status }}
+            <span class="kep-badge-refined kep-status-generic">{{ . | humanize | title }}</span>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="kep-data-grid mb-4">
+          {{ with .Params.creationDate }}
+          <div class="kep-data-row">
+            <span class="kep-data-label">Created</span>
+            <span class="kep-data-value">{{ . }}</span>
+          </div>
+          {{ end }}
+          {{ with .Params.lastUpdated }}
+          <div class="kep-data-row">
+            <span class="kep-data-label">Updated</span>
+            <span class="kep-data-value">{{ . }}</span>
+          </div>
+          {{ end }}
+          {{ with .Params.latestMilestone }}
+          <div class="kep-data-row">
+            <span class="kep-data-label">Latest</span>
+            <span class="kep-data-value">{{ . }}</span>
+          </div>
+          {{ end }}
+        </div>
+
+        {{ with .Params.milestone }}
+        {{ if or .alpha .beta .stable .deprecated }}
+        <div class="kep-milestones-refined pt-3 border-top">
+          <div class="kep-banner-sublabel">Milestones</div>
+          <div class="kep-data-grid">
+            {{ with .alpha }}
+            <div class="kep-data-row">
+              <span class="kep-data-label"><span class="dot alpha"></span> Alpha</span>
+              <span class="kep-data-value"><code>{{ . }}</code></span>
+            </div>
+            {{ end }}
+            {{ with .beta }}
+            <div class="kep-data-row">
+              <span class="kep-data-label"><span class="dot beta"></span> Beta</span>
+              <span class="kep-data-value"><code>{{ . }}</code></span>
+            </div>
+            {{ end }}
+            {{ with .stable }}
+            <div class="kep-data-row">
+              <span class="kep-data-label"><span class="dot stable"></span> Stable</span>
+              <span class="kep-data-value"><code>{{ . }}</code></span>
+            </div>
+            {{ end }}
+            {{ with .deprecated }}
+            <div class="kep-data-row">
+              <span class="kep-data-label"><span class="dot deprecated"></span> Depr.</span>
+              <span class="kep-data-value"><code>{{ . }}</code></span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
         {{ end }}
-      </tbody>
-    </table>
+        {{ end }}
+
+        {{ with .Params.seeAlso }}
+        <div class="kep-related-refined pt-3 border-top mt-3">
+          <div class="kep-banner-sublabel">Related Enhancements</div>
+          <ul class="kep-link-list">
+            {{ range . }}
+            <li>
+              {{- if and (strings.HasPrefix . "http") (not (strings.Contains . "[")) -}}
+                <a href="{{ . }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> {{ . }}</a>
+              {{- else if and (strings.HasPrefix . "/") (not (strings.Contains . "[")) -}}
+                <a href="https://github.com/kubernetes/enhancements/tree/master{{ . }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> {{ . }}</a>
+              {{- else -}}
+                {{ . | markdownify }}
+              {{- end -}}
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </div>
+
+      {{/* Column 2: Ownership & People */}}
+      <div class="kep-banner-col border-start-refined">
+        <div class="kep-banner-label">Ownership</div>
+        
+        <div class="kep-sig-section mb-4">
+          <div class="kep-banner-sublabel">Owning SIG</div>
+          {{- $owningSigSlug := strings.TrimPrefix "sig-" .Params.owningSig -}}
+          {{- with .Site.GetPage (printf "community/community-groups/sigs/%s" $owningSigSlug) -}}
+            <a href="{{ .RelPermalink }}" class="kep-main-link">{{ .LinkTitle | default .Title }}</a>
+          {{- else -}}
+            <a href="https://github.com/kubernetes/community/tree/master/{{ $.Params.owningSig }}" class="kep-main-link">
+              SIG {{ $owningSigSlug | humanize | title }}
+            </a>
+          {{- end -}}
+        </div>
+
+        {{ with .Params.participatingSigs }}
+        <div class="kep-sig-section mb-4 pt-3 border-top">
+          <div class="kep-banner-sublabel">Participating SIGs</div>
+          <div class="d-flex flex-wrap gap-2">
+            {{ range $i, $sig := . }}
+              {{- $sigSlug := strings.TrimPrefix "sig-" $sig -}}
+              {{- with $.Site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
+                <a href="{{ .RelPermalink }}" class="kep-tag-link">{{ .LinkTitle | default .Title }}</a>
+              {{- else -}}
+                <a href="https://github.com/kubernetes/community/tree/master/{{ $sig }}" class="kep-tag-link">
+                  {{ $sigSlug | humanize | title }}
+                </a>
+              {{- end -}}
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+        {{ with .Params.authors }}
+        <div class="kep-people-section pt-3 border-top">
+          <div class="kep-banner-sublabel">Primary Authors</div>
+          <div class="kep-people-grid">
+            {{ range . }}
+            <a href="https://github.com/{{ trim . "@" }}" target="_blank" rel="noopener" class="kep-person-link">
+              <i class="fab fa-github"></i> {{ . }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
   </div>
-  {{ end }}
 
-  {{/* Authors and contributors */}}
-  <div class="kep-people mt-4">
-    <h2 id="people">People</h2>
-
-    {{ with .Params.authors }}
-    <p>
-      <strong>Authors:</strong>
-      {{ range $i, $author := . }}
-        {{- if $i }}, {{ end -}}
-        <a href="https://github.com/{{ trim $author "@" }}">{{ $author }}</a>
-      {{ end }}
-    </p>
-    {{ end }}
-
-    {{ with .Params.reviewers }}
-    <p>
-      <strong>Reviewers:</strong>
-      {{ range $i, $reviewer := . }}
-        {{- if $i }}, {{ end -}}
-        <a href="https://github.com/{{ trim $reviewer "@" }}">{{ $reviewer }}</a>
-      {{ end }}
-    </p>
-    {{ end }}
-
-    {{ with .Params.approvers }}
-    <p>
-      <strong>Approvers:</strong>
-      {{ range $i, $approver := . }}
-        {{- if $i }}, {{ end -}}
-        <a href="https://github.com/{{ trim $approver "@" }}">{{ $approver }}</a>
-      {{ end }}
-    </p>
-    {{ end }}
-  </div>
-
-  {{/* Dates */}}
-  <div class="kep-dates mt-4">
-    <h2 id="timeline">Timeline</h2>
-    {{ with .Params.creationDate }}
-    <p><strong>Created:</strong> <time datetime="{{ . }}">{{ . }}</time></p>
-    {{ end }}
-    {{ with .Params.lastUpdated }}
-    <p><strong>Last Updated:</strong> <time datetime="{{ . }}">{{ . }}</time></p>
-    {{ end }}
-    {{ with $.Params.latestMilestone }}
-    <p><strong>Latest Milestone:</strong> {{ . }}</p>
-    {{ end }}
-  </div>
-
-  {{/* See Also */}}
-  {{ with .Params.seeAlso }}
-  <div class="kep-see-also mt-4">
-    <h2 id="related-keps">Related KEPs</h2>
-    <ul>
-      {{ range . }}
-      <li>{{ . }}</li>
-      {{ end }}
-    </ul>
-  </div>
-  {{ end }}
-
-  {{/* Manual content placeholder - for markdown overrides */}}
+  {{/* Main content (README) */}}
   {{ if .Content }}
-  <div class="kep-custom-content mt-4">
+  <div class="kep-content mt-4">
     {{ .Content }}
   </div>
   {{ end }}
-
 </div>
 {{ end }}

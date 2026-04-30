@@ -28,34 +28,234 @@ body.td-home div.lead p {
 
 /* KEP page styles */
 .kep-page {
-  .kep-stage-badge {
-    margin-bottom: 1rem;
+  padding: 1rem 0;
 
-    .badge {
-      font-size: 0.9rem;
-      padding: 0.5em 1em;
-      border-radius: 4px;
+  .kep-banner-container {
+    background-color: #fff;
+    border: 1px solid #e0e4e8;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  .kep-banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    @media (max-width: 991px) {
+      grid-template-columns: 1fr;
     }
   }
 
-  .kep-stage-alpha .badge {
-    background-color: #ffc107;
-    color: #000;
+  .kep-banner-col {
+    padding: 2rem;
+    position: relative;
+
+    &.border-start-refined {
+      border-left: 1px solid #e0e4e8;
+      
+      @media (max-width: 991px) {
+        border-left: none;
+        border-top: 1px solid #e0e4e8;
+      }
+    }
   }
 
-  .kep-stage-beta .badge {
-    background-color: #17a2b8;
-    color: #fff;
+  .kep-banner-label {
+    font-family: var(--bs-font-monospace);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #8a94a6;
+    margin-bottom: 2rem;
+    display: block;
+    font-weight: 600;
   }
 
-  .kep-stage-stable .badge {
-    background-color: #28a745;
-    color: #fff;
+  .kep-banner-sublabel {
+    font-family: var(--bs-font-monospace);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a0aec0;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
   }
 
-  .kep-stage-deprecated .badge {
-    background-color: #6c757d;
-    color: #fff;
+  /* Refined Badges */
+  .kep-badge-refined {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+
+    &.kep-stage-alpha {
+      background-color: #fff8e1;
+      color: #b45309;
+      border: 1px solid #fef3c7;
+    }
+
+    &.kep-stage-beta {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    &.kep-stage-stable {
+      background-color: #ecfdf5;
+      color: #15803d;
+      border: 1px solid #d1fae5;
+    }
+
+    &.kep-stage-deprecated {
+      background-color: #f3f4f6;
+      color: #4b5563;
+      border: 1px solid #e5e7eb;
+    }
+
+    &.kep-status-generic {
+      background-color: #f8fafc;
+      color: #475569;
+      border: 1px solid #e2e8f0;
+    }
+  }
+
+  /* Data Grid for Timeline/Milestones */
+  .kep-data-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .kep-data-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0.25rem 0;
+
+    .kep-data-label {
+      color: #64748b;
+      display: flex;
+      align-items: center;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 8px;
+        display: inline-block;
+
+        &.alpha { background-color: #fbbf24; box-shadow: 0 0 8px rgba(251, 191, 36, 0.4); }
+        &.beta { background-color: #38bdf8; box-shadow: 0 0 8px rgba(56, 189, 248, 0.4); }
+        &.stable { background-color: #34d399; box-shadow: 0 0 8px rgba(52, 211, 153, 0.4); }
+        &.deprecated { background-color: #94a3b8; }
+      }
+    }
+
+    .kep-data-value {
+      font-weight: 500;
+      color: #1e293b;
+      
+      code {
+        background: #f1f5f9;
+        padding: 0.1rem 0.4rem;
+        border-radius: 3px;
+        color: #475569;
+      }
+    }
+  }
+
+  /* Ownership Links */
+  .kep-main-link {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--bs-primary);
+    }
+  }
+
+  .kep-tag-link {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background-color: #64748b;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #475569;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+  }
+
+  .kep-people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .kep-person-link {
+    font-size: 0.85rem;
+    color: #475569;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+
+    i { color: #94a3b8; }
+
+    &:hover {
+      color: var(--bs-primary);
+      transform: translateX(4px);
+      i { color: var(--bs-primary); }
+    }
+  }
+
+  .kep-link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      
+      a {
+        font-size: 0.85rem;
+        color: #334155;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+
+        i { 
+          font-size: 0.7rem;
+          color: #94a3b8; 
+          line-height: 1;
+        }
+
+        &:hover {
+          color: var(--bs-primary);
+          transform: translateX(4px);
+          i { color: var(--bs-primary); }
+        }
+
+        strong { font-weight: 500; }
+      }
+    }
   }
 
   h2 {
@@ -65,13 +265,131 @@ body.td-home div.lead p {
     margin-top: 1.5rem;
   }
 
-  .kep-sigs-owner {
-    font-weight: bold;
-    margin-bottom: 0.25rem;
+  .kep-content {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+
+    // Hide duplicate KEP title from README if present
+    h1:first-of-type {
+      display: none;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #1a1a1a;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      color: #3a3a3a;
+    }
+
+    // Ensure images don't overflow
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 2rem 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    // Handle tables in markdown
+    table {
+      width: 100%;
+      margin: 2rem 0;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      overflow: hidden;
+
+      th,
+      td {
+        padding: 1rem;
+        border: 1px solid #dee2e6;
+      }
+
+      th {
+        background-color: #f8f9fa;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    // Blockquotes
+    blockquote {
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      background: #fdfdfe;
+      border-left: 4px solid #dee2e6;
+      font-style: italic;
+      color: #4a4a4a;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    // Code blocks
+    pre {
+      background-color: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      margin: 2rem 0;
+    }
   }
 
-  .table {
-    max-width: 600px;
+  // Status-specific content borders
+
+  .kep-metadata-container {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      border-bottom: 2px solid #dee2e6;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      display: block;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    div {
+      margin-top: 0 !important;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    p {
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
   }
 }
 
@@ -80,7 +398,7 @@ body.td-home div.lead p {
   background-color: rgba(var(--bs-primary-rgb), 0.1);
   color: var(--bs-primary);
   transition: all 0.2s ease;
-  
+
   &.active {
     background-color: var(--bs-primary);
     color: #fff;
