@@ -19,6 +19,7 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 <meta name="robots" content="noindex, nofollow">
 {{ end -}}
 
+<link rel="canonical" href="{{ .Permalink }}">
 {{ partialCached "favicons.html" . }}
 <title>
   {{- if .IsHome -}}
@@ -36,7 +37,7 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous" defer></script>
 {{ if .Site.Params.offlineSearch -}}
 <script defer
   src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
