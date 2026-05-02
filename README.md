@@ -63,7 +63,9 @@ Note that the extended version is required.
 
 In addition to Hugo, the [postcss-cli] and [autoprefixer] JavaScript packages are
 required. These can be installed via the [Node Package Manager][npm] (`npm`) from a
-recent version of [nodejs] with `npm install -g postcss-cli autoprefixer`.
+recent version of [nodejs]. This repo currently targets Node.js `20.16.0` to match
+the Netlify production build environment; if you use `nvm`, run `nvm use` first.
+You can then install the required packages with `npm install -g postcss-cli autoprefixer`.
 
 The Contributor Site uses the [docsy] theme. It is included as a [git submodule].
 To fetch docsy and its requirements, run the command:
