@@ -6,8 +6,8 @@ date: 2023-12-20T09:30:00-08:00
 author: Mengjiao Liu and Patrick Ohly
 ---
 
-On behalf of the [Structured Logging Working Group](https://github.com/kubernetes/community/blob/master/wg-structured-logging/README.md) 
-and [SIG Instrumentation](https://github.com/kubernetes/community/tree/master/sig-instrumentation#readme), 
+On behalf of the [Structured Logging Working Group](https://github.com/kubernetes/community/blob/main/wg-structured-logging/README.md) 
+and [SIG Instrumentation](https://github.com/kubernetes/community/tree/main/sig-instrumentation#readme), 
 we are pleased to announce that the contextual logging feature
 introduced in Kubernetes v1.24 has now been successfully migrated to
 two components (kube-scheduler and kube-controller-manager)
@@ -110,7 +110,7 @@ they need to be aware of how this change affects them.
 
 If you're interested in getting involved, we always welcome new contributors to join us.
 Contextual logging provides a fantastic opportunity for you to contribute to Kubernetes development and make a meaningful impact.
-By joining [Structured Logging WG](https://github.com/kubernetes/community/tree/master/wg-structured-logging),
+By joining [Structured Logging WG](https://github.com/kubernetes/community/tree/main/wg-structured-logging),
 you can actively participate in the development of Kubernetes and make your first contribution.
 It's a great way to learn and engage with the community while gaining valuable experience.
 

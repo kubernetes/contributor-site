@@ -71,7 +71,7 @@ language. This area of focus is known as the KPNG project, and if this sounds
 interesting to you, please join us in the KPNG [community meetings][meet] and
 `#sig-network-kpng` on [Kubernetes Slack][kslack].
 
-[meet]:https://github.com/kubernetes/community/blob/master/sig-network/README.md#meetings
+[meet]:https://github.com/kubernetes/community/blob/main/sig-network/README.md#meetings
 [kslack]:https://kubernetes.slack.com/
 
 _**Multi-Network**_
@@ -126,7 +126,7 @@ channels as well as our main `#sig-network` channel. Also, check for issues
 labelled `good-first-issue` if you prefer to just dive right into the
 repositories. Let us know how we can help you!
 
-[net-charter]:https://github.com/kubernetes/community/blob/master/sig-network/charter.md
+[net-charter]:https://github.com/kubernetes/community/blob/main/sig-network/charter.md
 [kslack]:https://kubernetes.slack.com/
 
 **Sujay**: What skills are contributors to SIG Network likely to learn?

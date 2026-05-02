@@ -21,7 +21,7 @@ criteria. It will automatically retest PRs that meet the criteria ('tide comes i
 them when they have up-to-date passing test results ('tide goes out')."
 
 What actually prompted this article is the awesomely amazing folks on the [Contributor Comms
-team](https://github.com/kubernetes/community/tree/master/communication) saying, "I need to squash my commits
+team](https://github.com/kubernetes/community/tree/main/communication) saying, "I need to squash my commits
 and push that." Which immediately made me remember the wonder of the Tide label:
 [`tide/merge-method-squash`](https://github.com/kubernetes/test-infra/blob/master/label_sync/labels.md#tide/merge-method-squash).
 

@@ -76,7 +76,7 @@
               {{- with site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
                 <a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title }}</a>
               {{- else -}}
-                <a href="https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}">
+                <a href="https://github.com/kubernetes/community/tree/main/{{ $data.owningSig }}">
                   SIG {{ $sigSlug | humanize | title }}
                 </a>
               {{- end -}}

@@ -38,28 +38,28 @@ BenTheElder. I started in Kubernetes as a Google Summer of Code student in 2015 
 working at Google in the space since 2017. I have contributed a lot to many areas but especially
 build, CI, test tooling, etc. My favorite project so far was building
 [KIND](https://kind.sigs.k8s.io/). I have been on the release team, a chair of [SIG
-Testing](https://github.com/kubernetes/community/blob/master/sig-testing/README.md), and currently a
-tech lead of SIG Testing and [SIG K8s Infra](https://github.com/kubernetes/community/blob/master/sig-k8s-infra/README.md).
+Testing](https://github.com/kubernetes/community/blob/main/sig-testing/README.md), and currently a
+tech lead of SIG Testing and [SIG K8s Infra](https://github.com/kubernetes/community/blob/main/sig-k8s-infra/README.md).
 
 **Nabarun**: Hi, I am [Nabarun](https://www.linkedin.com/in/palnabarun/) from India. I have been
 working on Kubernetes since 2019. I have been contributing across multiple areas in Kubernetes: [SIG
-ContribEx](https://github.com/kubernetes/community/blob/master/sig-k8s-infra/README.md) (where I am
+ContribEx](https://github.com/kubernetes/community/blob/main/sig-k8s-infra/README.md) (where I am
 also a chair), [API
-Machinery](https://github.com/kubernetes/community/blob/master/sig-k8s-infra/README.md),
-[Architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md), and
-[SIG Release](https://github.com/kubernetes/community/blob/master/sig-release/README.md), where I
+Machinery](https://github.com/kubernetes/community/blob/main/sig-k8s-infra/README.md),
+[Architecture](https://github.com/kubernetes/community/blob/main/sig-architecture/README.md), and
+[SIG Release](https://github.com/kubernetes/community/blob/main/sig-release/README.md), where I
 contributed to several releases including being the Release Team Lead of [Kubernetes 1.21](https://kubernetes.io/blog/2021/04/08/kubernetes-1-21-release-announcement/).
 
 **Paco**: I am [Paco](https://www.linkedin.com/in/pacoxu2020/) from China. I worked as an open
 source team lead in DaoCloud, Shanghai. In the community, I participate mainly in
 [kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/), [SIG
-Node](https://github.com/kubernetes/community/blob/master/sig-node/README.md) and [SIG
-Testing](https://github.com/kubernetes/community/blob/master/sig-testing/README.md). Besides, I
+Node](https://github.com/kubernetes/community/blob/main/sig-node/README.md) and [SIG
+Testing](https://github.com/kubernetes/community/blob/main/sig-testing/README.md). Besides, I
 helped in KCD China and was co-chair of the recent [KubeCon+CloudNativeCon China 2024](https://events.linuxfoundation.org/kubecon-cloudnativecon-open-source-summit-ai-dev-china/) in Hong Kong.
 
-**Patrick**: Hello! I’m [Patrick](https://www.linkedin.com/in/patrickohly/). I’ve contributed to Kubernetes since 2018. I started in [SIG Storage](https://github.com/kubernetes/community/blob/master/sig-storage/README.md) and then got involved in more and more areas. Nowadays, I am a SIG Testing tech lead, logging infrastructure maintainer, organizer of the [Structured Logging](https://github.com/kubernetes/community/tree/master/wg-structured-logging) and [Device Management](https://github.com/kubernetes/community/tree/master/wg-device-management) working groups, contributor in [SIG Scheduling](https://github.com/kubernetes/community/blob/master/sig-scheduling/README.md), and of course member of the Steering Committee. My main focus area currently is [Dynamic Resource Allocation (DRA)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/), a new API for accelerators.
+**Patrick**: Hello! I’m [Patrick](https://www.linkedin.com/in/patrickohly/). I’ve contributed to Kubernetes since 2018. I started in [SIG Storage](https://github.com/kubernetes/community/blob/main/sig-storage/README.md) and then got involved in more and more areas. Nowadays, I am a SIG Testing tech lead, logging infrastructure maintainer, organizer of the [Structured Logging](https://github.com/kubernetes/community/tree/main/wg-structured-logging) and [Device Management](https://github.com/kubernetes/community/tree/main/wg-device-management) working groups, contributor in [SIG Scheduling](https://github.com/kubernetes/community/blob/main/sig-scheduling/README.md), and of course member of the Steering Committee. My main focus area currently is [Dynamic Resource Allocation (DRA)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/), a new API for accelerators.
 
-**Maciej**: Hey, my name is [Maciej](https://www.linkedin.com/in/maciejszulik/) and I've been working on Kubernetes since late 2014 in various areas, including controllers, apiserver and kubectl. Aside from being part of the Steering Committee, I’m also helping guide [SIG CLI](https://github.com/kubernetes/community/blob/master/sig-cli/README.md), [SIG Apps](https://github.com/kubernetes/community/blob/master/sig-apps/README.md) and [WG Batch](https://github.com/kubernetes/community/blob/master/wg-batch/README.md). 
+**Maciej**: Hey, my name is [Maciej](https://www.linkedin.com/in/maciejszulik/) and I've been working on Kubernetes since late 2014 in various areas, including controllers, apiserver and kubectl. Aside from being part of the Steering Committee, I’m also helping guide [SIG CLI](https://github.com/kubernetes/community/blob/main/sig-cli/README.md), [SIG Apps](https://github.com/kubernetes/community/blob/main/sig-apps/README.md) and [WG Batch](https://github.com/kubernetes/community/blob/main/wg-batch/README.md). 
 
 ## About the Steering Committee
 

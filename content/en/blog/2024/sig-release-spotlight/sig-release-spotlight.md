@@ -103,7 +103,7 @@ a community where everyone is busy with their own tasks, how can I find the righ
 
     Everyone's way of getting involved within the Open Source community is different. SIG Release 
     is a self-serving team, meaning that we write our own tools to be able to ship releases. We 
-    collaborate a lot with other SIGs, such as [SIG K8s Infra](https://github.com/kubernetes/community/blob/master/sig-k8s-infra/README.md), but all the tools that we used needs to be 
+    collaborate a lot with other SIGs, such as [SIG K8s Infra](https://github.com/kubernetes/community/blob/main/sig-k8s-infra/README.md), but all the tools that we used needs to be 
     tailor-made for our massive technical needs, while reducing costs. This means that we are 
     constantly looking for volunteers who’d like to help with different types of projects, beyond “just” cutting a release.
 
@@ -115,7 +115,7 @@ a community where everyone is busy with their own tasks, how can I find the righ
 
     - Get yourself familiar with the code, including how features are managed, the release calendar, and the overall structure of the Release Team.
     - Join the Kubernetes community communication channels, such as [Slack](https://communityinviter.com/apps/kubernetes/community) (#sig-release), where we are particularly active. 
-    - Join the [SIG Release weekly meetings](https://github.com/kubernetes/community/tree/master/sig-release#meetings)
+    - Join the [SIG Release weekly meetings](https://github.com/kubernetes/community/tree/main/sig-release#meetings)
     which are open to all in the community. Participating in these meetings is a great way to learn about ongoing and future projects that 
     you might find relevant for your skillset and interests.
 
@@ -172,4 +172,4 @@ a community where everyone is busy with their own tasks, how can I find the righ
 Well, this conversation ends here but not the learning. I hope this interview has given you some idea about what SIG Release does and how to 
 get started in helping out. It is important to mention again that this article covers the first subproject under SIG Release, the Release Team. 
 In the next Spotlight blog on SIG Release, we will provide a spotlight on the Release Engineering subproject, what it does and how to 
-get involved. Finally, you can go through the [SIG Release charter](https://github.com/kubernetes/community/tree/master/sig-release) to get a more in-depth understanding of how SIG Release operates.
+get involved. Finally, you can go through the [SIG Release charter](https://github.com/kubernetes/community/tree/main/sig-release) to get a more in-depth understanding of how SIG Release operates.

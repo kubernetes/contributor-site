@@ -9,7 +9,7 @@ author: "Sandipan Panda"
 Welcome to another edition of the _SIG spotlight_ blog series, where we
 highlight the incredible work being done by various Special Interest
 Groups (SIGs) within the Kubernetes project. In this edition, we turn
-our attention to [SIG Testing](https://github.com/kubernetes/community/tree/master/sig-testing#readme),
+our attention to [SIG Testing](https://github.com/kubernetes/community/tree/main/sig-testing#readme),
 a group interested in effective testing of Kubernetes and automating
 away project toil. SIG Testing focus on creating and running tools and
 infrastructure that make it easier for the community to write and run
@@ -83,7 +83,7 @@ analysis, coverage, Prow/TestGrid config generation, and more in the
 test-infra repo.
 
 *If you are willing to learn more and get involved with any of the SIG
-Testing subprojects, check out the [SIG Testing README](https://github.com/kubernetes/community/tree/master/sig-testing#subprojects).*
+Testing subprojects, check out the [SIG Testing README](https://github.com/kubernetes/community/tree/main/sig-testing#subprojects).*
 
 ## Key challenges and accomplishments
 
@@ -124,7 +124,7 @@ have that for unit tests and those tend to be less complex.
 **Sandipan:** Testing is always important, but is there anything
 specific to your work in terms of the Kubernetes release process?
 
-**Patrick:** [test flakes](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/flaky-tests.md)…
+**Patrick:** [test flakes](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/flaky-tests.md)…
 if we have too many of those, development velocity goes down because
 PRs cannot be merged without clean test runs and those become less
 likely. Developers also lose trust in testing and just "retest" until
@@ -195,7 +195,7 @@ roles within the SIG. If you're interested, hit us up!
 
 Looking ahead, SIG Testing has exciting plans in store. You can get in
 touch with the folks at SIG Testing in their [Slack channel](https://kubernetes.slack.com/messages/sig-testing) or attend
-one of their regular [bi-weekly meetings on Tuesdays](https://github.com/kubernetes/community/tree/master/sig-testing#meetings). If
+one of their regular [bi-weekly meetings on Tuesdays](https://github.com/kubernetes/community/tree/main/sig-testing#meetings). If
 you are interested in making it easier for the community to run tests
 and contribute test results, to ensure Kubernetes is stable across a
 variety of cluster configurations and cloud providers, join the SIG

@@ -8,7 +8,7 @@ slug: contextual-logging
  **Authors:** Patrick Ohly (Intel)
 
 The [Structured Logging Working
-Group](https://github.com/kubernetes/community/blob/master/wg-structured-logging/README.md)
+Group](https://github.com/kubernetes/community/blob/main/wg-structured-logging/README.md)
 has added new capabilities to the logging infrastructure in Kubernetes
 1.24. This blog post explains how developers can take advantage of those to
 make log output more useful and how they can get involved with improving Kubernetes.
@@ -101,7 +101,7 @@ Another decision was to not break compatibility with klog v2:
   set up contextual logging will work and log through the logging backend
   chosen by the binary. However, such log output will not include the
   additional information and will not work well in unit tests, so libraries
-  should be modified to support contextual logging. The [migration guide](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/migration-to-structured-logging.md)
+  should be modified to support contextual logging. The [migration guide](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-instrumentation/migration-to-structured-logging.md)
   for structured logging has been extended to also cover contextual logging.
 
 - When a library supports contextual logging and retrieves a logger from its
@@ -242,7 +242,7 @@ really related to klog and its releases should be tracked and tagged properly.
 
 ## Next steps
 
-The [Structured Logging WG](https://github.com/kubernetes/community/tree/master/wg-structured-logging)
+The [Structured Logging WG](https://github.com/kubernetes/community/tree/main/wg-structured-logging)
 is always looking for new contributors. The migration
 away from C-style logging is now going to target structured, contextual logging
 in one step to reduce the overall code churn and number of PRs. Changing log

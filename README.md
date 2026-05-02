@@ -18,7 +18,7 @@ original location. A list of sources and their locations within the
 
 ### External sources
 
-- **Source:** https://git.k8s.io/community/contributors/guide <br>
+- **Source:** https://github.com/kubernetes/community/blob/main/contributors/guide <br>
   **Destination:** `/guide`
 - **Source:** https://github.com/cncf/foundation/blob/master/code-of-conduct.md <br>
   **Destination:** `/code-of-conduct.md`
@@ -108,7 +108,7 @@ We’re building out this site in real-time! Want to join us and help? Here’s 
 * [ ] Developers' guide/handbook
 * [ ] Directory of Kubernetes SIGs and other community groups
 * [ ] Listing events beyond just Contributor Summits
-* [ ] Pathways to success for [new Kubernetes contributors](https://git.k8s.io/community/community-membership.md) and mentoring programs
+* [ ] Pathways to success for [new Kubernetes contributors](https://github.com/kubernetes/community/blob/main/community-membership.md) and mentoring programs
 * [ ] Refactoring the hugo code and glue code behind the site
 
 See the [Issues] for tasks and projects in progress
@@ -126,7 +126,7 @@ Participation in the Kubernetes community is governed by the
 [npm]: https://nodejs.org/en/download/package-manager
 [frontmatter]: https://gohugo.io/content-management/front-matter/
 [docker]: https://www.docker.com/get-started
-[sig-contribex]: https://git.k8s.io/community/sig-contributor-experience/README.md
+[sig-contribex]: https://github.com/kubernetes/community/blob/main/sig-contributor-experience/README.md
 [sig-contribex-slack]: http://slack.k8s.io/#sig-contribex
 [sig-contribex-list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
 [kep-2225]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-contributor-experience/2225-contributor-site

@@ -19,7 +19,7 @@ By the time you're done with this unit, you'll:
 * Be able to locate the requirements for manual testing during development
 * Be able to respond to the automatic tests of bots for a pull request
 
-Testing Kubernetes is pretty complicated. We will try to make it easy for you, but you might want to start by reading the [Development Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md).
+Testing Kubernetes is pretty complicated. We will try to make it easy for you, but you might want to start by reading the [Development Guide](https://github.com/kubernetes/community/blob/main/contributors/devel/development.md).
 
 ---
 
@@ -70,7 +70,7 @@ Let's learn about each type of test!
 
 * Any contributor adding new functionality will be responsible for creating tests that validate their contribution.
 * Any contributor submitting a pull request will be responsible for making sure that tests run against their contribution—and pass!
-* [SIG Testing](https://github.com/kubernetes/community/tree/master/contributors/devel/sig-testing) is responsible for maintaining the test framework.
+* [SIG Testing](https://github.com/kubernetes/community/tree/main/contributors/devel/sig-testing) is responsible for maintaining the test framework.
 
 ---
 
@@ -80,7 +80,7 @@ Presubmission is the phase before a pull request is created—the steps that you
 
 * Presubmission verification is a collection of checks that give your pull request the best chance of being accepted.
 * Developers need to run as many verification tests as possible locally.
-* [Learn how to run them in the Development Guide.](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#presubmission-verification)
+* [Learn how to run them in the Development Guide.](https://github.com/kubernetes/community/blob/main/contributors/devel/development.md#presubmission-verification)
 
 ---
 
@@ -90,7 +90,7 @@ Pull requests need to pass **all** unit tests.
 
 * Run them all from your development directory with `make test`
 * You can also run unit tests individually during the development process.
-* [Read everything there is to know about unit tests in the Testing Guide.](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md#unit-tests)
+* [Read everything there is to know about unit tests in the Testing Guide.](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/testing.md#unit-tests)
 
 ---
 
@@ -100,7 +100,7 @@ Pull requests also need to pass **all** integration tests.
 
 * If you are testing locally, you might need to install extra software.
 * These tests are run from your development environment with `make test-integration`
-* [Read Integration Testing in Kubernetes to learn more about this type of test.](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/integration-tests.md)
+* [Read Integration Testing in Kubernetes to learn more about this type of test.](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/integration-tests.md)
 
 ---
 
@@ -110,7 +110,7 @@ E2E tests build test binaries, spin up a test cluster, run the tests, and then t
 
 - **Note: Running all E2E tests takes a very long time!**
 
-You will not need to run E2E tests for every pull request. [The End-to-End Testing Guide is a great place to learn more.](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
+You will not need to run E2E tests for every pull request. [The End-to-End Testing Guide is a great place to learn more.](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/e2e-tests.md)
 
 ---
 
@@ -130,11 +130,11 @@ You should run tests locally or in your development environment before submittin
 
 We've covered a lot of ground in this unit, and if you want to go deeper, here is a collection of all the resources we used.
 
-* [SIG Testing documentation](https://github.com/kubernetes/community/tree/master/contributors/devel/sig-testing)
-* [The Development Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#presubmission-verification)
-* [The Testing Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md#unit-tests)
-* [Integration Testing in Kubernetes](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/integration-tests.md)
-* [End-to-End Testing Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md)
+* [SIG Testing documentation](https://github.com/kubernetes/community/tree/main/contributors/devel/sig-testing)
+* [The Development Guide](https://github.com/kubernetes/community/blob/main/contributors/devel/development.md#presubmission-verification)
+* [The Testing Guide](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/testing.md#unit-tests)
+* [Integration Testing in Kubernetes](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/integration-tests.md)
+* [End-to-End Testing Guide](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/e2e-tests.md)
 * [Pull Request documentation](/docs/guide/pull-requests/#more-about-ok-to-test)
 
 <div class="bottom-nav">

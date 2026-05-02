@@ -261,7 +261,7 @@ with a Kubernetes community member, please use the `/report` command or contact
 the [CoCC directly].
 
 
-[CoCC directly]: https://git.k8s.io/community/code-of-conduct.md
+[CoCC directly]: https://github.com/kubernetes/community/blob/main/code-of-conduct.md
 
 ### Jackbox
 

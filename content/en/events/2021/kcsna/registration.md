@@ -23,7 +23,7 @@ community@kubernetes.io.
 [faq]: /events/2021/kcsna/faq/
 [kubernetes]: https://github.com/kubernetes
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
-[applying for org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
+[applying for org membership]: https://github.com/kubernetes/community/blob/main/community-membership.md#member
 
 **NOTE:** Any in-person events held by SIGs and subprojects will follow KubeCon’s
 [Health & Safety Guidelines] requiring **ALL** in-person attendees to be fully
