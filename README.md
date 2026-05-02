@@ -43,7 +43,7 @@ Site is to use [Docker][docker]. To begin, create the docker image to be used
 with generating the site by executing `make container-image`.
 
 To ensure you can view the site with externally sourced content, run
-`make container-gen-content` before previewing the site by with
+`make container-modules-get` before previewing the site with
 `make container-server`.
 
 **NOTE to Apple Silicon Mac Users**
@@ -73,22 +73,7 @@ git submodule update --init --recursive --depth 1
 ```
 
 To ensure you can view the site with externally sourced content, run
-`make gen-content` before previewing the site by with `make server`.
-
-**NOTE to MacOS Users**
-
-The `hack/gen-content.sh` script requires the gnu version
-of base packages such as `find`, `grep`, and `sed`. 
-
-```
-brew install coreutils findutils grep gnu-sed gnu-tar make readlink
-```
-
-You will then need to update your path to include these:
-
-```
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-```
+`make modules-get` before previewing the site with `make server`.
 
 ## Community, discussion, contribution, and support
 

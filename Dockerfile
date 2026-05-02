@@ -17,6 +17,14 @@ RUN apk add --no-cache \
     sed \
     npm
 
+# Specify GO_VERSION, or work it out automatically by using
+# "make container-image"
+ARG GO_VERSION
+RUN curl -sSfL "https://go.dev/dl/go${GO_VERSION}.linux-${TARGETARCH}.tar.gz" -o /tmp/go.tgz \
+    && tar -xz -C /usr/local -f /tmp/go.tgz \
+    && rm /tmp/go.tgz
+ENV PATH="/usr/local/go/bin:${PATH}"
+
 WORKDIR /src
 
 COPY package*.json ./

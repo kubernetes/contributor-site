@@ -1,12 +1,34 @@
 {{- $u := .Destination -}}
-{{- /* 
-  Robustly handle URLs with parentheses or extra spaces from external sources (e.g. KEP READMEs).
-  This prevents build failures like "first path segment in URL cannot contain colon" when 
-  a link destination is wrapped in extra parentheses.
-*/ -}}
+{{- /* Handle extra whitespace or parentheses sometimes found in external content */ -}}
 {{- $u = trim $u " ()" -}}
+
+{{- $isExternal := strings.HasPrefix $u "http" -}}
+{{- $isFragment := strings.HasPrefix $u "#" -}}
+{{- $isMailto := strings.HasPrefix $u "mailto:" -}}
+
+{{- if and (not $isExternal) (not $isFragment) (not $isMailto) -}}
+  {{- /* Try Hugo's native page resolution */ -}}
+  {{- $page := .Page.GetPage $u -}}
+  {{- if $page -}}
+    {{- $u = $page.RelPermalink -}}
+  {{- else -}}
+    {{- /* Fallback to external repository for non-local links */ -}}
+    {{- if not (strings.HasPrefix $u "/") -}}
+      {{- if strings.Contains .Page.File.Dir "docs/guide" -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/contributors/guide/%s" $u -}}
+      {{- else if strings.Contains .Page.File.Dir "docs/comms" -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/communication/%s" $u -}}
+      {{- else if strings.Contains .Page.File.Dir "docs/orientation" -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/mentoring/new-contributor-orientation/%s" $u -}}
+      {{- else if strings.Contains .Page.File.Dir "community" -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/%s" $u -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 <a href="{{ $u | safeURL }}"
   {{ with .Title }} title="{{ . }}"{{ end }}
-  {{ if strings.HasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>
+  {{ if or $isExternal (strings.HasPrefix $u "http") }} target="_blank" rel="noopener"{{ end }}>
   {{- .Text | safeHTML -}}
 </a>
