@@ -90,16 +90,16 @@
 
   {{ if .Params.meetings }}
   <div class="mt-5">
-    <h3 class="h4 fw-bold border-bottom pb-2 mb-4">Meetings</h3>
+    <h3 class="h4 fw-bold border-bottom pb-2 mb-4">{{ T "ui_meetings" }}</h3>
     <div class="card border-0 shadow-sm overflow-hidden">
       <div class="table-responsive">
         <table class="table table-hover mb-0">
           <thead class="bg-light">
             <tr>
-              <th class="ps-3">Description</th>
-              <th>Day</th>
-              <th>Time ({{ (index .Params.meetings 0).tz }})</th>
-              <th class="text-end pe-3">Links</th>
+              <th class="ps-3">{{ T "ui_description" }}</th>
+              <th>{{ T "ui_day" }}</th>
+              <th>{{ T "ui_time" }} ({{ (index .Params.meetings 0).tz }})</th>
+              <th class="text-end pe-3">{{ T "ui_links" }}</th>
             </tr>
           </thead>
           <tbody>
@@ -131,8 +131,5 @@
   {{ if (.Site.Config.Services.Disqus.Shortname) -}}
     <br />
     {{- partial "disqus-comment.html" . -}}
-  {{ end -}}
-</div>
-omment.html" . -}}
   {{ end -}}
 </div>

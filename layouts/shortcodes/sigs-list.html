@@ -233,7 +233,7 @@
                     <h5 class="fw-bold mb-0 text-primary h6">
                       <a href="/community/community-groups/wg/{{ .dir | replaceRE "^sig-" "" | replaceRE "^wg-" "" }}/" class="text-decoration-none text-primary">WG {{ .name }}</a>
                     </h5>
-                    <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="{{ T "ui_view_source" }}"><i class="fab fa-github"></i></a>
                   </div>
                   
                   <div class="mb-3">
@@ -246,11 +246,11 @@
                   <div class="collapse mt-auto" id="collapse-{{ .dir | urlize }}">
                     {{ if .leadership }}
                     <div class="mb-3">
-                      <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
+                      <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">{{ T "ui_leadership" }}</h6>
                       
                       {{ if .leadership.chairs }}
                       <div class="mb-2">
-                        <div class="small fw-semibold text-dark mb-1">Chairs</div>
+                        <div class="small fw-semibold text-dark mb-1">{{ T "ui_chairs" }}</div>
                         <div class="d-flex flex-wrap gap-1">
                           {{ range .leadership.chairs }}
                           <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
@@ -263,7 +263,7 @@
 
                       {{ if .leadership.tech_leads }}
                       <div>
-                        <div class="small fw-semibold text-dark mb-1">Tech Leads</div>
+                        <div class="small fw-semibold text-dark mb-1">{{ T "ui_tech_leads" }}</div>
                         <div class="d-flex flex-wrap gap-1">
                           {{ range .leadership.tech_leads }}
                           <a href="https://github.com/{{ .github }}" class="badge bg-secondary bg-opacity-10 text-secondary border-0 text-decoration-none py-1 px-2">
@@ -278,7 +278,7 @@
 
                     {{ if gt (len $allMeetings) 0 }}
                     <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
-                      <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
+                      <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> {{ T "ui_meetings" }} ({{ len $allMeetings }})</h6>
                       <div style="max-height: 180px; overflow-y: auto;" class="pe-2">
                         {{ range $index, $meeting := $allMeetings }}
                         <div class="mb-2 {{ if lt (add $index 1) (len $allMeetings) }}border-bottom border-primary border-opacity-10 pb-2{{ end }}">
@@ -291,7 +291,7 @@
                             </div>
                         </div>
                         <div class="small text-dark">
-                          {{ .day }} at <span class="fw-bold">{{ .time }} {{ .tz }}</span>
+                          {{ .day }} {{ T "ui_at" }} <span class="fw-bold">{{ .time }} {{ .tz }}</span>
                         </div>
                       </div>
                       {{ end }}
@@ -302,7 +302,7 @@
 
                   <div class="d-flex flex-wrap gap-2 mt-auto align-items-center justify-content-between pt-2">
                     <button class="btn btn-sm btn-light text-primary rounded-pill px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ .dir | urlize }}" aria-expanded="false" aria-controls="collapse-{{ .dir | urlize }}">
-                      <i class="fas fa-chevron-down me-1 toggle-icon"></i> <span class="toggle-text">Show Details</span>
+                      <i class="fas fa-chevron-down me-1 toggle-icon"></i> <span class="toggle-text">{{ T "ui_show_details" }}</span>
                     </button>
                     <div class="d-flex gap-2">
                       {{ if .contact.slack }}
@@ -312,7 +312,7 @@
                       {{ end }}
 
                       <a href="/community/community-groups/wg/{{ .dir | replaceRE "^wg-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
-                        Visit <i class="fas fa-arrow-right ms-1"></i>
+                        {{ T "ui_visit" }} <i class="fas fa-arrow-right ms-1"></i>
                       </a>
                     </div>
                   </div>
@@ -347,7 +347,7 @@
                     <h5 class="fw-bold mb-0 text-primary h6">
                       <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
                     </h5>
-                    <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="View Source"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="{{ T "ui_view_source" }}"><i class="fab fa-github"></i></a>
                   </div>
                   
                   <div class="mb-3">
@@ -360,7 +360,7 @@
                   <div class="collapse mt-auto" id="collapse-{{ .dir | urlize }}">
                     {{ if gt (len $allMeetings) 0 }}
                     <div class="bg-primary bg-opacity-10 p-2 rounded-3 mb-3">
-                      <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> Meetings ({{ len $allMeetings }})</h6>
+                      <h6 class="fw-bold small text-uppercase text-primary mb-2"><i class="far fa-clock me-1"></i> {{ T "ui_meetings" }} ({{ len $allMeetings }})</h6>
                       <div style="max-height: 180px; overflow-y: auto;" class="pe-2">
                         {{ range $index, $meeting := $allMeetings }}
                         <div class="mb-2 {{ if lt (add $index 1) (len $allMeetings) }}border-bottom border-primary border-opacity-10 pb-2{{ end }}">
@@ -373,7 +373,7 @@
                             </div>
                         </div>
                         <div class="small text-dark">
-                          {{ .day }} at <span class="fw-bold">{{ .time }} {{ .tz }}</span>
+                          {{ .day }} {{ T "ui_at" }} <span class="fw-bold">{{ .time }} {{ .tz }}</span>
                         </div>
                       </div>
                       {{ end }}
@@ -382,11 +382,11 @@
                     {{ end }}
                     {{ if .leadership }}
                     <div class="mb-3">
-                      <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">Leadership</h6>
+                      <h6 class="fw-bold small text-uppercase text-muted border-bottom pb-1 mb-2">{{ T "ui_leadership" }}</h6>
                       
                       {{ if .leadership.chairs }}
                       <div class="mb-2">
-                        <div class="small fw-semibold text-dark mb-1">Chairs</div>
+                        <div class="small fw-semibold text-dark mb-1">{{ T "ui_chairs" }}</div>
                         <div class="d-flex flex-wrap gap-1">
                           {{ range .leadership.chairs }}
                           <a href="https://github.com/{{ .github }}" class="badge bg-primary bg-opacity-10 text-primary border-0 text-decoration-none py-1 px-2">
@@ -399,7 +399,7 @@
 
                       {{ if .leadership.tech_leads }}
                       <div>
-                        <div class="small fw-semibold text-dark mb-1">Tech Leads</div>
+                        <div class="small fw-semibold text-dark mb-1">{{ T "ui_tech_leads" }}</div>
                         <div class="d-flex flex-wrap gap-1">
                           {{ range .leadership.tech_leads }}
                           <a href="https://github.com/{{ .github }}" class="badge bg-secondary bg-opacity-10 text-secondary border-0 text-decoration-none py-1 px-2">
@@ -415,7 +415,7 @@
 
                   <div class="d-flex flex-wrap gap-2 mt-auto align-items-center justify-content-between pt-2">
                     <button class="btn btn-sm btn-light text-primary rounded-pill px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ .dir | urlize }}" aria-expanded="false" aria-controls="collapse-{{ .dir | urlize }}">
-                      <i class="fas fa-chevron-down me-1 toggle-icon"></i> <span class="toggle-text">Show Details</span>
+                      <i class="fas fa-chevron-down me-1 toggle-icon"></i> <span class="toggle-text">{{ T "ui_show_details" }}</span>
                     </button>
                     <div class="d-flex gap-2">
                       {{ if .contact.slack }}
@@ -425,7 +425,7 @@
                       {{ end }}
 
                       <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
-                        Visit <i class="fas fa-arrow-right ms-1"></i>
+                        {{ T "ui_visit" }} <i class="fas fa-arrow-right ms-1"></i>
                       </a>
                     </div>
                   </div>
