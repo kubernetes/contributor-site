@@ -32,7 +32,11 @@ export GOMODCACHE="${GOMODCACHE:-/tmp/gomod}"
 make modules-get
 make modules-tidy
 
-# 2. Check if there are changes
+# 2. Validate the build
+echo "Validating the build..."
+make production-build
+
+# 3. Check if there are changes
 if git diff --quiet go.mod go.sum; then
   echo "No module updates found. Exiting."
   exit 0
