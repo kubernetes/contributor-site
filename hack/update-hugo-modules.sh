@@ -18,6 +18,13 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
+DRY_RUN=${DRY_RUN:-false}
+for arg in "$@"; do
+  if [[ "$arg" == "--dry-run" ]]; then
+    DRY_RUN=true
+  fi
+done
+
 # 1. Update Hugo modules
 # GOMODCACHE is set to a writeable directory in CI
 export GOMODCACHE="${GOMODCACHE:-/tmp/gomod}"
@@ -28,6 +35,11 @@ make modules-tidy
 # 2. Check if there are changes
 if git diff --quiet go.mod go.sum; then
   echo "No module updates found. Exiting."
+  exit 0
+fi
+
+if [[ "$DRY_RUN" == "true" ]]; then
+  echo "Changes detected in dry-run mode. Validation successful."
   exit 0
 fi
 
