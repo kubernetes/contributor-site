@@ -128,7 +128,7 @@ other = "Beta"
 other = "Stable"
 
 [kep_depr]
-other = "Depr."
+other = "Deprecated"
 
 [kep_implementation_history]
 other = "Implementation History"
