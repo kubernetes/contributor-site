@@ -6,7 +6,6 @@ themesDir: node_modules
 enableRobotsTXT: true
 
 # Language settings
-contentDir: content/en
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
 
@@ -51,6 +50,7 @@ caches:
 # Language configuration
 languages:
   en:
+    contentDir: content/en
     title: *title # Use the YAML reference instead of repeating
     languageName: English
     languageNameLatinScript: English

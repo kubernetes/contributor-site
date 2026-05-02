@@ -22,12 +22,12 @@ original location. A list of sources and their locations within the
 
 ### External sources
 
-- **Source:** https://git.k8s.io/community/contributors/guide <br>
-  **Destination:** `/guide`
-- **Source:** https://github.com/cncf/foundation/blob/master/code-of-conduct.md <br>
-  **Destination:** `/code-of-conduct.md`
-- **Source:** https://git.k8s.io/sig-release/releases/release-1.18/README.md <br>
-  **Destination:** `/release.md`
+- **Source:** [kubernetes/community/contributors/guide](https://git.k8s.io/community/contributors/guide) <br>
+  **Destination:** `/en/docs/guide/`
+- **Source:** [cncf/foundation/code-of-conduct.md](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) <br>
+  **Destination:** `/en/includes/cncf-code-of-conduct.md`
+- **Source:** [kubernetes/sig-release/releases/release-1.36/README.md](https://git.k8s.io/sig-release/releases/release-1.36/README.md) <br>
+  **Destination:** `/en/resources/release/`
 
 ## Running the site locally
 
