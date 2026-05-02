@@ -1,0 +1,82 @@
+name: Call for Help
+description: Request assistance for a SIG project to prevent critical gaps
+title: "[Call for Help] <project-name>: <brief-description>"
+labels:
+  - call-for-help
+body:
+  - type: input
+    id: project-name
+    label: Project Name
+    description: "e.g., ingress-nginx, kubernetes-sigs/cluster-api"
+    placeholder: "Enter project or repository name"
+
+  - type: input
+    id: github-repo
+    label: GitHub Repository
+    description: "e.g., kubernetes/ingress-nginx"
+    placeholder: "Enter the full repository path"
+
+  - type: input
+    id: sig-wg
+    label: SIG/Working Group
+    description: "e.g., SIG Network, WG Serving"
+    placeholder: "Enter the SIG or WG name"
+
+  - type: checkboxes
+    id: request-type
+    label: Request Type
+    description: What kind of help is needed?
+    options:
+      - label: Reviewers - Need additional reviewers for PRs
+        required: false
+      - label: Maintainers - Need new maintainers to prevent single point of failure
+        required: false
+      - label: Security - Security-focused assistance needed
+        required: false
+      - label: Mentorship - Need help onboarding new contributors
+        required: false
+
+  - type: textarea
+    id: description
+    label: Description
+    description: Provide details about the situation and why help is needed
+    placeholder: "Describe the current situation and what kind of help you need..."
+
+  - type: input
+    id: slack-handle
+    label: Slack Handle
+    description: Your GitHub username for Slack
+    placeholder: "@username"
+
+  - type: input
+    id: email
+    label: Email
+    description: Contact email (optional)
+    placeholder: "contact@email.com"
+
+  - type: checkboxes
+    id: nco-feature
+    label: New Contributor Orientation
+    description: Include this project in NCO for new contributors
+    options:
+      - label: Yes, feature this project in New Contributor Orientation
+        required: false
+
+  - type: input
+    id: good-first-issues
+    label: Good First Issues Link
+    description: Link to good first issues for this project
+    placeholder: "https://github.com/org/repo/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue"
+
+  - type: input
+    id: onboarding-guide
+    label: Onboarding Guide Link
+    description: Link to contributing/onboarding guide
+    placeholder: "https://kubernetes.dev/docs/..."
+
+  - type: markdown
+    value: |
+      ---
+      **Note**: This request requires approval from a SIG Chair or Tech Lead from your SIG.
+      Once approved with `/approve`, this issue will be displayed in the Community Resilience Dashboard
+      and optionally in New Contributor Orientation.
