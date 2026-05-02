@@ -1,0 +1,20 @@
+# Community Resilience Dashboard Configuration
+
+# List of SIGs to include in the dashboard
+# These should match the 'dir' names in the official sigs.yaml
+target_sigs:
+  - sig-contributor-experience
+
+# Manual repository additions that might not be correctly linked in sigs.yaml
+additional_repos:
+  - repo: elekto-dev/elekto
+    subproject: elections
+
+# Overrides for specific repositories to handle non-standard layouts or documentation
+overrides:
+  "kubernetes/community":
+    onboarding_url: "https://www.kubernetes.dev/docs/guide/"
+  "kubernetes-sigs/maintainers":
+    onboarding_url: "https://github.com/kubernetes-sigs/maintainers"
+  "elekto-dev/elekto":
+    owners_url: "https://github.com/elekto-dev/elekto/graphs/contributors"

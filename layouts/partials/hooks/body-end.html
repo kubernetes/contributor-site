@@ -9,6 +9,15 @@
 <!-- scripts for algolia docsearch -->
 {{ end }}
 
+{{ if .HasShortcode "lottery-factor" }}
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+<script>
+  window.lotteryData = {{ .Site.Data.lottery_factor | jsonify | safeJS }};
+</script>
+{{ $lotteryJs := resources.Get "js/lottery-treemap.js" | minify | fingerprint }}
+<script src="{{ $lotteryJs.RelPermalink }}" integrity="{{ $lotteryJs.Data.Integrity }}"></script>
+{{ end }}
+
 {{ if .HasShortcode "keps-data" }}
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 <script type="text/javascript">

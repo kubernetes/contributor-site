@@ -1,0 +1,38 @@
+name: Update Community Resilience Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at midnight
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+
+      - name: Run Lottery Factor Generation
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd hack
+          go mod init hack || true
+          go get gopkg.in/yaml.v3
+          go run gen-lottery-factor.go
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add static/data/lottery_factor.json
+          git diff-index --quiet HEAD || git commit -m "Update Community Resilience Lottery Factor data"
+          git push
