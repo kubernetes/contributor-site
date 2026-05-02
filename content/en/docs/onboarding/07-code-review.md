@@ -54,7 +54,7 @@ Anybody can review your code, but only approved reviewers can add the `lgtm` lab
 
 * Every SIG and section of the code base has its own approved reviewers.
 * The requirements for becoming an approved reviewer differ across SIGs.
-    * For an excellent example, [read about SIG-Node approvers and reviewers](https://github.com/kubernetes/community/blob/master/sig-node/sig-node-contributor-ladder.md#sig-node-reviewers-and-approvers).
+    * For an excellent example, [read about SIG-Node approvers and reviewers](https://github.com/kubernetes/community/blob/main/sig-node/sig-node-contributor-ladder.md#sig-node-reviewers-and-approvers).
 
 ---
 
@@ -62,13 +62,13 @@ Anybody can review your code, but only approved reviewers can add the `lgtm` lab
 
 There are a number of points to keep in mind while preparing your pull request for review.
 
-* Follow the project [coding conventions](https://github.com/kubernetes/community/blob/master/contributors/guide/coding-conventions.md).
+* Follow the project [coding conventions](https://github.com/kubernetes/community/blob/main/contributors/guide/coding-conventions.md).
 * Write [good commit messages](https://chris.beams.io/posts/git-commit/).
 * Break large changes into smaller patches that are easier to understand.
 * Label your PR appropriately.
 * Pay attention to the instructions the bot gives you.
 
-The Contributor Guide has [more guidelines and tips for passing reviews](https://github.com/kubernetes/community/blob/master/contributors/guide/contributing.md#code-review).
+The Contributor Guide has [more guidelines and tips for passing reviews](https://github.com/kubernetes/community/blob/main/contributors/guide/contributing.md#code-review).
 
 ---
 

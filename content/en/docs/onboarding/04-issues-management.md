@@ -56,7 +56,7 @@ Issues are managed in many of the different Kubernetes GitHub repositories, and 
 
 # What are some common labels?
 
-There are [A LOT of different labels](https://github.com/kubernetes/test-infra/blob/master/label_sync/labels.md), and both issues and pull requests (PRs) can have their own labels. Here are a few you will run into frequently.
+There are [A LOT of different labels](https://github.com/kubernetes/test-infra/blob/main/label_sync/labels.md), and both issues and pull requests (PRs) can have their own labels. Here are a few you will run into frequently.
 
 <table style="font-size: 45%">
   <tr>

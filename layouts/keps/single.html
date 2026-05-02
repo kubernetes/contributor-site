@@ -85,7 +85,7 @@
               {{- if and (strings.HasPrefix . "http") (not (strings.Contains . "[")) -}}
                 <a href="{{ . }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> {{ . }}</a>
               {{- else if and (strings.HasPrefix . "/") (not (strings.Contains . "[")) -}}
-                <a href="https://github.com/kubernetes/enhancements/tree/master{{ . }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> {{ . }}</a>
+                <a href="https://github.com/kubernetes/enhancements/tree/main{{ . }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> {{ . }}</a>
               {{- else -}}
                 {{ . | markdownify }}
               {{- end -}}
@@ -106,7 +106,7 @@
           {{- with .Site.GetPage (printf "community/community-groups/sigs/%s" $owningSigSlug) -}}
             <a href="{{ .RelPermalink }}" class="kep-main-link">{{ .LinkTitle | default .Title }}</a>
           {{- else -}}
-            <a href="https://github.com/kubernetes/community/tree/master/{{ $.Params.owningSig }}" class="kep-main-link">
+            <a href="https://github.com/kubernetes/community/tree/main/{{ $.Params.owningSig }}" class="kep-main-link">
               SIG {{ $owningSigSlug | humanize | title }}
             </a>
           {{- end -}}
@@ -121,7 +121,7 @@
               {{- with $.Site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
                 <a href="{{ .RelPermalink }}" class="kep-tag-link">{{ .LinkTitle | default .Title }}</a>
               {{- else -}}
-                <a href="https://github.com/kubernetes/community/tree/master/{{ $sig }}" class="kep-tag-link">
+                <a href="https://github.com/kubernetes/community/tree/main/{{ $sig }}" class="kep-tag-link">
                   {{ $sigSlug | humanize | title }}
                 </a>
               {{- end -}}

@@ -9,7 +9,7 @@ author: "Arujjwal Negi"
 One of the most popular ways developers use Kubernetes-related services is via cloud providers, but
 have you ever wondered how cloud providers can do that? How does this whole process of integration
 of Kubernetes to various cloud providers happen? To answer that, let's put the spotlight on [SIG
-Cloud Provider](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md).
+Cloud Provider](https://github.com/kubernetes/community/blob/main/sig-cloud-provider/README.md).
 
 SIG Cloud Provider works to create seamless integrations between Kubernetes and various cloud
 providers. Their mission? Keeping the Kubernetes ecosystem fair and open for all. By setting clear
@@ -47,7 +47,7 @@ project](https://kubernetes.io/docs/tasks/extend-kubernetes/setup-konnectivity/)
 
 
 **Arujjwal:** After going through the project
-[README](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md), I
+[README](https://github.com/kubernetes/community/blob/main/sig-cloud-provider/README.md), I
 learned that SIG Cloud Provider works with the integration of Kubernetes with cloud providers. How
 does this whole process go?
 
@@ -68,9 +68,9 @@ venues.
 important ones and what job they do?
 
 **Michael:** I think the two most important subprojects today are the [cloud provider
-framework](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md#kubernetes-cloud-provider)
+framework](https://github.com/kubernetes/community/blob/main/sig-cloud-provider/README.md#kubernetes-cloud-provider)
 and the [extraction/migration
-project](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md#cloud-provider-extraction-migration). The
+project](https://github.com/kubernetes/community/blob/main/sig-cloud-provider/README.md#cloud-provider-extraction-migration). The
 cloud provider framework is a common library to help infrastructure integrators build a cloud
 controller for their infrastructure. This project is most frequently the starting point for new
 people coming to the SIG. The extraction and migration project is the other big subproject and a
@@ -107,7 +107,7 @@ contributors as much as possible.
 
 **Michael:** Since I joined the SIG, more than a year ago, we have made great progress in advancing
 the extraction and migration subproject. We have moved from an alpha status on the defining
-[KEP](https://github.com/kubernetes/enhancements/blob/master/keps/README.md) to a beta status and
+[KEP](https://github.com/kubernetes/enhancements/blob/main/keps/README.md) to a beta status and
 are inching ever closer to removing the old provider code from the Kubernetes source tree. I've been
 really proud to see the active engagement from our community members and to see the progress we have
 made towards extraction. I have a feeling that, within the next few releases, we will see the final
@@ -128,7 +128,7 @@ will be a great opportunity for anyone looking to expand their Kubernetes involv
 
 **Arujjwal:** Are there any specific skills you're looking for that we should highlight? To give you
 an example from our own [SIG ContribEx]
-(https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md):
+(https://github.com/kubernetes/community/blob/main/sig-contributor-experience/README.md):
 if you're an expert in [Hugo](https://gohugo.io/), we can always use some help with k8s.dev!
 
 **Michael:** The SIG is currently working through the final phases of our extraction and migration
@@ -143,4 +143,4 @@ in designing and implementing the new tests.
 This is where the conversation ends. I hope this gave you some insights about SIG Cloud Provider's
 aim and working. This is just the tip of the iceberg. To know more and get involved with SIG Cloud
 Provider, try attending their meetings
-[here](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md#meetings).
+[here](https://github.com/kubernetes/community/blob/main/sig-cloud-provider/README.md#meetings).

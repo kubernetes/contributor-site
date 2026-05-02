@@ -8,7 +8,7 @@ author: >
   Organizing team of Kubernetes Upstream Training in Japan
 ---
 
-We are organizers of [Kubernetes Upstream Training in Japan](https://github.com/kubernetes-sigs/contributor-playground/tree/master/japan).
+We are organizers of [Kubernetes Upstream Training in Japan](https://github.com/kubernetes-sigs/contributor-playground/tree/main/japan).
 Our team is composed of members who actively contribute to Kubernetes, including individuals who hold roles such as member, reviewer, approver, and chair.
 
 Our goal is to increase the number of Kubernetes contributors and foster the growth of the community.

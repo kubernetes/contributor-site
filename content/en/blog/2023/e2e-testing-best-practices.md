@@ -18,7 +18,7 @@ framework](https://github.com/kubernetes/kubernetes/tree/v1.27.0-rc.0/test/e2e/f
 for writing these E2E tests has been around for a long
 time. Functionality was added to it as needed, leading to code that became hard
 to maintain and use. The [testing commons
-WG](https://github.com/kubernetes/community/blob/master/sig-testing/README.md#testing-commons)
+WG](https://github.com/kubernetes/community/blob/main/sig-testing/README.md#testing-commons)
 started cleaning it up, but dissolved before completely achieving their
 goals.
 
@@ -27,7 +27,7 @@ v2](https://github.com/kubernetes/kubernetes/pull/109111) in Kubernetes 1.25, I
 picked up several of the loose ends and started untangling them. This blog post
 is a summary of those changes. Some of this content is also found in the
 Kubernetes contributor document about [writing good E2E
-tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/writing-good-e2e-tests.md)
+tests](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-testing/writing-good-e2e-tests.md)
 and gets reproduced here to raise awareness that the document has been updated.
 
 ## Overall architecture
@@ -316,7 +316,7 @@ and the framework were modified to use gomega. Typically, `Eventually` is
 passed a function which gets an object or lists several of them, then `Should`
 checks against the expected result. Errors and retries specific to Kubernetes
 are handled by [wrapping client-go
-functions](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/framework/get.go).
+functions](https://github.com/kubernetes/kubernetes/blob/main/test/e2e/framework/get.go).
 
 Using normal Gomega assertions in helper packages is problematic for two reasons:
 - The stacktrace associated with the failure starts with the helper unless
@@ -406,7 +406,7 @@ to match current best practices would be a good way for new contributors to get
 involved.
 
 The [SIG
-Testing](https://github.com/kubernetes/community/blob/master/sig-testing/README.md)'s
+Testing](https://github.com/kubernetes/community/blob/main/sig-testing/README.md)'s
 Slack channel is a good place to start. At KubeCon EU 2023, the ["Keeping the
 lights on and the bugs away"
 talk](https://kccnceu2023.sched.com/event/1Hzcr/keeping-the-lights-on-and-the-bugs-away-patrick-ohly-intel)

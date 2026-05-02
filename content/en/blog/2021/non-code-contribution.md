@@ -19,7 +19,7 @@ I do not code as part of my day-to-day work; I never have. While I have made bit
 
 I'm an Ops person that embraced DevOps early. This meant that I contributed bash scripts, documentation, and configuration files to repos left and right. I still struggle with git from time to time, but I feel like that's the norm, not the exception. If you're familiar with git and GitHub, you're ahead of the game when it comes to contributing to Kubernetes.
 
-My first work in the cloud native world was working with the [SIG Docs](https://git.k8s.io/community/sig-docs) team. I helped review some documentation and learned some of their processes. I wasn't there long before I found out about another great SIG: [Contributor Experience](https://git.k8s.io/community/sig-contributor-experience/README.md). Contributor Experience is all about improving the workflow, removing bottlenecks, and generally making Kubernetes a great project to contribute your time and effort. I knew ContribEx (as it’s called) is where I could make an impact.
+My first work in the cloud native world was working with the [SIG Docs](https://git.k8s.io/community/sig-docs) team. I helped review some documentation and learned some of their processes. I wasn't there long before I found out about another great SIG: [Contributor Experience](https://git.k8s.io/community/sig-contributor-experience/main/README.md). Contributor Experience is all about improving the workflow, removing bottlenecks, and generally making Kubernetes a great project to contribute your time and effort. I knew ContribEx (as it’s called) is where I could make an impact.
 
 My philosophy is if things were hard or confusing for me, they'd likely be hard for a large swath of folks. Process improvements can come from anyone. Why not me?
 

@@ -132,7 +132,7 @@ Some topics, such as Security or Code of Conduct, require discretion. Committees
 The [Kubernetes Community Resources page](/community/) has links to documents that describe our community structure and governance.
 
 * [The Community Groups page](/community/community-groups/) lists all current SIGs, working groups, and committees.
-* [The governance document](https://github.com/kubernetes/community/blob/master/governance.md) drills down into more of the specifics.
+* [The governance document](https://github.com/kubernetes/community/blob/main/governance.md) drills down into more of the specifics.
 
 <div class="bottom-nav">
     <a href="/docs/onboarding">Onboarding Index</a> | <a href="../02-getting-into-github">Next Section</a>

@@ -9,7 +9,7 @@ author: "Frederico Muñoz (SAS Institute)"
 
 _This is the second interview of a SIG Architecture Spotlight series that will cover the different
 subprojects. In this blog, we will cover the [SIG Architecture: Production Readiness
-subproject](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#production-readiness-1)_.
+subproject](https://github.com/kubernetes/community/blob/main/sig-architecture/README.md#production-readiness-1)_.
 
 In this SIG Architecture spotlight, we talked with [Wojciech Tyczynski](https://github.com/wojtek-t)
 (Google), lead of the Production Readiness subproject.
@@ -26,7 +26,7 @@ the seeding engineers for that team.
 
 After two months of onboarding and helping with different tasks across the project towards 1.0
 launch, I took ownership of the scalability area and I was leading Kubernetes to support clusters
-with 5000 nodes. I’m still involved in [SIG Scalability](https://github.com/kubernetes/community/blob/master/sig-scalability/README.md)
+with 5000 nodes. I’m still involved in [SIG Scalability](https://github.com/kubernetes/community/blob/main/sig-scalability/README.md)
 as its Technical Lead. That was the start of a journey since scalability is such a cross-cutting topic,
 and I started contributing to many other areas including, over time, to SIG Architecture.
 
@@ -78,7 +78,7 @@ So while we’re trying to get feedback (our annual PRR survey is very important
 reveals completely new problems - it rather shows the scale of them. And we try to react to it -
 changes like "Beta APIs off by default" happen in reaction to the data that we observe.
 
-**FSM**: On the topic of reaction, that made me think of how the [Kubernetes Enhancement Proposal (KEP)](https://github.com/kubernetes/enhancements/blob/master/keps/NNNN-kep-template/README.md)
+**FSM**: On the topic of reaction, that made me think of how the [Kubernetes Enhancement Proposal (KEP)](https://github.com/kubernetes/enhancements/blob/main/keps/NNNN-kep-template/README.md)
 template has a Production Readiness Review (PRR) section, which is tied to the graduation
 process. Was this something born out of identified insufficiencies? How would you describe the
 results?
@@ -104,7 +104,7 @@ thinking about reliability in its widest possible meaning.
 
 **FSM**: We've been talking about the PRR process, could you describe it for our readers?
 
-**WT**: The [PRR process](https://github.com/kubernetes/community/blob/master/sig-architecture/production-readiness.md)
+**WT**: The [PRR process](https://github.com/kubernetes/community/blob/main/sig-architecture/production-readiness.md)
 is fairly simple - we just want to ensure that you think through the productionisation aspects of
 your feature early enough. If you do your job, it’s just a matter of answering some questions in the
 KEP template and getting approval from a PRR approver (in addition to regular SIG approval). If you

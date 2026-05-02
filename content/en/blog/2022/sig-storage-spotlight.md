@@ -18,13 +18,13 @@ In this SIG Storage spotlight, [Frederico Muñoz](https://twitter.com/fredericom
 
 **Xing Yang (XY)**: I am a Tech Lead at VMware, working on Cloud Native Storage. I am also a Co-Chair of SIG Storage. I started to get involved in K8s SIG Storage at the end of 2017, starting with contributing to the [VolumeSnapshot](https://kubernetes.io/docs/concepts/storage/volume-snapshots/) project. At that time, the VolumeSnapshot project was still in an experimental, pre-alpha stage. It needed contributors. So I volunteered to help. Then I worked with other community members to bring VolumeSnapshot to Alpha in K8s 1.12 release in 2018, Beta in K8s 1.17 in 2019, and eventually GA in 1.20 in 2020.
 
-**FSM**: Reading the [SIG Storage charter](https://github.com/kubernetes/community/blob/master/sig-storage/charter.md) alone it’s clear that SIG Storage covers a lot of ground, could you describe how the SIG is organised?
+**FSM**: Reading the [SIG Storage charter](https://github.com/kubernetes/community/blob/main/sig-storage/charter.md) alone it’s clear that SIG Storage covers a lot of ground, could you describe how the SIG is organised?
 
 **XY**: In SIG Storage, there are two Co-Chairs and two Tech Leads. Saad Ali from Google and myself are Co-Chairs. Michelle Au from Google and Jan Šafránek from Red Hat are Tech Leads.
 
-We have bi-weekly meetings where we go through features we are working on for each particular release, getting the statuses, making sure each feature has dev owners and reviewers working on it, and reminding people about the release deadlines, etc. More information on the SIG is on the [community page](https://github.com/kubernetes/community/tree/master/sig-storage). People can also add PRs that need attention, design proposals that need discussion, and other topics to the meeting agenda doc. We will go over them after project tracking is done.
+We have bi-weekly meetings where we go through features we are working on for each particular release, getting the statuses, making sure each feature has dev owners and reviewers working on it, and reminding people about the release deadlines, etc. More information on the SIG is on the [community page](https://github.com/kubernetes/community/tree/main/sig-storage). People can also add PRs that need attention, design proposals that need discussion, and other topics to the meeting agenda doc. We will go over them after project tracking is done.
 
-We also have other regular meetings, i.e., CSI Implementation meeting, Object Bucket API design meeting, and one-off meetings for specific topics if needed. There is also a K8s [Data Protection Working Group](https://github.com/kubernetes/community/blob/master/wg-data-protection/README.md) that is sponsored by SIG Storage and SIG Apps. SIG Storage owns or co-owns features that are being discussed at the Data Protection WG.
+We also have other regular meetings, i.e., CSI Implementation meeting, Object Bucket API design meeting, and one-off meetings for specific topics if needed. There is also a K8s [Data Protection Working Group](https://github.com/kubernetes/community/blob/main/wg-data-protection/README.md) that is sponsored by SIG Storage and SIG Apps. SIG Storage owns or co-owns features that are being discussed at the Data Protection WG.
 
 ## Storage and Kubernetes
 
@@ -56,7 +56,7 @@ CSI is definitely a big improvement compared to in-tree volume plugins. Kubernet
 
 ## Ongoing challenges
 
-**FSM**: Specifically for the [1.25 release](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.25) we can see that there are a relevant number of storage-related [KEPs](https://bit.ly/k8s125-enhancements) in the pipeline, would you say that this release is particularly important for the SIG?
+**FSM**: Specifically for the [1.25 release](https://github.com/kubernetes/sig-release/tree/main/releases/release-1.25) we can see that there are a relevant number of storage-related [KEPs](https://bit.ly/k8s125-enhancements) in the pipeline, would you say that this release is particularly important for the SIG?
 
 **XY**: I wouldn’t say one release is more important than other releases. In any given release, we are working on a few very important things.
 
@@ -64,7 +64,7 @@ CSI is definitely a big improvement compared to in-tree volume plugins. Kubernet
 
 **XY**: Yes. For the 1.25 release, I want to highlight the following:
 
-* [CSI Migration](https://kubernetes.io/blog/2021/12/10/storage-in-tree-to-csi-migration-status-update/#quick-recap-what-is-csi-migration-and-why-migrate) is an on-going effort that SIG Storage has been working on for a few releases now. The goal is to move in-tree volume plugins to out-of-tree CSI drivers and eventually remove the in-tree volume plugins.  There are 7 KEPs that we are targeting in 1.25 are related to CSI migration. There is one [core KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/625-csi-migration) for the general CSI Migration feature. That is targeting GA in 1.25. CSI Migration for GCE PD and AWS EBS are targeting GA. CSI Migration for vSphere is targeting to have the feature gate on by default while staying in 1.25 that are in Beta. Ceph RBD and PortWorx are targeting Beta, with feature gate off by default. Ceph FS is targeting Alpha.
+* [CSI Migration](https://kubernetes.io/blog/2021/12/10/storage-in-tree-to-csi-migration-status-update/#quick-recap-what-is-csi-migration-and-why-migrate) is an on-going effort that SIG Storage has been working on for a few releases now. The goal is to move in-tree volume plugins to out-of-tree CSI drivers and eventually remove the in-tree volume plugins.  There are 7 KEPs that we are targeting in 1.25 are related to CSI migration. There is one [core KEP](https://github.com/kubernetes/enhancements/tree/main/keps/sig-storage/625-csi-migration) for the general CSI Migration feature. That is targeting GA in 1.25. CSI Migration for GCE PD and AWS EBS are targeting GA. CSI Migration for vSphere is targeting to have the feature gate on by default while staying in 1.25 that are in Beta. Ceph RBD and PortWorx are targeting Beta, with feature gate off by default. Ceph FS is targeting Alpha.
 * The second one I want to highlight is [COSI, the Container Object Storage Interface](https://github.com/kubernetes-sigs/container-object-storage-interface-spec). This is a sub-project under SIG Storage. COSI proposes object storage Kubernetes APIs to support orchestration of object store operations for Kubernetes workloads. It also introduces gRPC interfaces for object storage providers to write drivers to provision buckets. The COSI team has been working on this project for more than two years now. The COSI feature is targeting Alpha in 1.25. The KEP just got merged. The COSI team is working on updating the implementation based on the updated KEP.
 * Another feature I want to mention is [CSI Ephemeral Volume](https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/#csi-ephemeral-volumes) support. This feature allows CSI volumes to be specified directly in the pod specification for ephemeral use cases. They can be used to inject arbitrary states, such as configuration, secrets, identity, variables or similar information, directly inside pods using a mounted volume.  This was initially introduced in 1.15 as an alpha feature, and it is now [targeting GA](https://github.com/kubernetes/enhancements/issues/596) in 1.25.
 
@@ -77,9 +77,9 @@ CSI is definitely a big improvement compared to in-tree volume plugins. Kubernet
 
 **FSM**: Kubernetes is a community-driven project. Any recommendation for anyone looking into getting involved in SIG Storage work? Where should they start?
 
-**XY**: Take a look at the [SIG Storage community page](https://github.com/kubernetes/community/tree/master/sig-storage), it has lots of information on how to get started. There are [SIG annual reports](https://github.com/kubernetes/community/blob/master/sig-storage/annual-report-2021.md) that tell you what we did each year. Take a look at the Contributing guide. It has links to presentations that can help you get familiar with Kubernetes storage concepts.
+**XY**: Take a look at the [SIG Storage community page](https://github.com/kubernetes/community/tree/main/sig-storage), it has lots of information on how to get started. There are [SIG annual reports](https://github.com/kubernetes/community/blob/main/sig-storage/annual-report-2021.md) that tell you what we did each year. Take a look at the Contributing guide. It has links to presentations that can help you get familiar with Kubernetes storage concepts.
 
-Join our [bi-weekly meetings on Thursdays](https://github.com/kubernetes/community/tree/master/sig-storage#meetings). Learn how the SIG operates and what we are working on for each release. Find a project that you are interested in and help out. As I mentioned earlier, I got started in SIG Storage by contributing to the Volume Snapshot project.
+Join our [bi-weekly meetings on Thursdays](https://github.com/kubernetes/community/tree/main/sig-storage#meetings). Learn how the SIG operates and what we are working on for each release. Find a project that you are interested in and help out. As I mentioned earlier, I got started in SIG Storage by contributing to the Volume Snapshot project.
 
 **FSM**: Any closing thoughts you would like to add?
 

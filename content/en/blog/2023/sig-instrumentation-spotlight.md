@@ -28,9 +28,9 @@ In this SIG Instrumentation spotlight, [Imran Noor Mohamed](https://www.linkedin
 
 **Elana (EH)**: In SIG Instrumentation, we have two chairs, Han and myself, as well as two tech leads, David Ashpole and Damien Grisonnet. We all work together as the SIG’s leads in order to run meetings, triage issues and PRs, review and approve KEPs, plan for each release, present at KubeCon and community meetings, and write our annual report. Within the SIG we also have a number of important subprojects, each of which is stewarded by its subproject owners. For example, Marek Siarkowicz is a subproject owner of [metrics-server](https://github.com/kubernetes-sigs/metrics-server).
 
-Because we’re a horizontal SIG, some of our projects have a wide scope and require coordination from a dedicated group of contributors. For example, in order to guide the Kubernetes migration to structured logging, we chartered the [Structured Logging](https://github.com/kubernetes/community/blob/master/wg-structured-logging/README.md) Working Group (WG), organized by Marek and Patrick Ohly. The WG doesn’t own any code, but helps with various components such as the *kubelet*, *scheduler*, etc. in migrating their code to use structured logs.
+Because we’re a horizontal SIG, some of our projects have a wide scope and require coordination from a dedicated group of contributors. For example, in order to guide the Kubernetes migration to structured logging, we chartered the [Structured Logging](https://github.com/kubernetes/community/blob/main/wg-structured-logging/README.md) Working Group (WG), organized by Marek and Patrick Ohly. The WG doesn’t own any code, but helps with various components such as the *kubelet*, *scheduler*, etc. in migrating their code to use structured logs.
 
-**Imran (INM)**: Walking through the [charter](https://github.com/kubernetes/community/blob/master/sig-instrumentation/charter.md) alone it’s clear that SIG Instrumentation has a lot of sub-projects. Could you highlight some important ones?
+**Imran (INM)**: Walking through the [charter](https://github.com/kubernetes/community/blob/main/sig-instrumentation/charter.md) alone it’s clear that SIG Instrumentation has a lot of sub-projects. Could you highlight some important ones?
 
 **Han (HK)**: We have many different sub-projects and we are in dire need of people who can come and help shepherd them. Our most important projects in-tree (that is, within the kubernetes/kubernetes repo) are metrics, tracing, and, structured logging. Our most important projects out-of-tree are (a) KSM (kube-state-metrics) and (b) metrics-server.
 
@@ -38,7 +38,7 @@ Because we’re a horizontal SIG, some of our projects have a wide scope and req
 
 ## Current status and ongoing challenges
 
-**Imran (INM)**: For release [1.26](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.26) we can see that there are a relevant number of metrics, logs, and tracing [KEPs](https://www.k8s.dev/resources/keps/) in the pipeline. Would you like to point out important things for last release (maybe alpha & stable milestone candidates?)
+**Imran (INM)**: For release [1.26](https://github.com/kubernetes/sig-release/tree/main/releases/release-1.26) we can see that there are a relevant number of metrics, logs, and tracing [KEPs](https://www.k8s.dev/resources/keps/) in the pipeline. Would you like to point out important things for last release (maybe alpha & stable milestone candidates?)
 
 **Han (HK)**: We can now generate [documentation](https://kubernetes.io/docs/reference/instrumentation/metrics/) for every single metric in the main Kubernetes code base! We have a pretty fancy static analysis pipeline that enables this functionality. We’ve also added feature metrics so that you can look at your metrics to determine which features are enabled in your cluster at a given time. Lastly, we added a component-sli endpoint, which should make it easy for people to create availability SLOs for *control-plane* components.
 
@@ -54,6 +54,6 @@ Because we’re a horizontal SIG, some of our projects have a wide scope and req
 
 **Imran (INM)**: Kubernetes values community over products.  Any recommendation for anyone looking into getting involved in SIG Instrumentation work? Where should they start (new contributor-friendly areas within SIG?)
 
-**Han(HK) and Elana (EH)**: Come to our bi-weekly triage [meetings](https://github.com/kubernetes/community/tree/master/sig-instrumentation#meetings)! They aren’t recorded and are a great place to ask questions and learn about our ongoing work. We strive to be a friendly community and one of the easiest SIGs to get started with. You can check out our latest KubeCon NA 2022 [SIG Instrumentation Deep Dive](https://youtu.be/JIzrlWtAA8Y) to get more insight into our work. We also invite you to join our Slack channel #sig-instrumentation and feel free to reach out to any of our SIG leads or subproject owners directly.
+**Han(HK) and Elana (EH)**: Come to our bi-weekly triage [meetings](https://github.com/kubernetes/community/tree/main/sig-instrumentation#meetings)! They aren’t recorded and are a great place to ask questions and learn about our ongoing work. We strive to be a friendly community and one of the easiest SIGs to get started with. You can check out our latest KubeCon NA 2022 [SIG Instrumentation Deep Dive](https://youtu.be/JIzrlWtAA8Y) to get more insight into our work. We also invite you to join our Slack channel #sig-instrumentation and feel free to reach out to any of our SIG leads or subproject owners directly.
 
 Thank you so much for your time and insights into the workings of SIG Instrumentation!

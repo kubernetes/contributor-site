@@ -8,7 +8,7 @@ author: "Sandipan Panda (DevZero)"
 
 In our ongoing SIG Spotlight series, we dive into the heart of the Kubernetes project by talking to
 the leaders of its various Special Interest Groups (SIGs). This time, we focus on 
-**[SIG Apps](https://github.com/kubernetes/community/tree/master/sig-apps#apps-special-interest-group)**,
+**[SIG Apps](https://github.com/kubernetes/community/tree/main/sig-apps#apps-special-interest-group)**,
 the group responsible for everything related to developing, deploying, and operating applications on
 Kubernetes. [Sandipan Panda](https://www.linkedin.com/in/sandipanpanda)
 ([DevZero](https://www.devzero.io/)) had the opportunity to interview [Maciej
@@ -24,7 +24,7 @@ within the Kubernetes community that led to your current roles in SIG Apps?**
 
 **Maciej**: Hey, my name is Maciej, and I’m one of the leads for SIG Apps. Aside from this role, you
 can also find me helping
-[SIG CLI](https://github.com/kubernetes/community/tree/master/sig-cli#readme) and also being one of
+[SIG CLI](https://github.com/kubernetes/community/tree/main/sig-cli#readme) and also being one of
 the Steering Committee members. I’ve been contributing to Kubernetes since late 2014 in various
 areas, including controllers, apiserver, and kubectl.
 
@@ -45,7 +45,7 @@ involved. Over time, I took on more responsibilities, culminating in my current 
 What key problems does it aim to solve within the Kubernetes ecosystem?**
 
 As described in our
-[charter](https://github.com/kubernetes/community/blob/master/sig-apps/charter.md#scope), we cover a
+[charter](https://github.com/kubernetes/community/blob/main/sig-apps/charter.md#scope), we cover a
 broad area related to developing, deploying, and operating applications on Kubernetes. That, in
 short, means we’re open to each and everyone showing up at our bi-weekly meetings and discussing the
 ups and downs of writing and deploying various applications on Kubernetes.
@@ -57,9 +57,9 @@ At this point in time, the main factors driving the development of our controlle
 challenges coming from running various AI-related workloads. It’s worth giving credit here to two
 working groups we’ve sponsored over the past years:
 
-1. [The Batch Working Group](https://github.com/kubernetes/community/tree/master/wg-batch), which is
+1. [The Batch Working Group](https://github.com/kubernetes/community/tree/main/wg-batch), which is
    looking at running HPC, AI/ML, and data analytics jobs on top of Kubernetes.
-2. [The Serving Working Group](https://github.com/kubernetes/community/tree/master/wg-serving), which
+2. [The Serving Working Group](https://github.com/kubernetes/community/tree/main/wg-serving), which
    is focusing on hardware-accelerated AI/ML inference.
 
 ## Best practices and challenges
@@ -122,7 +122,7 @@ successful with one controller, you’ll need to repeat that same process with o
 integrated into your work?**
 
 We always encourage everyone to show up and present their problems and solutions during our
-bi-weekly [meetings](https://github.com/kubernetes/community/tree/master/sig-apps#meetings). As long
+bi-weekly [meetings](https://github.com/kubernetes/community/tree/main/sig-apps#meetings). As long
 as you’re solving an interesting problem on top of Kubernetes and you can provide valuable feedback
 about any of the core controllers, we’re always happy to hear from everyone.
 
@@ -150,7 +150,7 @@ modern application developers and operators. Whether you’re a new contributor 
 developer, there’s always an opportunity to get involved and make an impact.
 
 If you’re interested in learning more or contributing to SIG Apps, be sure to check out their [SIG
-README](https://github.com/kubernetes/community/tree/master/sig-apps) and join their bi-weekly [meetings](https://github.com/kubernetes/community/tree/master/sig-apps#meetings).
+README](https://github.com/kubernetes/community/tree/main/sig-apps) and join their bi-weekly [meetings](https://github.com/kubernetes/community/tree/main/sig-apps#meetings).
 
 - [SIG Apps Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-apps)
 - [SIG Apps on Slack](https://kubernetes.slack.com/messages/sig-apps)

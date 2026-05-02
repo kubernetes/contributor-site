@@ -24,8 +24,8 @@ If you're mourning that loss,
 know you're not alone.
 Whatever you do to honor him,
 may it be with as much kindness as he brought to others every day.
-We have started to collect some of our <a href="https://github.com/cncf/memorials/blob/master/peeyush-gupta.md" target="_blank" rel="noreferrer">thoughts and memories of Peeyush</a> as a memorial to him and what he brought to the community.
-If you would like to share some of your own, please <a href="https://github.com/cncf/memorials/blob/master/peeyush-gupta.md" target="_blank" rel="noreferrer">open a PR adding your own memories of him.</a>
+We have started to collect some of our <a href="https://github.com/cncf/memorials/blob/main/peeyush-gupta.md" target="_blank" rel="noreferrer">thoughts and memories of Peeyush</a> as a memorial to him and what he brought to the community.
+If you would like to share some of your own, please <a href="https://github.com/cncf/memorials/blob/main/peeyush-gupta.md" target="_blank" rel="noreferrer">open a PR adding your own memories of him.</a>
 
 {{% /alert %}}
 

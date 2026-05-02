@@ -185,7 +185,7 @@ There's plenty to learn in debugging test failures, and it will help you gain
 familiarity with the code that SIG Node maintains.
 
 You can always find information about the group on the
-[SIG Node](https://github.com/kubernetes/community/tree/master/sig-node) page.
+[SIG Node](https://github.com/kubernetes/community/tree/main/sig-node) page.
 We give group updates at our maintainer track sessions, such as
 [KubeCon + CloudNativeCon Europe 2021](https://kccnceu2021.sched.com/event/iE8E/kubernetes-sig-node-intro-and-deep-dive-elana-hashman-red-hat-sergey-kanzhelev-google) and
 [KubeCon + CloudNative North America 2021](https://kccncna2021.sched.com/event/lV9D/kubenetes-sig-node-intro-and-deep-dive-elana-hashman-derek-carr-red-hat-sergey-kanzhelev-dawn-chen-google?iframe=no&w=100%&sidebar=yes&bg=no).

@@ -11,11 +11,11 @@ that will cover the different subprojects. We start with the SIG
 Architecture: Conformance subproject_
 
 In this [SIG
-Architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md)
+Architecture](https://github.com/kubernetes/community/blob/main/sig-architecture/README.md)
 spotlight, we talked with [Riaan
 Kleinhans](https://github.com/Riaankl) (ii-Team), Lead for the
 [Conformance
-sub-project](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#conformance-definition-1).
+sub-project](https://github.com/kubernetes/community/blob/main/sig-architecture/README.md#conformance-definition-1).
 
 ## About SIG Architecture and the Conformance subproject
 
@@ -66,7 +66,7 @@ compatible Kubernetes ecosystem for developers and users alike.
 
 **FSM**: A part of providing those standardised tests is, I believe,
 the [Conformance Test
-Suite](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/conformance-tests.md). Could
+Suite](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-architecture/conformance-tests.md). Could
 you explain what it is and its importance?
 
 **RK**: The Kubernetes Conformance Test Suite checks if Kubernetes
@@ -92,7 +92,7 @@ in specific profiles. However, this aspect is still a work in
 progress.
 
 Endpoints that do not meet the conformance criteria are listed in
-[ineligible_endpoints.yaml](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/ineligible_endpoints.yaml),
+[ineligible_endpoints.yaml](https://github.com/kubernetes/kubernetes/blob/main/test/conformance/testdata/ineligible_endpoints.yaml),
 which is publicly accessible in the Kubernetes repo. This file can be
 updated to add or remove endpoints as their status or requirements
 change. These ineligible endpoints are also visible on
@@ -138,7 +138,7 @@ release 1.27!
 
 At that point, the community took another look at [all the endpoints
 that were listed as ineligible for
-conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/pending_eligible_endpoints.yaml).
+conformance](https://github.com/kubernetes/kubernetes/blob/main/test/conformance/testdata/pending_eligible_endpoints.yaml).
 The list was populated through community input over several years.
 Several endpoints that were previously deemed ineligible for
 conformance have been identified and relocated to a new dedicated

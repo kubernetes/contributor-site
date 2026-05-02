@@ -43,7 +43,7 @@ to `PodTopologySpread` recently. `PodTopologySpread` is a relatively new feature
 and we are still in the process of gathering feedback and making improvements.
 
 Most recently, we have been focusing on a new internal enhancement called
-[QueueingHint](https://github.com/kubernetes/enhancements/blob/master/keps/sig-scheduling/4247-queueinghint/README.md)
+[QueueingHint](https://github.com/kubernetes/enhancements/blob/main/keps/sig-scheduling/4247-queueinghint/README.md)
 which aims to enhance scheduling throughput. Throughput is one of our crucial metrics in
 scheduling. Traditionally, we have primarily focused on optimizing the latency of each scheduling
 cycle. QueueingHint takes a different approach, optimizing when to retry scheduling, thereby
@@ -82,7 +82,7 @@ talk about them? Are there some interesting contributions by those teams you wan
 [Kueue](https://github.com/kubernetes-sigs/kueue)
 : Recently, many people have been trying to manage batch workloads with Kubernetes, and in 2022,
   Kubernetes community founded
-  [WG-Batch](https://github.com/kubernetes/community/blob/master/wg-batch/README.md) for better
+  [WG-Batch](https://github.com/kubernetes/community/blob/main/wg-batch/README.md) for better
   support for such batch workloads in Kubernetes. [Kueue](https://github.com/kubernetes-sigs/kueue)
   is a project that takes a crucial role for it. It’s a job queueing controller, deciding when a job
   should wait, when a job should be admitted to start, and when a job should be preempted. Kueue aims
@@ -102,7 +102,7 @@ talk about them? Are there some interesting contributions by those teams you wan
   Descheduler evicts Pods violating their scheduling constraints (or other undesired conditions) so
   that they’re recreated and rescheduled.
 
-[Descheduling Framework](https://github.com/kubernetes-sigs/descheduler/blob/master/keps/753-descheduling-framework/README.md)
+[Descheduling Framework](https://github.com/kubernetes-sigs/descheduler/blob/main/keps/753-descheduling-framework/README.md)
 : One very interesting on-going project, similar to
   [Scheduling Framework](https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/)
   in the scheduler, aiming to make descheduling logic extensible and allow maintainers to focus on building
@@ -142,7 +142,7 @@ label, which often indicates lower-priority tasks and can be starting points.
 Specifically for SIG Scheduling, you should first understand the
 [Scheduling Framework](https://kubernetes.io/docs/concepts/scheduling-eviction/scheduling-framework/), which is
 the fundamental architecture of kube-scheduler. Most of the implementation is found in
-[pkg/scheduler](https://github.com/kubernetes/kubernetes/tree/master/pkg/scheduler). I suggest starting with
+[pkg/scheduler](https://github.com/kubernetes/kubernetes/tree/main/pkg/scheduler). I suggest starting with
 [ScheduleOne](https://github.com/kubernetes/kubernetes/blob/0590bb1ac495ae8af2a573f879408e48800da2c5/pkg/scheduler/schedule_one.go#L66)
 function and then exploring deeper from there.
 
@@ -182,7 +182,7 @@ allows maintainers to focus on the core scheduling features and the framework ru
 Another major issue is maintaining sufficient scheduling throughput. Typically, a Kubernetes cluster
 has only one kube-scheduler, so its throughput directly affects the overall scheduling scalability
 and, consequently, the cluster's scalability. Although we have an internal performance test
-([scheduler_perf](https://github.com/kubernetes/kubernetes/tree/master/test/integration/scheduler_perf)),
+([scheduler_perf](https://github.com/kubernetes/kubernetes/tree/main/test/integration/scheduler_perf)),
 unfortunately, we sometimes overlook performance degradation in less common scenarios. It’s
 difficult as even small changes, which look irrelevant to performance, can lead to degradation.
 
@@ -217,7 +217,7 @@ are what makes our open source so powerful 😊
 
 Feel free to reach out to us in Slack
 ([#sig-scheduling](https://kubernetes.slack.com/archives/C09TP78DV)) or
-[meetings](https://github.com/kubernetes/community/blob/master/sig-scheduling/README.md#meetings).
+[meetings](https://github.com/kubernetes/community/blob/main/sig-scheduling/README.md#meetings).
 I hope this article interests everyone and we can see new contributors!
 
 **AP: Thank you so much for taking the time to do this! I'm confident that many will find this
