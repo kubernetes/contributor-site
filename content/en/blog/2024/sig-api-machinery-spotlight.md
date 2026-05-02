@@ -71,7 +71,7 @@ support and effectively took ownership of that area from sig-apps.
 For an example of more shared ownership: building out cooperative resource management (the goal of
 server-side apply), `kubectl` expanded to take ownership of leveraging the server-side apply
 capability.  The transition isn’t yet complete, but [SIG
-CLI](https://github.com/kubernetes/community/tree/master/sig-cli) manages that usage and owns it.
+CLI](https://github.com/kubernetes/community/tree/main/sig-cli) manages that usage and owns it.
 
 **FSM: And for the boundary between approaches, do you have any guidelines?**
 
@@ -148,7 +148,7 @@ reduced etcd load (consistent reads from cache), and reduced peak memory usage (
 
 And finally, the increased usage has highlighted some long existing
 gaps that we’re closing.  Things like field selectors for CRDs which
-the [Batch Working Group](https://github.com/kubernetes/community/blob/master/wg-batch/README.md)
+the [Batch Working Group](https://github.com/kubernetes/community/blob/main/wg-batch/README.md)
 is eager to leverage and will eventually form the basis for a new way
 to prevent trampoline pod attacks from exploited nodes.
 

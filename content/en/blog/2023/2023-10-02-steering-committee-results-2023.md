@@ -6,9 +6,9 @@ slug: steering-committee-results-2023
 author: "Kaslin Fields"
 ---
 
-The [2023 Steering Committee Election](https://github.com/kubernetes/community/tree/master/events/elections/2023) is now complete. The Kubernetes Steering Committee consists of 7 seats, 4 of which were up for election in 2023. Incoming committee members serve a term of 2 years, and all members are elected by the Kubernetes Community.
+The [2023 Steering Committee Election](https://github.com/kubernetes/community/tree/main/events/elections/2023) is now complete. The Kubernetes Steering Committee consists of 7 seats, 4 of which were up for election in 2023. Incoming committee members serve a term of 2 years, and all members are elected by the Kubernetes Community.
 
-This community body is significant since it oversees the governance of the entire Kubernetes project. With that great power comes great responsibility. You can learn more about the steering committee’s role in their [charter](https://github.com/kubernetes/steering/blob/master/charter.md).
+This community body is significant since it oversees the governance of the entire Kubernetes project. With that great power comes great responsibility. You can learn more about the steering committee’s role in their [charter](https://github.com/kubernetes/steering/blob/main/charter.md).
 
 Thank you to everyone who voted in the election; your participation helps support the community’s continued health and success.
 
@@ -58,4 +58,4 @@ If you want to meet some of the newly elected Steering Committee members, join u
 
 ---
 
-_This post was written by the [Contributor Comms Subproject](https://github.com/kubernetes/community/tree/master/communication/contributor-comms). If you want to write stories about the Kubernetes community, learn more about us._
+_This post was written by the [Contributor Comms Subproject](https://github.com/kubernetes/community/tree/main/communication/contributor-comms). If you want to write stories about the Kubernetes community, learn more about us._

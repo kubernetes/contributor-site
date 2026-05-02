@@ -114,7 +114,7 @@ The following are considerations to take into account designing new features:
 ### Feature testing
 
 It is highly encouraged to add critest to every new CRI API.
-Read about CRI API [validation](https://github.com/kubernetes-sigs/cri-tools/blob/master/docs/validation.md).
+Read about CRI API [validation](https://github.com/kubernetes-sigs/cri-tools/blob/main/docs/validation.md).
 
 ## What's next
 

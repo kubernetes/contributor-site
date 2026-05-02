@@ -66,7 +66,7 @@
                 {{ printf "%s" $data.title }}
               </a>
               {{- else -}}
-              <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owningSig}}/{{$data.name}}#summary">
+              <a href="https://github.com/kubernetes/enhancements/tree/main/keps/{{$data.owningSig}}/{{$data.name}}#summary">
                 {{ printf "%s" $data.title }}
               </a>
               {{- end -}}
@@ -76,7 +76,7 @@
               {{- with site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
                 <a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title }}</a>
               {{- else -}}
-                <a href="https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}">
+                <a href="https://github.com/kubernetes/community/tree/main/{{ $data.owningSig }}">
                   SIG {{ $sigSlug | humanize | title }}
                 </a>
               {{- end -}}
@@ -107,7 +107,7 @@
                   {{- $version := strings.TrimPrefix "v" $milestone -}}
                   <li>
                     {{ $stage }}:
-                    <a href="https://github.com/kubernetes/sig-release/tree/master/releases/release-{{ $version }}" class="kep-milestone" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/kubernetes/sig-release/tree/main/releases/release-{{ $version }}" class="kep-milestone" target="_blank" rel="noopener noreferrer">
                       {{ $milestone }}
                     </a>
                   </li>

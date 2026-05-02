@@ -20,7 +20,7 @@ original location. A list of sources and their locations within the
 
 - **Source:** https://git.k8s.io/community/contributors/guide <br>
   **Destination:** `/guide`
-- **Source:** https://github.com/cncf/foundation/blob/master/code-of-conduct.md <br>
+- **Source:** https://github.com/cncf/foundation/blob/main/code-of-conduct.md <br>
   **Destination:** `/code-of-conduct.md`
 - **Source:** https://git.k8s.io/sig-release/releases/release-1.18/README.md <br>
   **Destination:** `/release.md`
@@ -126,10 +126,10 @@ Participation in the Kubernetes community is governed by the
 [npm]: https://nodejs.org/en/download/package-manager
 [frontmatter]: https://gohugo.io/content-management/front-matter/
 [docker]: https://www.docker.com/get-started
-[sig-contribex]: https://git.k8s.io/community/sig-contributor-experience/README.md
+[sig-contribex]: https://git.k8s.io/community/sig-contributor-experience/main/README.md
 [sig-contribex-slack]: http://slack.k8s.io/#sig-contribex
 [sig-contribex-list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
-[kep-2225]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-contributor-experience/2225-contributor-site
+[kep-2225]: https://github.com/kubernetes/enhancements/tree/main/keps/sig-contributor-experience/2225-contributor-site
 [docsy]: https://docsy.dev
 [postcss-cli]: https://postcss.org/
 [autoprefixer]: https://github.com/postcss/autoprefixer

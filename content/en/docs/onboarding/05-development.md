@@ -38,7 +38,7 @@ This method uses a containerized build environment. There are some good reasons 
 * Initial setup is simple.
 * This provides a very consistent build and test environment.
 
-Read more about this method in [Building Kubernetes](https://github.com/kubernetes/kubernetes/blob/master/build/README.md).
+Read more about this method in [Building Kubernetes](https://github.com/kubernetes/kubernetes/blob/main/build/README.md).
 
 ---
 
@@ -49,7 +49,7 @@ This method takes the most effort to set up. But it has its own advantages:
 * You’ll have fine-grained control over all aspects of the build process.
 * There is no overheard from a container system like Docker.
 
-To set this method up, [follow the steps from the Development Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#building-kubernetes-on-a-local-osshell-environment).
+To set this method up, [follow the steps from the Development Guide](https://github.com/kubernetes/community/blob/main/contributors/devel/development.md#building-kubernetes-on-a-local-osshell-environment).
 
 ---
 
@@ -68,7 +68,7 @@ To build Kubernetes with Codespaces, follow the steps in this document.
 
 Once you have a working development environment, you will be ready to develop and run tests against Kubernetes.
 
-But first, we recommend that you [become familiar with the Development Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md).
+But first, we recommend that you [become familiar with the Development Guide](https://github.com/kubernetes/community/blob/main/contributors/devel/development.md).
 
 
 <div class="bottom-nav">
