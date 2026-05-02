@@ -4,6 +4,10 @@ This repository contains the [Hugo][hugo] site and generator scripts for the
 Kubernetes Contributor site. The published website is available at
 https://kubernetes.dev/ (served via Netlify).
 
+## Localization
+
+- [English (en)](README-en.md)
+
 ## Site content
 
 The content for the Contributor Site is sourced from multiple locations.
