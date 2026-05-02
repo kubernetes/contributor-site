@@ -59,7 +59,7 @@ KEPs are required for most non-trivial changes. Specifically:
 
 First, we call it KEP for short. And second, the KEP process is managed by the Architecture Special Interest Group (SIG Architecture).
 
-* To learn more, [read the SIG Architecture documentation](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md).
+* To learn more, [read the SIG Architecture documentation](https://github.com/kubernetes/community/blob/main/sig-architecture/README.md).
 
 <div class="bottom-nav">
     <a href="/docs/onboarding">Onboarding Index</a>

@@ -48,8 +48,8 @@ of documentation you’d like to be surfaced.
 [k8s.dev/cheatsheet]: https://k8s.dev/cheatsheet
 [k8s.dev/calendar]: https://k8s.dev/calendar
 [k8s.dev/release]: https://k8s.dev/release
-[The Developer Guide]: https://git.k8s.io/community/contributors/devel
-[subproject websites]: https://git.k8s.io/community/github-management/subproject-site-requests.md
-[repo creation]: https://git.k8s.io/community/github-management/opening-a-request.md#opening-a-issue-for-support-with-github
-[slack channel]: https://git.k8s.io/community/communication/slack-guidelines.md#requesting-a-channel
+[The Developer Guide]: https://github.com/kubernetes/community/blob/main/contributors/devel
+[subproject websites]: https://github.com/kubernetes/community/blob/main/github-management/subproject-site-requests.md
+[repo creation]: https://github.com/kubernetes/community/blob/main/github-management/opening-a-request.md#opening-a-issue-for-support-with-github
+[slack channel]: https://github.com/kubernetes/community/blob/main/communication/slack-guidelines.md#requesting-a-channel
 [kubernetes-sigs/contributor-site]: https://github.com/kubernetes-sigs/contributor-site

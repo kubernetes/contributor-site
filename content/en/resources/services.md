@@ -43,8 +43,8 @@ required to apply for org membership in another Kubernetes org, such as
 adding yourself a member of the other org.
 
 
-[Kubernetes GitHub Org members]: https://git.k8s.io/community/community-membership.md
-[community membership guidelines]: https://git.k8s.io/community/community-membership.md#member
+[Kubernetes GitHub Org members]: https://github.com/kubernetes/community/blob/main/community-membership.md
+[community membership guidelines]: https://github.com/kubernetes/community/blob/main/community-membership.md#member
 [Org Membership Request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
 
 
@@ -75,8 +75,8 @@ For more information, see the Kubernetes [GitHub Repository Guidelines].
 [creation, migration]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-repo&template=repo-create.yml&title=
 [archival]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-repo&template=repo-archive.yml&title=
 [issue templates]: https://github.com/kubernetes/org/issues/new/choose
-[Donated repos]: http://git.k8s.io/community/github-management/kubernetes-repositories.md#rules-for-donated-repositories
-[GitHub Repository Guidelines]: http://git.k8s.io/community/github-management/kubernetes-repositories.md
+[Donated repos]: https://github.com/kubernetes/community/blob/main/github-management/kubernetes-repositories.md#rules-for-donated-repositories
+[GitHub Repository Guidelines]: https://github.com/kubernetes/community/blob/main/github-management/kubernetes-repositories.md
 
 
 ## Communication platform and services
@@ -101,8 +101,8 @@ community [mailing list creation procedure]. With the subproject's entry in
 [sigs.yaml], being updated with the new mailing list.
 
 
-[mailing list creation procedure]: https://git.k8s.io/community/communication/mailing-list-guidelines.md#mailing-list-creation
-[sigs.yaml]: https://git.k8s.io/community/sigs.yaml
+[mailing list creation procedure]: https://github.com/kubernetes/community/blob/main/communication/mailing-list-guidelines.md#mailing-list-creation
+[sigs.yaml]: https://github.com/kubernetes/community/blob/main/sigs.yaml
 
 
 
@@ -119,9 +119,9 @@ be through the [Slack Request] form in the [kubernetes/community] readme.
 For more information, see the [Slack Guidelines].
 
 
-[slack-config]: https://git.k8s.io/community/communication/slack-config
+[slack-config]: https://github.com/kubernetes/community/blob/main/communication/slack-config
 [Slack Request]: https://github.com/kubernetes/community/issues/new?assignees=&labels=area%2Fcommunity-management%2C+area%2Fslack-management%2C+sig%2Fcontributor-experience&template=slack-request.yml&title=REQUEST%3A+New+Slack+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D%3E+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D+name%3E
-[Slack Guidelines]: https://git.k8s.io/community/communication/slack-guidelines.md
+[Slack Guidelines]: https://github.com/kubernetes/community/blob/main/communication/slack-guidelines.md
 
 
 
@@ -137,7 +137,7 @@ For additional information, on survey services, see the community
 [Survey request guidelines].
 
 [Community Survey Request]: https://github.com/kubernetes/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=survey-request.yml&title=SURVEY+REQUEST%3A+%3Ctopic%3E
-[Survey request guidelines]: https://git.k8s.io/community/communication/requesting-survey.md
+[Survey request guidelines]: https://github.com/kubernetes/community/blob/main/communication/requesting-survey.md
 
 
 
@@ -149,8 +149,8 @@ pinging `@youtube-admins` in the [SIG ContribEx Slack channel].
 For more information, see the [YouTube guidelines].
 
 
-[YouTube admin team]: https://git.k8s.io/community/communication/moderators.md#youtube-channel
-[YouTube guidelines]: https://git.k8s.io/community/communication/youtube/youtube-guidelines.md
+[YouTube admin team]: https://github.com/kubernetes/community/blob/main/communication/moderators.md#youtube-channel
+[YouTube guidelines]: https://github.com/kubernetes/community/blob/main/communication/youtube/youtube-guidelines.md
 
 
 
@@ -165,7 +165,7 @@ For more information, see the Kubernetes [Zoom guidelines].
 If you need further assistance, you can open an issue in the [kubernetes/community]
 repo, or ping the `@zoom-admins` in the [SIG ContribEx Slack channel].
 
-[Zoom guidelines]: https://git.k8s.io/community/communication/zoom-guidelines.md
+[Zoom guidelines]: https://github.com/kubernetes/community/blob/main/communication/zoom-guidelines.md
 
 
 
@@ -187,10 +187,10 @@ There are some specific formats and guidelines around some of these items, they
 can be be reviewed in the [Netlify subproject site guidelines].
 
 [Netlify]: https://netlify.com
-[config]: http://git.k8s.io/community/github-management/subproject-site-requests.md#example-netlify-configuration
+[config]: https://github.com/kubernetes/community/blob/main/github-management/subproject-site-requests.md#example-netlify-configuration
 [issue]: https://github.com/kubernetes/k8s.io/issues/new?assignees=&labels=wg%2Fk8s-infra%2C+area%2Fdns&template=dns-request.md&title=DNS+REQUEST%3A+%3Cyour-dns-record%3E
 [Netlify Site Request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-integration&template=site-request.yml&title=
-[Netlify subproject site guidelines]: http://git.k8s.io/community/github-management/subproject-site-requests.md#subproject-domain-reques
+[Netlify subproject site guidelines]: https://github.com/kubernetes/community/blob/main/github-management/subproject-site-requests.md#subproject-domain-reques
 
 
 

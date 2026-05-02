@@ -1,4 +1,4 @@
-# select files from https://git.k8s.io/community/contributors/guide
+# select files from https://github.com/kubernetes/community/blob/main/contributors/guide
 *
 !.gitignore
 !_index.md

@@ -47,7 +47,7 @@ The user-facing documentation deals with how to install, configure, and operate 
 The [community documentation](https://www.kubernetes.dev/) is an informal collection of docs maintained by contributors. It consists of:
 
 * [The Contributor Guide](/docs/)
-* [The Developer Guide](https://github.com/kubernetes/community/tree/master/contributors/devel/)
+* [The Developer Guide](https://github.com/kubernetes/community/tree/main/contributors/devel/)
 * [The Community website](https://www.kubernetes.dev/)
 
 ---
@@ -60,7 +60,7 @@ Each SIG is in control of some aspect of Kubernetes development, infrastructure,
 * Consequently, the documentation is stored in many different places and varies widely in how complete it is.
 * Here are some of the best:
     * [SIG Release](https://github.com/kubernetes/sig-release) handles the process of releasing new Kubernetes versions.
-    * You already saw lots of [SIG Testing documentation](https://github.com/kubernetes/community/tree/master/contributors/devel/sig-testing) in a previous unit.
+    * You already saw lots of [SIG Testing documentation](https://github.com/kubernetes/community/tree/main/contributors/devel/sig-testing) in a previous unit.
 
 ---
 

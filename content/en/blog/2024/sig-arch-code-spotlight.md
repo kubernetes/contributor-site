@@ -69,7 +69,7 @@ that will sync the merged commits to the required staging repositories (like
 publish code for downstream consumption. PS: The `publishing-bot` needs more folks to help out!
 
 For more information on staging repositories, please see the [contributor
-documentation](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/staging.md).
+documentation](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-architecture/staging.md).
 
 **FSM**: Speaking of contributions, the very high number of contributors, both individuals and
 companies, must also be a challenge: how does the subproject operate in terms of making sure that
@@ -79,7 +79,7 @@ standards are being followed?
 team](https://github.com/kubernetes/org/blob/a106af09b8c345c301d072bfb7106b309c0ad8e9/config/kubernetes/org.yaml#L1329)
 that helps review and approve dependency changes. These are folks who have helped lay the foundation
 of much of the
-[tooling](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/vendor.md)
+[tooling](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-architecture/vendor.md)
 that Kubernetes uses today for dependency management. This tooling helps ensure there is a
 consistent way that contributors can make changes to dependencies. The project has also worked on
 additional tooling to signal statistics of dependencies that is being added or removed:
@@ -106,7 +106,7 @@ that add/update/delete dependencies, fix code that needs fixing as part of our e
 supported versions of Go.
 
 Furthermore, some of these changes are also candidates for
-[backporting](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/cherry-picks.md)
+[backporting](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-release/cherry-picks.md)
 to our supported release branches.
 
 **FSM**: Is there any major project or theme the subproject is working on right now that you would
@@ -128,7 +128,7 @@ significantly improved by this change.
 **MJ**: The first step, as is the first step with any project in Kubernetes, is to join our slack:
 [slack.k8s.io](https://slack.k8s.io), and after that join the `#k8s-code-organization` channel. There is also a
 [code-organization office
-hours](https://github.com/kubernetes/community/tree/master/sig-architecture#meetings) that takes
+hours](https://github.com/kubernetes/community/tree/main/sig-architecture#meetings) that takes
 place that you can choose to attend. Timezones are hard, so feel free to also look at the recordings
 or meeting notes and follow up on slack!
 
