@@ -17,7 +17,6 @@ To see the original Enhancement issue, click on the KEP number.  To see a summar
 If you notice an empty cell in the table, the KEP may not have updated information.
 Please raise <a href="https://github.com/kubernetes/enhancements/issues">an issue in the kubernetes/enhancements</a> repository.
 {{% /alert %}}
-## KEP List
 
 {{< keps-data >}}
 
