@@ -28,7 +28,7 @@ body.td-home div.lead p {
 
 /* KEP page styles */
 .kep-page {
-  padding: 1rem 0;
+  padding: 0;
 
   .kep-banner-container {
     background-color: #fff;
@@ -986,7 +986,7 @@ body.kep-listing {
 // ===== Responsive: Phone =====
 @media (max-width: 768px) {
   .kep-page {
-    padding: 0.5rem 0;
+    padding: 0;
   }
 
   .kep-filter-bar {
