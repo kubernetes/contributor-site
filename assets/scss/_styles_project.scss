@@ -413,18 +413,20 @@ body.kep-listing {
     display: none !important;
   }
 
-  // Desktop: expand main to fill hidden TOC space, add right padding
+  // Desktop: expand main to fill hidden TOC space, add right padding and border
   main.col-xl-8 {
     @media (min-width: 1200px) {
       flex: 0 0 100% !important;
       max-width: 100% !important;
       width: 100% !important;
       padding-right: 3rem !important;
+      border-right: 1px solid #e2e8f0;
     }
 
-    // Tablet: add right padding
+    // Tablet: add right padding and border
     @media (min-width: 768px) and (max-width: 1199px) {
       padding-right: 2rem !important;
+      border-right: 1px solid #e2e8f0;
     }
   }
 
