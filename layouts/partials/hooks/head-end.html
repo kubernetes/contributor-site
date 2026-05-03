@@ -1,22 +1,20 @@
-{{/*
-    This file is a 1:1 copy of the one in docsy but with adding stylesheets
-    for enabling Datatables on the KEP page.
-
-    Remove this notice if a better way is found to include the stylesheets.
-*/}}
-
-{{ with .Site.Params.algolia_docsearch }}
-<!-- stylesheet for algolia docsearch -->
-{{ end }}
-
 {{ if .HasShortcode "keps-data" }}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-<style>
-    .kep-milestone {
-        font-weight: bold;
-    }
-
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Kubernetes Enhancement Proposals (KEPs)",
+  "description": "Browse and filter all Kubernetes Enhancement Proposals across every release.",
+  "about": {
+    "@type": "Thing",
+    "name": "Kubernetes Enhancement Proposals"
+  }
+}
+</script>
 {{ end }}
 
 <link rel="canonical" href="{{ with .Params.canonicalURL }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}">
