@@ -14,7 +14,8 @@ filters:
       - TineoC
       - tokt
       - sig-contributor-experience-leads
-  # files/directories related to static site generator
-  "^(assets|layouts|static|package-lock\\.json|package\\.json|netlify\\.toml|hugo\\.yaml)$":
+  # files/directories related to static site generator and localization framework
+  "^(assets|layouts|static|package-lock\\.json|package\\.json|netlify\\.toml|hugo\\.yaml|content/)$":
     reviewers:
       - SayakMukhopadhyay
+      - sig-docs-localization-reviewers
