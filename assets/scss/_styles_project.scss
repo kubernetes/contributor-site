@@ -416,9 +416,9 @@ body.kep-listing {
   // Desktop: expand main to fill hidden TOC space, add right padding and border
   main.col-xl-8 {
     @media (min-width: 1200px) {
-      flex: 0 0 100% !important;
-      max-width: 100% !important;
-      width: 100% !important;
+      flex: 0 0 83.333333% !important;
+      max-width: 83.333333% !important;
+      width: 83.333333% !important;
       padding-right: 3rem !important;
       border-right: 1px solid #e2e8f0;
     }
