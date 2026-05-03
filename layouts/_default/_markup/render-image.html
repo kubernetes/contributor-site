@@ -1,0 +1,11 @@
+{{- $u := .Destination -}}
+
+{{- if and (not (strings.HasPrefix $u "http")) (not (strings.HasPrefix $u "/")) -}}
+  {{- /* Resolve relative paths for images in mounted content */ -}}
+  {{- $u = path.Join .Page.RelPermalink ".." $u -}}
+{{- end -}}
+
+<img src="{{ $u | safeURL }}" 
+     alt="{{ .Text }}" 
+     {{ with .Title }}title="{{ . }}"{{ end }} 
+     class="img-fluid" />

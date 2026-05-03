@@ -1,26 +1,34 @@
-{{/* This will try to find a resource in the "includes"  bundle */}}
+{{/* This will try to find a resource in the "includes" bundle or a site page */}}
 {{- $name := .Get 0 -}}
 {{- if $name -}}
 	{{- $bundle := site.GetPage "page" "includes" -}}
-	{{- with $bundle -}}
-	{{- $pattern := printf "%s*" $name -}}
-	{{- range $bundle.Resources -}}
+	{{- $found := false -}}
+	
+	{{- if $bundle -}}
+		{{/* Try finding as a resource in the includes bundle */}}
+		{{- $resourceName := $name | strings.TrimPrefix "../includes/" | strings.TrimPrefix "includes/" -}}
+		{{- $baseName := replace $resourceName ".md" "" -}}
+		{{- $resource := $bundle.Resources.GetMatch (printf "%s*" $baseName) -}}
+		{{- with $resource -}}
+			{{- .Content | safeHTML -}}
+			{{- $found = true -}}
+		{{- end -}}
 	{{- end -}}
-	{{- $resource := $bundle.Resources.GetMatch $pattern -}}
-	{{- with $resource -}}
-	{{- .Content | safeHTML -}}
-	{{- else -}}
-	{{/* It is not a resource in the includes bundle. Try to find the page relative to the current. */}}
-	{{- $path := path.Join $.Page.File.Dir $name -}}
-	{{- $page := site.GetPage "page" $path -}}
-	{{- with $page }}
-	{{ .Content }}
-	{{- else -}}
-	{{ errorf "[%s] no Resource or Page matching %q." $.Page.Lang ($pattern | safeHTML ) }}
-	{{- end -}}
-	{{- end -}}
-	{{- else -}}
-	{{ errorf "[%s] the 'includes' bundle was not found." $.Page.Lang }}
+
+	{{- if not $found -}}
+		{{/* Try finding as a page anywhere in the site */}}
+		{{- $page := site.GetPage $name -}}
+		{{- if not $page -}}
+			{{- $cleanPath := $name | strings.TrimPrefix "../" -}}
+			{{- $page = site.GetPage $cleanPath -}}
+		{{- end -}}
+		
+		{{- with $page -}}
+			{{- .RawContent | markdownify -}}
+			{{- $found = true -}}
+		{{- else -}}
+			{{- errorf "[%s] include shortcode could not find %q." $.Page.Lang ($name | safeHTML) -}}
+		{{- end -}}
 	{{- end -}}
 {{- else -}}
 	{{- errorf "[%s] missing resource name in include for page %q" $.Page.Lang $.Page.Path -}}

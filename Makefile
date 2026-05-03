@@ -17,13 +17,15 @@ STAGING_IMAGE_REGISTRY	:= us-central1-docker.pkg.dev/k8s-staging-images
 IMAGE_REGISTRY			?= ${STAGING_IMAGE_REGISTRY}/contributor-site
 IMAGE_NAME				:= k8s-contrib-site-hugo
 IMAGE_REPO				:= $(IMAGE_REGISTRY)/$(IMAGE_NAME)
-IMAGE_VERSION			:= $(shell scripts/hash-files.sh Dockerfile Makefile netlify.toml .dockerignore cloudbuild.yaml package.json package-lock.json | cut -c 1-12)
+IMAGE_VERSION			:= $(shell scripts/hash-files.sh Dockerfile Makefile netlify.toml .dockerignore cloudbuild.yaml package.json package-lock.json go.mod go.sum | cut -c 1-12)
 COMMIT					:= $(shell git rev-parse --short HEAD)
-CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
-CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
+CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -v "$(CURDIR):/src"
+CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
+GO_VERSION				:= $(shell grep ^GO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
+GOMODCACHE				?= $(shell go env GOMODCACHE)
 
 # Docker buildx related settings for multi-arch images
 DOCKER_BUILDX ?= docker buildx
@@ -31,16 +33,16 @@ DOCKER_BUILDX ?= docker buildx
 CONTAINER_HUGO_MOUNTS = \
 	--read-only \
 	--mount type=bind,source=$(CURDIR)/.git,target=/src/.git,readonly \
+	--mount type=bind,source=$(CURDIR)/go.mod,target=/src/go.mod \
+	--mount type=bind,source=$(CURDIR)/go.sum,target=/src/go.sum \
 	--mount type=bind,source=$(CURDIR)/assets,target=/src/assets,readonly \
 	--mount type=bind,source=$(CURDIR)/content,target=/src/content,readonly \
-	--mount type=bind,source=$(CURDIR)/external-sources,target=/src/external-sources,readonly \
-	--mount type=bind,source=$(CURDIR)/hack,target=/src/hack,readonly \
 	--mount type=bind,source=$(CURDIR)/layouts,target=/src/layouts,readonly \
 	--mount type=bind,source=$(CURDIR)/static,target=/src/static,readonly \
 	--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
 	--mount type=bind,source=$(CURDIR)/hugo.yaml,target=/src/hugo.yaml,readonly
 
-# Fast NONBLOCKING IO to stdout caused by the hack/gen-content.sh script can
+# Fast NONBLOCKING IO to stdout caused by Hugo module operations can
 # cause Netlify builds to terminate unexpectedly. This forces stdout to block.
 BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 					flags = fcntl.fcntl(sys.stdout, fcntl.F_GETFL); \
@@ -49,8 +51,8 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets container-targets
-targets: help gen-content render server clean clean-all production-build preview-build
-container-targets: container-image container-push container-gen-content container-render container-server
+targets: help modules-get render server clean clean-all production-build preview-build
+container-targets: container-image container-push container-modules-get container-render container-server
 
 help: ## Show this help text.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -58,8 +60,12 @@ help: ## Show this help text.
 dependencies:
 	npm ci
 
-gen-content: ## Generates content from external sources.
-	hack/gen-content.sh
+modules-get: ## Pulls latest Hugo module content.
+	hugo mod get -u
+	hugo mod tidy
+
+modules-tidy: ## Clean and tidy Hugo modules.
+	hugo mod tidy
 
 render: dependencies ## Build the site using Hugo on the host.
 	hugo --logLevel info --ignoreCache --minify
@@ -77,7 +83,7 @@ docker-image:
 	$(MAKE) container-image
 
 container-image: ## Build container image for use with container-* targets.
-	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --label git_commit=$(COMMIT) --build-arg HUGO_VERSION=$(HUGO_VERSION)
+	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --label git_commit=$(COMMIT) --build-arg HUGO_VERSION=$(HUGO_VERSION) --build-arg GO_VERSION=$(GO_VERSION)
 
 container-push: container-image ## Push container image for the preview of the website
 	$(CONTAINER_ENGINE) push $(CONTAINER_IMAGE)
@@ -94,6 +100,7 @@ docker-push: ## Build a multi-architecture image and push that into the registry
 		--push \
 		--platform=$(PLATFORMS) \
 		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
+		--build-arg GO_VERSION=$(GO_VERSION) \
 		--tag $(CONTAINER_IMAGE) \
 		-f Dockerfile.cross .
 	$(DOCKER_BUILDX) stop image-builder
@@ -101,17 +108,17 @@ docker-push: ## Build a multi-architecture image and push that into the registry
 
 docker-gen-content:
 	@echo -e "**** The use of docker-gen-content is deprecated. Use container-gen-content instead. ****" 1>&2
-	$(MAKE) container-gen-content
+	$(MAKE) container-modules-get
 
-container-gen-content: ## Generates content from external sources within a container (equiv to gen-content).
-	$(CONTAINER_RUN) $(CONTAINER_IMAGE) hack/gen-content.sh
+container-modules-get: ## Pulls latest Hugo module content within a container.
+	$(CONTAINER_RUN) -e GOMODCACHE=/tmp/gomod $(CONTAINER_IMAGE) hugo mod get -u
 
 docker-render:
 	@echo -e "**** The use of docker-render is deprecated. Use container-render instead. ****" 1>&2
 	$(MAKE) container-render
 
 container-render: ## Build the site using Hugo within a container (equiv to render).
-	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_MOUNTS) $(CONTAINER_IMAGE) hugo --logLevel info --ignoreCache --minify
+	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_MOUNTS) -e GOMODCACHE=/tmp/gomod $(CONTAINER_IMAGE) hugo --noBuildLock --logLevel info --ignoreCache --minify
 
 docker-server:
 	@echo -e "**** The use of docker-server is deprecated. Use container-server instead. ****" 1>&2
@@ -123,9 +130,9 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 		$(CONTAINER_HUGO_MOUNTS) \
 		--cap-drop=ALL \
 		--cap-drop=AUDIT_WRITE \
+		-e GOMODCACHE=/tmp/gomod \
 		$(CONTAINER_IMAGE) \
-	bash -c 'cd /src && hack/gen-content.sh --in-container && \
-		 cd /tmp/src && \
+	bash -c 'cd /src && hugo mod get -u && \
 		hugo server \
 		--environment preview \
 		--logLevel info \
@@ -141,40 +148,12 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 clean: ## Cleans build artifacts.
 	rm -rf public/ resources/ _tmp/
 
-clean-all: ## Cleans both build artifacts and files synced to content directory
+clean-all: ## Cleans both build artifacts and Hugo cache.
 	rm -rf public/ resources/ _tmp/
-	rm -f content/en/events/community-meeting.md
-	rm -f content/en/events/meet-our-contributors.md
-	rm -f content/en/events/office-hours.md
-	rm -f content/en/docs/cheatsheet.md
-	rm -f content/en/resources/rename.md
-	find content/en/docs/guide -maxdepth 1 \
-		-not -path content/en/docs/guide \
-		-not -name ".gitignore" \
-		-exec rm -rf {} \;
-	find content/en/docs/comms -maxdepth 1 \
-		-not -path content/en/docs/comms \
-		-not -name ".gitignore" \
-		-not -name "_index.md" \
-		-exec rm -rf {} \;
-	find content/en/resources/release -maxdepth 1  \
-		-not -path content/en/resources/release \
-		-not -name ".gitignore" \
-		-exec rm -rf {} \;
-	find content/en/docs/orientation -maxdepth 1 \
-		-not -path content/en/docs/orientation \
-		-not -name ".gitignore" \
-		-exec rm -rf {} \;
-	find content/en/community -maxdepth 1 \
-		-not -path content/en/community \
-		-not -name ".gitignore" \
-		-not -name "_index.md" \
-		-not -name "code-of-conduct.md" \
-		-exec rm -rf {} \;
+	hugo mod clean
 
 production-build: ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
-	hack/gen-content.sh
 	hugo \
 		--environment production \
 		--logLevel info \
@@ -183,7 +162,6 @@ production-build: ## Builds the production site (this command used only by Netli
 
 preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
-	hack/gen-content.sh
 	hugo \
 		--environment preview \
 		--logLevel info \
