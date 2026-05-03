@@ -407,6 +407,8 @@ body.td-home div.lead p {
 
 // ===== KEP Listing Full Width =====
 body.kep-listing {
+  overflow-x: hidden;
+
   .td-sidebar-toc {
     display: none !important;
   }
@@ -681,14 +683,24 @@ body.kep-listing {
 
 // ===== KEP Table Wrapper =====
 .kep-table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 // ===== KEP Table Styles =====
 #keps-table {
   font-size: 0.85rem;
   width: 100%;
+  table-layout: fixed;
+
+  // Column widths — title gets remaining space
+  .kep-col-number { width: 9%; }
+  .kep-col-title { width: auto; }
+  .kep-col-sig { width: 11%; }
+  .kep-col-stage { width: 10%; }
+  .kep-col-latest { width: 10%; }
+  .kep-col-created { width: 10%; }
+  .kep-col-author { width: 15%; }
 
   thead th {
     font-size: 0.7rem;
@@ -718,6 +730,9 @@ body.kep-listing {
   tbody td {
     padding: 0.5rem;
     vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   tbody tr {
@@ -759,6 +774,10 @@ body.kep-listing {
 
   .kep-title-link {
     color: #1e293b;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .kep-sig-link {
@@ -933,14 +952,19 @@ body.kep-listing {
 
   #keps-table {
     // Hide Author on tablet
-    th:nth-child(7),
-    td:nth-child(7) {
+    .kep-col-author {
       display: none;
     }
 
     th, td {
       padding: 0.45rem 0.4rem;
     }
+
+    .kep-col-number { width: 11%; }
+    .kep-col-sig { width: 13%; }
+    .kep-col-stage { width: 12%; }
+    .kep-col-latest { width: 12%; }
+    .kep-col-created { width: 12%; }
 
     .kep-title-link {
       font-size: 0.82rem;
@@ -964,7 +988,7 @@ body.kep-listing {
     border-radius: 0;
     border-left: none;
     border-right: none;
-    margin: 0 -1rem 1rem;
+    margin: 0 0 1rem;
     padding: 0.75rem 1rem;
 
     &.visible {
@@ -1026,24 +1050,18 @@ body.kep-listing {
   }
 
   .kep-table-wrapper {
-    margin: 0 -1rem;
-    padding: 0 1rem;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
   #keps-table {
     font-size: 0.8rem;
 
-    // Hide Created and Author on phone
-    th:nth-child(6),
-    td:nth-child(6),
-    th:nth-child(7),
-    td:nth-child(7) {
-      display: none;
-    }
-
-    // Hide Latest Milestone on small phones
-    th:nth-child(5),
-    td:nth-child(5) {
+    // Hide Created, Author, Latest Milestone on phone
+    .kep-col-created,
+    .kep-col-author,
+    .kep-col-latest {
       display: none;
     }
 
@@ -1060,14 +1078,13 @@ body.kep-listing {
       font-size: 0.72rem;
     }
 
+    .kep-col-number { width: 14%; }
+    .kep-col-sig { width: 20%; }
+    .kep-col-stage { width: 16%; }
+
     .kep-title-link {
       font-size: 0.78rem;
       line-height: 1.3;
-      display: block;
-      max-width: 180px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
     }
 
     .kep-sig-link {
@@ -1119,20 +1136,15 @@ body.kep-listing {
 // ===== Responsive: Small Phone =====
 @media (max-width: 480px) {
   #keps-table {
-    // Hide SIG on very small screens
-    th:nth-child(3),
-    td:nth-child(3) {
+    // Hide SIG and Stage — only Number + Title
+    .kep-col-sig,
+    .kep-col-stage {
       display: none;
     }
 
-    // Hide Stage too — only show Number + Title
-    th:nth-child(4),
-    td:nth-child(4) {
-      display: none;
-    }
+    .kep-col-number { width: 18%; }
 
     .kep-title-link {
-      max-width: 200px;
       font-size: 0.75rem;
     }
   }
