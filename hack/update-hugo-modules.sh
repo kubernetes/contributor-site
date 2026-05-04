@@ -54,7 +54,12 @@ echo "Changes detected. Creating a PR..."
 
 # pr-creator tool from k8s.io/test-infra is used to create the PR.
 # This requires GITHUB_TOKEN_PATH to be set in the environment.
-go run k8s.io/test-infra/robots/pr-creator@latest \
+if [[ -z "${GITHUB_TOKEN_PATH:-}" ]]; then
+  echo "GITHUB_TOKEN_PATH must be set for non-dry-run mode" >&2
+  exit 1
+fi
+
+go run k8s.io/test-infra/robots/pr-creator@v0.0.0-20260503165537-419d814ca6a0 \
   --github-token-path="${GITHUB_TOKEN_PATH}" \
   --org="kubernetes" \
   --repo="contributor-site" \

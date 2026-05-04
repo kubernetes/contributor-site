@@ -12,9 +12,9 @@
   {{- if $page -}}
     {{- $u = $page.RelPermalink -}}
   {{- else -}}
-    {{- /* Fallback to external repository for non-local links */ -}}
+    {{- /* Fallback: rewrite unresolved relative links to their upstream GitHub source */ -}}
     {{- if not (strings.HasPrefix $u "/") -}}
-      {{- /* Normalize relative paths (resolve ../ traversal) before building URL */ -}}
+      {{- /* Normalize relative paths (resolve ../ traversal) */ -}}
       {{- $normalized := $u -}}
       {{- $parts := split $u "/" -}}
       {{- $resolved := slice -}}
@@ -31,17 +31,18 @@
         {{- $normalized = delimit $resolved "/" -}}
       {{- end -}}
 
-      {{- /* NOTE: Upstream repos currently use 'master'. Update if renamed to 'main'. */ -}}
-      {{- if strings.Contains .Page.File.Dir "docs/guide" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/contributors/guide/%s" $normalized -}}
-      {{- else if strings.Contains .Page.File.Dir "docs/comms" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/communication/%s" $normalized -}}
-      {{- else if strings.Contains .Page.File.Dir "docs/orientation" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/mentoring/new-contributor-orientation/%s" $normalized -}}
-      {{- else if strings.Contains .Page.File.Dir "community" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/%s" $normalized -}}
-      {{- else if strings.Contains .Page.File.Dir "resources/release" -}}
-        {{- $u = printf "https://github.com/kubernetes/sig-release/blob/master/releases/%s" $normalized -}}
+      {{- /* Look up the mapping from data/link_sources.yaml */ -}}
+      {{- $dir := .Page.File.Dir -}}
+      {{- $matched := false -}}
+      {{- range site.Data.link_sources.mappings -}}
+        {{- if and (not $matched) (strings.HasPrefix $dir .prefix) -}}
+          {{- if .single_file -}}
+            {{- $u = .github_url -}}
+          {{- else -}}
+            {{- $u = printf "%s/%s" .github_url $normalized -}}
+          {{- end -}}
+          {{- $matched = true -}}
+        {{- end -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -49,6 +50,6 @@
 
 <a href="{{ $u | safeURL }}"
   {{ with .Title }} title="{{ . }}"{{ end }}
-  {{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
+  {{ if or $isExternal (strings.HasPrefix $u "http") }} target="_blank" rel="noopener"{{ end }}>
   {{- .Text | safeHTML -}}
 </a>

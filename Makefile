@@ -34,12 +34,13 @@ DOCKER_BUILDX ?= docker buildx
 CONTAINER_HUGO_MOUNTS = \
 	--read-only \
 	--mount type=bind,source=$(CURDIR)/.git,target=/src/.git,readonly \
-	--mount type=bind,source=$(CURDIR)/go.mod,target=/src/go.mod \
-	--mount type=bind,source=$(CURDIR)/go.sum,target=/src/go.sum \
+	--mount type=bind,source=$(CURDIR)/go.mod,target=/src/go.mod,readonly \
+	--mount type=bind,source=$(CURDIR)/go.sum,target=/src/go.sum,readonly \
 	--mount type=bind,source=$(CURDIR)/assets,target=/src/assets,readonly \
 	--mount type=bind,source=$(CURDIR)/content,target=/src/content,readonly \
 	--mount type=bind,source=$(CURDIR)/layouts,target=/src/layouts,readonly \
 	--mount type=bind,source=$(CURDIR)/static,target=/src/static,readonly \
+	--mount type=volume,source=hugo-gomod-cache,target=/gomodcache \
 	--mount type=tmpfs,destination=/tmp,tmpfs-mode=01777 \
 	--mount type=bind,source=$(CURDIR)/hugo.yaml,target=/src/hugo.yaml,readonly
 
@@ -112,14 +113,14 @@ docker-gen-content:
 	$(MAKE) container-modules-get
 
 container-modules-get: ## Pulls latest Hugo module content within a container.
-	$(CONTAINER_RUN) -e GOMODCACHE=/tmp/gomod $(CONTAINER_IMAGE) hugo mod get -u
+	$(CONTAINER_RUN) --mount type=volume,source=hugo-gomod-cache,target=/gomodcache -e GOMODCACHE=/gomodcache $(CONTAINER_IMAGE) hugo mod get -u
 
 docker-render:
 	@echo -e "**** The use of docker-render is deprecated. Use container-render instead. ****" 1>&2
 	$(MAKE) container-render
 
 container-render: ## Build the site using Hugo within a container (equiv to render).
-	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_MOUNTS) -e GOMODCACHE=/tmp/gomod $(CONTAINER_IMAGE) hugo --noBuildLock --logLevel info --ignoreCache --minify
+	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_MOUNTS) -e GOMODCACHE=/gomodcache $(CONTAINER_IMAGE) hugo --noBuildLock --logLevel info --ignoreCache --minify
 
 docker-server:
 	@echo -e "**** The use of docker-server is deprecated. Use container-server instead. ****" 1>&2
@@ -131,7 +132,7 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 		$(CONTAINER_HUGO_MOUNTS) \
 		--cap-drop=ALL \
 		--cap-drop=AUDIT_WRITE \
-		-e GOMODCACHE=/tmp/gomod \
+		-e GOMODCACHE=/gomodcache \
 		$(CONTAINER_IMAGE) \
 	bash -c 'cd /src && hugo mod get -u && hugo mod tidy && \
 		hugo server \
@@ -152,6 +153,7 @@ clean: ## Cleans build artifacts.
 clean-all: ## Cleans both build artifacts and Hugo cache.
 	rm -rf public/ resources/ _tmp/
 	hugo mod clean
+	$(CONTAINER_ENGINE) volume rm hugo-gomod-cache 2>/dev/null || true
 
 production-build: ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)

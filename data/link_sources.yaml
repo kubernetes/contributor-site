@@ -1,0 +1,41 @@
+# Mapping of content directory prefixes to their upstream GitHub source URLs.
+# Used by layouts/_default/_markup/render-link.html to rewrite unresolved
+# internal links to point at the correct upstream repository file.
+#
+# Each entry has:
+#   prefix: substring matched against .Page.File.Dir (content-relative path)
+#   github_url: base URL of the upstream source on GitHub
+#   single_file: (optional) if true, the link is appended as a literal path
+#                component; if false (default), it is appended as a directory
+mappings:
+  # k8s.io/community — contributors/guide
+  - prefix: "docs/guide/"
+    github_url: "https://github.com/kubernetes/community/blob/master/contributors/guide"
+  # k8s.io/community — communication
+  - prefix: "docs/comms/"
+    github_url: "https://github.com/kubernetes/community/blob/master/communication"
+  # k8s.io/community — mentoring/new-contributor-orientation
+  - prefix: "docs/orientation/"
+    github_url: "https://github.com/kubernetes/community/blob/master/mentoring/new-contributor-orientation"
+  # k8s.io/community — contributor cheatsheet (single file)
+  - prefix: "docs/contributor-cheatsheet"
+    github_url: "https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet/README.md"
+    single_file: true
+  # k8s.io/community — community content (mentoring, values, etc.)
+  - prefix: "community/"
+    github_url: "https://github.com/kubernetes/community/blob/master"
+  # k8s.io/community — github-management
+  - prefix: "resources/rename"
+    github_url: "https://github.com/kubernetes/community/blob/master/github-management/default-branch-migration.md"
+    single_file: true
+  # k8s.io/sig-release — release notes
+  - prefix: "resources/release/"
+    github_url: "https://github.com/kubernetes/sig-release/blob/master/releases"
+  # k8s.io/community — code of conduct
+  - prefix: "includes/code-of-conduct"
+    github_url: "https://github.com/kubernetes/community/blob/master/code-of-conduct.md"
+    single_file: true
+  # github.com/cncf/foundation — code of conduct
+  - prefix: "includes/cncf-code-of-conduct"
+    github_url: "https://github.com/cncf/foundation/blob/master/code-of-conduct.md"
+    single_file: true
