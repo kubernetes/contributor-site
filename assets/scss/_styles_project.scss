@@ -407,26 +407,17 @@ body.td-home div.lead p {
 
 // ===== KEP Listing Full Width =====
 body.kep-listing {
-  overflow-x: hidden;
 
   .td-sidebar-toc {
     display: none !important;
   }
 
-  // Desktop: expand main to fill hidden TOC space, add right padding and border
+  // Desktop & Tablet: expand main to fill hidden TOC space
   main.col-xl-8 {
-    @media (min-width: 1200px) {
+    @media (min-width: 768px) {
       flex: 0 0 83.333333% !important;
       max-width: 83.333333% !important;
       width: 83.333333% !important;
-      padding-right: 3rem !important;
-      border-right: 1px solid #e2e8f0;
-    }
-
-    // Tablet: add right padding and border
-    @media (min-width: 768px) and (max-width: 1199px) {
-      padding-right: 2rem !important;
-      border-right: 1px solid #e2e8f0;
     }
   }
 
@@ -691,7 +682,7 @@ body.kep-listing {
 
 // ===== KEP Table Wrapper =====
 .kep-table-wrapper {
-  overflow-x: hidden;
+  overflow-x: auto;
   width: 100%;
 }
 
@@ -1060,7 +1051,6 @@ body.kep-listing {
   .kep-table-wrapper {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
   }
 
   #keps-table {
