@@ -840,10 +840,7 @@ body.kep-listing {
     border-color: #e5e7eb;
   }
 
-  &.kep-stage-other,
-  &.kep-stage-implementable,
-  &.kep-stage-implemented,
-  &.kep-stage-provisional {
+  &.kep-stage-other {
     background: #eef2ff;
     color: #4338ca;
     border-color: #e0e7ff;

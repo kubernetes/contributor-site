@@ -24,9 +24,20 @@
 {{- $releaseSet := dict -}}
 {{- $sigSet := dict -}}
 {{- range $kepData -}}
+  {{- $kep := . -}}
   {{- $lm := .latestMilestone -}}
   {{- if and $lm (ne $lm "0.0") -}}
     {{- $releaseSet = merge $releaseSet (dict $lm true) -}}
+  {{- else -}}
+    {{- /* Fallback: check milestone map for any non-empty value */ -}}
+    {{- range $s := slice "stable" "beta" "alpha" "deprecated" -}}
+      {{- if not $lm -}}
+        {{- with index $kep.milestone $s -}}{{- if . -}}{{- $lm = . -}}{{- end -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $lm -}}
+      {{- $releaseSet = merge $releaseSet (dict $lm true) -}}
+    {{- end -}}
   {{- end -}}
   {{- $sig := .owningSig -}}
   {{- if $sig -}}
@@ -126,7 +137,8 @@
           {{- range $data.authors -}}
             {{- $allAuthors = printf "%s %s" $allAuthors (trim . "@") -}}
           {{- end -}}
-          <tr data-stage="{{ $stage }}" data-latest-milestone="{{ strings.TrimPrefix "v" $data.latestMilestone }}" data-sig="{{ $data.owningSig }}" data-kep="{{ $data.kepNumber }}" data-created="{{ $data.creationDate }}" data-authors="{{ $allAuthors }}">
+          {{- $allAuthors = strings.TrimLeft $allAuthors " " -}}
+          <tr data-stage="{{ $stage }}" data-latest-milestone="{{ if $latest }}{{ strings.TrimPrefix "v" $latest }}{{ end }}" data-sig="{{ $data.owningSig }}" data-kep="{{ $data.kepNumber }}" data-created="{{ $data.creationDate }}" data-authors="{{ $allAuthors }}">
             <td class="kep-col-number" data-order="{{ $data.kepNumber }}">
               <a href="/resources/keps/{{ $data.kepNumber }}/" class="kep-number-link">{{ $data.kepNumber }}</a>
             </td>
