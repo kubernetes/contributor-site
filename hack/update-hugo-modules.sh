@@ -30,11 +30,13 @@ done
 export GOMODCACHE="${GOMODCACHE:-/tmp/gomod}"
 
 make modules-get
-make modules-tidy
 
 # 2. Validate the build
+# Use development environment to avoid requiring production-only env vars
+# (e.g. HUGO_GOOGLE_CALENDAR_API_KEY). This still validates module resolution
+# and Hugo build correctness.
 echo "Validating the build..."
-make production-build
+hugo --environment development --logLevel info --ignoreCache --minify
 
 # 3. Check if there are changes
 if git diff --quiet go.mod go.sum; then
