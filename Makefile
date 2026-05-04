@@ -19,11 +19,12 @@ IMAGE_NAME				:= k8s-contrib-site-hugo
 IMAGE_REPO				:= $(IMAGE_REGISTRY)/$(IMAGE_NAME)
 IMAGE_VERSION			:= $(shell scripts/hash-files.sh Dockerfile Makefile netlify.toml .dockerignore cloudbuild.yaml package.json package-lock.json go.mod go.sum | cut -c 1-12)
 COMMIT					:= $(shell git rev-parse --short HEAD)
+DATE					:= $(shell date -u +%Y%m%d)
 CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -v "$(CURDIR):/src"
 CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 GO_VERSION				:= $(shell grep ^GO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
-GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
+GIT_TAG					?= v$(DATE)-$(COMMIT)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
 GOMODCACHE				?= $(shell go env GOMODCACHE)
 
