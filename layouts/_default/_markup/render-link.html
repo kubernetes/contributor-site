@@ -14,14 +14,34 @@
   {{- else -}}
     {{- /* Fallback to external repository for non-local links */ -}}
     {{- if not (strings.HasPrefix $u "/") -}}
+      {{- /* Normalize relative paths (resolve ../ traversal) before building URL */ -}}
+      {{- $normalized := $u -}}
+      {{- $parts := split $u "/" -}}
+      {{- $resolved := slice -}}
+      {{- range $parts -}}
+        {{- if eq . ".." -}}
+          {{- if gt (len $resolved) 0 -}}
+            {{- $resolved = $resolved | first (sub (len $resolved) 1) -}}
+          {{- end -}}
+        {{- else if and (ne . "") (ne . ".") -}}
+          {{- $resolved = $resolved | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt (len $resolved) 0 -}}
+        {{- $normalized = delimit $resolved "/" -}}
+      {{- end -}}
+
+      {{- /* NOTE: Upstream repos currently use 'master'. Update if renamed to 'main'. */ -}}
       {{- if strings.Contains .Page.File.Dir "docs/guide" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/contributors/guide/%s" $u -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/contributors/guide/%s" $normalized -}}
       {{- else if strings.Contains .Page.File.Dir "docs/comms" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/communication/%s" $u -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/communication/%s" $normalized -}}
       {{- else if strings.Contains .Page.File.Dir "docs/orientation" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/mentoring/new-contributor-orientation/%s" $u -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/mentoring/new-contributor-orientation/%s" $normalized -}}
       {{- else if strings.Contains .Page.File.Dir "community" -}}
-        {{- $u = printf "https://github.com/kubernetes/community/blob/master/%s" $u -}}
+        {{- $u = printf "https://github.com/kubernetes/community/blob/master/%s" $normalized -}}
+      {{- else if strings.Contains .Page.File.Dir "resources/release" -}}
+        {{- $u = printf "https://github.com/kubernetes/sig-release/blob/master/releases/%s" $normalized -}}
       {{- end -}}
     {{- end -}}
   {{- end -}}
@@ -29,6 +49,6 @@
 
 <a href="{{ $u | safeURL }}"
   {{ with .Title }} title="{{ . }}"{{ end }}
-  {{ if or $isExternal (strings.HasPrefix $u "http") }} target="_blank" rel="noopener"{{ end }}>
+  {{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
   {{- .Text | safeHTML -}}
 </a>

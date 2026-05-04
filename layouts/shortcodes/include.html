@@ -24,7 +24,7 @@
 		{{- end -}}
 		
 		{{- with $page -}}
-			{{- .RawContent | markdownify -}}
+			{{- .Content -}}
 			{{- $found = true -}}
 		{{- else -}}
 			{{- errorf "[%s] include shortcode could not find %q." $.Page.Lang ($name | safeHTML) -}}

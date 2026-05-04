@@ -107,7 +107,7 @@ docker-push: ## Build a multi-architecture image and push that into the registry
 	rm Dockerfile.cross
 
 docker-gen-content:
-	@echo -e "**** The use of docker-gen-content is deprecated. Use container-gen-content instead. ****" 1>&2
+	@echo -e "**** The use of docker-gen-content is deprecated. Use container-modules-get instead. ****" 1>&2
 	$(MAKE) container-modules-get
 
 container-modules-get: ## Pulls latest Hugo module content within a container.
@@ -132,7 +132,7 @@ container-server: ## Run Hugo locally within a container, available at http://lo
 		--cap-drop=AUDIT_WRITE \
 		-e GOMODCACHE=/tmp/gomod \
 		$(CONTAINER_IMAGE) \
-	bash -c 'cd /src && hugo mod get -u && \
+	bash -c 'cd /src && hugo mod get -u && hugo mod tidy && \
 		hugo server \
 		--environment preview \
 		--logLevel info \
