@@ -19,6 +19,7 @@
 {{- end -}}
 
 {{- $validStages := slice "alpha" "beta" "stable" "deprecated" -}}
+{{- $validStatuses := slice "implementable" "implemented" -}}
 
 {{- /* Build unique release and SIG lists */ -}}
 {{- $releaseSet := dict -}}
@@ -113,6 +114,9 @@
       </thead>
       <tbody>
         {{ range $data := $kepData }}
+          {{- $hasValidStage := and $data.stage (in $validStages $data.stage) -}}
+          {{- $hasValidStatus := and $data.status (in $validStatuses $data.status) -}}
+          {{- $hasPage := or $hasValidStage $hasValidStatus -}}
           {{- $stage := $data.stage -}}
           {{- if not $stage }}
             {{- if or (eq $data.status "implementable") (eq $data.status "implemented") }}
@@ -140,10 +144,18 @@
           {{- $allAuthors = strings.TrimLeft $allAuthors " " -}}
           <tr data-stage="{{ $stage }}" data-latest-milestone="{{ if $latest }}{{ strings.TrimPrefix "v" $latest }}{{ end }}" data-sig="{{ $data.owningSig }}" data-kep="{{ $data.kepNumber }}" data-created="{{ $data.creationDate }}" data-authors="{{ $allAuthors }}">
             <td class="kep-col-number" data-order="{{ $data.kepNumber }}">
+              {{- if $hasPage }}
               <a href="/resources/keps/{{ $data.kepNumber }}/" class="kep-number-link">{{ $data.kepNumber }}</a>
+              {{- else }}
+              <a href="https://features.k8s.io/{{ $data.kepNumber }}" class="kep-number-link">{{ $data.kepNumber }}</a>
+              {{- end }}
             </td>
             <td class="kep-col-title">
+              {{- if $hasPage }}
               <a href="/resources/keps/{{ $data.kepNumber }}/" class="kep-title-link">{{ $data.title }}</a>
+              {{- else }}
+              <a href="https://features.k8s.io/{{ $data.kepNumber }}" class="kep-title-link">{{ $data.title }}</a>
+              {{- end }}
             </td>
             <td class="kep-col-sig">
               {{- $sigSlug := strings.TrimPrefix "sig-" $data.owningSig -}}
