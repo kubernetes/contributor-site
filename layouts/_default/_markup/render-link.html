@@ -1,10 +1,13 @@
 {{- $u := .Destination -}}
-{{- /* 
+{{- /*
   Robustly handle URLs with parentheses or extra spaces from external sources (e.g. KEP READMEs).
-  This prevents build failures like "first path segment in URL cannot contain colon" when 
+  This prevents build failures like "first path segment in URL cannot contain colon" when
   a link destination is wrapped in extra parentheses.
 */ -}}
-{{- $u = trim $u " ()" -}}
+{{- $u = trim $u " " -}}
+{{- if and (hasPrefix $u "(") (hasSuffix $u ")") -}}
+  {{- $u = substr $u 1 -1 -}}
+{{- end -}}
 <a href="{{ $u | safeURL }}"
   {{ with .Title }} title="{{ . }}"{{ end }}
   {{ if strings.HasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>
