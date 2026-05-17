@@ -103,7 +103,7 @@
         
         {{- /* 2. Fix relative paths (not starting with http, #, or / and not containing :) */ -}}
         {{- $readmeContent = replaceRE `!\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "![${1}](%s${2})" $kepDirUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
+        {{- $readmeContent = replaceRE `<img\s+([^>]*?)src="([^/#:][^:"]*)"([^>]*)>` (printf `<img %1ssrc="%s%2"%3>` $kepDirUrl) $readmeContent -}}
         {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
       {{- end -}}
     {{- end -}}

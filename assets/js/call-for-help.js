@@ -1,5 +1,5 @@
 // Call for Help integration for Community Resilience Dashboard
-// Fetches issues labeled 'call-for-help' from GitHub API
+// Fetches issues labeled 'call-for-help-approved' from GitHub API
 
 (function() {
   'use strict';
@@ -7,7 +7,7 @@
   const GITHUB_API = 'https://api.github.com';
   const REPO_OWNER = 'kubernetes';
   const REPO_NAME = 'contributor-site';
-  const REQUIRED_LABELS = ['call-for-help', 'call-for-help-approved'];
+  const APPROVED_LABEL = 'call-for-help-approved';
   const NCO_LABELS = ['sig-contribex-nco'];
 
   const RequestType = {
@@ -18,9 +18,16 @@
     OTHER: 'Other'
   };
 
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
   async function fetchCallForHelpIssues() {
     try {
-      const url = `${GITHUB_API}/repos/${REPO_OWNER}/${REPO_NAME}/issues?labels=call-for-help&state=open&per_page=50`;
+      // Fetch only approved issues
+      const url = `${GITHUB_API}/repos/${REPO_OWNER}/${REPO_NAME}/issues?labels=${APPROVED_LABEL}&state=open&per_page=50`;
       const response = await fetch(url);
 
       if (!response.ok) {
@@ -79,31 +86,95 @@
     const card = document.createElement('div');
     card.className = `call-for-help-card${isStale ? ' stale' : ''}${issue.hasNCO ? ' nco-featured' : ''}`;
 
-    card.innerHTML = `
-      <div class="card-header">
-        <h4 class="project-name">
-          <a href="${issue.url}" target="_blank" rel="noopener">${issue.project}</a>
-          ${issue.hasNCO ? '<span class="nco-badge">NCO</span>' : ''}
-        </h4>
-        <span class="request-type">${issue.requestType.join(', ')}</span>
-      </div>
-      <div class="card-body">
-        <p class="issue-title">${issue.title}</p>
-        <div class="card-meta">
-          <span class="issue-number">#${issue.number}</span>
-          <span class="created-date">${daysSinceCreated} days ago</span>
-          ${isStale ? '<span class="stale-badge">Stale</span>' : ''}
-        </div>
-      </div>
-      <div class="card-footer">
-        <a href="${issue.url}" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">
-          View Issue
-        </a>
-        <a href="${issue.url.replace('issues/', 'issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue')}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener">
-          Good First Issues
-        </a>
-      </div>
-    `;
+    // Header
+    const header = document.createElement('div');
+    header.className = 'card-header';
+
+    const titleWrapper = document.createElement('h4');
+    titleWrapper.className = 'project-name';
+
+    const link = document.createElement('a');
+    link.href = issue.url;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.textContent = issue.project;
+
+    titleWrapper.appendChild(link);
+
+    if (issue.hasNCO) {
+      const ncoBadge = document.createElement('span');
+      ncoBadge.className = 'nco-badge';
+      ncoBadge.textContent = 'NCO';
+      titleWrapper.appendChild(ncoBadge);
+    }
+
+    const typeSpan = document.createElement('span');
+    typeSpan.className = 'request-type';
+    typeSpan.textContent = issue.requestType.join(', ');
+
+    header.appendChild(titleWrapper);
+    header.appendChild(typeSpan);
+
+    // Body
+    const body = document.createElement('div');
+    body.className = 'card-body';
+
+    const titlePara = document.createElement('p');
+    titlePara.className = 'issue-title';
+    titlePara.textContent = issue.title;
+
+    const metaDiv = document.createElement('div');
+    metaDiv.className = 'card-meta';
+
+    const numberSpan = document.createElement('span');
+    numberSpan.className = 'issue-number';
+    numberSpan.textContent = '#' + issue.number;
+
+    const dateSpan = document.createElement('span');
+    dateSpan.className = 'created-date';
+    dateSpan.textContent = daysSinceCreated + ' days ago';
+
+    metaDiv.appendChild(numberSpan);
+    metaDiv.appendChild(dateSpan);
+
+    if (isStale) {
+      const staleBadge = document.createElement('span');
+      staleBadge.className = 'stale-badge';
+      staleBadge.textContent = 'Stale';
+      metaDiv.appendChild(staleBadge);
+    }
+
+    body.appendChild(titlePara);
+    body.appendChild(metaDiv);
+
+    // Footer
+    const footer = document.createElement('div');
+    footer.className = 'card-footer';
+
+    // Fix malformed Good First Issues URL
+    const baseUrl = issue.url.replace(/\/issues\/\d+$/, '');
+
+    const viewBtn = document.createElement('a');
+    viewBtn.href = issue.url;
+    viewBtn.className = 'btn btn-sm btn-outline-primary';
+    viewBtn.target = '_blank';
+    viewBtn.rel = 'noopener';
+    viewBtn.textContent = 'View Issue';
+
+    const gfiBtn = document.createElement('a');
+    gfiBtn.href = baseUrl + '?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue';
+    gfiBtn.className = 'btn btn-sm btn-outline-secondary';
+    gfiBtn.target = '_blank';
+    gfiBtn.rel = 'noopener';
+    gfiBtn.textContent = 'Good First Issues';
+
+    footer.appendChild(viewBtn);
+    footer.appendChild(gfiBtn);
+
+    // Append all sections
+    card.appendChild(header);
+    card.appendChild(body);
+    card.appendChild(footer);
 
     return card;
   }

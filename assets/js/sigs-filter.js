@@ -65,14 +65,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Handle URL hash for tab activation
   if (window.location.hash) {
-    const hash = window.location.hash;
-    const tabEl = document.querySelector(`button[data-bs-target="${hash}"]`);
-    if (tabEl) {
-      // Check if bootstrap is available
-      if (typeof bootstrap !== 'undefined') {
-        const tab = new bootstrap.Tab(tabEl);
-        tab.show();
+    try {
+      const hash = window.location.hash;
+      const tabEl = document.querySelector(`button[data-bs-target="${hash}"]`);
+      if (tabEl) {
+        // Check if bootstrap is available
+        if (typeof bootstrap !== 'undefined') {
+          const tab = new bootstrap.Tab(tabEl);
+          tab.show();
+        }
       }
+    } catch (e) {
+      // Silently ignore invalid selector syntax
+      console.debug('Could not activate tab from hash:', e.message);
     }
   }
 
