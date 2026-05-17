@@ -1,0 +1,50 @@
+---
+name: Call for Help
+about: Request assistance for a SIG project to prevent critical gaps
+title: '[Call for Help] <project-name>: <brief-description>'
+labels: ['call-for-help']
+---
+
+## Project Information
+
+- **Project Name**: <!-- e.g., ingress-nginx, kubernetes-sigs/cluster-api -->
+- **GitHub Repository**: <!-- e.g., kubernetes/ingress-nginx -->
+- **SIG/Working Group**: <!-- e.g., SIG Network, WG Serving -->
+
+## Request Type
+
+What kind of help is needed? (check all that apply)
+
+- [ ] **Reviewers** - Need additional reviewers for PRs
+- [ ] **Maintainers** - Need new maintainers to prevent single point of failure
+- [ ] **Security** - Security-focused assistance needed
+- [ ] **Mentorship** - Need help onboarding new contributors
+- [ ] **Other** - Describe below
+
+## Description
+
+<!-- Provide details about the situation and why help is needed -->
+
+
+
+## Contact Information
+
+- **Slack Handle**: <!-- e.g., @username -->
+- **Email**: <!-- contact@email.com -->
+- **Preferred Contact Method**: [ ] Slack [ ] Email [ ] GitHub
+
+## New Contributor Orientation
+
+- [ ] **Feature in NCO** - Include this project in New Contributor Orientation for new contributors
+
+## Links
+
+- **Good First Issues**: <!-- link to good first issues -->
+- **Onboarding Guide**: <!-- link to contributing guide -->
+- **OWNERS File**: <!-- link to OWNERS -->
+
+---
+
+**Note**: This request requires approval from a SIG Chair or Tech Lead from your SIG.
+Once approved with `/approve`, this issue will be displayed in the Community Resilience Dashboard
+and optionally in New Contributor Orientation.
