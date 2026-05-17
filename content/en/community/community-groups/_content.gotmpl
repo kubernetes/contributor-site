@@ -28,7 +28,7 @@
       {{ $name := .name }}
       {{ $dir := .dir }}
       {{ $slug := replace $dir "sig-" "" }}
-      
+
       {{/* Fetch README Content */}}
       {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
       {{ $readmeContent := "" }}
@@ -102,7 +102,7 @@
       {{ $name := .name }}
       {{ $dir := .dir }}
       {{ $slug := replace $dir "wg-" "" }}
-      
+
       {{/* Fetch README Content */}}
       {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
       {{ $readmeContent := "" }}
@@ -174,7 +174,7 @@
       {{ $name := .name }}
       {{ $dir := .dir }}
       {{ $slug := replace $dir "committee-" "" }}
-      
+
       {{/* Fetch README Content */}}
       {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
       {{ $readmeContent := "" }}

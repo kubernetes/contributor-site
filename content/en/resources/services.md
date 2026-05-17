@@ -120,7 +120,7 @@ For more information, see the [Slack Guidelines].
 
 
 [slack-config]: https://git.k8s.io/community/communication/slack-config
-[Slack Request]: https://github.com/kubernetes/community/issues/new?assignees=&labels=area%2Fcommunity-management%2C+area%2Fslack-management%2C+sig%2Fcontributor-experience&template=slack-request.yml&title=REQUEST%3A+New+Slack+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D%3E+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D+name%3E
+[Slack Request]: https://github.com/kubernetes/community/issues/new?assignees=&labels=area%2Fcommunity-management%2C+area%2Fslack-management%2C+sig%2Fcontributor-experience&template=comms-request.yaml&title=REQUEST%3A+New+Slack+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D%3E+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D+name%3E
 [Slack Guidelines]: https://git.k8s.io/community/communication/slack-guidelines.md
 
 
