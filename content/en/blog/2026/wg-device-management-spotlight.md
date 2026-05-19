@@ -11,7 +11,7 @@ author: "Natalie Fisher"
 
 The rising popularity of AI, Edge, and Telecommunications workloads on Kubernetes has led to new requirements for hardware management. We now need hardware specification beyond CPU time and memory allocations.  This includes allocating GPUs, TPUs, network interfaces, and other hardware, sometimes after pod start and occasionally through time-sharing. 
 
-Efficiently managing this specialized hardware is the mission of the **Device Management Working Group**. Their cornerstone project, **Dynamic Resource Allocation (DRA)**, recently graduated to GA, marking a fundamental shift in how the project handles hardware-intensive workloads at scale.
+Efficiently managing this specialized hardware is the mission of the **[Device Management Working Group](https://www.kubernetes.dev/community/community-groups/wg/device-management/)**. Their cornerstone project, **[Dynamic Resource Allocation (DRA)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/)**, recently graduated to GA, marking a fundamental shift in how the project handles hardware-intensive workloads at scale.
 
 In this spotlight, we sit down with WG chairs **Kevin Klues**, **Patrick Ohly**, and **John Belamaric** to discuss the limitations of the legacy device model, the "NP-hard" challenges of scheduling, and how they’re building a more programmable, hardware-aware future for Kubernetes.
 
