@@ -68,7 +68,7 @@ If those three groups design independently, you end up with inconsistent abstrac
 
 The cross-SIG model also means that design decisions are reviewed from multiple angles. Someone from sig-scheduling will catch scheduler complexity that a sig-node contributor might overlook, and vice versa. It slows down individual decisions slightly, but produces much more robust outcomes.
 
-# Current Focus Areas
+# Current focus areas
 
 With DRA now generally available, the working group’s focus has expanded to enable more advanced scheduling models, shared semantics, operational visibility, and support for increasingly complex hardware topologies.
 
