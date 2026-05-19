@@ -52,7 +52,7 @@ But DRA, as it stands right now, is very focused on scheduling. There are other 
 
 Also, as Kevin alluded to, devices are often allocated and used in groups, rather than individually. Choosing the right devices to work together in a group depends on how they are interconnected; for example, NVIDIA GPUs may be in an any-to-any fabric arrangement in an NVLINK domain, whereas TPUs may have a 3D torus interconnect. This affects the “selection, allocation and configuration” of devices, and we have a lot more work to do to address these use cases.
 
-# A Cross-SIG Effort
+# A Cross-SIG effort
 
 Because device management touches scheduling, node operations, autoscaling, networking, and API design, the work naturally spans multiple SIGs across the Kubernetes project.
 
