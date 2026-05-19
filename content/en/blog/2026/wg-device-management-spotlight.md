@@ -115,7 +115,7 @@ The `ResourceSlice` API is how vendors model and advertise their devices. This i
 
 Some features require changes in both. We have another sharing method we call “consumable capacity”. In the explicit sharing case described above, a user needs to point containers at the same `ResourceClaim`; there is one `ResourceClaim` shared amongst several containers and Pods. With consumable capacity, the device sharing works more like how Pods share a Node. The user creates a `ResourceClaim` that asks for a certain amount of resources, for example, “I need a NIC with 2Gbps of bandwidth”. The scheduler knows that there is a NIC with 40Gbps of bandwidth available, and so it allocates 2Gbps out of that 40Gbps and gives it to that `ResourceClaim`. In this case, each Pod has its own ResourceClaim, but the underlying device is shared between those claims. It’s up to the on-node DRA driver to properly set up the device for this sort of sharing (in the NIC case, likely by creating a subinterface). We call this “platform-mediated sharing” to differentiate it from the explicit "user-mediated sharing".
 
-# Real-World Impact
+# Real-world impact
 
 While much of the work is deeply technical, the underlying goal is practical: enabling Kubernetes to better support real-world AI/ML and hardware-intensive workloads at scale.
 
