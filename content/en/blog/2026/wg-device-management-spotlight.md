@@ -151,7 +151,7 @@ Despite the challenges, contributors across the working group remain excited abo
 
 **JB:** I am excited about a lot of things. The community really has grown and has so many interesting features in the works to enable modeling of more complex devices, and to better model multi-node devices.
 
-I am really excited to see the creative ways people will use these APIs. They were primarily designed to address “devices”, but just like how “everything is a file” in Unix/Linux, the APIs themselves are quite flexible as to what they model. They really build out a more programmable scheduler, which can have interesting applications. For example, I recently prototyped using DRA to schedule pods to nodes where a large AI model is already locally cached. It’s really quite flexible, and I have great confidence in the creativity of our community, so I think we’ll see some unexpected solutions in the ecosystem.
+I am really excited to see the creative ways people will use these APIs. They were primarily designed to address "devices", but just like how "everything is a file" in Unix/Linux, the APIs themselves are quite flexible as to what they model. They really build out a more programmable scheduler, which can have interesting applications. For example, I recently prototyped using DRA to schedule pods to nodes where a large AI model is already locally cached. It’s really quite flexible, and I have great confidence in the creativity of our community, so I think we’ll see some unexpected solutions in the ecosystem.
 
 # Getting Involved
 
