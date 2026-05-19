@@ -13,7 +13,7 @@ The rising popularity of AI, Edge, and Telecommunications workloads on Kubernete
 
 Efficiently managing this specialized hardware is the mission of the **[Device Management Working Group](https://www.kubernetes.dev/community/community-groups/wg/device-management/)**. Their cornerstone project, **[Dynamic Resource Allocation (DRA)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/)**, recently graduated to GA, marking a fundamental shift in how the project handles hardware-intensive workloads at scale.
 
-In this spotlight, we sit down with WG chairs **Kevin Klues**, **Patrick Ohly**, and **John Belamaric** to discuss the limitations of the legacy device model, the "NP-hard" challenges of scheduling, and how they’re building a more programmable, hardware-aware future for Kubernetes.
+In this spotlight, we sit down with WG chairs **[Kevin Klues](https://github.com/klueska)**, **[Patrick Ohly](https://github.com/pohly)**, and **[John Belamaric](https://github.com/johnbelamaric)** to discuss the limitations of the legacy device model, the "NP-hard" challenges of scheduling, and how they’re building a more programmable, hardware-aware future for Kubernetes.
 
 # Introducing Device Management
 
