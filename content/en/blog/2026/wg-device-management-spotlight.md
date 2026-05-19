@@ -30,7 +30,7 @@ In this spotlight, we sit down with WG chairs **[Kevin Klues](https://github.com
 The working group emerged from a fundamental rethink of how Kubernetes interacts with specialized hardware. At the heart of this evolution is **Dynamic Resource Allocation (DRA)**. Rather than treating devices as simple integers, DRA provides a structured framework that breaks device management into four distinct stages:
 
 * **Modeling:** Vendors use the **`ResourceSlice` API** to advertise the granular capabilities and capacity of their hardware.  
-* **Requesting:** Users define their specific hardware needs—such as GPU memory or interconnect requirements—through the **ResourceClaim API**.  
+* **Requesting:** Users define their specific hardware needs—such as GPU memory or interconnect requirements—through the **`ResourceClaim` API**.  
 * **Scheduling:** The Kubernetes scheduler uses these APIs to match workload requirements against available hardware intelligently.  
 * **Actuation:** Once a match is made, the system handles the "handshake" that prepares and secures the device for the Pod's use.
 
