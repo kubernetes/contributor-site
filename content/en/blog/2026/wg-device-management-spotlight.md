@@ -107,7 +107,7 @@ In addition to the project board, we also maintain a table which summarizes all 
 
 **JB:** Good question. One way to think about it is what we are doing in the two primary APIs: `ResourceClaim` and `ResourceSlice`.
 
-The ResourceClaim API is how the user asks for devices. We have built some features that allow the user to be more flexible in their requests. For example, instead of asking for a specific model of GPU, they can ask for a GPU with at least a certain amount of memory. Or they can ask for a list of alternatives: “I’d like one A100 (80GB) GPU, but if you don’t have it, I’ll take 2 A100 (40 GB) GPUs.” This gives the scheduler some options to satisfy the request, which can lead to better obtainability and utilization of hardware that otherwise would not be selected.
+The `ResourceClaim` API is how the user asks for devices. We have built some features that allow the user to be more flexible in their requests. For example, instead of asking for a specific model of GPU, they can ask for a GPU with at least a certain amount of memory. Or they can ask for a list of alternatives: "I’d like one A100 (80GB) GPU, but if you don’t have it, I’ll take 2 A100 (40 GB) GPUs." This gives the scheduler some options to satisfy the request, which can lead to better obtainability and utilization of hardware that otherwise would not be selected.
 
 The ResourceClaim API allows users to explicitly share devices. You can point multiple containers (in the same or different Pods) at a ResourceClaim; this allows the devices allocated by that claim to be used in all of those containers, *if the device supports it*. 
 
