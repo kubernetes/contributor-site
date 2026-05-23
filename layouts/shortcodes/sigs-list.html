@@ -15,15 +15,16 @@
 {{- $cacheOpts := dict "key" "sigs-yaml" -}}
 {{- $opts = merge $opts $cacheOpts -}}
 
-{{ with resources.GetRemote $sigsUrl $opts }}
-  {{ with .Err }}
+{{- with try (resources.GetRemote $sigsUrl $opts) -}}
+  {{- with .Err -}}
     {{ if eq hugo.Environment "production" }}
       {{ errorf "Unable to load sigs.yaml: %s" . }}
     {{ else }}
       {{ warnf "Unable to load sigs.yaml: %s" . }}
     {{ end }}
-  {{ end }}
-  {{ with .Content | transform.Unmarshal }}
+  {{- end -}}
+  {{- with .Value -}}
+    {{- with .Content | transform.Unmarshal -}}
 <div class="sigs-container my-4">
   <div class="row">
     <!-- Sticky Header Wrapper -->
@@ -441,5 +442,6 @@
     </div>
   </div>
 </div>
-{{ end }}
-{{ end }}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

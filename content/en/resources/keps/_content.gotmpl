@@ -10,21 +10,32 @@
 
 {{/* Fetch remote KEP data */}}
 {{- $kepDataOpts := merge $globalOpts (dict "key" "keps-json-data") -}}
-{{- with resources.GetRemote $kepDataSourceUrl $kepDataOpts -}}
+{{- with try (resources.GetRemote $kepDataSourceUrl $kepDataOpts ) -}}
   {{- with .Err -}}
     {{- if eq hugo.Environment "production" -}}
       {{- errorf "Unable to load KEP data: %s" . -}}
     {{- else -}}
       {{- warnf "Cannot load KEP data: %s" . -}}
     {{- end -}}
+  {{- else with .Value -}}
+    {{- with try (.Content | transform.Unmarshal) -}}
+      {{- with .Err -}}
+        {{- if eq hugo.Environment "production" -}}
+          {{- errorf "Unable to load KEP data: %s" . -}}
+        {{- else -}}
+          {{- warnf "Cannot load KEP data: %s" . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- with .Value -}}
+        {{- $kepData = . -}}
+      {{- end -}}
+    {{- end -}}
   {{- else -}}
-    {{- $kepData = .Content | transform.Unmarshal -}}
-  {{- end -}}
-{{- else -}}
-  {{- if eq hugo.Environment "production" -}}
-    {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
-  {{- else -}}
-    {{- warnf "Cannot load KEP data from %s" $kepDataSourceUrl -}}
+    {{- if eq hugo.Environment "production" -}}
+      {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
+    {{- else -}}
+      {{- warnf "Cannot load KEP data from %s" $kepDataSourceUrl -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
@@ -68,28 +79,29 @@
     {{- $readmeContent := "" -}}
     {{- $readmeOpts := merge $globalOpts (dict "key" (printf "kep-readme-%s" $kep.kepNumber)) -}}
     
-    {{- $resource := resources.GetRemote $readmeUrl $readmeOpts -}}
+    {{- $resourceFetchAttempt := try (resources.GetRemote $readmeUrl $readmeOpts ) -}}
     
-    {{- /* Fallback to README.MD if README.md fails or is nil */ -}}
+    {{- /* Fallback to README.MD if README.md fetch fails or response is nil */ -}}
     {{- $needsFallback := false -}}
-    {{- if not $resource -}}
+    {{- if not $resourceFetchAttempt.Value -}}
       {{- $needsFallback = true -}}
-    {{- else if $resource.Err -}}
+    {{- else if $resourceFetchAttempt.Err -}}
       {{- $needsFallback = true -}}
     {{- end -}}
 
     {{- if $needsFallback -}}
       {{- $readmeUrlUpper := printf "%s%s/%s/README.MD" $rawBaseUrl $kep.owningSig $kep.name -}}
       {{- $readmeOptsUpper := merge $globalOpts (dict "key" (printf "kep-readme-%s-upper" $kep.kepNumber)) -}}
-      {{- $resource = resources.GetRemote $readmeUrlUpper $readmeOptsUpper -}}
+      {{- $resourceFetchAttempt = try (resources.GetRemote $readmeUrlUpper $readmeOptsUpper) -}}
     {{- end -}}
 
-    {{- if $resource -}}
-      {{- if $resource.Err -}}
-        {{- warnf "Unable to load README for KEP %s (tried .md and .MD): %s" $kep.kepNumber $resource.Err -}}
-      {{- else -}}
+    {{- with $resourceFetchAttempt -}}
+      {{- with .Err -}}
+        {{- warnf "Unable to load README for KEP %s (tried .md and .MD): %s" $kep.kepNumber . -}}
+      {{- end -}}
+      {{- with .Value -}}
         {{- /* Fix common markdown link errors in KEP READMEs to avoid build failures */ -}}
-        {{- $readmeContent = replace $resource.Content "]((http" "](http" -}}
+        {{- $readmeContent = replace .Content "]((http" "](http" -}}
         {{- $readmeContent = replace $readmeContent "/))" "/)" -}}
         {{- $readmeContent = replace $readmeContent "((http" "(http" -}}
         
@@ -105,6 +117,8 @@
         {{- $readmeContent = replaceRE `!\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "![${1}](%s${2})" $kepDirUrl) $readmeContent -}}
         {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
         {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
+      {{- else -}}
+        {{- warnf "Unable to load README for KEP %s" -}}
       {{- end -}}
     {{- end -}}
 
