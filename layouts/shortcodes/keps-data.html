@@ -1,20 +1,20 @@
 {{- $kepDataSourceUrl := "https://storage.googleapis.com/k8s-keps/keps.json" -}}
 {{- $kepData := "" -}}
-{{- with resources.GetRemote $kepDataSourceUrl -}}
+{{- with try (resources.GetRemote $kepDataSourceUrl ) -}}
   {{- with .Err -}}
     {{- if eq hugo.Environment "production" }}
-      {{ errorf "Unable to load KEP data: %s" . }}
+      {{ errorf "Unable to load KEP data from %s: %s" $kepDataSourceUrl . -}}
     {{- else -}}
-      {{- warnf "Cannot load KEP data: %s" . -}}
+      {{- warnf "Cannot load KEP data from %s: %s" $kepDataSourceUrl . -}}
     {{- end -}}
-  {{- else -}}
+  {{- else with .Value -}}
     {{- $kepData = .Content | transform.Unmarshal -}}
-  {{- end -}}
-{{- else -}}
-  {{- if eq hugo.Environment "production" }}
-    {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
   {{- else -}}
-    {{- warnf "Cannot load KEP data from %s" $kepDataSourceUrl -}}
+    {{- if eq hugo.Environment "production" }}
+      {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
+    {{- else -}}
+      {{- warnf "Cannot load KEP data from %s" $kepDataSourceUrl -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
