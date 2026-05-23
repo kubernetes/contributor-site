@@ -1,13 +1,4 @@
 {{- $kepDataSourceUrl := "https://storage.googleapis.com/k8s-keps/keps.json" -}}
-{{/*
-  Datatables is used in the page to enrich the list of KEPs.
-  The stylesheets and scripts required are in `partials/hooks/head-end.html`
-  and `partials/hooks/body-end.html` respectively.
-
-  Note: In order to configure Datatable parameters for changing any behavior, edit
-  the `DataTable` initialization in `partials/hooks/body-end.html`
-
-*/}}
 {{- $kepData := "" -}}
 {{- with resources.GetRemote $kepDataSourceUrl -}}
   {{- with .Err -}}
@@ -27,96 +18,192 @@
   {{- end -}}
 {{- end -}}
 
-{{/* Define stages that are "beyond provisional" for linking to internal pages */}}
 {{- $validStages := slice "alpha" "beta" "stable" "deprecated" -}}
 {{- $validStatuses := slice "implementable" "implemented" -}}
 
-<div>
-  <table id="keps-table" class="table table-hover mt-2 col-md-12 table-sm">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col" class="col-md-1">KEP Number</th>
-        <th scope="col" class="col-md-3">Title</th>
-        <th scope="col" class="col-md-2">SIG</th>
-        <th scope="col" class="col-md-2">Author</th>
-        <th scope="col" class="col-md-1">Created</th>
-        <th scope="col" class="col-md-1">Last Updated</th>
-        <th scope="col" class="col-md-1">Milestone</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{range $index, $data := $kepData}}
-          {{- $isValidStage := in $validStages $data.stage -}}
-          {{- $isValidStatus := in $validStatuses $data.status -}}
-          <tr>
-            <td>
-              {{- if or $isValidStage $isValidStatus -}}
-              <a href="/resources/keps/{{ $data.kepNumber }}/">
-                {{ printf "%s" $data.kepNumber }}
-              </a>
-              {{- else -}}
-              <a href="https://features.k8s.io/{{ $data.kepNumber }}">
-                {{ printf "%s" $data.kepNumber }}
-              </a>
+{{- /* Build unique release and SIG lists */ -}}
+{{- $releaseSet := dict -}}
+{{- $sigSet := dict -}}
+{{- range $kepData -}}
+  {{- $kep := . -}}
+  {{- $lm := .latestMilestone -}}
+  {{- if and $lm (ne $lm "0.0") -}}
+    {{- $releaseSet = merge $releaseSet (dict $lm true) -}}
+  {{- else -}}
+    {{- /* Fallback: check milestone map for any non-empty value */ -}}
+    {{- range $s := slice "stable" "beta" "alpha" "deprecated" -}}
+      {{- if not $lm -}}
+        {{- with index $kep.milestone $s -}}{{- if . -}}{{- $lm = . -}}{{- end -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $lm -}}
+      {{- $releaseSet = merge $releaseSet (dict $lm true) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $sig := .owningSig -}}
+  {{- if $sig -}}
+    {{- $sigSet = merge $sigSet (dict $sig true) -}}
+  {{- end -}}
+{{- end -}}
+{{- $releases := slice -}}
+{{- range $k, $_ := $releaseSet -}}{{- $releases = $releases | append $k -}}{{- end -}}
+{{- $sigs := slice -}}
+{{- range $k, $_ := $sigSet -}}{{- $sigs = $sigs | append $k -}}{{- end -}}
+
+<div class="kep-page">
+  <div class="kep-filter-bar" role="search" aria-label="Filter KEPs">
+    <div class="kep-filter-row kep-filter-selects">
+      <div class="kep-filter-group">
+        <label for="kep-filter-release">Release</label>
+        <select id="kep-filter-release" aria-label="Filter by release">
+          <option value="">All Releases</option>
+          {{- range $releases }}
+          <option value="{{ strings.TrimPrefix "v" . }}">{{ strings.TrimPrefix "v" . }}</option>
+          {{- end }}
+        </select>
+      </div>
+      <div class="kep-filter-group">
+        <label for="kep-filter-sig">SIG</label>
+        <select id="kep-filter-sig" aria-label="Filter by SIG">
+          <option value="">All SIGs</option>
+          {{- range sort $sigs }}
+          <option value="{{ . }}">{{ strings.TrimPrefix "sig-" . }}</option>
+          {{- end }}
+        </select>
+      </div>
+    </div>
+    <div class="kep-filter-row">
+      <fieldset class="kep-stage-toggles">
+        <legend>Stage</legend>
+        <button data-stage="alpha" class="kep-stage-btn kep-stage-alpha" role="checkbox" aria-checked="false" type="button">Alpha</button>
+        <button data-stage="beta" class="kep-stage-btn kep-stage-beta" role="checkbox" aria-checked="false" type="button">Beta</button>
+        <button data-stage="stable" class="kep-stage-btn kep-stage-stable" role="checkbox" aria-checked="false" type="button">Stable</button>
+        <button data-stage="deprecated" class="kep-stage-btn kep-stage-deprecated" role="checkbox" aria-checked="false" type="button">Deprecated</button>
+        <button data-stage="other" class="kep-stage-btn kep-stage-other" role="checkbox" aria-checked="false" type="button">Other</button>
+      </fieldset>
+    </div>
+    <div class="kep-filter-row kep-filter-actions">
+      <div class="kep-search-group">
+        <svg class="kep-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85-.017.016zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="currentColor"/></svg>
+        <input type="search" id="kep-search" class="kep-search-input" placeholder="Search by title, KEP number, author..." aria-label="Search by title, KEP number, author...">
+      </div>
+      <div class="kep-results-count" aria-live="polite" role="status"></div>
+    </div>
+  </div>
+
+  <div class="kep-filter-toggle">
+    <button id="kep-filter-toggle-btn" class="kep-filter-toggle-btn" type="button" aria-expanded="false">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 2.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM4.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0zM9 13.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z" fill="currentColor"/></svg>
+      Filters
+    </button>
+  </div>
+
+  <div class="kep-table-wrapper">
+    <table id="keps-table" class="table table-hover table-sm">
+      <caption class="visually-hidden">List of Kubernetes Enhancement Proposals (KEPs)</caption>
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" class="kep-col-number">KEP Number</th>
+          <th scope="col" class="kep-col-title">Title</th>
+          <th scope="col" class="kep-col-sig">SIG</th>
+          <th scope="col" class="kep-col-stage">Stage</th>
+          <th scope="col" class="kep-col-latest">Latest Milestone</th>
+          <th scope="col" class="kep-col-created">Created</th>
+          <th scope="col" class="kep-col-author">Author</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range $data := $kepData }}
+          {{- $hasValidStage := and $data.stage (in $validStages $data.stage) -}}
+          {{- $hasValidStatus := and $data.status (in $validStatuses $data.status) -}}
+          {{- $hasPage := or $hasValidStage $hasValidStatus -}}
+          {{- $stage := $data.stage -}}
+          {{- if not $stage }}
+            {{- if or (eq $data.status "implementable") (eq $data.status "implemented") }}
+              {{- $stage = $data.status -}}
+            {{- else if eq $data.status "provisional" -}}
+              {{- $stage = "provisional" -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $stageClass := $stage -}}
+          {{- if and $stage (not (in $validStages $stage)) }}{{ $stageClass = "other" }}{{ end -}}
+          {{- $latest := $data.latestMilestone -}}
+          {{- if not $latest }}
+            {{- range $s := slice "stable" "beta" "alpha" "deprecated" }}
+              {{- if not $latest }}
+                {{- with index $data.milestone $s }}{{ if . }}{{ $latest = printf "%s: %s" $s . }}{{ end }}{{ end }}
               {{- end -}}
+            {{- end -}}
+          {{- end -}}
+          {{- $latestVersion := strings.TrimPrefix "v" $latest -}}
+          {{- $numAuthors := len $data.authors -}}
+          {{- $allAuthors := "" -}}
+          {{- range $data.authors -}}
+            {{- $allAuthors = printf "%s %s" $allAuthors (trim . "@") -}}
+          {{- end -}}
+          {{- $allAuthors = strings.TrimLeft $allAuthors " " -}}
+          <tr data-stage="{{ $stage }}" data-latest-milestone="{{ if $latest }}{{ strings.TrimPrefix "v" $latest }}{{ end }}" data-sig="{{ $data.owningSig }}" data-kep="{{ $data.kepNumber }}" data-created="{{ $data.creationDate }}" data-authors="{{ $allAuthors }}">
+            <td class="kep-col-number" data-order="{{ $data.kepNumber }}">
+              {{- if $hasPage }}
+              <a href="/resources/keps/{{ $data.kepNumber }}/" class="kep-number-link">{{ $data.kepNumber }}</a>
+              {{- else }}
+              <a href="https://features.k8s.io/{{ $data.kepNumber }}" class="kep-number-link">{{ $data.kepNumber }}</a>
+              {{- end }}
             </td>
-            <td>
-              {{- if or $isValidStage $isValidStatus -}}
-              <a href="/resources/keps/{{ $data.kepNumber }}/">
-                {{ printf "%s" $data.title }}
-              </a>
-              {{- else -}}
-              <a href="https://github.com/kubernetes/enhancements/tree/master/keps/{{$data.owningSig}}/{{$data.name}}#summary">
-                {{ printf "%s" $data.title }}
-              </a>
-              {{- end -}}
+            <td class="kep-col-title">
+              {{- if $hasPage }}
+              <a href="/resources/keps/{{ $data.kepNumber }}/" class="kep-title-link">{{ $data.title }}</a>
+              {{- else }}
+              <a href="https://features.k8s.io/{{ $data.kepNumber }}" class="kep-title-link">{{ $data.title }}</a>
+              {{- end }}
             </td>
-            <td>
+            <td class="kep-col-sig">
               {{- $sigSlug := strings.TrimPrefix "sig-" $data.owningSig -}}
               {{- with site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle | default .Title }}</a>
+                <a href="{{ .RelPermalink }}" class="kep-sig-link">{{ .LinkTitle | default .Title }}</a>
               {{- else -}}
-                <a href="https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}">
-                  SIG {{ $sigSlug | humanize | title }}
-                </a>
+                <a href="https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}" class="kep-sig-link">SIG {{ $sigSlug | humanize | title }}</a>
               {{- end -}}
             </td>
-            <td>
-              {{ range $index, $author := $data.authors }}
-              {{- if $index -}}, {{ end -}}
-              <a href="https://github.com/{{ trim $author "@" }}">
-                <span class="github-user">@{{ trim $author "@" }}</span>
-              </a>
-              {{ end }}
+            <td class="kep-col-stage">
+              {{- if $stage }}
+              <span class="kep-stage-badge kep-stage-{{ $stageClass }}">{{ $stage }}</span>
+              {{- else }}
+              <span class="kep-no-data">&mdash;</span>
+              {{- end }}
             </td>
-            <td>
-                {{ if $data.creationDate }}
-                  <time datetime="{{ $data.creationDate }}">{{ $data.creationDate }}</time>
-                {{ end }}
+            <td class="kep-col-latest">
+              {{- if $latest }}
+                <span class="kep-latest-version">{{ $latestVersion }}</span>
+              {{- else }}
+                <span class="kep-no-data">&mdash;</span>
+              {{- end }}
             </td>
-            <td>
-                {{ if $data.lastUpdated }}
-                  <time datetime="{{ $data.lastUpdated }}">{{ $data.lastUpdated }}</time>
-                {{ end }}
-              </span>
+            <td class="kep-col-created">
+              {{- if $data.creationDate }}
+                <time datetime="{{ $data.creationDate }}">{{ $data.creationDate }}</time>
+              {{- else }}
+                <span class="kep-no-data">&mdash;</span>
+              {{- end }}
             </td>
-            <td>
-              <ul class="list-unstyled">
-                {{ range $stage, $milestone := $data.milestone }}
-                  {{ if $milestone }}
-                  {{- $version := strings.TrimPrefix "v" $milestone -}}
-                  <li>
-                    {{ $stage }}:
-                    <a href="https://github.com/kubernetes/sig-release/tree/master/releases/release-{{ $version }}" class="kep-milestone" target="_blank" rel="noopener noreferrer">
-                      {{ $milestone }}
-                    </a>
-                  </li>
-                  {{ end }}
-                {{ end }}
-              </ul>
+            <td class="kep-col-author">
+              {{- if $data.authors }}
+                {{ range $i, $author := $data.authors }}
+                  {{- if lt $i 2 }}
+                    {{- if $i }}, {{ end }}
+                    <a href="https://github.com/{{ trim $author "@" }}" class="kep-author-link">{{ trim $author "@" }}</a>
+                  {{- end }}
+                {{- end }}
+                {{- if gt $numAuthors 2 }}
+                  <span class="kep-author-etal">et al.</span>
+                {{- end }}
+              {{- else }}
+                <span class="kep-no-data">&mdash;</span>
+              {{- end }}
             </td>
           </tr>
-      {{ end }}
-    </tbody>
-  </table>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -2,8 +2,10 @@
 linktitle: Enhancements
 title: Kubernetes Enhancement Proposals (KEPs)
 description: |
-  List of Kubernetes enhancements
+  Browse and filter all Kubernetes Enhancement Proposals (KEPs) across every release.
+  Search by SIG, stage, milestone version, or author.
 type: keps
+body_class: kep-listing
 ---
 
 These data come from the [kubernetes/enhancements]
@@ -15,7 +17,6 @@ To see the original Enhancement issue, click on the KEP number.  To see a summar
 If you notice an empty cell in the table, the KEP may not have updated information.
 Please raise <a href="https://github.com/kubernetes/enhancements/issues">an issue in the kubernetes/enhancements</a> repository.
 {{% /alert %}}
-###	KEP List
 
 {{< keps-data >}}
 

@@ -1,43 +1,217 @@
-{{/*
-    This file is a 1:1 copy of the one in docsy but with adding scripts
-    for enabling Datatables on the KEP page.
-
-    Remove this notice if a better way is found to include the scripts.
-*/}}
-
-{{ with .Site.Params.algolia_docsearch }}
-<!-- scripts for algolia docsearch -->
-{{ end }}
-
 {{ if .HasShortcode "keps-data" }}
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#keps-table').DataTable({
-            lengthMenu: [
-                [10, 25, 50, -1],
-                [10, 25, 50, 'All'],
-            ],
-            order: [[2, 'asc'], [0, 'asc']],
-        });
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+<script>
+(function() {
+  'use strict';
+
+  // Sort release options newest first — runs even if DataTable fails
+  function sortReleases() {
+    var select = document.getElementById('kep-filter-release');
+    if (!select) return;
+    var options = Array.from(select.options).slice(1);
+    options.sort(function(a, b) {
+      var va = (a.value.match(/[\d.]+/) || ['0'])[0].split('.').map(Number);
+      var vb = (b.value.match(/[\d.]+/) || ['0'])[0].split('.').map(Number);
+      for (var i = 0; i < Math.max(va.length, vb.length); i++) {
+        var na = va[i] || 0;
+        var nb = vb[i] || 0;
+        if (na !== nb) return nb - na;
+      }
+      return 0;
     });
+    options.forEach(function(o) { select.appendChild(o); });
+  }
+
+  sortReleases();
+
+  if (typeof $ === 'undefined' || !$.fn || !$.fn.DataTable) return;
+
+  function initKepTable() {
+    var table = document.getElementById('keps-table');
+    if (!table) return;
+
+    var $table = $(table);
+    var activeStages = new Set();
+    var searchTerm = '';
+
+    // Filter function — reads plain-text cell content from data[]
+    // data[2] = SIG, data[3] = Stage, data[4] = Latest Milestone
+    $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+      var selRelease = document.getElementById('kep-filter-release');
+      var selSig = document.getElementById('kep-filter-sig');
+      var releaseVal = selRelease ? selRelease.value : '';
+      var sigVal = selSig ? selSig.value : '';
+
+      var tr = settings.aoData[dataIndex].nTr;
+      var rowRelease = tr ? (tr.getAttribute('data-latest-milestone') || '') : '';
+      var rowSig = tr ? (tr.getAttribute('data-sig') || '') : '';
+      var rowStage = tr ? (tr.getAttribute('data-stage') || '').toLowerCase() : '';
+
+      if (releaseVal && rowRelease !== releaseVal) return false;
+      if (sigVal && rowSig !== sigVal) return false;
+
+      if (activeStages.size > 0) {
+        var match = false;
+        activeStages.forEach(function(stage) {
+          if (stage === 'other') {
+            if (['alpha','beta','stable','deprecated'].indexOf(rowStage) === -1 && rowStage !== '') match = true;
+          } else if (rowStage === stage) {
+            match = true;
+          }
+        });
+        if (!match) return false;
+      }
+
+      if (searchTerm) {
+        var term = searchTerm.toLowerCase();
+        var rowText = data.join(' ').toLowerCase();
+        var rowAuthors = tr ? (tr.getAttribute('data-authors') || '').toLowerCase() : '';
+        if (rowText.indexOf(term) === -1 && rowAuthors.indexOf(term) === -1) return false;
+      }
+
+      return true;
+    });
+
+    var dt = $table.DataTable({
+      lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]],
+      pageLength: 10,
+      order: [[0, 'desc']],
+      columnDefs: [
+        { type: 'num', targets: [0] },
+        { orderable: false, targets: [6] },
+        { type: 'date', targets: [5] }
+      ],
+      dom: 'ltip',
+      search: { search: '', regex: false, smart: false },
+      language: { zeroRecords: 'No KEPs match your filters.' },
+      drawCallback: function() {
+        var info = this.api().page.info();
+        var c = document.querySelector('.kep-results-count');
+        if (c) c.textContent = info.recordsDisplay === info.recordsTotal
+          ? info.recordsTotal + ' KEPs'
+          : 'Showing ' + info.recordsDisplay + ' of ' + info.recordsTotal + ' KEPs';
+      }
+    });
+
+    // Vanilla JS event listeners — no jQuery quirks
+    var searchInput = document.getElementById('kep-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        searchTerm = this.value;
+        dt.draw();
+      });
+    }
+
+    var releaseSelect = document.getElementById('kep-filter-release');
+    if (releaseSelect) {
+      releaseSelect.addEventListener('change', function() {
+        dt.draw();
+        syncHash();
+      });
+    }
+
+    var sigSelect = document.getElementById('kep-filter-sig');
+    if (sigSelect) {
+      sigSelect.addEventListener('change', function() {
+        dt.draw();
+        syncHash();
+      });
+    }
+
+    function toggleStage(btn) {
+      var stage = btn.getAttribute('data-stage');
+      var checked = btn.getAttribute('aria-checked') === 'true';
+      btn.setAttribute('aria-checked', checked ? 'false' : 'true');
+      if (checked) activeStages.delete(stage);
+      else activeStages.add(stage);
+      dt.draw();
+      syncHash();
+    }
+
+    document.querySelectorAll('.kep-stage-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        toggleStage(this);
+      });
+      btn.addEventListener('keydown', function(e) {
+        if (e.key === ' ' || e.key === 'Enter') {
+          e.preventDefault();
+          toggleStage(this);
+        }
+      });
+    });
+
+    var toggleBtn = document.getElementById('kep-filter-toggle-btn');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        var filterBar = document.querySelector('.kep-filter-bar');
+        if (filterBar) filterBar.classList.toggle('visible');
+      });
+    }
+
+    function syncHash() {
+      var parts = [];
+      var releaseEl = document.getElementById('kep-filter-release');
+      var sigEl = document.getElementById('kep-filter-sig');
+      var r = releaseEl ? releaseEl.value : '';
+      var s = sigEl ? sigEl.value : '';
+      if (r) parts.push('release=' + encodeURIComponent(r));
+      if (s) parts.push('sig=' + encodeURIComponent(s));
+      if (activeStages.size) parts.push('stage=' + encodeURIComponent(Array.from(activeStages).join(',')));
+      var hash = parts.length ? '#' + parts.join('&') : '';
+      history.replaceState(null, '', hash || window.location.pathname);
+    }
+
+    function applyHash() {
+      var h = window.location.hash.slice(1);
+      if (!h) return;
+      var params = {};
+      h.split('&').forEach(function(p) {
+        var kv = p.split('=');
+        if (kv.length === 2) params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]);
+      });
+      var releaseEl = document.getElementById('kep-filter-release');
+      var sigEl = document.getElementById('kep-filter-sig');
+      if (params.release && releaseEl) releaseEl.value = params.release;
+      if (params.sig && sigEl) sigEl.value = params.sig;
+      if (params.stage) {
+        params.stage.split(',').forEach(function(s) {
+          activeStages.add(s);
+          var btn = document.querySelector('.kep-stage-btn[data-stage="' + s + '"]');
+          if (btn) btn.setAttribute('aria-checked', 'true');
+        });
+      }
+      dt.draw();
+    }
+
+    applyHash();
+    window.addEventListener('hashchange', applyHash);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initKepTable);
+  } else {
+    initKepTable();
+  }
+})();
 </script>
 {{ end }}
 
-{{/* Sticky header scroll behavior */}}
+{{/* Sticky header */}}
 <script>
 function initStickyHeader() {
-  const navbar = document.querySelector('.td-navbar');
+  var navbar = document.querySelector('.td-navbar');
   if (!navbar) return;
 
-  const updateNavbar = () => {
+  var updateNavbar = function() {
     navbar.classList.toggle('scrolled', window.scrollY > 10);
   };
 
   window.addEventListener('scroll', updateNavbar);
   updateNavbar();
 
-  const observer = new MutationObserver(() => {
+  var observer = new MutationObserver(function() {
     if (!navbar.classList.contains('scrolled') && window.scrollY > 10) {
       navbar.classList.add('scrolled');
     }
