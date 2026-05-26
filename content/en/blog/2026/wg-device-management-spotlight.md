@@ -83,7 +83,7 @@ With DRA now generally available, the working group’s focus has expanded to en
 2. Support “day two” operations like health monitoring.  
 3. Improve multi-node support, primarily by integrating with workload-aware scheduling.
 
-In addition to the project board, we also maintain a table which summarizes all the KEPs which are currently in flight. This is the status for 1.36; more are likely to be added for 1.37:
+In addition to the project board, we also maintain a table which summarizes all the <a href="https://www.kubernetes.dev/resources/keps/4381" target="_blank">KEPs</a>[2] which are currently in flight. This is the status for 1.36; more are likely to be added for 1.37:
 
 | KEP | Description | Release |  |  |  |  |
 | :---: | :---- | :---: | :---: | :---: | :---: | :---: |
@@ -184,5 +184,6 @@ If you’re interested in shaping the future of hardware-aware orchestration, no
 # References
 
 \[1\] Project Board: [https://github.com/orgs/kubernetes/projects/95](https://github.com/orgs/kubernetes/projects/95)   
-\[2\] Device Management Page: [https://github.com/kubernetes/community/tree/master/wg-device-management](https://github.com/kubernetes/community/tree/master/wg-device-management)   
-\[3\] Device Management Charter: [https://github.com/kubernetes/community/blob/master/wg-device-management/charter.md](https://github.com/kubernetes/community/blob/master/wg-device-management/charter.md)
+\[2\] KEP: <a href = "https://www.kubernetes.dev/resources/keps/4381">https://www.kubernetes.dev/resources/keps/4381</a> <br>
+\[3\]Device Management Page: [https://github.com/kubernetes/community/tree/master/wg-device-management](https://github.com/kubernetes/community/tree/master/wg-device-management)   
+\[4\] Device Management Charter: [https://github.com/kubernetes/community/blob/master/wg-device-management/charter.md](https://github.com/kubernetes/community/blob/master/wg-device-management/charter.md)
