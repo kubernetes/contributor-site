@@ -1,0 +1,149 @@
+# Site strings for English (en)
+# Following kubernetes/website structure using 'other' key for pluralization support
+
+[ui_search]
+other = "Search"
+
+[ui_search_placeholder]
+other = "Type name, tag, area..."
+
+[ui_view_readme_source]
+other = "View README Source"
+
+[ui_view_charter]
+other = "View Charter"
+
+[ui_view_charter_source]
+other = "View Charter Source"
+
+[ui_press_help]
+other = 'Press "?" for help.'
+
+[ui_filter]
+other = "Filter:"
+
+[ui_any_day]
+other = "Any day"
+
+[ui_monday]
+other = "Mon"
+
+[ui_tuesday]
+other = "Tue"
+
+[ui_wednesday]
+other = "Wed"
+
+[ui_thursday]
+other = "Thu"
+
+[ui_friday]
+other = "Fri"
+
+[ui_topics]
+other = "Topics:"
+
+[ui_clear]
+other = "Clear"
+
+[ui_leadership]
+other = "Leadership"
+
+[ui_chairs]
+other = "Chairs"
+
+[ui_tech_leads]
+other = "Tech Leads"
+
+[ui_meetings]
+other = "Meetings"
+
+[ui_at]
+other = "at"
+
+[ui_show_details]
+other = "Show Details"
+
+[ui_visit]
+other = "Visit"
+
+[ui_description]
+other = "Description"
+
+[ui_day]
+other = "Day"
+
+[ui_time]
+other = "Time"
+
+[ui_links]
+other = "Links"
+
+[ui_view_source]
+other = "View Source"
+
+[ui_all]
+other = "All"
+
+[ui_video_placeholder]
+other = "Kubernetes contributor site video"
+
+[kep_number]
+other = "KEP Number"
+
+[kep_title]
+other = "Title"
+
+[kep_sig]
+other = "SIG"
+
+[kep_author]
+other = "Author"
+
+[kep_created]
+other = "Created"
+
+[kep_updated]
+other = "Updated"
+
+[kep_last_updated]
+other = "Last Updated"
+
+[kep_milestone]
+other = "Milestone"
+
+[kep_milestones]
+other = "Milestones"
+
+[kep_latest]
+other = "Latest"
+
+[kep_alpha]
+other = "Alpha"
+
+[kep_beta]
+other = "Beta"
+
+[kep_stable]
+other = "Stable"
+
+[kep_depr]
+other = "Deprecated"
+
+[kep_implementation_history]
+other = "Implementation History"
+
+[kep_related_enhancements]
+other = "Related Enhancements"
+
+[kep_ownership]
+other = "Ownership"
+
+[kep_owning_sig]
+other = "Owning SIG"
+
+[kep_participating_sigs]
+other = "Participating SIGs"
+
+[kep_primary_authors]
+other = "Primary Authors"

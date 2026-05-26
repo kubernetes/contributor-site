@@ -8,7 +8,7 @@
       
       {{/* Column 1: Implementation & History */}}
       <div class="kep-banner-col">
-        <div class="kep-banner-label">Implementation History</div>
+        <div class="kep-banner-label">{{ T "kep_implementation_history" }}</div>
         
         <div class="kep-status-group mb-4">
           <div class="d-flex flex-wrap gap-2">
@@ -24,19 +24,19 @@
         <div class="kep-data-grid mb-4">
           {{ with .Params.creationDate }}
           <div class="kep-data-row">
-            <span class="kep-data-label">Created</span>
+            <span class="kep-data-label">{{ T "kep_created" }}</span>
             <span class="kep-data-value">{{ . }}</span>
           </div>
           {{ end }}
           {{ with .Params.lastUpdated }}
           <div class="kep-data-row">
-            <span class="kep-data-label">Updated</span>
+            <span class="kep-data-label">{{ T "kep_updated" }}</span>
             <span class="kep-data-value">{{ . }}</span>
           </div>
           {{ end }}
           {{ with .Params.latestMilestone }}
           <div class="kep-data-row">
-            <span class="kep-data-label">Latest</span>
+            <span class="kep-data-label">{{ T "kep_latest" }}</span>
             <span class="kep-data-value">{{ . }}</span>
           </div>
           {{ end }}
@@ -45,29 +45,29 @@
         {{ with .Params.milestone }}
         {{ if or .alpha .beta .stable .deprecated }}
         <div class="kep-milestones-refined pt-3 border-top">
-          <div class="kep-banner-sublabel">Milestones</div>
+          <div class="kep-banner-sublabel">{{ T "kep_milestones" }}</div>
           <div class="kep-data-grid">
             {{ with .alpha }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot alpha"></span> Alpha</span>
+              <span class="kep-data-label"><span class="dot alpha"></span> {{ T "kep_alpha" }}</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}
             {{ with .beta }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot beta"></span> Beta</span>
+              <span class="kep-data-label"><span class="dot beta"></span> {{ T "kep_beta" }}</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}
             {{ with .stable }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot stable"></span> Stable</span>
+              <span class="kep-data-label"><span class="dot stable"></span> {{ T "kep_stable" }}</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}
             {{ with .deprecated }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot deprecated"></span> Depr.</span>
+              <span class="kep-data-label"><span class="dot deprecated"></span> {{ T "kep_depr" }}</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}
@@ -78,7 +78,7 @@
 
         {{ with .Params.seeAlso }}
         <div class="kep-related-refined pt-3 border-top mt-3">
-          <div class="kep-banner-sublabel">Related Enhancements</div>
+          <div class="kep-banner-sublabel">{{ T "kep_related_enhancements" }}</div>
           <ul class="kep-link-list">
             {{ range . }}
             <li>
@@ -98,23 +98,23 @@
 
       {{/* Column 2: Ownership & People */}}
       <div class="kep-banner-col border-start-refined">
-        <div class="kep-banner-label">Ownership</div>
+        <div class="kep-banner-label">{{ T "kep_ownership" }}</div>
         
         <div class="kep-sig-section mb-4">
-          <div class="kep-banner-sublabel">Owning SIG</div>
+          <div class="kep-banner-sublabel">{{ T "kep_owning_sig" }}</div>
           {{- $owningSigSlug := strings.TrimPrefix "sig-" .Params.owningSig -}}
           {{- with .Site.GetPage (printf "community/community-groups/sigs/%s" $owningSigSlug) -}}
             <a href="{{ .RelPermalink }}" class="kep-main-link">{{ .LinkTitle | default .Title }}</a>
           {{- else -}}
             <a href="https://github.com/kubernetes/community/tree/master/{{ $.Params.owningSig }}" class="kep-main-link">
-              SIG {{ $owningSigSlug | humanize | title }}
+              {{ T "kep_sig" }} {{ $owningSigSlug | humanize | title }}
             </a>
           {{- end -}}
         </div>
 
         {{ with .Params.participatingSigs }}
         <div class="kep-sig-section mb-4 pt-3 border-top">
-          <div class="kep-banner-sublabel">Participating SIGs</div>
+          <div class="kep-banner-sublabel">{{ T "kep_participating_sigs" }}</div>
           <div class="d-flex flex-wrap gap-2">
             {{ range $i, $sig := . }}
               {{- $sigSlug := strings.TrimPrefix "sig-" $sig -}}
@@ -132,7 +132,7 @@
 
         {{ with .Params.authors }}
         <div class="kep-people-section pt-3 border-top">
-          <div class="kep-banner-sublabel">Primary Authors</div>
+          <div class="kep-banner-sublabel">{{ T "kep_primary_authors" }}</div>
           <div class="kep-people-grid">
             {{ range . }}
             <a href="https://github.com/{{ trim . "@" }}" target="_blank" rel="noopener" class="kep-person-link">
