@@ -1,0 +1,17 @@
+{{- $u := .Destination -}}
+
+{{- if and (not (strings.HasPrefix $u "http")) (not (strings.HasPrefix $u "/")) -}}
+  {{- /* Resolve relative paths for images in mounted content */ -}}
+  {{- if strings.HasSuffix .Page.RelPermalink "/" -}}
+    {{- /* Bundle/section page: RelPermalink already ends with / */ -}}
+    {{- $u = path.Join .Page.RelPermalink $u -}}
+  {{- else -}}
+    {{- /* Regular page: go up one directory */ -}}
+    {{- $u = path.Join .Page.RelPermalink ".." $u -}}
+  {{- end -}}
+{{- end -}}
+
+<img src="{{ $u | safeURL }}" 
+     alt="{{ .Text }}" 
+     {{ with .Title }}title="{{ . }}"{{ end }} 
+     class="img-fluid" />

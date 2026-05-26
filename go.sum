@@ -1,0 +1,6 @@
+github.com/cncf/foundation v0.0.0-20260430214659-243fa9e01436 h1:owe4PR/Vx3ONFeP/DkST+aT/BFs/fRLo6CyMONdU1dY=
+github.com/cncf/foundation v0.0.0-20260430214659-243fa9e01436/go.mod h1:Bc+TWRzbCv6T+tkQqNuwGA3cGk017o2TE5CAmu9EY/Q=
+k8s.io/community v0.0.0-20260430184724-b0a07ba82a52 h1:SzUz4T5TP9OqTKt79H7tMhcw3cFXn2gLfzopZLZTFGE=
+k8s.io/community v0.0.0-20260430184724-b0a07ba82a52/go.mod h1:xtSUbAS2+b+VSyXBArm0L8NyzxCRQnrZj1PrFq2v1Zw=
+k8s.io/sig-release v0.0.0-20260422172754-760d54e82b76 h1:lbf1F+UCK+rfAf47wQeQ5Uoa4BNX2vRUUcKuiB+2Qk0=
+k8s.io/sig-release v0.0.0-20260422172754-760d54e82b76/go.mod h1:QjF+jIUa1Uy3JUvF/cJg1OtfuiLLurUpIfz2AKg2874=

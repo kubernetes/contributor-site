@@ -1,12 +1,55 @@
 {{- $u := .Destination -}}
-{{- /* 
-  Robustly handle URLs with parentheses or extra spaces from external sources (e.g. KEP READMEs).
-  This prevents build failures like "first path segment in URL cannot contain colon" when 
-  a link destination is wrapped in extra parentheses.
-*/ -}}
+{{- /* Handle extra whitespace or parentheses sometimes found in external content */ -}}
 {{- $u = trim $u " ()" -}}
+
+{{- $isExternal := strings.HasPrefix $u "http" -}}
+{{- $isFragment := strings.HasPrefix $u "#" -}}
+{{- $isMailto := strings.HasPrefix $u "mailto:" -}}
+
+{{- if and (not $isExternal) (not $isFragment) (not $isMailto) -}}
+  {{- /* Try Hugo's native page resolution */ -}}
+  {{- $page := .Page.GetPage $u -}}
+  {{- if $page -}}
+    {{- $u = $page.RelPermalink -}}
+  {{- else -}}
+    {{- /* Fallback: rewrite unresolved relative links to their upstream GitHub source */ -}}
+    {{- if not (strings.HasPrefix $u "/") -}}
+      {{- /* Normalize relative paths (resolve ../ traversal) */ -}}
+      {{- $normalized := $u -}}
+      {{- $parts := split $u "/" -}}
+      {{- $resolved := slice -}}
+      {{- range $parts -}}
+        {{- if eq . ".." -}}
+          {{- if gt (len $resolved) 0 -}}
+            {{- $resolved = $resolved | first (sub (len $resolved) 1) -}}
+          {{- end -}}
+        {{- else if and (ne . "") (ne . ".") -}}
+          {{- $resolved = $resolved | append . -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if gt (len $resolved) 0 -}}
+        {{- $normalized = delimit $resolved "/" -}}
+      {{- end -}}
+
+      {{- /* Look up the mapping from data/link_sources.yaml */ -}}
+      {{- $dir := .Page.File.Dir -}}
+      {{- $matched := false -}}
+      {{- range site.Data.link_sources.mappings -}}
+        {{- if and (not $matched) (strings.HasPrefix $dir .prefix) -}}
+          {{- if .single_file -}}
+            {{- $u = .github_url -}}
+          {{- else -}}
+            {{- $u = printf "%s/%s" .github_url $normalized -}}
+          {{- end -}}
+          {{- $matched = true -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
 <a href="{{ $u | safeURL }}"
   {{ with .Title }} title="{{ . }}"{{ end }}
-  {{ if strings.HasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>
+  {{ if or $isExternal (strings.HasPrefix $u "http") }} target="_blank" rel="noopener"{{ end }}>
   {{- .Text | safeHTML -}}
 </a>

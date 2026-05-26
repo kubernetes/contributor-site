@@ -1,5 +1,64 @@
 baseURL: 'https://www.kubernetes.dev/'
-title: &title Kubernetes Contributors # Create a reference to use later
+title: &title Kubernetes Contributors
+
+module:
+  hugoVersion:
+    extended: true
+    min: 0.110.0
+  imports:
+    - path: k8s.io/community
+      mounts:
+        - source: contributors/guide/README.md
+          target: content/docs/guide/_index.md
+        - source: contributors/guide
+          target: content/docs/guide
+          excludeFiles: [README.md]
+        - source: contributors/guide/contributor-cheatsheet/README.md
+          target: content/docs/contributor-cheatsheet.md
+        - source: mentoring/README.md
+          target: content/community/mentoring.md
+        - source: values.md
+          target: content/community/values.md
+        - source: communication/best-practices.md
+          target: content/docs/comms/notifications.md
+        - source: communication/calendar-guidelines.md
+          target: content/docs/comms/calendars.md
+        - source: communication/discuss-guidelines.md
+          target: content/docs/comms/discuss.md
+        - source: communication/mailing-list-guidelines.md
+          target: content/docs/comms/mailing-lists.md
+        - source: communication/moderation.md
+          target: content/docs/comms/moderation.md
+        - source: communication/moderators.md
+          target: content/docs/comms/moderators.md
+        - source: communication/requesting-survey.md
+          target: content/docs/comms/surveys.md
+        - source: communication/slack-guidelines.md
+          target: content/docs/comms/slack.md
+        - source: communication/zoom-guidelines.md
+          target: content/docs/comms/zoom.md
+        - source: communication/youtube/youtube-guidelines.md
+          target: content/docs/comms/youtube.md
+        - source: github-management/default-branch-migration.md
+          target: content/resources/rename.md
+        - source: code-of-conduct.md
+          target: content/includes/code-of-conduct.md
+        - source: committee-code-of-conduct/incident-process.md
+          target: content/community/code-of-conduct-incident-process.md
+        - source: mentoring/new-contributor-orientation/README.md
+          target: content/docs/orientation/_index.md
+        - source: mentoring/new-contributor-orientation
+          target: content/docs/orientation
+          excludeFiles: [README.md]
+    - path: k8s.io/sig-release
+      mounts:
+        - source: releases/release-1.36/README.md
+          target: content/resources/release/index.md
+    - path: github.com/cncf/foundation
+      mounts:
+        - source: code-of-conduct.md
+          target: content/includes/cncf-code-of-conduct.md
+
 theme:
   - docsy
 themesDir: node_modules

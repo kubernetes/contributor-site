@@ -3,8 +3,9 @@ publish = "public"
 command = "make production-build"
 
 [build.environment]
-NODE_VERSION = "20.17.0"
 HUGO_VERSION = "0.144.2"
+GO_VERSION = "1.26.2"
+NODE_VERSION = "20.17.0"
 
 [context.production.environment]
 HUGO_ENV = "production"
