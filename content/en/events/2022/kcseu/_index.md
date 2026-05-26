@@ -19,7 +19,7 @@ at the
 <a href="https://www.feriavalencia.com/en/" rel="noopener noreferrer" target="_blank">Feria Valencia</a>.
 
 The Summit will be a loosely organized event with a [relaxed schedule](/events/2022/kcseu/schedule),
- including a Steering AMA, three hours of [Unconference Sessions](https://github.com/kubernetes/community/issues/6633), 
+ including a Steering AMA, three hours of [Unconference Sessions](https://git.k8s.io/community/issues/6633), 
 multiple SIG and WG meetings, and a Documentation Sprint.  This will be followed
 by a [Contributor Social](/events/2022/kcseu/social) with games and refreshments.
 

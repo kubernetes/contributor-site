@@ -22,7 +22,7 @@ The Summit is a dedicated day for maintainers to collaborate in person. The even
 
 ### 📅 Schedule & Participation
 
-- **Volunteer & Staffing:** If you are interested in volunteering or staffing for this event, please see [kubernetes/community#8819](https://github.com/kubernetes/community/issues/8819).
+- **Volunteer & Staffing:** If you are interested in volunteering or staffing for this event, please see [kubernetes/community#8819](https://git.k8s.io/community/issues/8819).
 - **Call for Proposals (CFP):** Check the [event schedule](https://maintainersummiteu2026.sched.com/) for submission deadlines.
 - **Registration:** [Register here](https://events.linuxfoundation.org/kubecon-cloudnativecon-europe/features-add-ons/maintainer-summit/#registration).
 

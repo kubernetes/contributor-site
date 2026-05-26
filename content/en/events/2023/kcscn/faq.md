@@ -51,7 +51,7 @@ We will strive to ensure fairness and inclusivity in the event to the best of ou
 Thank you for your understanding and support.
 
 This year etcd org members, or those who contribute a lot to etcd, are also eligible for priority registration,
-as [etcd is expected to soon become a Kubernetes SIG](https://github.com/kubernetes/community/pull/7372).
+as [etcd is expected to soon become a Kubernetes SIG](https://git.k8s.io/community/pull/7372).
 
 If you are not yet a member, but active within the project, please consider
 joining! The process of joining is straight forward. See our [org membership]
@@ -68,7 +68,7 @@ Kubernetes Orgs:
 <li><a href="https://github.com/etcd-io" rel="noopener noreferrer" target="_blank">etcd-io</a></li>
 </ul>
 
-[org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
+[org membership]: https://git.k8s.io/community/blob/main/community-membership.md#member
 
 ### I have an idea for a session
 

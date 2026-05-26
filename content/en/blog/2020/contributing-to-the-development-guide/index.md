@@ -58,13 +58,13 @@ The Development Guide needed a pretty serious overhaul. When we got our hands on
 packed with information and lots of steps for new developers to go through, but it was getting dusty
 with age and neglect. Documentation can really require a global look, not just point fixes.
 As a result, I ended up submitting a gargantuan pull request to the
-[Community repo](https://github.com/kubernetes/community): 267 additions and 88 deletions.
+[Community repo](https://git.k8s.io/community): 267 additions and 88 deletions.
 
 The life cycle of a pull request requires a certain number of Kubernetes organization members to review and approve changes
 before they can be merged. This is a great practice, as it keeps both documentation and code in
 pretty good shape, but it can be tough to cajole the right people into taking the time for such a hefty
 review. As a result, that massive PR took 26 days from my first submission to final merge. But in
-the end, [it was successful](https://github.com/kubernetes/community/pull/5003).
+the end, [it was successful](https://git.k8s.io/community/pull/5003).
 
 Since Kubernetes is a pretty fast-moving project, and since developers typically aren't really
 excited about writing documentation, I also ran into the problem that sometimes, the secret jewels
@@ -77,7 +77,7 @@ brand new user of some unfinished software. I ended up working with one of the d
 [`kubetest2` framework](https://github.com/kubernetes-sigs/kubetest2) to document the latest process of
 getting up-and-running for e2e testing, but it required a lot of head scratching on my part. You can
 judge the results for yourself by checking out my
-[completed pull request](https://github.com/kubernetes/community/pull/5045).
+[completed pull request](https://git.k8s.io/community/pull/5045).
 
 ## Nobody Is the Boss, and Everybody Gives Feedback
 

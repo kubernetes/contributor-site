@@ -63,7 +63,7 @@ Kubernetes Orgs:
 </ul>
 
 
-[org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
+[org membership]: https://git.k8s.io/community/blob/main/community-membership.md#member
 
 ### What is a sponsored attendee?
 
@@ -76,7 +76,7 @@ Please [email us] to make arrangements.
 
 Most of the Summit will be unconference-style, so you will have an opportunity
 to propose a session closer to the Summit itself. If you have an idea for a talk,
-workshop or panel please post your idea to the [unconference issue](https://github.com/kubernetes/community/issues/7692), when it becomes available, or the [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA)
+workshop or panel please post your idea to the [unconference issue](https://git.k8s.io/community/issues/7692), when it becomes available, or the [CFP](https://forms.gle/mkJ7Q18LoQwRV1LPA)
 form.  
 
 ### My SIG wants to meet at the Summit

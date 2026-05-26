@@ -21,7 +21,7 @@ criteria. It will automatically retest PRs that meet the criteria ('tide comes i
 them when they have up-to-date passing test results ('tide goes out')."
 
 What actually prompted this article is the awesomely amazing folks on the [Contributor Comms
-team](https://github.com/kubernetes/community/tree/master/communication) saying, "I need to squash my commits
+team](https://git.k8s.io/community/tree/main/communication) saying, "I need to squash my commits
 and push that." Which immediately made me remember the wonder of the Tide label:
 [`tide/merge-method-squash`](https://github.com/kubernetes/test-infra/blob/master/label_sync/labels.md#tide/merge-method-squash).
 
@@ -114,7 +114,7 @@ automatically, adds the `lgtm` label which is required for approval, and `/appro
 merging.
 
 An [example of many of these is this update to the Kubernetes Community
-site](https://github.com/kubernetes/community/pull/6765): we can see how additional reviewers were added with
+site](https://git.k8s.io/community/pull/6765): we can see how additional reviewers were added with
 `/cc`, and following the discussion and changes, both the `/lgtm` and `/approve` commands are used to trigger
 the merging.
 

@@ -89,7 +89,7 @@ filling out the [Contributor Comms Request] form in the [kubernetes/community]
 repo.
 
 [@K8sContributors]: https://twitter.com/K8sContributors
-[Contributor Comms Request]: https://github.com/kubernetes/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=comms-request.yaml&title=REQUEST%3A+New+communication+about+%3Ctopic%3E
+[Contributor Comms Request]: https://git.k8s.io/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=comms-request.yaml&title=REQUEST%3A+New+communication+about+%3Ctopic%3E
 
 
 
@@ -120,7 +120,7 @@ For more information, see the [Slack Guidelines].
 
 
 [slack-config]: https://git.k8s.io/community/communication/slack-config
-[Slack Request]: https://github.com/kubernetes/community/issues/new?assignees=&labels=area%2Fcommunity-management%2C+area%2Fslack-management%2C+sig%2Fcontributor-experience&template=slack-request.yml&title=REQUEST%3A+New+Slack+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D%3E+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D+name%3E
+[Slack Request]: https://git.k8s.io/community/issues/new?assignees=&labels=area%2Fcommunity-management%2C+area%2Fslack-management%2C+sig%2Fcontributor-experience&template=slack-request.yml&title=REQUEST%3A+New+Slack+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D%3E+%3C%5Bchannel%7Cusergroup%7Cbot%7Ctoken%7Cwebhook%5D+name%3E
 [Slack Guidelines]: https://git.k8s.io/community/communication/slack-guidelines.md
 
 
@@ -136,7 +136,7 @@ repo.
 For additional information, on survey services, see the community
 [Survey request guidelines].
 
-[Community Survey Request]: https://github.com/kubernetes/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=survey-request.yml&title=SURVEY+REQUEST%3A+%3Ctopic%3E
+[Community Survey Request]: https://git.k8s.io/community/issues/new?labels=area%2Fcontributor-comms%2C+sig%2Fcontributor-experience&template=survey-request.yml&title=SURVEY+REQUEST%3A+%3Ctopic%3E
 [Survey request guidelines]: https://git.k8s.io/community/communication/requesting-survey.md
 
 
@@ -217,7 +217,7 @@ For more information on funding requests, see the [Project Funding] page.
 
 <!-- shared links -->
 [cg]: /community/community-groups
-[kubernetes/community]: https://github.com/kubernetes/community
+[kubernetes/community]: https://git.k8s.io/community
 [kubernetes/org]: https://github.com/kubernetes/org
 [kubernetes/k8s.io]: https://github.com/kubernetes/k8s.io
 [kubernetes]: https://github.com/kubernetes

@@ -42,7 +42,7 @@ that come to light after the CfP ends.
 This is the format used at many [DevOps Days](https://devopsdays.org/open-space-format/), and helps us accommodate changing
 needs and unpredictable travel schedules.
 
-If you have a topic in mind, feel free to submit it under the [Unconference Issue](https://github.com/kubernetes/community/issues/7993).
+If you have a topic in mind, feel free to submit it under the [Unconference Issue](https://git.k8s.io/community/issues/7993).
 
 ## Doc Sprint
 
