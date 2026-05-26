@@ -8,7 +8,7 @@ author: "Kaslin Fields"
 
 The [2023 Steering Committee Election](https://github.com/kubernetes/community/tree/master/events/elections/2023) is now complete. The Kubernetes Steering Committee consists of 7 seats, 4 of which were up for election in 2023. Incoming committee members serve a term of 2 years, and all members are elected by the Kubernetes Community.
 
-This community body is significant since it oversees the governance of the entire Kubernetes project. With that great power comes great responsibility. You can learn more about the steering committee’s role in their [charter](https://github.com/kubernetes/steering/blob/master/charter.md).
+This community body is significant since it oversees the governance of the entire Kubernetes project. With that great power comes great responsibility. You can learn more about the steering committee’s role in their [charter](https://git.k8s.io/steering/blob/master/charter.md).
 
 Thank you to everyone who voted in the election; your participation helps support the community’s continued health and success.
 
@@ -50,7 +50,7 @@ And thank you to all the candidates who came forward to run for election.
 
 ## Get Involved with the Steering Committee
 
-This governing body, like all of Kubernetes, is open to all. You can follow along with Steering Committee [backlog items](https://github.com/orgs/kubernetes/projects/40) and weigh in by filing an issue or creating a PR against their [repo](https://github.com/kubernetes/steering). They have an open meeting on [the first Monday at 9:30am PT of every month](https://github.com/kubernetes/steering). They can also be contacted at their public mailing list steering@kubernetes.io.
+This governing body, like all of Kubernetes, is open to all. You can follow along with Steering Committee [backlog items](https://github.com/orgs/kubernetes/projects/40) and weigh in by filing an issue or creating a PR against their [repo](https://git.k8s.io/steering). They have an open meeting on [the first Monday at 9:30am PT of every month](https://git.k8s.io/steering). They can also be contacted at their public mailing list steering@kubernetes.io.
 
 You can see what the Steering Committee meetings are all about by watching past meetings on the [YouTube Playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
 
