@@ -31,7 +31,7 @@ I have also been a kubelet maintainer since 2019, with a focus on its device man
 
 The working group emerged from a fundamental rethink of how Kubernetes interacts with specialized hardware. At the heart of this evolution is **Dynamic Resource Allocation (DRA)**. Rather than treating devices as simple integers, DRA provides a structured framework that breaks device management into four distinct stages:
 
-* **Modeling:** Vendors use the **`ResourceSlice` API** to advertise the granular capabilities and capacity of their hardware.  
+* **Modeling:** Vendors use the **ResourceSlice API** to advertise the granular capabilities and capacity of their hardware.  
 * **Requesting:** Users define their specific hardware needs—such as GPU memory or interconnect requirements—through the **`ResourceClaim` API**.  
 * **Scheduling:** The Kubernetes scheduler uses these APIs to match workload requirements against available hardware intelligently.  
 * **Actuation:** Once a match is made, the system handles the "handshake" that prepares and secures the device for the Pod's use.
@@ -78,7 +78,7 @@ With DRA now generally available, the working group’s focus has expanded to en
 
 **NF: What are some of the key initiatives or deliverables the working group is currently focused on?**
 
-**KK:** We maintain a project board at [https://github.com/orgs/kubernetes/projects/95](https://github.com/orgs/kubernetes/projects/95) \[1\] with real-time tracking of our initiatives and their progress.
+**KK:** We maintain a project board at [Kubernetes Project Board](https://github.com/orgs/kubernetes/projects/95) with real-time tracking of our initiatives and their progress.
 
 **PO:** The scope and feature set of core DRA were intentionally limited to enable graduation to GA within a reasonable time. Additional KEPs add more features, on their own schedule. Those fall roughly into three categories:
 
@@ -86,7 +86,7 @@ With DRA now generally available, the working group’s focus has expanded to en
 2. Support _day two_ operations like health monitoring.
 3. Improve multi-node support, primarily by integrating with workload-aware scheduling.
 
-In addition to the project board, we also maintain a table which summarizes all the <a href="https://www.kubernetes.dev/resources/keps/4381" target="_blank">KEPs</a>[2] which are currently in flight. This is the status for 1.36; more are likely to be added for 1.37:
+In addition to the project board, we also maintain a table which summarizes all the [KEPs](https://www.kubernetes.dev/resources/keps/4381) which are currently in flight. This is the status for 1.36; more are likely to be added for 1.37:
 
 | KEP | Description | Release |  |  |  |  |
 | :---: | :---- | :---: | :---: | :---: | :---: | :---: |
@@ -168,7 +168,7 @@ I am really excited to see the creative ways people will use these APIs. They we
 - Europe/Americas: Tuesdays at 8:30 AM PT (biweekly)  
 - Asia/Europe: Wednesdays at 9:00 AM CET (biweekly)
 
-Meeting notes, agendas, and recordings are all publicly accessible (links available from [https://www.kubernetes.dev/community/community-groups/wg/device-management/](https://www.kubernetes.dev/community/community-groups/wg/device-management/#meetings)). You can get a feel for the work in progress before attending your first meeting.
+Meeting notes, agendas, and recordings are all publicly accessible (links available from [Device Management page](https://www.kubernetes.dev/community/community-groups/wg/device-management/#meetings)). You can get a feel for the work in progress before attending your first meeting.
 
 On Slack, find us in `#wg-device-management` on the Kubernetes Slack workspace. That's the best place for quick questions or to introduce yourself.
 
@@ -183,10 +183,3 @@ As Kubernetes evolves to support the AI/ML revolution and high-performance compu
 From the graduation of Dynamic Resource Allocation (DRA) to the next frontiers of health monitoring and topology-aware scheduling, this group is effectively rewriting the "handshake" between software and hardware.
 
 If you’re interested in shaping the future of hardware-aware orchestration, now is the perfect time to get involved. Whether you want to help refine the API, build out drivers, or improve documentation, the working group welcomes all levels of experience and perspectives from across the community.
-
-# References
-
-\[1\] Project Board: [https://github.com/orgs/kubernetes/projects/95](https://github.com/orgs/kubernetes/projects/95)   
-\[2\] KEP: <a href = "https://www.kubernetes.dev/resources/keps/4381">https://www.kubernetes.dev/resources/keps/4381</a> <br>
-\[3\]Device Management Page: [https://github.com/kubernetes/community/tree/master/wg-device-management](https://github.com/kubernetes/community/tree/master/wg-device-management)   
-\[4\] Device Management Charter: [https://github.com/kubernetes/community/blob/master/wg-device-management/charter.md](https://github.com/kubernetes/community/blob/master/wg-device-management/charter.md)
