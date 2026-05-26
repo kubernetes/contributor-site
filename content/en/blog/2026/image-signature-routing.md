@@ -1,8 +1,7 @@
 ---
 layout: blog
 title: "Eliminating Kubernetes Image Signature Replication"
-draft: true
-date: 2026-05-18
+date: 2026-06-05
 slug: image-signature-routing
 author: >
   Sascha Grunert (Red Hat)
