@@ -20,7 +20,8 @@ the _NP-hard_ challenges of scheduling, and how they’re building a more progra
 
 **Natalie Fisher: Can you introduce yourself, your role, and how you got involved in the Device Management Working Group?**
 
-**Kevin Klues:** My name is Kevin Klues. I am a Distinguished Engineer at NVIDIA. I have been a co-chair of the device management working group since its inception at Kubecon EU 2024\. I have also been involved with DRA (the working group’s primary deliverable) since its inception in 2019 / 2020\. I have also been a kubelet maintainer since 2019, with a focus on its device manager, CPU manager, and topology manager subcomponents. The challenges we saw with using these components for workloads that relied on external accelerators (e.g., GPUs) are what triggered us to start working on DRA in the first place.
+**Kevin Klues:** My name is Kevin Klues. I am a Distinguished Engineer at NVIDIA. I have been a co-chair of the device management working group since its inception at Kubecon EU 2024. I have also been involved with DRA (the working group's primary deliverable) since its inception in 2019 / 2020.
+I have also been a kubelet maintainer since 2019, with a focus on its device manager, CPU manager, and topology manager subcomponents. The challenges we saw with using these components for workloads that relied on external accelerators (e.g., GPUs) are what triggered us to start working on DRA in the first place.
 
 **Patrick Ohly:** I am a Principal Engineer at Intel. In Kubernetes, I am a Tech Lead for [SIG Testing](https://www.kubernetes.dev/community/community-groups/sigs/testing/) and [SIG Instrumentation](https://www.kubernetes.dev/community/community-groups/sigs/instrumentation/) and co-chair of the Device Management WG. I was co-chair of the WG Structured Logging and a member of the Steering Committee. Some of my early contributions to Kubernetes include [ephemeral CSI volumes](https://kubernetes.io/docs/concepts/storage/ephemeral-volumes/) and storage capacity tracking, so I had some experience with API design, implementation, and scheduling. We knew that introducing a major new API for accelerators would be hard. Somewhat foolishly, I accepted that challenge in 2020, wrote the initial DRA KEP (now known as “classic DRA”) and implemented most of it, then started over with a second KEP for today’s "structured parameters DRA". Initially, it was an uphill battle to convince maintainers that this work was necessary. It was only around 2023 that interest in DRA picked up, leading to the formation of the working group.
 
@@ -41,7 +42,9 @@ The working group emerged from a fundamental rethink of how Kubernetes interacts
 
 The problem we set out to solve is that the legacy Device Plugin API  (which has been the primary mechanism for exposing hardware accelerators in Kubernetes) is fundamentally limited. It treats devices as opaque integers: you can request "2 GPUs," but you can't say anything meaningful about which GPUs you need, how they should be connected to each other, whether they can be shared, or how they should be partitioned. That was fine for simple cases, but modern AI/ML workloads are anything but simple. They span multiple nodes, require specific interconnect topologies, and increasingly need to share or partition hardware dynamically.
 
-The working group's primary deliverable is Dynamic Resource Allocation (DRA), a new framework that replaces the rigid device plugin model with a flexible, declarative API. With DRA, workloads can describe their hardware requirements (e.g., GPU type, memory capacity, interconnect topology, desired partitioning) and drivers can publish fine-grained device attributes that the scheduler can act on. [DRA graduated to GA in Kubernetes 1.34](https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/), and the ecosystem around it (e.g., drivers, tooling, and new API extensions) is growing rapidly.
+The working group's primary deliverable is Dynamic Resource Allocation (DRA), a new framework that replaces the rigid device plugin model with a flexible, declarative API.
+With DRA, workloads can describe their hardware requirements (e.g., GPU type, memory capacity, interconnect topology, desired partitioning) and drivers can publish fine-grained device attributes that the scheduler can act on.
+DRA [graduated](https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/) to GA in Kubernetes 1.34], and the ecosystem around it (e.g., drivers, tooling, and new API extensions) is growing rapidly.
 
 **PO:** As Kevin said, the working group was formed around the existing effort to develop DRA. The initial work was done with only a handful of people actively involved, and perhaps also could only be done successfully in such a setup. But because it touches on so many different areas of Kubernetes, we also needed a place to discuss that and get the broader community of Kubernetes maintainers, device vendors, and, to a lesser extent, also end-users involved. The working group provides that place, with regular meetings online (one slot for Americas/EMEA, one for EMEA/Asia) and at KubeCon.
 
@@ -69,7 +72,7 @@ If those three groups design independently, you end up with inconsistent abstrac
 
 The cross-SIG model also means that design decisions are reviewed from multiple angles. Someone from sig-scheduling will catch scheduler complexity that a sig-node contributor might overlook, and vice versa. It slows down individual decisions slightly, but produces much more robust outcomes.
 
-# Current focus areas
+## Current focus areas
 
 With DRA now generally available, the working group’s focus has expanded to enable more advanced scheduling models, shared semantics, operational visibility, and support for increasingly complex hardware topologies.
 
@@ -80,7 +83,7 @@ With DRA now generally available, the working group’s focus has expanded to en
 **PO:** The scope and feature set of core DRA were intentionally limited to enable graduation to GA within a reasonable time. Additional KEPs add more features, on their own schedule. Those fall roughly into three categories:
 
 1. Extend the expressiveness of DRA to support more complex devices and scheduling scenarios.  
-2. Support “day two” operations like health monitoring.  
+2. Support _day two_ operations like health monitoring.
 3. Improve multi-node support, primarily by integrating with workload-aware scheduling.
 
 In addition to the project board, we also maintain a table which summarizes all the <a href="https://www.kubernetes.dev/resources/keps/4381" target="_blank">KEPs</a>[2] which are currently in flight. This is the status for 1.36; more are likely to be added for 1.37:
@@ -116,7 +119,7 @@ The ResourceSlice API is how vendors model and advertise their devices. This is 
 
 Some features require changes in both. We have another sharing method we call “consumable capacity”. In the explicit sharing case described above, a user needs to point containers at the same ResourceClaim; there is one ResourceClaim shared amongst several containers and Pods. With consumable capacity, the device sharing works more like how Pods share a Node. The user creates a ResourceClaim that asks for a certain amount of resources, for example, “I need a NIC with 2Gbps of bandwidth”. The scheduler knows that there is a NIC with 40Gbps of bandwidth available, and so it allocates 2Gbps out of that 40Gbps and gives it to that ResourceClaim. In this case, each Pod has its own ResourceClaim, but the underlying device is shared between those claims. It’s up to the on-node DRA driver to properly set up the device for this sort of sharing (in the NIC case, likely by creating a subinterface). We call this “platform-mediated sharing” to differentiate it from the explicit "user-mediated sharing".
 
-# Real-world impact
+## Real-world impact
 
 While much of the work is deeply technical, the underlying goal is practical: enabling Kubernetes to better support real-world AI/ML and hardware-intensive workloads at scale.
 
@@ -128,7 +131,7 @@ While much of the work is deeply technical, the underlying goal is practical: en
 
 **JB:** We’re still learning here, but one idea of DRA is to enable a shift to more "requirements driven" specifications. This can allow less coupling between end users that write the workload specification and the cluster administrators that set up the clusters. Instead of agreeing on labeling conventions and requiring users to understand the cluster topology, the users can specify what their workload needs, and the scheduler can figure out how to satisfy it. If we can make this work, it can make even complex workloads more portable across clusters.
 
-# Challenges and trade-offs
+## Challenges and trade-offs
 
 As with many areas of Kubernetes, increasing flexibility and expressiveness also introduces new layers of complexity, particularly around scheduling and optimization.
 
@@ -140,7 +143,7 @@ As with many areas of Kubernetes, increasing flexibility and expressiveness also
 
 On top of that, scheduling in general is very complex and is an NP-hard problem. All the metadata and flexibility DRA adds gives the scheduler more options, which has pros and cons. More options are helpful if you are constrained in your choices, as it means you can schedule something that you otherwise could not. But it also means it is even harder to find an optimal solution when there are many possibilities in a given cluster. DRA works well in our common use cases so far, but we have a lot of work to do to improve the optimality of the chosen scheduling solution and ensure the performance of making that choice.
 
-# Looking ahead
+## Looking ahead
 
 Despite the challenges, contributors across the working group remain excited about the pace of innovation and the growing community forming around device management in Kubernetes.
 
@@ -162,18 +165,18 @@ I am really excited to see the creative ways people will use these APIs. They we
 
   We have two meeting slots to accommodate different time zones:
 
-  \- Europe/Americas: Tuesdays at 8:30 AM PT (biweekly)  
-  \- Asia/Europe: Wednesdays at 9:00 AM CET (biweekly)
+- Europe/Americas: Tuesdays at 8:30 AM PT (biweekly)  
+- Asia/Europe: Wednesdays at 9:00 AM CET (biweekly)
 
-Meeting notes, agendas, and recordings are all publicly accessible (links available at [https://github.com/kubernetes/community/tree/master/wg-device-management](https://github.com/kubernetes/community/tree/master/wg-device-management) \[2\]). You can get a feel for the work in progress before attending your first meeting.
+Meeting notes, agendas, and recordings are all publicly accessible (links available from [https://www.kubernetes.dev/community/community-groups/wg/device-management/](https://www.kubernetes.dev/community/community-groups/wg/device-management/#meetings)). You can get a feel for the work in progress before attending your first meeting.
 
-On Slack, find us in \#wg-device-management on the Kubernetes Slack workspace. That's the best place for quick questions or to introduce yourself.
+On Slack, find us in `#wg-device-management` on the Kubernetes Slack workspace. That's the best place for quick questions or to introduce yourself.
 
 For more hands-on contributions, the DRA Driver for NVIDIA GPUs is now a community project and a great place to start. It's a real-world, production-grade implementation that the broader community is now shaping together.
 
 We welcome contributors at all levels – whether you're interested in the API design, the scheduler internals, driver development, or documentation. Come say hello.
 
-# Summary
+## Summary
 
 As Kubernetes evolves to support the AI/ML revolution and high-performance computing, the work happening within WG Device Management is becoming the foundation for how modern workloads are scheduled and operated at scale.
 
