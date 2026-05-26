@@ -14,7 +14,7 @@ Efficiently managing this specialized hardware is the mission of the **[Device M
 
 In this spotlight, we sit down with WG chairs **[Kevin Klues](https://github.com/klueska)**, **[Patrick Ohly](https://github.com/pohly)**, and **[John Belamaric](https://github.com/johnbelamaric)** to discuss the limitations of the legacy device model, the "NP-hard" challenges of scheduling, and how they’re building a more programmable, hardware-aware future for Kubernetes.
 
-# Introducing Device Management
+## Introducing Device Management
 
 **Natalie Fisher: Can you introduce yourself, your role, and how you got involved in the Device Management Working Group?**
 
