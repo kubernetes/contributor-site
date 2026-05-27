@@ -241,39 +241,41 @@
         {{ $.AddPage $page }}
   
         {{/* Fetch Charter Content */}}
-        {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
-        {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
-        {{ with try (resources.GetRemote $charterUrl $charterOpts) }}
-          {{ with .Err }}
-            {{ if eq hugo.Environment "production" }}
-              {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+        {{ if and (ne $dir "committee-security-response") (ne $dir "committee-steering") }}
+          {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
+          {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
+          {{ with try (resources.GetRemote $charterUrl $charterOpts) }}
+            {{ with .Err }}
+              {{ if eq hugo.Environment "production" }}
+                {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+              {{ else }}
+                {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
+              {{ end }}
+            {{ else with .Value }}
+              {{ $charterContent := replace .Content "\u200b" "" }}
+              {{ $charterPage := dict
+                "kind" "page"
+                "path" (printf "committees/%s/charter" $slug)
+                "title" (printf "%s Charter" $name)
+                "params" (dict
+                  "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+                  "hide_summary" true
+                  "toc_hide" true
+                )
+                "content" (dict              "mediaType" "text/markdown"
+                  "value" $charterContent
+                )
+              }}
+              {{ $.AddPage $charterPage }}
             {{ else }}
-              {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
-            {{ end }}
-          {{ else with .Value }}
-            {{ $charterContent := replace .Content "\u200b" "" }}
-            {{ $charterPage := dict
-              "kind" "page"
-              "path" (printf "committees/%s/charter" $slug)
-              "title" (printf "%s Charter" $name)
-              "params" (dict
-                "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-                "hide_summary" true
-                "toc_hide" true
-              )
-              "content" (dict              "mediaType" "text/markdown"
-                "value" $charterContent
-              )
-            }}
-            {{ $.AddPage $charterPage }}
-          {{ else }}
-            {{ if eq hugo.Environment "production" }}
-              {{ errorf "Unable to load charter for %s" $dir }}
-            {{ else }}
-              {{ warnf "Unable to load charter for %s" $dir }}
-            {{ end }}
+              {{ if eq hugo.Environment "production" }}
+                {{ errorf "Unable to load charter for %s" $dir }}
+              {{ else }}
+                {{ warnf "Unable to load charter for %s" $dir }}
+              {{ end }}
+            {{- end -}}
           {{- end -}}
-        {{- end -}}
+        {{ end }}
       {{- end -}}
     {{- end -}}
   {{- else -}}
