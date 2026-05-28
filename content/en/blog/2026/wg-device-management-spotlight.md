@@ -86,7 +86,7 @@ With DRA now generally available, the working group’s focus has expanded to en
 2. Support _day two_ operations like health monitoring.
 3. Improve multi-node support, primarily by integrating with workload-aware scheduling.
 
-In addition to the project board, we also maintain a table which summarizes all the [KEPs](https://www.kubernetes.dev/resources/keps/4381) which are currently in flight. This is the status for 1.36; more are likely to be added for 1.37:
+In addition to the project board, we also maintain a table which summarizes all the [KEPs](https://www.kubernetes.dev/resources/keps/) which are currently in flight. This is the status for 1.36; more are likely to be added for 1.37:
 
 | KEP | Description | Release |  |  |  |  |
 | :---: | :---- | :---: | :---: | :---: | :---: | :---: |
