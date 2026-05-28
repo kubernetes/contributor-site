@@ -91,21 +91,21 @@ In addition to the project board, we also maintain a table which summarizes all 
 | KEP | Description | Release |  |  |  |  |
 | :---: | :---- | :---: | :---: | :---: | :---: | :---: |
 |  |  | **1.32** | **1.33** | **1.34** | **1.35** | **1.36** |
-| [4831](https://github.com/kubernetes/enhancements/issues/4381) | DRA: Structured Parameters | Beta | Beta | Stable |  |  |
-| [5004](https://github.com/kubernetes/enhancements/issues/5004) | DRA: Extended Resource Requests via DRA |  |  | Alpha | Alpha | Beta |
-| [4817](https://github.com/kubernetes/enhancements/issues/4817)  | DRA: Resource Claim Status | Alpha | Beta | Beta | Beta | Beta  |
-| [5018](https://github.com/kubernetes/enhancements/issues/5018) | DRA: Namespace Controlled Admin Access |  | Alpha | Beta | Beta | Stable |
-| [5055](https://github.com/kubernetes/enhancements/issues/5055) | DRA: Device Taints and Tolerations |  | Alpha | Alpha | Alpha | Beta |
-| [4816](https://github.com/kubernetes/enhancements/issues/4816) | DRA: Prioritized Alternatives in Device Requests |  | Alpha | Beta | Beta | Stable |
-| [5075](https://github.com/kubernetes/enhancements/issues/5075) | DRA: Consumable Capacity |  |  | Alpha | Alpha | Beta |
-| [4815](https://github.com/kubernetes/enhancements/issues/4815) | DRA: Partitionable Devices |  | Alpha | Alpha | Alpha | Beta |
-| [5304](https://github.com/kubernetes/enhancements/issues/5304) | DRA: Attributes Downward API |  |  |  |  | Alpha |
-| [5729](https://github.com/kubernetes/enhancements/issues/5729) | DRA: ResourceClaim Support for Workloads |  |  |  |  | Alpha |
-| [4680](https://github.com/kubernetes/enhancements/issues/4680) | Resource Health Status in Pod Status | Alpha | Alpha | Alpha | Alpha | Beta |
-| [5517](https://github.com/kubernetes/enhancements/issues/5517) | DRA: Native Resource Requests |  |  |  |  | Alpha |
-| [5677](https://github.com/kubernetes/enhancements/issues/5677) | DRA: Resource Availability Visibility |  |  |  |  | Alpha |
-| [5007](https://github.com/kubernetes/enhancements/issues/5007) | DRA: Device Binding Conditions |  |  | Alpha | Alpha | Beta |
-| [5491](https://github.com/kubernetes/enhancements/issues/5491) | DRA: List Types for Attributes |  |  |  |  | Alpha |
+| [4831](https://www.kubernetes.dev/resources/keps/4381) | DRA: Structured Parameters | Beta | Beta | Stable |  |  |
+| [5004](https://www.kubernetes.dev/resources/keps/5004) | DRA: Extended Resource Requests via DRA |  |  | Alpha | Alpha | Beta |
+| [4817](https://www.kubernetes.dev/resources/keps/4817)  | DRA: Resource Claim Status | Alpha | Beta | Beta | Beta | Beta  |
+| [5018](https://www.kubernetes.dev/resources/keps/5018) | DRA: Namespace Controlled Admin Access |  | Alpha | Beta | Beta | Stable |
+| [5055](https://www.kubernetes.dev/resources/keps/5055) | DRA: Device Taints and Tolerations |  | Alpha | Alpha | Alpha | Beta |
+| [4816](https://www.kubernetes.dev/resources/keps/4816) | DRA: Prioritized Alternatives in Device Requests |  | Alpha | Beta | Beta | Stable |
+| [5075](https://www.kubernetes.dev/resources/keps/5075) | DRA: Consumable Capacity |  |  | Alpha | Alpha | Beta |
+| [4815](https://www.kubernetes.dev/resources/keps/4815) | DRA: Partitionable Devices |  | Alpha | Alpha | Alpha | Beta |
+| [5304](https://www.kubernetes.dev/resources/keps/5304) | DRA: Attributes Downward API |  |  |  |  | Alpha |
+| [5729](https://www.kubernetes.dev/resources/keps/5729) | DRA: ResourceClaim Support for Workloads |  |  |  |  | Alpha |
+| [4680](https://www.kubernetes.dev/resources/keps/4680) | Resource Health Status in Pod Status | Alpha | Alpha | Alpha | Alpha | Beta |
+| [5517](https://www.kubernetes.dev/resources/keps/5517) | DRA: Native Resource Requests |  |  |  |  | Alpha |
+| [5677](https://www.kubernetes.dev/resources/keps/5677) | DRA: Resource Availability Visibility |  |  |  |  | Alpha |
+| [5007](https://www.kubernetes.dev/resources/keps/5007) | DRA: Device Binding Conditions |  |  | Alpha | Alpha | Beta |
+| [5491](https://www.kubernetes.dev/resources/keps/5491) | DRA: List Types for Attributes |  |  |  |  | Alpha |
 
 **NF: One of the core challenges is efficient device utilization and sharing. What progress is being made in this area?**
 
