@@ -1063,7 +1063,7 @@ body.kep-listing {
 // ===== Responsive: Phone =====
 @media (max-width: 768px) {
   .kep-page {
-    padding: 0;
+    padding: 0 1rem;
   }
 
   .kep-filter-bar {
@@ -1133,7 +1133,7 @@ body.kep-listing {
   }
 
   .kep-table-wrapper {
-    margin: 0;
+    margin: 0 1rem;
     padding: 0;
   }
 
