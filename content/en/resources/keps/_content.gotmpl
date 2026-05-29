@@ -10,33 +10,10 @@
 
 {{/* Fetch remote KEP data */}}
 {{- $kepDataOpts := merge $globalOpts (dict "key" "keps-json-data") -}}
-{{- with try (resources.GetRemote $kepDataSourceUrl $kepDataOpts ) -}}
-  {{- with .Err -}}
-    {{- if eq hugo.Environment "production" -}}
-      {{- errorf "Unable to load KEP data: %s" . -}}
-    {{- else -}}
-      {{- warnf "Cannot load KEP data: %s" . -}}
-    {{- end -}}
-  {{- else with .Value -}}
-    {{- with try (.Content | transform.Unmarshal) -}}
-      {{- with .Err -}}
-        {{- if eq hugo.Environment "production" -}}
-          {{- errorf "Unable to load KEP data: %s" . -}}
-        {{- else -}}
-          {{- warnf "Cannot load KEP data: %s" . -}}
-        {{- end -}}
-      {{- end -}}
-      {{- with .Value -}}
-        {{- $kepData = . -}}
-      {{- end -}}
-    {{- end -}}
-  {{- else -}}
-    {{- if eq hugo.Environment "production" -}}
-      {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
-    {{- else -}}
-      {{- warnf "Cannot load KEP data from %s" $kepDataSourceUrl -}}
-    {{- end -}}
-  {{- end -}}
+{{- with resources.GetRemote $kepDataSourceUrl $kepDataOpts -}}
+  {{- $kepData = .Content | transform.Unmarshal -}}
+{{- else -}}
+  {{- errorf "Unable to load KEP data from %s" $kepDataSourceUrl -}}
 {{- end -}}
 
 {{/* Define stages that are "beyond provisional" */}}
@@ -78,48 +55,32 @@
     {{- $readmeUrl := printf "%s%s/%s/README.md" $rawBaseUrl $kep.owningSig $kep.name -}}
     {{- $readmeContent := "" -}}
     {{- $readmeOpts := merge $globalOpts (dict "key" (printf "kep-readme-%s" $kep.kepNumber)) -}}
-    
-    {{- $resourceFetchAttempt := try (resources.GetRemote $readmeUrl $readmeOpts ) -}}
-    
-    {{- /* Fallback to README.MD if README.md fetch fails or response is nil */ -}}
-    {{- $needsFallback := false -}}
-    {{- if not $resourceFetchAttempt.Value -}}
-      {{- $needsFallback = true -}}
-    {{- else if $resourceFetchAttempt.Err -}}
-      {{- $needsFallback = true -}}
-    {{- end -}}
 
-    {{- if $needsFallback -}}
+    {{- $resource := resources.GetRemote $readmeUrl $readmeOpts -}}
+
+    {{- if not $resource -}}
       {{- $readmeUrlUpper := printf "%s%s/%s/README.MD" $rawBaseUrl $kep.owningSig $kep.name -}}
       {{- $readmeOptsUpper := merge $globalOpts (dict "key" (printf "kep-readme-%s-upper" $kep.kepNumber)) -}}
-      {{- $resourceFetchAttempt = try (resources.GetRemote $readmeUrlUpper $readmeOptsUpper) -}}
+      {{- $resource = resources.GetRemote $readmeUrlUpper $readmeOptsUpper -}}
     {{- end -}}
 
-    {{- with $resourceFetchAttempt -}}
-      {{- with .Err -}}
-        {{- warnf "Unable to load README for KEP %s (tried .md and .MD): %s" $kep.kepNumber . -}}
-      {{- end -}}
-      {{- with .Value -}}
-        {{- /* Fix common markdown link errors in KEP READMEs to avoid build failures */ -}}
-        {{- $readmeContent = replace .Content "]((http" "](http" -}}
-        {{- $readmeContent = replace $readmeContent "/))" "/)" -}}
-        {{- $readmeContent = replace $readmeContent "((http" "(http" -}}
-        
-        {{- /* Fix relative image and link paths to point to GitHub */ -}}
-        {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/" -}}
-        {{- $kepDirUrl := printf "%skeps/%s/%s/" $repoBaseUrl $kep.owningSig $kep.name -}}
-        
-        {{- /* 1. Fix absolute-looking paths (starting with /) */ -}}
-        {{- $readmeContent = replaceRE `!\[(.*?)\]\(/(.*?)\)` (printf "![${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `\[(.*?)\]\(/(.*?)\)` (printf "[${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
-        
-        {{- /* 2. Fix relative paths (not starting with http, #, or / and not containing :) */ -}}
-        {{- $readmeContent = replaceRE `!\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "![${1}](%s${2})" $kepDirUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
-      {{- else -}}
-        {{- warnf "Unable to load README for KEP %s" -}}
-      {{- end -}}
+    {{- with $resource -}}
+      {{- $readmeContent = .Content -}}
+      {{- $readmeContent = replace $readmeContent "]((http" "](http" -}}
+      {{- $readmeContent = replace $readmeContent "/))" "/)" -}}
+      {{- $readmeContent = replace $readmeContent "((http" "(http" -}}
+
+      {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/" -}}
+      {{- $kepDirUrl := printf "%skeps/%s/%s/" $repoBaseUrl $kep.owningSig $kep.name -}}
+
+      {{- $readmeContent = replaceRE `!\[(.*?)\]\(/(.*?)\)` (printf "![${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
+      {{- $readmeContent = replaceRE `\[(.*?)\]\(/(.*?)\)` (printf "[${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
+
+      {{- $readmeContent = replaceRE `!\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "![${1}](%s${2})" $kepDirUrl) $readmeContent -}}
+      {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
+      {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
+    {{- else -}}
+      {{- warnf "Unable to load README for KEP %s" $kep.kepNumber -}}
     {{- end -}}
 
     {{/* Build page path: /resources/keps/{kepNumber}/ */}}
