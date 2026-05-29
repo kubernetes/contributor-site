@@ -13,15 +13,15 @@
 
 {{- $sigsOpts := merge $globalOpts (dict "key" "sigs-yaml-adapter") -}}
 
-{{- with resources.GetRemote $sigsUrl $sigsOpts -}}
+{{- with try (resources.GetRemote $sigsUrl $sigsOpts) -}}
   {{ with .Err }}
     {{- if eq hugo.Environment "production" -}}
       {{ errorf "Unable to load sigs.yaml: %s" . }}
     {{- else -}}
       {{ warnf "Unable to load sigs.yaml: %s" . }}
     {{ end }}
-  {{ else with .Content }}
-    {{ with . | transform.Unmarshal }}
+  {{ else with .Value }}
+    {{ with .Content | transform.Unmarshal }}
       {{/* SIGs */}}
       {{ range .sigs }}
         {{ $name := .name }}
@@ -32,15 +32,21 @@
         {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
         {{ $readmeContent := "" }}
         {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
-        {{ with resources.GetRemote $readmeUrl $readmeOpts }}
+        {{ with try (resources.GetRemote $readmeUrl $readmeOpts) }}
           {{ with .Err }}
             {{ if eq hugo.Environment "production" }}
               {{ errorf "Unable to load README for %s: %s" $dir .Err }}
             {{ else }}
               {{ warnf "Unable to load README for %s: %s" $dir .Err }}
             {{ end }}
-          {{ else }}
+          {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
+          {{ else }}
+            {{ if eq hugo.Environment "production" }}
+              {{ errorf "Unable to load README for %s: %s" $dir .Err }}
+            {{ else }}
+              {{ warnf "Unable to load README for %s: %s" $dir .Err }}
+            {{ end }}
           {{ end }}
         {{ end }}
   
@@ -69,14 +75,14 @@
         {{/* Fetch Charter Content */}}
         {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
         {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
-        {{ with resources.GetRemote $charterUrl $charterOpts }}
+        {{ with try (resources.GetRemote $charterUrl $charterOpts) }}
           {{ with .Err }}
             {{ if eq hugo.Environment "production" }}
               {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
             {{ else }}
               {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
             {{ end }}
-          {{ else }}
+          {{ else with .Value }}
             {{ $charterContent := replace .Content "\u200b" "" }}
             {{ $charterPage := dict
               "kind" "page"
@@ -92,6 +98,12 @@
               )
             }}
             {{ $.AddPage $charterPage }}
+          {{ else }}
+            {{ if eq hugo.Environment "production" }}
+              {{ errorf "Unable to load charter from %s" $charterUrl }}
+            {{ else }}
+              {{ warnf "Unable to load charter from %s" $charterUrl }}
+            {{ end }}
           {{ end }}
         {{ end }}
       {{ end }}
@@ -106,15 +118,21 @@
         {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
         {{ $readmeContent := "" }}
         {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
-        {{ with resources.GetRemote $readmeUrl $readmeOpts }}
+        {{ with try (resources.GetRemote $readmeUrl $readmeOpts) }}
           {{ with .Err }}
             {{ if eq hugo.Environment "production" }}
               {{ errorf "Unable to load README for %s: %s" $dir .Err }}
             {{ else }}
               {{ warnf "Unable to load README for %s: %s" $dir .Err }}
             {{ end }}
-          {{ else }}
+          {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
+          {{ else }}
+            {{ if eq hugo.Environment "production" }}
+              {{ errorf "Unable to load README for %s" $dir }}
+            {{ else }}
+              {{ warnf "Unable to load README for %s" $dir }}
+            {{ end }}
           {{ end }}
         {{ end }}
   
@@ -184,18 +202,29 @@
         {{ $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $dir }}
         {{ $readmeContent := "" }}
         {{ $readmeOpts := merge $globalOpts (dict "key" (printf "readme-%s" $dir)) }}
-        {{ with resources.GetRemote $readmeUrl $readmeOpts }}
+        {{ with try (resources.GetRemote $readmeUrl $readmeOpts) }}
           {{ with .Err }}
             {{ if eq hugo.Environment "production" }}
               {{ errorf "Unable to load README for %s: %s" $dir .Err }}
             {{ else }}
               {{ warnf "Unable to load README for %s: %s" $dir .Err }}
             {{ end }}
-          {{ else }}
+          {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
+          {{ else }}
+            {{ if eq hugo.Environment "production" }}
+              {{ errorf "Unable to load README for %s" $dir }}
+            {{ else }}
+              {{ warnf "Unable to load README for %s" $dir }}
+            {{ end }}
           {{ end }}
         {{ end }}
   
+        {{ $charterLink := .charter_link }}
+        {{ $remoteCharterUrl := printf "%s%s/%s" $githubBaseUrl $dir (or $charterLink "charter.md") }}
+        {{ if and $charterLink (hasPrefix $charterLink "http") }}
+          {{ $remoteCharterUrl = $charterLink }}
+        {{ end }}
         {{ $page := dict
           "kind" "section"
           "path" (printf "committees/%s" $slug)
@@ -207,7 +236,7 @@
             "contact" .contact
             "dir" .dir
             "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
-            "remote_charter_url" (cond (and .charter_link (hasPrefix .charter_link "http")) .charter_link (printf "%s%s/%s" $githubBaseUrl $dir (or .charter_link "charter.md")))
+            "remote_charter_url" $remoteCharterUrl
           )
           "content" (dict
             "mediaType" "text/markdown"
@@ -216,28 +245,40 @@
         }}
         {{ $.AddPage $page }}
 
-        {{ if and .charter_link (not (hasPrefix .charter_link "http")) }}
-          {{ $charterUrl := printf "%s%s/%s" $rawBaseUrl $dir .charter_link }}
+        {{ if and $charterLink (not (hasPrefix $charterLink "http")) }}
+          {{ $charterUrl := printf "%s%s/%s" $rawBaseUrl $dir $charterLink }}
           {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
-          {{ with resources.GetRemote $charterUrl $charterOpts }}
-            {{ $charterContent := replace .Content "\u200b" "" }}
-            {{ $charterPage := dict
-              "kind" "page"
-              "path" (printf "committees/%s/charter" $slug)
-              "title" (printf "%s Charter" $name)
-              "params" (dict
-                "remote_charter_url" (printf "%s%s/%s" $githubBaseUrl $dir .charter_link)
-                "hide_summary" true
-                "toc_hide" true
-              )
-              "content" (dict              "mediaType" "text/markdown"
-                "value" $charterContent
-              )
-            }}
-            {{ $.AddPage $charterPage }}
-          {{ else }}
-            {{ warnf "Unable to load charter for %s" $dir }}
-          {{ end }}
+          {{ with try (resources.GetRemote $charterUrl $charterOpts) }}
+            {{ with .Err }}
+              {{ if eq hugo.Environment "production" }}
+                {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+              {{ else }}
+                {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
+              {{ end }}
+            {{ else with .Value }}
+              {{ $charterContent := replace .Content "\u200b" "" }}
+              {{ $charterPage := dict
+                "kind" "page"
+                "path" (printf "committees/%s/charter" $slug)
+                "title" (printf "%s Charter" $name)
+                "params" (dict
+                  "remote_charter_url" (printf "%s%s/%s" $githubBaseUrl $dir $charterLink)
+                  "hide_summary" true
+                  "toc_hide" true
+                )
+                "content" (dict              "mediaType" "text/markdown"
+                  "value" $charterContent
+                )
+              }}
+              {{ $.AddPage $charterPage }}
+            {{ else }}
+              {{ if eq hugo.Environment "production" }}
+                {{ errorf "Unable to load charter for %s" $dir }}
+              {{ else }}
+                {{ warnf "Unable to load charter for %s" $dir }}
+              {{ end }}
+            {{- end -}}
+          {{- end -}}
         {{ end }}
       {{- end -}}
     {{- end -}}
