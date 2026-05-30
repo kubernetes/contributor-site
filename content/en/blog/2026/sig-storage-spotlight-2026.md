@@ -2,8 +2,7 @@
 layout: blog
 title: "Spotlight on SIG Storage"
 slug: sig-storage-spotlight-2026
-date: 2026-04-15
-draft: true
+date: 2026-05-28
 author: "Darshan Murthy (Apple)"
 ---
 
