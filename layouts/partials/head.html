@@ -19,6 +19,7 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 <meta name="robots" content="noindex, nofollow">
 {{ end -}}
 
+<link rel="canonical" href="{{ .Permalink }}">
 {{ partialCached "favicons.html" . }}
 <title>
   {{- if .IsHome -}}
