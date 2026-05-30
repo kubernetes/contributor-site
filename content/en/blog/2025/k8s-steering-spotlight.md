@@ -13,7 +13,7 @@ The topics covered are, however, overwhelmingly relevant to understand its scope
 approach the Steering Committee elections, it provides useful insights into the workings of the
 Committee._
 
-The [Kubernetes Steering Committee](https://github.com/kubernetes/steering) is the backbone of the
+The [Kubernetes Steering Committee](https://git.k8s.io/steering) is the backbone of the
 Kubernetes project, ensuring that its vibrant community and governance structures operate smoothly
 and effectively. While the technical brilliance of Kubernetes is often spotlighted through its
 [Special Interest Groups (SIGs) and Working Groups (WGs)](https://github.com/kubernetes/community),
@@ -71,7 +71,7 @@ clarifying project governance and liaising with the Cloud Native Computing Found
 to request additional resources and support) and other CNCF projects.
 
 **Maciej**: Our
-[charter](https://github.com/kubernetes/steering/blob/main/charter.md#direct-responsibilities-of-the-steering-committee)
+[charter](https://git.k8s.io/steering/blob/main/charter.md#direct-responsibilities-of-the-steering-committee)
 nicely describes all the responsibilities. In short, we make sure the project runs smoothly by
 supporting our maintainers and contributors in their daily tasks.
 
