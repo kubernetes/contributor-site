@@ -162,7 +162,7 @@
               {{- with site.GetPage (printf "community/community-groups/sigs/%s" $sigSlug) -}}
                 <a href="{{ .RelPermalink }}" class="kep-sig-link">{{ .LinkTitle | default .Title }}</a>
               {{- else -}}
-                <a href="https://github.com/kubernetes/community/tree/master/{{ $data.owningSig }}" class="kep-sig-link">SIG {{ $sigSlug | humanize | title }}</a>
+                <a href="https://git.k8s.io/community/tree/main/{{ $data.owningSig }}" class="kep-sig-link">SIG {{ $sigSlug | humanize | title }}</a>
               {{- end -}}
             </td>
             <td class="kep-col-stage">

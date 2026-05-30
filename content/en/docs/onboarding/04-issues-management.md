@@ -49,7 +49,7 @@ You can identify different types of issues with their labels (AKA tags).
 Issues are managed in many of the different Kubernetes GitHub repositories, and can be accessed via the _Issues_ tab. Here are the most common:
 
 * [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/issues)
-* [kubernetes/community](https://github.com/kubernetes/community/issues)
+* [kubernetes/community](https://git.k8s.io/community/issues)
 * [kubernetes/website](https://github.com/kubernetes/website/issues)
 
 ---

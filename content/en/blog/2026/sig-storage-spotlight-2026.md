@@ -9,7 +9,7 @@ author: "Darshan Murthy (Apple)"
 
 In our ongoing SIG Spotlight series, we shine a light on the groups that keep the Kubernetes project
 moving forward. This time, we catch up with **[SIG
-Storage](https://github.com/kubernetes/community/tree/master/sig-storage)**, the group responsible
+Storage](https://git.k8s.io/community/tree/main/sig-storage)**, the group responsible
 for persistent data, volume management, and the interfaces that connect Kubernetes workloads to the
 storage systems beneath them.
 
@@ -28,7 +28,7 @@ alongside another co-chair [Saad Ali](https://github.com/saad-ali) from Google. 
 **What first drew you to storage in Kubernetes, and how did you start contributing?**
 
 I have always been working in the storage domain, so SIG Storage was a natural place for me to get
-started when I began to learn Kubernetes. I started attending [SIG Storage meetings](https://github.com/kubernetes/community/blob/main/sig-storage/README.md#meetings), trying to figure
+started when I began to learn Kubernetes. I started attending [SIG Storage meetings](https://git.k8s.io/community/blob/main/sig-storage/README.md#meetings), trying to figure
 out what I could do to help. This was before the first [Container Storage Interface](https://github.com/container-storage-interface/spec/blob/master/spec.md) (CSI) release —
 lots of things were still evolving. It was a very exciting time.
 
@@ -36,8 +36,8 @@ lots of things were still evolving. It was a very exciting time.
 
 I'm a maintainer in Kubernetes CSI. There are multiple CSI sidecars — such as `csi-provisioner`,
 `csi-attacher`, `csi-resizer`, and `csi-snapshotter` — that we need to release following every
-Kubernetes release. I'm also a co-chair for a [Data Protection Working Group](https://github.com/kubernetes/community/blob/main/wg-data-protection/README.md) co-sponsored by SIG
-Storage and [SIG Apps](https://github.com/kubernetes/community/tree/main/sig-apps). Several features have come out of that WG aimed at filling gaps in data
+Kubernetes release. I'm also a co-chair for a [Data Protection Working Group](https://git.k8s.io/community/blob/main/wg-data-protection/README.md) co-sponsored by SIG
+Storage and [SIG Apps](https://git.k8s.io/community/tree/main/sig-apps). Several features have come out of that WG aimed at filling gaps in data
 protection support within Kubernetes. One is [Volume Group
 Snapshot](https://kubernetes.io/docs/concepts/storage/volume-group-snapshots/), which provides
 crash-consistent group snapshots for multiple volumes used by an application. [Changed Block
@@ -49,7 +49,7 @@ from the DP WG designed to support efficient backups.
 **For folks who are new: what is SIG Storage, in your own words? What problems in Kubernetes are
 you trying to solve?**
 
-SIG Storage is a [Special Interest Group](https://github.com/kubernetes/community/blob/main/governance.md) focused on how to provide storage to containers running in
+SIG Storage is a [Special Interest Group](https://git.k8s.io/community/blob/main/governance.md) focused on how to provide storage to containers running in
 your Kubernetes cluster. We define standard interfaces so that a storage vendor can write a driver
 and have its underlying storage system consumed by containers in Kubernetes.
 
@@ -191,10 +191,10 @@ production or a developer curious about storage internals, there's a place for y
 
 If you'd like to get involved, check out the [SIG Storage community
 page](https://www.kubernetes.dev/community/community-groups/sigs/storage/) and join the [bi-weekly
-meetings](https://github.com/kubernetes/community/tree/master/sig-storage#meetings). You can also
+meetings](https://git.k8s.io/community/tree/main/sig-storage#meetings). You can also
 find the SIG on Slack at
 [#sig-storage](https://kubernetes.slack.com/messages/sig-storage).
 
 - [SIG Storage Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-storage)
 - [SIG Storage on Slack](https://kubernetes.slack.com/messages/sig-storage)
-- [Data Protection WG](https://github.com/kubernetes/community/blob/master/wg-data-protection/README.md)
+- [Data Protection WG](https://git.k8s.io/community/blob/main/wg-data-protection/README.md)

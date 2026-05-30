@@ -71,7 +71,7 @@ joining! The process of joining is straight forward. See our [org membership]
 docs for more information. If your application to join is pending, please
 contact us at community@kubernetes.io about registering.
 
-[org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
+[org membership]: https://git.k8s.io/community/blob/main/community-membership.md#member
 
 
 ### What is a sponsored attendee?
@@ -87,7 +87,7 @@ Most of the Summit will be unconference-style, so you will have an opportunity
 to propose a session the morning of the Summit.  However, we have a couple of
 time slots for plenary sessions around the unconference ones, so if you have 
 a topic that you think needs the whole community's attention, please [add it to
-the issue](https://github.com/kubernetes/community/issues/6633).
+the issue](https://git.k8s.io/community/issues/6633).
 
 ### My SIG wants to meet at the Summit
 

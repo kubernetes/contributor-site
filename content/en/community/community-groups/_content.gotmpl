@@ -3,7 +3,7 @@
 {{ $defaultBranch := "main" }}
 {{ $sigsUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch }}
 {{ $rawBaseUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/" $defaultBranch }}
-{{ $githubBaseUrl := printf "https://github.com/kubernetes/community/tree/%s/" $defaultBranch }}
+{{ $githubBaseUrl := printf "https://git.k8s.io/community/tree/%s/" $defaultBranch }}
 
 {{/* Global Options for GetRemote */}}
 {{- $globalOpts := dict -}}

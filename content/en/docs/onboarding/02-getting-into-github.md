@@ -35,7 +35,7 @@ Working with GitHub is straightforward, but if you are new to it, it can seem co
 
 As one of the largest open source projects with thousands of contributors, Kubernetes relies on GitHub for organization and sharing information.
 
-* [Kubernetes hosts multiple projects on GitHub](https://github.com/kubernetes/), including Kubernetes itself and the [Kubernetes Community repository](https://github.com/kubernetes/community).
+* [Kubernetes hosts multiple projects on GitHub](https://github.com/kubernetes/), including Kubernetes itself and the [Kubernetes Community repository](https://git.k8s.io/community).
 * Contributions are managed using GitHub features such as issue tracking and pull requests.
 * Organization membership is managed using GitHub accounts.
 * There are four GitHub organizations used by the Kubernetes project: kubernetes, kubernetes-sigs, kubernetes-csi, and kubernetes-client. They contain over 300 projects.
@@ -47,7 +47,7 @@ As one of the largest open source projects with thousands of contributors, Kuber
 You _probably_ already have a GitHub account, but just in case:
 
 * If you don't have one yet, [create a GitHub account on their sign up page](https://github.com/signup). The Free plan works fine!
-* Official members of the Kubernetes community need their GitHub accounts to [meet certain other requirements](https://github.com/kubernetes/community/blob/master/community-membership.md).
+* Official members of the Kubernetes community need their GitHub accounts to [meet certain other requirements](https://git.k8s.io/community/blob/main/community-membership.md).
 
 ---
 
@@ -76,7 +76,7 @@ Once you are ready to contribute, you will have to jump through one small legal 
 # How do I sign a CLA?
 
 * After you make your first pull request, a GitHub bot will walk you through the process.
-* The process is [outlined in the Community repository](https://github.com/kubernetes/community/blob/master/CLA.md).
+* The process is [outlined in the Community repository](https://git.k8s.io/community/blob/main/CLA.md).
 
 ---
 

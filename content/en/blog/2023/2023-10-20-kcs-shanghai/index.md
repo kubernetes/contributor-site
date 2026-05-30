@@ -43,7 +43,7 @@ It can also be seen in the smiling faces captured in meetup photos or heard thro
 
 Next, there were three technical sharing sessions:
 
-- [sig-multi-cluster](https://github.com/kubernetes/community/blob/master/sig-multicluster/README.md):
+- [sig-multi-cluster](https://git.k8s.io/community/blob/main/sig-multicluster/README.md):
   [Hongcai Ren](https://github.com/RainbowMango), a maintainer of Karmada, provided an introduction to
   the responsibilities and roles of this SIG. Their focus is on designing, discussing, implementing,
   and maintaining APIs, tools, and documentation related to multi-cluster management.
@@ -53,7 +53,7 @@ Next, there were three technical sharing sessions:
   from [GitLab](https://gitlab.cn/) presented how to deploy Kubernetes manifests declaratively,
   customize configurations, and leverage the latest features of Helm, including Helmfile.
 
-- [sig-scheduling](https://github.com/kubernetes/community/blob/master/sig-scheduling/README.md):
+- [sig-scheduling](https://git.k8s.io/community/blob/main/sig-scheduling/README.md):
   [william-wang](https://github.com/william-wang) from Huawei Cloud shared the recent updates and
   future plans of SIG Scheduling. This SIG is responsible for designing, developing, and testing
   components related to Pod scheduling.
@@ -100,7 +100,7 @@ We would like to express our gratitude to the organizers of this event:
 - [Kevin Wang](https://github.com/kevin-wangzefeng), the co-chair of KubeCon and the lead of the kubernetes contributor summit.
 - [Paco Xu](https://github.com/pacoxu), who actively coordinated the venue, meals, invited contributors from both China and international sources,
   and established WeChat groups to collect agenda topics. They also shared details of the event
-  before and after its occurrence through [pre and post announcements](https://github.com/kubernetes/community/issues/7510).
+  before and after its occurrence through [pre and post announcements](https://git.k8s.io/community/issues/7510).
 - [Mengjiao Liu](https://github.com/mengjiao-liu), who was responsible for organizing, coordinating,
   and facilitating various matters related to the summit.
 

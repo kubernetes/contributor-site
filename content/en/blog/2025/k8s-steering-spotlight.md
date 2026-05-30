@@ -13,10 +13,10 @@ The topics covered are, however, overwhelmingly relevant to understand its scope
 approach the Steering Committee elections, it provides useful insights into the workings of the
 Committee._
 
-The [Kubernetes Steering Committee](https://github.com/kubernetes/steering) is the backbone of the
+The [Kubernetes Steering Committee](https://git.k8s.io/steering) is the backbone of the
 Kubernetes project, ensuring that its vibrant community and governance structures operate smoothly
 and effectively. While the technical brilliance of Kubernetes is often spotlighted through its
-[Special Interest Groups (SIGs) and Working Groups (WGs)](https://github.com/kubernetes/community),
+[Special Interest Groups (SIGs) and Working Groups (WGs)](https://git.k8s.io/community),
 the unsung heroes quietly steering the ship are the members of the Steering Committee. They tackle
 complex organizational challenges, empower contributors, and foster the thriving open source
 ecosystem that Kubernetes is celebrated for.
@@ -38,28 +38,28 @@ BenTheElder. I started in Kubernetes as a Google Summer of Code student in 2015 
 working at Google in the space since 2017. I have contributed a lot to many areas but especially
 build, CI, test tooling, etc. My favorite project so far was building
 [KIND](https://kind.sigs.k8s.io/). I have been on the release team, a chair of [SIG
-Testing](https://github.com/kubernetes/community/blob/master/sig-testing/README.md), and currently a
-tech lead of SIG Testing and [SIG K8s Infra](https://github.com/kubernetes/community/blob/master/sig-k8s-infra/README.md).
+Testing](https://git.k8s.io/community/blob/main/sig-testing/README.md), and currently a
+tech lead of SIG Testing and [SIG K8s Infra](https://git.k8s.io/community/blob/main/sig-k8s-infra/README.md).
 
 **Nabarun**: Hi, I am [Nabarun](https://www.linkedin.com/in/palnabarun/) from India. I have been
 working on Kubernetes since 2019. I have been contributing across multiple areas in Kubernetes: [SIG
-ContribEx](https://github.com/kubernetes/community/blob/master/sig-k8s-infra/README.md) (where I am
+ContribEx](https://git.k8s.io/community/blob/main/sig-k8s-infra/README.md) (where I am
 also a chair), [API
-Machinery](https://github.com/kubernetes/community/blob/master/sig-k8s-infra/README.md),
-[Architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md), and
-[SIG Release](https://github.com/kubernetes/community/blob/master/sig-release/README.md), where I
+Machinery](https://git.k8s.io/community/blob/main/sig-k8s-infra/README.md),
+[Architecture](https://git.k8s.io/community/blob/main/sig-architecture/README.md), and
+[SIG Release](https://git.k8s.io/community/blob/main/sig-release/README.md), where I
 contributed to several releases including being the Release Team Lead of [Kubernetes 1.21](https://kubernetes.io/blog/2021/04/08/kubernetes-1-21-release-announcement/).
 
 **Paco**: I am [Paco](https://www.linkedin.com/in/pacoxu2020/) from China. I worked as an open
 source team lead in DaoCloud, Shanghai. In the community, I participate mainly in
 [kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/), [SIG
-Node](https://github.com/kubernetes/community/blob/master/sig-node/README.md) and [SIG
-Testing](https://github.com/kubernetes/community/blob/master/sig-testing/README.md). Besides, I
+Node](https://git.k8s.io/community/blob/main/sig-node/README.md) and [SIG
+Testing](https://git.k8s.io/community/blob/main/sig-testing/README.md). Besides, I
 helped in KCD China and was co-chair of the recent [KubeCon+CloudNativeCon China 2024](https://events.linuxfoundation.org/kubecon-cloudnativecon-open-source-summit-ai-dev-china/) in Hong Kong.
 
-**Patrick**: Hello! I’m [Patrick](https://www.linkedin.com/in/patrickohly/). I’ve contributed to Kubernetes since 2018. I started in [SIG Storage](https://github.com/kubernetes/community/blob/master/sig-storage/README.md) and then got involved in more and more areas. Nowadays, I am a SIG Testing tech lead, logging infrastructure maintainer, organizer of the [Structured Logging](https://github.com/kubernetes/community/tree/master/wg-structured-logging) and [Device Management](https://github.com/kubernetes/community/tree/master/wg-device-management) working groups, contributor in [SIG Scheduling](https://github.com/kubernetes/community/blob/master/sig-scheduling/README.md), and of course member of the Steering Committee. My main focus area currently is [Dynamic Resource Allocation (DRA)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/), a new API for accelerators.
+**Patrick**: Hello! I’m [Patrick](https://www.linkedin.com/in/patrickohly/). I’ve contributed to Kubernetes since 2018. I started in [SIG Storage](https://git.k8s.io/community/blob/main/sig-storage/README.md) and then got involved in more and more areas. Nowadays, I am a SIG Testing tech lead, logging infrastructure maintainer, organizer of the [Structured Logging](https://git.k8s.io/community/tree/main/wg-structured-logging) and [Device Management](https://git.k8s.io/community/tree/main/wg-device-management) working groups, contributor in [SIG Scheduling](https://git.k8s.io/community/blob/main/sig-scheduling/README.md), and of course member of the Steering Committee. My main focus area currently is [Dynamic Resource Allocation (DRA)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/), a new API for accelerators.
 
-**Maciej**: Hey, my name is [Maciej](https://www.linkedin.com/in/maciejszulik/) and I've been working on Kubernetes since late 2014 in various areas, including controllers, apiserver and kubectl. Aside from being part of the Steering Committee, I’m also helping guide [SIG CLI](https://github.com/kubernetes/community/blob/master/sig-cli/README.md), [SIG Apps](https://github.com/kubernetes/community/blob/master/sig-apps/README.md) and [WG Batch](https://github.com/kubernetes/community/blob/master/wg-batch/README.md). 
+**Maciej**: Hey, my name is [Maciej](https://www.linkedin.com/in/maciejszulik/) and I've been working on Kubernetes since late 2014 in various areas, including controllers, apiserver and kubectl. Aside from being part of the Steering Committee, I’m also helping guide [SIG CLI](https://git.k8s.io/community/blob/main/sig-cli/README.md), [SIG Apps](https://git.k8s.io/community/blob/main/sig-apps/README.md) and [WG Batch](https://git.k8s.io/community/blob/main/wg-batch/README.md). 
 
 ## About the Steering Committee
 
@@ -71,7 +71,7 @@ clarifying project governance and liaising with the Cloud Native Computing Found
 to request additional resources and support) and other CNCF projects.
 
 **Maciej**: Our
-[charter](https://github.com/kubernetes/steering/blob/main/charter.md#direct-responsibilities-of-the-steering-committee)
+[charter](https://git.k8s.io/steering/blob/main/charter.md#direct-responsibilities-of-the-steering-committee)
 nicely describes all the responsibilities. In short, we make sure the project runs smoothly by
 supporting our maintainers and contributors in their daily tasks.
 
