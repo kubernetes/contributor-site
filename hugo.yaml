@@ -46,12 +46,11 @@ caches:
     dir: ':cacheDir/modules'
     maxAge: -1
 
+# Use npm-installed copies of Docsy's Hugo Module deps so Hugo skips `go get`
+# at build time. The `go get` walks go.mod's transitive imports and fails
+# wherever the dependency is absent (e.g. Netlify).
 module:
-  imports:
-    - path: github.com/FortAwesome/Font-Awesome
-      ignoreImports: true
-    - path: github.com/twbs/bootstrap
-      ignoreImports: true
+  replacements: "github.com/twbs/bootstrap -> bootstrap, github.com/FortAwesome/Font-Awesome -> @fortawesome/fontawesome-free"
 
 # Language configuration
 languages:
