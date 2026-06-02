@@ -219,7 +219,15 @@
             {{ end }}
           {{ end }}
         {{ end }}
-  
+        {{ $charterLink := .charter_link }}
+        {{ $remoteCharterUrl := "" }}
+        {{ if $charterLink }}
+          {{ $remoteCharterUrl = printf "%s%s/%s" $githubBaseUrl $dir $charterLink }}
+          {{ if hasPrefix $charterLink "http" }}
+            {{ $remoteCharterUrl = $charterLink }}
+          {{ end }}
+        {{ end }}
+
         {{ $page := dict
           "kind" "section"
           "path" (printf "committees/%s" $slug)
@@ -231,7 +239,7 @@
             "contact" .contact
             "dir" .dir
             "remote_readme_url" (printf "%s%s/README.md" $githubBaseUrl $dir)
-            "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
+            "remote_charter_url" $remoteCharterUrl
           )
           "content" (dict
             "mediaType" "text/markdown"
@@ -239,41 +247,43 @@
           )
         }}
         {{ $.AddPage $page }}
-  
-        {{/* Fetch Charter Content */}}
-        {{ $charterUrl := printf "%s%s/charter.md" $rawBaseUrl $dir }}
-        {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
-        {{ with try (resources.GetRemote $charterUrl $charterOpts) }}
-          {{ with .Err }}
-            {{ if eq hugo.Environment "production" }}
-              {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+
+        {{ if and $charterLink (not (hasPrefix $charterLink "http")) }}
+          {{ $charterUrl := printf "%s%s/%s" $rawBaseUrl $dir $charterLink }}
+          {{ $charterOpts := merge $globalOpts (dict "key" (printf "charter-%s" $dir)) }}
+          {{ with try (resources.GetRemote $charterUrl $charterOpts) }}
+            {{ with .Err }}
+              {{ if eq hugo.Environment "production" }}
+                {{ errorf "Unable to load charter for %s: %s" $dir .Err }}
+              {{ else }}
+                {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
+              {{ end }}
+            {{ else with .Value }}
+              {{ $charterContent := replace .Content "\u200b" "" }}
+              {{ $charterPage := dict
+                "kind" "page"
+                "path" (printf "committees/%s/charter" $slug)
+                "title" (printf "%s Charter" $name)
+                "params" (dict
+                  "remote_charter_url" (printf "%s%s/%s" $githubBaseUrl $dir $charterLink)
+                  "hide_summary" true
+                  "toc_hide" true
+                )
+                "content" (dict
+                  "mediaType" "text/markdown"
+                  "value" $charterContent
+                )
+              }}
+              {{ $.AddPage $charterPage }}
             {{ else }}
-              {{ warnf "Unable to load charter for %s: %s" $dir .Err }}
-            {{ end }}
-          {{ else with .Value }}
-            {{ $charterContent := replace .Content "\u200b" "" }}
-            {{ $charterPage := dict
-              "kind" "page"
-              "path" (printf "committees/%s/charter" $slug)
-              "title" (printf "%s Charter" $name)
-              "params" (dict
-                "remote_charter_url" (printf "%s%s/charter.md" $githubBaseUrl $dir)
-                "hide_summary" true
-                "toc_hide" true
-              )
-              "content" (dict              "mediaType" "text/markdown"
-                "value" $charterContent
-              )
-            }}
-            {{ $.AddPage $charterPage }}
-          {{ else }}
-            {{ if eq hugo.Environment "production" }}
-              {{ errorf "Unable to load charter for %s" $dir }}
-            {{ else }}
-              {{ warnf "Unable to load charter for %s" $dir }}
-            {{ end }}
+              {{ if eq hugo.Environment "production" }}
+                {{ errorf "Unable to load charter for %s" $dir }}
+              {{ else }}
+                {{ warnf "Unable to load charter for %s" $dir }}
+              {{ end }}
+            {{- end -}}
           {{- end -}}
-        {{- end -}}
+        {{ end }}
       {{- end -}}
     {{- end -}}
   {{- else -}}
