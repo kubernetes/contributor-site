@@ -16,6 +16,23 @@ If your repo has certain guidelines for contribution, put them here ahead of the
 - [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) - Main contributor documentation, or you can just jump directly to the [contributing section](http://git.k8s.io/community/contributors/guide#contributing)
 - [Contributor Cheat Sheet](https://git.k8s.io/community/contributors/guide/contributor-cheatsheet) - Common resources for existing developers
 
+## Pull Request Requirements
+
+Pull requests are merged by Tide once they carry the `lgtm`, `approved`,
+and `cncf-cla: yes` labels and have no `do-not-merge/*` label. Prow also
+blocks the merge until four Netlify status checks pass:
+
+- `deploy/netlify`, the production build itself
+- `Header rules`, which checks the generated HTML
+- `Pages changed`, which diffs the generated pages
+- `Redirect rules`, which validates the `netlify.toml` redirects
+
+Run `make production-build` locally (or `make container-render` if you
+don't have Hugo installed) before opening the PR. The four checks should
+be green on the Netlify deploy preview linked from the PR before you ask
+for review. If a check is failing for a reason unrelated to your change,
+call it out in the PR description so reviewers know it's pre-existing.
+
 ## Mentorship
 
 - [Mentoring Initiatives](https://git.k8s.io/community/mentoring) - We have a diverse set of mentorship programs available that are always looking for volunteers!
