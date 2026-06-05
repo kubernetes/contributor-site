@@ -19,7 +19,7 @@ Hydrophone's design philosophy centers around ease of use. By starting the confo
 pod within the *conformance* namespace, Hydrophone waits for the tests to conclude, then prints and
 exports the results. This approach offers a hassle-free method for running either individual tests
 or the entire [Conformance Test
-Suite](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/conformance-tests.md).
+Suite](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-architecture/conformance-tests.md).
 
 ## Key features of Hydrophone
 

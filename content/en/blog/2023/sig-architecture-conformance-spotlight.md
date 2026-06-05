@@ -11,11 +11,11 @@ that will cover the different subprojects. We start with the SIG
 Architecture: Conformance subproject_
 
 In this [SIG
-Architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md)
+Architecture](https://github.com/kubernetes/community/blob/main/sig-architecture/README.md)
 spotlight, we talked with [Riaan
 Kleinhans](https://github.com/Riaankl) (ii-Team), Lead for the
 [Conformance
-sub-project](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#conformance-definition-1).
+sub-project](https://github.com/kubernetes/community/blob/main/sig-architecture/README.md#conformance-definition-1).
 
 ## About SIG Architecture and the Conformance subproject
 
@@ -66,7 +66,7 @@ compatible Kubernetes ecosystem for developers and users alike.
 
 **FSM**: A part of providing those standardised tests is, I believe,
 the [Conformance Test
-Suite](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/conformance-tests.md). Could
+Suite](https://github.com/kubernetes/community/blob/main/contributors/devel/sig-architecture/conformance-tests.md). Could
 you explain what it is and its importance?
 
 **RK**: The Kubernetes Conformance Test Suite checks if Kubernetes

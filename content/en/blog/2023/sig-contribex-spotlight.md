@@ -11,7 +11,7 @@ author: Fyka Ansari
 Welcome to the world of Kubernetes and its vibrant contributor
 community! In this blog post, we'll be shining a spotlight on the
 [Special Interest Group for Contributor
-Experience](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md)
+Experience](https://github.com/kubernetes/community/blob/main/sig-contributor-experience/README.md)
 (SIG ContribEx), an essential component of the Kubernetes project.
 
 SIG ContribEx in Kubernetes is responsible for developing and
@@ -141,7 +141,7 @@ involved. We have supportive leads and particularly beginner-friendly
 projects too.
 
 **Madhav:** To begin, read the [SIG
-README](https://github.com/kubernetes/community/tree/master#readme) on
+README](https://github.com/kubernetes/community/tree/main#readme) on
 GitHub, which provides an overview of the projects the SIG
 manages. While attending meetings is beneficial for all SIGs, it's
 especially recommended for SIG ContribEx, as each subproject gets
@@ -211,7 +211,7 @@ standpoint!
 
 _(If you are willing to learn more and get involved with any of these
 sub-projects, check out the_ [SIG ContribEx
-README](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/README.md#subprojects)).
+README](https://github.com/kubernetes/community/blob/main/sig-contributor-experience/README.md#subprojects)).
 
 ### Accomplishments
 
@@ -282,7 +282,7 @@ different Kubernetes project spaces. If you are interested in getting
 more involved with SIG ContribEx, here are some resources for you to
 get started:
 
-* [GitHub](https://github.com/kubernetes/community/tree/master/sig-contributor-experience#contributor-experience-special-interest-group)
+* [GitHub](https://github.com/kubernetes/community/tree/main/sig-contributor-experience#contributor-experience-special-interest-group)
 * [Mailing list](https://groups.google.com/g/kubernetes-sig-contribex)
 * [Open Community
   Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)

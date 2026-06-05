@@ -9,7 +9,7 @@ author: "Darshan Murthy (Apple)"
 
 In our ongoing SIG Spotlight series, we shine a light on the groups that keep the Kubernetes project
 moving forward. This time, we catch up with **[SIG
-Storage](https://github.com/kubernetes/community/tree/master/sig-storage)**, the group responsible
+Storage](https://github.com/kubernetes/community/tree/main/sig-storage)**, the group responsible
 for persistent data, volume management, and the interfaces that connect Kubernetes workloads to the
 storage systems beneath them.
 
@@ -191,10 +191,10 @@ production or a developer curious about storage internals, there's a place for y
 
 If you'd like to get involved, check out the [SIG Storage community
 page](https://www.kubernetes.dev/community/community-groups/sigs/storage/) and join the [bi-weekly
-meetings](https://github.com/kubernetes/community/tree/master/sig-storage#meetings). You can also
+meetings](https://github.com/kubernetes/community/tree/main/sig-storage#meetings). You can also
 find the SIG on Slack at
 [#sig-storage](https://kubernetes.slack.com/messages/sig-storage).
 
 - [SIG Storage Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-storage)
 - [SIG Storage on Slack](https://kubernetes.slack.com/messages/sig-storage)
-- [Data Protection WG](https://github.com/kubernetes/community/blob/master/wg-data-protection/README.md)
+- [Data Protection WG](https://github.com/kubernetes/community/blob/main/wg-data-protection/README.md)

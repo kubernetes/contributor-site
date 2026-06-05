@@ -14,7 +14,7 @@ tools in [Rust][rust] and [eBPF][ebpf]? Or perhaps you're specifically
 interested in Gateway API? We'll tell you a bit about the project and how it
 might benefit you.
 
-[signet]:https://github.com/kubernetes/community/tree/master/sig-network
+[signet]:https://github.com/kubernetes/community/tree/main/sig-network
 [blixt]:https://github.com/kubernetes-sigs/blixt
 [gwapi]:https://kubernetes.io/docs/concepts/services-networking/gateway/
 [rust]:https://www.rust-lang.org/
@@ -129,4 +129,4 @@ monthly [SIG Network Code Jam][cjam] as well.
 [repo]:https://github.com/kubernetes-sigs/blixt
 [k8slack]:https://kubernetes.slack.com
 [meets]:https://gateway-api.sigs.k8s.io/contributing/#meetings
-[cjam]:https://github.com/kubernetes/community/tree/master/sig-network#meetings
+[cjam]:https://github.com/kubernetes/community/tree/main/sig-network#meetings
