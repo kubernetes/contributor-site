@@ -1,5 +1,5 @@
 {{ if .HasShortcode "keps-data" }}
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js" integrity="sha384-KhMc4ulEz1xrlAOwFgGUzujfQW+yJsnvk5/kqSqIDJ24NpxlJmN5MI1EA2QzQMFm" crossorigin="anonymous"></script>
 <script>
 (function() {
   'use strict';
@@ -34,11 +34,13 @@
     var activeStages = new Set();
     var searchTerm = '';
 
+    // Cache elements outside the search loop callback to prevent performance issues
+    var selRelease = document.getElementById('kep-filter-release');
+    var selSig = document.getElementById('kep-filter-sig');
+
     // Filter function — reads plain-text cell content from data[]
     // data[2] = SIG, data[3] = Stage, data[4] = Latest Milestone
     $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
-      var selRelease = document.getElementById('kep-filter-release');
-      var selSig = document.getElementById('kep-filter-sig');
       var releaseVal = selRelease ? selRelease.value : '';
       var sigVal = selSig ? selSig.value : '';
 
@@ -81,15 +83,16 @@
         { orderable: false, targets: [6] },
         { type: 'date', targets: [5] }
       ],
-      dom: 'ltip',
+      dom: 'l<"kep-table-wrapper"t>ip',
       search: { search: '', regex: false, smart: false },
       language: { zeroRecords: 'No KEPs match your filters.' },
-      drawCallback: function() {
-        var info = this.api().page.info();
-        var c = document.querySelector('.kep-results-count');
-        if (c) c.textContent = info.recordsDisplay === info.recordsTotal
-          ? info.recordsTotal + ' KEPs'
-          : 'Showing ' + info.recordsDisplay + ' of ' + info.recordsTotal + ' KEPs';
+      initComplete: function() {
+        var wrapper = document.querySelector('.kep-table-wrapper');
+        if (wrapper) {
+          wrapper.setAttribute('tabindex', '0');
+          wrapper.setAttribute('role', 'region');
+          wrapper.setAttribute('aria-label', 'Kubernetes Enhancement Proposals table, scrollable');
+        }
       }
     });
 
@@ -131,12 +134,6 @@
     document.querySelectorAll('.kep-stage-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         toggleStage(this);
-      });
-      btn.addEventListener('keydown', function(e) {
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          toggleStage(this);
-        }
       });
     });
 
