@@ -47,7 +47,7 @@ Read more about this method in [Building Kubernetes](https://github.com/kubernet
 This method takes the most effort to set up. But it has its own advantages:
 
 * You’ll have fine-grained control over all aspects of the build process.
-* There is no overheard from a container system like Docker.
+* There is no overhead from a container system like Docker.
 
 To set this method up, [follow the steps from the Development Guide](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#building-kubernetes-on-a-local-osshell-environment).
 
