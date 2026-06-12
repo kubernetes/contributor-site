@@ -28,7 +28,8 @@
   {{- $kep := . -}}
   {{- $lm := .latestMilestone -}}
   {{- if and $lm (ne $lm "0.0") -}}
-    {{- $releaseSet = merge $releaseSet (dict $lm true) -}}
+    {{- $normalizedLm := strings.TrimPrefix "v" $lm -}}
+    {{- $releaseSet = merge $releaseSet (dict $normalizedLm true) -}}
   {{- else -}}
     {{- /* Fallback: check milestone map for any non-empty value */ -}}
     {{- range $s := slice "stable" "beta" "alpha" "deprecated" -}}
@@ -37,7 +38,8 @@
       {{- end -}}
     {{- end -}}
     {{- if $lm -}}
-      {{- $releaseSet = merge $releaseSet (dict $lm true) -}}
+      {{- $normalizedLm := strings.TrimPrefix "v" $lm -}}
+      {{- $releaseSet = merge $releaseSet (dict $normalizedLm true) -}}
     {{- end -}}
   {{- end -}}
   {{- $sig := .owningSig -}}
