@@ -13,7 +13,7 @@ description: |
 
 ## Objectives
 
-This unit will teach you all about how to submit and manage pull requests for the different Kuberenetes repositories. By the end of this unit, you will be able to:
+This unit will teach you all about how to submit and manage pull requests for the different Kubernetes repositories. By the end of this unit, you will be able to:
 
 * Reference and operate in the Kubernetes GitHub workflow
 * Recognize common bots and their messages
@@ -28,7 +28,7 @@ Before we start teaching you how to use pull requests, we should tell you what t
 * A pull request is how you communicate that you have a Git branch filled with completed changes that you wish to merge with a repository on GitHub.
 * Pull requests allow contributors to collaborate, review code, run tests, and confirm critical details _before_ new changes are integrated into a project.
 * You will frequently see a pull request called a “PR”.
-* Kubernetes relies heavily on GitHub’s pull request system. The [GitHub docs have a thorough dive into pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). [Go deeper!](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+* Kubernetes relies heavily on GitHub’s pull request system. The [GitHub docs have a thorough dive into pull requests](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests). 
 
 ---
 

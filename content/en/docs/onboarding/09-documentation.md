@@ -70,6 +70,7 @@ Kubernetes is used by developers and DevOps people _all over the world._ It is i
 
 * Can you write documentation in a language that isn't English? We would love your help!
 * Access user-facing documentation in other languages [from the documentation pages](https://kubernetes.io/docs/home/).
+* Interested in helping? See the [localization contribution guide](https://kubernetes.io/docs/contribute/localization/).
 
 ---
 
@@ -101,12 +102,22 @@ Documentation updates follow the same process as any other contribution.
 
 ---
 
+# Where can I find documentation and Style guidance?
+
+When writing or updating documentation, follow the project guidance.
+
+* Read the [Documentation Style Guide](https://kubernetes.io/docs/contribute/style/style-guide/).
+* Additional guidance is available in the [Contributor Guide](https://kubernetes.io/docs/contribute/).
+
+---
+
 # How do we keep the documentation useful and consistent?
 
 Of course the last slide is the million dollar question.
 
 * It is only through the efforts of contributors like you that the documentation stays useful and consistent.
 * Pay attention to any visible changes your contributions are making! Always ask yourself, "How will this affect the documentation?"
+
 
 <div class="bottom-nav">
     <a href="/docs/onboarding">Onboarding Index</a> | <a href="../10-architecture/">Next Section</a>
