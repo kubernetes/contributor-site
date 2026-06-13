@@ -71,7 +71,7 @@ Kubernetes generally follows the standard GitHub pull request process, but there
     * Content
     * Potential website changes
 
-You can respond to comments from reviewers through comments or additional changes that you push to your development branch. [We will cover code review in a later unit.](../07-code-review)
+You can respond to comments from reviewers through comments or additional changes that you push to your development branch. [We will cover code review in a later unit.](../07-code-review/)
 
 ---
 

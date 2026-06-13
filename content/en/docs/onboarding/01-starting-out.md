@@ -135,5 +135,5 @@ The [Kubernetes Community Resources page](/community/) has links to documents th
 * [The governance document](https://github.com/kubernetes/community/blob/master/governance.md) drills down into more of the specifics.
 
 <div class="bottom-nav">
-    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../02-getting-into-github">Next Section</a>
+    <a href="/docs/onboarding">Onboarding Index</a> | <a href="../02-getting-into-github/">Next Section</a>
 </div>
