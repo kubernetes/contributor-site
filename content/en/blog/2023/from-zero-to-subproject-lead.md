@@ -4,8 +4,8 @@ title: "From Zero to Kubernets Subproject Lead"
 date: 2023-03-29
 slug: from-zero-to-k8s-subproject-lead
 author: "Ala Dewberry (VMware)"
+description: "Getting started in any open-source community can be daunting, especially if it’s a big one like Kubernetes. I wrote this post to share my..."
 ---
-
 Getting started in any open-source community can be daunting, especially if it’s a big one like
 Kubernetes. I wrote this post to share my experience and encourage others to join up. All
 it takes is some curiosity and a willingness to show up!

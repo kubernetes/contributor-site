@@ -4,8 +4,8 @@ title: "Contextual logging in Kubernetes 1.29: Better troubleshooting and enhanc
 slug: contextual-logging
 date: 2023-12-20T09:30:00-08:00
 author: Mengjiao Liu and Patrick Ohly
+description: "On behalf of the Structured Logging Working Group and SIG Instrumentation, we are pleased to announce that the contextual logging feature..."
 ---
-
 On behalf of the [Structured Logging Working Group](https://github.com/kubernetes/community/blob/master/wg-structured-logging/README.md) 
 and [SIG Instrumentation](https://github.com/kubernetes/community/tree/master/sig-instrumentation#readme), 
 we are pleased to announce that the contextual logging feature
