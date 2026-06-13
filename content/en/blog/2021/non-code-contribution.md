@@ -2,6 +2,7 @@
 title: "How to choose a SIG as a non-code Kubernetes contributor"
 linkTitle: "How to choose a SIG as a non-code Kubernetes contributor"
 date: 2021-07-09
+description: "Kubernetes contributors aren't people in capes or part of some secret society. How to start committing to the GitHub repos that make up the..."
 ---
 By [Chris Short](https://twitter.com/ChrisShort)
 
@@ -13,7 +14,7 @@ The SIG you work in depends on your skills and what you want to do with your (or
 
 I’ll start with myself as an example.
 
-# How I found my SIG
+## How I found my SIG
 
 I do not code as part of my day-to-day work; I never have. While I have made bits of code into programs here and there, I always had a helping hand. It's also possible my definition of a coder is busted too. But, I consider myself a non-code contributor to Kubernetes.
 
@@ -25,7 +26,7 @@ My philosophy is if things were hard or confusing for me, they'd likely be hard 
 
 I found early on this: continually showing up to SIG meetings is one way to add value to the community. Regular participation gives you growing context in Kubernetes, and it helps in the long run.
 
-# How I contribute
+## How I contribute
 
 For me, contributing to Kubernetes is all about helping other contributors. I love talking to new contributors about why something is the way it is and they come up with some alternatives to doing that task. That thought exercise can be an enormously helpful contribution. That has been a part of what I've done in the community. Asking why something is the way it is can be a potent tool for improving things. I’ve helped with [new contributor workshops](https://git.k8s.io/community/events/2018/05-contributor-summit/new-contributor-workshop.md), which meant showing up and sharing my knowledge. I’ve helped onboard folks into the Kubernetes GitHub organization. I’ve hosted community meetings.
 
@@ -35,7 +36,7 @@ My work now is focusing more on contributing to our [Contributor Marketing](http
 
 None of those things required me to write code. Non-code contributors are an essential part of our community.
 
-# Hop into the Kubernetes community
+## Hop into the Kubernetes community
 
 To join the Kubernetes community, I recommend finding a SIG where your skills align, doing things you want to do in your off time. There's a list of [Kubernetes SIGs](/community/community-groups/) with a lot of great options. If you’re not sure where to go, start with [Contributor Experience](https://git.k8s.io/community/sig-contributor-experience). We’re here to help.
 

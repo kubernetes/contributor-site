@@ -5,8 +5,8 @@ slug: sig-network-spotlight
 date: 2023-05-09
 slug: sig-network-spotlight-2023
 author: "Sujay Dey"
+description: "Networking is one of the core pillars of Kubernetes, and the Special Interest Group for Networking (SIG Network) is responsible for developing and..."
 ---
-
 Networking is one of the core pillars of Kubernetes, and the Special Interest
 Group for Networking (SIG Network) is responsible for developing and maintaining
 the networking features of Kubernetes. It covers all aspects to ensure

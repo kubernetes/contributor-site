@@ -4,8 +4,8 @@ title: "Spotlight on SIG etcd"
 slug: sig-etcd-spotlight
 date: 2025-03-04
 author: "Frederico Muñoz (SAS Institute)"
+description: "In this SIG etcd spotlight we talked with James Blair, [Marek Siarkowicz](https://github.com/serathius), Wenjia Zhang, and Benjamin Wang to learn..."
 ---
-
 In this SIG etcd spotlight we talked with [James Blair](https://github.com/jmhbnz), [Marek
 Siarkowicz](https://github.com/serathius), [Wenjia Zhang](https://github.com/wenjiaswe), and
 [Benjamin Wang](https://github.com/ahrtr) to learn a bit more about this Kubernetes Special Interest

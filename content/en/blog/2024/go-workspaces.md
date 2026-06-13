@@ -4,8 +4,8 @@ title: Using Go workspaces in Kubernetes
 slug: go-workspaces-in-kubernetes
 date: 2024-03-19T08:30:00-08:00
 author: "Tim Hockin (Google)"
+description: "The Go programming language has played a huge role in the success of Kubernetes. As Kubernetes has grown, matured, and pushed the bounds of what..."
 ---
-
 The [Go programming language](https://go.dev/) has played a huge role in the
 success of Kubernetes. As Kubernetes has grown, matured, and pushed the bounds
 of what "regular" projects do, the Go project team has also grown and evolved

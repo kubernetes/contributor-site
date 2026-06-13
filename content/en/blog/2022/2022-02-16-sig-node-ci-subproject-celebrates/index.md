@@ -2,9 +2,8 @@
 layout: blog
 title: 'SIG Node CI Subproject Celebrates Two Years of Test Improvements'
 date: 2022-02-16
+description: "Ensuring the reliability of SIG Node upstream code is a continuous effort that takes a lot of behind-the-scenes effort from many contributors...."
 ---
-
-
 **Authors:** Sergey Kanzhelev (Google), Elana Hashman (Red Hat)
 
 

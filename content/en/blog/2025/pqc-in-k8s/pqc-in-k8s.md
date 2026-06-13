@@ -5,8 +5,8 @@ slug: pqc-in-k8s
 date: 2025-07-18
 author: "Fabian Kammel (ControlPlane)"
 draft: false
+description: "The world of cryptography is on the cusp of a major shift with the advent of quantum computing. While powerful quantum computers are still largely..."
 ---
-
 The world of cryptography is on the cusp of a major shift with the advent of
 quantum computing. While powerful quantum computers are still largely
 theoretical for many applications, their potential to break current

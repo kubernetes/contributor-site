@@ -3,8 +3,8 @@ layout: blog
 title: "Contextual Logging in Kubernetes 1.24"
 date: 2022-05-25
 slug: contextual-logging
+description: "The [Structured Logging Working Group](https://github.com/kubernetes/community/blob/master/wg-structured-logging/README.md) has added new..."
 ---
-
  **Authors:** Patrick Ohly (Intel)
 
 The [Structured Logging Working

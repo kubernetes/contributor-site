@@ -3,8 +3,8 @@ title: "Announcing the Kubernetes Contributor Stories Series"
 linkTitle: "Share your Kubernetes Contributor Story"
 date: 2021-05-14
 slug: contributor-stories-series
+description: "The Kubernetes contributor community is vast. We have tens of thousands of members by any conservative estimate and many hundreds involved..."
 ---
-
 By [Matt Broberg](https://twitter.com/mbbroberg)
 
 The Kubernetes contributor community is vast. We have tens of thousands of members by any conservative estimate and many hundreds involved day-to-day. We are from all around the world, all kinds of backgrounds, all types of expertise, and we are all Kubernetes contributors.

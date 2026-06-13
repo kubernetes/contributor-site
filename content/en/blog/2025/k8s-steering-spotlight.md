@@ -5,8 +5,8 @@ slug: k8s-steering-spotlight-2025
 date: 2025-09-22
 draft: false
 author: "Arpit Agrawal"
+description: "This interview was conducted in August 2024, and due to the dynamic nature of the Steering Committee membership and election process it might not..."
 ---
-
 _This interview was conducted in August 2024, and due to the dynamic nature of the Steering
 Committee membership and election process it might not represent the actual composition accurately.
 The topics covered are, however, overwhelmingly relevant to understand its scope of work. As we

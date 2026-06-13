@@ -4,8 +4,8 @@ title: "Spotlight on SIG ContribEx"
 date: 2023-08-14
 slug: sig-contribex-spotlight-2023
 author: Fyka Ansari
+description: "Welcome to the world of Kubernetes and its vibrant contributor community! In this blog post, we'll be shining a spotlight on the [Special Interest..."
 ---
-
 **Author**: Fyka Ansari
 
 Welcome to the world of Kubernetes and its vibrant contributor

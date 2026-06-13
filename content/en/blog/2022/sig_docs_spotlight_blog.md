@@ -3,8 +3,8 @@ layout: blog
 title: "Spotlight on SIG Docs"
 date: 2022-08-02
 slug: sig-docs-spotlight-2022
+description: "The official documentation is the go-to source for any open source project. For Kubernetes, it's an ever-evolving Special Interest Group (SIG)..."
 ---
-
 **Author:** Purneswar Prasad
 
 ## Introduction

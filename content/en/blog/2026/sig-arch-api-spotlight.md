@@ -5,8 +5,8 @@ slug: sig-architecture-api
 date: 2026-02-12
 draft: false
 author: "Frederico Muñoz (SAS Institute)"
+description: "This is the fifth interview of a SIG Architecture Spotlight series that covers the different subprojects, and we will be covering [SIG..."
 ---
-
 _This is the fifth interview of a SIG Architecture Spotlight series that covers the different
 subprojects, and we will be covering [SIG Architecture: API
 Governance](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#architecture-and-api-governance-1)._

@@ -4,9 +4,8 @@ title: "Kubernetes supports running kube-proxy in an unprivileged container"
 date: 2024-01-05
 slug: kube-proxy-non-privileged
 author: Lars Ekman
+description: "This post describes how the --init-only flag to kube-proxy can be used to run the main kube-proxy container in a stricter securityContext, by..."
 ---
-
-
 This post describes how the `--init-only` flag to `kube-proxy` can be
 used to run the main kube-proxy container in a stricter
 `securityContext`, by performing the configuration that requires

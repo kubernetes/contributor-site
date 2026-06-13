@@ -2,8 +2,8 @@
 content_type: "reference"
 title: CRI API version skew policy
 weight: 51
+description: "CRI is a plugin interface which enables the kubelet to use a wide variety of container runtimes, without the need to recompile. CRI consists of a..."
 ---
-
 CRI is a plugin interface which enables the kubelet to use a wide variety of container runtimes,
 without the need to recompile. CRI consists of a protocol buffers and gRPC API.
 Read more about CRI API at [kubernetes docs](https://kubernetes.io/docs/concepts/architecture/cri/).

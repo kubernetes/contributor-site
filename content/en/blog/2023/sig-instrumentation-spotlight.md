@@ -4,8 +4,8 @@ title: "Spotlight on SIG Instrumentation"
 slug: sig-instrumentation-spotlight-2023
 date: 2023-02-03
 author: "Imran Noor Mohamed (Delivery Hero)"
+description: "Observability requires the right data at the right time for the right consumer (human or piece of software) to make the right decision. In the..."
 ---
-
 Observability requires the right data at the right time for the right consumer (human or piece of software) to make the right decision. In the context of Kubernetes, having best practices for cluster observability across all Kubernetes components is crucial.
 
 SIG Instrumentation helps to address this issue by providing best practices and tools that all other SIGs use to instrument Kubernetes components-like the *API server*, *scheduler*, *kubelet* and *kube-controller-manager*.
