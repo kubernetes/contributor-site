@@ -1,0 +1,20 @@
+DirectoryPath: public
+IgnoreDirectoryMissingTrailingSlash: true
+CheckExternal: false
+IgnoreAltMissing: false
+CheckImages: true
+CheckLinks: true
+CheckScripts: true
+CheckMeta: true
+IgnoreInternalEmptyHash: true
+IgnoreEmptyHref: true
+IgnoreDirs:
+  - "community"
+  - "resources/keps"
+  - "docs/guide"
+  - "docs/orientation"
+  - "resources/release"
+  - "events"
+  - "blog"
+  - "docs/comms"
+  - "docs/contributor-cheatsheet"

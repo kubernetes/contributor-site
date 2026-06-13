@@ -24,6 +24,8 @@ CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
+HTMLTEST_IMAGE			:= wjdp/htmltest@sha256:2215e132582bb1b918981f9920696a5ec2fbffe9a99af6be424f1b90f4bbf0ef
+HTMLTEST_CMD			:= go run github.com/wjdp/htmltest@ec73febdcb639acbeb983089db2df6732e8199bd
 
 # Docker buildx related settings for multi-arch images
 DOCKER_BUILDX ?= docker buildx
@@ -111,7 +113,12 @@ docker-render:
 	$(MAKE) container-render
 
 container-render: ## Build the site using Hugo within a container (equiv to render).
-	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_MOUNTS) $(CONTAINER_IMAGE) hugo --logLevel info --ignoreCache --minify
+	mkdir -p public
+	$(CONTAINER_RUN_TTY) $(CONTAINER_HUGO_MOUNTS) \
+		--mount type=bind,source=$(CURDIR)/public,target=/src/public \
+		$(CONTAINER_IMAGE) \
+		hugo --environment development --logLevel info --ignoreCache --minify --noBuildLock
+
 
 docker-server:
 	@echo -e "**** The use of docker-server is deprecated. Use container-server instead. ****" 1>&2
@@ -180,6 +187,10 @@ production-build: ## Builds the production site (this command used only by Netli
 		--logLevel info \
 		--ignoreCache \
 		--minify
+	HUGO_ENV=production $(MAKE) check-headers-file
+	$(MAKE) verify-spelling
+	$(HTMLTEST_CMD)
+
 
 preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
@@ -192,3 +203,19 @@ preview-build: ## Builds a deploy preview of the site (this command used only by
 		--buildFuture \
 		--ignoreCache \
 		--minify
+
+container-internal-linkcheck: container-render ## Run htmltest link checker inside a container (aligns with kubernetes/website)
+	$(CONTAINER_ENGINE) run -w /test --mount "type=bind,source=$(CURDIR),target=/test" --rm $(HTMLTEST_IMAGE) -c .htmltest.yml -s
+
+
+local-internal-linkcheck: render ## Run htmltest link checker locally on the host
+	$(HTMLTEST_CMD)
+
+check-headers-file: ## Verify Netlify headers file doesn't block search indexing (aligns with kubernetes/website)
+	scripts/check-headers-file.sh
+
+verify-spelling: ## Check spelling in all markdown content files (aligns with kubernetes/website)
+	scripts/verify-spelling.sh
+
+lint: verify-spelling local-internal-linkcheck ## Run all spelling and link checking linters locally
+
