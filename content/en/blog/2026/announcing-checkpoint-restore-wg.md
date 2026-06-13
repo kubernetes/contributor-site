@@ -40,5 +40,5 @@ Following our presentation about [transparent checkpointing](https://sched.co/1t
 If you are interested in contributing to Kubernetes or CRIU, there are several ways to participate:
 
 - Join our meeting every second Thursday at 17:00 UTC via the Zoom link in our [meeting notes](https://docs.google.com/document/d/1ZMtHBibXfTw4cQerM4O4DJonzVs3W7Hp2K5ml6pTufs/edit); recordings of our prior meetings are available [here](https://www.youtube.com/playlist?list=PL69nYSiGNLP1P7F40IMVL3NsNiIm5AGos).
-- Chat with us on the [Kubernetes Slack](http://slack.k8s.io/): [#wg-checkpoint-restore](https://kubernetes.slack.com/messages/wg-checkpoint-restore)
+- Chat with us on the [Kubernetes Slack](https://slack.k8s.io/): [#wg-checkpoint-restore](https://kubernetes.slack.com/messages/wg-checkpoint-restore)
 - Email us at the [wg-checkpoint-restore mailing list](https://groups.google.com/a/kubernetes.io/g/wg-checkpoint-restore)
