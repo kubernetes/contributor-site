@@ -8,7 +8,6 @@ resources:
 - src: "jorge-castro-code-of-conduct.jpg"
   title: "Jorge Castro announcing the Kubernetes Code of Conduct during a weekly SIG ContribEx meeting."
 ---
-
 When most people think of contributing to an open source project, I suspect they probably think of
 contributing code changes, new features, and bug fixes. As a software engineer and a long-time open
 source user and contributor, that's certainly what I thought. Although I have written a good quantity

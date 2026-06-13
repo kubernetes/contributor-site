@@ -2,8 +2,8 @@
 title: "Announcing the Contributor Website"
 linkTitle: "Announcing the Contributor Website"
 date: 2020-08-24
+description: "Welcome to [kubernetes.dev], the Kubernetes Contributor website; built to become the one stop shop for Kubernetes contributor content and news. It..."
 ---
-
 Welcome to [kubernetes.dev], the Kubernetes Contributor website; built to become
 the one stop shop for Kubernetes contributor content and news. It brings
 important documentation scattered throughout the project into **one central

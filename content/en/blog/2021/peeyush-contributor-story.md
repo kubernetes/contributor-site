@@ -3,8 +3,8 @@ layout: blog
 title: "From Kubernetes for work to Kubernetes for play" 
 date: 2021-06-01
 Slug: peeyush-contributor-story
+description: "Addendum by Matt Broberg on May 26, 2021"
 ---
-
 {{% alert color="primary" %}}
 <i>
 Addendum by <a href="https://twitter.com/mbbroberg">Matt Broberg</a> on May 26, 2021
