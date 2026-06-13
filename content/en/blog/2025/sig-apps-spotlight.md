@@ -4,8 +4,8 @@ title: "Spotlight on SIG Apps"
 slug: sig-apps-spotlight-2025
 date: 2025-03-12
 author: "Sandipan Panda (DevZero)"
+description: "In our ongoing SIG Spotlight series, we dive into the heart of the Kubernetes project by talking to the leaders of its various Special Interest..."
 ---
-
 In our ongoing SIG Spotlight series, we dive into the heart of the Kubernetes project by talking to
 the leaders of its various Special Interest Groups (SIGs). This time, we focus on 
 **[SIG Apps](https://github.com/kubernetes/community/tree/master/sig-apps#apps-special-interest-group)**,

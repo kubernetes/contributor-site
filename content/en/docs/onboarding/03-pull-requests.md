@@ -7,11 +7,11 @@ description: |
   Kubernetes repositories.
 ---
 
-# Section 3: Pull Requests
+## Section 3: Pull Requests
 
 ---
 
-## Objectives
+### Objectives
 
 This unit will teach you all about how to submit and manage pull requests for the different Kubernetes repositories. By the end of this unit, you will be able to:
 
@@ -21,7 +21,7 @@ This unit will teach you all about how to submit and manage pull requests for th
 
 ---
 
-## What is a pull request?
+### What is a pull request?
 
 Before we start teaching you how to use pull requests, we should tell you what they are!
 
@@ -32,7 +32,7 @@ Before we start teaching you how to use pull requests, we should tell you what t
 
 ---
 
-## Where do I make a pull request?
+### Where do I make a pull request?
 
 Before creating a pull request, you should:
 
@@ -43,7 +43,7 @@ Before creating a pull request, you should:
 
 ---
 
-## How do I open a pull request?
+### How do I open a pull request?
 
 You’ll want to review the basic pull request process you learned at the end of [Unit 2](../02-getting-into-github/).
 
@@ -53,7 +53,7 @@ You’ll want to review the basic pull request process you learned at the end of
 
 ---
 
-## How does Kubernetes use pull requests?
+### How does Kubernetes use pull requests?
 
 Kubernetes generally follows the standard GitHub pull request process, but there is a layer of additional Kubernetes specific (and sometimes SIG specific) differences.
 
@@ -63,7 +63,7 @@ Kubernetes generally follows the standard GitHub pull request process, but there
 
 ---
 
-## How does the pull request review process work?
+### How does the pull request review process work?
 
 * Anyone can review a documentation pull request. Code pull requests require approved reviewers.
 * In addition to code-related concerns, pull request reviews also look at:
@@ -75,7 +75,7 @@ You can respond to comments from reviewers through comments or additional change
 
 ---
 
-## When are my pull requests run through tests?
+### When are my pull requests run through tests?
 
 * A bot runs your PR through a few pre-commit tests automatically.
 * The results of these tests will be posted to your pull request’s discussion automatically.
@@ -83,7 +83,7 @@ You can respond to comments from reviewers through comments or additional change
 
 ---
 
-## What do I do if my test fails?
+### What do I do if my test fails?
 
 * The test results should give some indication of what went wrong.
 * Make changes, push them to your branch, and [continue iterating through the pull request process](/docs/guide/pull-requests/).

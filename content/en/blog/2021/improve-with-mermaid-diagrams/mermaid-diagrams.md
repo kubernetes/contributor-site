@@ -2,8 +2,8 @@
 title: "Improve your documentation with Mermaid.js diagrams"
 linkTitle: "Improve your documentation with Mermaid.js diagrams"
 date: 2021-12-01
+description: "Topics covered in this blog."
 ---
-
 By Chris Metz and Tim Bannister
 
 ---

@@ -4,8 +4,8 @@ title: "Spotlight on SIG CLI"
 date: 2023-07-20
 slug: sig-cli-spotlight-2023
 author: "Arpit Agrawal"
+description: "In the world of Kubernetes, managing containerized applications at scale requires powerful and efficient tools. The command-line interface (CLI)..."
 ---
-
 In the world of Kubernetes, managing containerized applications at
 scale requires powerful and efficient tools. The command-line
 interface (CLI) is an integral part of any developer or operator’s

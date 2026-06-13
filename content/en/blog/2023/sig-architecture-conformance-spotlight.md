@@ -4,8 +4,8 @@ title: "Spotlight on SIG Architecture: Conformance"
 slug: sig-architecture-conformance-spotlight-2023
 date: 2023-10-05
 author: "Frederico Muñoz (SAS Institute)"
+description: "This is the first interview of a SIG Architecture Spotlight series that will cover the different subprojects. We start with the SIG Architecture:..."
 ---
-
 _This is the first interview of a SIG Architecture Spotlight series
 that will cover the different subprojects. We start with the SIG
 Architecture: Conformance subproject_

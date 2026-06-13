@@ -7,8 +7,8 @@ author: >
   [Nir Rozenbaum](https://github.com/nirrozenbaum),
   [Morgan Foster](https://github.com/usize),
   [Flynn](https://github.com/kflynn)
+description: "The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important..."
 ---
-
 The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important topics between interested contributors. Today, we're excited to announce the formation of the [AI Gateway Working Group](https://github.com/kubernetes-sigs/wg-ai-gateway), a new initiative focused on developing standards and best practices for networking infrastructure that supports AI workloads in Kubernetes environments.
 
 ## What is an AI Gateway?

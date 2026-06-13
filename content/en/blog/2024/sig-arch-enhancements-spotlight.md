@@ -4,8 +4,8 @@ title: "Spotlight on SIG Architecture: Enhancements"
 slug: sig-architecture-enhancements
 date: 2025-01-21
 author: "Frederico Muñoz (SAS Institute)"
+description: "This is the fourth interview of a SIG Architecture Spotlight series that will cover the different subprojects, and we will be covering [SIG..."
 ---
-
 _This is the fourth interview of a SIG Architecture Spotlight series that will cover the different
 subprojects, and we will be covering [SIG Architecture:
 Enhancements](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md#enhancements)._

@@ -3,8 +3,8 @@ layout: blog
 title: "Introducing KWOK: Kubernetes WithOut Kubelet"
 date: 2023-03-01
 slug: introducing-kwok
+description: "Have you ever wondered how to set up a cluster of thousands of nodes just in seconds, how to simulate real nodes with a low resource footprint,..."
 ---
-
 **Author:** Shiming Zhang (DaoCloud), Wei Huang (Apple), Yibo Zhuang (Apple)
 
 <img style="float: right; display: inline-block; margin-left: 2em; max-width: 15em;" src="/blog/2023/03/01/introducing-kwok/kwok.svg" alt="KWOK logo" />

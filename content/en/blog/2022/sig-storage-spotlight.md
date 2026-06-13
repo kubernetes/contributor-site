@@ -4,8 +4,8 @@ title: "Spotlight on SIG Storage"
 date: 2022-08-22
 slug: sig-storage-spotlight-2022
 author: "Frederico Muñoz (SAS)"
+description: "Since the very beginning of Kubernetes, the topic of persistent data and how to address the requirement of stateful applications has been an..."
 ---
-
 Since the very beginning of Kubernetes, the topic of persistent data and how to address the requirement of stateful applications has been an important topic. Support for stateless deployments was natural, present from the start, and garnered attention, becoming very well-known. Work on better support for stateful applications was also present from early on, with each release increasing the scope of what could be run on Kubernetes.
 
 Message queues, databases, clustered filesystems: these are some examples of the solutions that have different storage requirements and that are, today, increasingly deployed in Kubernetes. Dealing with ephemeral and persistent storage, local or remote, file or block, from many different vendors, while considering how to provide the needed resiliency and data consistency that users expect, all of this is under SIG Storage's umbrella.

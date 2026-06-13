@@ -5,8 +5,8 @@ slug: sig-storage-spotlight-2026
 date: 2026-04-15
 draft: true
 author: "Darshan Murthy (Apple)"
+description: "In our ongoing SIG Spotlight series, we shine a light on the groups that keep the Kubernetes project moving forward. This time, we catch up with..."
 ---
-
 In our ongoing SIG Spotlight series, we shine a light on the groups that keep the Kubernetes project
 moving forward. This time, we catch up with **[SIG
 Storage](https://github.com/kubernetes/community/tree/master/sig-storage)**, the group responsible

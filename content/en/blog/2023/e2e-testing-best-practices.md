@@ -4,8 +4,8 @@ title: "E2E Testing Best Practices, Reloaded"
 date: 2023-04-12
 slug: e2e-testing-best-practices-reloaded
 author: "Patrick Ohly (Intel)"
+description: "End-to-end (E2E) testing in Kubernetes is how the project validates functionality with real clusters. Contributors sooner or later encounter it..."
 ---
-
 End-to-end (E2E) testing in Kubernetes is how the project validates
 functionality with real clusters. Contributors sooner or later encounter it
 when asked to write E2E tests for new features or to help with debugging test

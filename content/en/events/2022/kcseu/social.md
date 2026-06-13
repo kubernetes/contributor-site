@@ -4,9 +4,9 @@ type: docs
 weight: 5
 ---
 
-# Contributor Social at La Casa Del Mar
+## Contributor Social at La Casa Del Mar
 
-<img align="right" src="/events/2022/kcseu/casadelmar.jpg" width="30%">
+<img align="right" src="/events/2022/kcseu/casadelmar.jpg" width="30%" alt="La Casa de la Mar venue">
 
 From 6:30 to 8:30pm (and beyond), Kubernetes contributors will be schmoozing,
 eating, playing boardgames, and competing in a pub quiz at [La Casa Del Mar](https://lacasadelamar.com/espacios-patacona/), 
@@ -16,7 +16,7 @@ The Social is open only to registered attendees of the Kubernetes Contributor
 Summit and possibly their guests (see below).  You must be [registered](https://cvent.me/384mb9)
 before attending.
 
-## Location And Transportation
+### Location And Transportation
 
 The Contributor Social will be held at the
 <a href="https://lacasadelamar.com/espacios-patacona/" rel="noopener noreferrer" target="_blank">La Casa de la Mar</a>
@@ -32,7 +32,7 @@ your hotel or another location,
 You are also welcome to get there on your own.  There aren't any good public 
 transportation links to the venue.
 
-## Activities
+### Activities
 
 Games!  Prizes!
 
@@ -47,13 +47,13 @@ intended to help you break the ice with more experienced contributors. The
 first folks to complete vertical row, horizontal row, and blackout on their 
 bingo cards will win prizes.
 
-## Food & Drink
+### Food & Drink
 
 La Casa Del Mar serves American-Spanish hybrid pub food, and we'll have substantial
 snacks available for all contributors, as well as alcoholic and non-alcoholic 
 drinks.
 
-## Bringing A Guest
+### Bringing A Guest
 
 Contributors will be able to bring a single family member or 
 partner to the Social.  This does not include coworkers or casual friends;

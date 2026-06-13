@@ -7,11 +7,11 @@ description: |
 ---
 
 
-# Section 5: Getting Started with Kubernetes Development
+## Section 5: Getting Started with Kubernetes Development
 
 ---
 
-# What you’re about to learn
+## What you’re about to learn
 
 It’s time to set up a development environment so you can build Kubernetes. By end of this unit, you will:
 
@@ -20,7 +20,7 @@ It’s time to set up a development environment so you can build Kubernetes. By 
 
 ---
 
-# What are your options for a development environment?
+## What are your options for a development environment?
 
 There are three primary options, all with their own benefits and drawbacks.
 
@@ -30,7 +30,7 @@ There are three primary options, all with their own benefits and drawbacks.
 
 ---
 
-# Why build with Docker?
+## Why build with Docker?
 
 This method uses a containerized build environment. There are some good reasons to use it:
 
@@ -42,7 +42,7 @@ Read more about this method in [Building Kubernetes](https://github.com/kubernet
 
 ---
 
-# Why build using a local OS?
+## Why build using a local OS?
 
 This method takes the most effort to set up. But it has its own advantages:
 
@@ -53,7 +53,7 @@ To set this method up, [follow the steps from the Development Guide](https://git
 
 ---
 
-# Why build using GitHub Codespaces?
+## Why build using GitHub Codespaces?
 
 The newest method takes advantage of [GitHub Codespaces](https://github.com/features/codespaces) to provide a container-based development environment.
 
@@ -64,7 +64,7 @@ To build Kubernetes with Codespaces, follow the steps in this document.
 
 ---
 
-# What are the next steps?
+## What are the next steps?
 
 Once you have a working development environment, you will be ready to develop and run tests against Kubernetes.
 

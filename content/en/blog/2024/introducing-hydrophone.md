@@ -4,8 +4,8 @@ title: "Introducing Hydrophone"
 slug: introducing-hydrophone
 date: 2024-05-23
 author: "Ricky Sadowski (ICR)"
+description: "In the ever-changing landscape of Kubernetes, ensuring that clusters operate as intended is essential. This is where conformance testing becomes..."
 ---
-
 In the ever-changing landscape of Kubernetes, ensuring that clusters operate as intended is
 essential. This is where conformance testing becomes crucial, verifying that a Kubernetes cluster
 meets the required standards set by the community. Today, we're thrilled to introduce

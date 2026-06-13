@@ -5,8 +5,8 @@ date: 2026-06-05
 slug: image-signature-routing
 author: >
   Sascha Grunert (Red Hat)
+description: "The image promoter rewrite laid the groundwork for simplifying how Kubernetes delivers container image signatures. One of the rewrite phases..."
 ---
-
 The [image promoter rewrite](https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/) laid the
 groundwork for simplifying how Kubernetes delivers container image signatures.
 One of the rewrite phases (Phase 6) separated image signing from signature

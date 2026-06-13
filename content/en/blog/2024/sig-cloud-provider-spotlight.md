@@ -4,8 +4,8 @@ title: "Spotlight on SIG Cloud Provider"
 slug: sig-cloud-provider-spotlight-2024
 date: 2024-03-01
 author: "Arujjwal Negi"
+description: "One of the most popular ways developers use Kubernetes-related services is via cloud providers, but have you ever wondered how cloud providers can..."
 ---
-
 One of the most popular ways developers use Kubernetes-related services is via cloud providers, but
 have you ever wondered how cloud providers can do that? How does this whole process of integration
 of Kubernetes to various cloud providers happen? To answer that, let's put the spotlight on [SIG

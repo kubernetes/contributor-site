@@ -4,8 +4,8 @@ title: >-
     K8s CI Bot Helper Job: automating "make update"
 date: 2022-04-26
 slug: k8s-ci-bot-helper-job
+description: "If you are contributing to the Kubernetes project and are developing on a Windows PC, it is conceivable that you will encounter certain issues..."
 ---
-
 **Authors:** [Subhasmita Swain](https://github.com/SubhasmitaSw), [Davanum Srinivas](https://github.com/dims) 
 
 ---

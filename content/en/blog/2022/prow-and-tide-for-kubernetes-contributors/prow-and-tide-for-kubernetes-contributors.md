@@ -3,8 +3,8 @@ layout: blog
 title: Prow and Tide for Kubernetes Contributors
 date: 2022-12-12
 slug: prow-and-tide-for-kubernetes-contributors
+description: "In my work in the Kubernetes world, I look up a label or Prow command often. The systems behind the scenes (Prow and Tide) are here to help..."
 ---
-
 **Authors:** [Chris Short](https://github.com/chris-short), [Frederico Muñoz](https://github.com/fsmunoz)
 
 ---

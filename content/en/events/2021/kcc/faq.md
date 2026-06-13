@@ -114,7 +114,7 @@ everything. If you need assistance, join the `#help` channel.
 
 ### What is this YAGPDB.xyz and why is it messaging me?
 
-<img align="left" src="/events/2021/kcc/yagpdb.png" width="40" height="40">
+<img align="left" src="/events/2021/kcc/yagpdb.png" width="40" height="40" alt="YAGPDB Discord Bot logo">
 
 [YAGPDB] (Yet Another General Purpose Discord Bot) is a verified discord bot
 that we use to manage a variety of services within discord, from verification
@@ -132,19 +132,19 @@ overlays. A few examples of what this would look like:
 
 1 ) To do so, click the server dropdown (Top Left)
 
-<img align="center" src="/events/2021/kcc/server.png" width="40%">
+<img align="center" src="/events/2021/kcc/server.png" width="40%" alt="Discord server list showing Kubernetes server">
 <br>
 <br>
 2 ) Select “Change Nickname”
 <br>
 <br>
-<img align="center" src="/events/2021/kcc/nickname.png" width="40%">
+<img align="center" src="/events/2021/kcc/nickname.png" width="40%" alt="Discord edit nickname interface">
 <br>
 <br>
 3 ) Then follow the template of “nickname (pro/noun)” like so:
 <br>
 <br>
-<img align="center" src="/events/2021/kcc/name.png" width="40%">
+<img align="center" src="/events/2021/kcc/name.png" width="40%" alt="Discord user settings name field">
 
 ### Information on each channel in Discord
 

@@ -5,9 +5,8 @@ slug: wg-device-management-spotlight-2026
 date: 2026-05-18
 draft: true
 author: "Natalie Fisher"
+description: "The rising popularity of AI, Edge, and Telecommunications workloads on Kubernetes has led to new requirements for hardware management. We now need..."
 ---
-
-
 The rising popularity of AI, Edge, and Telecommunications workloads on Kubernetes has led to new requirements for hardware management. We now need hardware specification beyond CPU time and memory allocations.  This includes allocating GPUs, TPUs, network interfaces, and other hardware, sometimes after pod start and occasionally through time-sharing. 
 
 Efficiently managing this specialized hardware is the mission of the **[Device Management Working Group](https://www.kubernetes.dev/community/community-groups/wg/device-management/)**. Their cornerstone project, **[Dynamic Resource Allocation (DRA)](https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/)**, recently graduated to GA, marking a fundamental shift in how the project handles hardware-intensive workloads at scale.
@@ -16,7 +15,7 @@ In this spotlight, we sit down with working group chairs **[Kevin Klues](https:/
 **[John Belamaric](https://github.com/johnbelamaric)** to discuss the limitations of the legacy device model,
 the _NP-hard_ challenges of scheduling, and how they’re building a more programmable, hardware-aware future for Kubernetes.
 
-## Introducing Device Management
+### Introducing Device Management
 
 **Natalie Fisher: Can you introduce yourself, your role, and how you got involved in the Device Management Working Group?**
 
@@ -27,7 +26,7 @@ I have also been a kubelet maintainer since 2019, with a focus on its device man
 
 **John Belamaric:** I am a Senior Staff SWE at Google, and the third co-chair of WG Device Management, also since its inception. I am also a co-chair of [SIG Architecture](https://www.kubernetes.dev/community/community-groups/sigs/architecture/) since 2019. As Patrick mentioned, in late 2023, interest in DRA really picked up. The initial implementation, made autoscaling very challenging, and so there was some concern in the community about advancing it to beta. I got involved to try to help address some of those concerns, and the three of us, along with Tim Hockin, worked hard over the next few months to build a consensus around a new design. To facilitate this collaboration, we formed the working group after discussion at KubeCon in Paris in 2024. 
 
-## The problem and the solution
+### The problem and the solution
 
 The working group emerged from a fundamental rethink of how Kubernetes interacts with specialized hardware. At the heart of this evolution is **Dynamic Resource Allocation (DRA)**. Rather than treating devices as simple integers, DRA provides a structured framework that breaks device management into four distinct stages:
 
@@ -56,7 +55,7 @@ But DRA, as it stands right now, is very focused on scheduling. There are other 
 
 Also, as Kevin alluded to, devices are often allocated and used in groups, rather than individually. Choosing the right devices to work together in a group depends on how they are interconnected; for example, NVIDIA GPUs may be in an any-to-any fabric arrangement in an NVLINK domain, whereas TPUs may have a 3D torus interconnect. This affects the “selection, allocation and configuration” of devices, and we have a lot more work to do to address these use cases.
 
-## A cross-SIG effort
+### A cross-SIG effort
 
 Because device management touches scheduling, node operations, autoscaling, networking, and API design, the work naturally spans multiple SIGs across the Kubernetes project.
 
@@ -72,7 +71,7 @@ If those three groups design independently, you end up with inconsistent abstrac
 
 The cross-SIG model also means that design decisions are reviewed from multiple angles. Someone from sig-scheduling will catch scheduler complexity that a sig-node contributor might overlook, and vice versa. It slows down individual decisions slightly, but produces much more robust outcomes.
 
-## Current focus areas
+### Current focus areas
 
 With DRA now generally available, the working group’s focus has expanded to enable more advanced scheduling models, shared semantics, operational visibility, and support for increasingly complex hardware topologies.
 
@@ -119,7 +118,7 @@ The ResourceSlice API is how vendors model and advertise their devices. This is 
 
 Some features require changes in both. We have another sharing method we call “consumable capacity”. In the explicit sharing case described above, a user needs to point containers at the same ResourceClaim; there is one ResourceClaim shared amongst several containers and Pods. With consumable capacity, the device sharing works more like how Pods share a Node. The user creates a ResourceClaim that asks for a certain amount of resources, for example, “I need a NIC with 2Gbps of bandwidth”. The scheduler knows that there is a NIC with 40Gbps of bandwidth available, and so it allocates 2Gbps out of that 40Gbps and gives it to that ResourceClaim. In this case, each Pod has its own ResourceClaim, but the underlying device is shared between those claims. It’s up to the on-node DRA driver to properly set up the device for this sort of sharing (in the NIC case, likely by creating a subinterface). We call this “platform-mediated sharing” to differentiate it from the explicit "user-mediated sharing".
 
-## Real-world impact
+### Real-world impact
 
 While much of the work is deeply technical, the underlying goal is practical: enabling Kubernetes to better support real-world AI/ML and hardware-intensive workloads at scale.
 
@@ -131,7 +130,7 @@ While much of the work is deeply technical, the underlying goal is practical: en
 
 **JB:** We’re still learning here, but one idea of DRA is to enable a shift to more "requirements driven" specifications. This can allow less coupling between end users that write the workload specification and the cluster administrators that set up the clusters. Instead of agreeing on labeling conventions and requiring users to understand the cluster topology, the users can specify what their workload needs, and the scheduler can figure out how to satisfy it. If we can make this work, it can make even complex workloads more portable across clusters.
 
-## Challenges and trade-offs
+### Challenges and trade-offs
 
 As with many areas of Kubernetes, increasing flexibility and expressiveness also introduces new layers of complexity, particularly around scheduling and optimization.
 
@@ -143,7 +142,7 @@ As with many areas of Kubernetes, increasing flexibility and expressiveness also
 
 On top of that, scheduling in general is very complex and is an NP-hard problem. All the metadata and flexibility DRA adds gives the scheduler more options, which has pros and cons. More options are helpful if you are constrained in your choices, as it means you can schedule something that you otherwise could not. But it also means it is even harder to find an optimal solution when there are many possibilities in a given cluster. DRA works well in our common use cases so far, but we have a lot of work to do to improve the optimality of the chosen scheduling solution and ensure the performance of making that choice.
 
-## Looking ahead
+### Looking ahead
 
 Despite the challenges, contributors across the working group remain excited about the pace of innovation and the growing community forming around device management in Kubernetes.
 
@@ -157,7 +156,7 @@ Despite the challenges, contributors across the working group remain excited abo
 
 I am really excited to see the creative ways people will use these APIs. They were primarily designed to address "devices", but just like how "everything is a file" in Unix/Linux, the APIs themselves are quite flexible as to what they model. They really build out a more programmable scheduler, which can have interesting applications. For example, I recently prototyped using DRA to schedule pods to nodes where a large AI model is already locally cached. It’s really quite flexible, and I have great confidence in the creativity of our community, so I think we’ll see some unexpected solutions in the ecosystem.
 
-# Getting involved
+## Getting involved
 
 **NF: How can contributors get involved with the Device Management Working Group?**
 
@@ -176,7 +175,7 @@ For more hands-on contributions, the DRA Driver for NVIDIA GPUs is now a communi
 
 We welcome contributors at all levels – whether you're interested in the API design, the scheduler internals, driver development, or documentation. Come say hello.
 
-## Summary
+### Summary
 
 As Kubernetes evolves to support the AI/ML revolution and high-performance computing, the work happening within WG Device Management is becoming the foundation for how modern workloads are scheduled and operated at scale.
 

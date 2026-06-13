@@ -4,8 +4,8 @@ title: "Kubernetes Contributor Summit: Behind-the-scenes"
 slug: k8s-contributor-summit-behind-the-scenes
 date: 2023-11-03
 author: "Frederico Muñoz (SAS Institute)"
+description: "Every year, just before the official start of KubeCon+CloudNativeCon, there's a special event that has a very special place in the hearts of those..."
 ---
-
 Every year, just before the official start of KubeCon+CloudNativeCon, there's a special event that
 has a very special place in the hearts of those organizing and participating in it: the Kubernetes
 Contributor Summit. To find out why, and to provide a behind-the-scenes perspective, we interview

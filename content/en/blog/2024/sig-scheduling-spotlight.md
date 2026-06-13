@@ -4,8 +4,8 @@ title: "Spotlight on SIG Scheduling"
 slug: sig-scheduling-spotlight-2024
 date: 2024-09-24
 author: "Arvind Parekh"
+description: "In this SIG Scheduling spotlight we talked with Kensei Nakada, an approver in SIG Scheduling."
 ---
-
 In this SIG Scheduling spotlight we talked with [Kensei Nakada](https://github.com/sanposhiho/), an
 approver in SIG Scheduling.
 
