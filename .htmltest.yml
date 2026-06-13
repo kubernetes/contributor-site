@@ -1,0 +1,12 @@
+DirectoryPath: public
+IgnoreDirectoryMissingTrailingSlash: true
+CheckExternal: false
+IgnoreAltMissing: true
+CheckImages: true
+CheckLinks: true
+CheckScripts: true
+CheckMeta: true
+IgnoreInternalEmptyHash: true
+IgnoreEmptyHref: true
+IgnoreDirs:
+  - "community"

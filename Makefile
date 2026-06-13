@@ -192,3 +192,11 @@ preview-build: ## Builds a deploy preview of the site (this command used only by
 		--buildFuture \
 		--ignoreCache \
 		--minify
+
+container-internal-linkcheck: container-render ## Run htmltest link checker inside a container (aligns with kubernetes/website)
+	$(CONTAINER_ENGINE) run --mount "type=bind,source=$(CURDIR),target=/test" --rm wjdp/htmltest htmltest
+
+local-internal-linkcheck: render ## Run htmltest link checker locally on the host
+	hack/install-htmltest.sh
+	./bin/htmltest
+

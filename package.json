@@ -9,7 +9,7 @@
     "postcss-cli": "^10.1.0"
   },
   "scripts": {
-    "test": "python3 scripts/seo-lint.py"
+    "test": "make local-internal-linkcheck"
   },
   "repository": {
     "type": "git",
