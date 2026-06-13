@@ -1,7 +1,6 @@
 {{ $lotteryData := site.Data.lottery_factor.repo_data }}
 {{ $sigsData := site.Data.lottery_factor.sigs }}
 
-{{/* Fetch full sigs.yaml for meeting/contact info */}}
 {{ $defaultBranch := "main" }}
 {{ $sigsYamlUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch }}
 {{ $opts := dict }}
@@ -21,33 +20,26 @@
   {{ end }}
 {{ end }}
 
-{{/* Extract unique languages for the filter dropdown */}}
 {{ $languages := slice }}
 {{ range $lotteryData }}
   {{ if .tech_stack }}
     {{ range .tech_stack.languages }}
-      {{ if not (in $languages .) }}
-        {{ $languages = $languages | append . }}
-      {{ end }}
+      {{ if not (in $languages .) }}{{ $languages = $languages | append . }}{{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
 {{ $languages = sort $languages }}
 
-{{/* Extract unique skills for the filter dropdown */}}
 {{ $allSkills := slice }}
 {{ range $lotteryData }}
   {{ if .tech_stack }}
     {{ range .tech_stack.skills_needed }}
-      {{ if not (in $allSkills .) }}
-        {{ $allSkills = $allSkills | append . }}
-      {{ end }}
+      {{ if not (in $allSkills .) }}{{ $allSkills = $allSkills | append . }}{{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
 {{ $allSkills = sort $allSkills }}
 
-{{/* Extract unique SIGs for the filter dropdown */}}
 {{ $sigs := slice }}
 {{ range $sigsData }}
   {{ $sigs = $sigs | append .name }}
@@ -58,61 +50,55 @@
 
   <!-- Filter Bar -->
   <div class="filter-bar">
-    <div class="filter-row">
-      <div class="filter-field">
-        <label for="searchFilter">Search</label>
-        <input type="text" id="searchFilter" placeholder="Project, SIG, or skill...">
-      </div>
-      <div class="filter-field">
-        <label for="languageFilter">Language</label>
-        <select id="languageFilter">
-          <option value="all">All</option>
-          {{ range $languages }}
-          <option value="{{ . }}">{{ . }}</option>
-          {{ end }}
-        </select>
-      </div>
-      <div class="filter-field">
-        <label for="skillFilter">Skill</label>
-        <select id="skillFilter">
-          <option value="all">All</option>
-          {{ range $allSkills }}
-          <option value="{{ . }}">{{ . }}</option>
-          {{ end }}
-        </select>
-      </div>
-      <div class="filter-field">
-        <label for="sigFilter">SIG</label>
-        <select id="sigFilter">
-          <option value="all">All</option>
-          {{ range $sigs }}
-          <option value="{{ . }}">{{ . }}</option>
-          {{ end }}
-        </select>
-      </div>
-      <div class="filter-field">
-        <label for="dayFilter">Meeting Day</label>
-        <select id="dayFilter">
-          <option value="all">Any</option>
-          <option value="Monday">Mon</option>
-          <option value="Tuesday">Tue</option>
-          <option value="Wednesday">Wed</option>
-          <option value="Thursday">Thu</option>
-          <option value="Friday">Fri</option>
-        </select>
-      </div>
-      <div class="filter-field check-fields">
-        <label><input type="checkbox" id="ncoFilter"> NCO</label>
-        <label><input type="checkbox" id="riskFilter"> High Risk</label>
-        <button id="clearFilters">Clear</button>
-      </div>
+    <div class="filter-search-row">
+      <input type="text" id="searchFilter" placeholder="Search projects...">
+      <button id="clearFilters">Clear all</button>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Language</span>
+      <span class="pill active" data-filter="language" data-value="all">All<span class="pill-icon">&#10005;</span></span>
+      {{ range $languages }}
+      <span class="pill" data-filter="language" data-value="{{ . }}">{{ . }}<span class="pill-icon">&#10005;</span></span>
+      {{ end }}
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Skill</span>
+      <span class="pill active" data-filter="skill" data-value="all">All<span class="pill-icon">&#10005;</span></span>
+      {{ range $allSkills }}
+      <span class="pill" data-filter="skill" data-value="{{ . }}">{{ . }}<span class="pill-icon">&#10005;</span></span>
+      {{ end }}
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">SIG</span>
+      <span class="pill active" data-filter="sig" data-value="all">All<span class="pill-icon">&#10005;</span></span>
+      {{ range $sigs }}
+      <span class="pill" data-filter="sig" data-value="{{ . }}">{{ replace . "SIG " "" }}<span class="pill-icon">&#10005;</span></span>
+      {{ end }}
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Meeting</span>
+      <span class="pill active" data-filter="day" data-value="all">Any<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="monday">Mon<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="tuesday">Tue<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="wednesday">Wed<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="thursday">Thu<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="friday">Fri<span class="pill-icon">&#10005;</span></span>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Status</span>
+      <span class="pill" data-filter="nco" data-value="1">NCO featured<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="risk" data-value="1">High risk<span class="pill-icon">&#10005;</span></span>
     </div>
   </div>
 
   <!-- Results -->
   <div class="results-meta">
     <span id="resultsCount">Loading...</span>
-    <span class="results-legend"><span class="nco-tag">NCO</span> = Featured in orientation</span>
   </div>
 
   <!-- Project Grid -->
@@ -121,19 +107,14 @@
   </div>
 
   <!-- Pagination -->
-  <div id="pagination" class="pagination hide">
-    <button id="prevPage" class="page-btn">&#8592; Previous</button>
-    <span id="pageInfo" class="page-info"></span>
-    <button id="nextPage" class="page-btn">Next &#8594;</button>
-  </div>
+  <div id="pagination" class="pagination hide"></div>
 
   <!-- Empty State -->
   <div id="emptyState" class="empty-state hide">
-    <p>No projects match your filters.<br>Try a different combination or <a href="" id="resetFiltersBtn">clear all filters</a>.</p>
+    <p>No projects match your filters.<br>Try a different combination or <a href="#" id="resetFiltersBtn" style="color:inherit;">clear all filters</a>.</p>
   </div>
 </div>
 
-<!-- Embed data -->
 <script>
 window.lotteryFactorData = {{ $lotteryData | jsonify }};
 window.lotteryFactorSigs = {{ $sigsData | jsonify }};

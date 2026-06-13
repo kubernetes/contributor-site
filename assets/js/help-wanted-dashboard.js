@@ -2,6 +2,7 @@
   'use strict';
 
   var PAGE_SIZE = 12;
+  var MAX_VISIBLE_PAGES = 7;
 
   var SAMPLE_PROJECTS = [
     { repo: 'kubernetes-sigs/kind', sig: 'SIG Testing', lang: ['Go', 'Shell'], skills: ['testing', 'containers'], lf: 2, gfi: 12 },
@@ -23,6 +24,7 @@
   var allProjects = [];
   var filteredProjects = [];
   var currentPage = 1;
+  var filters = { language: 'all', skill: 'all', sig: 'all', day: 'all', nco: false, risk: false };
 
   function escapeHtml(t) {
     var d = document.createElement('div'); d.textContent = t; return d.innerHTML;
@@ -42,15 +44,9 @@
     for (var i = 0; i < yaml.sigs.length; i++) {
       var s = yaml.sigs[i];
       if (s.name === sigName || 'SIG ' + s.name === sigName) {
-        // Get the first meeting
-        var meeting = null;
-        if (s.meetings && s.meetings.length > 0) {
-          meeting = s.meetings[0];
-        }
         return {
-          name: s.name,
-          dir: s.dir || '',
-          meeting: meeting,
+          name: s.name, dir: s.dir || '',
+          meeting: s.meetings && s.meetings.length > 0 ? s.meetings[0] : null,
           slack: s.contact ? s.contact.slack : null,
           description: s.mission_statement || ''
         };
@@ -59,10 +55,9 @@
     return null;
   }
 
-  function sigPageUrl(sigInfo) {
-    if (!sigInfo || !sigInfo.dir) return '';
-    var name = sigInfo.dir.replace(/^sig-/, '');
-    return '/community/community-groups/sigs/' + name + '/';
+  function sigPageUrl(info) {
+    if (!info || !info.dir) return '';
+    return '/community/community-groups/sigs/' + info.dir.replace(/^sig-/, '') + '/';
   }
 
   function buildProjects() {
@@ -73,37 +68,23 @@
       for (var i = 0; i < data.length; i++) {
         var r = data[i];
         var ts = r.tech_stack || {};
-        var sigName = (r.sigs || [])[0] || '';
-        var sigInfo = findSigInfo(sigName);
+        var name = (r.sigs || [])[0] || '';
+        var info = findSigInfo(name);
         result.push({
-          repo: r.repo,
-          repoName: r.repo.split('/')[1],
-          sig: sigName,
-          sigInfo: sigInfo,
-          sigUrl: sigPageUrl(sigInfo),
-          lang: ts.languages || [],
-          skills: ts.skills_needed || [],
-          lf: r.lottery_factor || 0,
-          gfi: ts.good_first_issue_count || 0,
-          gfi_url: r.good_first_issues_url || '',
-          onboarding_url: r.onboarding_url || '',
+          repo: r.repo, repoName: r.repo.split('/')[1], sig: name, sigInfo: info,
+          sigUrl: sigPageUrl(info), lang: ts.languages || [], skills: ts.skills_needed || [],
+          lf: r.lottery_factor || 0, gfi: ts.good_first_issue_count || 0,
+          gfi_url: r.good_first_issues_url || '', onboarding_url: r.onboarding_url || '',
         });
       }
     }
 
     if (result.length === 0) {
       result = SAMPLE_PROJECTS.map(function(s) {
-        var sigInfo = findSigInfo(s.sig);
+        var info = findSigInfo(s.sig);
         return {
-          repo: s.repo,
-          repoName: s.repo.split('/')[1],
-          sig: s.sig,
-          sigInfo: sigInfo,
-          sigUrl: sigPageUrl(sigInfo),
-          lang: s.lang || [],
-          skills: s.skills || [],
-          lf: s.lf,
-          gfi: s.gfi,
+          repo: s.repo, repoName: s.repo.split('/')[1], sig: s.sig, sigInfo: info,
+          sigUrl: sigPageUrl(info), lang: s.lang, skills: s.skills, lf: s.lf, gfi: s.gfi,
           gfi_url: 'https://github.com/' + s.repo + '/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22',
           onboarding_url: 'https://github.com/' + s.repo + '/blob/main/CONTRIBUTING.md',
         };
@@ -115,40 +96,60 @@
   }
 
   function init() {
-    var grid = document.getElementById('projectsGrid');
-    if (!grid) return;
+    if (!document.getElementById('projectsGrid')) return;
     allProjects = buildProjects();
+    bindPills();
+    bindClear();
     applyFilters();
-    bindEvents();
+  }
+
+  function getFilterVal(group) {
+    if (group === 'nco') return filters.nco;
+    if (group === 'risk') return filters.risk;
+    return filters[group] || 'all';
+  }
+
+  function setFilterVal(group, val) {
+    if (group === 'nco' || group === 'risk') {
+      filters[group] = !filters[group];
+    } else {
+      if (filters[group] === val) { filters[group] = 'all'; } else { filters[group] = val; }
+    }
+  }
+
+  function updatePillUI() {
+    document.querySelectorAll('.pill').forEach(function(p) {
+      var group = p.getAttribute('data-filter');
+      var val = p.getAttribute('data-value');
+      if (!group) return;
+      var current = getFilterVal(group);
+      var isActive = (current === val) || (group === 'nco' && val === '1' && filters.nco) || (group === 'risk' && val === '1' && filters.risk);
+      p.classList.toggle('active', isActive);
+    });
   }
 
   function applyFilters() {
     var search = (document.getElementById('searchFilter')?.value || '').toLowerCase().trim();
-    var language = document.getElementById('languageFilter')?.value || 'all';
-    var skill = document.getElementById('skillFilter')?.value || 'all';
-    var sig = document.getElementById('sigFilter')?.value || 'all';
-    var day = document.getElementById('dayFilter')?.value || 'all';
-    var ncoOnly = document.getElementById('ncoFilter')?.checked || false;
-    var highRiskOnly = document.getElementById('riskFilter')?.checked || false;
 
     filteredProjects = allProjects.filter(function(p) {
       if (search) {
         var s = [p.repoName, p.repo, p.sig].concat(p.lang, p.skills).join(' ').toLowerCase();
         if (s.indexOf(search) < 0) return false;
       }
-      if (language !== 'all' && p.lang.indexOf(language) < 0) return false;
-      if (skill !== 'all' && p.skills.indexOf(skill) < 0) return false;
-      if (sig !== 'all' && p.sig !== sig) return false;
-      if (day !== 'all') {
+      if (filters.language !== 'all' && p.lang.indexOf(filters.language) < 0) return false;
+      if (filters.skill !== 'all' && p.skills.indexOf(filters.skill) < 0) return false;
+      if (filters.sig !== 'all' && p.sig !== filters.sig) return false;
+      if (filters.day !== 'all') {
         var m = p.sigInfo && p.sigInfo.meeting;
-        if (!m || !m.day || m.day.toLowerCase() !== day.toLowerCase()) return false;
+        if (!m || !m.day || m.day.toLowerCase() !== filters.day) return false;
       }
-      if (ncoOnly && p.lf > 2) return false;
-      if (highRiskOnly && p.lf > 2) return false;
+      if (filters.nco && p.lf > 2) return false;
+      if (filters.risk && p.lf > 2) return false;
       return true;
     });
 
     currentPage = 1;
+    updatePillUI();
     renderResults();
   }
 
@@ -156,7 +157,7 @@
     var grid = document.getElementById('projectsGrid');
     var countEl = document.getElementById('resultsCount');
     var emptyState = document.getElementById('emptyState');
-    var paginationEl = document.getElementById('pagination');
+    var pagEl = document.getElementById('pagination');
     if (!grid) return;
 
     var totalPages = Math.ceil(filteredProjects.length / PAGE_SIZE) || 1;
@@ -168,99 +169,120 @@
     if (filteredProjects.length === 0) {
       grid.innerHTML = '';
       if (emptyState) emptyState.classList.remove('hide');
-      if (paginationEl) paginationEl.classList.add('hide');
+      if (pagEl) pagEl.innerHTML = '';
       return;
     }
     if (emptyState) emptyState.classList.add('hide');
     grid.innerHTML = pageItems.map(renderCard).join('');
-
-    if (paginationEl) {
-      if (totalPages > 1) {
-        paginationEl.classList.remove('hide');
-        document.getElementById('pageInfo').textContent = 'Page ' + currentPage + ' of ' + totalPages;
-        document.getElementById('prevPage').disabled = currentPage <= 1;
-        document.getElementById('nextPage').disabled = currentPage >= totalPages;
-      } else {
-        paginationEl.classList.add('hide');
-      }
-    }
+    renderPagination(pagEl, totalPages);
   }
 
   function renderCard(p) {
-    var ncoTag = p.lf <= 2 ? '<span class="nco-tag">NCO</span>' : '';
-    var lfTag = p.lf > 0 ? '<span class="risk-tag">LF ' + p.lf + '</span>' : '';
-    var langBadges = p.lang.map(function(l) { return '<span class="tag">' + escapeHtml(l) + '</span>'; }).join('');
-    var skillBadges = p.skills.map(function(s) { return '<span class="tag-outline">' + escapeHtml(s) + '</span>'; }).join('');
+    var tags = [];
+    if (p.lf <= 2) tags.push('<span class="tag-badge lf-' + p.lf + '">NCO</span>');
+    if (p.lf > 0) tags.push('<span class="tag-badge lf-' + p.lf + '">LF ' + p.lf + '</span>');
+    var badgeHtml = tags.join('');
 
-    var sigLink = '';
-    if (p.sigUrl) {
-      sigLink = '<a href="' + p.sigUrl + '" class="sig-link">' + escapeHtml(p.sig) + '</a>';
-    } else {
-      sigLink = '<span class="sig-link">' + escapeHtml(p.sig) + '</span>';
-    }
+    var langHtml = p.lang.map(function(l) { return '<span class="lang-tag">' + escapeHtml(l) + '</span>'; }).join('');
+    var skillHtml = p.skills.map(function(s) { return '<span class="skill-tag">' + escapeHtml(s) + '</span>'; }).join('');
 
-    var meetingLine = '';
+    var sigHtml = p.sigUrl ? '<a href="' + p.sigUrl + '" class="sig-link">' + escapeHtml(p.sig) + '</a>' : '<span class="sig-link">' + escapeHtml(p.sig) + '</span>';
+
+    var meeting = '';
     if (p.sigInfo && p.sigInfo.meeting) {
       var m = p.sigInfo.meeting;
-      meetingLine = '<div class="card-meeting">' + escapeHtml(m.day) + ' ' + escapeHtml(m.time) + ' ' + escapeHtml(m.tz || '') + '</div>';
+      meeting = '<div class="card-meeting">' + escapeHtml(m.day) + ' ' + escapeHtml(m.time) + ' ' + escapeHtml(m.tz || '') + '</div>';
     }
 
-    var slackLink = '';
-    if (p.sigInfo && p.sigInfo.slack) {
-      slackLink = '<a href="https://kubernetes.slack.com/messages/' + escapeHtml(p.sigInfo.slack) + '" class="btn-sm">Slack</a>';
-    }
-
-    var gfiLink = p.gfi_url ? '<a href="' + escapeHtml(p.gfi_url) + '" class="btn-sm">Good First Issues' + (p.gfi > 0 ? ' (' + p.gfi + ')' : '') + '</a>' : '';
-    var onboardingLink = p.onboarding_url ? '<a href="' + escapeHtml(p.onboarding_url) + '" class="btn-sm">Onboarding</a>' : '';
+    var slack = p.sigInfo && p.sigInfo.slack ? '<a href="https://kubernetes.slack.com/messages/' + escapeHtml(p.sigInfo.slack) + '" class="action-link">Slack</a>' : '';
+    var gfi = p.gfi_url ? '<a href="' + escapeHtml(p.gfi_url) + '" class="action-link">Good First Issues' + (p.gfi > 0 ? ' (' + p.gfi + ')' : '') + '</a>' : '';
+    var ob = p.onboarding_url ? '<a href="' + escapeHtml(p.onboarding_url) + '" class="action-link">Onboarding</a>' : '';
 
     return '<div class="project-card">' +
-      '<div class="card-head">' +
-        '<div><a href="https://github.com/' + escapeHtml(p.repo) + '" class="project-link">' + escapeHtml(p.repoName) + '</a></div>' +
-        '<div>' + ncoTag + lfTag + '</div>' +
-      '</div>' +
-      '<div class="card-sig">' + sigLink + '</div>' +
-      '<div class="tags-line">' + langBadges + skillBadges + '</div>' +
-      meetingLine +
-      '<div class="actions-line">' + gfiLink + onboardingLink + slackLink + '</div>' +
+      '<div class="card-head"><div><a href="https://github.com/' + escapeHtml(p.repo) + '" class="project-link">' + escapeHtml(p.repoName) + '</a></div><div>' + badgeHtml + '</div></div>' +
+      '<div class="card-sig">' + sigHtml + '</div>' +
+      '<div class="tags-line">' + langHtml + skillHtml + '</div>' +
+      meeting +
+      '<div class="actions-line">' + gfi + ob + slack + '</div>' +
     '</div>';
   }
 
-  function bindEvents() {
-    var ids = ['searchFilter', 'languageFilter', 'skillFilter', 'sigFilter', 'dayFilter', 'ncoFilter', 'riskFilter'];
-    ids.forEach(function(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      el.addEventListener('change', applyFilters);
-      if (el.type === 'text') el.addEventListener('input', debounce(applyFilters, 300));
+  function renderPagination(el, total) {
+    if (!el) return;
+    if (total <= 1) { el.innerHTML = ''; return; }
+
+    var html = '';
+
+    html += '<button class="page-btn" data-page="' + (currentPage - 1) + '"' + (currentPage <= 1 ? ' disabled' : '') + '>&#8592;</button>';
+
+    var pages = [];
+    if (total <= MAX_VISIBLE_PAGES) {
+      for (var i = 1; i <= total; i++) pages.push(i);
+    } else {
+      pages.push(1);
+      var startPage = Math.max(2, currentPage - 2);
+      var endPage = Math.min(total - 1, currentPage + 2);
+      if (startPage > 2) pages.push('...');
+      for (var i = startPage; i <= endPage; i++) pages.push(i);
+      if (endPage < total - 1) pages.push('...');
+      pages.push(total);
+    }
+
+    pages.forEach(function(p) {
+      if (p === '...') {
+        html += '<span class="page-dots">...</span>';
+      } else {
+        html += '<button class="page-btn' + (p === currentPage ? ' current' : '') + '" data-page="' + p + '">' + p + '</button>';
+      }
     });
 
-    var prev = document.getElementById('prevPage');
-    var next = document.getElementById('nextPage');
-    if (prev) prev.addEventListener('click', function() { if (currentPage > 1) { currentPage--; renderResults(); } });
-    if (next) next.addEventListener('click', function() { var total = Math.ceil(filteredProjects.length / PAGE_SIZE); if (currentPage < total) { currentPage++; renderResults(); } });
+    html += '<button class="page-btn" data-page="' + (currentPage + 1) + '"' + (currentPage >= total ? ' disabled' : '') + '>&#8594;</button>';
 
+    el.innerHTML = html;
+
+    el.querySelectorAll('.page-btn:not(.current):not(:disabled)').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var page = parseInt(this.getAttribute('data-page'));
+        if (page >= 1 && page <= total) {
+          currentPage = page;
+          renderResults();
+          document.getElementById('projectsGrid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  }
+
+  function bindPills() {
+    document.querySelectorAll('.pill').forEach(function(p) {
+      p.addEventListener('click', function() {
+        var group = this.getAttribute('data-filter');
+        var val = this.getAttribute('data-value');
+        if (!group) return;
+        setFilterVal(group, val);
+        applyFilters();
+      });
+    });
+
+    var searchInput = document.getElementById('searchFilter');
+    if (searchInput) {
+      searchInput.addEventListener('input', debounce(applyFilters, 250));
+    }
+  }
+
+  function bindClear() {
     var clearBtn = document.getElementById('clearFilters');
     var resetBtn = document.getElementById('resetFiltersBtn');
-    if (clearBtn) clearBtn.addEventListener('click', clearFilters);
-    if (resetBtn) resetBtn.addEventListener('click', clearFilters);
+    var cb = function() {
+      filters = { language: 'all', skill: 'all', sig: 'all', day: 'all', nco: false, risk: false };
+      var si = document.getElementById('searchFilter');
+      if (si) si.value = '';
+      applyFilters();
+    };
+    if (clearBtn) clearBtn.addEventListener('click', cb);
+    if (resetBtn) resetBtn.addEventListener('click', cb);
   }
 
-  function clearFilters() {
-    var el;
-    el = document.getElementById('searchFilter'); if (el) el.value = '';
-    el = document.getElementById('languageFilter'); if (el) el.value = 'all';
-    el = document.getElementById('skillFilter'); if (el) el.value = 'all';
-    el = document.getElementById('sigFilter'); if (el) el.value = 'all';
-    el = document.getElementById('dayFilter'); if (el) el.value = 'all';
-    el = document.getElementById('ncoFilter'); if (el) el.checked = false;
-    el = document.getElementById('riskFilter'); if (el) el.checked = false;
-    applyFilters();
-  }
-
-  function debounce(fn, ms) {
-    var timer;
-    return function() { clearTimeout(timer); timer = setTimeout(fn, ms); };
-  }
+  function debounce(fn, ms) { var t; return function() { clearTimeout(t); t = setTimeout(fn, ms); }; }
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
