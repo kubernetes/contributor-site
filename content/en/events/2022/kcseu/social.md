@@ -6,7 +6,7 @@ weight: 5
 
 # Contributor Social at La Casa Del Mar
 
-<img align="right" src="/events/2022/kcseu/casadelmar.jpg" width="30%">
+<img align="right" src="/events/2022/kcseu/casadelmar.jpg" width="30%" alt="La Casa de la Mar venue">
 
 From 6:30 to 8:30pm (and beyond), Kubernetes contributors will be schmoozing,
 eating, playing boardgames, and competing in a pub quiz at [La Casa Del Mar](https://lacasadelamar.com/espacios-patacona/), 
