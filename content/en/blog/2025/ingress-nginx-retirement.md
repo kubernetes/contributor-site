@@ -5,8 +5,8 @@ date: 2025-11-12T12:00:00-05:00
 slug: ingress-nginx-retirement
 author: >
   Tabitha Sable (Kubernetes SRC)
+description: "To prioritize the safety and security of the ecosystem, Kubernetes SIG Network and the Security Response Committee are announcing the upcoming..."
 ---
-
 To prioritize the safety and security of the ecosystem, Kubernetes SIG Network and the Security Response Committee are announcing the upcoming retirement of [Ingress NGINX](https://github.com/kubernetes/ingress-nginx/). Best-effort maintenance will continue until March 2026. Afterward, there will be no further releases, no bugfixes, and no updates to resolve any security vulnerabilities that may be discovered. **Existing deployments of Ingress NGINX will continue to function and installation artifacts will remain available.**
 
 We recommend migrating to one of the many alternatives. Consider [migrating to Gateway API](https://gateway-api.sigs.k8s.io/guides/), the modern replacement for Ingress. If you must continue using Ingress, many alternative Ingress controllers are [listed in the Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/). Continue reading for further information about the history and current state of Ingress NGINX, as well as next steps.

@@ -4,8 +4,8 @@ title: "Spotlight on SIG API Machinery"
 slug: sig-api-machinery-spotlight-2024
 date: 2024-08-07
 author: "Frederico Muñoz (SAS Institute)"
+description: "We recently talked with Federico Bongiovanni (Google) and [David Eads](https://github.com/deads2k) (Red Hat), Chairs of SIG API Machinery, to know..."
 ---
-
 We recently talked with [Federico Bongiovanni](https://github.com/fedebongio) (Google) and [David
 Eads](https://github.com/deads2k) (Red Hat), Chairs of SIG API Machinery, to know a bit more about
 this Kubernetes Special Interest Group.

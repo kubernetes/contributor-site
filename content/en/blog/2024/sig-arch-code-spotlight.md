@@ -4,8 +4,8 @@ title: "Spotlight on SIG Architecture: Code Organization"
 slug: sig-architecture-code-spotlight-2024
 date: 2024-04-11
 author: "Frederico Muñoz (SAS Institute)"
+description: "This is the third interview of a SIG Architecture Spotlight series that will cover the different subprojects. We will cover SIG Architecture: Code..."
 ---
-
 _This is the third interview of a SIG Architecture Spotlight series that will cover the different
 subprojects. We will cover [SIG Architecture: Code Organization](https://github.com/kubernetes/community/blob/e44c2c9d0d3023e7111d8b01ac93d54c8624ee91/sig-architecture/README.md#code-organization)._
 
