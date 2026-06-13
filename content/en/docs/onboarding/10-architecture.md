@@ -7,11 +7,11 @@ description: |
     and how to change it.
 ---
 
-# Section 10: Architecture and Enhancements
+## Section 10: Architecture and Enhancements
 
 ---
 
-# What you’re about to learn
+## What you’re about to learn
 
 We’re getting into the guts of Kubernetes now! After this module, you will:
 
@@ -21,7 +21,7 @@ We’re getting into the guts of Kubernetes now! After this module, you will:
 
 ---
 
-# Where are the architecture documents?
+## Where are the architecture documents?
 
 The good news is that the Kubernetes architecture is very well documented.
 
@@ -30,7 +30,7 @@ The good news is that the Kubernetes architecture is very well documented.
 
 ---
 
-# What are the components of a Kubernetes cluster?
+## What are the components of a Kubernetes cluster?
 
 A Kubernetes deployment is called a cluster. So what is it made of?
 
@@ -42,7 +42,7 @@ You can also learn [how they communicate with each other](https://kubernetes.io/
 
 ---
 
-# How are new features added to Kubernetes?
+## How are new features added to Kubernetes?
 
 New features are added through a process that begins with a [Kubernetes Enhancement Proposal](https://github.com/kubernetes/enhancements/blob/master/keps/README.md).
 
@@ -55,7 +55,7 @@ KEPs are required for most non-trivial changes. Specifically:
 
 ---
 
-# Who manages the Kubernetes Enhancement Proposal process?
+## Who manages the Kubernetes Enhancement Proposal process?
 
 First, we call it KEP for short. And second, the KEP process is managed by the Architecture Special Interest Group (SIG Architecture).
 

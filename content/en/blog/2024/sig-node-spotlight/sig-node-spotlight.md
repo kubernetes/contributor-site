@@ -21,7 +21,7 @@ who will shed some light on their roles, challenges, and the exciting developmen
 
 _Answers given collectively by all interviewees will be marked by their initials._
 
-## Introductions
+### Introductions
 
 **Arpit:** Thank you for joining us today. Could you please introduce yourselves and provide a brief
 overview of your roles within SIG Node?
@@ -42,7 +42,7 @@ search services. I have been contributing to the Kubernetes project in my free t
 Engine](https://cloud.google.com/kubernetes-engine) for 3 years and have worked on open-source
 projects for many years now. I am a chair of SIG Node.
 
-## Understanding SIG Node
+### Understanding SIG Node
 
 **Arpit:** Thank you! Could you provide our readers with an overview of SIG Node's responsibilities
 within the Kubernetes ecosystem?
@@ -70,7 +70,7 @@ is extremely expensive, every second of delayed operations can visibly change th
 computation.
 
 
-## Challenges and Opportunities
+### Challenges and Opportunities
 
 **Arpit:** What upcoming challenges and opportunities is SIG Node keeping an eye on?
 
@@ -116,7 +116,7 @@ finally graduated to GA (General Availability). I also enjoy seeing my contribut
 daily by contributors, such as the comment containing the GitHub tree hash used to retain LGTM
 despite squash commits.
 
-## Sidecar containers
+### Sidecar containers
 
 **Arpit:** Can you provide more context on the concept of sidecar containers and their evolution in
 the context of Kubernetes?
@@ -192,7 +192,7 @@ explicitly marked as sidecars. This approach ensures that existing applications 
 not be disrupted by the new feature, and provides a more streamlined way to define and manage
 sidecars.
 
-## Contributing to SIG Node
+### Contributing to SIG Node
 
 **Arpit:** What is the best place for the new members and especially beginners to contribute?
 
@@ -217,7 +217,7 @@ In addition to the Sidecar KEP, there are many other areas where SIG Node needs 
   function as intended across a variety of scenarios.
 
 
-# Conclusion
+## Conclusion
 
 In conclusion, SIG Node stands as a cornerstone in Kubernetes' journey, ensuring its reliability and
 adaptability in the ever-changing landscape of cloud-native computing. With dedicated members like

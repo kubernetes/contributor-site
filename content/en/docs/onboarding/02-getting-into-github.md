@@ -7,11 +7,11 @@ description: |
     with repositories there.
 ---
 
-# Section 2: Getting Into GitHub
+## Section 2: Getting Into GitHub
 
 ---
 
-# What you're about to learn
+## What you're about to learn
 
 The first step to being a Kubernetes contributor is getting into GitHub! After this unit, you will:
 
@@ -21,7 +21,7 @@ The first step to being a Kubernetes contributor is getting into GitHub! After t
 
 ---
 
-# What is GitHub?
+## What is GitHub?
 
 * GitHub is a web service for managing software development with Git.
 * It provides bug tracking, task management, hosted development environments, continuous integration, and [other important features](https://github.com/about).
@@ -31,7 +31,7 @@ Working with GitHub is straightforward, but if you are new to it, it can seem co
 
 ---
 
-# How does Kubernetes use GitHub?
+## How does Kubernetes use GitHub?
 
 As one of the largest open source projects with thousands of contributors, Kubernetes relies on GitHub for organization and sharing information.
 
@@ -42,7 +42,7 @@ As one of the largest open source projects with thousands of contributors, Kuber
 
 ---
 
-# How do I set up my GitHub account?
+## How do I set up my GitHub account?
 
 You _probably_ already have a GitHub account, but just in case:
 
@@ -51,7 +51,7 @@ You _probably_ already have a GitHub account, but just in case:
 
 ---
 
-# Which GitHub features will I use as a contributor?
+## Which GitHub features will I use as a contributor?
 
 Now it's time to learn all of these extra GitHub features.
 
@@ -63,7 +63,7 @@ Now it's time to learn all of these extra GitHub features.
 
 ---
 
-# What is a Contributor License Agreement (CLA)?
+## What is a Contributor License Agreement (CLA)?
 
 Once you are ready to contribute, you will have to jump through one small legal hoop, but we make it as easy as possible.
 
@@ -73,14 +73,14 @@ Once you are ready to contribute, you will have to jump through one small legal 
 
 ---
 
-# How do I sign a CLA?
+## How do I sign a CLA?
 
 * After you make your first pull request, a GitHub bot will walk you through the process.
 * The process is [outlined in the Community repository](https://github.com/kubernetes/community/blob/master/CLA.md).
 
 ---
 
-# Okay, you are ready to make your first pull request!
+## Okay, you are ready to make your first pull request!
 
 1. Visit the [Kubernetes Contributor Playground repository](https://github.com/kubernetes-sigs/contributor-playground).
 2. Use the "Fork" button in the upper right corner to fork the repository to your own account.
