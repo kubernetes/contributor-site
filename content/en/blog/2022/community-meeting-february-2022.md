@@ -3,8 +3,8 @@ layout: blog
 title: "February 2022 Community Meeting Highlights"
 date: 2022-05-05
 slug: community-meeting-februrary-2022
+description: "We just had our first contributor community meeting this year, and it was awesome to be back with you in that format. These meetings will be..."
 ---
-
 **Author:** Nigel Brown (VMware)
 
 We just had our first contributor community meeting this year, and it was awesome to be back with you 

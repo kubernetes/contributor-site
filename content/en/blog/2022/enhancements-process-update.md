@@ -3,8 +3,8 @@ layout: blog
 title: "Enhancements Opt-in Process Change for v1.26"
 date: 2022-09-09
 slug: enhancements-opt-in
+description: "Since the inception of the Kubernetes release team, we have used a spreadsheet to keep track of enhancements for the release. The project has..."
 ---
-
 **Author:** Grace Nguyen
 
 ## Context and Motivations

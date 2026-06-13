@@ -3,8 +3,8 @@ layout: blog
 title: "Enhancing Kubernetes one KEP at a Time"
 date: 2022-08-11
 slug: enhancing-kubernetes-one-kep-at-a-time
+description: "Did you know that Kubernetes v1.24 has 46 enhancements? That's a lot of new functionality packed into a 4-month release cycle. The Kubernetes..."
 ---
-
 **Author:** Ryler Hockenbury (Mastercard)
 
 Did you know that Kubernetes v1.24 has [46 enhancements](https://kubernetes.io/blog/2022/05/03/kubernetes-1-24-release-announcement/)? That's a lot of new functionality packed into a 4-month release cycle. The Kubernetes release team coordinates the logistics of the release, from remediating test flakes to publishing updated docs. It's a ton of work, but they always deliver.

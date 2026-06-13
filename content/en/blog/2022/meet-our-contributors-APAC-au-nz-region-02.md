@@ -3,8 +3,8 @@ layout: blog
 title: "Meet Our Contributors - APAC (Aus-NZ region)"
 date: 2022-03-14
 slug: meet-our-contributors-au-nz-ep-02
+description: "Good day, everyone 👋"
 ---
-
 **Authors & Interviewers:** [Anubhav Vardhan](https://github.com/anubha-v-ardhan), [Atharva Shinde](https://github.com/Atharva-Shinde), [Avinesh Tripathi](https://github.com/AvineshTripathi), [Brad McCoy](https://github.com/bradmccoydev), [Debabrata Panigrahi](https://github.com/Debanitrkl), [Jayesh Srivastava](https://github.com/jayesh-srivastava), [Kunal Verma](https://github.com/verma-kunal), [Pranshu Srivastava](https://github.com/PranshuSrivastava), [Priyanka Saggu](https://github.com/Priyankasaggu11929), [Purneswar Prasad](https://github.com/PurneswarPrasad), [Vedant Kakde](https://github.com/vedant-kakde)
 
 ---
