@@ -26,6 +26,14 @@ type Owners struct {
 	Reviewers []string `json:"reviewers"`
 }
 
+type TechStack struct {
+	Languages            []string `json:"languages"`
+	PrimaryLanguage      string   `json:"primary_language"`
+	SkillsNeeded         []string `json:"skills_needed"`
+	Difficulty           string   `json:"difficulty"`
+	GoodFirstIssueCount  int      `json:"good_first_issue_count"`
+}
+
 type RepoStats struct {
 	Repo               string         `json:"repo"`
 	CreatedAt          string         `json:"created_at"`
@@ -33,7 +41,7 @@ type RepoStats struct {
 	TotalPoints        int            `json:"total_points"`
 	Contributors       []Contribution `json:"contributors"`
 	LastUpdated        string         `json:"last_updated"`
-	TechStack          []string       `json:"tech_stack"`
+	TechStack          TechStack      `json:"tech_stack"`
 	Owners             Owners         `json:"owners"`
 	OnboardingURL      string         `json:"onboarding_url"`
 	OwnersURL          string         `json:"owners_url"`
@@ -358,6 +366,8 @@ func getRepoStats(fullRepo string, since time.Time) RepoStats {
 
 	techStack := getTechStack(owner, repo, branch)
 	owners := getOwnersMetadata(owner, repo, branch)
+	gfiCount := countGoodFirstIssues(owner, repo)
+	techStack.GoodFirstIssueCount = gfiCount
 
 	onboardingUrl := fmt.Sprintf("https://github.com/%s/blob/%s/CONTRIBUTING.md", fullRepo, branch)
 	ownersUrl := fmt.Sprintf("https://github.com/%s/blob/%s/OWNERS", fullRepo, branch)
@@ -385,6 +395,27 @@ func getRepoStats(fullRepo string, since time.Time) RepoStats {
 		IssuesURL:          fmt.Sprintf("https://github.com/%s/issues", fullRepo),
 		GoodFirstIssuesURL: fmt.Sprintf("https://github.com/%s/issues?q=is%%3Aissue+is%%3Aopen+label%%3A%%22good+first+issue%%22", fullRepo),
 	}
+}
+
+func countGoodFirstIssues(owner, repo string) int {
+	opts := &github.IssueListByRepoOptions{
+		Labels:      []string{"good first issue"},
+		State:       "open",
+		ListOptions: github.ListOptions{PerPage: 100},
+	}
+	count := 0
+	for {
+		issues, resp, err := client.Issues.ListByRepo(ctx, owner, repo, opts)
+		if err != nil {
+			break
+		}
+		count += len(issues)
+		if resp.NextPage == 0 {
+			break
+		}
+		opts.Page = resp.NextPage
+	}
+	return count
 }
 
 func isBot(author string) bool {
@@ -443,16 +474,18 @@ func getOwnersMetadata(owner, repo, branch string) Owners {
 	return Owners{Approvers: finalAppr, Reviewers: finalRev}
 }
 
-func getTechStack(owner, repo, branch string) []string {
+func getTechStack(owner, repo, branch string) TechStack {
 	stackMap := make(map[string]bool)
+	skillsMap := make(map[string]bool)
+	var languages []string
 
+	// 1. Topics → Skills
 	r, _, err := client.Repositories.Get(ctx, owner, repo)
-	if err != nil || r == nil {
-		return nil
-	}
-	for _, t := range r.Topics {
-		if t != "" && t != "kubernetes" && !strings.Contains(t, "sig-") && !strings.Contains(t, "k8s-") {
-			stackMap[strings.Title(t)] = true
+	if err == nil && r != nil {
+		for _, t := range r.Topics {
+			if t != "" && t != "kubernetes" && !strings.Contains(t, "sig-") && !strings.Contains(t, "k8s-") {
+				skillsMap[strings.Title(t)] = true
+			}
 		}
 	}
 
@@ -473,8 +506,9 @@ func getTechStack(owner, repo, branch string) []string {
 		return sortedLangs[i].size > sortedLangs[j].size
 	})
 
-	// Add top 3 languages regardless of priority
+	// Collect top 3 languages
 	for i := 0; i < len(sortedLangs) && i < 3; i++ {
+		languages = append(languages, sortedLangs[i].name)
 		stackMap[sortedLangs[i].name] = true
 	}
 
@@ -483,51 +517,72 @@ func getTechStack(owner, repo, branch string) []string {
 	if err == nil {
 		content, _ := goMod.GetContent()
 		if strings.Contains(content, "sigs.k8s.io/controller-runtime") {
-			stackMap["Operator"] = true
+			skillsMap["Operator"] = true
 		} else if strings.Contains(content, "k8s.io/client-go") {
-			stackMap["Controller"] = true
+			skillsMap["Controller"] = true
 		}
 		
 		if strings.Contains(content, "github.com/spf13/cobra") {
-			stackMap["CLI Tool"] = true
+			skillsMap["CLI Tool"] = true
 		}
 		if strings.Contains(content, "github.com/prometheus/client_golang") {
-			stackMap["Metrics"] = true
+			skillsMap["Metrics"] = true
 		}
 		if strings.Contains(content, "github.com/onsi/ginkgo") {
-			stackMap["E2E Tested"] = true
+			skillsMap["E2E Tested"] = true
 		}
 		if strings.Contains(content, "k8s.io/code-generator") {
-			stackMap["API Machinery"] = true
+			skillsMap["API Machinery"] = true
 		}
 	}
 
 	_, _, _, err = client.Repositories.GetContents(ctx, owner, repo, "hugo.yaml", &github.RepositoryContentGetOptions{Ref: branch})
-	if err == nil { stackMap["Hugo"] = true }
+	if err == nil { skillsMap["Hugo"] = true }
 	
 	pkgJson, _, _, err := client.Repositories.GetContents(ctx, owner, repo, "package.json", &github.RepositoryContentGetOptions{Ref: branch})
 	if err == nil {
 		content, _ := pkgJson.GetContent()
 		if strings.Contains(content, "docsy") {
-			stackMap["Docsy"] = true
+			skillsMap["Docsy"] = true
 		}
 	}
 
-	var result []string
-	priority := []string{"Operator", "CLI Tool", "API Machinery", "Hugo", "Docsy", "Metrics", "E2E Tested", "Python", "Go", "TypeScript", "Docker"}
-	for _, p := range priority {
-		if stackMap[p] {
-			result = append(result, p)
-			delete(stackMap, p)
+	// Extract remaining skills from stackMap (anything that isn't a language)
+	var skills []string
+	for k := range skillsMap {
+		if !stackMap[k] {
+			skills = append(skills, k)
 		}
 	}
+	sort.Strings(skills)
 
-	var remaining []string
-	for k := range stackMap { remaining = append(remaining, k) }
-	sort.Strings(remaining)
-	result = append(result, remaining...)
+	// Determine difficulty
+	difficulty := "intermediate"
+	if len(languages) > 0 {
+		switch languages[0] {
+		case "Go":
+			if len(languages) > 1 {
+				difficulty = "advanced"
+			}
+		case "Python", "JavaScript", "TypeScript":
+			difficulty = "beginner"
+		case "Shell", "Bash", "Docker":
+			difficulty = "beginner"
+		}
+	}
+	if len(skillsMap) > 5 {
+		difficulty = "advanced"
+	}
 
-	if len(result) == 0 { return []string{"Documentation"} }
-	if len(result) > 5 { return result[:5] }
-	return result
+	primaryLanguage := ""
+	if len(languages) > 0 {
+		primaryLanguage = languages[0]
+	}
+
+	return TechStack{
+		Languages:       languages,
+		PrimaryLanguage: primaryLanguage,
+		SkillsNeeded:    skills,
+		Difficulty:      difficulty,
+	}
 }

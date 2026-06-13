@@ -1,13 +1,12 @@
 {{ $showNCOOnly := .Get "ncoOnly" }}
 {{ $title := .Get "title" | default "Call for Help" }}
 
-<div class="call-for-help-container my-4">
+<div class="call-for-help-container">
   {{ if $title }}
   <h2>{{ $title }}</h2>
   {{ end }}
-
   <div id="callForHelpDashboard" class="call-for-help-dashboard">
-    <p class="loading">Loading Call for Help requests...</p>
+    <p class="loading">Loading...</p>
   </div>
 </div>
 
@@ -18,30 +17,10 @@
 <script src="{{ $js.RelPermalink }}"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const showNCOOnly = {{ $showNCOOnly }};
-    const dashboard = document.getElementById('callForHelpDashboard');
-
-    if (showNCOOnly) {
-      window.initCallForHelpDashboard('callForHelpDashboard').then(function(issues) {
-        const ncoIssues = issues.filter(function(i) { return i.hasNCO; });
-        displayIssues(ncoIssues);
-      });
-    } else {
-      window.initCallForHelpDashboard('callForHelpDashboard');
-    }
-  });
-
-  function displayIssues(issues) {
-    const dashboard = document.getElementById('callForHelpDashboard');
-    if (!issues || issues.length === 0) {
-      dashboard.innerHTML = '<p class="no-requests">No active requests.</p>';
-      return;
-    }
-    dashboard.innerHTML = '';
-    issues.forEach(function(issue) {
-      const card = window.createProjectCard(issue);
-      dashboard.appendChild(card);
-    });
-  }
+window.lotteryFactorData = {{ site.Data.lottery_factor.repo_data | jsonify }};
+window.lotteryFactorSigs = {{ site.Data.lottery_factor.sigs | jsonify }};
+window.showNCOOnly = {{ $showNCOOnly }};
+document.addEventListener('DOMContentLoaded', function() {
+  window.initCallForHelpDashboard('callForHelpDashboard');
+});
 </script>

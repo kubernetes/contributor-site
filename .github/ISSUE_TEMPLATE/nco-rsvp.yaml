@@ -1,0 +1,30 @@
+name: New Contributor Orientation RSVP
+description: Request to attend or be notified about the upcoming New Contributor Orientation
+title: "[NCO RSVP] <Your Name> - <Month>"
+labels:
+  - sig-contribex-nco-rsvp
+body:
+  - type: markdown
+    value: |
+      Thank you for your interest in attending the Kubernetes New Contributor Orientation (NCO)!
+      Please fill in the details below.
+  - type: input
+    id: github-username
+    label: GitHub Username
+    placeholder: "@username"
+    required: true
+  - type: dropdown
+    id: session
+    label: Preferred Session
+    description: Which session timezone works best for you?
+    options:
+      - "EMEA/APAC-friendly (1:30 PT / 8:30 UTC / 14:00 IST)"
+      - "AMER-friendly (8:30 PT / 15:30 UTC / 21:00 IST)"
+      - "Either / Unsure"
+    required: true
+  - type: checkboxes
+    id: notifications
+    label: Notifications
+    options:
+      - label: Yes, please send me calendar invites and event reminders
+        required: true

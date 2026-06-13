@@ -1,242 +1,147 @@
-// Call for Help integration for Community Resilience Dashboard
-// Fetches issues labeled 'call-for-help-approved' from GitHub API
-
 (function() {
   'use strict';
 
-  const GITHUB_API = 'https://api.github.com';
-  const REPO_OWNER = 'kubernetes';
-  const REPO_NAME = 'contributor-site';
-  const APPROVED_LABEL = 'call-for-help-approved';
-  const NCO_LABELS = ['sig-contribex-nco'];
+  var SAMPLE_PROJECTS = [
+    { repo: 'kubernetes-sigs/kind', sigs: ['SIG Testing'], lang: ['Go', 'Shell'], skills: ['testing', 'containers'], lf: 2, gfi: 12, onboarding_url: 'https://github.com/kubernetes-sigs/kind/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/kind/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/gateway-api', sigs: ['SIG Network'], lang: ['Go', 'YAML'], skills: ['networking', 'api-design'], lf: 3, gfi: 8, onboarding_url: 'https://github.com/kubernetes-sigs/gateway-api/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/gateway-api/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/krew-index', sigs: ['SIG CLI'], lang: ['YAML', 'Shell'], skills: ['documentation', 'packaging'], lf: 1, gfi: 15, onboarding_url: 'https://github.com/kubernetes-sigs/krew-index/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/krew-index/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/security-profiles-operator', sigs: ['SIG Node'], lang: ['Go'], skills: ['security'], lf: 1, gfi: 6, onboarding_url: 'https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/security-profiles-operator/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/metrics-server', sigs: ['SIG Instrumentation'], lang: ['Go'], skills: ['metrics'], lf: 2, gfi: 3, onboarding_url: 'https://github.com/kubernetes-sigs/metrics-server/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/metrics-server/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/external-dns', sigs: ['SIG Network'], lang: ['Go'], skills: ['dns', 'cloud'], lf: 2, gfi: 10, onboarding_url: 'https://github.com/kubernetes-sigs/external-dns/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/external-dns/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/cluster-api', sigs: ['SIG Cluster Lifecycle'], lang: ['Go', 'Python'], skills: ['infrastructure'], lf: 5, gfi: 20, onboarding_url: 'https://github.com/kubernetes-sigs/cluster-api/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/cluster-api/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/kubectl-validate', sigs: ['SIG CLI'], lang: ['Go'], skills: ['cli', 'validation'], lf: 3, gfi: 5, onboarding_url: 'https://github.com/kubernetes-sigs/kubectl-validate/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/kubectl-validate/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/descheduler', sigs: ['SIG Scheduling'], lang: ['Go'], skills: ['scheduling'], lf: 3, gfi: 7, onboarding_url: 'https://github.com/kubernetes-sigs/descheduler/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/descheduler/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+    { repo: 'kubernetes-sigs/node-feature-discovery', sigs: ['SIG Node'], lang: ['Go', 'Shell'], skills: ['hardware', 'discovery'], lf: 4, gfi: 4, onboarding_url: 'https://github.com/kubernetes-sigs/node-feature-discovery/blob/main/CONTRIBUTING.md', gfi_url: 'https://github.com/kubernetes-sigs/node-feature-discovery/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22' },
+  ];
 
-  const RequestType = {
-    REVIEWERS: 'Reviewers',
-    MAINTAINERS: 'Maintainers',
-    SECURITY: 'Security',
-    MENTORSHIP: 'Mentorship',
-    OTHER: 'Other'
-  };
-
-  function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+  function escapeHtml(t) {
+    var d = document.createElement('div'); d.textContent = t; return d.innerHTML;
   }
 
-  async function fetchCallForHelpIssues() {
-    try {
-      // Fetch only approved issues
-      const url = `${GITHUB_API}/repos/${REPO_OWNER}/${REPO_NAME}/issues?labels=${APPROVED_LABEL}&state=open&per_page=50`;
-      const response = await fetch(url);
+  function hasRealData(data) {
+    if (!data || data.length === 0) return false;
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].lottery_factor > 0 && data[i].total_points > 0) return true;
+    }
+    return false;
+  }
 
-      if (!response.ok) {
-        console.error('Failed to fetch Call for Help issues:', response.status);
-        return [];
+  function buildProjects() {
+    var data = window.lotteryFactorData;
+    var projects = [];
+
+    if (hasRealData(data)) {
+      for (var i = 0; i < data.length; i++) {
+        var r = data[i];
+        if (r.lottery_factor > 0) {
+          var ts = r.tech_stack || {};
+          projects.push({
+            repo: r.repo,
+            repoName: r.repo.split('/')[1],
+            sig: (r.sigs || [])[0] || '',
+            lang: ts.languages || [],
+            skills: ts.skills_needed || [],
+            lf: r.lottery_factor,
+            gfi: ts.good_first_issue_count || 0,
+            onboarding_url: r.onboarding_url || '',
+            gfi_url: r.good_first_issues_url || '',
+          });
+        }
       }
-
-      const issues = await response.json();
-      return issues.filter(issue => !issue.pull_request);
-    } catch (error) {
-      console.error('Error fetching Call for Help issues:', error);
-      return [];
-    }
-  }
-
-  function parseRequestType(body) {
-    const types = [];
-    const lowerBody = body.toLowerCase();
-
-    if (lowerBody.includes('reviewer')) types.push(RequestType.REVIEWERS);
-    if (lowerBody.includes('maintainer')) types.push(RequestType.MAINTAINERS);
-    if (lowerBody.includes('security')) types.push(RequestType.SECURITY);
-    if (lowerBody.includes('mentorship') || lowerBody.includes('mentor')) types.push(RequestType.MENTORSHIP);
-    if (lowerBody.includes('other')) types.push(RequestType.OTHER);
-
-    return types.length > 0 ? types : [RequestType.OTHER];
-  }
-
-  function extractProjectInfo(issue) {
-    const title = issue.title;
-    const body = issue.body || '';
-
-    const projectMatch = title.match(/\[Call for Help\]\s*([^:]+):/);
-    const project = projectMatch ? projectMatch[1].trim() : title;
-
-    const labels = issue.labels.map(l => l.name);
-    const hasNCO = NCO_LABELS.some(l => labels.includes(l));
-
-    return {
-      number: issue.number,
-      title: issue.title,
-      project: project,
-      url: issue.html_url,
-      requestType: parseRequestType(body),
-      hasNCO: hasNCO,
-      createdAt: new Date(issue.created_at),
-      labels: labels,
-      state: issue.state
-    };
-  }
-
-  function createProjectCard(issue) {
-    const daysSinceCreated = Math.floor((Date.now() - issue.createdAt.getTime()) / (1000 * 60 * 60 * 24));
-    const isStale = daysSinceCreated > 90;
-
-    const card = document.createElement('div');
-    card.className = `call-for-help-card${isStale ? ' stale' : ''}${issue.hasNCO ? ' nco-featured' : ''}`;
-
-    // Header
-    const header = document.createElement('div');
-    header.className = 'card-header';
-
-    const titleWrapper = document.createElement('h4');
-    titleWrapper.className = 'project-name';
-
-    const link = document.createElement('a');
-    link.href = issue.url;
-    link.target = '_blank';
-    link.rel = 'noopener';
-    link.textContent = issue.project;
-
-    titleWrapper.appendChild(link);
-
-    if (issue.hasNCO) {
-      const ncoBadge = document.createElement('span');
-      ncoBadge.className = 'nco-badge';
-      ncoBadge.textContent = 'NCO';
-      titleWrapper.appendChild(ncoBadge);
     }
 
-    const typeSpan = document.createElement('span');
-    typeSpan.className = 'request-type';
-    typeSpan.textContent = issue.requestType.join(', ');
-
-    header.appendChild(titleWrapper);
-    header.appendChild(typeSpan);
-
-    // Body
-    const body = document.createElement('div');
-    body.className = 'card-body';
-
-    const titlePara = document.createElement('p');
-    titlePara.className = 'issue-title';
-    titlePara.textContent = issue.title;
-
-    const metaDiv = document.createElement('div');
-    metaDiv.className = 'card-meta';
-
-    const numberSpan = document.createElement('span');
-    numberSpan.className = 'issue-number';
-    numberSpan.textContent = '#' + issue.number;
-
-    const dateSpan = document.createElement('span');
-    dateSpan.className = 'created-date';
-    dateSpan.textContent = daysSinceCreated + ' days ago';
-
-    metaDiv.appendChild(numberSpan);
-    metaDiv.appendChild(dateSpan);
-
-    if (isStale) {
-      const staleBadge = document.createElement('span');
-      staleBadge.className = 'stale-badge';
-      staleBadge.textContent = 'Stale';
-      metaDiv.appendChild(staleBadge);
+    if (projects.length === 0) {
+      projects = SAMPLE_PROJECTS.map(function(s) {
+        return {
+          repo: s.repo,
+          repoName: s.repo.split('/')[1],
+          sig: (s.sigs || [])[0] || '',
+          lang: s.lang || [],
+          skills: s.skills || [],
+          lf: s.lf,
+          gfi: s.gfi,
+          onboarding_url: s.onboarding_url || '',
+          gfi_url: s.gfi_url || '',
+        };
+      });
     }
 
-    body.appendChild(titlePara);
-    body.appendChild(metaDiv);
-
-    // Footer
-    const footer = document.createElement('div');
-    footer.className = 'card-footer';
-
-    // Fix malformed Good First Issues URL
-    const baseUrl = issue.url.replace(/\/issues\/\d+$/, '');
-
-    const viewBtn = document.createElement('a');
-    viewBtn.href = issue.url;
-    viewBtn.className = 'btn btn-sm btn-outline-primary';
-    viewBtn.target = '_blank';
-    viewBtn.rel = 'noopener';
-    viewBtn.textContent = 'View Issue';
-
-    const gfiBtn = document.createElement('a');
-    gfiBtn.href = baseUrl + '?q=is%3Aissue+is%3Aopen+label%3Agood-first-issue';
-    gfiBtn.className = 'btn btn-sm btn-outline-secondary';
-    gfiBtn.target = '_blank';
-    gfiBtn.rel = 'noopener';
-    gfiBtn.textContent = 'Good First Issues';
-
-    footer.appendChild(viewBtn);
-    footer.appendChild(gfiBtn);
-
-    // Append all sections
-    card.appendChild(header);
-    card.appendChild(body);
-    card.appendChild(footer);
-
-    return card;
+    projects.sort(function(a, b) { return a.lf - b.lf; });
+    return projects;
   }
 
-  async function initCallForHelpDashboard(containerId) {
-    const container = document.getElementById(containerId);
+  function renderCard(p, isNCO) {
+    var ncoTag = isNCO ? '<span class="nco-tag">NCO</span>' : '';
+    var lfTag = p.lf > 0 ? '<span class="risk-tag">LF ' + p.lf + '</span>' : '';
+    var langBadges = p.lang.map(function(l) { return '<span class="tag">' + escapeHtml(l) + '</span>'; }).join('');
+    var skillBadges = p.skills.map(function(s) { return '<span class="tag-outline">' + escapeHtml(s) + '</span>'; }).join('');
+    var gfiLink = p.gfi_url ? '<a href="' + escapeHtml(p.gfi_url) + '" class="btn-sm">Good First Issues' + (p.gfi > 0 ? ' (' + p.gfi + ')' : '') + '</a>' : '';
+    var onboardingLink = p.onboarding_url ? '<a href="' + escapeHtml(p.onboarding_url) + '" class="btn-sm">Onboarding</a>' : '';
+
+    return '<div class="call-for-help-card' + (isNCO ? ' nco-featured' : '') + '">' +
+      '<div class="card-row top-row">' +
+        '<h4 class="project-name"><a href="https://github.com/' + escapeHtml(p.repo) + '" class="project-link">' + escapeHtml(p.repoName) + '</a>' + ncoTag + '</h4>' +
+        '<span class="request-type">' + p.sig + '  ' + lfTag + '</span>' +
+      '</div>' +
+      '<div class="card-row">' + langBadges + skillBadges + '</div>' +
+      '<div class="card-row actions">' + gfiLink + onboardingLink + '</div>' +
+    '</div>';
+  }
+
+  function init(containerId) {
+    var container = document.getElementById(containerId);
     if (!container) return;
 
-    container.innerHTML = '<div class="loading">Loading Call for Help requests...</div>';
-
-    const issues = await fetchCallForHelpIssues();
-    const parsed = issues.map(extractProjectInfo);
-
-    if (parsed.length === 0) {
-      container.innerHTML = `
-        <div class="no-requests">
-          <p>No active Call for Help requests at this time.</p>
-          <p class="help-text">
-            SIG Chairs and Tech Leads can
-            <a href="https://github.com/${REPO_OWNER}/${REPO_NAME}/issues/new?template=call-for-help.yaml" target="_blank" rel="noopener">
-              create a request
-            </a>
-            if their project needs assistance.
-          </p>
-        </div>
-      `;
+    var projects = buildProjects();
+    if (projects.length === 0) {
+      container.innerHTML = '';
       return;
     }
 
-    const ncoProjects = parsed.filter(p => p.hasNCO);
-    const otherProjects = parsed.filter(p => !p.hasNCO);
+    var ncoThreshold = Math.min(3, Math.ceil(projects.length / 3));
+    var ncoProjects = [];
+    var otherProjects = [];
 
-    let html = '<div class="call-for-help-section">';
-
-    if (ncoProjects.length > 0) {
-      html += `
-        <div class="nco-projects">
-          <h3>New Contributor Orientation Featured Projects</h3>
-          <p class="section-desc">These projects are looking for new contributors!</p>
-          <div class="projects-grid">
-            ${ncoProjects.map(p => createProjectCard(p).outerHTML).join('')}
-          </div>
-        </div>
-      `;
+    for (var i = 0; i < projects.length; i++) {
+      if (i < ncoThreshold && projects[i].lf <= 2) {
+        ncoProjects.push(projects[i]);
+      } else {
+        otherProjects.push(projects[i]);
+      }
     }
 
-    if (otherProjects.length > 0) {
-      html += `
-        <div class="other-projects">
-          <h3>Projects Needing Assistance</h3>
-          <div class="projects-grid">
-            ${otherProjects.map(p => createProjectCard(p).outerHTML).join('')}
-          </div>
-        </div>
-      `;
+    var html = '';
+
+    if (window.showNCOOnly && ncoProjects.length > 0) {
+      html += '<h3 class="section-title">Featured in New Contributor Orientation</h3>';
+      html += '<p class="section-desc">These projects are ready for new contributors.</p>';
+      html += '<div class="projects-grid">';
+      for (var j = 0; j < ncoProjects.length; j++) html += renderCard(ncoProjects[j], true);
+      html += '</div>';
     }
 
-    html += '</div>';
+    if (!window.showNCOOnly) {
+      if (ncoProjects.length > 0) {
+        html += '<p class="section-desc">Featured in New Contributor Orientation</p>';
+        html += '<div class="projects-grid">';
+        for (var j = 0; j < ncoProjects.length; j++) html += renderCard(ncoProjects[j], true);
+        html += '</div>';
+      }
+      if (otherProjects.length > 0) {
+        html += '<p class="section-desc">Projects needing contributors</p>';
+        html += '<div class="projects-grid">';
+        for (var j = 0; j < otherProjects.length; j++) html += renderCard(otherProjects[j], false);
+        html += '</div>';
+      }
+    }
+
+    if (html === '') {
+      container.innerHTML = '';
+      return;
+    }
+
     container.innerHTML = html;
   }
 
-  window.initCallForHelpDashboard = initCallForHelpDashboard;
-  window.fetchCallForHelpIssues = fetchCallForHelpIssues;
-
+  window.initCallForHelpDashboard = init;
 })();

@@ -1,130 +1,134 @@
-.call-for-help-section {
-  margin: 2rem 0;
+.call-for-help-container {
+  margin: 1.5rem 0;
 }
 
-.call-for-help-section h3 {
-  margin-bottom: 0.5rem;
-  color: var(--bs-body-color);
+.call-for-help-container h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.25rem;
 }
 
 .section-desc {
-  margin-bottom: 1.5rem;
-  color: var(--bs-secondary-color);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .call-for-help-card {
-  border: 1px solid var(--bs-border-color);
-  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   padding: 1rem;
-  background: var(--bs-body-bg);
-  transition: box-shadow 0.2s ease;
-}
-
-.call-for-help-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.call-for-help-card.stale {
-  border-color: var(--bs-warning);
-  opacity: 0.8;
+  background: #fff;
 }
 
 .call-for-help-card.nco-featured {
-  border-left: 4px solid var(--bs-success);
+  border-left: 3px solid #555;
 }
 
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.75rem;
+.call-for-help-card.stale {
+  opacity: 0.6;
 }
 
 .project-name {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.project-name a {
-  text-decoration: none;
-}
-
-.nco-badge {
-  display: inline-block;
-  background: var(--bs-success);
-  color: white;
-  font-size: 0.7rem;
-  padding: 0.15rem 0.4rem;
-  border-radius: 0.25rem;
-  margin-left: 0.5rem;
-  vertical-align: middle;
-}
-
-.request-type {
-  font-size: 0.85rem;
-  color: var(--bs-secondary-color);
-  background: var(--bs-tertiary-bg);
-  padding: 0.2rem 0.5rem;
-  border-radius: 0.25rem;
-}
-
-.card-body {
-  margin-bottom: 1rem;
-}
-
-.issue-title {
-  font-size: 0.9rem;
-  color: var(--bs-body-color);
-  margin-bottom: 0.5rem;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.card-meta {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.8rem;
-  color: var(--bs-secondary-color);
-}
-
-.stale-badge {
-  color: var(--bs-warning);
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
   font-weight: 600;
 }
 
-.card-footer {
+.project-link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.project-link:hover {
+  color: #000;
+}
+
+.nco-tag {
+  display: inline-block;
+  border: 1px solid #555;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  font-weight: normal;
+}
+
+.card-row {
+  margin-bottom: 0.5rem;
+}
+
+.top-row {
   display: flex;
-  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.card-footer .btn {
+.request-type {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.issue-title {
   font-size: 0.85rem;
+  margin-bottom: 0.3rem;
 }
 
-.no-requests {
-  text-align: center;
-  padding: 2rem;
-  background: var(--bs-tertiary-bg);
-  border-radius: 0.5rem;
+.meta {
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.no-requests .help-text {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  color: var(--bs-secondary-color);
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
 }
 
+.btn-sm {
+  font-size: 0.85rem;
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn-sm:hover {
+  color: #000;
+}
+
+.no-requests,
 .loading {
   text-align: center;
   padding: 2rem;
-  color: var(--bs-secondary-color);
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .top-row {
+    flex-direction: column;
+  }
+  .request-type {
+    white-space: normal;
+    margin-top: 0.25rem;
+  }
 }

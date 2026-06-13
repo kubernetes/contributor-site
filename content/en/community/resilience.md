@@ -1,29 +1,46 @@
 ---
 title: Community Resilience Dashboard
 linkTitle: Resilience Dashboard
-description: Visualizing the "Lottery Factor" (Bus Factor) across Kubernetes subprojects.
+description: See which Kubernetes projects might be in trouble and where you can help.
 ---
 
 {{< lottery-factor >}}
 
-## About the Lottery Factor
-The "Lottery Factor" (traditionally known as the Bus Factor) represents the minimum number of maintainers who, if they were to win the lottery and leave the project tomorrow, would result in the loss of >50% of the project's institutional knowledge and activity.
+## The Lottery Factor
 
-### How it is calculated
-Our Go-based ingestion engine analyzes activity from the last 6 months across repositories maintained by **SIG Contributor Experience**:
-- **Commits:** Direct code contributions.
-- **Pull Requests:** Review and authoring activity.
-- **Issues:** Participation in triage and discussion.
+Here's the basic idea. Some projects depend heavily on a small group of people. If a couple of key maintainers won the lottery and disappeared tomorrow, that project would be in trouble. We call that the "Lottery Factor" (some people call it the bus factor). A low number means higher risk.
 
-### Understanding the Visualization
-- **Size of boxes:** Represents the total activity (points) in that subproject/repository.
-- **Color:** Indicates the Lottery Factor.
-    - <span style="color: #dc3545; font-weight: bold;">Red (LF <= 2):</span> High Risk - Single Point of Failure.
-    - <span style="color: #ffc107; font-weight: bold;">Yellow (LF 3-4):</span> Moderate Risk.
-    - <span style="color: #28a745; font-weight: bold;">Green (LF >= 5):</span> Healthy distribution.
+### How we measure it
 
-### Take Action
-If you see a project with a high risk (low Lottery Factor), it's a great opportunity to get involved!
-- Check out the [Good First Issues](https://github.com/kubernetes/community/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3A%22good+first+issue%22).
-- Read our [SIG Onboarding Guides](/docs/onboarding/).
-- Join the `#sig-contribex` channel on Slack to learn how you can help.
+We look at activity over the last 6 months in repositories managed by SIG Contributor Experience:
+
+- **Commits** — who's writing code.
+- **Pull requests** — who's reviewing and authoring.
+- **Issues** — who's triaging and discussing.
+
+### How to read the treemap
+
+- **Box size** shows total activity in that repo or subproject.
+- **Color** shows the Lottery Factor.
+  - **LF of 1 or 2** means high risk. A single person leaving could cripple things.
+  - **LF of 3 or 4** means moderate risk.
+  - **LF of 5 or more** means the knowledge is spread out. Healthier.
+
+## Projects That Need Your Help
+
+The projects below are looking for contributors:
+
+{{< call-for-help title="Projects Calling for Help" >}}
+
+### What can you do?
+
+If a project has a low Lottery Factor, that's a sign. It means your contribution would matter more there.
+
+- Browse all projects on the [Help Wanted Dashboard](/community/help-wanted/) and filter by language, skills, or meeting time.
+- Check out [Good First Issues](https://github.com/kubernetes/community/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22+label%3A%22good+first+issue%22) across Kubernetes.
+- Read the [SIG Onboarding Guides](/docs/onboarding/).
+- Join `#sig-contribex` on Slack and ask around.
+
+### You're a SIG lead?
+
+If your project is short on people, [file a Call for Help request](https://github.com/kubernetes/contributor-site/issues/new?template=call-for-help.yaml). It will show up on this page and in New Contributor Orientation sessions.

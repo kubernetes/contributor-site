@@ -1,0 +1,147 @@
+{{ $lotteryData := site.Data.lottery_factor.repo_data }}
+{{ $sigsData := site.Data.lottery_factor.sigs }}
+
+{{/* Fetch full sigs.yaml for meeting/contact info */}}
+{{ $defaultBranch := "main" }}
+{{ $sigsYamlUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch }}
+{{ $opts := dict }}
+{{ with os.Getenv "HUGO_GITHUB_TOKEN" }}
+  {{ $opts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) }}
+{{ end }}
+{{ $cacheOpts := dict "key" "sigs-yaml-full" }}
+{{ $opts = merge $opts $cacheOpts }}
+{{ $sigsYamlData := dict }}
+{{ with resources.GetRemote $sigsYamlUrl $opts }}
+  {{ with .Err }}
+    {{ warnf "Unable to load sigs.yaml for help-wanted: %s" . }}
+  {{ else }}
+    {{ with .Content | transform.Unmarshal }}
+      {{ $sigsYamlData = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Extract unique languages for the filter dropdown */}}
+{{ $languages := slice }}
+{{ range $lotteryData }}
+  {{ if .tech_stack }}
+    {{ range .tech_stack.languages }}
+      {{ if not (in $languages .) }}
+        {{ $languages = $languages | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $languages = sort $languages }}
+
+{{/* Extract unique skills for the filter dropdown */}}
+{{ $allSkills := slice }}
+{{ range $lotteryData }}
+  {{ if .tech_stack }}
+    {{ range .tech_stack.skills_needed }}
+      {{ if not (in $allSkills .) }}
+        {{ $allSkills = $allSkills | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $allSkills = sort $allSkills }}
+
+{{/* Extract unique SIGs for the filter dropdown */}}
+{{ $sigs := slice }}
+{{ range $sigsData }}
+  {{ $sigs = $sigs | append .name }}
+{{ end }}
+{{ $sigs = sort $sigs }}
+
+<div class="help-wanted-dashboard">
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-row">
+      <div class="filter-field">
+        <label for="searchFilter">Search</label>
+        <input type="text" id="searchFilter" placeholder="Project, SIG, or skill...">
+      </div>
+      <div class="filter-field">
+        <label for="languageFilter">Language</label>
+        <select id="languageFilter">
+          <option value="all">All</option>
+          {{ range $languages }}
+          <option value="{{ . }}">{{ . }}</option>
+          {{ end }}
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="skillFilter">Skill</label>
+        <select id="skillFilter">
+          <option value="all">All</option>
+          {{ range $allSkills }}
+          <option value="{{ . }}">{{ . }}</option>
+          {{ end }}
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="sigFilter">SIG</label>
+        <select id="sigFilter">
+          <option value="all">All</option>
+          {{ range $sigs }}
+          <option value="{{ . }}">{{ . }}</option>
+          {{ end }}
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="dayFilter">Meeting Day</label>
+        <select id="dayFilter">
+          <option value="all">Any</option>
+          <option value="Monday">Mon</option>
+          <option value="Tuesday">Tue</option>
+          <option value="Wednesday">Wed</option>
+          <option value="Thursday">Thu</option>
+          <option value="Friday">Fri</option>
+        </select>
+      </div>
+      <div class="filter-field check-fields">
+        <label><input type="checkbox" id="ncoFilter"> NCO</label>
+        <label><input type="checkbox" id="riskFilter"> High Risk</label>
+        <button id="clearFilters">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-meta">
+    <span id="resultsCount">Loading...</span>
+    <span class="results-legend"><span class="nco-tag">NCO</span> = Featured in orientation</span>
+  </div>
+
+  <!-- Project Grid -->
+  <div id="projectsGrid" class="projects-grid">
+    <div class="loading-spinner">Loading projects...</div>
+  </div>
+
+  <!-- Pagination -->
+  <div id="pagination" class="pagination hide">
+    <button id="prevPage" class="page-btn">&#8592; Previous</button>
+    <span id="pageInfo" class="page-info"></span>
+    <button id="nextPage" class="page-btn">Next &#8594;</button>
+  </div>
+
+  <!-- Empty State -->
+  <div id="emptyState" class="empty-state hide">
+    <p>No projects match your filters.<br>Try a different combination or <a href="" id="resetFiltersBtn">clear all filters</a>.</p>
+  </div>
+</div>
+
+<!-- Embed data -->
+<script>
+window.lotteryFactorData = {{ $lotteryData | jsonify }};
+window.lotteryFactorSigs = {{ $sigsData | jsonify }};
+window.sigsYamlData = {{ $sigsYamlData | jsonify }};
+</script>
+
+{{ $js := resources.Get "js/help-wanted-dashboard.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}"></script>
+
+{{ $css := resources.Get "css/help-wanted-dashboard.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

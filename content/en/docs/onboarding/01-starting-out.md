@@ -132,6 +132,8 @@ Some topics, such as Security or Code of Conduct, require discretion. Committees
 The [Kubernetes Community Resources page](/community/) has links to documents that describe our community structure and governance.
 
 * [The Community Groups page](/community/community-groups/) lists all current SIGs, working groups, and committees.
+* [The Help Wanted Dashboard](/community/help-wanted/) lets you find projects that need your skills.
+* [The Resilience Dashboard](/community/resilience/) shows which projects need contributors most urgently.
 * [The governance document](https://github.com/kubernetes/community/blob/master/governance.md) drills down into more of the specifics.
 
 <div class="bottom-nav">
