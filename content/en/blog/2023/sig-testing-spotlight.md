@@ -4,8 +4,8 @@ title: "Spotlight on SIG Testing"
 slug: sig-testing-spotlight-2023
 date: 2023-11-24
 author: "Sandipan Panda"
+description: "Welcome to another edition of the SIG spotlight blog series, where we highlight the incredible work being done by various Special Interest Groups..."
 ---
-
 Welcome to another edition of the _SIG spotlight_ blog series, where we
 highlight the incredible work being done by various Special Interest
 Groups (SIGs) within the Kubernetes project. In this edition, we turn
