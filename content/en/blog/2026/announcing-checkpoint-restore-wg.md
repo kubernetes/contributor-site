@@ -7,8 +7,8 @@ author: >
   [Viktória Spišaková](https://github.com/viktoriaas),
   [Adrian Reber](https://github.com/adrianreber),
   [Peter Hunt](https://github.com/haircommander)
+description: "The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important..."
 ---
-
 The community around Kubernetes includes a number of Special Interest Groups (SIGs) and Working Groups (WGs) facilitating discussions on important topics between interested contributors. Today we would like to announce the new [Kubernetes Checkpoint Restore WG](https://github.com/kubernetes/community/tree/master/wg-checkpoint-restore) focusing on the integration of Checkpoint/Restore functionality into Kubernetes.
 
 ## Motivation and use cases

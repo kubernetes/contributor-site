@@ -4,8 +4,8 @@ title: "Spotlight on Policy Working Group"
 slug: wg-policy-spotlight-2025
 date: 2025-10-18
 author: "Arujjwal Negi"
----  
-
+description: "(Note: The Policy Working Group has completed its mission and is no longer active. This article reflects its work, accomplishments, and insights..."
+---
 *(Note: The Policy Working Group has completed its mission and is no longer active. This article reflects its work, accomplishments, and insights into how a working group operates.)*
 
 In the complex world of Kubernetes, policies play a crucial role in managing and securing clusters. But have you ever wondered how these policies are developed, implemented, and standardized across the Kubernetes ecosystem? To answer that, let's take a look back at the work of the Policy Working Group.
