@@ -17,7 +17,7 @@
 </script>
 {{ end }}
 
-<link rel="canonical" href="{{ with .Params.canonicalURL }}{{ . }}{{ else }}{{ .Permalink }}{{ end }}">
+<link rel="canonical" href="{{ with .Params.canonicalURL }}{{ . }}{{ else }}{{ "https://www.kubernetes.dev" }}{{ .RelPermalink }}{{ end }}">
 
 {{ if .HasShortcode "sigs-list" }}
   {{ $js := resources.Get "js/sigs-filter.js" | minify | fingerprint }}
