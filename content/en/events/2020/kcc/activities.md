@@ -68,7 +68,7 @@ We will be giving away lots of great prizes!
 [Ian Coldwater]: https://twitter.com/iancoldwater
 [Jeremy Meiss]: https://twitter.com/IAmJerdog
 [DevOps Party Game]: https://devopspartygames.com/
-[Kubernetes YouTube channel]: http://youtube.com/kubernetescommunity
+[Kubernetes YouTube channel]: https://youtube.com/kubernetescommunity
 
 ### The Great Cloud Native Bake Off
 
@@ -325,7 +325,7 @@ Similar to BGA, Yucata is a fan-run site with many games on offer, all free and 
 ### Boiteajeux
 
 * **Platforms:** Browser
-* **URL:** http://www.boiteajeux.net/
+* **URL:** https://www.boiteajeux.net/
 * **Cost:** Free
 * **Players:** Varies by game
 
@@ -352,7 +352,7 @@ If you know any boardgame nerds, they probably won’t shut up about Wingspan an
 ### Race For The Galaxy
 
 * **Platforms:** Windows and Mac have pre-built versions, source available for Linux
-* **URL:** http://keldon.net/rftg/
+* **URL:** https://keldon.net/rftg/
 * **Cost:** Free
 * **Players:** 2-6
 
