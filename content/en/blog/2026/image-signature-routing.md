@@ -145,6 +145,6 @@ This work is tracked in
 [kubernetes-sigs/promo-tools#1762](https://github.com/kubernetes-sigs/promo-tools/issues/1762).
 If you are interested in contributing to
 [SIG Release](https://www.kubernetes.dev/community/community-groups/sigs/release/),
-join our [weekly meeting](http://bit.ly/k8s-sig-release-meeting) or reach out on
+join our [weekly meeting](https://bit.ly/k8s-sig-release-meeting) or reach out on
 the [#sig-release](https://kubernetes.slack.com/messages/sig-release) Slack
 channel.
