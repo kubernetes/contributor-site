@@ -1,7 +1,6 @@
 ---
 layout: blog
 title: "Spotlight on SIG Network"
-slug: sig-network-spotlight
 date: 2023-05-09
 slug: sig-network-spotlight-2023
 author: "Sujay Dey"
