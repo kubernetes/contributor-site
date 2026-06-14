@@ -4,7 +4,7 @@ type: docs
 weight: 5
 ---
 
-<img align="right" src="/events/2022/kcsna/deluxx-fluxx-1.png" width="30%">
+<img align="right" src="/events/2022/kcsna/deluxx-fluxx-1.png" width="30%" alt="Deluxx Fluxx interior view 1">
 Join us at 
 <a href="https://www.deluxxfluxx.com/deluxx-fluxx-detroit" rel="noopener noreferrer" target="_blank">Deluxx Fluxx Detroit</a>
 from 6pm to 9pm for an evening celebration after the Contributor Summit on October 24th!
@@ -22,7 +22,7 @@ Detroit, MI 48226<br>
 
 ## Bringing A Guest
 
-<img align="right" src="/events/2022/kcsna/deluxx-fluxx-2.png" width="20%">
+<img align="right" src="/events/2022/kcsna/deluxx-fluxx-2.png" width="20%" alt="Deluxx Fluxx interior view 2">
 
 Contributors will be able to bring a single family member or  partner to the
 Social. This does not include coworkers or casual friends; our intention is
