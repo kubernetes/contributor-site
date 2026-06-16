@@ -1,3 +1,6 @@
+/* This file is provided by Docsy as an extension point for styling.
+Override variables from the theme here. */
+
 $primary: #326ce5;
 $secondary: #303030;
 
@@ -9,3 +12,45 @@ $display-font-sizes: (
 );
 
 $display-font-weight: $font-weight-bold;
+
+// Neutral ramp — shared text, border and surface greys
+$slate-50:  #f8fafc;
+$slate-100: #f1f5f9;
+$slate-200: #e2e8f0;
+$slate-300: #cbd5e1;
+$slate-400: #94a3b8;
+$slate-500: #64748b;
+$slate-600: #475569;
+$slate-700: #334155;
+$slate-800: #1e293b;
+$slate-900: #0f172a;
+
+// KEP stage palette: bg, soft (border / active bg), text, accent (active border), dot
+$kep-alpha-bg:      #fff8e1;
+$kep-alpha-soft:    #fef3c7;
+$kep-alpha-text:    #b45309;
+$kep-alpha-accent:  #f59e0b;
+$kep-alpha-dot:     #fbbf24;
+
+$kep-beta-bg:       #e0f2fe;
+$kep-beta-soft:     #bae6fd;
+$kep-beta-text:     #0369a1;
+$kep-beta-accent:   #0ea5e9;
+$kep-beta-dot:      #38bdf8;
+
+$kep-stable-bg:     #ecfdf5;
+$kep-stable-soft:   #d1fae5;
+$kep-stable-text:   #15803d;
+$kep-stable-accent: #10b981;
+$kep-stable-dot:    #34d399;
+
+$kep-deprecated-bg:   #f3f4f6;
+$kep-deprecated-soft: #e5e7eb;
+$kep-deprecated-text: #4b5563;
+
+$kep-other-bg:     #eef2ff;
+$kep-other-soft:   #e0e7ff;
+$kep-other-text:   #4338ca;
+$kep-other-accent: #6366f1;
+
+// Dark-mode tokens are deferred until the Docsy 0.11 upgrade.
