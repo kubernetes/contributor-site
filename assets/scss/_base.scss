@@ -1,0 +1,14 @@
+// ===== Reduced Motion =====
+@media (prefers-reduced-motion: reduce) {
+
+  .kep-filter-bar,
+  .kep-stage-btn,
+  #keps-table tbody tr,
+  .kep-filter-bar select,
+  .kep-filter-bar .kep-search-input,
+  .kep-filter-toggle-btn,
+  #keps-table a,
+  #keps-table thead th {
+    transition: none;
+  }
+}

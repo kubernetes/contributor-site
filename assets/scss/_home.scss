@@ -1,0 +1,15 @@
+// Improve homepage readability (white on gray, per accessibility)
+body.td-home div.lead {
+  background-color: rgba(50, 50, 50, 0.9);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+body.td-home div.lead *,
+body.td-home div.lead b,
+body.td-home div.lead p {
+  color: #fff;
+  margin: 0.5rem 0;
+  display: block;
+}

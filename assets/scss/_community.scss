@@ -1,0 +1,11 @@
+/* Community Groups Topic Tags */
+.topic-tag {
+  background-color: rgba(var(--bs-primary-rgb), 0.1);
+  color: var(--bs-primary);
+  transition: all 0.2s ease;
+
+  &.active {
+    background-color: var(--bs-primary);
+    color: #fff;
+  }
+}

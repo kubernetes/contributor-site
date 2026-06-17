@@ -82,7 +82,7 @@
       </div>
     </div>
 
-{{ $styles := resources.Get "scss/sigs-list.scss" | toCSS | minify | fingerprint }}
+{{ $styles := resources.Get "scss/sigs_list.scss" | toCSS | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
             
     <!-- Content Area -->
