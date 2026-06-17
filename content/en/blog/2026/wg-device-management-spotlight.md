@@ -2,7 +2,6 @@
 layout: blog
 title: "Spotlight on WG Device Management"
 slug: wg-device-management-spotlight-2026
-date: 2026-05-18
 draft: true
 author: "Natalie Fisher"
 ---
@@ -44,7 +43,7 @@ The problem we set out to solve is that the legacy Device Plugin API  (which has
 
 The working group's primary deliverable is Dynamic Resource Allocation (DRA), a new framework that replaces the rigid device plugin model with a flexible, declarative API.
 With DRA, workloads can describe their hardware requirements (e.g., GPU type, memory capacity, interconnect topology, desired partitioning) and drivers can publish fine-grained device attributes that the scheduler can act on.
-DRA [graduated](https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/) to GA in Kubernetes 1.34], and the ecosystem around it (e.g., drivers, tooling, and new API extensions) is growing rapidly.
+DRA [graduated](https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/) to GA in Kubernetes 1.34, and the ecosystem around it (e.g., drivers, tooling, and new API extensions) is growing rapidly.
 
 **PO:** As Kevin said, the working group was formed around the existing effort to develop DRA. The initial work was done with only a handful of people actively involved, and perhaps also could only be done successfully in such a setup. But because it touches on so many different areas of Kubernetes, we also needed a place to discuss that and get the broader community of Kubernetes maintainers, device vendors, and, to a lesser extent, also end-users involved. The working group provides that place, with regular meetings online (one slot for Americas/EMEA, one for EMEA/Asia) and at KubeCon.
 
@@ -62,7 +61,7 @@ Because device management touches scheduling, node operations, autoscaling, netw
 
 **NF: How does collaboration across these SIGs work in practice, and why is it necessary?**
 
-**KK:** Device management touches nearly every layer of the Kubernetes stack, which is why the working group was chartered as a cross-SIG effort from the start. We have five stakeholder SIGs: sig-node, sig-scheduling, sig-autoscaling, sig-networking, and sig-architecture.
+**KK:** Device management touches nearly every layer of the Kubernetes stack, which is why the working group was chartered as a cross-SIG effort from the start. We have five stakeholder SIGs: sig-node, sig-scheduling, sig-autoscaling, sig-network, and sig-architecture.
 
 In practice, the working group serves as a coordination layer. We don't own code directly; instead, our deliverables take the form of KEPs and implementations that live in the respective SIGs. What we provide is a unified forum where the people building the scheduler, the kubelet, the autoscaler, and the network plane can design together rather than in isolation.
 
@@ -91,7 +90,7 @@ In addition to the project board, we also maintain a table which summarizes all 
 | KEP | Description | Release |  |  |  |  |
 | :---: | :---- | :---: | :---: | :---: | :---: | :---: |
 |  |  | **1.32** | **1.33** | **1.34** | **1.35** | **1.36** |
-| [4831](https://www.kubernetes.dev/resources/keps/4381) | DRA: Structured Parameters | Beta | Beta | Stable |  |  |
+| [4381](https://www.kubernetes.dev/resources/keps/4381) | DRA: Structured Parameters | Beta | Beta | Stable |  |  |
 | [5004](https://www.kubernetes.dev/resources/keps/5004) | DRA: Extended Resource Requests via DRA |  |  | Alpha | Alpha | Beta |
 | [4817](https://www.kubernetes.dev/resources/keps/4817)  | DRA: Resource Claim Status | Alpha | Beta | Beta | Beta | Beta  |
 | [5018](https://www.kubernetes.dev/resources/keps/5018) | DRA: Namespace Controlled Admin Access |  | Alpha | Beta | Beta | Stable |
