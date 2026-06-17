@@ -16,3 +16,47 @@ Add styles or import other files. */
 
 // Cross-cutting media queries
 @import "base";
+
+/* Chroma syntax highlighting (emacs theme) */
+.chroma {
+  background-color: #f8f8f8;
+
+  [data-bs-theme="dark"] & {
+    background-color: #1b1f22;
+  }
+
+  .k, .kc, .kd, .kn, .kr, .ow { color: #a2f; font-weight: bold; }
+  .kp { color: #a2f; }
+  .kt { color: #0b0; font-weight: bold; }
+  .na, .s, .sa, .sb, .sc, .dl, .s2, .sh, .s1 { color: #b44; }
+  .nb, .nd { color: #a2f; }
+  .nc { color: #00f; }
+  .no { color: #800; }
+  .ni { color: #999; font-weight: bold; }
+  .ne { color: #d2413a; font-weight: bold; }
+  .nf { color: #00a000; }
+  .nl { color: #a0a000; }
+  .nn { color: #00f; font-weight: bold; }
+  .nt { color: #008000; font-weight: bold; }
+  .nv, .ss { color: #b8860b; }
+  .sd { color: #b44; font-style: italic; }
+  .se { color: #b62; font-weight: bold; }
+  .si { color: #b68; font-weight: bold; }
+  .sx { color: #008000; }
+  .sr { color: #b68; }
+  .m, .mb, .mf, .mh, .mi, .il, .mo, .o { color: #666; }
+  .c, .ch, .cm, .c1, .cp, .cpf { color: #080; font-style: italic; }
+  .cs { color: #080; font-weight: bold; }
+  .gd { color: #a00000; }
+  .ge { font-style: italic; }
+  .gr { color: #f00; }
+  .gh { color: #000080; font-weight: bold; }
+  .gi { color: #00a000; }
+  .go { color: #888; }
+  .gp { color: #000080; font-weight: bold; }
+  .gs { font-weight: bold; }
+  .gu { color: #800080; font-weight: bold; }
+  .gt { color: #04d; }
+  .gl { text-decoration: underline; }
+  .w { color: #bbb; }
+}

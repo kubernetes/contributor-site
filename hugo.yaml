@@ -65,6 +65,7 @@ markup:
   # Default highlight is tango for Docsy but the website uses emacs (for now)
   highlight:
     style: emacs
+    noClasses: false
 
 frontmatter:
   date:
