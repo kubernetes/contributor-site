@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on WG Device Management"
 slug: wg-device-management-spotlight-2026
-draft: true
+date: 2026-06-19T10:00:00-08:00
 author: "Natalie Fisher"
 ---
 
