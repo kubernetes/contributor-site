@@ -7,7 +7,7 @@ description: "Welcome to the Kubernetes Contributor Community!"
 {{< blocks/cover title="Welcome" image_anchor="center" height="auto" color="primary">}}
 
 
-<p class="lead mt-5"><b>Welcome to the Kubernetes Contributor Community</b></p>
+<p class="lead"><b>Welcome to the Kubernetes Contributor Community</b></p>
 
 <b>
 This site is the home of contributor documentation, and serves as a starting
