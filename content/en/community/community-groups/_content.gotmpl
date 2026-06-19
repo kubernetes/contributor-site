@@ -41,6 +41,7 @@
             {{ end }}
           {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
+            {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
           {{ else }}
             {{ if eq hugo.Environment "production" }}
               {{ errorf "Unable to load README for %s: %s" $dir .Err }}
@@ -84,6 +85,7 @@
             {{ end }}
           {{ else with .Value }}
             {{ $charterContent := replace .Content "\u200b" "" }}
+            {{ $charterContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $charterContent }}
             {{ $charterPage := dict
               "kind" "page"
               "path" (printf "sigs/%s/charter" $slug)
@@ -127,6 +129,7 @@
             {{ end }}
           {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
+            {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
           {{ else }}
             {{ if eq hugo.Environment "production" }}
               {{ errorf "Unable to load README for %s" $dir }}
@@ -135,7 +138,7 @@
             {{ end }}
           {{ end }}
         {{ end }}
-  
+
         {{ $page := dict
           "kind" "section"
           "path" (printf "wg/%s" $slug)
@@ -209,17 +212,18 @@
             {{ else }}
               {{ warnf "Unable to load README for %s: %s" $dir .Err }}
             {{ end }}
-          {{ else with .Value }}
-            {{ $readmeContent = replace .Content "\u200b" "" }}
-          {{ else }}
-            {{ if eq hugo.Environment "production" }}
-              {{ errorf "Unable to load README for %s" $dir }}
+            {{ else with .Value }}
+              {{ $readmeContent = replace .Content "\u200b" "" }}
+              {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
             {{ else }}
-              {{ warnf "Unable to load README for %s" $dir }}
+              {{ if eq hugo.Environment "production" }}
+                {{ errorf "Unable to load README for %s" $dir }}
+              {{ else }}
+                {{ warnf "Unable to load README for %s" $dir }}
+              {{ end }}
             {{ end }}
           {{ end }}
-        {{ end }}
-        {{ $charterLink := .charter_link }}
+          {{ $charterLink := .charter_link }}
         {{ $remoteCharterUrl := "" }}
         {{ if $charterLink }}
           {{ $remoteCharterUrl = printf "%s%s/%s" $githubBaseUrl $dir $charterLink }}
@@ -260,6 +264,7 @@
               {{ end }}
             {{ else with .Value }}
               {{ $charterContent := replace .Content "\u200b" "" }}
+              {{ $charterContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $charterContent }}
               {{ $charterPage := dict
                 "kind" "page"
                 "path" (printf "committees/%s/charter" $slug)
