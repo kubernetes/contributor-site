@@ -188,7 +188,7 @@
 
   .kep-people-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
     gap: 0.75rem;
   }
 
@@ -200,6 +200,8 @@
     align-items: center;
     gap: 6px;
     transition: all 0.2s ease;
+    min-width: 0;
+    overflow-wrap: anywhere;
 
     i {
       color: $slate-400;
@@ -228,14 +230,17 @@
         color: $slate-700;
         text-decoration: none;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 8px;
         transition: all 0.2s ease;
+        min-width: 0;
+        overflow-wrap: anywhere;
 
         i {
           font-size: 0.7rem;
           color: $slate-400;
           line-height: 1;
+          flex-shrink: 0;
         }
 
         &:hover {
@@ -266,6 +271,9 @@
     padding: 0;
     margin-bottom: 3rem;
     line-height: 1.7;
+
+    // Wrap long inline tokens (URLs, inline code) so prose can't widen the page
+    overflow-wrap: break-word;
 
     // Hide duplicate KEP title from README if present
     h1:first-of-type {
@@ -347,6 +355,8 @@
       border-radius: 8px;
       font-size: 0.9rem;
       margin: 2rem 0;
+      max-width: 100%;
+      overflow-x: auto;
     }
   }
 
@@ -358,7 +368,10 @@
     border-radius: 8px;
     margin-top: 4rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // #{} interpolation keeps the CSS min() literal so LibSass doesn't try to
+    // evaluate it (px vs % are incompatible at Sass compile time). This lets the
+    // column collapse below 300px on narrow screens to prevent horizontal overflow.
+    grid-template-columns: repeat(auto-fit, minmax(#{"min(300px, 100%)"}, 1fr));
     gap: 2rem;
 
     h2 {
