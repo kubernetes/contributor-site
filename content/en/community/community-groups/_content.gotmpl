@@ -41,9 +41,9 @@
             {{ end }}
           {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
-            {{ $readmeContent = replaceRE `\(/sig-([^\)\s]+)` `(/community/community-groups/sigs/$1/` $readmeContent }}
-            {{ $readmeContent = replaceRE `\(/wg-([^\)\s]+)` `(/community/community-groups/wg/$1/` $readmeContent }}
-            {{ $readmeContent = replaceRE `\(/committee-([^\)\s]+)` `(/community/community-groups/committees/$1/` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/sig-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/sigs/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/wg-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/wg/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/committee-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/committees/$1/$2)` $readmeContent }}
             {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
           {{ else }}
             {{ if eq hugo.Environment "production" }}
@@ -132,9 +132,9 @@
             {{ end }}
           {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
-            {{ $readmeContent = replaceRE `\(/sig-([^\)\s]+)` `(/community/community-groups/sigs/$1/` $readmeContent }}
-            {{ $readmeContent = replaceRE `\(/wg-([^\)\s]+)` `(/community/community-groups/wg/$1/` $readmeContent }}
-            {{ $readmeContent = replaceRE `\(/committee-([^\)\s]+)` `(/community/community-groups/committees/$1/` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/sig-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/sigs/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/wg-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/wg/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/committee-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/committees/$1/$2)` $readmeContent }}
             {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
           {{ else }}
             {{ if eq hugo.Environment "production" }}
@@ -220,9 +220,9 @@
             {{ end }}
             {{ else with .Value }}
               {{ $readmeContent = replace .Content "\u200b" "" }}
-            {{ $readmeContent = replaceRE `\(/sig-([^\)\s]+)` `(/community/community-groups/sigs/$1/` $readmeContent }}
-            {{ $readmeContent = replaceRE `\(/wg-([^\)\s]+)` `(/community/community-groups/wg/$1/` $readmeContent }}
-            {{ $readmeContent = replaceRE `\(/committee-([^\)\s]+)` `(/community/community-groups/committees/$1/` $readmeContent }}
+              {{ $readmeContent = replaceRE `\(/sig-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/sigs/$1/$2)` $readmeContent }}
+              {{ $readmeContent = replaceRE `\(/wg-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/wg/$1/$2)` $readmeContent }}
+              {{ $readmeContent = replaceRE `\(/committee-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/committees/$1/$2)` $readmeContent }}
               {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
             {{ else }}
               {{ if eq hugo.Environment "production" }}
