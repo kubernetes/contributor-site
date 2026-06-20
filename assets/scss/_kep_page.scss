@@ -188,7 +188,7 @@
 
   .kep-people-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0.75rem;
   }
 
@@ -201,7 +201,6 @@
     gap: 6px;
     transition: all 0.2s ease;
     min-width: 0;
-    overflow-wrap: anywhere;
 
     i {
       color: $slate-400;
@@ -234,7 +233,7 @@
         gap: 8px;
         transition: all 0.2s ease;
         min-width: 0;
-        overflow-wrap: anywhere;
+        overflow-wrap: break-word;
 
         i {
           font-size: 0.7rem;
