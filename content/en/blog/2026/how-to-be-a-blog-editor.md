@@ -11,12 +11,12 @@ If you're new to the blog team, this guide walks you through the whole journey o
 
 ## Step 1: Find blogs that need review
 
-Depending on which site the article targets, check one of these:
+Open blog PRs waiting for review live in one of two repos, depending on which site the article targets:
 
 - [k/website](https://github.com/kubernetes/website/pulls?q=is%3Aopen+is%3Apr+label%3Aarea%2Fblog) (kubernetes.io)
 - [k/contributor-site](https://github.com/kubernetes/contributor-site/pulls?q=is%3Aopen+is%3Apr+label%3Aarea%2Fblog) (kubernetes.dev)
 
-Pick one up, and move on to reviewing it against our guidelines.
+Pick one up, and review it against our guidelines.
 
 ## Step 2: Review against guidelines and style
 
