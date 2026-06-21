@@ -14,7 +14,7 @@ If you're new to the blog team, this guide walks you through the whole journey o
 Open blog PRs waiting for review live in one of two repos, depending on which site the article targets:
 
 - [k/website](https://github.com/kubernetes/website/pulls?q=is%3Aopen+is%3Apr+label%3Aarea%2Fblog) (kubernetes.io)
-- [k/contributor-site](https://github.com/kubernetes/contributor-site/pulls?q=is%3Aopen+is%3Apr+label%3Aarea%2Fblog) (kubernetes.dev)
+- [k/contributor-site](https://github.com/kubernetes/contributor-site/pulls?q=is%3Aopen+is%3Apr) (kubernetes.dev)
 
 Pick one up, and review it against our guidelines.
 
