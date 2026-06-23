@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: Human-Centered Automation for Kubernetes Localization in the AI Era
-draft: true
+date: 2026-06-26T14:00:00-08:00
 slug: human-centered-automation-kubernetes-localization-ai-era
 author: Peter Chang
 ---
