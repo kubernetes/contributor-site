@@ -6,7 +6,8 @@ themesDir: node_modules
 enableRobotsTXT: true
 
 # Language settings
-contentDir: content/en
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
 
 enableMissingTranslationPlaceholders: true
 disableKinds:
@@ -55,8 +56,14 @@ module:
 # Language configuration
 languages:
   en:
+    contentDir: content/en
     title: *title # Use the YAML reference instead of repeating
     languageName: English
+    weight: 1
+    languagedirection: ltr
+    params:
+      languageNameLatinScript: English
+      time_format_blog: "02.01.2006"
 
 markup:
   goldmark:
