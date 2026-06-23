@@ -13,6 +13,13 @@ $display-font-sizes: (
 
 $display-font-weight: $font-weight-bold;
 
+
+// Docsy 0.9.0+ underlines links by default (google/docsy#1815).
+// Restore the pre-0.9.0 appearance but show underlines on hover.
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+
 // Neutral ramp — shared text, border and surface greys
 $slate-50:  #f8fafc;
 $slate-100: #f1f5f9;
