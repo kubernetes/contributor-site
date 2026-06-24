@@ -75,7 +75,8 @@
     -}}
 
     {{/* Fetch README Content */}}
-    {{- $readmeUrl := printf "%s%s/%s/README.md" $rawBaseUrl $kep.owningSig $kep.name -}}
+    {{- $kepPath := default (printf "%s/%s" $kep.owningSig $kep.name) $kep.directory -}}
+    {{- $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $kepPath -}}
     {{- $readmeContent := "" -}}
     {{- $readmeOpts := merge $globalOpts (dict "key" (printf "kep-readme-%s" $kep.kepNumber)) -}}
     
