@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Open source maintainership in the age of AI"
-draft: true
+date: 2026-06-26T10:00:00-08:00
 slug: open-source-maintainership-in-the-age-of-ai
 author: >
   Kevin Hannon (Red Hat)
