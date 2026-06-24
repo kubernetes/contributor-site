@@ -3,7 +3,8 @@
 This directory contains the English localization of the Kubernetes Contributor Site.
 
 ## Contact
-- **Slack**: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex), [#sig-docs-localizations](https://kubernetes.slack.com/messages/sig-docs-localizations)
+- **SIG Contribex**: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
+- **SIG Docs Localizations**: [#sig-docs-localizations](https://kubernetes.slack.com/messages/sig-docs-localizations) (for localization contributions and support)
 - **Mailing List**: [kubernetes-dev](https://groups.google.com/a/kubernetes.io/group/dev)
 
 ## Code of Conduct
