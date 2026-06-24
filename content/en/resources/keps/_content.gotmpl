@@ -118,7 +118,7 @@
         {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
         {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
       {{- else -}}
-        {{- warnf "Unable to load README for KEP %s" -}}
+        {{- warnf "Unable to load README for KEP %s URL=%s" $kep.kepNumber $readmeUrl -}}
       {{- end -}}
     {{- end -}}
 
