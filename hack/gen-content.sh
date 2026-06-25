@@ -180,7 +180,52 @@ process_content() {
   if [[ $(head -n 1 "$1") != "---" ]]; then
     insert_header "$1"
   fi
+
+  strip_first_h1 "$1"
 }
+
+
+# strip_first_h1
+# The Hugo template renders {{ .Title }} as <h1>, so if the body content
+# also begins with a # heading the page will have duplicate H1s. Remove
+# the first body H1 (and any preceding <!-- omit in toc --> comment).
+# $1 - The full path to the markdown file.
+strip_first_h1() {
+  local file="$1"
+  local tmpfile="${file}.tmp"
+  local fm_count=0
+  local stripped="false"
+
+  while IFS= read -r line; do
+    if [[ "$line" == "---" ]]; then
+      fm_count=$((fm_count + 1))
+      echo "$line" >> "$tmpfile"
+      continue
+    fi
+    if [[ "$fm_count" -le 1 ]]; then
+      echo "$line" >> "$tmpfile"
+      continue
+    fi
+    if [[ "$stripped" == "false" ]]; then
+      if [[ -z "$line" ]]; then
+        echo "$line" >> "$tmpfile"
+        continue
+      fi
+      if [[ "$line" =~ ^\<\!\-\-[[:space:]]*omit[[:space:]]+in[[:space:]]+toc[[:space:]]*\-\-\>$ ]]; then
+        continue
+      fi
+      if [[ "$line" =~ ^#[[:space:]] ]]; then
+        stripped="true"
+        continue
+      fi
+      stripped="true"
+    fi
+    echo "$line" >> "$tmpfile"
+  done < "$file"
+
+  mv "$tmpfile" "$file"
+}
+
 
 # expand_paths
 # Generates (or expands) the full path relative to the root of the directory if
