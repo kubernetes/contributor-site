@@ -2,7 +2,7 @@
 layout: blog
 title: "What I learned from joining the Blog team"
 draft: true
-slug: what-i-learned-joining-the-blog-team
+slug: what-i-learned-from-joining-the-blog-team
 author: >
   Kashish Verma (https://github.com/KashishV999)
 ---
