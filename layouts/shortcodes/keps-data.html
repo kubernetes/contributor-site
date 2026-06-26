@@ -53,21 +53,21 @@
 {{- range $k, $_ := $sigSet -}}{{- $sigs = $sigs | append $k -}}{{- end -}}
 
 <div class="kep-page">
-  <div id="kep-filter-bar" class="kep-filter-bar" role="search" aria-label="Filter KEPs">
+  <div id="kep-filter-bar" class="kep-filter-bar" role="search" aria-label="{{ T "kep_filter_keps" }}">
     <div class="kep-filter-row kep-filter-selects">
       <div class="kep-filter-group">
-        <label for="kep-filter-release">Release</label>
-        <select id="kep-filter-release">
-          <option value="">All Releases</option>
+        <label for="kep-filter-release">{{ T "kep_release" }}</label>
+        <select id="kep-filter-release" aria-label="{{ T "kep_filter_by_release" }}">
+          <option value="">{{ T "kep_all_releases" }}</option>
           {{- range $releases }}
           <option value="{{ strings.TrimPrefix "v" . }}">{{ strings.TrimPrefix "v" . }}</option>
           {{- end }}
         </select>
       </div>
       <div class="kep-filter-group">
-        <label for="kep-filter-sig">SIG</label>
-        <select id="kep-filter-sig">
-          <option value="">All SIGs</option>
+        <label for="kep-filter-sig">{{ T "kep_sig" }}</label>
+        <select id="kep-filter-sig" aria-label="{{ T "kep_filter_by_sig" }}">
+          <option value="">{{ T "kep_all_sigs" }}</option>
           {{- range sort $sigs }}
           <option value="{{ . }}">{{ strings.TrimPrefix "sig-" . }}</option>
           {{- end }}
@@ -76,18 +76,18 @@
     </div>
     <div class="kep-filter-row">
       <fieldset class="kep-stage-toggles">
-        <legend>Stage</legend>
-        <button data-stage="alpha" class="kep-stage-btn kep-stage-alpha" role="checkbox" aria-checked="false" type="button">Alpha</button>
-        <button data-stage="beta" class="kep-stage-btn kep-stage-beta" role="checkbox" aria-checked="false" type="button">Beta</button>
-        <button data-stage="stable" class="kep-stage-btn kep-stage-stable" role="checkbox" aria-checked="false" type="button">Stable</button>
-        <button data-stage="deprecated" class="kep-stage-btn kep-stage-deprecated" role="checkbox" aria-checked="false" type="button">Deprecated</button>
-        <button data-stage="other" class="kep-stage-btn kep-stage-other" role="checkbox" aria-checked="false" type="button">Other</button>
+        <legend>{{ T "kep_stage" }}</legend>
+        <button data-stage="alpha" class="kep-stage-btn kep-stage-alpha" role="checkbox" aria-checked="false" type="button">{{ T "kep_alpha" }}</button>
+        <button data-stage="beta" class="kep-stage-btn kep-stage-beta" role="checkbox" aria-checked="false" type="button">{{ T "kep_beta" }}</button>
+        <button data-stage="stable" class="kep-stage-btn kep-stage-stable" role="checkbox" aria-checked="false" type="button">{{ T "kep_stable" }}</button>
+        <button data-stage="deprecated" class="kep-stage-btn kep-stage-deprecated" role="checkbox" aria-checked="false" type="button">{{ T "kep_deprecated" }}</button>
+        <button data-stage="other" class="kep-stage-btn kep-stage-other" role="checkbox" aria-checked="false" type="button">{{ T "kep_other" }}</button>
       </fieldset>
     </div>
     <div class="kep-filter-row kep-filter-actions">
       <div class="kep-search-group">
         <svg class="kep-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85-.017.016zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z" fill="currentColor"/></svg>
-        <input type="search" id="kep-search" class="kep-search-input" placeholder="Search by title, KEP number, author..." aria-label="Search by title, KEP number, author...">
+        <input type="search" id="kep-search" class="kep-search-input" placeholder="{{ T "kep_search_placeholder" }}" aria-label="{{ T "kep_search_placeholder" }}">
       </div>
     </div>
   </div>
@@ -95,21 +95,22 @@
   <div class="kep-filter-toggle">
     <button id="kep-filter-toggle-btn" class="kep-filter-toggle-btn" type="button" aria-expanded="false" aria-controls="kep-filter-bar">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.5 4h13M1.5 8h13M1.5 12h13M5 2.5v3M11 6.5v3M7 10.5v3"/></svg>
-      Filters
+      {{ T "kep_filters" }}
     </button>
   </div>
 
-  <table id="keps-table" class="table table-hover table-sm">
-      <caption class="visually-hidden">List of Kubernetes Enhancement Proposals (KEPs)</caption>
+  <div class="kep-table-wrapper">
+    <table id="keps-table" class="table table-hover table-sm">
+      <caption class="visually-hidden">{{ T "kep_caption" }}</caption>
       <thead class="thead-light">
         <tr>
-          <th scope="col" class="kep-col-number">KEP Number</th>
-          <th scope="col" class="kep-col-title">Title</th>
-          <th scope="col" class="kep-col-sig">SIG</th>
-          <th scope="col" class="kep-col-stage">Stage</th>
-          <th scope="col" class="kep-col-latest">Latest Milestone</th>
-          <th scope="col" class="kep-col-created">Created</th>
-          <th scope="col" class="kep-col-author">Author</th>
+          <th scope="col" class="kep-col-number">{{ T "kep_number" }}</th>
+          <th scope="col" class="kep-col-title">{{ T "kep_title" }}</th>
+          <th scope="col" class="kep-col-sig">{{ T "kep_sig" }}</th>
+          <th scope="col" class="kep-col-stage">{{ T "kep_stage" }}</th>
+          <th scope="col" class="kep-col-latest">{{ T "kep_latest_milestone" }}</th>
+          <th scope="col" class="kep-col-created">{{ T "kep_created" }}</th>
+          <th scope="col" class="kep-col-author">{{ T "kep_author" }}</th>
         </tr>
       </thead>
       <tbody>
@@ -195,7 +196,7 @@
                   {{- end }}
                 {{- end }}
                 {{- if gt $numAuthors 2 }}
-                  <span class="kep-author-etal">et al.</span>
+                  <span class="kep-author-etal">{{ T "kep_et_al" }}</span>
                 {{- end }}
               {{- else }}
                 <span class="kep-no-data">&mdash;</span>
@@ -205,4 +206,5 @@
         {{ end }}
       </tbody>
     </table>
+  </div>
 </div>
