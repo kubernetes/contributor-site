@@ -1,0 +1,32 @@
+name: Call for Help Review
+
+# ⚠️ DRAFT / EXPERIMENTAL: This workflow is in testing and subject to change.
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'call-for-help'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Install Python dependencies
+        run: pip install pyyaml
+
+      - name: Review Call for Help Request
+        run: python3 .github/scripts/call-for-help-review.py
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_CREATOR: ${{ github.event.issue.user.login }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          GITHUB_REPO_OWNER: ${{ github.repository_owner }}
+          GITHUB_REPO_NAME: ${{ github.event.repository.name }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

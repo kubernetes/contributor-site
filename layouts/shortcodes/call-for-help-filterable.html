@@ -1,0 +1,128 @@
+{{ $lotteryData := site.Data.lottery_factor.repo_data }}
+{{ $sigsData := site.Data.lottery_factor.sigs }}
+
+{{ $defaultBranch := "main" }}
+{{ $sigsYamlUrl := printf "https://raw.githubusercontent.com/kubernetes/community/%s/sigs.yaml" $defaultBranch }}
+{{ $opts := dict }}
+{{ with os.Getenv "HUGO_GITHUB_TOKEN" }}
+  {{ $opts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) }}
+{{ end }}
+{{ $cacheOpts := dict "key" "sigs-yaml-full" }}
+{{ $opts = merge $opts $cacheOpts }}
+{{ $sigsYamlData := dict }}
+{{ with resources.GetRemote $sigsYamlUrl $opts }}
+  {{ with .Err }}
+    {{ warnf "Unable to load sigs.yaml for help-wanted: %s" . }}
+  {{ else }}
+    {{ with .Content | transform.Unmarshal }}
+      {{ $sigsYamlData = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $languages := slice }}
+{{ range $lotteryData }}
+  {{ if .tech_stack }}
+    {{ range .tech_stack.languages }}
+      {{ if not (in $languages .) }}{{ $languages = $languages | append . }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $languages = sort $languages }}
+
+{{ $allSkills := slice }}
+{{ range $lotteryData }}
+  {{ if .tech_stack }}
+    {{ range .tech_stack.skills_needed }}
+      {{ if not (in $allSkills .) }}{{ $allSkills = $allSkills | append . }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{ $allSkills = sort $allSkills }}
+
+{{ $sigs := slice }}
+{{ range $sigsData }}
+  {{ $sigs = $sigs | append .name }}
+{{ end }}
+{{ $sigs = sort $sigs }}
+
+<div class="help-wanted-dashboard">
+
+  <!-- Filter Bar -->
+  <div class="filter-bar">
+    <div class="filter-search-row">
+      <input type="text" id="searchFilter" placeholder="Search projects...">
+      <button id="clearFilters">Clear all</button>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Language</span>
+      <span class="pill active" data-filter="language" data-value="all">All<span class="pill-icon">&#10005;</span></span>
+      {{ range $languages }}
+      <span class="pill" data-filter="language" data-value="{{ . }}">{{ . }}<span class="pill-icon">&#10005;</span></span>
+      {{ end }}
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Skill</span>
+      <span class="pill active" data-filter="skill" data-value="all">All<span class="pill-icon">&#10005;</span></span>
+      {{ range $allSkills }}
+      <span class="pill" data-filter="skill" data-value="{{ . }}">{{ . }}<span class="pill-icon">&#10005;</span></span>
+      {{ end }}
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">SIG</span>
+      <span class="pill active" data-filter="sig" data-value="all">All<span class="pill-icon">&#10005;</span></span>
+      {{ range $sigs }}
+      <span class="pill" data-filter="sig" data-value="{{ . }}">{{ replace . "SIG " "" }}<span class="pill-icon">&#10005;</span></span>
+      {{ end }}
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Meeting</span>
+      <span class="pill active" data-filter="day" data-value="all">Any<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="monday">Mon<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="tuesday">Tue<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="wednesday">Wed<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="thursday">Thu<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="day" data-value="friday">Fri<span class="pill-icon">&#10005;</span></span>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill-row-label">Status</span>
+      <span class="pill" data-filter="nco" data-value="1">NCO featured<span class="pill-icon">&#10005;</span></span>
+      <span class="pill" data-filter="risk" data-value="1">High risk<span class="pill-icon">&#10005;</span></span>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="results-meta">
+    <span id="resultsCount">Loading...</span>
+  </div>
+
+  <!-- Project Grid -->
+  <div id="projectsGrid" class="projects-grid">
+    <div class="loading-spinner">Loading projects...</div>
+  </div>
+
+  <!-- Pagination -->
+  <div id="pagination" class="pagination hide"></div>
+
+  <!-- Empty State -->
+  <div id="emptyState" class="empty-state hide">
+    <p>No projects match your filters.<br>Try a different combination or <a href="#" id="resetFiltersBtn" style="color:inherit;">clear all filters</a>.</p>
+  </div>
+</div>
+
+<script>
+window.lotteryFactorData = {{ $lotteryData | jsonify }};
+window.lotteryFactorSigs = {{ $sigsData | jsonify }};
+window.sigsYamlData = {{ $sigsYamlData | jsonify }};
+</script>
+
+{{ $js := resources.Get "js/help-wanted-dashboard.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}"></script>
+
+{{ $css := resources.Get "css/help-wanted-dashboard.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

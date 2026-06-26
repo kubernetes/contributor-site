@@ -1,0 +1,134 @@
+.call-for-help-container {
+  margin: 1.5rem 0;
+}
+
+.call-for-help-container h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.25rem;
+}
+
+.section-desc {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.call-for-help-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+  background: #fff;
+}
+
+.call-for-help-card.nco-featured {
+  border-left: 3px solid #555;
+}
+
+.call-for-help-card.stale {
+  opacity: 0.6;
+}
+
+.project-name {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.project-link {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.project-link:hover {
+  color: #000;
+}
+
+.nco-tag {
+  display: inline-block;
+  border: 1px solid #555;
+  font-size: 0.7rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  font-weight: normal;
+}
+
+.card-row {
+  margin-bottom: 0.5rem;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.request-type {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.issue-title {
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+.btn-sm {
+  font-size: 0.85rem;
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+}
+
+.btn-sm:hover {
+  color: #000;
+}
+
+.no-requests,
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .top-row {
+    flex-direction: column;
+  }
+  .request-type {
+    white-space: normal;
+    margin-top: 0.25rem;
+  }
+}

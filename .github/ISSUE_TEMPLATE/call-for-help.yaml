@@ -1,0 +1,165 @@
+name: Call for Help
+description: |
+  Request contributors for your SIG or subproject.
+  Requests are automatically verified against the repository OWNERS file
+  and kubernetes/community sigs.yaml. Approved requests appear on the
+  Community Resilience Dashboard and Help Wanted Dashboard.
+title: "[Call for Help] <SIG-name>: <short description>"
+labels:
+  - call-for-help
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Call for Help (DRAFT / EXPERIMENTAL)
+        ⚠️ **This workflow is a draft and is currently being tested for experimental purposes.**
+        Your feedback is welcome. The verification and notification mechanisms may change.
+
+        Use this template to request contributors for your SIG or subproject.
+
+        **Authorization:** This request will be automatically verified against the
+        repository's [OWNERS file](https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md)
+        and the [kubernetes/community sigs.yaml](https://github.com/kubernetes/community/blob/main/sigs.yaml).
+        If you are a listed approver, reviewer, SIG chair, or tech lead, the request
+        will be approved automatically. Otherwise, a moderator will review it within
+        1-2 business days.
+
+        **Visibility:** Approved requests appear on:
+        - [Community Resilience Dashboard](https://kubernetes.dev/community/resilience/)
+        - [Help Wanted Dashboard](https://kubernetes.dev/community/help-wanted/)
+        - Optionally: New Contributor Orientation (NCO) sessions
+
+  - type: dropdown
+    id: sig
+    attributes:
+      label: SIG
+      description: Which SIG is requesting help?
+      options:
+        - SIG API Machinery
+        - SIG Apps
+        - SIG Architecture
+        - SIG Auth
+        - SIG Autoscaling
+        - SIG CLI
+        - SIG Cloud Provider
+        - SIG Cluster Lifecycle
+        - SIG Contributor Experience
+        - SIG Docs
+        - SIG etcd
+        - SIG Instrumentation
+        - SIG K8s Infra
+        - SIG Multicluster
+        - SIG Network
+        - SIG Node
+        - SIG Release
+        - SIG Scalability
+        - SIG Scheduling
+        - SIG Security
+        - SIG Storage
+        - SIG Testing
+        - SIG UI
+        - SIG Windows
+        - Other / Multiple SIGs
+    validations:
+      required: true
+
+  - type: input
+    id: subproject
+    attributes:
+      label: Subproject
+      description: Which subproject needs help? (e.g., "kind", "kubectl", "gateway-api")
+      placeholder: kind
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: help-type
+    attributes:
+      label: What kind of help is needed?
+      description: Select all that apply.
+      options:
+        - label: New contributors / mentorship
+        - label: Code reviewers
+        - label: Maintainers / approvers
+        - label: Documentation writers
+        - label: Test infrastructure
+        - label: Security audit
+        - label: Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: nco-feature
+    attributes:
+      label: New Contributor Orientation
+      description: |
+        Would you like this project to be featured in an upcoming New Contributor Orientation (NCO)?
+        NCO-featured projects are highlighted for new contributors and included in orientation materials.
+      options:
+        - label: We want to be featured in the upcoming NCO
+
+  - type: textarea
+    id: skills
+    attributes:
+      label: Skills / Languages
+      description: What skills or programming languages would help? (e.g., Go, Python, technical writing, networking knowledge)
+      placeholder: |
+        - Go (primary)
+        - Shell scripting
+        - Technical writing
+        - Networking knowledge
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What does the project do? Why should someone join? What will they learn?
+      placeholder: |
+        kind is a tool for running local Kubernetes clusters using Docker containers.
+        We need help with documentation, testing, and code review.
+        This is a great project for new contributors because it has clear onboarding docs and a welcoming community.
+    validations:
+      required: true
+
+  - type: input
+    id: meeting
+    attributes:
+      label: Meeting Time
+      description: When does your SIG meet? (e.g., "Tuesdays 9:00 AM PT")
+      placeholder: Tuesdays 9:00 AM PT
+
+  - type: input
+    id: slack
+    attributes:
+      label: Slack Channel
+      description: "What is your SIG's Slack channel? (e.g., #sig-testing)"
+      placeholder: "#sig-testing"
+
+  - type: input
+    id: repo
+    attributes:
+      label: Primary Repository
+      description: |
+        Link to the main GitHub repository. This is used to verify your authorization
+        via the repository's OWNERS file.
+      placeholder: https://github.com/kubernetes-sigs/kind
+    validations:
+      required: true
+
+  - type: input
+    id: onboarding
+    attributes:
+      label: Onboarding Documentation
+      description: Link to CONTRIBUTING.md or onboarding docs
+      placeholder: https://github.com/kubernetes-sigs/kind/blob/main/CONTRIBUTING.md
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Note:** By submitting this request, you confirm that you are authorized to
+        request help on behalf of this project (SIG chair, tech lead, or subproject
+        owner). The request will be automatically verified and approved if you are
+        listed in the repository's OWNERS file or kubernetes/community sigs.yaml.

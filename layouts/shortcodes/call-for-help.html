@@ -1,0 +1,26 @@
+{{ $showNCOOnly := .Get "ncoOnly" }}
+{{ $title := .Get "title" | default "Call for Help" }}
+
+<div class="call-for-help-container">
+  {{ if $title }}
+  <h2>{{ $title }}</h2>
+  {{ end }}
+  <div id="callForHelpDashboard" class="call-for-help-dashboard">
+    <p class="loading">Loading...</p>
+  </div>
+</div>
+
+{{ $css := resources.Get "css/call-for-help.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+{{ $js := resources.Get "js/call-for-help.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}"></script>
+
+<script>
+window.lotteryFactorData = {{ site.Data.lottery_factor.repo_data | jsonify }};
+window.lotteryFactorSigs = {{ site.Data.lottery_factor.sigs | jsonify }};
+window.showNCOOnly = {{ $showNCOOnly }};
+document.addEventListener('DOMContentLoaded', function() {
+  window.initCallForHelpDashboard('callForHelpDashboard');
+});
+</script>
