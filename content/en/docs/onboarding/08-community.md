@@ -101,8 +101,8 @@ Each SIG and Working Group has its favored method of communication. You can star
 
 Slack is excellent for most discussion and questions.
 
-* Issues that affect more than one group need to be [discussed on the kubernetes-dev email list](https://github.com/kubernetes/community/tree/master/communication#decisions-are-made-here).
-* Decisions affecting a single group can be [handled in GitHub](https://github.com/kubernetes/community/tree/master/github-management).
+* Issues that affect more than one group need to be [discussed on the kubernetes-dev email list](https://github.com/kubernetes/community/tree/main/communication#decisions-are-made-here).
+* Decisions affecting a single group can be [handled in GitHub](https://github.com/kubernetes/community/tree/main/github-management).
 
 ---
 

@@ -68,7 +68,7 @@ Kubernetes Orgs:
 <li><a href="https://github.com/etcd-io" rel="noopener noreferrer" target="_blank">etcd-io</a></li>
 </ul>
 
-[org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
+[org membership]: https://github.com/kubernetes/community/blob/main/community-membership.md#member
 
 ### I have an idea for a session
 

@@ -47,7 +47,7 @@ As one of the largest open source projects with thousands of contributors, Kuber
 You _probably_ already have a GitHub account, but just in case:
 
 * If you don't have one yet, [create a GitHub account on their sign up page](https://github.com/signup). The Free plan works fine!
-* Official members of the Kubernetes community need their GitHub accounts to [meet certain other requirements](https://github.com/kubernetes/community/blob/master/community-membership.md).
+* Official members of the Kubernetes community need their GitHub accounts to [meet certain other requirements](https://github.com/kubernetes/community/blob/main/community-membership.md).
 
 ---
 
@@ -76,7 +76,7 @@ Once you are ready to contribute, you will have to jump through one small legal 
 # How do I sign a CLA?
 
 * After you make your first pull request, a GitHub bot will walk you through the process.
-* The process is [outlined in the Community repository](https://github.com/kubernetes/community/blob/master/CLA.md).
+* The process is [outlined in the Community repository](https://github.com/kubernetes/community/blob/main/CLA.md).
 
 ---
 

@@ -13,7 +13,7 @@ toolkit, offering a convenient and flexible way to interact with a
 Kubernetes cluster.
 
 SIG CLI plays a crucial role in improving the [Kubernetes
-CLI](https://github.com/kubernetes/community/tree/master/sig-cli)
+CLI](https://github.com/kubernetes/community/tree/main/sig-cli)
 experience by focusing on the development and enhancement of
 `kubectl`, the primary command-line tool for Kubernetes.
 
@@ -51,7 +51,7 @@ Lead and Chair.
 **Arpit**: Thank you! Could you share with us the purpose and goals of SIG CLI?
 
 **Maciej**: Our
-[charter](https://github.com/kubernetes/community/tree/master/sig-cli/)
+[charter](https://github.com/kubernetes/community/tree/main/sig-cli/)
 has the most detailed description, but in few words, we handle all CLI
 tooling that helps you manage your Kubernetes manifests and interact
 with your Kubernetes clusters.
@@ -93,7 +93,7 @@ CLI is working on?
 
 **Maciej**: There are always several initiatives we’re working on at
 any given point in time. It’s best to join [one of our
-calls](https://github.com/kubernetes/community/tree/master/sig-cli/#meetings)
+calls](https://github.com/kubernetes/community/tree/main/sig-cli/#meetings)
 to learn about the current ones.
 
 **Katrina**: For major features, you can check out [our open

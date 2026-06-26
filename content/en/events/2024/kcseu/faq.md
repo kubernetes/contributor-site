@@ -63,7 +63,7 @@ Kubernetes Orgs:
 </ul>
 
 
-[org membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
+[org membership]: https://github.com/kubernetes/community/blob/main/community-membership.md#member
 
 ### What is a sponsored attendee?
 
