@@ -41,16 +41,19 @@
             {{ end }}
           {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
+            {{ $readmeContent = replaceRE `\(/sig-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/sigs/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/wg-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/wg/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/committee-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/committees/$1/$2)` $readmeContent }}
             {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
           {{ else }}
             {{ if eq hugo.Environment "production" }}
-              {{ errorf "Unable to load README for %s: %s" $dir .Err }}
+              {{ errorf "Unable to load README for %s" $dir }}
             {{ else }}
-              {{ warnf "Unable to load README for %s: %s" $dir .Err }}
+              {{ warnf "Unable to load README for %s" $dir }}
             {{ end }}
           {{ end }}
         {{ end }}
-  
+
         {{ $page := dict
           "kind" "section"
           "path" (printf "sigs/%s" $slug)
@@ -129,6 +132,9 @@
             {{ end }}
           {{ else with .Value }}
             {{ $readmeContent = replace .Content "\u200b" "" }}
+            {{ $readmeContent = replaceRE `\(/sig-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/sigs/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/wg-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/wg/$1/$2)` $readmeContent }}
+            {{ $readmeContent = replaceRE `\(/committee-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/committees/$1/$2)` $readmeContent }}
             {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
           {{ else }}
             {{ if eq hugo.Environment "production" }}
@@ -214,6 +220,9 @@
             {{ end }}
             {{ else with .Value }}
               {{ $readmeContent = replace .Content "\u200b" "" }}
+              {{ $readmeContent = replaceRE `\(/sig-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/sigs/$1/$2)` $readmeContent }}
+              {{ $readmeContent = replaceRE `\(/wg-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/wg/$1/$2)` $readmeContent }}
+              {{ $readmeContent = replaceRE `\(/committee-([^\)\s#]+)(#[^\)\s]*)?\)` `(/community/community-groups/committees/$1/$2)` $readmeContent }}
               {{ $readmeContent = replaceRE `^[\s\S]*?(##[\s\S]*)` `$1` $readmeContent }}
             {{ else }}
               {{ if eq hugo.Environment "production" }}
