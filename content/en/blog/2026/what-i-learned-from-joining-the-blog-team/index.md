@@ -1,20 +1,17 @@
 ---
 layout: blog
-title: "How to be a blog editor"
+title: "What I learned from joining the Blog team"
 draft: true
-slug: how-to-be-a-blog-editor
+slug: what-i-learned-joining-the-blog-team
 author: >
   Kashish Verma (https://github.com/KashishV999)
 ---
 
-Welcome to the Kubernetes blog team!
+When I joined the Kubernetes blog team, I did not know quite what to expect.
+Here is everything I picked up along the way from finding your first PR
+to getting an article published. Everyone starts somewhere and I am glad you are starting here.
 
-This guide walks you through everything, from picking up your first blog PR
-to getting an article published and all the support you need along the way.
-Everyone starts somewhere and we are glad you are starting here.
-
-Before we get into it, let us answer the question most people have when
-they first join the team.
+Before I get into it, let me answer the question I had when I first joined.
 
 ## Am I actually qualified to do this?
 
@@ -109,8 +106,8 @@ their name, or `Name (independent)`. Lowercase "i" on independent.
 
 The blog publishes to one or both of these two sites:
 
-- [kubernetes.io](https://kubernetes.io) : the main Kubernetes blog : [Repo](https://github.com/kubernetes/website/)
-- [kubernetes.dev](https://www.kubernetes.dev) : the contributor blog : [Repo](https://github.com/kubernetes/contributor-site/)
+- [kubernetes.io](https://kubernetes.io) : the main Kubernetes blog, stored in the [k/website GitHub repo](https://github.com/kubernetes/website/)
+- [kubernetes.dev](https://www.kubernetes.dev) : the contributor blog, stored in the [k/contributor-site GitHub repo](https://github.com/kubernetes/contributor-site/)
 
 If you want to know the difference between the content that gets published
 to each site, check this out:
@@ -118,7 +115,7 @@ to each site, check this out:
 - [Content examples: kubernetes.io vs kubernetes.dev](https://kubernetes.io/docs/contribute/blog/guidelines/#content-examples)
 
 If you think that the scope of a blog is not relevant to that site, feel
-free to suggest. *(We love discussions and different perspectives.)*
+free to suggest. 
 
 ## How do I preview before merging?
 
@@ -126,15 +123,14 @@ When a PR is opened, Netlify, a web hosting platform, automatically builds
 a preview. Here is how to find it:
 
 - Scroll down in the PR to find the Netlify bot comment
-- Click the "Deploy Preview" link
-- Navigate to the Blog section or add `/blog/1/01/01/{slug}` to the
-  Netlify URL, replacing `{slug}` with the slug from the front matter
+- Click the "Deploy Preview" link , this won't take you directly to your blog post, so manually add `/blog/1/01/01/{slug}` to the URL, for example: `https://deploy-preview-kubernetes-io-main-staging.netlify.app/blog/1/01/01/my-blog-slug`
 
 ![Netlify bot comment showing the Deploy Preview link](netlify-preview.png)
 
 Hugo uses `1-01-01` as its default when no publish date is set yet.
 
 **ALWAYS CHECK ON MOBILE TOO**
+
 Something that looks great on desktop may not render properly on mobile.
 Especially check for diagrams, math, and images.
 
@@ -151,6 +147,7 @@ where the article is being published.
    `draft: true` for `date: YYYY-MM-DD`.
 
 **KEEP THE PUBLISH PR SMALL**
+
 Front matter only. Do not bundle in content changes. The smaller the PR,
 the easier it is to track, review, and fix if something goes wrong.
 
@@ -178,10 +175,10 @@ other direction is rare but technically possible.
 
 ## How do I speed up the back and forth?
 
-This is optional, but it helps a lot. If an author is open to it, suggest
-they share their draft on HackMD or Google Docs before opening a PR.
-Reviewing there means no waiting on commits for every small change. You
-can send them a quick Slack message or reach out in the channel.
+This is something I picked up early on and it helps a lot. If an author is
+open to it, suggest they share their draft on HackMD or Google Docs before
+opening a PR. Reviewing there means no waiting on commits for every small
+change. You can send them a quick Slack message or reach out in the channel.
 
 ## Be kind
 
@@ -195,7 +192,7 @@ When something needs attention:
 
 - Help the author see the problem. Do not just flag it, explain it.
 - If a piece feels borderline or a decision feels too big to make alone,
-  bring it to the team. *(That is what we are here for.)*
+  bring it to the team. *(That is what the team is here for.)*
 
 ## It is OK to ask!
 
@@ -213,9 +210,9 @@ you cannot, then ask.*
 
 ## Come find us
 
-New to the team? The best thing you can do is connect with the people
-around you. It really does make a difference when you know the people you
-are working with and they know you as well.
+The best thing I did when I joined was connect with the people around me.
+It really does make a difference when you know the people you are working
+with and they know you as well.
 
 A good tip would be to start attending meetings and introducing yourself
 to your colleagues. :)
