@@ -21,6 +21,9 @@
     "url": "https://github.com/kubernetes/contributor-site/issues"
   },
   "homepage": "https://github.com/kubernetes/contributor-site#readme",
+  "engines": {
+    "node": "20.16.0"
+  },
   "overrides": {
     "@fortawesome/fontawesome-free": "^6.6.0"
   }
