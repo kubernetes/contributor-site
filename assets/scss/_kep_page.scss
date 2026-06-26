@@ -347,15 +347,44 @@
     }
 
     // Code blocks
-    pre {
-      background-color: #1e1e1e;
-      color: #d4d4d4;
-      padding: 1.5rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
+    .highlight {
       margin: 2rem 0;
-      max-width: 100%;
+      padding: 0;
+      position: relative;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+
+      pre {
+        margin: 0;
+      }
+    }
+
+    pre {
+      font-size: 0.875em;
+      padding: 1rem;
+      border-radius: 0;
       overflow-x: auto;
+      max-width: 100%;
+      word-wrap: normal;
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      color: inherit;
+
+      [data-bs-theme="dark"] & {
+        background-color: #1b1f22;
+        border-color: #495057;
+      }
+
+      code {
+        font-size: inherit;
+        color: inherit;
+        word-break: normal;
+      }
+
+      @media (max-width: 575px) {
+        font-size: 0.8rem;
+      }
     }
   }
 
