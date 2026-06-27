@@ -43,7 +43,7 @@ to `PodTopologySpread` recently. `PodTopologySpread` is a relatively new feature
 and we are still in the process of gathering feedback and making improvements.
 
 Most recently, we have been focusing on a new internal enhancement called
-[QueueingHint](https://github.com/kubernetes/enhancements/blob/master/keps/sig-scheduling/4247-queueinghint/README.md)
+[QueueingHint](https://github.com/kubernetes/enhancements/blob/main/keps/sig-scheduling/4247-queueinghint/README.md)
 which aims to enhance scheduling throughput. Throughput is one of our crucial metrics in
 scheduling. Traditionally, we have primarily focused on optimizing the latency of each scheduling
 cycle. QueueingHint takes a different approach, optimizing when to retry scheduling, thereby

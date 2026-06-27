@@ -76,7 +76,7 @@ API is changed, either at design or implementation.
 **FM: Is this during the Kubernetes Enhancement Proposal (KEP) process? Since KEPs are mandatory for
 enhancements, I assume part of the work intersects with API Governance?**
 
-**JL**: It can. [KEPs](https://github.com/kubernetes/enhancements/blob/master/keps/README.md) vary
+**JL**: It can. [KEPs](https://github.com/kubernetes/enhancements/blob/main/keps/README.md) vary
 in how detailed they are. Some include literal API definitions. When they do, we can perform an API
 review at the design stage. Then implementation becomes a matter of checking fidelity to the design.
 

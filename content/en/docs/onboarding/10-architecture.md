@@ -44,7 +44,7 @@ You can also learn [how they communicate with each other](https://kubernetes.io/
 
 # How are new features added to Kubernetes?
 
-New features are added through a process that begins with a [Kubernetes Enhancement Proposal](https://github.com/kubernetes/enhancements/blob/master/keps/README.md).
+New features are added through a process that begins with a [Kubernetes Enhancement Proposal](https://github.com/kubernetes/enhancements/blob/main/keps/README.md).
 
 KEPs are required for most non-trivial changes. Specifically:
 

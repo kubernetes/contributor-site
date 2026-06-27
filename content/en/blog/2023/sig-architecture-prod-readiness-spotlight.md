@@ -78,7 +78,7 @@ So while we’re trying to get feedback (our annual PRR survey is very important
 reveals completely new problems - it rather shows the scale of them. And we try to react to it -
 changes like "Beta APIs off by default" happen in reaction to the data that we observe.
 
-**FSM**: On the topic of reaction, that made me think of how the [Kubernetes Enhancement Proposal (KEP)](https://github.com/kubernetes/enhancements/blob/master/keps/NNNN-kep-template/README.md)
+**FSM**: On the topic of reaction, that made me think of how the [Kubernetes Enhancement Proposal (KEP)](https://github.com/kubernetes/enhancements/blob/main/keps/NNNN-kep-template/README.md)
 template has a Production Readiness Review (PRR) section, which is tied to the graduation
 process. Was this something born out of identified insufficiencies? How would you describe the
 results?

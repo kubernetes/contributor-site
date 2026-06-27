@@ -62,7 +62,7 @@ described being addressed, and to what extent?**
 
 **Marek**: It's been a positive change overall. Becoming a SIG has brought more structure and
 transparency to etcd's development. We've adopted Kubernetes processes like KEPs
-([Kubernetes Enhancement Proposals](https://github.com/kubernetes/enhancements/blob/master/keps/README.md) 
+([Kubernetes Enhancement Proposals](https://github.com/kubernetes/enhancements/blob/main/keps/README.md) 
 and PRRs ([Production Readiness Reviews](https://github.com/kubernetes/community/blob/main/sig-architecture/production-readiness.md),
 which has improved our feature development and release cycle.
 

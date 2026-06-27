@@ -107,7 +107,7 @@ contributors as much as possible.
 
 **Michael:** Since I joined the SIG, more than a year ago, we have made great progress in advancing
 the extraction and migration subproject. We have moved from an alpha status on the defining
-[KEP](https://github.com/kubernetes/enhancements/blob/master/keps/README.md) to a beta status and
+[KEP](https://github.com/kubernetes/enhancements/blob/main/keps/README.md) to a beta status and
 are inching ever closer to removing the old provider code from the Kubernetes source tree. I've been
 really proud to see the active engagement from our community members and to see the progress we have
 made towards extraction. I have a feeling that, within the next few releases, we will see the final

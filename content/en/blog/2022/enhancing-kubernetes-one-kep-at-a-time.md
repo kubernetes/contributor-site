@@ -15,9 +15,9 @@ The release team comprises around 30 people across six subteams - Bug Triage, CI
 
 Great question. We'll get to that in a second but first, let's talk about how features are managed in Kubernetes.
 
-Each new feature requires a [Kubernetes Enhancement Proposal](https://github.com/kubernetes/enhancements/blob/master/keps/README.md) - KEP for short. KEPs are small structured design documents that provide a way to propose and coordinate new features. The KEP author describes the motivation, design (and alternatives), risks, and tests - then community members provide feedback to build consensus.
+Each new feature requires a [Kubernetes Enhancement Proposal](https://github.com/kubernetes/enhancements/blob/main/keps/README.md) - KEP for short. KEPs are small structured design documents that provide a way to propose and coordinate new features. The KEP author describes the motivation, design (and alternatives), risks, and tests - then community members provide feedback to build consensus.
 
-KEPs are submitted and updated through a pull request (PR) workflow on the [k/enhancements repo](https://github.com/kubernetes/enhancements). Features start in alpha and move through a graduation process to beta and stable as they mature. For example, here's a cool KEP about [privileged container support on Windows Server](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/kep.yaml).  It was introduced as alpha in Kubernetes v1.22 and graduated to beta in v1.23.
+KEPs are submitted and updated through a pull request (PR) workflow on the [k/enhancements repo](https://github.com/kubernetes/enhancements). Features start in alpha and move through a graduation process to beta and stable as they mature. For example, here's a cool KEP about [privileged container support on Windows Server](https://github.com/kubernetes/enhancements/blob/main/keps/sig-windows/1981-windows-privileged-container-support/kep.yaml).  It was introduced as alpha in Kubernetes v1.22 and graduated to beta in v1.23.
 
 Now getting back to the question - the enhancements subteam coordinates the lifecycle tracking of the KEPs for each release. Each KEP is required to meet a set of requirements to be cleared for inclusion in a release. The enhancements subteam verifies each requirement for each KEP and tracks the status.
 
@@ -29,7 +29,7 @@ Another great question, keep them coming! The enhancements team is involved in t
 
 #### Enhancements Freeze
 
-Enhancements freeze is the deadline for a KEP to be complete in order for the enhancement to be included in a release. It's a quality gate to enforce alignment around maintaining and updating KEPs. The most notable requirements are a (1) [production readiness review ](https://github.com/kubernetes/community/blob/main/sig-architecture/production-readiness.md)(PRR) and a (2) [KEP file](https://github.com/kubernetes/enhancements/tree/master/keps/NNNN-kep-template) with a complete test plan and graduation criteria.
+Enhancements freeze is the deadline for a KEP to be complete in order for the enhancement to be included in a release. It's a quality gate to enforce alignment around maintaining and updating KEPs. The most notable requirements are a (1) [production readiness review ](https://github.com/kubernetes/community/blob/main/sig-architecture/production-readiness.md)(PRR) and a (2) [KEP file](https://github.com/kubernetes/enhancements/tree/main/keps/NNNN-kep-template) with a complete test plan and graduation criteria.
 
 The enhancements subteam communicates to each KEP author through comments on the KEP issue on Github. As a first step, they'll verify the status and check if it meets the requirements.  The KEP gets marked as tracked after satisfying the requirements; otherwise, it's considered at risk. If a KEP is still at risk when enhancement freeze is in effect, the KEP is removed from the release.
 

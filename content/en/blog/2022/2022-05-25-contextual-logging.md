@@ -16,7 +16,7 @@ make log output more useful and how they can get involved with improving Kuberne
 ## Structured logging
 
 The goal of [structured
-logging](https://github.com/kubernetes/enhancements/blob/master/keps/sig-instrumentation/1602-structured-logging/README.md)
+logging](https://github.com/kubernetes/enhancements/blob/main/keps/sig-instrumentation/1602-structured-logging/README.md)
 is to replace C-style formatting and the resulting opaque log strings with log
 entries that have a well-defined syntax for storing message and parameters
 separately, for example as a JSON struct.
@@ -61,7 +61,7 @@ been updated to support structured logging.
 
 ## Contextual logging
 
-[Contextual logging](https://github.com/kubernetes/enhancements/blob/master/keps/sig-instrumentation/3077-contextual-logging/README.md)
+[Contextual logging](https://github.com/kubernetes/enhancements/blob/main/keps/sig-instrumentation/3077-contextual-logging/README.md)
 is based on the [go-logr API](https://github.com/go-logr/logr#a-minimal-logging-api-for-go). The key
 idea is that libraries are passed a logger instance by their caller and use
 that for logging instead of accessing a global logger. The binary decides about

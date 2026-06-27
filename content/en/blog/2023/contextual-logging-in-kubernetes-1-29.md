@@ -16,7 +16,7 @@ for better troubleshooting of Kubernetes and to empower developers to enhance Ku
 
 ## What is contextual logging?
 
-[Contextual logging](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging)
+[Contextual logging](https://github.com/kubernetes/enhancements/tree/main/keps/sig-instrumentation/3077-contextual-logging)
 is based on the [go-logr](https://github.com/go-logr/logr#a-minimal-logging-api-for-go) API. 
 The key idea is that libraries are passed a logger instance by their caller
 and use that for logging instead of accessing a global logger.
@@ -104,7 +104,7 @@ they need to be aware of how this change affects them.
 ## Further reading
 
 - Read the [Contextual Logging in Kubernetes 1.24](/blog/2022/05/25/contextual-logging/) article.
-- Read the [KEP-3077: contextual logging](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging).
+- Read the [KEP-3077: contextual logging](https://github.com/kubernetes/enhancements/tree/main/keps/sig-instrumentation/3077-contextual-logging).
 
 ## Get involved
 

@@ -1,5 +1,5 @@
 {{- $kepDataSourceUrl := "https://storage.googleapis.com/k8s-keps/keps.json" -}}
-{{- $rawBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/keps/" -}}
+{{- $rawBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/main/keps/" -}}
 {{- $kepData := slice -}}
 
 {{/* Global Options for GetRemote */}}
@@ -106,7 +106,7 @@
         {{- $readmeContent = replace $readmeContent "((http" "(http" -}}
         
         {{- /* Fix relative image and link paths to point to GitHub */ -}}
-        {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/" -}}
+        {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/main/" -}}
         {{- $kepDirUrl := printf "%skeps/%s/%s/" $repoBaseUrl $kep.owningSig $kep.name -}}
         
         {{- /* 1. Fix absolute-looking paths (starting with /) */ -}}

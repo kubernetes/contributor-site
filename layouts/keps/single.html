@@ -85,7 +85,7 @@
               {{- if and (strings.HasPrefix . "http") (not (strings.Contains . "[")) -}}
                 <a href="{{ . }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> {{ . }}</a>
               {{- else if and (strings.HasPrefix . "/") (not (strings.Contains . "[")) -}}
-                <a href="https://github.com/kubernetes/enhancements/tree/master{{ . }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> {{ . }}</a>
+                <a href="https://github.com/kubernetes/enhancements/tree/main{{ . }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> {{ . }}</a>
               {{- else -}}
                 {{ . | markdownify }}
               {{- end -}}
