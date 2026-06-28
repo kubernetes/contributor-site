@@ -161,7 +161,7 @@ canonicalUrl: https://www.kubernetes.dev/blog/{YYYY}/{MM}/{DD}/{slug}
 
 Replace `{YYYY}`, `{MM}`, `{DD}`, and `{slug}` with the actual values.
 
-**Now you may ask, who sets the date?** You do! But before you open the
+*Now you may ask, who sets the date?* You do! But before you open the
 publish PR, drop us a message in [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) and let the team know what date you have in mind. *(Come on in, we are friendly!)*. The team can confirm the date, suggest a change if needed, and once everyone is aligned you go ahead and open the publish PR. *(It's that easy!)*
 
 *My personal tip: introduce yourself while you are there, trust me you will love it!*
