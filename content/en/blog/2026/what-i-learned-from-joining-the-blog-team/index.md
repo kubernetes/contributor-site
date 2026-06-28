@@ -151,9 +151,9 @@ k/contributor-site:
 1. Merge the draft in `k/contributor-site` first.
 2. Open a [mirror](https://kubernetes.io/docs/contribute/blog/article-mirroring/) draft PR in `k/website`. The content needs to match exactly. No drift between the two versions.
 
-### What do I do once the draft is merged?
+### What to do once the draft is merged?
 
-This is the last stage! Here you will open the publish PR. All it does is take the same content and swap `draft: true` for `date: YYYY-MM-DD`. If the article is mirrored, make sure the date is the same for both sites and add`canonicalUrl` to the k/website front matter:
+This is the last stage! A publish PR gets opened. All it does is take the same content and swap `draft: true` for `date: YYYY-MM-DD`. If the article is mirrored, make sure the date is the same for both sites and add`canonicalUrl` to the k/website front matter:
 
 ```yaml
 canonicalUrl: https://www.kubernetes.dev/blog/{YYYY}/{MM}/{DD}/{slug}
@@ -161,10 +161,7 @@ canonicalUrl: https://www.kubernetes.dev/blog/{YYYY}/{MM}/{DD}/{slug}
 
 Replace `{YYYY}`, `{MM}`, `{DD}`, and `{slug}` with the actual values.
 
-*Now you may ask, who sets the date?* You do! But before you open the
-publish PR, drop us a message in [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) and let the team know what date you have in mind. *(Come on in, we are friendly!)*. The team can confirm the date, suggest a change if needed, and once everyone is aligned you go ahead and open the publish PR. *(It's that easy!)*
-
-*My personal tip: introduce yourself while you are there, trust me you will love it!*
+*Now how is the publication date assigned?* To open the publish PR, one has to jump on [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) channel to discuss the publication date with the other blog editors. The team confirms the date, suggest a change if needed, and once everyone is aligned , a publish PR can be created *(It's that easy!)*
 
 One thing to keep in mind though, keep the publish PR small. Do not bundle in content changes. The smaller the PR, the easier it is to track, review, and fix if something goes wrong.
 
