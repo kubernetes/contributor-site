@@ -54,17 +54,16 @@ are some exceptions. Have a look at them as well:
 
 - [Blog-specific exceptions](https://kubernetes.io/docs/contribute/blog/article-submission/#article-content)
 
-*It is a lot to take in at once and that is okay. Start with one thing,
+*I know it's a lot to take in at once,and that's okay. Start with one thing,
 maybe punctuation or formatting, and go from there. You will naturally
 get faster over time.*
 
 ## The details that are easy to miss
 
-This is the part I really want you to slow down on. These are the small
-things that quietly delay publication.
+This is the part I really want you to slow down on. These are the small things that quietly delay publication.
 
 Every blog goes through **two stages**. First it gets merged as a draft.
-Then, in a separate PR, it gets published.
+Then, in a separate PR, it gets published. So, these are the few things I want you to treat as a pre-merge checklist. *(Trust me it really helped me, and I hope it helps you too.)*
 
 ### Is your front matter correct?
 
@@ -86,8 +85,7 @@ author: >
 
 While you are reviewing a draft PR, the front matter should always have
 `draft: true`. The `date: YYYY-MM-DD` field comes later, in a separate
-publish PR. Hugo, the static site generator, will not publish anything
-until the date is set.
+publish PR *(which we discuss later)*. Hugo, the static site generator, will not publish anything until the date is set.
 
 *So the draft needs to be merged first to move to the second stage for
 setting the date.*
@@ -123,7 +121,8 @@ When a PR is opened, Netlify, a web hosting platform, automatically builds
 a preview. Here is how to find it:
 
 - Scroll down in the PR to find the Netlify bot comment
-- Click the "Deploy Preview" link , this won't take you directly to your blog post, so manually add `/blog/1/01/01/{slug}` to the URL, for example: `https://deploy-preview-kubernetes-io-main-staging.netlify.app/blog/1/01/01/my-blog-slug`
+- Click the "Deploy Preview" link, this won't take you directly to your blog post, so manually add `/blog/1/01/01/{slug}` to the URL, replacing ``{slug}`` with the blog's actual slug from the front matter.
+- for example: `https://deploy-preview-kubernetes-io-main-staging.netlify.app/blog/1/01/01/my-blog-slug`
 
 ![Netlify bot comment showing the Deploy Preview link](netlify-preview.png)
 
@@ -141,15 +140,8 @@ where the article is being published.
 
 ### Going to one site
 
-1. Merge the draft PR. `draft: true` should still be in the front matter
+1. Merge the draft PR. The`draft: true` should still be in the front matter
    at this point.
-2. Open a second small PR: the publish PR. All it does is swap
-   `draft: true` for `date: YYYY-MM-DD`.
-
-**KEEP THE PUBLISH PR SMALL**
-
-Front matter only. Do not bundle in content changes. The smaller the PR,
-the easier it is to track, review, and fix if something goes wrong.
 
 ### Going to both sites
 
@@ -157,12 +149,11 @@ If the team decides an article belongs on both k/website and
 k/contributor-site:
 
 1. Merge the draft in `k/contributor-site` first.
-2. Open a [mirror](https://kubernetes.io/docs/contribute/blog/article-mirroring/)
-   draft PR in `k/website`. The content needs to match exactly. No drift
-   between the two versions.
-3. Once both drafts are merged, open the publish PR.
-4. Because k/website is hosting a mirror blog, add `canonicalUrl` to the
-   k/website front matter:
+2. Open a [mirror](https://kubernetes.io/docs/contribute/blog/article-mirroring/) draft PR in `k/website`. The content needs to match exactly. No drift between the two versions.
+
+### What do I do once the draft is merged?
+
+This is the last stage! Here you will open the publish PR. All it does is take the same content and swap `draft: true` for `date: YYYY-MM-DD`. If the article is mirrored, make sure the date is the same for both sites and add`canonicalUrl` to the k/website front matter:
 
 ```yaml
 canonicalUrl: https://www.kubernetes.dev/blog/{YYYY}/{MM}/{DD}/{slug}
@@ -170,8 +161,14 @@ canonicalUrl: https://www.kubernetes.dev/blog/{YYYY}/{MM}/{DD}/{slug}
 
 Replace `{YYYY}`, `{MM}`, `{DD}`, and `{slug}` with the actual values.
 
-Mirroring almost always goes from k/contributor-site to k/website. The
-other direction is rare but technically possible.
+**Now you may ask, who sets the date?** You do! But before you open the
+publish PR, drop us a message in [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) and let the team know what date you have in mind. *(Come on in, we are friendly!)*. The team can confirm the date, suggest a change if needed, and once everyone is aligned you go ahead and open the publish PR. *(It's that easy!)*
+
+*My personal tip: introduce yourself while you are there, trust me you will love it!*
+
+One thing to keep in mind though, keep the publish PR small. Do not bundle in content changes. The smaller the PR, the easier it is to track, review, and fix if something goes wrong.
+
+*Yayy! You are done, congratulations!* 
 
 ## How do I speed up the back and forth?
 
