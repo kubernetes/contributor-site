@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943f8b
 
 # Specify HUGO_VERSION, or work it out automatically by using
 # "make container-image"
