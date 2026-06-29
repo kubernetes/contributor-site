@@ -32,6 +32,22 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 {{ template "_internal/opengraph.html" . -}}
 {{ template "_internal/schema.html" . -}}
 {{ template "_internal/twitter_cards.html" . -}}
+
+<script>
+  (() => {
+    const storedTheme = localStorage.getItem('td-color-theme');
+    const theme = storedTheme ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    document.documentElement.setAttribute(
+      'data-bs-theme',
+      theme === 'auto'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : theme
+    );
+  })();
+</script>
+
 {{ partialCached "head-css.html" . "asdf" -}}
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
