@@ -51,7 +51,7 @@ ul.center {
 }
 </style>
 
-<div class="text-center">
+<div class="stay-involved text-center">
 <h2>Stay Involved:</h2>
 
 There are many ways you can stay involved with the Kubernetes Contributor community.

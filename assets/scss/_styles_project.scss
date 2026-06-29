@@ -63,3 +63,12 @@ Add styles or import other files. */
   .gl { text-decoration: underline; }
   .w { color: #bbb; }
 }
+
+.td-box--2:has(.stay-involved) {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+
+  a {
+    color: var(--bs-link-color);
+  }
+}
