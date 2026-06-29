@@ -64,6 +64,7 @@ markup:
       unsafe: true
   # Default highlight is tango for Docsy but the website uses emacs (for now)
   highlight:
+    noClasses: false
     style: emacs
     noClasses: false
 
@@ -85,6 +86,7 @@ params:
 
   # User interface configuration
   ui:
+    showLightDarkModeMenu: true
     # Enable to show the sidebar menu in its compact state.
     sidebar_menu_compact: true
     # Set to true to disable the About link in the site footer
