@@ -1,11 +1,135 @@
-/* Community Groups Topic Tags */
+/* Community Groups */
 .topic-tag {
   background-color: rgba(var(--bs-primary-rgb), 0.1);
-  color: var(--bs-primary);
+  color: $primary;
   transition: all 0.2s ease;
-
   &.active {
-    background-color: var(--bs-primary);
-    color: #fff;
+    background-color: $primary;
+    color: $light;
+  }
+}
+/* Temporary dark mode overrides
+ * TODO(#828): Remove these overrides after the Docsy 0.9.1 → 0.10.0 migration.
+ */
+[data-bs-theme="dark"] {
+  /* Redefine Bootstrap CSS variables globally for dark mode so classes like 
+      .text-primary and .border-primary natively adapt to white without !important */
+
+  --bs-primary: #{$white};
+  --bs-primary-rgb: 255, 255, 255;
+
+  /* Navigation count badges */
+  .nav.nav-pills.shadow-sm.rounded.bg-body .nav-link > .badge.bg-primary {
+    background-color: #0d6efd !important;
+    color: $white !important;
+    border: none !important;
+    border-radius: $border-radius-pill !important;
+  }
+
+  /* Topic tags */
+  .topic-tag,
+  .badge.bg-secondary.bg-opacity-10,
+  span[class*="topic-tag"] {
+    background-color: $dark !important;
+    color: $white !important;
+    border: 1px solid rgba($white, 0.2);
+    border-radius: $border-radius-pill;
+    &.active {
+      background-color: $light;
+      color: $dark;
+      border-color: $light;
+    }
+  }
+  /* Community cards */
+  .sig-card-wrapper {
+    
+    /* Headings */
+    .card-title,
+    .card-title a,
+    a.card-title,
+    h1, h2, h3, h4, h5, h6,
+    .text-primary,
+    [class*="text-primary"],
+    .leadership-title,
+    strong,
+    .sig-card-header a,
+    a[href*="github"],
+    .fa-github,
+    .fab.fa-github {
+      color: $white !important;
+    }
+
+    /* Body text */
+    .card-text,
+    p,
+    .card-body,
+    .meetings-container,
+    .meetings-list,
+    .card-footer,
+    div[class*="meeting"],
+    .meeting-title,
+    .meeting-item,
+    li,
+    small {
+      color: $white !important;
+    }
+
+    /* Leadership badges */
+  .sig-card-wrapper a.badge.bg-primary.bg-opacity-10 {
+    background-color: $dark !important;
+    color: $white !important;
+    border: 1px solid rgba($white, 0.2) !important;
+  }
+
+    .chair-tag,
+    .tech-lead-tag,
+    .sig-leader {
+      background-color: rgba($white, 0.12);
+      color: $white;
+      border: 1px solid rgba($white, 0.2);
+      border-radius: $border-radius-pill;
+    }
+
+    /* Icons */
+    .fa-youtube, .fab.fa-youtube, [class*="youtube"] {
+      color: $danger;
+    }
+    .fa-video, .fas.fa-video, [class*="video"] {
+      color: $info;
+    }
+
+    /* Buttons */
+    .btn,
+    button,
+    a.btn,
+    a[class*="btn"],
+    .btn-outline-primary,
+    .btn-light,
+    .btn-outline-dark,
+    .btn-outline-secondary,
+    .btn-secondary,
+    .card-footer a,
+    .card-footer button {
+      background-color: rgba($white, 0.12);
+      color: $white;
+      border: 1px solid rgba($white, 0.2);
+      border-radius: $border-radius-pill;
+      &:hover,
+      &:focus {
+        background-color: rgba($white, 0.2);
+        color: $white;
+        border-color: rgba($white, 0.35);
+      }
+    }
+    /* Icon buttons */
+    .card-footer {
+      a:not([class*="btn"]),
+      button:not([class*="btn"]),
+      .btn-sm,
+      .p-2,
+      .rounded-circle {
+        border-radius: 50%;
+      }
+    }
   }
 }

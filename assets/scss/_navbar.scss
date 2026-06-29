@@ -3,6 +3,10 @@
 }
 
 .td-navbar {
+  // Temporary workaround for theme switcher dropdown stacking.
+  // TODO(#828): Remove once the underlying stacking context issue is resolved.
+  z-index: 1050;
+
   transition: background-color 0.3s ease;
 }
 
@@ -21,4 +25,16 @@
 .td-navbar .td-search__input:focus {
   background-color: $white;
   color: $dark;
+}
+
+.td-navbar, .navbar {
+  .nav-link,
+  .dropdown-toggle,
+  .td-theme-toggle {
+    &, svg, i, &::after {
+      color: var(--bs-light);
+      fill: var(--bs-light);
+      opacity: 1;
+    }
+  }
 }
