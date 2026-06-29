@@ -8,8 +8,7 @@ type: docs
 ---
 
 {{% alert title="Notice" color="warning" %}}
-This event has passed. Recordings from the event can be found on the
-[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
+This event has passed. Recordings from the event can be found on the [Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP0MPeiM9oAffsxtrUgUAu1g).
 {{% /alert %}}
 
 - [General Information](#general-information)
@@ -115,7 +114,7 @@ everything. If you need assistance, join the `#help` channel.
 
 ### What is this YAGPDB.xyz and why is it messaging me?
 
-<img align="left" src="/events/past-events/2020/kcc2020/yagpdb.png" width="40" height="40" alt="YAGPDB Discord Bot logo">
+<img align="left" src="/events/2020/kcc/yagpdb.png" width="40" height="40" alt="YAGPDB Discord Bot logo">
 
 [YAGPDB] (Yet Another General Purpose Discord Bot) is a verified discord bot
 that we use to manage a variety of services within discord, from verification
@@ -133,19 +132,19 @@ overlays. A few examples of what this would look like:
 
 1 ) To do so, click the server dropdown (Top Left)
 
-<img align="center" src="/events/past-events/2020/kcc2020/server.png" width="40%" alt="Discord server list showing Kubernetes server">
+<img align="center" src="/events/2020/kcc/server.png" width="40%" alt="Discord server list showing Kubernetes server">
 <br>
 <br>
 2 ) Select “Change Nickname”
 <br>
 <br>
-<img align="center" src="/events/past-events/2020/kcc2020/nickname.png" width="40%" alt="Discord edit nickname interface">
+<img align="center" src="/events/2020/kcc/nickname.png" width="40%" alt="Discord edit nickname interface">
 <br>
 <br>
 3 ) Then follow the template of “nickname (pro/noun)” like so:
 <br>
 <br>
-<img align="center" src="/events/past-events/2020/kcc2020/name.png" width="40%" alt="Discord user settings name field">
+<img align="center" src="/events/2020/kcc/name.png" width="40%" alt="Discord user settings name field">
 
 
 ### What are the `#<channel>-info` channels for?

@@ -8,8 +8,7 @@ type: docs
 ---
 
 {{% alert title="Notice" color="warning" %}}
-This event has passed. Recordings from the event can be found on the
-[Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP1nRmC5ks6szxfDN69ZZFcS).
+This event has passed. Recordings from the event can be found on the [Kubernetes Community YouTube Channel](https://youtube.com/playlist?list=PL69nYSiGNLP1nRmC5ks6szxfDN69ZZFcS).
 {{% /alert %}}
 
 {{% schedule
