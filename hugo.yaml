@@ -46,10 +46,37 @@ caches:
     dir: ':cacheDir/modules'
     maxAge: -1
 
-# Use npm-installed copies of Docsy's Hugo Module deps so Hugo skips `go get`
-# at build time. The `go get` walks go.mod's transitive imports and fails
-# wherever the dependency is absent (e.g. Netlify).
 module:
+  hugoVersion:
+    extended: true
+    min: "0.133.0"
+  imports:
+    - path: k8s.io/community
+      mounts:
+        - source: contributors/guide
+          target: content/en/docs/guide
+          excludeFiles: OWNERS
+        - source: communication
+          target: content/en/docs/comms
+          excludeFiles: OWNERS
+        - source: mentoring
+          target: content/en/community
+          excludeFiles: OWNERS
+        - source: code-of-conduct.md
+          target: content/en/community/code-of-conduct.md
+        - source: committee-code-of-conduct
+          target: content/en/community/committee-code-of-conduct
+          excludeFiles: OWNERS
+        - source: github-management
+          target: content/en/resources/github-management
+          excludeFiles: OWNERS
+        - source: sig-list.md
+          target: content/en/sig-list.md
+        - source: values.md
+          target: content/en/community/values.md
+  # Use npm-installed copies of Docsy Hugo Module deps so Hugo skips `go get`
+  # at build time. The `go get` walks go.mod transitive imports and fails
+  # wherever the dependency is absent (e.g. Netlify).
   replacements: "github.com/twbs/bootstrap -> bootstrap, github.com/FortAwesome/Font-Awesome -> @fortawesome/fontawesome-free"
 
 # Language configuration

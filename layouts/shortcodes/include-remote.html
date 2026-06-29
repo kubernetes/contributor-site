@@ -1,0 +1,7 @@
+{{- $url := .Get 0 -}}
+{{- $resource := resources.GetRemote $url -}}
+{{- with $resource -}}
+{{- .Content | safeHTML -}}
+{{- else -}}
+{{- errorf "Unable to fetch remote content from %s" $url -}}
+{{- end -}}

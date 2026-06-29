@@ -7,11 +7,11 @@ description: |
 ---
 
 <div id="code-of-conduct">
-{{< include "../includes/code-of-conduct.md" >}}
+{{< include-remote "https://raw.githubusercontent.com/kubernetes/community/master/code-of-conduct.md" >}}
 </div>
 
 The text of the CNCF Code of Conduct is available below.
 
 <div id="cncf-code-of-conduct">
-{{< include "../includes/cncf-code-of-conduct.md" >}}
+{{< include-remote "https://raw.githubusercontent.com/cncf/foundation/main/code-of-conduct.md" >}}
 </div>
