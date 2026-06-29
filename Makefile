@@ -22,6 +22,7 @@ COMMIT					:= $(shell git rev-parse --short HEAD)
 CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
 CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
+NODE_VERSION			:= $(shell grep ^NODE_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
 
@@ -54,6 +55,9 @@ container-targets: container-image container-push container-gen-content containe
 
 help: ## Show this help text.
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
+
+.nvmrc: netlify.toml
+	grep ^NODE_VERSION $< | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n" > $@
 
 dependencies:
 	npm ci
@@ -172,7 +176,7 @@ clean-all: ## Cleans both build artifacts and files synced to content directory
 		-not -name "code-of-conduct.md" \
 		-exec rm -rf {} \;
 
-production-build: ## Builds the production site (this command used only by Netlify).
+production-build: .nvmrc ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
 	hack/gen-content.sh
 	hugo \
@@ -181,7 +185,7 @@ production-build: ## Builds the production site (this command used only by Netli
 		--ignoreCache \
 		--minify
 
-preview-build: ## Builds a deploy preview of the site (this command used only by Netlify).
+preview-build: .nvmrc ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
 	hack/gen-content.sh
 	hugo \

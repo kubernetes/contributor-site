@@ -40,5 +40,8 @@ _tmp/
 .ash_history
 .bash_history
 
-# Added yarn dependecies
+# Added yarn dependencies
 node_modules/
+
+# Generated Node version file
+.nvmrc
