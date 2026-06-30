@@ -1,0 +1,23 @@
+# Stable configuration for Kubernetes New Contributor Orientation
+# Dates and times are fetched live from Google Calendar API
+name: "Kubernetes New Contributor Orientation"
+calendar_id: "calendar@kubernetes.io"
+search_query: "New Contributor Orientation"
+schedule: "Third Tuesday of every month"
+session_times:
+  emea:
+    label: "EMEA/APAC-friendly"
+    timezone_string: "1:30 PT / 8:30 UTC / 10:30 CET / 14:00 IST"
+  amer:
+    label: "AMER-friendly"
+    timezone_string: "8:30 PT / 15:30 UTC / 17:30 CET / 21:00 IST"
+links:
+  community_calendar: "https://k8s.dev/calendar"
+  mailing_list: "https://groups.google.com/forum/#!forum/kubernetes-sig-contribex"
+  dev_mailing_list: "https://groups.google.com/a/kubernetes.io/g/dev"
+  slack_join: "https://slack.k8s.io/"
+  slack_new_contributors: "https://kubernetes.slack.com/archives/C09R23FHP"
+  slack_sig_contribex: "https://kubernetes.slack.com/archives/C1TU9EB9S"
+  youtube_playlist: "https://www.youtube.com/playlist?list=PL69nYSiGNLP24dHZ4BifJwHPHGch94d9F"
+  slide_deck: "https://github.com/kubernetes/community/blob/main/mentoring/new-contributor-orientation/nco-slides/TEMPLATE%20%5BMONTH%5D%20New%20Contributor%20Orientation.pdf"
+  zoom_meeting: "https://zoom.us/j/94335417770"

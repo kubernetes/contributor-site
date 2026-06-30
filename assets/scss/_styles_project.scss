@@ -17,6 +17,9 @@ Add styles or import other files. */
 // Cross-cutting media queries
 @import "base";
 
+// NCO feature
+@import "nco";
+
 /* Chroma syntax highlighting (emacs theme) */
 .chroma {
   background-color: #f8f8f8;
