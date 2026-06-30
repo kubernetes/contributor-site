@@ -190,7 +190,7 @@ can be be reviewed in the [Netlify subproject site guidelines].
 [config]: https://git.k8s.io/community/github-management/subproject-site-requests.md#example-netlify-configuration
 [issue]: https://github.com/kubernetes/k8s.io/issues/new?assignees=&labels=wg%2Fk8s-infra%2C+area%2Fdns&template=dns-request.md&title=DNS+REQUEST%3A+%3Cyour-dns-record%3E
 [Netlify Site Request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-integration&template=site-request.yml&title=
-[Netlify subproject site guidelines]: https://git.k8s.io/community/github-management/subproject-site-requests.md#subproject-domain-reques
+[Netlify subproject site guidelines]: https://git.k8s.io/community/github-management/subproject-site-requests.md#subproject-site-requests
 
 
 
