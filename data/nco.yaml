@@ -1,5 +1,6 @@
 # Stable configuration for Kubernetes New Contributor Orientation
 # Dates and times are fetched live from Google Calendar API
+# This information is used for fallback purposes in case the gCalendar API Calls aren't available
 name: "Kubernetes New Contributor Orientation"
 calendar_id: "calendar@kubernetes.io"
 search_query: "New Contributor Orientation"
