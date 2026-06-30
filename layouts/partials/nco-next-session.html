@@ -27,7 +27,7 @@
   "apiKey" $apiKey
 }}
 
-<div class="nco-container my-4" id="nco-root" data-nco='{{ $ncoData | jsonify }}' aria-label="Kubernetes New Contributor Orientation">
+<div class="metadata-container nco-container my-4" id="nco-root" data-nco='{{ $ncoData | jsonify }}' aria-label="Kubernetes New Contributor Orientation">
 
   <div class="d-flex flex-column align-items-center justify-content-center py-5" id="nco-loading" aria-live="polite">
     <div class="nco-loader mb-3"></div>
@@ -36,7 +36,7 @@
 
   <div class="nco-state d-none" id="nco-card">
     <div class="mb-4">
-      <span class="nco-section-title">
+      <span class="metadata-sublabel">
         <span class="nco-pulse-dot"></span>Next Session Date
       </span>
       <h3 class="fw-bold h3 mt-1 mb-0" id="nco-date-display">—</h3>
@@ -46,7 +46,7 @@
 
   <div class="nco-state d-none" id="nco-fallback">
     <div class="mb-4">
-      <span class="nco-section-title">
+      <span class="metadata-sublabel">
         <span class="nco-pulse-dot"></span>Next Session Date
       </span>
       <h3 class="fw-bold h3 mt-1 mb-0" id="nco-fallback-date-display">—</h3>
@@ -92,7 +92,7 @@
   <div class="pt-4 nco-connected-section">
     <div class="row g-4">
       <div class="col-md-6 mt-0">
-        <span class="nco-section-title">Slack Channels</span>
+        <span class="metadata-sublabel">Slack Channels</span>
         <div class="d-flex flex-column gap-1 mt-2">
           <a href="{{ $nco.links.slack_new_contributors }}" target="_blank" rel="noopener" class="nco-connected-link">
             <i class="fab fa-slack" aria-hidden="true"></i>
@@ -109,7 +109,7 @@
       </div>
 
       <div class="col-md-6 mt-md-0 mt-4">
-        <span class="nco-section-title">Mailing Lists</span>
+        <span class="metadata-sublabel">Mailing Lists</span>
         <div class="d-flex flex-column gap-1 mt-2">
           <a href="{{ $nco.links.mailing_list }}" target="_blank" rel="noopener" class="nco-connected-link">
             <i class="far fa-envelope" aria-hidden="true"></i>
@@ -259,7 +259,7 @@
 
   function renderDateHeader(date) {
     return '<div class="mb-2 mt-3">'
-      + '<span class="nco-section-title"><span class="nco-pulse-dot"></span>Next Session Date</span>'
+      + '<span class="metadata-sublabel"><span class="nco-pulse-dot"></span>Next Session Date</span>'
       + '<h3 class="fw-bold h3 mt-1 mb-0">' + date.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + '</h3>'
       + '</div>';
   }

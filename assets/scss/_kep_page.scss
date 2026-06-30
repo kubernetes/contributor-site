@@ -1,58 +1,59 @@
+/* Shared component: Banner / Metadata Container */
+.metadata-container {
+  background-color: #fff;
+  border: 1px solid #e0e4e8;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metadata-col {
+  padding: 2rem;
+  position: relative;
+
+  &.border-start-refined {
+    border-left: 1px solid #e0e4e8;
+
+    @media (max-width: 991px) {
+      border-left: none;
+      border-top: 1px solid #e0e4e8;
+    }
+  }
+}
+
+.metadata-label {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #8a94a6;
+  margin-bottom: 2rem;
+  display: block;
+  font-weight: 600;
+}
+
+.metadata-sublabel {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #a0aec0;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
 /* KEP page styles */
 .kep-page {
   padding: 0;
-
-  .kep-banner-container {
-    background-color: #fff;
-    border: 1px solid #e0e4e8;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  }
-
-  .kep-banner-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    @media (max-width: 991px) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .kep-banner-col {
-    padding: 2rem;
-    position: relative;
-
-    &.border-start-refined {
-      border-left: 1px solid #e0e4e8;
-
-      @media (max-width: 991px) {
-        border-left: none;
-        border-top: 1px solid #e0e4e8;
-      }
-    }
-  }
-
-  .kep-banner-label {
-    font-family: var(--bs-font-monospace);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #8a94a6;
-    margin-bottom: 2rem;
-    display: block;
-    font-weight: 600;
-  }
-
-  .kep-banner-sublabel {
-    font-family: var(--bs-font-monospace);
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #a0aec0;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-  }
 
   /* Refined Badges */
   .kep-badge-refined {

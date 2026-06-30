@@ -1,10 +1,5 @@
 .nco-container {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid #e2e8f0;
-  border-left: 4px solid #326ce5;
-  border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.02), 0 8px 16px -6px rgba(50,108,229,0.04), inset 0 1px 0 #ffffff;
 }
 
 @media (max-width: 576px) {
@@ -15,15 +10,6 @@
 
 .nco-connected-section {
   border-top: 1px solid #f1f5f9;
-}
-
-.nco-section-title {
-  display: block;
-  font-size: 0.725rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #64748b;
 }
 
 .nco-muted {
