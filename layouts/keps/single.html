@@ -152,6 +152,12 @@
   <div class="kep-content mt-4">
     {{ .Content }}
   </div>
+  {{ else }}
+  <div class="alert alert-info mt-4" role="status">
+    The detailed KEP content is not available on this page because the upstream README could not be loaded.
+    You can search the Kubernetes enhancements repo for KEP-{{ .Params.kepNumber }} on
+    <a href="https://github.com/kubernetes/enhancements/search?q={{ .Params.kepNumber }}&type=code" target="_blank" rel="noopener">GitHub</a>.
+  </div>
   {{ end }}
 </div>
 {{ end }}
