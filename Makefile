@@ -22,6 +22,7 @@ COMMIT					:= $(shell git rev-parse --short HEAD)
 CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
 CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
+NODE_VERSION			:= $(shell grep ^NODE_VERSION netlify.toml | cut -d '=' -f 2 | tr -d " \"\n")
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
 
@@ -49,7 +50,7 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets container-targets
-targets: help gen-content render server clean clean-all production-build preview-build
+targets: help gen-content render server lint-blogs clean clean-all production-build preview-build
 container-targets: container-image container-push container-gen-content container-render container-server
 
 help: ## Show this help text.
@@ -57,6 +58,12 @@ help: ## Show this help text.
 
 dependencies:
 	npm ci
+
+lint-blogs: ## Run markdownlint on changed blog posts.
+	hack/lint-blogs.sh $(BASE_REF)
+
+print-node-version: ## Print the Node.js version used in this project.
+	@echo $(NODE_VERSION)
 
 gen-content: ## Generates content from external sources.
 	hack/gen-content.sh

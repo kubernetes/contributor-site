@@ -1,0 +1,19 @@
+name: Verify blog posts
+on:
+  pull_request:
+    paths:
+      - 'content/*/blog/**/*.md'
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        with:
+          fetch-depth: 0
+      - name: Get node version
+        run: echo "NODE_VERSION=$(make -s print-node-version)" >> $GITHUB_ENV
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - run: npm ci
+      - run: make lint-blogs BASE_REF=${{ github.base_ref }}
