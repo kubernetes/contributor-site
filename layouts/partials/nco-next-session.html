@@ -1,0 +1,385 @@
+{{ $apiKey := or (getenv "HUGO_GOOGLE_CALENDAR_API_KEY") .Site.Params.google_calendar_api_key "" }}
+
+{{ if hugo.IsProduction }}
+  {{ if not $apiKey }}
+    {{ errorf "Google Calendar API key is required for production builds (set via HUGO_GOOGLE_CALENDAR_API_KEY environment variable or google_calendar_api_key site parameter)" }}
+  {{ end }}
+{{ end }}
+
+{{ $calPage := .Site.GetPage "resources/community-calendar.md" }}
+{{ $calLink := $calPage.RelPermalink | default "/resources/calendar/" }}
+{{ $nco := .Site.Data.nco }}
+
+{{ $ncoData := dict
+  "calendarId" $nco.calendar_id
+  "searchQuery" $nco.search_query
+  "emeaLabel" $nco.session_times.emea.label
+  "amerLabel" $nco.session_times.amer.label
+  "calLink" $calLink
+  "zoomLink" $nco.links.zoom_meeting
+  "slackJoin" $nco.links.slack_join
+  "ytLink" $nco.links.youtube_playlist
+  "slideDeck" $nco.links.slide_deck
+  "mailLink" $nco.links.mailing_list
+  "devMailLink" $nco.links.dev_mailing_list
+  "slackNC" $nco.links.slack_new_contributors
+  "slackCX" $nco.links.slack_sig_contribex
+  "apiKey" $apiKey
+}}
+
+<div class="metadata-container nco-container my-4" id="nco-root" data-nco='{{ $ncoData | jsonify }}' aria-label="Kubernetes New Contributor Orientation">
+
+  <div class="d-flex flex-column align-items-center justify-content-center py-5" id="nco-loading" aria-live="polite">
+    <div class="nco-loader mb-3"></div>
+    <span class="small fw-bold text-uppercase nco-muted">Fetching next session...</span>
+  </div>
+
+  <div class="nco-state d-none" id="nco-card">
+    <div class="mb-4">
+      <span class="metadata-sublabel">
+        <span class="nco-pulse-dot"></span>Next Session Date
+      </span>
+      <h3 class="fw-bold h3 mt-1 mb-0" id="nco-date-display">—</h3>
+    </div>
+    <div class="d-flex flex-column mb-4" id="nco-sessions-grid"></div>
+  </div>
+
+  <div class="nco-state d-none" id="nco-fallback">
+    <div class="mb-4">
+      <span class="metadata-sublabel">
+        <span class="nco-pulse-dot"></span>Next Session Date
+      </span>
+      <h3 class="fw-bold h3 mt-1 mb-0" id="nco-fallback-date-display">—</h3>
+    </div>
+
+    <div class="d-flex flex-column mb-4">
+      <div class="nco-session-row d-flex align-items-center justify-content-between gap-3">
+        <a href="{{ $calLink }}" target="_blank" rel="noopener" class="nco-session-link d-flex align-items-center gap-3" id="nco-fallback-emea-link">
+          <div class="nco-globe-icon-wrapper">
+            <i class="fas fa-globe-europe" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="nco-session-title-text fw-bold">{{ $nco.session_times.emea.label }}</div>
+            <div class="nco-session-time-text small" id="nco-fallback-emea-time">{{ $nco.session_times.emea.timezone_string }}</div>
+          </div>
+        </a>
+        <div class="d-flex align-items-center">
+          <a class="nco-action-btn" aria-label="Add to Calendar" title="Add to Calendar" id="nco-fallback-emea-btn">
+            <i class="far fa-calendar-plus" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="nco-session-row d-flex align-items-center justify-content-between gap-3">
+        <a href="{{ $calLink }}" target="_blank" rel="noopener" class="nco-session-link d-flex align-items-center gap-3" id="nco-fallback-amer-link">
+          <div class="nco-globe-icon-wrapper">
+            <i class="fas fa-globe-americas" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="nco-session-title-text fw-bold">{{ $nco.session_times.amer.label }}</div>
+            <div class="nco-session-time-text small" id="nco-fallback-amer-time">{{ $nco.session_times.amer.timezone_string }}</div>
+          </div>
+        </a>
+        <div class="d-flex align-items-center">
+          <a class="nco-action-btn" aria-label="Add to Calendar" title="Add to Calendar" id="nco-fallback-amer-btn">
+            <i class="far fa-calendar-plus" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 nco-connected-section">
+    <div class="row g-4">
+      <div class="col-md-6 mt-0">
+        <span class="metadata-sublabel">Slack Channels</span>
+        <div class="d-flex flex-column gap-1 mt-2">
+          <a href="{{ $nco.links.slack_new_contributors }}" target="_blank" rel="noopener" class="nco-connected-link">
+            <i class="fab fa-slack" aria-hidden="true"></i>
+            <span>#kubernetes-new-contributors</span>
+          </a>
+          <a href="{{ $nco.links.slack_sig_contribex }}" target="_blank" rel="noopener" class="nco-connected-link">
+            <i class="fab fa-slack" aria-hidden="true"></i>
+            <span>#sig-contribex</span>
+          </a>
+          <div class="small nco-connected-invite">
+            New to Slack? Get invite at <a href="{{ $nco.links.slack_join }}" target="_blank" rel="noopener" class="fw-semibold nco-inline-link">slack.k8s.io</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-md-0 mt-4">
+        <span class="metadata-sublabel">Mailing Lists</span>
+        <div class="d-flex flex-column gap-1 mt-2">
+          <a href="{{ $nco.links.mailing_list }}" target="_blank" rel="noopener" class="nco-connected-link">
+            <i class="far fa-envelope" aria-hidden="true"></i>
+            <span>SIG ContribEx</span>
+          </a>
+          <a href="{{ $nco.links.dev_mailing_list }}" target="_blank" rel="noopener" class="nco-connected-link">
+            <i class="far fa-envelope" aria-hidden="true"></i>
+            <span>dev@kubernetes.io</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pt-4 mt-4 nco-connected-section">
+    <div class="nco-footer-links">
+      <a href="{{ $nco.links.youtube_playlist }}" target="_blank" rel="noopener" class="nco-footer-btn">
+        <i class="fab fa-youtube" aria-hidden="true"></i> Recordings
+      </a>
+      <a href="{{ $calLink }}" target="_blank" rel="noopener" class="nco-footer-btn">
+        <i class="far fa-calendar-alt" aria-hidden="true"></i> Calendar
+      </a>
+      <a href="{{ $nco.links.slide_deck }}" target="_blank" rel="noopener" class="nco-footer-btn">
+        <i class="fas fa-file-pdf" aria-hidden="true"></i> Slides
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('nco-root');
+  var d = JSON.parse(root.dataset.nco);
+
+  var loadingEl  = document.getElementById('nco-loading');
+  var cardEl     = document.getElementById('nco-card');
+  var fallbackEl = document.getElementById('nco-fallback');
+  var dateEl     = document.getElementById('nco-date-display');
+  var gridEl     = document.getElementById('nco-sessions-grid');
+
+  var ncoMatcher = /new contributor orientation|nco/i;
+
+  function show(el) {
+    [loadingEl, cardEl, fallbackEl].forEach(function (e) { e.classList.add('d-none'); });
+    el.classList.remove('d-none');
+  }
+
+  function padZero(num) {
+    return num < 10 ? '0' + num : '' + num;
+  }
+
+  function formatGCalDate(date) {
+    return date.getUTCFullYear()
+      + padZero(date.getUTCMonth() + 1)
+      + padZero(date.getUTCDate())
+      + 'T'
+      + padZero(date.getUTCHours())
+      + padZero(date.getUTCMinutes())
+      + '00Z';
+  }
+
+  function buildGCalUrl(sessionLabel, start, end, zoomLink) {
+    var details = [
+      'The Kubernetes New Contributor Orientation (NCO) meetings are an initiative owned by the mentoring subproject of SIG-ContribEx. Started in September of 2024, the purpose of these meetings is to orient prospective new contributors to the community by providing an overview of what Kubernetes does as a technology, how the community is structured and how it functions, and how they might fit into the community as "contributors." There is no hands-on content included in the New Contributor Orientation meeting.',
+      '',
+      'Zoom Link: ' + zoomLink,
+      '',
+      'More details: https://kubernetes.dev/docs/orientation/',
+      'Slack: #kubernetes-new-contributors (slack.k8s.io)',
+      'Mailing list: dev@kubernetes.io'
+    ].join('\n');
+
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent('Kubernetes New Contributor Orientation (' + sessionLabel + ')')
+      + '&dates=' + formatGCalDate(start) + '/' + formatGCalDate(end)
+      + '&details=' + encodeURIComponent(details)
+      + '&location=' + encodeURIComponent(zoomLink);
+  }
+
+  function getNextThirdTuesday() {
+    var now = new Date();
+    function thirdTuesday(year, month) {
+      var firstDay = new Date(year, month, 1).getDay();
+      var firstTue = firstDay <= 2 ? 1 + (2 - firstDay) : 1 + (9 - firstDay);
+      return new Date(Date.UTC(year, month, firstTue + 14, 8, 30));
+    }
+    var target = thirdTuesday(now.getFullYear(), now.getMonth());
+    var today = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate(), 8, 30));
+    if (today > target) {
+      var m = now.getMonth() + 1;
+      target = thirdTuesday(now.getFullYear() + (m > 11 ? 1 : 0), m % 12);
+    }
+    return target;
+  }
+
+  function extractJoinLink(ev) {
+    if (ev.location && /^https?:\/\//i.test(ev.location)) return ev.location;
+    if (ev.hangoutLink) return ev.hangoutLink;
+    if (ev.description) {
+      var m = ev.description.match(/https?:\/\/[^\s"'>]+/i);
+      if (m) return m[0];
+    }
+    return '';
+  }
+
+  function renderRow(ev, region) {
+    var isEMEA = region === 'emea';
+    var label = isEMEA ? d.emeaLabel : d.amerLabel;
+    var iconClass = isEMEA ? 'fa-globe-europe' : 'fa-globe-americas';
+    var joinLink = ev ? extractJoinLink(ev) : '';
+    var calEvLink = ev ? ev.htmlLink || '' : '';
+    var parts = '';
+
+    if (ev) {
+      var start = new Date(ev.start.dateTime || ev.start.date);
+      var end = ev.end ? new Date(ev.end.dateTime || ev.end.date) : null;
+      var timeStr = start.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' });
+      if (end) {
+        timeStr += ' - ' + end.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+      } else {
+        timeStr += ' ' + start.toLocaleTimeString(undefined, { timeZoneName: 'short' }).split(' ').pop();
+      }
+
+      parts = '<a href="' + (calEvLink || d.calLink) + '" target="_blank" rel="noopener" class="nco-session-link d-flex align-items-center gap-3">'
+        + '<div class="nco-globe-icon-wrapper"><i class="fas ' + iconClass + '" aria-hidden="true"></i></div>'
+        + '<div><div class="nco-session-title-text fw-bold">' + label + '</div>'
+        + '<div class="nco-session-time-text small">' + timeStr + '</div></div></a>'
+        + '<div class="d-flex align-items-center gap-2">';
+      if (joinLink) {
+        parts += '<a href="' + joinLink + '" target="_blank" rel="noopener" class="nco-action-btn" aria-label="Join Meeting" title="Join Meeting"><i class="fas fa-video" aria-hidden="true"></i></a>';
+      }
+      if (calEvLink) {
+        parts += '<a href="' + calEvLink + '" target="_blank" rel="noopener" class="nco-action-btn" aria-label="Add to Calendar" title="Add to Calendar"><i class="far fa-calendar-plus" aria-hidden="true"></i></a>';
+      }
+      parts += '</div>';
+    } else {
+      var shortLabel = isEMEA ? 'EMEA/APAC' : 'AMER';
+      parts = '<div class="d-flex align-items-center gap-3">'
+        + '<div class="nco-globe-icon-wrapper"><i class="fas fa-info-circle" aria-hidden="true"></i></div>'
+        + '<div class="small">' + shortLabel + ' \u2014 details pending</div></div>'
+        + '<a href="' + d.calLink + '" target="_blank" rel="noopener" class="nco-action-btn" aria-label="Check calendar" title="Check calendar"><i class="fas fa-chevron-right" aria-hidden="true"></i></a>';
+    }
+
+    return '<div class="nco-session-row d-flex align-items-center justify-content-between gap-3">' + parts + '</div>';
+  }
+
+  function renderDateHeader(date) {
+    return '<div class="mb-2 mt-3">'
+      + '<span class="metadata-sublabel"><span class="nco-pulse-dot"></span>Next Session Date</span>'
+      + '<h3 class="fw-bold h3 mt-1 mb-0">' + date.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }) + '</h3>'
+      + '</div>';
+  }
+
+  function runFallback() {
+    var target = getNextThirdTuesday();
+
+    var fbDateEl = document.getElementById('nco-fallback-date-display');
+    if (fbDateEl) {
+      fbDateEl.textContent = target.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    }
+
+    var emeaStart = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth(), target.getUTCDate(), 8, 30));
+    var emeaEnd = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth(), target.getUTCDate(), 9, 30));
+    var amerStart = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth(), target.getUTCDate(), 15, 30));
+    var amerEnd = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth(), target.getUTCDate(), 16, 30));
+
+    function fmtRange(s, e) {
+      return s.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })
+        + ' - ' + e.toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' });
+    }
+
+    var fbEmeaTime = document.getElementById('nco-fallback-emea-time');
+    var fbAmerTime = document.getElementById('nco-fallback-amer-time');
+    if (fbEmeaTime) fbEmeaTime.textContent = fmtRange(emeaStart, emeaEnd);
+    if (fbAmerTime) fbAmerTime.textContent = fmtRange(amerStart, amerEnd);
+
+    var emeaGCal = buildGCalUrl(d.emeaLabel, emeaStart, emeaEnd, d.zoomLink);
+    var amerGCal = buildGCalUrl(d.amerLabel, amerStart, amerEnd, d.zoomLink);
+
+    var el;
+    el = document.getElementById('nco-fallback-emea-link'); if (el) el.href = emeaGCal;
+    el = document.getElementById('nco-fallback-emea-btn');  if (el) el.href = emeaGCal;
+    el = document.getElementById('nco-fallback-amer-link'); if (el) el.href = amerGCal;
+    el = document.getElementById('nco-fallback-amer-btn');  if (el) el.href = amerGCal;
+
+    show(fallbackEl);
+  }
+
+  if (!d.apiKey) { runFallback(); return; }
+
+  var now = new Date();
+  var timeMin = new Date(now.getTime() - 86400000).toISOString();
+  var url = 'https://www.googleapis.com/calendar/v3/calendars/'
+    + encodeURIComponent(d.calendarId)
+    + '/events?key=' + encodeURIComponent(d.apiKey)
+    + '&timeMin=' + encodeURIComponent(timeMin)
+    + '&q=' + encodeURIComponent(d.searchQuery)
+    + '&orderBy=startTime&singleEvents=true&maxResults=20';
+
+  fetch(url)
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      if (!data.items || !data.items.length) { runFallback(); return; }
+
+      var events = data.items.filter(function (e) {
+        return e.summary && ncoMatcher.test(e.summary);
+      });
+
+      if (!events.length) { runFallback(); return; }
+
+      events.sort(function (a, b) {
+        return new Date(a.start.dateTime || a.start.date) - new Date(b.start.dateTime || b.start.date);
+      });
+
+      var now = new Date();
+      var emeaEvent = null;
+      var amerEvent = null;
+
+      for (var i = 0; i < events.length; i++) {
+        var ev = events[i];
+        var evDate = new Date(ev.start.dateTime || ev.start.date);
+        if (evDate <= now) continue;
+        var startHour = evDate.getUTCHours();
+        if (startHour < 12 && !emeaEvent) { emeaEvent = ev; }
+        else if (startHour >= 12 && !amerEvent) { amerEvent = ev; }
+        if (emeaEvent && amerEvent) break;
+      }
+
+      if (!emeaEvent && !amerEvent) { runFallback(); return; }
+
+      var emeaDate = emeaEvent ? new Date(emeaEvent.start.dateTime || emeaEvent.start.date) : null;
+      var amerDate = amerEvent ? new Date(amerEvent.start.dateTime || amerEvent.start.date) : null;
+
+      var sameDay = emeaDate && amerDate
+        && emeaDate.getUTCFullYear() === amerDate.getUTCFullYear()
+        && emeaDate.getUTCMonth() === amerDate.getUTCMonth()
+        && emeaDate.getUTCDate()  === amerDate.getUTCDate();
+
+      if (sameDay) {
+        var dates = [emeaDate, amerDate].filter(Boolean).sort(function (a, b) { return a - b; });
+        dateEl.textContent = dates[0].toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      } else {
+        dateEl.parentElement.style.display = 'none';
+      }
+
+      gridEl.innerHTML = '';
+
+      if (sameDay) {
+        gridEl.insertAdjacentHTML('beforeend', renderRow(emeaEvent, 'emea'));
+        if (!emeaEvent) gridEl.insertAdjacentHTML('beforeend', renderRow(null, 'emea'));
+        gridEl.insertAdjacentHTML('beforeend', renderRow(amerEvent, 'amer'));
+        if (!amerEvent) gridEl.insertAdjacentHTML('beforeend', renderRow(null, 'amer'));
+      } else {
+        if (emeaEvent) {
+          gridEl.insertAdjacentHTML('beforeend', renderDateHeader(emeaDate));
+          gridEl.insertAdjacentHTML('beforeend', renderRow(emeaEvent, 'emea'));
+        } else {
+          gridEl.insertAdjacentHTML('beforeend', renderRow(null, 'emea'));
+        }
+        if (amerEvent) {
+          gridEl.insertAdjacentHTML('beforeend', renderDateHeader(amerDate));
+          gridEl.insertAdjacentHTML('beforeend', renderRow(amerEvent, 'amer'));
+        } else {
+          gridEl.insertAdjacentHTML('beforeend', renderRow(null, 'amer'));
+        }
+      }
+
+      show(cardEl);
+    })
+    .catch(function () { runFallback(); });
+})();
+</script>

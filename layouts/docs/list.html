@@ -13,6 +13,11 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 			{{ partial "reading-time.html" . -}}
 		{{ end -}}
 	</header>
+
+	{{ if eq .CurrentSection.RelPermalink "/docs/orientation/" }}
+		{{ partial "nco-next-session.html" . }}
+	{{ end }}
+
 	{{ .Content }}
   {{ if not .Params.hide_section_index }}
     {{ partial "section-index.html" . -}}

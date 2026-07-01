@@ -61,7 +61,7 @@ fi
 
 # discover GNU sed on the system
 SED="sed"
-if ! $SED --version >/dev/null; then
+if ! $SED --version >/dev/null 2>&1; then
     if command -v gsed >/dev/null; then
         SED="gsed"
     else
