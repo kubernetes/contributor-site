@@ -5,7 +5,7 @@
   -webkit-overflow-scrolling: touch;
   min-width: 0;
   scrollbar-width: thin;
-  scrollbar-color: $slate-500 transparent;
+  scrollbar-color: var(--bs-secondary-color) transparent;
 
   &:focus-visible {
     outline: 2px solid $primary;
@@ -21,11 +21,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $slate-500;
+    background: var(--bs-secondary-color);
     border-radius: 4px;
 
     &:hover {
-      background: $slate-600;
+      background: var(--bs-body-color);
     }
   }
 }
@@ -71,11 +71,11 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: $slate-500;
-    background: $slate-50;
+    color: var(--bs-secondary-color);
+    background: var(--bs-tertiary-bg);
     white-space: nowrap;
     padding: 0.65rem 0.5rem;
-    border-bottom: 2px solid $slate-200;
+    border-bottom: 2px solid var(--bs-border-color);
     cursor: pointer;
     user-select: none;
     transition: background 0.1s ease;
@@ -84,7 +84,7 @@
     z-index: 10;
 
     &:hover {
-      background: $slate-100;
+      background: var(--bs-secondary-bg);
     }
 
     &:focus-visible {
@@ -109,11 +109,11 @@
     transition: opacity 0.15s ease;
 
     &:hover {
-      background: $slate-50;
+      background: var(--bs-tertiary-bg);
     }
 
     &:focus-within {
-      background-color: $slate-100;
+      background-color: var(--bs-secondary-bg);
       outline: none;
     }
   }
@@ -128,7 +128,7 @@
   .kep-title-link,
   .kep-sig-link {
     text-decoration: none;
-    color: $slate-900;
+    color: var(--bs-body-color);
     transition: color 0.15s ease;
 
     &:hover {
@@ -143,7 +143,7 @@
   }
 
   .kep-title-link {
-    color: $slate-800;
+    color: var(--bs-body-color);
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -152,13 +152,13 @@
   }
 
   .kep-sig-link {
-    color: $slate-600;
+    color: var(--bs-secondary-color);
     font-size: 0.82rem;
   }
 
   .kep-author-link {
     text-decoration: none;
-    color: $slate-500;
+    color: var(--bs-secondary-color);
     font-size: 0.82rem;
     transition: color 0.15s ease;
 
@@ -168,7 +168,7 @@
   }
 
   .kep-author-etal {
-    color: $slate-400;
+    color: var(--bs-secondary-color);
     font-size: 0.78rem;
     font-style: italic;
   }
@@ -224,7 +224,7 @@
     font-family: "JetBrains Mono", "SF Mono", "Fira Code", "Cascadia Code", monospace;
     font-size: 0.78rem;
     font-weight: 600;
-    color: $slate-900;
+    color: var(--bs-body-color);
   }
 
   .kep-latest-alpha {
@@ -246,7 +246,7 @@
 
 // ===== No Data Fallback =====
 .kep-no-data {
-  color: $slate-300;
+  color: var(--bs-secondary-color);
   font-size: 0.78rem;
 }
 
@@ -256,22 +256,31 @@
 
   .dataTables_length {
     font-size: 0.82rem;
-    color: $slate-500;
+    color: var(--bs-secondary-color);
     margin-bottom: 0.75rem;
 
     select {
       font-size: 0.82rem;
       padding: 0.2rem 0.4rem;
-      border: 1px solid $slate-200;
+      border: 1px solid var(--bs-border-color);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
       border-radius: 4px;
-      background: #fff;
-      color: $slate-900;
+      background: var(--bs-body-bg);
+      color: var(--bs-body-color);
+
+      &:focus {
+        border-color: $primary;
+        box-shadow: 0 0 0 .2rem rgba($primary, .25);
+        outline: 0;
+      }
     }
   }
 
   .dataTables_info {
     font-size: 0.82rem;
-    color: $slate-500;
+    color: var(--bs-secondary-color);
     padding-top: 0.75rem;
   }
 
@@ -282,16 +291,16 @@
     .paginate_button {
       padding: 0.3rem 0.6rem;
       margin: 0 0.1rem;
-      border: 1px solid $slate-200;
+      border: 1px solid var(--bs-border-color);
       border-radius: 4px;
-      background: #fff;
-      color: $slate-600 !important; // beats DataTables' own !important on button color
+      background: var(--bs-body-bg);
+      color: var(--bs-body-color) !important; // beats DataTables' own !important on button color
       cursor: pointer;
       transition: all 0.1s ease;
 
       &:hover {
-        background: $slate-100;
-        border-color: $slate-300;
+        background: var(--bs-secondary-bg);
+        border-color: var(--bs-border-color);
       }
 
       &.current {
@@ -381,6 +390,7 @@
       font-size: 0.75rem;
       text-align: center;
       padding-top: 0.5rem;
+      color: var(--bs-secondary-color);
     }
 
     .dataTables_paginate {

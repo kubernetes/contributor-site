@@ -9,3 +9,10 @@
     color: #fff;
   }
 }
+[data-bs-theme="dark"] {
+  .badge.bg-secondary.bg-opacity-10 {
+    background-color: #343a40 !important;
+    color: #f8f9fa !important;
+  }
+}
+

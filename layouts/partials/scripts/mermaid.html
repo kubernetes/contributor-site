@@ -1,8 +1,8 @@
 {{ $version := .Site.Params.mermaid.version | default "latest" -}}
 {{ $cdnurl := printf "https://cdn.jsdelivr.net/npm/mermaid@%s/dist/mermaid.esm.min.mjs" $version -}}
-{{ $remote := resources.GetRemote $cdnurl }}
-{{ if not $remote }}
-  {{ errorf "Invalid Mermaid version %s, could not retrieve this version from CDN." $version }}
+{{ $remote := try (resources.GetRemote $cdnurl) }}
+{{ with $remote.Err }}
+  {{ errorf "Invalid Mermaid version %q, could not retrieve Mermaid from CDN: %s" $version . }}
 {{ end }}
 <script type="module" async>
 import mermaid from "{{ $cdnurl }}";

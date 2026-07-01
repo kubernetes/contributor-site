@@ -13,6 +13,14 @@ $display-font-sizes: (
 
 $display-font-weight: $font-weight-bold;
 
+// Automatically lightens your brand primary color by 25% on dark backgrounds for readability
+$lighten-amount-for-dark-color-variant: 25% !default;
+
+// Map custom layout tokens to universal themes if needed
+$slate-dark-bg: var(--bs-body-bg);
+$slate-dark-border: var(--bs-border-color);
+$slate-dark-text: var(--bs-body-color);
+
 
 // Docsy 0.9.0+ underlines links by default (google/docsy#1815).
 // Restore the pre-0.9.0 appearance but show underlines on hover.
