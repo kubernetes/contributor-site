@@ -7,11 +7,11 @@ description: |
     and organized.
 ---
 
-# Section 4: Issues Management/Triage
+## Section 4: Issues Management/Triage
 
 ---
 
-# What you're about to learn
+## What you're about to learn
 
 This unit will help you get started with issue management across the Kubernetes GitHub repositories. By the end, you'll:
 
@@ -22,7 +22,7 @@ This unit will help you get started with issue management across the Kubernetes 
 
 ---
 
-# How does Kubernetes use GitHub issues?
+## How does Kubernetes use GitHub issues?
 
 Contributors and end users use issues for a variety of reasons:
 
@@ -35,7 +35,7 @@ You can identify different types of issues with their labels (AKA tags).
 
 ---
 
-# What are labels?
+## What are labels?
 
 * Labels are a GitHub feature used to organize issues and pull requests.
 * They allow you to quickly identify at a glance what type of issue or pull request you are looking at.
@@ -44,7 +44,7 @@ You can identify different types of issues with their labels (AKA tags).
 
 ---
 
-# Where can I find all of the Kubernetes issues?
+## Where can I find all of the Kubernetes issues?
 
 Issues are managed in many of the different Kubernetes GitHub repositories, and can be accessed via the _Issues_ tab. Here are the most common:
 
@@ -54,7 +54,7 @@ Issues are managed in many of the different Kubernetes GitHub repositories, and 
 
 ---
 
-# What are some common labels?
+## What are some common labels?
 
 There are [A LOT of different labels](https://github.com/kubernetes/test-infra/blob/master/label_sync/labels.md), and both issues and pull requests (PRs) can have their own labels. Here are a few you will run into frequently.
 
@@ -105,7 +105,7 @@ There are [A LOT of different labels](https://github.com/kubernetes/test-infra/b
 
 ---
 
-# Which labels will you have to worry about?
+## Which labels will you have to worry about?
 
 That list of labels is really long, but you won't need to worry about most of them at the beginning.
 
@@ -115,7 +115,7 @@ That list of labels is really long, but you won't need to worry about most of th
 
 ---
 
-# What is triaging?
+## What is triaging?
 
 * Triaging is the process where new issues and requests are reviewed and organized.
 * Factors considered include priority/urgency, SIG ownership of the issue, and the kind of issue (bug, feature, etc.).
@@ -126,7 +126,7 @@ Triaging is critical for keeping track of new issues, bugs, and problems. [Read 
 
 ---
 
-# How are issues prioritized?
+## How are issues prioritized?
 
 Each SIG is responsible for triaging and deciding on the priority of issues that affect their area.
 
@@ -135,7 +135,7 @@ Each SIG is responsible for triaging and deciding on the priority of issues that
 
 ---
 
-# What is the Security Response Committee?
+## What is the Security Response Committee?
 
 * The Security Response Committee (SRC) is responsible for triaging and handling the security issues for Kubernetes.
 * The SRC is also responsible for disclosing vulnerabilities to the public.

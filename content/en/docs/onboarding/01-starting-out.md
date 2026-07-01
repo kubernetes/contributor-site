@@ -6,13 +6,13 @@ description: |
     Begin your journey to become a contributing member of the Kubernetes project!
 ---
 
-# Welcome to Kubernetes!
+## Welcome to Kubernetes!
 
 Welcome to the New Contributor course for Kubernetes!
 
 ---
 
-# Section 1: Starting Out
+## Section 1: Starting Out
 
 Each unit of this course consists of a slideshow and links to resources. Take your time reading the materials, and feel free to reach out to the community with questions.
 
@@ -20,7 +20,7 @@ We look forward to your contributions!
 
 ---
 
-# What you are about to learn
+## What you are about to learn
 
 This first unit is all about starting out in the Kubernetes community. By the end of this unit, you will:
 
@@ -30,7 +30,7 @@ This first unit is all about starting out in the Kubernetes community. By the en
 
 ---
 
-# Who exactly is a contributor?
+## Who exactly is a contributor?
 
 Kubernetes contributors bring a wide range of talents, skills, services, and ideas to the community. They:
 
@@ -44,7 +44,7 @@ Everybody's contributions are welcome in the Kubernetes community!
 
 ---
 
-# What are the core values of the Kubernetes community?
+## What are the core values of the Kubernetes community?
 
 The Kubernetes community adheres to the following principles:
 
@@ -58,7 +58,7 @@ The Kubernetes community adheres to the following principles:
 
 ---
 
-# What behavior is expected of contributors?
+## What behavior is expected of contributors?
 
 The Kubernetes community strives to be safe, respectful and inclusive. We expect all contributors to:
 
@@ -70,7 +70,7 @@ The Kubernetes community strives to be safe, respectful and inclusive. We expect
 
 ---
 
-# What is the CNCF Code of Conduct?
+## What is the CNCF Code of Conduct?
 
 _"The Kubernetes Code of Conduct is in effect, so please be excellent to each other." — Jorge Castro, 2020 SIG ContribEx co-chair_
 
@@ -80,7 +80,7 @@ The Code of Conduct serves as a set of rules used by the Kubernetes community to
 
 ---
 
-# Who oversees and enforces the Code of Conduct?
+## Who oversees and enforces the Code of Conduct?
 
 The Code of Conduct Committee oversees and handles all incidents and responses regarding code of conduct issues and violations.
 
@@ -88,7 +88,7 @@ The Code of Conduct Committee oversees and handles all incidents and responses r
 
 ---
 
-# How is the Kubernetes community organized?
+## How is the Kubernetes community organized?
 
 Most community activity is organized into three areas:
 
@@ -98,7 +98,7 @@ Most community activity is organized into three areas:
 
 ---
 
-# What are Special Interest Groups?
+## What are Special Interest Groups?
 
 We are organized primarily into Special Interest Groups, or SIGs. Each SIG is composed of members from multiple companies and organizations. In addition, each SIG:
 
@@ -107,7 +107,7 @@ We are organized primarily into Special Interest Groups, or SIGs. Each SIG is co
 
 ---
 
-# What is a working group?
+## What is a working group?
 
 A working group facilitates topics of discussion that cross SIG lines. They are a vehicle for consensus building. A working group:
 
@@ -117,7 +117,7 @@ A working group facilitates topics of discussion that cross SIG lines. They are 
 
 ---
 
-# What is a committee?
+## What is a committee?
 
 Some topics, such as Security or Code of Conduct, require discretion. Committees do not have open membership and do not always operate in the open. 
 
@@ -127,7 +127,7 @@ Some topics, such as Security or Code of Conduct, require discretion. Committees
 
 ---
 
-# Where can I learn more?
+## Where can I learn more?
 
 The [Kubernetes Community Resources page](/community/) has links to documents that describe our community structure and governance.
 

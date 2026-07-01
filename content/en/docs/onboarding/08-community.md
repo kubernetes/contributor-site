@@ -7,11 +7,11 @@ description: |
     project. Learn how we do it!
 ---
 
-# Section 8: Community
+## Section 8: Community
 
 ---
 
-# What you’re about to learn
+## What you’re about to learn
 
 It’s time to learn about communication and community among Kubernetes contributors. By the end of this unit, you will:
 
@@ -22,7 +22,7 @@ It’s time to learn about communication and community among Kubernetes contribu
 
 ---
 
-# How big is the Kubernetes contributor community?
+## How big is the Kubernetes contributor community?
 
 The Kubernetes community has _thousands_ of active contributors.
 
@@ -30,7 +30,7 @@ The Kubernetes community has _thousands_ of active contributors.
 
 ---
 
-# Is every contributor a developer?
+## Is every contributor a developer?
 
 No! Kubernetes contributors take on all kinds of responsibilities and roles, including:
 
@@ -60,7 +60,7 @@ No! Kubernetes contributors take on all kinds of responsibilities and roles, inc
 
 ---
 
-# What is the best way to communicate with my fellow contributors?
+## What is the best way to communicate with my fellow contributors?
 
 Every SIG, working group, and committee will have its preferred method of communication, but globally, the community uses:
 
@@ -70,7 +70,7 @@ Every SIG, working group, and committee will have its preferred method of commun
 
 ---
 
-# What do I need to know about the mailing lists?
+## What do I need to know about the mailing lists?
 
 Community-wide notifications and discussions are always sent to the [Kubernetes dev mailing list](https://groups.google.com/a/kubernetes.io/g/dev). 
 
@@ -78,7 +78,7 @@ Community-wide notifications and discussions are always sent to the [Kubernetes 
 
 ---
 
-# How do I join the Kubernetes Slack community?
+## How do I join the Kubernetes Slack community?
 
 The Kubernetes Slack server has over 500 channels! 
 
@@ -87,7 +87,7 @@ The Kubernetes Slack server has over 500 channels!
 
 ---
 
-# What is the best way to communicate with each SIG?
+## What is the best way to communicate with each SIG?
 
 Each SIG and Working Group has its favored method of communication. You can start in their Slack channel and ask around.
 
@@ -97,7 +97,7 @@ Each SIG and Working Group has its favored method of communication. You can star
 
 ---
 
-# How does the community use GitHub Issues and email to communicate?
+## How does the community use GitHub Issues and email to communicate?
 
 Slack is excellent for most discussion and questions.
 
@@ -106,7 +106,7 @@ Slack is excellent for most discussion and questions.
 
 ---
 
-# How do I find out more about KubeCon and other in-person events?
+## How do I find out more about KubeCon and other in-person events?
 
 While KubeCon is organized by the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/), we like to host a Contributor Summit alongside KubeCon.
 
@@ -115,7 +115,7 @@ While KubeCon is organized by the [Cloud Native Computing Foundation (CNCF)](htt
 
 ---
 
-# Where can I learn more about communication in the community?
+## Where can I learn more about communication in the community?
 
 We have extensive guidelines and policies around our various communication channels.
 

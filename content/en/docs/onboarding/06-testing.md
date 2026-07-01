@@ -6,13 +6,13 @@ description: |
     Learn about the different types of tests in the Kubernetes project and how to run them.
 ---
 
-# Section 6: Testing
+## Section 6: Testing
 
 This unit is all about the various types of tests, both automated and manual, in the Kubernetes project. 
 
 ---
 
-# What you're about to learn
+## What you're about to learn
 
 By the time you're done with this unit, you'll:
 
@@ -23,7 +23,7 @@ Testing Kubernetes is pretty complicated. We will try to make it easy for you, b
 
 ---
 
-# What are the different types of tests?
+## What are the different types of tests?
 
 In the course of developing Kubernetes, you will interact with three different test types:
 
@@ -35,7 +35,7 @@ Let's learn about each type of test!
 
 ---
 
-# Unit tests
+## Unit tests
 
 **Unit tests** run against the smallest possible components of code, like an individual function or API calls.
 
@@ -44,7 +44,7 @@ Let's learn about each type of test!
 
 ---
 
-# Integration tests
+## Integration tests
 
 **Integration tests** make sure that components work together flawlessly as a group.
 
@@ -54,7 +54,7 @@ Let's learn about each type of test!
 
 ---
 
-# End-to-End tests
+## End-to-End tests
 
 **End-to-end (E2E) tests** emulate an entire execution path across the entire application, from start to end.
 
@@ -64,7 +64,7 @@ Let's learn about each type of test!
 
 ---
 
-# Who is responsible for Kubernetes tests?
+## Who is responsible for Kubernetes tests?
 
 *"Developers! Developers! Developers!" — Steve Ballmer*
 
@@ -74,7 +74,7 @@ Let's learn about each type of test!
 
 ---
 
-# What is presubmission verification?
+## What is presubmission verification?
 
 Presubmission is the phase before a pull request is created—the steps that you, the contributor, can take to maximize your PR's chance of success.
 
@@ -84,7 +84,7 @@ Presubmission is the phase before a pull request is created—the steps that you
 
 ---
 
-# How do I interact with unit tests?
+## How do I interact with unit tests?
 
 Pull requests need to pass **all** unit tests.
 
@@ -94,7 +94,7 @@ Pull requests need to pass **all** unit tests.
 
 ---
 
-# How do I interact with integration tests?
+## How do I interact with integration tests?
 
 Pull requests also need to pass **all** integration tests.
 
@@ -104,7 +104,7 @@ Pull requests also need to pass **all** integration tests.
 
 ---
 
-# How do I interact with end-to-end (E2E) tests?
+## How do I interact with end-to-end (E2E) tests?
 
 E2E tests build test binaries, spin up a test cluster, run the tests, and then tear the cluster down.
 
@@ -114,7 +114,7 @@ You will not need to run E2E tests for every pull request. [The End-to-End Testi
 
 ---
 
-# How does testing affect my pull request?
+## How does testing affect my pull request?
 
 You should run tests locally or in your development environment before submitting a pull request, because it will speed up the process.
 
@@ -126,7 +126,7 @@ You should run tests locally or in your development environment before submittin
 
 ---
 
-# Testing Resources
+## Testing Resources
 
 We've covered a lot of ground in this unit, and if you want to go deeper, here is a collection of all the resources we used.
 

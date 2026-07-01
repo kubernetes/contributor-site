@@ -7,11 +7,11 @@ description: |
     what to do when you need a reviewer.
 ---
 
-# Section 7: Code Review
+## Section 7: Code Review
 
 ---
 
-# What you're about to learn
+## What you're about to learn
 
 In this unit, you will learn everything about getting your code contributions to Kubernetes reviewed. By the end of this unit, you will be able to:
 
@@ -20,7 +20,7 @@ In this unit, you will learn everything about getting your code contributions to
 
 ---
 
-# What is a code review?
+## What is a code review?
 
 A code review is when other developers examine proposed changes and additions to source code.
 
@@ -29,7 +29,7 @@ A code review is when other developers examine proposed changes and additions to
 
 ---
 
-# Why are code reviews important?
+## Why are code reviews important?
 
 Like testing, code reviews help make sure Kubernetes remains stable, reliable, and bug-free.
 
@@ -39,7 +39,7 @@ Like testing, code reviews help make sure Kubernetes remains stable, reliable, a
 
 ---
 
-# Where does a code review fit into the process?
+## Where does a code review fit into the process?
 
 To understand code reviews, you need to understand pull requests first. Make sure you've finished that unit!
 
@@ -48,7 +48,7 @@ To understand code reviews, you need to understand pull requests first. Make sur
 
 ---
 
-# Who can review my code?
+## Who can review my code?
 
 Anybody can review your code, but only approved reviewers can add the `lgtm` label to your PR, which marks it as ready for merging.
 
@@ -58,7 +58,7 @@ Anybody can review your code, but only approved reviewers can add the `lgtm` lab
 
 ---
 
-# How can I make sure my changes pass review?
+## How can I make sure my changes pass review?
 
 There are a number of points to keep in mind while preparing your pull request for review.
 
@@ -72,7 +72,7 @@ The Contributor Guide has [more guidelines and tips for passing reviews](https:/
 
 ---
 
-# Help! My pull request isn't getting any reviews!
+## Help! My pull request isn't getting any reviews!
 
 If you need help finding reviewers for your pull request, try one of the following:
 
