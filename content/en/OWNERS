@@ -1,0 +1,15 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+# This is the directory for English source content.
+# The contributor-site localization team handles ownership,
+# with all existing site owners as fallback.
+
+options:
+  no_parent_owners: true
+
+reviewers:
+- sig-contribex-website-reviewers
+
+approvers:
+- sig-contribex-website-owners
+- sig-contribex-website-reviewers

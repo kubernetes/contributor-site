@@ -3,9 +3,22 @@ aliases:
     - dims
     - derekwaynecarr
     - johnbelamaric
-  sig-contributor-experience-leads:
+  sig-contributor-experience-leads: &contribex-leads
     - kaslin
     - MadhavJivrajani
     - mfahlandt
     - palnabarun
     - Priyankasaggu11929
+  sig-contribex-website-owners: *contribex-leads
+  sig-contribex-website-reviewers:
+    - jberkus
+    - jeefy
+    - lmktfy
+    - mrbobbytables
+    - natalisucks
+    - nimbinatus
+    - reylejano
+    - stmcginnis
+    - TineoC
+    - tokt
+
