@@ -4,8 +4,8 @@ title: "KCD Around the World: New York"
 draft: true 
 slug: kcd-around-the-world-new-york
 author: >
-  Christopher Tineo (Game Plan Tech),
-  Kashish Verma (independent)
+  [Christopher Tineo](https://github.com/TineoC) (Game Plan Tech),
+  [Kashish Verma](https://github.com/KashishV999) 
 ---
 
 Welcome to KCD Around the World, a new series where we explore Kubernetes Community Days from every corner of the globe. When most people think of KCD, they think about talks and technical sessions, but behind every event is a community of volunteers, contributors, organizers and attendees who make it all happen. Through conversations with the people behind each KCD, we'll share what makes it unique.
