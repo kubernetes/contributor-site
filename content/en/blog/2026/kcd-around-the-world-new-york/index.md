@@ -10,7 +10,7 @@ author: >
 
 Welcome to KCD Around the World, a new series where we explore [Kubernetes Community Days](https://www.cncf.io/kcds/) from every corner of the globe. When most people think of KCD, they think about talks and technical sessions, but behind every event is a community of volunteers, contributors, organizers and attendees who make it all happen. Through conversations with the people behind each KCD, we'll share what makes it unique.
 
-Our first stop: New York City. To learn what made this year's event special, we interview Christopher Tineo, who organized KCD NY 2026 and built out the event agenda and website.
+Our first stop: New York City. To learn what made this year's event special, we interview Christopher Tineo, one of the organizers for KCD NY 2026.
 
 ## Meet the community
 
