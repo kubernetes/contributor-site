@@ -4,7 +4,7 @@ title: "What I learned from joining the Blog team"
 draft: true
 slug: what-i-learned-from-joining-the-blog-team
 author: >
-  [Kashish Verma] (https://github.com/KashishV999)
+  [Kashish Verma](https://github.com/KashishV999)
 ---
 
 When I joined the Kubernetes blog team, I did not know quite what to expect.
