@@ -81,15 +81,7 @@
           <div class="kep-banner-sublabel">Related Enhancements</div>
           <ul class="kep-link-list">
             {{ range . }}
-            <li>
-              {{- if and (strings.HasPrefix . "http") (not (strings.Contains . "[")) -}}
-                <a href="{{ . }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> {{ . }}</a>
-              {{- else if and (strings.HasPrefix . "/") (not (strings.Contains . "[")) -}}
-                <a href="https://github.com/kubernetes/enhancements/tree/master{{ . }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> {{ . }}</a>
-              {{- else -}}
-                {{ . | markdownify }}
-              {{- end -}}
-            </li>
+            <li>{{- partial "keps/see-also.html" . -}}</li>
             {{ end }}
           </ul>
         </div>
