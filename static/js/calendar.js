@@ -62,7 +62,7 @@ function renderCalendar(apiKey) {
           type: 'timeGrid',
           duration: { weeks: 1 },
           buttonText: 'week',
-          aspectRation: 10,
+          aspectRatio: 10,
           allDaySlot: false
         },
         monthView: {
