@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "KCD Around the World: New York"
-draft: true 
+draft: true
 slug: kcd-around-the-world-new-york
 author: >
   [Christopher Tineo](https://github.com/TineoC) (Game Plan Tech),
@@ -18,9 +18,9 @@ Our first stop: New York City. To learn what made this year's event special, we 
 
 **Christopher Tineo (CT):** I'm Christopher Tineo. This year I organized KCD NY 2026, where my main focus was building out the event agenda and our [event website](https://kcdnewyork.com).
 
-Going back a bit, I first got involved through a meetup organized in Santo Domingo by Victor Recio around Feb 2024, right after I got my [CKAD certification](https://kubernetes.io/training/). I had the chance to connect with a few engineers who eventually became organizers for our [CNCF chapter](https://www.linkedin.com/company/cloudnativesdq), Ayesha Yege and Enmanuel Medina.
+Going back a bit, I first got involved through a meetup organized in Santo Domingo by Victor Recio around February 2024, right after I got my [CKAD certification](https://kubernetes.io/training/). I had the chance to connect with a few engineers who eventually became organizers for our [CNCF chapter](https://www.linkedin.com/company/cloudnativesdq), Ayesha Yege and Enmanuel Medina.
 
-As I dived deeper into the CNCF community, I knew I wanted to be a part of it. After watching Julia Morgado's inspiring talk at [Kubecon 2023](https://www.youtube.com/watch?v=rqtENN7iveQ&t=32s&pp=ygUgZnJvbSBub24tdGVjaCB0byBjbmNmIGFtYmFzc2Fkb3I%3D), I was driven to take action. Despite living in the Dominican Republic, I booked a flight to KCD NY 2024 and applied to volunteer. Luckily, I got a spot on the team, and it turned out to be an incredible firsthand experience with the community.
+As I dived deeper into the CNCF community, I knew I wanted to be a part of it. After watching Julia Morgado's inspiring talk at [KubeCon 2023](https://youtu.be/rqtENN7iveQ?si=AzlvfHv2NH0RZfZs), I was driven to take action. Despite living in the Dominican Republic, I booked a flight to KCD NY 2024 and applied to volunteer. Luckily, I got a spot on the team, and it turned out to be an incredible firsthand experience with the community.
 
 ![Christopher Tineo and fellow KCD New York 2026 team posing together at the event](kcd-ny-2026-team.jpg)
 
