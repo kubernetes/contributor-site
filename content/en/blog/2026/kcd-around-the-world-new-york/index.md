@@ -58,7 +58,6 @@ Attending as a volunteer in 2024 is what motivated me to come back as a speaker 
 
 **CT:** AI Agents in production, Platform Engineering and Runtime Security. And if you missed any of the sessions, we've got the recordings up on our [YouTube channel](https://www.youtube.com/@KCDNewYork), so you can still go back and watch.
 
-
 ## Looking ahead
 
 **KV:** For someone considering their first KCD, what would you tell them?
