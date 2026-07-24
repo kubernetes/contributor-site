@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "KCD Around the World: New York"
-draft: true
+date: 2026-07-28T10:00:00-08:00
 slug: kcd-around-the-world-new-york
 author: >
   [Christopher Tineo](https://github.com/TineoC) (Game Plan Tech),
