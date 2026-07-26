@@ -36,7 +36,7 @@
     <rect x="40" y="70" width="250" height="70" rx="6" fill="#fff8e1" stroke="#f0b429" stroke-width="1.4"/>
     <text x="165" y="93" text-anchor="middle" class="title">image-owning repo</text>
     <text x="165" y="113" text-anchor="middle" class="body">cloudbuild.yaml</text>
-    <text x="165" y="131" text-anchor="middle" class="body">make release-staging</text>
+    <text x="165" y="131" text-anchor="middle" class="body">image build configuration</text>
 
     <rect x="690" y="70" width="250" height="70" rx="6" fill="#eaf2fd" stroke="#5b8def" stroke-width="1.4"/>
     <text x="815" y="100" text-anchor="middle" class="title">kubernetes/k8s.io</text>

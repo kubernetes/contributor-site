@@ -7,28 +7,23 @@ author: >
   [Kahiro Okina](https://github.com/kahirokunn) (Craftsman Software, Inc.)
 ---
 
-For many Kubernetes SIG projects, shipping container images eventually
-becomes necessary, and `registry.k8s.io` is the official channel for them. I recently published a
-SIG project's first images there. No single step is hard, but the steps live
-in four repositories and have to happen in a particular order, which I mostly
-learned by tripping over them.
+If you're publishing container images for a Kubernetes SIG project, you might
+expect the same publishing workflow used by other container registries to work.
+That was my assumption too. My workflow successfully published the images, but
+they weren't publicly available. Instead, official Kubernetes project images
+are distributed through
+[registry.k8s.io](https://github.com/kubernetes/k8s.io/tree/main/registry.k8s.io),
+the Kubernetes project's official container image registry.
 
-This post is the guide I wish I had at the start. The example project is
-`cluster-inventory-api` from
-[SIG Multicluster](https://github.com/kubernetes/community/tree/master/sig-multicluster),
-but nothing in the procedure is specific to that SIG.
+No single step was hard, but the steps were spread across multiple repositories
+and had to happen in a particular order, something I mostly learned by tripping
+over them. This post is the guide I wish I had at the start. It walks through
+that workflow end to end using Cluster Inventory API from
+[SIG Multicluster](https://github.com/kubernetes/community/tree/master/sig-multicluster)
+as an example. The same process applies to eligible Kubernetes subprojects that
+publish official container images.
 
-## What Cluster Inventory API publishes
-
-Cluster Inventory API helps applications and tools work with multiple
-Kubernetes clusters. It publishes the
-[`secretreader`](https://github.com/kubernetes-sigs/cluster-inventory-api/tree/main/plugins/secretreader/cmd/plugin)
-and
-[`kubeconfig-secretreader`](https://github.com/kubernetes-sigs/cluster-inventory-api/tree/main/plugins/kubeconfig-secretreader/cmd/plugin)
-access-provider plugins as OCI images. Consumers mount these images as
-[image volumes](https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/).
-
-## My first plan: ghcr.io
+## My first attempt: GHCR
 
 I first tried a common GitHub release pattern: using GitHub Actions to publish
 images to `ghcr.io` on a tag push
@@ -39,7 +34,7 @@ private, so GHCR cannot be used for public distribution.
 {{< figure src="ghcr-path-blocked.svg" class="text-center" width="660" alt="The blocked GHCR path: a tag push triggers GitHub Actions, which pushes the image to ghcr.io, where it cannot be made public." >}}
 
 As described in the
-[artifacts documentation](https://github.com/kubernetes/k8s.io/tree/main/artifacts#staging-buckets),
+[registry.k8s.io documentation](https://github.com/kubernetes/k8s.io/tree/main/registry.k8s.io),
 official images take a different route:
 [Prow](https://docs.prow.k8s.io/) (the Kubernetes project's CI/CD system)
 picks up a tag push and runs Google Cloud Build on Kubernetes-owned
@@ -47,13 +42,6 @@ infrastructure to push the image to a staging registry, and the image promoter
 then copies it to `registry.k8s.io`.
 
 {{< figure src="official-publishing-path.svg" class="text-center" width="820" alt="The official publishing path: a tag push triggers a Prow postsubmit job, which runs Cloud Build and pushes to a staging registry. The image promoter then copies the image to registry.k8s.io." >}}
-
-For this project, the images that finally shipped through that route were:
-
-```none
-registry.k8s.io/cluster-inventory-api/secretreader:v0.1.3
-registry.k8s.io/cluster-inventory-api/kubeconfig-secretreader:v0.1.3
-```
 
 ## The first-time setup, step by step
 
@@ -63,33 +51,36 @@ repositories: [`kubernetes/k8s.io`](https://github.com/kubernetes/k8s.io),
 [`kubernetes/org`](https://github.com/kubernetes/org). The pieces depend on
 each other like this:
 
-{{< figure src="dependency-overview.svg" alt="A dependency graph for first-time registry.k8s.io image publishing. The image-owning repository provides cloudbuild.yaml and make release-staging, and a signed release tag triggers the kubernetes/test-infra image-pushing postsubmit job. In kubernetes/k8s.io, a staging Google Group must exist before the staging registry can be created, and that registry is the job's push target. The postsubmit job pushes the staging image. That staging image, together with image promoter config in kubernetes/k8s.io and OWNERS validation through kubernetes/org membership, promotes the image to registry.k8s.io." >}}
+{{< figure src="dependency-overview.svg" alt="A dependency graph for first-time registry.k8s.io image publishing. The image-owning repository provides cloudbuild.yaml and image build configuration, and a signed release tag triggers the kubernetes/test-infra image-pushing postsubmit job. In kubernetes/k8s.io, a staging Google Group must exist before the staging registry can be created, and that registry is the job's push target. The postsubmit job pushes the staging image. That staging image, together with image promoter config in kubernetes/k8s.io and OWNERS validation through kubernetes/org membership, promotes the image to registry.k8s.io." >}}
 
-### Before you start: choose registry paths, tag policy, and owners
+### Before you start: decide your project details
 
-Reading `registry.k8s.io/cluster-inventory-api/secretreader:v0.1.3` from the
-example above: `<project>` is `cluster-inventory-api`, `<image>` is
-`secretreader`, and `v<version>` is `v0.1.3`. For your project, decide:
+Before setting up the publishing workflow, decide a few project-specific
+details. These values will be reused throughout the setup when creating the
+staging registry, configuring image builds, and setting up image promotion:
 
-- `<project>`, which also fixes the staging path
+- `<project>`, which determines the staging registry path
   `us-central1-docker.pkg.dev/k8s-staging-images/<project>`.
 - `<image>` for each image you ship.
-- The tag policy behind `<version>`.
-- Which SIG owns the project, and who reviews and approves.
-- Who goes in the promotion `OWNERS` file.
-- The staging access group name.
+- Decide how your project will version releases.
 
-### 1. Make the image-owning repository build images
+For the Cluster Inventory API example, these values form
+`registry.k8s.io/cluster-inventory-api/secretreader:v0.1.3`, where `<project>`
+is `cluster-inventory-api`, `<image>` is `secretreader`, and `<version>` is
+`0.1.3`.
 
-Set up the repository so that a tag push can build and push a staging image.
-You need:
+### 1. Set up your project repository to build images
+
+Before Kubernetes infrastructure can build and publish your images, the
+image-owning repository must define how they are built. As described in the
+[image-pushing documentation](https://github.com/kubernetes/test-infra/blob/master/config/jobs/image-pushing/README.md),
+this requires:
 
 - a `RELEASE.md` documenting the release steps,
-- a `cloudbuild.yaml` (the `test-infra` job in step 4 invokes this to build
-  and push the image),
-- a Dockerfile and/or Make target to build the image,
-- a release target that pushes to the staging registry (for example
-  `make release-staging`).
+- a `cloudbuild.yaml` file that invokes the project's image build and push
+  process,
+- the project-specific build configuration invoked by `cloudbuild.yaml`. See
+  the [build example](https://github.com/kubernetes/test-infra/blob/master/config/jobs/image-pushing/README.md#build-example).
 
 References:
 [cluster-inventory-api#53](https://github.com/kubernetes-sigs/cluster-inventory-api/pull/53)
@@ -99,12 +90,19 @@ References:
 
 ### 2. Add a Google Group for staging artifacts
 
-Create the Google Group that will get push access to the staging registry, in
-your SIG's group configuration under `groups/` in `kubernetes/k8s.io`
-([kubernetes/k8s.io#9385](https://github.com/kubernetes/k8s.io/pull/9385)),
-and get approval from your SIG leads or chairs. Keep the group-name suffix
-within the 18-character limit
-([kubernetes/k8s.io#9402](https://github.com/kubernetes/k8s.io/pull/9402)).
+Kubernetes uses a Google Group to control who can push images into the staging
+registry. Before the registry can be created, this group must exist.
+
+Create a Google Group named
+`k8s-infra-staging-<project-name>@kubernetes.io` in your SIG's
+[`groups/` configuration](https://github.com/kubernetes/k8s.io/tree/main/groups)
+in `kubernetes/k8s.io`. After the PR merges, Kubernetes infrastructure creates
+the group automatically. For example, see
+[kubernetes/k8s.io#9385](https://github.com/kubernetes/k8s.io/pull/9385).
+
+Keep the `<project-name>` suffix within the **18-character limit**. See
+[kubernetes/k8s.io#9402](https://github.com/kubernetes/k8s.io/pull/9402) for an
+example where the group name was shortened to meet this requirement.
 
 ### 3. Add a staging registry in kubernetes/k8s.io
 
@@ -118,7 +116,9 @@ repository publicly readable. Reference:
 
 Add a job under `config/jobs/image-pushing/` that runs the image-owning
 repository's `cloudbuild.yaml` on a tag push and pushes to the staging
-registry. Reference:
+registry. See the
+[Prow config template](https://github.com/kubernetes/test-infra/blob/master/config/jobs/image-pushing/README.md#prow-config-template).
+For reference:
 [kubernetes/test-infra#36821](https://github.com/kubernetes/test-infra/pull/36821).
 
 ### 5. Push a release tag to build a staging image
@@ -133,16 +133,20 @@ git push origin v<version>
 gh release create v<version> --draft --generate-notes --verify-tag
 ```
 
-Then verify the staging image:
-
-```bash
-docker manifest inspect us-central1-docker.pkg.dev/k8s-staging-images/<project>/<image>:v<version>
-```
+Verify that the image was successfully published to the staging registry.
 
 Tag events are not processed retroactively: tags created before the release
 pipeline existed will not produce a staging image.
 
+Note: Staging registries have a 90-day retention policy and are intended only
+for intermediate builds. End users should consume images from
+`registry.k8s.io` after they have been promoted.
+
 ### 6. Add the image promoter configuration in kubernetes/k8s.io
+
+At this point, the image exists only in the staging registry. The next step
+configures the Image Promoter, which copies approved images into the public
+`registry.k8s.io` registry.
 
 Open a `kubernetes/k8s.io` PR that adds the promotion configuration for this
 project
@@ -152,6 +156,10 @@ project
 - `registry.k8s.io/images/k8s-staging-<project>/images.yaml` (the promotion
   target),
 - `registry.k8s.io/manifests/k8s-staging-<project>/promoter-manifest.yaml`.
+
+The `promoter-manifest.yaml` file stores credentials and other registry
+metadata, while `images.yaml` stores the image data. The `OWNERS` file lets more
+project members approve new images for promotion.
 
 For the first promotion, include the digest and tag entries for the staging
 images in `images.yaml`, and get `/lgtm` from a SIG lead. For later releases,
@@ -167,11 +175,21 @@ member, submit a membership request first
 
 ### 7. Verify the release and publish it
 
-Once the promotion PR merges, run the project's release verification and
-confirm the production image is available:
+Once the promotion PR merges, the image promoter workflow publishes the image
+from the staging registry to `registry.k8s.io`. The promotion is handled by
+Kubernetes CI jobs:
 
-```bash
-docker manifest inspect registry.k8s.io/<project>/<image>:v<version>
+- `post-k8sio-image-promo` runs after the merge and performs the promotion.
+- `ci-k8sio-image-promo` periodically retries promotions in case of transient
+  failures.
+
+Verify that the promotion jobs complete successfully and that the image is
+available from `registry.k8s.io`. For Cluster Inventory API, the images that
+shipped through this route were:
+
+```none
+registry.k8s.io/cluster-inventory-api/secretreader:v0.1.3
+registry.k8s.io/cluster-inventory-api/kubeconfig-secretreader:v0.1.3
 ```
 
 When that works, publish or update the GitHub release and announce it in the
@@ -186,8 +204,8 @@ up with the work:
 
 | Channel | Use it for |
 | --- | --- |
-| `#github-management` | Repository access, GHCR questions, and Kubernetes organization membership |
-| `#sig-k8s-infra` | The staging Google Group and staging registry |
+| [`#github-management`](https://kubernetes.slack.com/archives/C01672LSZL0) | Repository access, Kubernetes organization membership, and GitHub-related questions |
+| [`#sig-k8s-infra`](https://kubernetes.slack.com/archives/CCK68P2Q2) | The staging Google Group, staging registry, and image publishing infrastructure |
 
 ## After the first time, it is much lighter
 
@@ -227,6 +245,7 @@ pull requests and guiding the infrastructure and promotion changes.
 - [Using Plugin OCI Images](https://github.com/kubernetes-sigs/cluster-inventory-api/blob/main/docs/plugin-images.md)
 - [Image volumes](https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/)
 - [registry.k8s.io: faster, cheaper and Generally Available (GA)](https://kubernetes.io/blog/2022/11/28/registry-k8s-io-faster-cheaper-ga/)
-- [Publishing official artifact images (`kubernetes/k8s.io/artifacts`)](https://github.com/kubernetes/k8s.io/tree/main/artifacts#staging-buckets)
+- [Managing Kubernetes container registries](https://github.com/kubernetes/k8s.io/tree/main/registry.k8s.io)
+- [Image pushing jobs](https://github.com/kubernetes/test-infra/blob/master/config/jobs/image-pushing/README.md)
 - [`kpromo` (promo-tools)](https://github.com/kubernetes-sigs/promo-tools)
 - [Kubernetes Slack](https://slack.k8s.io/)
