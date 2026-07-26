@@ -163,9 +163,8 @@ project members approve new images for promotion.
 
 For the first promotion, include the digest and tag entries for the staging
 images in `images.yaml`, and get `/lgtm` from a SIG lead. For later releases,
-[`kpromo`](https://github.com/kubernetes-sigs/promo-tools) generates this PR
-for you (see the routine release steps below). If you are curious how the
-promotion machinery works, see
+follow the routine release steps below to create the promotion PR with
+`kpromo`. If you are curious how the promotion machinery works, see
 [The Invisible Rewrite: Modernizing the Kubernetes Image Promoter](https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/).
 
 If anyone you plan to list in `OWNERS` is not yet a Kubernetes organization
@@ -213,7 +212,9 @@ Routine releases only touch the image-owning repository and one promotion PR:
 
 1. Push a signed tag, create a draft GitHub release, and confirm the
    postsubmit pushed the staging image, as in step 5 of the first-time setup.
-2. Create the promotion PR with `kpromo pr`, naming the Artifact Registry
+2. Follow the
+   [promotion pull request guide](https://sigs.k8s.io/promo-tools/docs/promotion-pull-requests.md)
+   and create the promotion PR with `kpromo pr`, naming the Artifact Registry
    staging repository explicitly with `--staging-repo`:
 
    ```bash
@@ -247,5 +248,5 @@ pull requests and guiding the infrastructure and promotion changes.
 - [registry.k8s.io: faster, cheaper and Generally Available (GA)](https://kubernetes.io/blog/2022/11/28/registry-k8s-io-faster-cheaper-ga/)
 - [Managing Kubernetes container registries](https://github.com/kubernetes/k8s.io/tree/main/registry.k8s.io)
 - [Image pushing jobs](https://github.com/kubernetes/test-infra/blob/master/config/jobs/image-pushing/README.md)
-- [`kpromo` (promo-tools)](https://github.com/kubernetes-sigs/promo-tools)
+- [Creating promotion pull requests with `kpromo`](https://sigs.k8s.io/promo-tools/docs/promotion-pull-requests.md)
 - [Kubernetes Slack](https://slack.k8s.io/)
