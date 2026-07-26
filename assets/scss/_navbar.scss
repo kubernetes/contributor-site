@@ -8,4 +8,12 @@
 
 .td-navbar.scrolled {
   background-color: rgba($primary, 0.95) !important; // overrides Docsy's navbar background
+
+  // Use Bootstrap navbar CSS variables so the brand and navigation links
+  // inherit the correct colors without overriding individual selectors
+  --bs-navbar-color: var(--bs-white);
+  --bs-navbar-hover-color: var(--bs-white);
+  --bs-navbar-active-color: var(--bs-white);
+  --bs-navbar-brand-color: var(--bs-white);
+  --bs-navbar-brand-hover-color: var(--bs-white);
 }
