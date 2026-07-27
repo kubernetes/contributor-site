@@ -183,16 +183,18 @@ Kubernetes CI jobs:
   failures.
 
 Verify that the promotion jobs complete successfully and that the image is
-available from `registry.k8s.io`. For Cluster Inventory API, the images that
-shipped through this route were:
+available from `registry.k8s.io`.
+
+When that works, publish or update the GitHub release and announce it in the
+related issues and Slack channels.
+
+For Cluster Inventory API, completing these steps made both images publicly
+available:
 
 ```none
 registry.k8s.io/cluster-inventory-api/secretreader:v0.1.3
 registry.k8s.io/cluster-inventory-api/kubeconfig-secretreader:v0.1.3
 ```
-
-When that works, publish or update the GitHub release and announce it in the
-related issues and Slack channels.
 
 ### Where to ask for help
 
