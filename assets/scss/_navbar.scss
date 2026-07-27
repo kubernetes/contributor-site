@@ -6,6 +6,13 @@
   transition: background-color 0.3s ease;
 }
 
+@media (min-width: 768px) {
+  .td-navbar-cover {
+    // Improve navbar contrast over the landing page hero image.
+    background: rgba($dark, 0.85) !important;
+  }
+}
+
 .td-navbar.scrolled {
   background-color: rgba($primary, 0.95) !important; // overrides Docsy's navbar background
 
