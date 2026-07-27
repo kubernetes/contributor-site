@@ -239,14 +239,3 @@ implementation;
 clarifying the publishing rules; and
 [Arnaud M.](https://github.com/ameukam) for reviewing the `kubernetes/k8s.io`
 pull requests and guiding the infrastructure and promotion changes.
-
-## References
-
-- [cluster-inventory-api releases](https://github.com/kubernetes-sigs/cluster-inventory-api/releases)
-- [Using Plugin OCI Images](https://github.com/kubernetes-sigs/cluster-inventory-api/blob/main/docs/plugin-images.md)
-- [Image volumes](https://kubernetes.io/docs/tasks/configure-pod-container/image-volumes/)
-- [registry.k8s.io: faster, cheaper and Generally Available (GA)](https://kubernetes.io/blog/2022/11/28/registry-k8s-io-faster-cheaper-ga/)
-- [Managing Kubernetes container registries](https://github.com/kubernetes/k8s.io/tree/main/registry.k8s.io)
-- [Image pushing jobs](https://github.com/kubernetes/test-infra/blob/master/config/jobs/image-pushing/README.md)
-- [Creating promotion pull requests with `kpromo`](https://sigs.k8s.io/promo-tools/docs/promotion-pull-requests.md)
-- [Kubernetes Slack](https://slack.k8s.io/)
