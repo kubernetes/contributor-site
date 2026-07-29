@@ -11,6 +11,6 @@ jobs:
       contents: none
     steps:
     - name: Trigger webhook on netlify
-      run: curl -s -X POST "https://api.netlify.com/build_hooks/${TOKEN}"
+      run: curl -sS -f -X POST "https://api.netlify.com/build_hooks/${TOKEN}"
       env:
         TOKEN: ${{ secrets.NETLIFY_BUILD_HOOK_KEY }}
