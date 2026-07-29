@@ -197,6 +197,13 @@
                         <i class="fab fa-slack"></i>
                       </a>
                       {{ end }}
+                      {{ if .contact.mailing_list }}
+                      <a href="{{ .contact.mailing_list }}" class="btn btn-sm btn-outline-dark rounded-pill px-2"
+                        target="_blank" rel="noopener noreferrer" title="Join Mailing List"
+                        aria-label="Join Mailing List">
+                        <i class="fas fa-envelope"></i>
+                      </a>
+                      {{ end }}
 
                       <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
                         Visit <i class="fas fa-arrow-right ms-1"></i>
@@ -311,6 +318,13 @@
                         <i class="fab fa-slack"></i>
                       </a>
                       {{ end }}
+                      {{ if .contact.mailing_list }}
+                      <a href="{{ .contact.mailing_list }}" class="btn btn-sm btn-outline-dark rounded-pill px-2"
+                        target="_blank" rel="noopener noreferrer" title="Join Mailing List"
+                        aria-label="Join Mailing List">
+                        <i class="fas fa-envelope"></i>
+                      </a>
+                      {{ end }}
 
                       <a href="/community/community-groups/wg/{{ .dir | replaceRE "^wg-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
                         Visit <i class="fas fa-arrow-right ms-1"></i>
@@ -422,6 +436,13 @@
                       {{ if .contact.slack }}
                       <a href="https://kubernetes.slack.com/messages/{{ .contact.slack }}" class="btn btn-sm btn-outline-dark rounded-pill px-2" target="_blank" title="Slack">
                         <i class="fab fa-slack"></i>
+                      </a>
+                      {{ end }}
+                      {{ if .contact.mailing_list }}
+                      <a href="{{ .contact.mailing_list }}" class="btn btn-sm btn-outline-dark rounded-pill px-2"
+                        target="_blank" rel="noopener noreferrer" title="Join Mailing List"
+                        aria-label="Join Mailing List">
+                        <i class="fas fa-envelope"></i>
                       </a>
                       {{ end }}
 
