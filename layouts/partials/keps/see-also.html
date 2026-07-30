@@ -3,9 +3,11 @@
        - full URL:           "https://…"
        - root-relative path: "/keps/sig-scheduling/624-scheduling-framework"
        - bare repo path:     "keps/sig-node/4569-cgroup-v1-maintenance-mode/README.md"
+       - nested path:        "/keps/prod-readiness/sig-apps/3329"
+       - singular "/kep/":   "/kep/sig-network/0752-endpointslices/"
        - free text:          "KEP-32", "TBD", "n/a"
 
-       Both path shapes resolve to the referenced KEP's own page on this site, so every
+       Every path shape resolves to the referenced KEP's own page on this site, so every
        entry reads the same way regardless of how it was written. Paths we can't resolve
        fall back to GitHub, and anything else is left as text.
 
@@ -17,9 +19,14 @@
 {{- else if strings.HasPrefix $entry "http" -}}
   <a href="{{ $entry }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> {{ $entry }}</a>
 {{- else -}}
-  {{- $path := cond (strings.HasPrefix $entry "/") $entry (printf "/%s" $entry) -}}
+  {{- $path := printf "/%s" (strings.TrimPrefix "/" $entry) -}}
+  {{- /* A few entries write "/kep/…" for "/keps/…"; normalizing here fixes both the
+         lookup below and the directory name the GitHub fallback links to. */ -}}
+  {{- $path = replaceRE `^/kep/` "/keps/" $path -}}
   {{- $kep := "" -}}
-  {{- with findRESubmatch `^/keps/[^/]+/([0-9]+)([^/]*)` $path 1 -}}
+  {{- /* The SIG is usually the only directory before the number, but some entries nest
+         further ("/keps/prod-readiness/sig-apps/3329", kubeadm's own subdirectory). */ -}}
+  {{- with findRESubmatch `^/keps/(?:[^/]+/)*([0-9]+)([^/]*)` $path 1 -}}
     {{- $number := index . 0 1 -}}
     {{- $directory := printf "%s%s" $number (index . 0 2) -}}
     {{- with partial "keps/page-by-number.html" (strings.TrimLeft "0" $number) -}}
