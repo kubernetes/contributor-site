@@ -1,11 +1,13 @@
-{{- /* Returns this site's page for a KEP number, or nil when that KEP has no page.
+{{- /* Returns this site's page for a KEP number, or "" when that KEP has no page.
        Not every KEP gets one — see content/en/resources/keps/_content.gotmpl for the
        stage/status filter. Keeps the /resources/keps/<number>/ URL scheme in one place.
 
        @param {string} context The KEP number, e.g. "4569".
-       @returns {page.Page}
+       @returns {page.Page|string} The page, or "" when there is none — falsy either way,
+                so callers can reach for `with`.
 */ -}}
 {{- $page := "" -}}
+{{- /* An empty number would make GetPage return the section page listing every KEP. */ -}}
 {{- with printf "%v" . -}}
   {{- $page = site.GetPage (printf "resources/keps/%s" .) -}}
 {{- end -}}

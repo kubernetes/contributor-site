@@ -17,7 +17,7 @@
 {{- if strings.Contains $entry "[" -}}
   {{ $entry | markdownify }}
 {{- else if strings.HasPrefix $entry "http" -}}
-  <a href="{{ $entry }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> {{ $entry }}</a>
+  <a href="{{ $entry }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> {{ $entry }}</a>
 {{- else -}}
   {{- $path := printf "/%s" (strings.TrimPrefix "/" $entry) -}}
   {{- /* A few entries write "/kep/…" for "/keps/…"; normalizing here fixes both the
@@ -29,7 +29,8 @@
   {{- with findRESubmatch `^/keps/(?:[^/]+/)*([0-9]+)([^/]*)` $path 1 -}}
     {{- $number := index . 0 1 -}}
     {{- $directory := printf "%s%s" $number (index . 0 2) -}}
-    {{- with partial "keps/page-by-number.html" (strings.TrimLeft "0" $number) -}}
+    {{- $lookup := strings.TrimLeft "0" $number -}}
+    {{- with partialCached "keps/page-by-number.html" $lookup $lookup -}}
       {{- /* A zero-padded number is legacy per-directory numbering ("0006-apply.md",
              kubeadm's "0023-kubeadm-config.md") that only coincidentally matches a
              modern KEP number, so require an exact directory match before trusting it.
@@ -41,9 +42,9 @@
     {{- end -}}
   {{- end -}}
   {{- if $kep -}}
-    <a href="{{ $kep.RelPermalink }}"><i class="fas fa-link"></i> KEP-{{ $kep.Params.kepNumber }}: {{ $kep.Title }}</a>
+    <a href="{{ $kep.RelPermalink }}"><i class="fas fa-link" aria-hidden="true"></i> KEP-{{ $kep.Params.kepNumber }}: {{ $kep.Title }}</a>
   {{- else if strings.Contains $path "/keps/" -}}
-    <a href="https://github.com/kubernetes/enhancements/tree/master{{ $path }}" target="_blank" rel="noopener"><i class="fab fa-github"></i> {{ $entry }}</a>
+    <a href="https://github.com/kubernetes/enhancements/tree/master{{ $path }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> {{ $entry }}</a>
   {{- else -}}
     {{ $entry | markdownify }}
   {{- end -}}

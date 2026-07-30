@@ -113,8 +113,13 @@
       </thead>
       <tbody>
         {{ range $data := $kepData }}
-          {{- /* The KEP's own page on this site, or nil when it has none. */ -}}
-          {{- $kepPage := partial "keps/page-by-number.html" $data.kepNumber -}}
+          {{- /* Link to the KEP's own page on this site, falling back to the enhancements
+                 repo for the KEPs that have no page. Cached because this table lists every
+                 KEP and most of them repeat the same lookup. */ -}}
+          {{- $kepUrl := printf "https://features.k8s.io/%s" $data.kepNumber -}}
+          {{- with partialCached "keps/page-by-number.html" $data.kepNumber $data.kepNumber -}}
+            {{- $kepUrl = .RelPermalink -}}
+          {{- end -}}
           {{- $stage := $data.stage -}}
           {{- if not $stage }}
             {{- if or (eq $data.status "implementable") (eq $data.status "implemented") }}
@@ -142,18 +147,10 @@
           {{- $allAuthors = strings.TrimLeft $allAuthors " " -}}
           <tr data-stage="{{ $stage }}" data-latest-milestone="{{ if $latest }}{{ strings.TrimPrefix "v" $latest }}{{ end }}" data-sig="{{ $data.owningSig }}" data-kep="{{ $data.kepNumber }}" data-created="{{ $data.creationDate }}" data-authors="{{ $allAuthors }}">
             <td class="kep-col-number" data-order="{{ $data.kepNumber }}">
-              {{- with $kepPage }}
-              <a href="{{ .RelPermalink }}" class="kep-number-link">{{ $data.kepNumber }}</a>
-              {{- else }}
-              <a href="https://features.k8s.io/{{ $data.kepNumber }}" class="kep-number-link">{{ $data.kepNumber }}</a>
-              {{- end }}
+              <a href="{{ $kepUrl }}" class="kep-number-link">{{ $data.kepNumber }}</a>
             </td>
             <td class="kep-col-title">
-              {{- with $kepPage }}
-              <a href="{{ .RelPermalink }}" class="kep-title-link">{{ $data.title }}</a>
-              {{- else }}
-              <a href="https://features.k8s.io/{{ $data.kepNumber }}" class="kep-title-link">{{ $data.title }}</a>
-              {{- end }}
+              <a href="{{ $kepUrl }}" class="kep-title-link">{{ $data.title }}</a>
             </td>
             <td class="kep-col-sig">
               {{- $sigSlug := strings.TrimPrefix "sig-" $data.owningSig -}}
