@@ -12,7 +12,7 @@
 
   .kep-banner-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 
     @media (max-width: 991px) {
       grid-template-columns: 1fr;
@@ -22,6 +22,7 @@
   .kep-banner-col {
     padding: 2rem;
     position: relative;
+    min-width: 0;
 
     &.border-start-refined {
       border-left: 1px solid #e0e4e8;
@@ -228,18 +229,15 @@
         font-size: 0.85rem;
         color: $slate-700;
         text-decoration: none;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
+        display: block;
         transition: all 0.2s ease;
         min-width: 0;
-        overflow-wrap: break-word;
+        overflow-wrap: anywhere;
 
         i {
           font-size: 0.7rem;
           color: $slate-400;
-          line-height: 1;
-          flex-shrink: 0;
+          margin-right: 8px;
         }
 
         &:hover {
