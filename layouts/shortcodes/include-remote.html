@@ -1,7 +1,22 @@
+{{- /*
+  Renders a remote markdown document inline.
+
+  resources.GetRemote returns the raw file, so .Content is markdown source. It
+  must be run through markdownify -- passing it to safeHTML alone emits the
+  markdown verbatim, leaving links as literal [text](url) on the page.
+
+  The leading H1 is stripped first: the layout already renders the page title,
+  and markdownify output does not pass through
+  layouts/_default/_markup/render-heading.html, so the body heading would
+  otherwise duplicate it.
+*/ -}}
 {{- $url := .Get 0 -}}
 {{- $resource := resources.GetRemote $url -}}
 {{- with $resource -}}
-{{- .Content | safeHTML -}}
+{{- $content := .Content -}}
+{{- $content = replaceRE `^# .+` "" $content 1 -}}
+{{- $content = trim $content "\n\r " -}}
+{{- $content | markdownify -}}
 {{- else -}}
 {{- warnf "Unable to fetch remote content from %s" $url -}}
 {{- end -}}
