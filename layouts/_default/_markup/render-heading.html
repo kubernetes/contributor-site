@@ -1,0 +1,19 @@
+{{- /*
+  Suppresses level-1 headings in page bodies.
+
+  The page title is rendered by the layout as <h1>, so an upstream document that
+  opens with "# Title" would produce a duplicate H1. hack/gen-content.sh stripped
+  that heading from the markdown before syncing.
+
+  Doing this with a regex over already-rendered HTML is fragile -- it operates on
+  output and matches the first <h1> regardless of where it came from. A render
+  hook removes the heading at parse time instead, which is both cheaper and
+  scoped to body content only.
+
+  Every H1 is suppressed, not just the first: the layout owns the page title, so
+  a second body-level H1 is a document-structure error either way.
+*/ -}}
+{{- if eq .Level 1 -}}
+{{- else -}}
+<h{{ .Level }} id="{{ .Anchor }}">{{ .Text | safeHTML }}</h{{ .Level }}>
+{{- end -}}

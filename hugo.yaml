@@ -50,88 +50,148 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-  # Module imports pin upstream content versions via go.sum.
-  # Content is mounted directly from modules (no adapt-content.sh copy step).
-  # Each import uses mounts to map source paths to target site paths,
-  # with README.md -> _index.md renaming done via individual file mounts.
+  # NOTE: mount targets are relative to Hugo's CONTENT COMPONENT, whose root is
+  # `contentDir: content/en` (set above). They must therefore be `content/<path>`
+  # and NOT `content/en/<path>` -- the latter resolves to content/en/en/<path>
+  # and publishes every mounted page under /en/, silently leaving the real URLs
+  # empty while the build still exits 0.
+  #
+  # Module imports pin upstream content versions via go.sum. The pin governs
+  # deploy previews and local dev; production refreshes to latest upstream at
+  # build time (see the Makefile). Content is mounted directly from modules.
+  #
+  # Directory mounts publish upstream trees wholesale. Individual file mounts
+  # exist almost entirely to PRESERVE the URLs the site already serves -- each
+  # one has a matching entry in its directory mount's excludeFiles, because a
+  # file mount does not suppress the same file arriving via its parent
+  # directory mount.
   imports:
     - path: k8s.io/community
       mounts:
-        # --- Directory mounts: content files (excluding README.md) ---
+        # --- Directory mounts: upstream trees published wholesale ---
         - source: contributors/guide
-          target: content/en/docs/guide
-          excludeFiles: "**/README.md"
+          target: content/docs/guide
+          excludeFiles:
+            - "**/README.md"
+            - "**/README-*.md"   # localised cheatsheets are not English pages
+            - "**/OWNERS"
+            - "coding-conventions.md"       # preserved as coding-convention.md
+            - "contributor-cheatsheet/**"   # preserved at /docs/contributor-cheatsheet/
         - source: communication
-          target: content/en/docs/comms
-          excludeFiles: "**/README.md"
+          target: content/docs/comms
+          excludeFiles:
+            - "**/README.md"
+            - "**/README-*.md"
+            - "**/OWNERS"
+            - "best-practices.md"           # preserved as notifications.md
+            - "calendar-guidelines.md"      # preserved as calendars.md
+            - "discuss-guidelines.md"       # preserved as discuss.md
+            - "mailing-list-guidelines.md"  # preserved as mailing-lists.md
+            - "requesting-survey.md"        # preserved as surveys.md
+            - "slack-guidelines.md"         # preserved as slack.md
+            - "zoom-guidelines.md"          # preserved as zoom.md
+            - "youtube/**"                  # guidelines own /docs/comms/youtube/
         - source: mentoring
-          target: content/en/community
-          excludeFiles: "**/README.md"
+          target: content/community
+          excludeFiles:
+            - "**/README.md"
+            - "**/README-*.md"
+            - "**/OWNERS"
+            - "new-contributor-orientation/**"  # preserved under /docs/orientation/
+        - source: mentoring/new-contributor-orientation
+          target: content/docs/orientation
+          excludeFiles:
+            - "**/README.md"
+            - "**/OWNERS"
         - source: committee-code-of-conduct
-          target: content/en/community/committee-code-of-conduct
-          excludeFiles: "**/README.md"
+          target: content/community/committee-code-of-conduct
+          excludeFiles:
+            - "**/README.md"
+            - "**/README-*.md"
+            - "**/OWNERS"
+            - "incident-process.md"  # preserved at /community/code-of-conduct-incident-process/
         - source: github-management
-          target: content/en/resources/github-management
-          excludeFiles: "**/README.md"
+          target: content/resources/github-management
+          excludeFiles:
+            - "**/README.md"
+            - "**/README-*.md"
+            - "**/OWNERS"
+            - "default-branch-migration.md"  # preserved at /resources/rename/
 
         # --- Individual file mounts (sig-list, values, policies, etc.) ---
         - source: sig-list.md
-          target: content/en/sig-list.md
+          target: content/sig-list.md
         - source: values.md
-          target: content/en/community/values.md
+          target: content/community/values.md
         - source: code-of-conduct.md
-          target: content/en/includes/code-of-conduct.md
+          target: content/includes/code-of-conduct.md
         # CLA.md provided locally via content/en/CLA.md
         - source: community-membership.md
-          target: content/en/community/community-membership.md
+          target: content/community/community-membership.md
 
-        # --- README.md -> _index.md file mounts (contributors/guide) ---
-        - source: contributors/guide/README.md
-          target: content/en/docs/guide/_index.md
+        # --- URL preservation: upstream renamed these, the site did not ---
+        - source: contributors/guide/coding-conventions.md
+          target: content/docs/guide/coding-convention.md
         - source: contributors/guide/contributor-cheatsheet/README.md
-          target: content/en/docs/guide/contributor-cheatsheet/_index.md
+          target: content/docs/contributor-cheatsheet.md
+        - source: communication/best-practices.md
+          target: content/docs/comms/notifications.md
+        - source: communication/calendar-guidelines.md
+          target: content/docs/comms/calendars.md
+        - source: communication/discuss-guidelines.md
+          target: content/docs/comms/discuss.md
+        - source: communication/mailing-list-guidelines.md
+          target: content/docs/comms/mailing-lists.md
+        - source: communication/requesting-survey.md
+          target: content/docs/comms/surveys.md
+        - source: communication/slack-guidelines.md
+          target: content/docs/comms/slack.md
+        - source: communication/zoom-guidelines.md
+          target: content/docs/comms/zoom.md
+        - source: communication/youtube/youtube-guidelines.md
+          target: content/docs/comms/youtube.md
+        - source: mentoring/README.md
+          target: content/community/mentoring.md
+        - source: committee-code-of-conduct/incident-process.md
+          target: content/community/code-of-conduct-incident-process.md
+        - source: github-management/default-branch-migration.md
+          target: content/resources/rename.md
 
-        # --- README.md -> _index.md file mounts (communication) ---
+        # --- README.md -> _index.md section landing pages ---
+        - source: contributors/guide/README.md
+          target: content/docs/guide/_index.md
         - source: communication/contributor-comms/README.md
-          target: content/en/docs/comms/contributor-comms/_index.md
+          target: content/docs/comms/contributor-comms/_index.md
         - source: communication/contributor-comms/blogging-resources/README.md
-          target: content/en/docs/comms/contributor-comms/blogging-resources/_index.md
+          target: content/docs/comms/contributor-comms/blogging-resources/_index.md
         - source: communication/slack-config/README.md
-          target: content/en/docs/comms/slack-config/_index.md
-        - source: communication/youtube/README.md
-          target: content/en/docs/comms/youtube/_index.md
-
-        # --- README.md -> _index.md file mounts (mentoring -> community) ---
+          target: content/docs/comms/slack-config/_index.md
         - source: mentoring/new-contributor-orientation/README.md
-          target: content/en/community/new-contributor-orientation/_index.md
+          target: content/docs/orientation/_index.md
         - source: mentoring/processes/README.md
-          target: content/en/community/processes/_index.md
+          target: content/community/processes/_index.md
         - source: mentoring/programs/README.md
-          target: content/en/community/programs/_index.md
+          target: content/community/programs/_index.md
         - source: mentoring/programs/contributor-workshop/README.md
-          target: content/en/community/programs/contributor-workshop/_index.md
+          target: content/community/programs/contributor-workshop/_index.md
         - source: mentoring/programs/contributor-workshop/guides/README.md
-          target: content/en/community/programs/contributor-workshop/guides/_index.md
+          target: content/community/programs/contributor-workshop/guides/_index.md
         - source: mentoring/programs/contributor-workshop/live-workshop/README.md
-          target: content/en/community/programs/contributor-workshop/live-workshop/_index.md
-
-        # --- README.md -> _index.md (committee-code-of-conduct) ---
+          target: content/community/programs/contributor-workshop/live-workshop/_index.md
         - source: committee-code-of-conduct/README.md
-          target: content/en/community/committee-code-of-conduct/_index.md
-
-        # --- README.md -> _index.md (github-management) ---
+          target: content/community/committee-code-of-conduct/_index.md
         - source: github-management/README.md
-          target: content/en/resources/github-management/_index.md
+          target: content/resources/github-management/_index.md
 
     - path: github.com/cncf/foundation
       mounts:
         - source: code-of-conduct.md
-          target: content/en/includes/cncf-code-of-conduct.md
+          target: content/includes/cncf-code-of-conduct.md
 
     - path: github.com/kubernetes/sig-release
       mounts:
         - source: releases/release-1.37/README.md
-          target: content/en/resources/release/index.md
+          target: content/resources/release/index.md
 
   # Use npm-installed copies of Docsy Hugo Module deps so Hugo skips `go get`
   # at build time. The `go get` walks go.mod transitive imports and fails
@@ -162,6 +222,77 @@ frontmatter:
 
 # Everything below this are Site Params
 params:
+  # URLs the site already serves and promises to keep serving. Verified on every
+  # build by layouts/partials/verify-mounts.html -- a missing entry FAILS the
+  # build. Hugo silently ignores a module mount whose upstream source has been
+  # renamed or deleted, so without this check a page can vanish from the live
+  # site while every build stays green.
+  #
+  # Only URLs that predate the Hugo Modules migration are listed. Pages that
+  # arrive via whole-tree directory mounts are deliberately not asserted -- they
+  # come and go with upstream.
+  expectedPages:
+    - /docs/guide/
+    - /docs/guide/coding-convention/
+    - /docs/guide/contributing/
+    - /docs/guide/expectations/
+    - /docs/guide/first-contribution/
+    - /docs/guide/github-workflow/
+    - /docs/guide/help-wanted/
+    - /docs/guide/issue-triage/
+    - /docs/guide/non-code-contributions/
+    - /docs/guide/owners/
+    - /docs/guide/platforms/
+    - /docs/guide/pull-requests/
+    - /docs/guide/release-notes/
+    - /docs/contributor-cheatsheet/
+    - /docs/comms/calendars/
+    - /docs/comms/discuss/
+    - /docs/comms/mailing-lists/
+    - /docs/comms/moderation/
+    - /docs/comms/moderators/
+    - /docs/comms/notifications/
+    - /docs/comms/slack/
+    - /docs/comms/surveys/
+    - /docs/comms/youtube/
+    - /docs/comms/zoom/
+    - /docs/orientation/
+    - /docs/orientation/nco-host-handbook/
+    - /docs/orientation/nco-lead-handbook/
+    - /docs/orientation/new-contributor-resources/
+    - /community/mentoring/
+    - /community/values/
+    - /community/code-of-conduct-incident-process/
+    - /includes/code-of-conduct/
+    - /includes/cncf-code-of-conduct/
+    - /resources/rename/
+    - /resources/release/
+
+  # Maps a mounted content path back to the upstream repo it came from, so
+  # layouts/_default/_markup/render-link.html can expand a relative .md link
+  # that points outside mounted content into a working upstream URL instead of
+  # emitting a dead relative link. Order matters: longest prefix wins, so more
+  # specific entries come first.
+  upstreamSources:
+    - target: docs/orientation
+      source: mentoring/new-contributor-orientation
+      base: https://github.com/kubernetes/community/blob/master
+    - target: docs/guide
+      source: contributors/guide
+      base: https://github.com/kubernetes/community/blob/master
+    - target: docs/comms
+      source: communication
+      base: https://github.com/kubernetes/community/blob/master
+    - target: community/committee-code-of-conduct
+      source: committee-code-of-conduct
+      base: https://github.com/kubernetes/community/blob/master
+    - target: resources/github-management
+      source: github-management
+      base: https://github.com/kubernetes/community/blob/master
+    - target: community
+      source: mentoring
+      base: https://github.com/kubernetes/community/blob/master
+
   # This is used instead of the built-in top level `copyright` to utilize
   # Docsy's partial which adds the copyright year automatically
   copyright: The Kubernetes Authors

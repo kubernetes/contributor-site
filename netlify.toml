@@ -40,16 +40,3 @@ from = "https://kubernetes.dev/*"
 to =  "https://www.kubernetes.dev/:splat"
 status = 301
 force = true
-
-# Redirects for content relocated during Hugo module migration.
-# Previously gen-content.sh synced to /guide/ and /comms/;
-# now module-mounted content lives under /docs/.
-[[redirects]]
-from = "/guide/*"
-to = "/docs/guide/:splat"
-status = 301
-
-[[redirects]]
-from = "/comms/*"
-to = "/docs/comms/:splat"
-status = 301

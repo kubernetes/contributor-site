@@ -39,25 +39,6 @@
 /kcseu2024        /events/2024/kcseu 301
 /kcsna2024        /events/2024/kcsna 301
 
-# Content relocated during Hugo module migration.
-# Previously gen-content.sh synced mentoring to /docs/orientation/;
-# now it's part of the module-mounted content under /community/.
-/docs/orientation/*    /community/new-contributor-orientation/:splat  301
-
-# gen-content.sh renamed files; Hugo modules keep original filenames
-/community/mentoring               /community/programs/mentoring-events         301
-/community/code-of-conduct-incident-process   /community/committee-code-of-conduct/incident-process  301
-/docs/contributor-cheatsheet       /docs/guide/contributor-cheatsheet            301
-/docs/comms/calendars              /docs/comms/calendar-guidelines               301
-/docs/comms/discuss                /docs/comms/discuss-guidelines                301
-/docs/comms/mailing-lists          /docs/comms/mailing-list-guidelines           301
-/docs/comms/notifications          /docs/comms/best-practices                    301
-/docs/comms/slack                  /docs/comms/slack-guidelines                  301
-/docs/comms/surveys                /docs/comms/requesting-survey                 301
-/docs/comms/zoom                   /docs/comms/zoom-guidelines                   301
-/docs/guide/coding-convention      /docs/guide/coding-conventions                301
-/resources/rename                  /resources/github-management/default-branch-migration  301
-
 /services         /resources/services 301
 /requests         /resources/services 301
 

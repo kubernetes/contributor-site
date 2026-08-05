@@ -1,25 +1,52 @@
-{{- $u := .Destination -}}
-{{- $u = trim $u " ()" -}}
-{{- $isExternal := strings.HasPrefix $u "http" -}}
-{{- $isMd := strings.HasSuffix $u ".md" -}}
-{{- if and $isMd (not $isExternal) -}}
-  {{- /* Resolve relative .md links to Hugo page permalinks */}}
-  {{- $page := .Page.GetPage $u -}}
-  {{- if $page -}}
-    <a href="{{ $page.RelPermalink }}"
-      {{ with .Title }} title="{{ . }}"{{ end }}>
-      {{- .Text | safeHTML -}}
-    </a>
+{{- /*
+  Link rendering for content mounted from Hugo Modules.
+
+  Upstream markdown links to other upstream files by relative .md path. Three
+  cases:
+
+    1. The target is also mounted on this site  -> link to its permalink.
+    2. The target is NOT mounted                -> expand to the upstream repo
+                                                   URL, so the link still works.
+    3. Anything else                            -> pass through untouched.
+
+  Case 2 matters more than it looks. hack/gen-content.sh expanded such links to
+  https://github.com/$org/$repo/blob/$branch/... ; emitting the raw relative
+  .md path instead produces a dead link. Whole-tree mounting publishes many
+  upstream pages that link laterally into parts of the repo the site does not
+  mount, so this is the common case, not the edge case.
+
+  The upstream repo for a page is resolved from site.Params.upstreamSources,
+  which maps a mounted content path back to its upstream source path.
+
+  Destinations are trimmed of stray spaces and parentheses: some upstream
+  documents (KEP READMEs especially) wrap link targets in extra parens, which
+  otherwise fails the build with "first path segment in URL cannot contain colon".
+*/ -}}
+{{- $u := trim .Destination " ()" -}}
+{{- $isExternal := or (strings.HasPrefix $u "http") (strings.HasPrefix $u "mailto:") -}}
+{{- $isAnchor := strings.HasPrefix $u "#" -}}
+{{- $href := $u -}}
+
+{{- if and (and (not $isExternal) (not $isAnchor)) (strings.HasSuffix $u ".md") -}}
+  {{- with $.Page.GetPage $u -}}
+    {{- /* 1. also mounted on this site */ -}}
+    {{- $href = .RelPermalink -}}
   {{- else -}}
-    <a href="{{ $u | safeURL }}"
-      {{ with .Title }} title="{{ . }}"{{ end }}>
-      {{- .Text | safeHTML -}}
-    </a>
+    {{- /* 2. not mounted -- expand to the upstream repository */ -}}
+    {{- $dir := "" -}}
+    {{- with $.Page.File -}}{{ $dir = strings.TrimSuffix "/" .Dir }}{{ end -}}
+    {{- $dir = strings.TrimPrefix "en/" $dir -}}
+    {{- $matched := false -}}
+    {{- range site.Params.upstreamSources -}}
+      {{- if and (not $matched) (or (eq $dir .target) (strings.HasPrefix $dir (printf "%s/" .target))) -}}
+        {{- $matched = true -}}
+        {{- $rel := strings.TrimPrefix .target $dir -}}
+        {{- $upstreamDir := path.Join .source $rel -}}
+        {{- $href = printf "%s/%s" .base (path.Join $upstreamDir $u) -}}
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
-{{- else -}}
-  <a href="{{ $u | safeURL }}"
-    {{ with .Title }} title="{{ . }}"{{ end }}
-    {{ if $isExternal }} target="_blank" rel="noopener"{{ end }}>
-    {{- .Text | safeHTML -}}
-  </a>
 {{- end -}}
+
+{{- $newTab := strings.HasPrefix $href "http" -}}
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $newTab }} target="_blank" rel="noopener"{{ end }}>{{- .Text | safeHTML -}}</a>
