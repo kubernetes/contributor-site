@@ -22,6 +22,8 @@ COMMIT					:= $(shell git rev-parse --short HEAD)
 CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
 CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
+# Only used to build the dev container image; Netlify reads GO_VERSION itself.
+GO_VERSION				:= $(shell grep ^GO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 NODE_VERSION			:= $(shell grep ^NODE_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
 CONTAINER_IMAGE			:= $(IMAGE_REPO):$(GIT_TAG)
@@ -94,7 +96,7 @@ docker-image:
 	$(MAKE) container-image
 
 container-image: ## Build container image for use with container-* targets.
-	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --label git_commit=$(COMMIT) --build-arg HUGO_VERSION=$(HUGO_VERSION)
+	$(CONTAINER_ENGINE) build . -t $(CONTAINER_IMAGE) --label git_commit=$(COMMIT) --build-arg HUGO_VERSION=$(HUGO_VERSION) --build-arg GO_VERSION=$(GO_VERSION)
 
 container-push: container-image ## Push container image for the preview of the website
 	$(CONTAINER_ENGINE) push $(CONTAINER_IMAGE)
@@ -111,6 +113,7 @@ docker-push: ## Build a multi-architecture image and push that into the registry
 		--push \
 		--platform=$(PLATFORMS) \
 		--build-arg HUGO_VERSION=$(HUGO_VERSION) \
+		--build-arg GO_VERSION=$(GO_VERSION) \
 		--tag $(CONTAINER_IMAGE) \
 		-f Dockerfile.cross .
 	$(DOCKER_BUILDX) stop image-builder

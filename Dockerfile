@@ -5,6 +5,10 @@ FROM alpine@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943
 ARG HUGO_VERSION
 ARG TARGETARCH
 
+# Hugo shells out to `go` to resolve module imports. Pinned from netlify.toml
+# by the Makefile so the container tracks the toolchain Netlify builds with.
+ARG GO_VERSION
+
 RUN apk add --no-cache \
     bash \
     build-base \
@@ -22,6 +26,12 @@ WORKDIR /src
 COPY package*.json ./
 
 RUN npm ci --ignore-scripts
+
+RUN curl -sSfL "https://go.dev/dl/go${GO_VERSION}.linux-${TARGETARCH}.tar.gz" -o /tmp/go.tgz && \
+    tar -xz -C /usr/local -f /tmp/go.tgz && \
+    rm /tmp/go.tgz
+
+ENV PATH="/usr/local/go/bin:${PATH}"
 
 RUN mkdir -p /usr/local/src && \
     cd /usr/local/src && \
