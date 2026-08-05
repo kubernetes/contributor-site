@@ -70,8 +70,13 @@ modules-update: ## Update Hugo modules to latest upstream commits.
 modules-tidy: ## Clean up unused Hugo module entries from go.sum.
 	hugo mod tidy
 
+# `go mod download` rather than `hugo mod get`: bare `hugo mod get` UPGRADES to
+# latest upstream, which would move the pin every time container-server starts.
+# It also populates $(HOME)/go/pkg/mod, which is the cache container-server
+# mounts as GOMODCACHE -- `hugo mod` commands use Hugo's own cache directory
+# instead. Requires Go on the host, as the container targets already assume.
 modules-download: ## Download pinned Hugo modules to local cache (no update).
-	hugo mod get
+	go mod download
 
 render: dependencies ## Build the site using Hugo on the host.
 	hugo --logLevel info --ignoreCache --minify
