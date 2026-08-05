@@ -1,15 +1,5 @@
-{{- /*
-  Page title with a filename fallback.
-
-  Content mounted from Hugo Modules is upstream markdown with no front matter,
-  and Hugo does NOT derive .Title from the filename -- it is simply empty. That
-  would render an empty <h1>, an empty <title>, and empty breadcrumb entries on
-  every module-mounted page.
-
-  hack/gen-content.sh used to synthesise a title from the filename before
-  syncing; this reproduces that behaviour at render time. README.md/_index.md
-  take the name of their parent directory, matching the old insert_header().
-*/ -}}
+{{- /* Hugo does not derive .Title from the filename; mounted upstream markdown
+       often has no front matter, which would render an empty <h1> and <title>. */ -}}
 {{- with .Title -}}
   {{- . -}}
 {{- else -}}

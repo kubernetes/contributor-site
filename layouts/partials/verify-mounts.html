@@ -1,20 +1,9 @@
-{{- /*
-  Fails the build when a URL the site promises to serve has gone missing.
-
-  Hugo silently ignores a module mount whose upstream `source` has been renamed
-  or deleted: the build exits 0, emits no warning at any log level, and the page
-  simply never appears. Verified against Hugo 0.144.2 -- `--panicOnWarning` does
-  not help (there is no warning to escalate) and neither does `hugo mod vendor`
-  (it skips the missing source and exits 0 too).
-
-  A template assertion is the only mechanism that actually fails the build, so
-  the list of URLs that must survive lives in site.Params.expectedPages and is
-  checked here. errorf sets a non-zero exit code.
-
-  Called once, from the home page only -- see layouts/partials/hooks/head-end.html.
-*/ -}}
+{{- /* Hugo silently ignores a module mount whose upstream source was renamed or
+       deleted: the build exits 0 and the page just never appears. errorf is the
+       only thing that turns that into a build failure. Called from the home page
+       only, via hooks/head-end.html. */ -}}
 {{- range site.Params.expectedPages -}}
   {{- if not (site.GetPage .) -}}
-    {{- errorf "verify-mounts: expected page %q does not exist. An upstream rename or deletion has silently dropped it -- check the module mounts in hugo.yaml against the current upstream tree." . -}}
+    {{- errorf "verify-mounts: expected page %q does not exist. Check the module mounts in hugo.yaml against the current upstream tree." . -}}
   {{- end -}}
 {{- end -}}

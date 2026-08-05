@@ -22,7 +22,7 @@ COMMIT					:= $(shell git rev-parse --short HEAD)
 CONTAINER_RUN			:= $(CONTAINER_ENGINE) run --rm -it -v "$(CURDIR):/src"
 CONTAINER_RUN_TTY		:= $(CONTAINER_ENGINE) run --rm -it
 HUGO_VERSION			:= $(shell grep ^HUGO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
-# Only used to build the dev container image; Netlify reads GO_VERSION itself.
+# Dev container image only; Netlify reads GO_VERSION from netlify.toml itself.
 GO_VERSION				:= $(shell grep ^GO_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 NODE_VERSION			:= $(shell grep ^NODE_VERSION netlify.toml | tail -n 1 | cut -d '=' -f 2 | tr -d " \"\n")
 GIT_TAG					?= v$(HUGO_VERSION)-$(IMAGE_VERSION)
@@ -72,11 +72,8 @@ modules-update: ## Update Hugo modules to latest upstream commits.
 modules-tidy: ## Clean up unused Hugo module entries from go.sum.
 	hugo mod tidy
 
-# `go mod download` rather than `hugo mod get`: bare `hugo mod get` UPGRADES to
-# latest upstream, which would move the pin every time container-server starts.
-# It also populates $(HOME)/go/pkg/mod, which is the cache container-server
-# mounts as GOMODCACHE -- `hugo mod` commands use Hugo's own cache directory
-# instead. Requires Go on the host, as the container targets already assume.
+# Not `hugo mod get`: that upgrades, and it fills Hugo's own cache rather than
+# $(HOME)/go/pkg/mod, which is what container-server mounts as GOMODCACHE.
 modules-download: ## Download pinned Hugo modules to local cache (no update).
 	go mod download
 

@@ -5,8 +5,7 @@ FROM alpine@sha256:28bd5fe8b56d1bd048e5babf5b10710ebe0bae67db86916198a6eec434943
 ARG HUGO_VERSION
 ARG TARGETARCH
 
-# Hugo shells out to `go` to resolve module imports. Pinned from netlify.toml
-# by the Makefile so the container tracks the toolchain Netlify builds with.
+# Hugo shells out to `go` to resolve module imports. Pinned from netlify.toml.
 ARG GO_VERSION
 
 RUN apk add --no-cache \

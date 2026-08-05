@@ -1,27 +1,11 @@
-{{- /*
-  Link rendering for content mounted from Hugo Modules.
+{{- /* Relative .md links in upstream markdown resolve to a permalink when the
+       target is also mounted here, and expand to the upstream repo URL when it
+       is not -- otherwise they render as dead relative links. upstreamSources
+       maps a mounted content path back to its upstream source path.
 
-  Upstream markdown links to other upstream files by relative .md path. Three
-  cases:
-
-    1. The target is also mounted on this site  -> link to its permalink.
-    2. The target is NOT mounted                -> expand to the upstream repo
-                                                   URL, so the link still works.
-    3. Anything else                            -> pass through untouched.
-
-  Case 2 matters more than it looks. hack/gen-content.sh expanded such links to
-  https://github.com/$org/$repo/blob/$branch/... ; emitting the raw relative
-  .md path instead produces a dead link. Whole-tree mounting publishes many
-  upstream pages that link laterally into parts of the repo the site does not
-  mount, so this is the common case, not the edge case.
-
-  The upstream repo for a page is resolved from site.Params.upstreamSources,
-  which maps a mounted content path back to its upstream source path.
-
-  Destinations are trimmed of stray spaces and parentheses: some upstream
-  documents (KEP READMEs especially) wrap link targets in extra parens, which
-  otherwise fails the build with "first path segment in URL cannot contain colon".
-*/ -}}
+       Destinations are trimmed of stray spaces and parens: some upstream docs
+       wrap targets in extra parens, which fails the build with "first path
+       segment in URL cannot contain colon". */ -}}
 {{- $u := trim .Destination " ()" -}}
 {{- $isExternal := or (strings.HasPrefix $u "http") (strings.HasPrefix $u "mailto:") -}}
 {{- $isAnchor := strings.HasPrefix $u "#" -}}
@@ -29,10 +13,8 @@
 
 {{- if and (and (not $isExternal) (not $isAnchor)) (strings.HasSuffix $u ".md") -}}
   {{- with $.Page.GetPage $u -}}
-    {{- /* 1. also mounted on this site */ -}}
     {{- $href = .RelPermalink -}}
   {{- else -}}
-    {{- /* 2. not mounted -- expand to the upstream repository */ -}}
     {{- $dir := "" -}}
     {{- with $.Page.File -}}{{ $dir = strings.TrimSuffix "/" .Dir }}{{ end -}}
     {{- $dir = strings.TrimPrefix "en/" $dir -}}

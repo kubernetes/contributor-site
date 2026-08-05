@@ -50,21 +50,14 @@ module:
   hugoVersion:
     extended: true
     min: "0.133.0"
-  # NOTE: mount targets are relative to Hugo's CONTENT COMPONENT, whose root is
-  # `contentDir: content/en` (set above). They must therefore be `content/<path>`
-  # and NOT `content/en/<path>` -- the latter resolves to content/en/en/<path>
-  # and publishes every mounted page under /en/, silently leaving the real URLs
-  # empty while the build still exits 0.
+  # Mount targets are relative to the content component, whose root is
+  # `contentDir: content/en`. They must be `content/<path>`, NOT
+  # `content/en/<path>` -- the latter publishes everything under /en/ while the
+  # build still exits 0.
   #
-  # Module imports pin upstream content versions via go.sum. The pin governs
-  # deploy previews and local dev; production refreshes to latest upstream at
-  # build time (see the Makefile). Content is mounted directly from modules.
-  #
-  # Directory mounts publish upstream trees wholesale. Individual file mounts
-  # exist almost entirely to PRESERVE the URLs the site already serves -- each
-  # one has a matching entry in its directory mount's excludeFiles, because a
-  # file mount does not suppress the same file arriving via its parent
-  # directory mount.
+  # File mounts below mostly exist to preserve URLs the site already serves.
+  # Each needs a matching excludeFiles entry on its parent directory mount: a
+  # file mount does not suppress the same file arriving via the directory.
   imports:
     - path: k8s.io/community
       mounts:
@@ -222,15 +215,9 @@ frontmatter:
 
 # Everything below this are Site Params
 params:
-  # URLs the site already serves and promises to keep serving. Verified on every
-  # build by layouts/partials/verify-mounts.html -- a missing entry FAILS the
-  # build. Hugo silently ignores a module mount whose upstream source has been
-  # renamed or deleted, so without this check a page can vanish from the live
-  # site while every build stays green.
-  #
-  # Only URLs that predate the Hugo Modules migration are listed. Pages that
-  # arrive via whole-tree directory mounts are deliberately not asserted -- they
-  # come and go with upstream.
+  # URLs that predate the Hugo Modules migration. A missing one fails the build
+  # via layouts/partials/verify-mounts.html. Pages arriving from whole-tree
+  # directory mounts are deliberately not listed -- they come and go upstream.
   expectedPages:
     - /docs/guide/
     - /docs/guide/coding-convention/
@@ -268,11 +255,9 @@ params:
     - /resources/rename/
     - /resources/release/
 
-  # Maps a mounted content path back to the upstream repo it came from, so
-  # layouts/_default/_markup/render-link.html can expand a relative .md link
-  # that points outside mounted content into a working upstream URL instead of
-  # emitting a dead relative link. Order matters: longest prefix wins, so more
-  # specific entries come first.
+  # Maps a mounted content path back to its upstream repo, so render-link.html
+  # can expand .md links pointing outside mounted content. Longest prefix wins,
+  # so more specific entries come first.
   upstreamSources:
     - target: docs/orientation
       source: mentoring/new-contributor-orientation
