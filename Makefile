@@ -146,60 +146,10 @@ container-server: modules-download ## Run Hugo locally within a container, avail
 clean: ## Cleans build artifacts.
 	rm -rf public/ resources/ _tmp/
 
-clean-all: ## Cleans both build artifacts and files synced to content directory
+clean-all: ## Cleans build artifacts. Alias of clean; kept for compatibility.
 	rm -rf public/ resources/ _tmp/
-	rm -f content/en/events/community-meeting.md
-	rm -f content/en/events/meet-our-contributors.md
-	rm -f content/en/events/office-hours.md
-	rm -f content/en/docs/cheatsheet.md
-	rm -f content/en/resources/rename.md
-	find content/en/docs/guide -maxdepth 1 \
-		-not -path content/en/docs/guide \
-		-not -name ".gitignore" -exec rm -rf {} \;
-	find content/en/docs/comms -maxdepth 1 \
-		-not -path content/en/docs/comms \
-		-not -name ".gitignore" -not -name "_index.md" -exec rm -rf {} \;
-	find content/en/resources/release -maxdepth 1  \
-		-not -path content/en/resources/release \
-		-not -name ".gitignore" -exec rm -rf {} \;
-	find content/en/docs/orientation -maxdepth 1 \
-		-not -path content/en/docs/orientation \
-		-not -name ".gitignore" -exec rm -rf {} \;
-	find content/en/community -maxdepth 1 \
-		-not -path content/en/community \
-		-not -name ".gitignore" -not -name "_index.md" \
-		-not -name "code-of-conduct.md" -exec rm -rf {} \;
 
 production-build: .nvmrc ## Builds the production site (this command used only by Netlify).
-	rm -f content/en/events/community-meeting.md
-	rm -f content/en/events/meet-our-contributors.md
-	rm -f content/en/events/office-hours.md
-	rm -f content/en/docs/cheatsheet.md
-	rm -f content/en/resources/rename.md
-	find content/en/docs/guide -maxdepth 1 \
-		-not -path content/en/docs/guide \
-		-not -name ".gitignore" \
-		-exec rm -rf {} \;
-	find content/en/docs/comms -maxdepth 1 \
-		-not -path content/en/docs/comms \
-		-not -name ".gitignore" \
-		-not -name "_index.md" \
-		-exec rm -rf {} \;
-	find content/en/resources/release -maxdepth 1  \
-		-not -path content/en/resources/release \
-		-not -name ".gitignore" \
-		-exec rm -rf {} \;
-	find content/en/docs/orientation -maxdepth 1 \
-		-not -path content/en/docs/orientation \
-		-not -name ".gitignore" \
-		-exec rm -rf {} \;
-	find content/en/community -maxdepth 1 \
-		-not -path content/en/community \
-		-not -name ".gitignore" \
-		-not -name "_index.md" \
-		-not -name "code-of-conduct.md" \
-		-exec rm -rf {} \;
-
 	$(BLOCK_STDOUT_CMD)
 	hugo mod get -u
 	hugo \
