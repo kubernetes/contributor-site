@@ -5,18 +5,19 @@
   must be run through markdownify -- passing it to safeHTML alone emits the
   markdown verbatim, leaving links as literal [text](url) on the page.
 
-  The leading H1 is stripped first: the layout already renders the page title,
-  and markdownify output does not pass through
-  layouts/_default/_markup/render-heading.html, so the body heading would
-  otherwise duplicate it.
+  The document's own leading H1 is kept. Its only caller, content/en/CLA.md,
+  renders with a layout that emits no title heading of its own, so stripping it
+  would leave the page with no heading at all. markdownify output does not pass
+  through layouts/_default/_markup/render-heading.html, so nothing else removes
+  it either.
+
+  If this shortcode is ever used on a page whose layout does render the title,
+  strip the leading H1 there rather than here.
 */ -}}
 {{- $url := .Get 0 -}}
 {{- $resource := resources.GetRemote $url -}}
 {{- with $resource -}}
-{{- $content := .Content -}}
-{{- $content = replaceRE `^# .+` "" $content 1 -}}
-{{- $content = trim $content "\n\r " -}}
-{{- $content | markdownify -}}
+{{- trim .Content "\n\r " | markdownify -}}
 {{- else -}}
 {{- warnf "Unable to fetch remote content from %s" $url -}}
 {{- end -}}

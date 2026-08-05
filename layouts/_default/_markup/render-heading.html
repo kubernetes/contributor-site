@@ -1,14 +1,18 @@
 {{- /*
   Suppresses level-1 headings in page bodies.
 
-  The page title is rendered by the layout as <h1>, so an upstream document that
-  opens with "# Title" would produce a duplicate H1. hack/gen-content.sh stripped
-  that heading from the markdown before syncing.
+  Upstream documents open with "# Title" and the layout renders the page title
+  as <h1>, so without this every mounted page carries a duplicate H1.
+  hack/gen-content.sh stripped the body heading before syncing; PR #647 replaced
+  that with a regex over already-rendered HTML in content.html, which operates
+  on output and matches the first <h1> regardless of origin. A render hook
+  removes the heading at parse time instead.
 
-  Doing this with a regex over already-rendered HTML is fragile -- it operates on
-  output and matches the first <h1> regardless of where it came from. A render
-  hook removes the heading at parse time instead, which is both cheaper and
-  scoped to body content only.
+  Applied to all content, not just module-mounted pages. Scoping it to the
+  mounted paths was tried and reverted: file mounts land outside the directory
+  targets (/docs/contributor-cheatsheet/, /resources/rename/, /resources/release/)
+  and KEP pages have their own ingestion path, so a scoped rule left 574 pages
+  with duplicate H1s against 0 for the unscoped one.
 
   Every H1 is suppressed, not just the first: the layout owns the page title, so
   a second body-level H1 is a document-structure error either way.
