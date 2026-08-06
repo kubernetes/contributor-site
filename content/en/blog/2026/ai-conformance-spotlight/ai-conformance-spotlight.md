@@ -4,14 +4,14 @@ title: "From Working Group to SIG Architecture: spotlight on AI Conformance"
 slug: sig-arch-ai-conformance-2026
 date: 2026-07-09
 draft: yes
-author: "Frederico Muñoz (SAS Institute) and Kirti Goyal"
+author: "Frederico Muñoz (SAS Institute) and Kirti Goyal (independent)"
 ---
 
 In this SIG Architecture spotlight we talked with [Janet Kuo](https://github.com/janetkuo) (Google)
 and [Yuan Tang](https://github.com/terrytangyuan) (Red Hat) about the journey of AI Conformance in
 Kubernetes, from the initial [Working
 Group](https://github.com/kubernetes/community/blob/main/governance.md#working-groups) to the
-integration [SIG Architecture](https://github.com/kubernetes/community/tree/main/sig-architecture#architecture-special-interest-group)
+integration [SIG Architecture](https://www.kubernetes.dev/community/community-groups/sigs/architecture/)
 as a subproject.
 
 ## Introductions
@@ -31,7 +31,7 @@ workloads, such as AI.
 **Yuan Tang**: I’m a Senior Principal Software Engineer at Red Hat, where I lead the development of
 our AI platform and drive our upstream open source strategy. I became involved in Kubernetes early
 on by fostering collaborations between the Kubernetes community and projects I was leading,
-including Kubefolw, Argo, and KServe. I later helped found and lead [WG Serving](https://github.com/kubernetes-sigs/wg-serving) and the AI Conformance program, advancing
+including Kubeflow, Argo, and KServe. I later helped found and lead [WG Serving](https://github.com/kubernetes-sigs/wg-serving) and the AI Conformance program, advancing
 innovation and strengthening community collaboration around running AI workloads on Kubernetes.
 
 ## Program, Working Group, Subproject: the many shapes of AI Conformance
@@ -47,8 +47,8 @@ co-chairs Yuan Tang, Rita Zhang, and Mario Fahlandt to get the community rallied
 
 **Yuan Tang:** Yes. I was a co-chair of WG Serving at that time and some of the initiatives such as
 the [Gateway AI Inference Extension](https://gateway-api-inference-extension.sigs.k8s.io/) quickly
-gained traction. There was a strong interest among the community to include inference related
-requirements in the K8s AI Conformance program.
+gained traction. There was a strong interest among the community to include inference-related
+requirements in the Kubernetes AI Conformance program.
 
 **FK: How would you describe the motivation behind the creation of the AI Conformance Working Group?**
 
@@ -88,7 +88,8 @@ Some concrete indicators of success include:
 
 Most importantly, the WG created consensus that AI workloads are now a first-class Kubernetes use case.
 
-{{< figure src="/blog/2026/sig-arch-ai-conformance-2026/ai_conf_kubecon.jpg" alt="AI Conformance at the KubeCon+CloudNativeCon NA 2025" >}}
+![KubeCon stage with 4 persons in it, one of them talking.](ai_conf_kubecon.jpg)
+
 
 **FK: AI Conformance was specifically highlighted at the latest KubeCon: is this a reflection of the
 growing importance of AI throughout the project?**
@@ -116,7 +117,9 @@ So the emphasis on AI Conformance is not just about chasing AI hype; it's about 
 to a major shift in workload patterns and ensuring the ecosystem evolves cohesively rather than
 fragmenting into vendor-specific AI stacks.
 
-{{< figure src="/blog/2026/sig-arch-ai-conformance-2026/ai_conf_sponsors.jpg" alt="AI Conformance: initial adopters and major contributors (KubeCon NA 2025)" >}}
+
+![(slide) Initial adopters and major contributors: Akamai (logo), Alibaba Cloud (logo), AWS (logo), Broadcom (logo), CoreWeave (logo), DaoCloud (logo), Google Cloud (logo), Kubermatic (logo), Microsoft Azure (logo), NVIDIA (logo), Oracle (logo), SUSE (logo), Red Hat (logo), SAP (logo)](ai_conf_sponsors.jpg)
+
 
 ## From Working Group to SIG Architecture subproject
 
@@ -157,7 +160,7 @@ best practices without locking Kubernetes into rigid APIs too early. Once those 
 with ecosystem adoption, we graduate them to mandatory MUST requirements.
 
 Second, we intentionally keep our focus on the infrastructure layer. We test for core capabilities
-like accelerator support through Dynamic Resource Allocation (DRA), rather than getting bogged down
+like accelerator support through [Dynamic Resource Allocation](/docs/concepts/scheduling-eviction/dynamic-resource-allocation/) (DRA), rather than getting bogged down
 in specific AI frameworks or model servers. That keeps the base platform stable while letting the AI
 tooling evolve as fast as it needs to.
 
@@ -183,11 +186,12 @@ foundational level to support the next decade of AI workloads.
 
 **Janet and Yuan**: We're always looking for new contributors. The easiest way to get started is by checking out our
 main repo at [kubernetes-sigs/ai-conformance](https://github.com/kubernetes-sigs/ai-conformance) and
-join our [meetings](https://github.com/kubernetes/community/tree/main/sig-architecture#meetings). If
+join our [meetings](https://www.kubernetes.dev/community/community-groups/sigs/architecture/#meetings). If
 you're interested in defining new AI Conformance requirements, you can jump into PR reviews or
 propose your own using our [KAR template](https://github.com/kubernetes-sigs/ai-conformance/tree/main/kars/NNNN-kar-template). If
-you want to write code, we always need help expanding our automated Go test suites in the [test/ directory](https://github.com/kubernetes-sigs/ai-conformance/tree/main/test). For vendors looking to
-certify their platforms, all the details are at
+you want to write code, we always need help expanding our automated Go test suites in the [`test/` directory](https://github.com/kubernetes-sigs/ai-conformance/tree/main/test).
+
+For vendors looking to certify their platforms, all the details are at
 [cncf/k8s-ai-conformance](https://github.com/cncf/k8s-ai-conformance).
 
 **FK: Any final comments you would like to share?** 
@@ -206,3 +210,4 @@ If you’re a platform vendor, we’d love to see you get certified. If you’re
 the intersection of AI and cloud-native infrastructure, come join us in SIG Architecture!
 
 **FK: Excellent, thank you both for guiding us in this journey on AI and AI Conformance in Kubernetes.**
+    
