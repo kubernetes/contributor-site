@@ -1,0 +1,15 @@
+{
+  "default": true,
+  // MD013: Line length — disabled because blog posts have long URLs and prose
+  "MD013": false,
+  // MD033: Inline HTML — disabled because Hugo uses HTML shortcodes
+  "MD033": false,
+  // MD041: First line heading — disabled because posts start with front matter
+  "MD041": false,
+  // MD024: Duplicate headings — disabled because posts reuse subheadings like "Prerequisites"
+  "MD024": false,
+  // MD046: Code block style — disabled because Hugo fenced blocks have varied syntax
+  "MD046": false,
+  // MD060: Table column style — disabled because it conflicts with readable table formatting
+  "MD060": false
+}

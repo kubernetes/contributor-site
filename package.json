@@ -6,6 +6,7 @@
     "@fortawesome/fontawesome-free": "^6.6.0",
     "autoprefixer": "^10.4.20",
     "docsy": "github:google/docsy#semver:0.9.1",
+    "markdownlint-cli": "0.48.0",
     "postcss-cli": "^10.1.0"
   },
   "scripts": {
@@ -22,6 +23,8 @@
   },
   "homepage": "https://github.com/kubernetes/contributor-site#readme",
   "overrides": {
-    "@fortawesome/fontawesome-free": "^6.6.0"
+    "@fortawesome/fontawesome-free": "^6.6.0",
+    "minimatch": "10.2.5",
+    "markdown-it": "14.1.1"
   }
 }

@@ -50,7 +50,7 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets container-targets
-targets: help gen-content render server clean clean-all production-build preview-build
+targets: help gen-content render server lint-blogs clean clean-all production-build preview-build
 container-targets: container-image container-push container-gen-content container-render container-server
 
 help: ## Show this help text.
@@ -61,6 +61,15 @@ help: ## Show this help text.
 
 dependencies:
 	npm ci
+
+# Set LINT_BLOGS_WARN_ONLY=1 for advisory lint (CI). Default fails on findings.
+LINT_BLOGS_WARN_ONLY ?= 0
+
+lint-blogs: ## Run markdownlint on changed blog posts (LINT_BLOGS_WARN_ONLY=1 for advisory).
+	LINT_BLOGS_WARN_ONLY=$(LINT_BLOGS_WARN_ONLY) hack/lint-blogs.sh $(BASE_REF)
+
+print-node-version: ## Print the Node.js version used in this project.
+	@echo $(NODE_VERSION)
 
 gen-content: ## Generates content from external sources.
 	hack/gen-content.sh
