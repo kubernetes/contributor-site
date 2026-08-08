@@ -1,0 +1,9 @@
+{{- /* Hugo silently ignores a module mount whose upstream source was renamed or
+       deleted: the build exits 0 and the page just never appears. errorf is the
+       only thing that turns that into a build failure. Called from the home page
+       only, via hooks/head-end.html. */ -}}
+{{- range site.Params.expectedPages -}}
+  {{- if not (site.GetPage .) -}}
+    {{- errorf "verify-mounts: expected page %q does not exist. Check the module mounts in hugo.yaml against the current upstream tree." . -}}
+  {{- end -}}
+{{- end -}}

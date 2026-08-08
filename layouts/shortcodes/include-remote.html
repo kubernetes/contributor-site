@@ -1,0 +1,11 @@
+{{- /* resources.GetRemote returns the raw file, so .Content is markdown source;
+       safeHTML alone would emit literal [text](url). The document's leading H1
+       is kept -- markdownify output skips render hooks, and the only caller
+       (content/en/CLA.md) uses a layout that renders no title of its own. */ -}}
+{{- $url := .Get 0 -}}
+{{- $resource := resources.GetRemote $url -}}
+{{- with $resource -}}
+{{- trim .Content "\n\r " | markdownify -}}
+{{- else -}}
+{{- warnf "Unable to fetch remote content from %s" $url -}}
+{{- end -}}

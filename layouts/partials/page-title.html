@@ -1,0 +1,13 @@
+{{- /* Hugo does not derive .Title from the filename; mounted upstream markdown
+       often has no front matter, which would render an empty <h1> and <title>. */ -}}
+{{- with .Title -}}
+  {{- . -}}
+{{- else -}}
+  {{- with .File -}}
+    {{- $base := .BaseFileName -}}
+    {{- if or (eq $base "_index") (eq $base "index") -}}
+      {{- $base = path.Base .Dir -}}
+    {{- end -}}
+    {{- $base | replaceRE "[-_]+" " " | title -}}
+  {{- end -}}
+{{- end -}}

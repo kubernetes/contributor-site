@@ -1,0 +1,6 @@
+github.com/cncf/foundation v0.0.0-20260709151531-8c2b6d36194d h1:t5x6mfPo4L9qpPyhWY82CvbCzxnAjDuSS8qXdfMThtA=
+github.com/cncf/foundation v0.0.0-20260709151531-8c2b6d36194d/go.mod h1:Bc+TWRzbCv6T+tkQqNuwGA3cGk017o2TE5CAmu9EY/Q=
+github.com/kubernetes/sig-release v0.0.0-20260702230026-c0577d6a9d54 h1:jWbgLnJRiMaREIqVNVLO40979f8sjDH/nxKVcyDVO4Q=
+github.com/kubernetes/sig-release v0.0.0-20260702230026-c0577d6a9d54/go.mod h1:sNxEc7U86IjC93kZywZHM8psA/Moy8DMXXwP2N+EAe0=
+k8s.io/community v0.0.0-20260710123745-cd24de874904 h1:yTL+oWTpYjo/xFkqdXMjr+IYhQ8bO9gFxohXudyEFpw=
+k8s.io/community v0.0.0-20260710123745-cd24de874904/go.mod h1:ReZtjuSc2VEkZa1NyJuKBbu3uAcpZ7LYvKu7biy1RnE=

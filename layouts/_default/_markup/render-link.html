@@ -1,12 +1,34 @@
-{{- $u := .Destination -}}
-{{- /* 
-  Robustly handle URLs with parentheses or extra spaces from external sources (e.g. KEP READMEs).
-  This prevents build failures like "first path segment in URL cannot contain colon" when 
-  a link destination is wrapped in extra parentheses.
-*/ -}}
-{{- $u = trim $u " ()" -}}
-<a href="{{ $u | safeURL }}"
-  {{ with .Title }} title="{{ . }}"{{ end }}
-  {{ if strings.HasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>
-  {{- .Text | safeHTML -}}
-</a>
+{{- /* Relative .md links in upstream markdown resolve to a permalink when the
+       target is also mounted here, and expand to the upstream repo URL when it
+       is not -- otherwise they render as dead relative links. upstreamSources
+       maps a mounted content path back to its upstream source path.
+
+       Destinations are trimmed of stray spaces and parens: some upstream docs
+       wrap targets in extra parens, which fails the build with "first path
+       segment in URL cannot contain colon". */ -}}
+{{- $u := trim .Destination " ()" -}}
+{{- $isExternal := or (strings.HasPrefix $u "http") (strings.HasPrefix $u "mailto:") -}}
+{{- $isAnchor := strings.HasPrefix $u "#" -}}
+{{- $href := $u -}}
+
+{{- if and (and (not $isExternal) (not $isAnchor)) (strings.HasSuffix $u ".md") -}}
+  {{- with $.Page.GetPage $u -}}
+    {{- $href = .RelPermalink -}}
+  {{- else -}}
+    {{- $dir := "" -}}
+    {{- with $.Page.File -}}{{ $dir = strings.TrimSuffix "/" .Dir }}{{ end -}}
+    {{- $dir = strings.TrimPrefix "en/" $dir -}}
+    {{- $matched := false -}}
+    {{- range site.Params.upstreamSources -}}
+      {{- if and (not $matched) (or (eq $dir .target) (strings.HasPrefix $dir (printf "%s/" .target))) -}}
+        {{- $matched = true -}}
+        {{- $rel := strings.TrimPrefix .target $dir -}}
+        {{- $upstreamDir := path.Join .source $rel -}}
+        {{- $href = printf "%s/%s" .base (path.Join $upstreamDir $u) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $newTab := strings.HasPrefix $href "http" -}}
+<a href="{{ $href | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $newTab }} target="_blank" rel="noopener"{{ end }}>{{- .Text | safeHTML -}}</a>

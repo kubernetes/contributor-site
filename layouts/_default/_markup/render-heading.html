@@ -1,0 +1,7 @@
+{{- /* The layout renders the page title as <h1>, so a body "# Title" would
+       duplicate it. Applies to all content: scoping this to module-mounted
+       paths misses file mounts and KEP pages, which then render two H1s. */ -}}
+{{- if eq .Level 1 -}}
+{{- else -}}
+<h{{ .Level }} id="{{ .Anchor }}">{{ .Text | safeHTML }}</h{{ .Level }}>
+{{- end -}}
