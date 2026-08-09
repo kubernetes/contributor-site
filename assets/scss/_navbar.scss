@@ -6,6 +6,19 @@
   transition: background-color 0.3s ease;
 }
 
+.td-navbar-cover {
+  // Improve navbar contrast over the landing page hero image.
+  background: rgba($dark, 0.85) !important;
+}
+
 .td-navbar.scrolled {
   background-color: rgba($primary, 0.95) !important; // overrides Docsy's navbar background
+
+  // Distinguish inactive, hover, and active navigation links.
+  --bs-navbar-color: rgba(255, 255, 255, 0.55);
+}
+
+.td-navbar .td-search__input:focus {
+  background-color: $white;
+  color: $dark;
 }
