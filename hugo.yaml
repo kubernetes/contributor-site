@@ -38,6 +38,9 @@ services:
   googleAnalytics:
     # Fake ID in support of [params.ui.feedback]. The real GA ID is set in the Netlify config.
     id: UA-00000000-0
+  rss:
+    # Number of items in the feed, read by layouts/index.rss.xml.
+    limit: 50
 
 # Hugo internal caching
 caches:

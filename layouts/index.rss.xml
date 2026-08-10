@@ -1,7 +1,11 @@
 {{/*
-  Home-page RSS feed, copied from kubernetes/website's layouts/index.rss.xml:
+  Home-page RSS feed, inspired from kubernetes/website's layouts/index.rss.xml:
   https://github.com/kubernetes/website/blob/main/layouts/index.rss.xml
-  Only the <description> text differs, since it names this site's blog.
+
+  The item count is read from services.rss.limit in hugo.yaml rather than
+  hardcoded. That key is 0 when unset and Hugo treats `first 0` as unlimited,
+  so the fallback below keeps a missing key from restoring the whole-site feed
+  this template exists to prevent.
 
   This site owns its feed template rather than inheriting one from the theme.
   Docsy shipped layouts/_default/list.rss.xml through v0.9.1 and removed it in
@@ -35,7 +39,9 @@
     {{ with .OutputFormats.Get "RSS" }}
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
-    {{ range first 50 (where site.RegularPages "Type" "in" (slice "blog")) }}
+    {{- $limit := site.Config.Services.RSS.Limit }}
+    {{- if lt $limit 1 }}{{ $limit = 50 }}{{ end }}
+    {{ range first $limit (where site.RegularPages "Type" "in" (slice "blog")) }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
