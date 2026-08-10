@@ -34,13 +34,13 @@
       <div class="mb-3">
         <div class="nav nav-pills shadow-sm rounded bg-body p-2 border flex-nowrap overflow-auto justify-content-lg-center" id="sigsTab" role="tablist">
           <button class="nav-link active text-nowrap me-2" id="sigs-tab" data-bs-toggle="pill" data-bs-target="#sigs" type="button" role="tab" aria-controls="sigs" aria-selected="true" aria-label="Show Special Interest Groups">
-            <i class="fas fa-users-cog me-1"></i> SIGs <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .sigs }}</span>
+            <i class="fas fa-users-cog me-1"></i> SIGs <span class="badge rounded-pill community-nav-count ms-1 d-none d-sm-inline">{{ len .sigs }}</span>
           </button>
           <button class="nav-link text-nowrap me-2" id="wg-tab" data-bs-toggle="pill" data-bs-target="#wg" type="button" role="tab" aria-controls="wg" aria-selected="false" aria-label="Show Working Groups">
-            <i class="fas fa-project-diagram me-1"></i> Working Groups <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .workinggroups }}</span>
+            <i class="fas fa-project-diagram me-1"></i> Working Groups <span class="badge rounded-pill community-nav-count ms-1 d-none d-sm-inline">{{ len .workinggroups }}</span>
           </button>
           <button class="nav-link text-nowrap" id="committees-tab" data-bs-toggle="pill" data-bs-target="#committees" type="button" role="tab" aria-controls="committees" aria-selected="false" aria-label="Show Committees">
-            <i class="fas fa-shield-alt me-1"></i> Committees <span class="badge rounded-pill bg-primary ms-1 d-none d-sm-inline">{{ len .committees }}</span>
+            <i class="fas fa-shield-alt me-1"></i> Committees <span class="badge rounded-pill community-nav-count ms-1 d-none d-sm-inline">{{ len .committees }}</span>
           </button>
         </div>
       </div>

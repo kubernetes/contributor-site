@@ -290,7 +290,7 @@
       border: 1px solid var(--bs-border-color);
       border-radius: 4px;
       background: var(--bs-body-bg);
-      color: var(--bs-body-color) !important; // beats DataTables' own !important on button color
+      color: var(--bs-body-color);
       cursor: pointer;
       transition: all 0.1s ease;
 
@@ -441,7 +441,7 @@
     // Required to override DataTables pagination text styles.
     .dataTables_paginate {
       &, a, span {
-        color: var(--bs-body-color) !important;
+        color: var(--bs-body-color);
       }
     }
 
@@ -461,9 +461,9 @@
         &.current {
           &, &:hover {
             color: var(--bs-body-color) !important;
-            background: var(--bs-tertiary-bg) !important;
-            border-color: var(--bs-border-color) !important;
-            box-shadow: none !important;
+            background: var(--bs-tertiary-bg);
+            border-color: var(--bs-border-color);
+            box-shadow: none;
           }
         }
 
@@ -486,20 +486,6 @@
         }
       }
     }
-  }
-
-  // Form dropdown elements and native browser option wrapper panels.
-  select,
-  .form-select {
-    color: var(--bs-body-color) !important;
-    background-color: var(--bs-body-bg) !important;
-
-    option {
-      color: var(--bs-body-color);
-      background-color: var(--bs-body-bg);
-    }
-  }
-}
 
 // Reserve space for DataTables sorting indicators to prevent
 // header text from overlapping the sort icons.
@@ -509,4 +495,6 @@
   th.sorting_desc {
     padding-right: 35px;
   }
+}
+}
 }
