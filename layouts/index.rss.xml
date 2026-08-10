@@ -1,0 +1,56 @@
+{{/*
+  Home-page RSS feed, copied from kubernetes/website's layouts/index.rss.xml:
+  https://github.com/kubernetes/website/blob/main/layouts/index.rss.xml
+  Only the <description> text differs, since it names this site's blog.
+
+  This site owns its feed template rather than inheriting one from the theme.
+  Docsy shipped layouts/_default/list.rss.xml through v0.9.1 and removed it in
+  v0.10.0 (google/docsy#1948); with no local template, Hugo fell back to its
+  built-in RSS, which ranges over every regular page with no section filter and
+  no item cap. kubernetes/website has never been exposed to that, having owned
+  this file since it moved to Hugo in 2018:
+  https://github.com/kubernetes/website/commit/7f3b633a
+
+  Paired with the `outputs` block in hugo.yaml, which emits RSS for the home
+  page only, mirroring:
+  https://github.com/kubernetes/website/blob/main/hugo.toml#L84-L88
+  Section feeds are deliberately not generated.
+*/}}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.Title }} Blog</title>
+    <link>{{ .Permalink }}</link>
+    <description>The Kubernetes contributor blog is used by the project to communicate community reports, contributor news, and any updates that might be relevant to people contributing to Kubernetes.</description>
+    <generator>Hugo -- gohugo.io</generator>{{ with site.LanguageCode }}
+    <language>{{.}}</language>{{end}}{{ with site.Author.email }}
+    <managingEditor>{{.}}{{ with site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with site.Author.email }}
+    <webMaster>{{.}}{{ with site.Author.name }} ({{.}}){{end}}</webMaster>{{end}}{{ with site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    <image>
+      <url>https://raw.githubusercontent.com/kubernetes/kubernetes/master/logo/logo.png</url>
+      <title>The Kubernetes project logo</title>
+      <link>{{ .Permalink }}</link>
+    </image>
+    {{ with .OutputFormats.Get "RSS" }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ end }}
+    {{ range first 50 (where site.RegularPages "Type" "in" (slice "blog")) }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{ with site.Author.email }}<author>{{.}}{{ with site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      <guid>{{ .Permalink }}</guid>
+      <description>
+        {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+        {{ with $img }}
+        {{ $img := .Resize "640x" }}
+        {{ printf "<![CDATA[<img src=\"%s\" width=\"%d\" height=\"%d\"/>]]>" $img.Permalink $img.Width $img.Height | safeHTML }}
+        {{ end }}
+        {{ .Content | html }}
+      </description>
+    </item>
+    {{ end }}
+  </channel>
+</rss>

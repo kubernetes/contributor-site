@@ -16,6 +16,20 @@ disableKinds:
 permalinks:
   blog: '/:section/:year/:month/:day/:slug/'
 
+# Be explicit about the output formats. We only want an RSS feed for the home
+# page, rendered by layouts/index.rss.xml. Leaving RSS on `section` would emit a
+# feed for every section, none of which carry dates, and leaving it unset lets
+# Hugo's built-in template range over every page on the site.
+# Mirrors https://github.com/kubernetes/website/blob/main/hugo.toml#L84-L88
+outputs:
+  home:
+    - HTML
+    - RSS
+  page:
+    - HTML
+  section:
+    - HTML
+
 # Image processing configuration.
 imaging:
   resampleFilter: CatmullRom
