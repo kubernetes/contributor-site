@@ -108,15 +108,17 @@
         {{- /* Fix relative image and link paths to point to GitHub */ -}}
         {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/" -}}
         {{- $kepDirUrl := printf "%skeps/%s/%s/" $repoBaseUrl $kep.owningSig $kep.name -}}
+        {{- $blobBase := "https://github.com/kubernetes/enhancements/blob/master/" -}}
+        {{- $linkDirUrl := printf "%skeps/%s/%s/" $blobBase $kep.owningSig $kep.name -}}
         
         {{- /* 1. Fix absolute-looking paths (starting with /) */ -}}
         {{- $readmeContent = replaceRE `!\[(.*?)\]\(/(.*?)\)` (printf "![${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `\[(.*?)\]\(/(.*?)\)` (printf "[${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
+        {{- $readmeContent = replaceRE `\[(.*?)\]\(/(.*?)\)` (printf "[${1}](%s${2})" $blobBase) $readmeContent -}}
         
         {{- /* 2. Fix relative paths (not starting with http, #, or / and not containing :) */ -}}
         {{- $readmeContent = replaceRE `!\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "![${1}](%s${2})" $kepDirUrl) $readmeContent -}}
         {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
+        {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $linkDirUrl) $readmeContent -}}
       {{- else -}}
         {{- warnf "Unable to load README for KEP %s URL=%s" $kep.kepNumber $readmeUrl -}}
       {{- end -}}
