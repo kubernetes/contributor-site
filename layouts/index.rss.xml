@@ -54,7 +54,7 @@
         {{ $img := .Resize "640x" }}
         {{ printf "<![CDATA[<img src=\"%s\" width=\"%d\" height=\"%d\"/>]]>" $img.Permalink $img.Width $img.Height | safeHTML }}
         {{ end }}
-        {{ .Content | html }}
+        {{ .Content | transform.XMLEscape | safeHTML }}
       </description>
     </item>
     {{ end }}
