@@ -4,10 +4,10 @@ title: "KCD Around the World: San Francisco Bay Area"
 date: 2026-08-18T10:00:00-08:00
 slug: kcd-around-the-world-san-francisco
 author: >
-  Rey Lejano,
-  Lisa-Marie Namphy,
-  Jason (Jay) Smith,
-  [Kashish Verma](https://github.com/KashishV999)
+  Rey Lejano (Red Hat),
+  [Kashish Verma](https://github.com/KashishV999),
+  Lisa-Marie Namphy (Intuit),
+  Jason (Jay) Smith (Google Cloud),
 ---
 
 Welcome back to KCD Around the World, a series where we explore [Kubernetes Community Days](https://www.cncf.io/kcds/) from every corner of the globe. Behind every event is a community of volunteers, contributors, organizers and attendees who make it all happen. Through conversations with the people behind each KCD, we share what makes it unique.
@@ -18,7 +18,7 @@ This stop: San Francisco Bay Area. Coming up on September 1, 2026 is the second 
 
 **Kashish Verma (KV):** Could you each introduce yourselves and tell us how you got involved in Kubernetes?
 
-**Rey Lejano (RL):** I'm one of the KCD San Francisco Bay Area organizers, and a Kubernetes SIG Docs co-chair and SIG Security subproject lead. I've served on seven Release Teams, including as the v1.23 Release Lead. A conversation with a Kubernetes contributor at the 2019 KubeCon in San Diego is what pulled me into contributing to the project, and it's been most of my focus ever since.
+**Rey Lejano (RL):** I'm one of the KCD San Francisco Bay Area organizers, a Kubernetes SIG Docs co-chair and SIG Security subproject lead, and I work at Red Hat. I've served on seven Release Teams, including as the v1.23 Release Lead. A conversation with a Kubernetes contributor at the 2019 KubeCon in San Diego is what pulled me into contributing to the project.
 
 **Lisa-Marie Namphy (LN):** Hi! I’m Lisa-Marie Namphy (Lisa), I've been a CNCF Ambassador since the early days of the program and have run one of the largest Kubernetes/Cloud Native user groups for over 10 years, now called Cloud Native Silicon Valley. I also run the Developer Relations and Tech Learning team at Intuit, where open source is core to how we build: our flagship products like TurboTax and QuickBooks run on Kubernetes and other CNCF technologies, including Argo, which Intuit originally created and donated.
 
