@@ -1,13 +1,13 @@
 ---
 layout: blog
 title: "KCD Around the World: San Francisco Bay Area"
-date: 2026-08-18T10:00:00-08:00
+draft: true
 slug: kcd-around-the-world-san-francisco
 author: >
-  Rey Lejano (Red Hat),
+  [Rey Lejano](https://github.com/reylejano) (Red Hat),
   [Kashish Verma](https://github.com/KashishV999),
   Lisa-Marie Namphy (Intuit),
-  Jason (Jay) Smith (Google Cloud),
+  Jason (Jay) Smith (Google Cloud)
 ---
 
 Welcome back to KCD Around the World, a series where we explore [Kubernetes Community Days](https://www.cncf.io/kcds/) from every corner of the globe. Behind every event is a community of volunteers, contributors, organizers and attendees who make it all happen. Through conversations with the people behind each KCD, we share what makes it unique.
@@ -46,16 +46,16 @@ This stop: San Francisco Bay Area. Coming up on September 1, 2026 is the second 
 
 **LN:** To add to what Rey said, the area is known for the origination of so much technology, OpenStack partly came out of a NASA team in Mountain View/Sunnyvale, Kubernetes was created at Google in Mountain View, and OpenAI and a wave of other AI work is happening here now, alongside Adobe, Intuit, Apple, NVIDIA, LinkedIn, Uber, and Meta. Our quarterly user group meetups regularly draw 200+ attendees.
 
-**JS:**  The San Francisco Bay Area is called “Silicon Valley” for a reason. It is the global epicenter of technology for many reasons. Despite the various technological minds that live here, it is often siloed. There are so many good ideas in the Bay Area related to Cloud Native that don't get shared. Many people may only talk to coworkers about this tech. 
+**JS:** The San Francisco Bay Area is called "Silicon Valley" for a reason. It is the global epicenter of technology for many reasons. Despite the various technological minds that live here, it is often siloed. There are so many good ideas in the Bay Area related to Cloud Native that don't get shared. Many people may only talk to coworkers about this tech. 
 
-The KCD gives us a way to bring all people from all backgrounds together to share and build community. 
+The KCD gives us a way to bring all people from all backgrounds together to share and build community.
 
 
 ## Getting the first edition off the ground
 
 **KV:** For the first edition in 2025, was it a challenge to get it up and running?
 
-**RL:** It was a challenge to get the first KCD San Francisco Bay Area going in 2025. Most of us organized local meetups and Cloud Native Community Groups (Jason and I organize CNCG San Francisco, and Lisa organizes CNCG Silicon Valley), but we weren't familiar with the larger scale of a KCD. Luckily, we had several folks join the team who brought that experience, like Matthew Cascio, who also organizes KCD Washington DC, April Baccaro, a professional tech event and program manager, and Rodney Bambao, our visual designer. All of the talks from the 2025 KCD San Francisco Bay Area are on [YouTube](https://www.youtube.com/@kcdsfbayarea), including a [photo recap video](https://youtu.be/YunCMjM48oo?si=Hw8GNa6yh2tveac8).
+**RL:** It was a challenge to get the first KCD San Francisco Bay Area going in 2025. Most of us organized local meetups and Cloud Native Community Groups (Jason and I organize CNCG San Francisco, and Lisa organizes CNCG Silicon Valley), but we weren't familiar with the larger scale of a KCD. Luckily, we had several folks join the team who brought that experience, like Matthew Cascio, who also organizes KCD Washington DC, April Baccaro, a professional tech event and program manager, and Rodney Bambao, our visual designer. All of the talks from the 2025 KCD San Francisco Bay Area are on [YouTube](https://www.youtube.com/@kcdsfbayarea), including a [photo recap video](https://youtu.be/YunCMjM48oo).
 
 **LN:** We were also fortunate to have wonderful "sponsors" of our program, including Arun Gupta, who originated the idea and lobbied for the SF Bay Area to get a KCD, Audra Montenegro, who's local in the Bay Area and helped us kick off the event (and attended it), and Jonathan Bryce, who came out and keynoted our first KCD. We were fortunate too to have wonderful sponsors join in to support and help us launch that first event.
 
@@ -67,9 +67,9 @@ The KCD gives us a way to bring all people from all backgrounds together to shar
 
 **RL:** For the second KCD San Francisco Bay Area, we made a few changes. First, we want KCD SF Bay Area to be accessible and affordable: tickets are less than half the price of last year, at $35, or $25 with code FRIENDS26, and include full access to the Computer History Museum (a ticket to CHM alone is $21.50), which we have to ourselves, plus lunch and happy hour. In a short time since 2025, the Bay Area tech community has gravitated toward agentic AI. The [2026 CNCF Annual Cloud Native Survey](https://www.cncf.io/reports/the-cncf-annual-cloud-native-survey/) states that "Kubernetes has become the de facto orchestration layer for production AI." Our talk topics have changed to account for that, but they remain grounded in cloud native.
 
-**LN:** We’ve also added a few exciting elements to our agenda, including lightning talks and Birds of a Feather (BoF) tables at lunch, so that we can include more speakers and all the local CNCF Ambassadors as part of the program. We will also host 2 long-form workshops.
+**LN:** We've also added a few exciting elements to our agenda, including lightning talks and Birds of a Feather (BoF) tables at lunch, so that we can include more speakers and all the local CNCF Ambassadors as part of the program.
 
-**JS:**  In addition to what has been mentioned above, I would say that we worked hard to keep the Cloud Native in this event. AI is what everyone is talking about but Cloud Native isn’t separate from it. We made sure to curate speakers who could touch upon both topics. 
+**JS:** In addition to what has been mentioned above, I would say that we worked hard to keep the Cloud Native in this event. AI is what everyone is talking about but Cloud Native isn’t separate from it. We made sure to curate speakers who could touch upon both topics.
 
 
 ## Beyond the talks
@@ -78,9 +78,9 @@ The KCD gives us a way to bring all people from all backgrounds together to shar
 
 **RL:** The CNCF offers support and we reached out to several KCD organizers from New York and Texas. At the KCD organizer breakfast at KubeCon NA 2024, I spent the whole time asking questions to the organizers like budgets, venue costs, attendees, etc. There are monthly check-ins with the CNCF to see where all the KCDs are at and where we need support.
 
-**LN:** We had some great suggestions from other organizers about open source close caption technology which we were able to use. What would be REALLY helpful is a cost effective lead scanning device. This continues to be a problem for us, and there doesn't seem to be an effective standard across the KCDs, so we reinvent the wheel ever time (with varying degrees of success). Since this is such an important element to our sponsors, it would be great to have a standard and some guidance here.
+**LN:** We had some great suggestions from other organizers about open source closed captioning technology which we were able to use. What would be REALLY helpful is a cost effective lead scanning device. This continues to be a problem for us, and there doesn't seem to be an effective standard across the KCDs, so we reinvent the wheel every time (with varying degrees of success). Since this is such an important element to our sponsors, it would be great to have a standard and some guidance here.
 
-**JS:** For the most part, we did get a lot of support from the CNCF as well as people who have done KCDs themselves. I think we are always learning new ways to be more efficient. 
+**JS:** For the most part, we did get a lot of support from the CNCF as well as people who have done KCDs themselves. I think we are always learning new ways to be more efficient.
 
 **KV:** What do you think is the relevance of KCDs in the cloud native ecosystem?
 
@@ -105,7 +105,7 @@ The KCD gives us a way to bring all people from all backgrounds together to shar
 
 **RL:** We have a great agenda this year with end users like OpenAI, Uber, LinkedIn, and PayPal sharing how they run cloud native at production scale. Tim Hockin, one of the Kubernetes founders, is giving the welcoming keynote. We've also got hardware, hyperscaler, and neocloud talks from NVIDIA, Google, Microsoft, AWS, and CoreWeave, plus several sessions bridging AI and cloud native, on agentic computing, LLM-driven disaster recovery, agentic GitOps guardrails, production-grade LLM serving on Kubernetes, and debugging inference workloads.
 
-**LN:** Beyond the main stage, we've built in lightning talks, BoF tables at lunch, and talks on certifications and CKAs, plus two long-form workshops. It's a genuinely lively agenda this year.
+**LN:** Beyond the main stage, we've built in lightning talks, BoF tables at lunch, and talks on certifications and such as the CKA, plus two long-form workshops. It's a genuinely lively agenda this year.
 
 **JS:** It is definitely very AI focused but we managed to keep the Cloud Native in it. Cloud Native has to evolve with the larger technological ecosystem. AI workloads still need to live somewhere and it only makes sense to leverage Cloud Native technologies. We have a variety of best practices being shown here. 
 
