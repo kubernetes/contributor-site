@@ -2,7 +2,7 @@
 layout: blog
 title: "KCD Around the World: San Francisco Bay Area"
 date: 2026-08-18T10:00:00-08:00
-slug: kcd-around-the-world-san-francisco-bay-area
+slug: kcd-around-the-world-san-francisco
 author: >
   Rey Lejano,
   Lisa-Marie Namphy,
