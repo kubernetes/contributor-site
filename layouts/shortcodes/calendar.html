@@ -1,5 +1,13 @@
 <div class="calendar-container">
-
-    <div id="calendar"></div>
-  
+  <div class="calendar-filter" role="search">
+    <label for="calendar-filter-input" class="visually-hidden">Filter events by title</label>
+    <input
+      id="calendar-filter-input"
+      class="calendar-filter-input"
+      type="search"
+      placeholder="Filter by title (e.g. New Contributor Orientation)"
+      autocomplete="off"
+    >
+  </div>
+  <div id="calendar"></div>
 </div>
