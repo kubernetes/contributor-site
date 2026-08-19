@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "Spotlight on SIG Apps
+title: "Spotlight on SIG Apps"
 slug: sig-apps-spotlight-2026
 date: 2026-08-18
 author: "Natalie Fisher (VMware by Broadcom)" 
@@ -52,7 +52,7 @@ MS: Node lifecycle challenges have come up repeatedly across SIG Apps, SIG Node,
 
 JK: From an AI perspective, resilience is critical. When you are running a massive distributed LLM training job that spans hundreds of GPUs, a single node failure can halt the entire pipeline. Similarly, if a DaemonSet that runs your logging or GPU monitoring agent gets stuck on a bad node, it impacts the entire cluster's health. 
 
-In addition to the work in the Node Lifecycle WG to handle infrastructure-level degradation, SIG Apps is addressing this at the orchestration layer through subprojects like JobSet (for distributed training) and LeaderWorkerSet (LWS) (for sharded LLM inference). These APIs introduce patterns like "all-or-nothing" failure handling, where a single pod or job failure triggers a coordinated group-level restart to resume from the last clean checkpoint, rather than letting stuck workloads hang in an inconsistent state.
+In addition to the work in the Node Lifecycle WG to handle infrastructure-level degradation, SIG Apps is addressing this at the orchestration layer through subprojects like [JobSet](https://github.com/kubernetes-sigs/jobset/) (for distributed training) and [LeaderWorkerSet (LWS)](https://github.com/kubernetes-sigs/lws/) (for sharded LLM inference). These APIs introduce patterns like "all-or-nothing" failure handling, where a single pod or job failure triggers a coordinated group-level restart to resume from the last clean checkpoint, rather than letting stuck workloads hang in an inconsistent state.
 
 ## Real-world impact
 
