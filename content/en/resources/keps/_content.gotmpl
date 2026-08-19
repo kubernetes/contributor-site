@@ -75,7 +75,8 @@
     -}}
 
     {{/* Fetch README Content */}}
-    {{- $readmeUrl := printf "%s%s/%s/README.md" $rawBaseUrl $kep.owningSig $kep.name -}}
+    {{- $kepPath := default (printf "%s/%s" $kep.owningSig $kep.name) $kep.path -}}
+    {{- $readmeUrl := printf "%s%s/README.md" $rawBaseUrl $kepPath -}}
     {{- $readmeContent := "" -}}
     {{- $readmeOpts := merge $globalOpts (dict "key" (printf "kep-readme-%s" $kep.kepNumber)) -}}
     
@@ -90,7 +91,7 @@
     {{- end -}}
 
     {{- if $needsFallback -}}
-      {{- $readmeUrlUpper := printf "%s%s/%s/README.MD" $rawBaseUrl $kep.owningSig $kep.name -}}
+      {{- $readmeUrlUpper := printf "%s%s/README.MD" $rawBaseUrl $kepPath -}}
       {{- $readmeOptsUpper := merge $globalOpts (dict "key" (printf "kep-readme-%s-upper" $kep.kepNumber)) -}}
       {{- $resourceFetchAttempt = try (resources.GetRemote $readmeUrlUpper $readmeOptsUpper) -}}
     {{- end -}}
@@ -107,7 +108,7 @@
         
         {{- /* Fix relative image and link paths to point to GitHub */ -}}
         {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/" -}}
-        {{- $kepDirUrl := printf "%skeps/%s/%s/" $repoBaseUrl $kep.owningSig $kep.name -}}
+        {{- $kepDirUrl := printf "%skeps/%s/" $repoBaseUrl $kepPath -}}
         
         {{- /* 1. Fix absolute-looking paths (starting with /) */ -}}
         {{- $readmeContent = replaceRE `!\[(.*?)\]\(/(.*?)\)` (printf "![${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
