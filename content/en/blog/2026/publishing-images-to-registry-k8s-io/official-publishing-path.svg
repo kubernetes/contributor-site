@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 170" font-family="Arial, Helvetica, sans-serif" font-size="13" role="img" aria-label="The official publishing path: a tag push triggers a Prow postsubmit job, which runs Cloud Build and pushes to a staging registry. The image promoter then copies the image to registry.k8s.io.">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#37474f"/>
+    </marker>
+  </defs>
+
+  <rect x="10" y="10" width="960" height="150" rx="8" fill="#fafafa" stroke="#bdbdbd"/>
+  <text x="30" y="32" fill="#616161" font-weight="bold">The official path</text>
+
+  <rect x="30" y="65" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="95" y="95" text-anchor="middle">tag push</text>
+
+  <rect x="190" y="65" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="255" y="95" text-anchor="middle">Prow postsubmit</text>
+
+  <rect x="350" y="65" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="415" y="95" text-anchor="middle">Cloud Build</text>
+
+  <rect x="510" y="65" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="575" y="95" text-anchor="middle">staging registry</text>
+
+  <rect x="670" y="65" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="735" y="95" text-anchor="middle">image promoter</text>
+
+  <rect x="830" y="65" width="130" height="50" rx="6" fill="#e8f5e9" stroke="#66bb6a"/>
+  <text x="895" y="95" text-anchor="middle" fill="#2e7d32">registry.k8s.io</text>
+
+  <line x1="164" y1="90" x2="186" y2="90" stroke="#37474f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="324" y1="90" x2="346" y2="90" stroke="#37474f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="484" y1="90" x2="506" y2="90" stroke="#37474f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="644" y1="90" x2="666" y2="90" stroke="#37474f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="804" y1="90" x2="826" y2="90" stroke="#37474f" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>
