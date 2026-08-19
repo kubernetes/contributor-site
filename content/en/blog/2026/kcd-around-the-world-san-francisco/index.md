@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "KCD Around the World: San Francisco Bay Area"
-draft: true
+date: 2026-08-19
 slug: kcd-around-the-world-san-francisco
 author: >
   [Rey Lejano](https://github.com/reylejano) (Red Hat),
