@@ -1,0 +1,232 @@
+# Site strings for English (en)
+# Following kubernetes/website structure using 'other' key for pluralization support
+
+[ui_search_placeholder]
+other = "Type name, tag, area..."
+
+[ui_view_readme_source]
+other = "View README Source"
+
+[ui_view_charter]
+other = "View Charter"
+
+[ui_view_charter_source]
+other = "View Charter Source"
+
+[ui_press_help]
+other = 'Press "?" for help.'
+
+[ui_navigate_arrows]
+other = "Use left and right arrows to navigate."
+
+[ui_return_onboarding]
+other = "Return to onboarding index."
+
+[ui_filter]
+other = "Filter:"
+
+[ui_any_day]
+other = "Any day"
+
+[ui_monday]
+other = "Mon"
+
+[ui_tuesday]
+other = "Tue"
+
+[ui_wednesday]
+other = "Wed"
+
+[ui_thursday]
+other = "Thu"
+
+[ui_friday]
+other = "Fri"
+
+[ui_topics]
+other = "Topics:"
+
+[ui_clear]
+other = "Clear"
+
+[ui_leadership]
+other = "Leadership"
+
+[ui_chairs]
+other = "Chairs"
+
+[ui_tech_leads]
+other = "Tech Leads"
+
+[ui_meetings]
+other = "Meetings"
+
+[ui_at]
+other = "at"
+
+[ui_show_details]
+other = "Show Details"
+
+[ui_visit]
+other = "Visit"
+
+[ui_filter_by_day]
+other = "Filter community groups by meeting day"
+
+[ui_filter_by_topic]
+other = "Filter by topic"
+
+[ui_label_sigs]
+other = "SIGs"
+
+[ui_label_wgs]
+other = "Working Groups"
+
+[ui_label_committees]
+other = "Committees"
+
+[ui_aria_show_sigs]
+other = "Show Special Interest Groups"
+
+[ui_aria_show_wgs]
+other = "Show Working Groups"
+
+[ui_aria_show_committees]
+other = "Show Committees"
+
+[ui_link_join]
+other = "Join"
+
+[ui_link_notes]
+other = "Notes"
+
+[ui_link_recordings]
+other = "Recordings"
+
+[ui_link_slack]
+other = "Slack"
+
+[ui_wg_prefix]
+other = "WG"
+
+[ui_description]
+other = "Description"
+
+[ui_day]
+other = "Day"
+
+[ui_time]
+other = "Time"
+
+[ui_links]
+other = "Links"
+
+[ui_view_source]
+other = "View Source"
+
+[ui_video_placeholder]
+other = "Kubernetes contributor site video"
+
+[kep_number]
+other = "KEP Number"
+
+[kep_title]
+other = "Title"
+
+[kep_sig]
+other = "SIG"
+
+[kep_author]
+other = "Author"
+
+[kep_created]
+other = "Created"
+
+[kep_updated]
+other = "Updated"
+
+[kep_last_updated]
+other = "Last Updated"
+
+[kep_milestone]
+other = "Milestone"
+
+[kep_milestones]
+other = "Milestones"
+
+[kep_latest]
+other = "Latest"
+
+[kep_latest_milestone]
+other = "Latest Milestone"
+
+[kep_alpha]
+other = "Alpha"
+
+[kep_beta]
+other = "Beta"
+
+[kep_stable]
+other = "Stable"
+
+[kep_depr]
+other = "Depr."
+
+[kep_deprecated]
+other = "Deprecated"
+
+[kep_other]
+other = "Other"
+
+[kep_release]
+other = "Release"
+
+[kep_all_releases]
+other = "All Releases"
+
+[kep_all_sigs]
+other = "All SIGs"
+
+[kep_filter_keps]
+other = "Filter KEPs"
+
+[kep_filter_by_release]
+other = "Filter by release"
+
+[kep_filter_by_sig]
+other = "Filter by SIG"
+
+[kep_search_placeholder]
+other = "Search by title, KEP number, author..."
+
+[kep_stage]
+other = "Stage"
+
+[kep_filters]
+other = "Filters"
+
+[kep_caption]
+other = "List of Kubernetes Enhancement Proposals (KEPs)"
+
+[kep_et_al]
+other = "et al."
+
+[kep_implementation_history]
+other = "Implementation History"
+
+[kep_related_enhancements]
+one = "Related Enhancement"
+other = "Related Enhancements"
+
+[kep_ownership]
+other = "Ownership"
+
+[kep_owning_sig]
+other = "Owning SIG"
+
+[kep_participating_sigs]
+one = "Participating SIG"
+other = "Participating SIGs"
+
+[kep_primary_authors]
+other = "Primary Authors"
