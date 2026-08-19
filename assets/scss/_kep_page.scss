@@ -3,8 +3,8 @@
   padding: 0;
 
   .kep-banner-container {
-    background-color: #fff;
-    border: 1px solid #e0e4e8;
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
@@ -24,11 +24,11 @@
     position: relative;
 
     &.border-start-refined {
-      border-left: 1px solid #e0e4e8;
+      border-left: 1px solid var(--bs-border-color);
 
       @media (max-width: 991px) {
         border-left: none;
-        border-top: 1px solid #e0e4e8;
+        border-top: 1px solid var(--bs-border-color);
       }
     }
   }
@@ -38,7 +38,7 @@
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #8a94a6;
+    color: var(--bs-secondary-color);
     margin-bottom: 2rem;
     display: block;
     font-weight: 600;
@@ -49,7 +49,7 @@
     font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: #a0aec0;
+    color: var(--bs-secondary-color);
     margin-bottom: 0.75rem;
     font-weight: 600;
   }
@@ -89,9 +89,9 @@
     }
 
     &.kep-status-generic {
-      background-color: $slate-50;
-      color: $slate-600;
-      border: 1px solid $slate-200;
+      background-color: #198754;
+      color: #fff;
+      border: 1px solid #198754;
     }
   }
 
@@ -110,7 +110,7 @@
     padding: 0.25rem 0;
 
     .kep-data-label {
-      color: $slate-500;
+      color: var(--bs-secondary-color);
       display: flex;
       align-items: center;
 
@@ -144,13 +144,13 @@
 
     .kep-data-value {
       font-weight: 500;
-      color: $slate-800;
+      color: var(--bs-body-color);
 
       code {
-        background: $slate-100;
+        background: var(--bs-tertiary-bg);
         padding: 0.1rem 0.4rem;
         border-radius: 3px;
-        color: $slate-600;
+        color: var(--bs-body-color);
       }
     }
   }
@@ -159,7 +159,7 @@
   .kep-main-link {
     font-size: 1.25rem;
     font-weight: 700;
-    color: $slate-900;
+    color: var(--bs-body-color);
     text-decoration: none;
     transition: color 0.2s ease;
 
@@ -171,7 +171,7 @@
   .kep-tag-link {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    background-color: $slate-500;
+    background-color: var(--bs-secondary-color);
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 500;
@@ -180,7 +180,7 @@
     transition: all 0.2s ease;
 
     &:hover {
-      background-color: $slate-600;
+      background-color: var(--bs-body-color);
       color: #ffffff;
       transform: translateY(-1px);
     }
@@ -194,7 +194,7 @@
 
   .kep-person-link {
     font-size: 0.85rem;
-    color: $slate-600;
+    color: var(--bs-body-color);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -279,25 +279,18 @@
       display: none;
     }
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-top: 2.5rem;
-      margin-bottom: 1.25rem;
-      font-weight: 700;
-    }
-
     h2 {
       font-size: 1.5rem;
-      color: #1a1a1a;
+      color: var(--bs-body-color);
     }
 
     p {
       margin-bottom: 1.5rem;
       color: #3a3a3a;
     }
+      p {
+        color: var(--bs-body-color);
+      }
 
     // Ensure images don't overflow
     img {
@@ -313,18 +306,18 @@
       margin: 2rem 0;
       border-collapse: separate;
       border-spacing: 0;
-      border: 1px solid #dee2e6;
+      border: 1px solid var(--bs-border-color);
       border-radius: 8px;
       overflow: hidden;
 
       th,
       td {
         padding: 1rem;
-        border: 1px solid #dee2e6;
+        border: 1px solid var(--bs-border-color);
       }
 
       th {
-        background-color: #f8f9fa;
+        background-color: var(--bs-tertiary-bg);
         font-weight: 600;
         text-transform: uppercase;
         font-size: 0.8rem;
@@ -372,8 +365,8 @@
       color: inherit;
 
       [data-bs-theme="dark"] & {
-        background-color: #1b1f22;
-        border-color: #495057;
+        background-color: var(--bs-body-bg);
+        border-color: var(--bs-border-color);
       }
 
       code {

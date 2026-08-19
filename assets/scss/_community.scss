@@ -1,11 +1,137 @@
-/* Community Groups Topic Tags */
+/* Community Groups */
 .topic-tag {
   background-color: rgba(var(--bs-primary-rgb), 0.1);
-  color: var(--bs-primary);
+  color: $primary;
   transition: all 0.2s ease;
-
   &.active {
-    background-color: var(--bs-primary);
-    color: #fff;
+    background-color: $primary;
+    color: $light;
+  }
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #{$white};
+  --bs-primary-rgb: 255, 255, 255;
+
+.community-nav-count {
+  background-color: var(--bs-secondary-bg);
+  color: var(--bs-body-color);
+}
+
+.nav.nav-pills.shadow-sm.rounded.bg-body {
+  .nav-link {
+    color: var(--bs-body-color);
+
+    &:hover:not(.active) {
+      background-color: var(--bs-tertiary-bg);
+      color: var(--bs-body-color);
+    }
+
+    &.active {
+      background-color: var(--bs-tertiary-bg);
+      color: var(--bs-emphasis-color);
+    }
+  }
+}
+
+    .topic-tag,
+    .badge.bg-secondary.bg-opacity-10,
+    span[class*="topic-tag"] {
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+    border-radius: $border-radius-pill;
+    &.active {
+      background-color: var(--bs-emphasis-color);
+      color: var(--bs-body-bg);
+      border-color: var(--bs-emphasis-color);
+    }
+  }
+    .sig-card-wrapper {
+    
+    /* Headings */
+    .card-title,
+    .card-title a,
+    a.card-title,
+    h1, h2, h3, h4, h5, h6,
+    .text-primary,
+    [class*="text-primary"],
+    .leadership-title,
+    strong,
+    .sig-card-header a,
+    a[href*="github"],
+    .fa-github,
+    .fab.fa-github {
+      color: var(--bs-body-color);
+    }
+
+    /* Body text */
+    .card-text,
+    p,
+    .card-body,
+    .meetings-container,
+    .meetings-list,
+    .card-footer,
+    div[class*="meeting"],
+    .meeting-title,
+    .meeting-item,
+    li,
+    small {
+      color: var(--bs-body-color);
+    }
+
+      .sig-card-wrapper a.badge.bg-primary.bg-opacity-10 {
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+  }
+
+    .chair-tag,
+    .tech-lead-tag,
+    .sig-leader {
+      background-color: var(--bs-secondary-bg);
+      color: var(--bs-body-color);
+      border: 1px solid var(--bs-border-color);
+      border-radius: $border-radius-pill;
+    }
+
+        .fa-youtube, .fab.fa-youtube, [class*="youtube"] {
+      color: var(--bs-danger);
+    }
+    .fa-video, .fas.fa-video, [class*="video"] {
+      color: var(--bs-info);
+    }
+
+        .btn,
+    button,
+    a.btn,
+    a[class*="btn"],
+    .btn-outline-primary,
+    .btn-light,
+    .btn-outline-dark,
+    .btn-outline-secondary,
+    .btn-secondary,
+    .card-footer a,
+    .card-footer button {
+      background-color: var(--bs-secondary-bg);
+      color: var(--bs-body-color);
+      border: 1px solid var(--bs-border-color);
+      border-radius: $border-radius-pill;
+      &:hover,
+      &:focus {
+        background-color: var(--bs-tertiary-bg);
+        color: var(--bs-body-color);
+        border-color: var(--bs-border-color);
+      }
+    }
+        .card-footer {
+      a:not([class*="btn"]),
+      button:not([class*="btn"]),
+      .btn-sm,
+      .p-2,
+      .rounded-circle {
+        border-radius: 50%;
+      }
+    }
   }
 }

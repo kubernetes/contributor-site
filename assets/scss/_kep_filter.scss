@@ -1,7 +1,7 @@
 // ===== KEP Filter Bar =====
 .kep-filter-bar {
-  background: #fff;
-  border: 1px solid $slate-200;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
   border-radius: 8px;
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
@@ -33,23 +33,23 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: $slate-500;
+      color: var(--bs-secondary-color);
     }
 
     select {
       font-size: 0.85rem;
       padding: 0.4rem 0.6rem;
-      border: 1px solid $slate-200;
+      border: 1px solid var(--bs-border-color);
       border-radius: 6px;
-      background: $slate-50;
-      color: $slate-900;
+      background: var(--bs-body-bg);
+      color: var(--bs-body-color);
       cursor: pointer;
       min-height: 36px;
       width: 100%;
       transition: border-color 0.15s ease;
 
       &:hover {
-        border-color: $slate-300;
+        border-color: var(--bs-border-color);
       }
 
       &:focus-visible {
@@ -74,7 +74,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: $slate-500;
+      color: var(--bs-secondary-color);
       margin-bottom: 0.25rem;
       width: 100%;
       float: none;
@@ -143,7 +143,7 @@
 
       &[aria-checked="true"] {
         background: $kep-deprecated-soft;
-        border-color: $slate-400;
+        border-color: var(--bs-border-color);
       }
     }
 
@@ -175,7 +175,7 @@
       left: 10px;
       top: 50%;
       transform: translateY(-50%);
-      color: $slate-400;
+      color: var(--bs-secondary-color);
       pointer-events: none;
     }
 
@@ -183,19 +183,19 @@
       width: 100%;
       padding: 0.45rem 0.75rem 0.45rem 2rem;
       font-size: 0.85rem;
-      border: 1px solid $slate-200;
+      border: 1px solid var(--bs-border-color);
       border-radius: 6px;
-      background: $slate-50;
-      color: $slate-900;
+      background: var(--bs-body-bg);
+      color: var(--bs-body-color);
       min-height: 36px;
       transition: border-color 0.15s ease;
 
       &::placeholder {
-        color: $slate-400;
+        color: var(--bs-secondary-color);
       }
 
       &:hover {
-        border-color: $slate-300;
+        border-color: var(--bs-border-color);
       }
 
       &:focus-visible {
@@ -208,7 +208,7 @@
 
   .kep-results-count {
     font-size: 0.82rem;
-    color: $slate-500;
+    color: var(--bs-secondary-color);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -228,16 +228,16 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: $primary;
-  background: #fff;
-  border: 1px solid $slate-200;
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.15s ease;
   font-family: inherit;
 
   &:hover {
-    background: $slate-50;
-    border-color: $slate-300;
+    background: var(--bs-body-bg);
+    border-color: var(--bs-border-color);
   }
 
   &:focus-visible {
