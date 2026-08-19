@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: "Spotlight on WG Device Management"
+title: "Spotlight on SIG Apps
 slug: sig-apps-spotlight-2026
 date: 2026-08-18
 author: "Natalie Fisher (VMware by Broadcom)" 
