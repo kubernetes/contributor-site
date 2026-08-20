@@ -12,7 +12,7 @@ Kubernetes v1.37 saw the most API reviews in the project's history. API reviewer
 
 Despite this massive surge, the API reviewers were able to keep pace. A primary driver of this efficiency was the significant expansion of Declarative Validation (DV), which [reached General Availability (GA)](https://kubernetes.io/blog/2026/05/05/kubernetes-v1-36-declarative-validation-ga/) in v1.36 and experienced its largest growth to date in v1.37. **Roughly 75% of new validations were written in DV, significantly saving reviewers' time.** Because the tooling handles the complexity, reviewers provided minimal guidance on the validation logic compared to previous releases.
 
-Additionally, linters and other correctness checks were a major factor in maintaining this velocity. Pre-reviews conducted by Joel Speed ([@joelspeed](https://github.com/joelspeed)), Patrick Ohly ([@pohly](https://github.com/pohly)), Maciej Szulik ([@soltysh](https://github.com/soltysh)), Tim Allclair ([@tallclair](https://github.com/tallclair)), Joe Betz ([@jpbetz](https://github.com/jpbetz)), and Mo Khan ([@enj](https://github.com/enj)) saved a lot of time for our core API reviewers like Jordan and Tim. (A special congratulations to Joe, who was promoted to API approver this release!)
+Additionally, linters and other correctness checks were a major factor in maintaining this velocity. Pre-reviews conducted by Joel Speed ([@joelspeed](https://github.com/joelspeed)), Patrick Ohly ([@pohly](https://github.com/pohly)), Maciej Szulik ([@soltysh](https://github.com/soltysh)), Tim Allclair ([@tallclair](https://github.com/tallclair)), Joe Betz ([@jpbetz](https://github.com/jpbetz)), and Mo Khan ([@enj](https://github.com/enj)) saved a lot of time for our core API reviewers like Jordan ([@liggitt](https://github.com/liggitt)) and Tim ([@thockin](https://github.com/thockin)). (A special congratulations to Joe, who was promoted to API approver this release!)
 
 > *"The guardrail work that made use of declarative validation tags automatically require covering test cases made a big difference in 1.37. Validation expressed as declarative tags shrank the complexity of implementations and reviews, and is feeding a virtuous cycle where reviewers and authors prefer declarative validation once they get used to it. There were a few PRs this cycle that had almost no `validation.go` changes at all (🎉), and a lot where all the straightforward things were done declaratively and only a few complex things were checked in handwritten validation. This is exactly what I was hoping for."*
 > — **Jordan Liggitt**
@@ -28,7 +28,7 @@ Additionally, linters and other correctness checks were a major factor in mainta
 
 Whether an API author is building something from scratch or updating an existing type, the process is streamlined: new and existing types (including `PodSpec`) can now use declarative validations simply by adding the appropriate tags and corresponding tests.
 
-The adoption metrics for Declarative Validation in v1.37 are staggering. Total de-duplicated API struct fields annotated with declarative validation grew from 182 in v1.36.0 to 378 at 1.37. This represents a **+107.7% growth** in unique field adoption.
+The adoption metrics for Declarative Validation in v1.37 are staggering. Total de-duplicated API struct fields annotated with declarative validation grew from 182 in v1.36 to 378 at v1.37. This represents a **+107.7% growth** in unique field adoption.
 
 All new APIs are heavily leveraging this capability. Out of the 206 DV adoptions, 150 are purely new fields, using declarative validations without corresponding handwritten validations.
 
@@ -84,7 +84,7 @@ For full documentation on how to use these tags and implement declarative valida
 The migration to declarative validation is an ongoing effort. While the framework itself is GA, there is still work to be done migrating foundational APIs to the new declarative format.
 
 If you are interested in contributing to the core of Kubernetes API Machinery, this is a fantastic place to start:
-- Check out the `validation-gen` documentation.
+- Check out the [`validation-gen` source code and documentation](https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/code-generator/cmd/validation-gen).
 - Look for issues tagged with [area/api-validation](https://github.com/kubernetes/kubernetes/issues?q=label%3Aarea%2Fapi-validation).
 - Join the conversation in [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery) and [#sig-api-machinery-dev-tools](https://kubernetes.slack.com/messages/sig-api-machinery-dev-tools) on Kubernetes Slack (for an invitation, visit [slack.k8s.io](https://slack.k8s.io/)).
 - Attend the [SIG API Machinery DV and KAL meetings](https://github.com/kubernetes/community/tree/master/sig-api-machinery#meetings) to get involved directly.
@@ -95,6 +95,6 @@ A massive thank you to everyone who contributed to this monumental release. We'd
 
 * **Our API Reviewers:** Tim Hockin ([@thockin](https://github.com/thockin)), Jordan Liggitt ([@liggitt](https://github.com/liggitt)), David Eads ([@deads2k](https://github.com/deads2k)), Joe Betz ([@jpbetz](https://github.com/jpbetz)), and Michelle Au ([@msau42](https://github.com/msau42)).
 * **Our Pre-Reviewers:** Joel Speed ([@joelspeed](https://github.com/joelspeed)), Patrick Ohly ([@pohly](https://github.com/pohly)), Maciej Szulik ([@soltysh](https://github.com/soltysh)), Tim Allclair ([@tallclair](https://github.com/tallclair)), and Mo Khan ([@enj](https://github.com/enj)) for their tireless pre-review efforts.
-* **The DV Working Group:** Lalit Chauhan ([@lalitc375](https://github.com/lalitc375)), Yongrui Lin ([@yongrlin](https://github.com/yongrlin)), Darshan Murthy ([@darshansreenivas](https://github.com/darshansreenivas)), Pranshul ([@pranshul](https://github.com/pranshul)), Joel Speed ([@joelspeed](https://github.com/joelspeed)), Bryce Palmer ([@everettraven](https://github.com/everettraven)), and many more.
+* **The DV Working Group:** Lalit Chauhan ([@lalitc375](https://github.com/lalitc375)), Yongrui Lin ([@yongruilin](https://github.com/yongruilin)), Darshan Murthy ([@darshansreenivas](https://github.com/darshansreenivas)), Pranshul ([@itzPranshul](https://github.com/itzPranshul)), Joel Speed ([@joelspeed](https://github.com/joelspeed)), Bryce Palmer ([@everettraven](https://github.com/everettraven)), and many more.
 
 Welcome to an even safer, more declarative future for Kubernetes!
