@@ -10,7 +10,11 @@ author: >
 
 Kubernetes v1.37 saw the most API reviews in the project's history. API reviewers reviewed an all-time high of [118 PRs](https://docs.google.com/spreadsheets/u/0/d/1rVeszSQVl6K0am_mW83MhZNHMjSb88BBEEML8Cv_5Hg/edit), up from 88 in the v1.36 release.
 
-Despite this massive surge, the API reviewers were able to keep pace. A primary driver of this efficiency was the significant expansion of Declarative Validation (DV), which [reached General Availability (GA)](https://kubernetes.io/blog/2026/05/05/kubernetes-v1-36-declarative-validation-ga/) in v1.36 and experienced its largest growth to date in v1.37. **Roughly 75% of new validations were written in DV, significantly saving reviewers' time.** Because the tooling handles the complexity, reviewers provided minimal guidance on the validation logic compared to previous releases.
+Despite this massive surge, the API reviewers were able to keep pace. A primary driver of this efficiency was the significant expansion of Declarative Validation (DV), which [reached General Availability (GA)](https://kubernetes.io/blog/2026/05/05/kubernetes-v1-36-declarative-validation-ga/) in v1.36 and experienced its largest growth to date in v1.37.
+
+Declarative Validation (DV) allows Kubernetes developers to declare validation rules using Interface Definition Language (IDL) tags (like `+k8s:optional` or `+k8s:minimum=0`) directly in the `types.go` files that define the native API types. These tags are then used by the code generator, `validation-gen`, to automatically generate the required validation functions, replacing the need for complex, handwritten imperative validation logic.
+
+**Roughly 75% of new validations were written in DV, significantly saving reviewers' time.** Because the tooling handles the complexity, reviewers provided minimal guidance on the validation logic compared to previous releases.
 
 Additionally, linters and other correctness checks were a major factor in maintaining this velocity. Pre-reviews conducted by Joel Speed ([@joelspeed](https://github.com/joelspeed)), Patrick Ohly ([@pohly](https://github.com/pohly)), Maciej Szulik ([@soltysh](https://github.com/soltysh)), Tim Allclair ([@tallclair](https://github.com/tallclair)), Joe Betz ([@jpbetz](https://github.com/jpbetz)), and Mo Khan ([@enj](https://github.com/enj)) saved a lot of time for our core API reviewers like Jordan ([@liggitt](https://github.com/liggitt)) and Tim ([@thockin](https://github.com/thockin)). (A special congratulations to Joe, who was promoted to API approver this release!)
 
