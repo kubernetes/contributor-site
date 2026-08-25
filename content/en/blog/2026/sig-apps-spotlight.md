@@ -1,4 +1,4 @@
----
+  ---
 layout: blog
 title: "Spotlight on SIG Apps"
 slug: sig-apps-spotlight
@@ -80,7 +80,7 @@ While much of SIG Apps’ work focuses on maintaining the stability of existing 
 
 **NF: The SIG recently discussed reviving KEP-4443 with a target release of Kubernetes 1.38. What opportunities or challenges does this proposal aim to address, and why is now the right time to revisit it?**
 
-[KEP-4443](https://github.com/kubernetes/enhancements/blob/master/keps/sig-apps/4443-configurable-pod-failure-policy-reasons/README.md) addresses a small but real gap in the Job API: a [PodFailurePolicy](https://kubernetes.io/docs/concepts/workloads/controllers/job/#pod-failure-policy) can be configured to add a condition reason to the JobFailed condition, but different pod failure policy rules targeting different container exit codes all produce that same generic reason. The proposal is simple: an optional Name field on each PodFailurePolicyRule, which gets appended to the JobFailed condition reason, so higher-level tools like JobSet can finally react differently depending on which rule triggered the failure.
+[KEP-4443](https://www.kubernetes.dev/resources/keps/4443/) addresses a small but real gap in the Job API: a [PodFailurePolicy](https://kubernetes.io/docs/concepts/workloads/controllers/job/#pod-failure-policy) can be configured to add a condition reason to the JobFailed condition, but different pod failure policy rules targeting different container exit codes all produce that same generic reason. The proposal is simple: an optional Name field on each PodFailurePolicyRule, which gets appended to the JobFailed condition reason, so higher-level tools like JobSet can finally react differently depending on which rule triggered the failure.
 
 As for timing, the answer is as simple as it always is in open source: we lost the original contributor who was driving this. Now we’ve got someone new interested in picking it up, that’s why we’re targeting the next release. 
 
@@ -88,7 +88,7 @@ As for timing, the answer is as simple as it always is in open source: we lost t
 
 **NF: For someone interested in contributing to SIG Apps, where would you recommend they start, especially if they are not yet a Kubernetes maintainer?**
 
-MS: The best place to start is the [\#sig-apps](https://kubernetes.slack.com/archives/C18NZM5K9) slack channel and our regular [SIG Apps meetings](https://github.com/kubernetes/community/blob/main/sig-apps/README.md#meetings). We’ve all started there, and if it feels intimidating, or nobody replies right away, that’s completely normal. Everyone's busy. It's not personal.
+MS: The best place to start is the [\#sig-apps](https://www.kubernetes.dev/community/community-groups/sigs/apps/) slack channel and our regular [SIG Apps meetings](https://github.com/kubernetes/community/blob/main/sig-apps/README.md#meetings). We’ve all started there, and if it feels intimidating, or nobody replies right away, that’s completely normal. Everyone's busy. It's not personal.
 
 JK: In addition to what Maciej answered, I'd suggest looking at our newer subprojects and initiatives. Contributing to stable APIs like Deployment or StatefulSet can be daunting because the barrier for making changes is very high due to backward compatibility, and there is much less low-hanging fruit.
 
