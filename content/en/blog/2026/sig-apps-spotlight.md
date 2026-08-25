@@ -14,7 +14,7 @@ Every Kubernetes user relies on SIG Apps, whether they realize it or not. Deploy
 
 SIG Apps is focused on improving workload resilience, refining application lifecycle management, and addressing the operational challenges that emerge when applications encounter node failures, rollout disruptions, and increasingly complex infrastructure environments.
 
-In this spotlight, we sit down with SIG Apps chairs [**Janet Kuo**](https://github.com/janetkuo), [**Kenneth Owens**](https://github.com/kow3ns), and [**Maciej Szulik**](https://github.com/soltysh) to discuss the evolution of Kubernetes workload management, the challenges of balancing application reliability with operational simplicity, and the future of application lifecycle management within one of Kubernetes’ most influential Special Interest Groups.
+In this spotlight, we sit down with two of the three SIG Apps chairs [**Janet Kuo**](https://github.com/janetkuo) and [**Maciej Szulik**](https://github.com/soltysh) to discuss the evolution of Kubernetes workload management, the challenges of balancing application reliability with operational simplicity, and the future of application lifecycle management within one of Kubernetes’ most influential Special Interest Groups.
 
 ## Introducing SIG Apps
 
