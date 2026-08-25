@@ -1,14 +1,14 @@
 ---
 layout: blog
 title: "Kubernetes v1.37: Declarative Validation Drives Record-Breaking API Reviews"
-draft: true
+date: 2026-08-25
 slug: kubernetes-v1-37-declarative-validation
 author: >
   Lalit Chauhan (Google)
   Yongrui Lin (Google)
 ---
 
-Kubernetes v1.37 saw the most API reviews in the project's history. API reviewers reviewed an all-time high of [118 PRs](https://docs.google.com/spreadsheets/u/0/d/1rVeszSQVl6K0am_mW83MhZNHMjSb88BBEEML8Cv_5Hg), up from 88 in the v1.36 release.
+Kubernetes v1.37 saw the most API reviews in the project's history. API reviewers reviewed an all-time high of [118 PRs](https://github.com/orgs/kubernetes/projects/169/views/2), up from 88 in the v1.36 release.
 
 Despite this massive surge, the API reviewers were able to keep pace. A primary driver of this efficiency was the significant expansion of _declarative validation_ (DV),
 which [reached General Availability (GA)](https://kubernetes.io/blog/2026/05/05/kubernetes-v1-36-declarative-validation-ga/) in v1.36 and experienced its largest growth to date in v1.37.
