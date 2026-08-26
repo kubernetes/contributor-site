@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Kubernetes v1.37: Declarative Validation Drives Record-Breaking API Reviews"
-draft: true
+date: 2026-08-27
 slug: kubernetes-v1-37-declarative-validation
 author: >
   Lalit Chauhan (Google)
