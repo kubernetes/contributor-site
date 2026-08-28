@@ -105,18 +105,23 @@
         {{- $readmeContent = replace $readmeContent "/))" "/)" -}}
         {{- $readmeContent = replace $readmeContent "((http" "(http" -}}
         
-        {{- /* Fix relative image and link paths to point to GitHub */ -}}
+        {{- /* Fix relative image and link paths to point to GitHub.
+               Images stay on raw.githubusercontent.com so they render as images.
+               Links go to the blob view so following one lands on the rendered
+               page instead of raw markdown source. */ -}}
         {{- $repoBaseUrl := "https://raw.githubusercontent.com/kubernetes/enhancements/master/" -}}
+        {{- $repoBlobUrl := "https://github.com/kubernetes/enhancements/blob/master/" -}}
         {{- $kepDirUrl := printf "%skeps/%s/%s/" $repoBaseUrl $kep.owningSig $kep.name -}}
-        
+        {{- $kepBlobDirUrl := printf "%skeps/%s/%s/" $repoBlobUrl $kep.owningSig $kep.name -}}
+
         {{- /* 1. Fix absolute-looking paths (starting with /) */ -}}
         {{- $readmeContent = replaceRE `!\[(.*?)\]\(/(.*?)\)` (printf "![${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `\[(.*?)\]\(/(.*?)\)` (printf "[${1}](%s${2})" $repoBaseUrl) $readmeContent -}}
-        
+        {{- $readmeContent = replaceRE `\[(.*?)\]\(/(.*?)\)` (printf "[${1}](%s${2})" $repoBlobUrl) $readmeContent -}}
+
         {{- /* 2. Fix relative paths (not starting with http, #, or / and not containing :) */ -}}
         {{- $readmeContent = replaceRE `!\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "![${1}](%s${2})" $kepDirUrl) $readmeContent -}}
         {{- $readmeContent = replaceRE `<img\s+[^>]*src="([^/#:][^:"]*)"` (printf `<img src="%s${1}"` $kepDirUrl) $readmeContent -}}
-        {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepDirUrl) $readmeContent -}}
+        {{- $readmeContent = replaceRE `\[(.*?)\]\(([^/#:][^:]*?)\)` (printf "[${1}](%s${2})" $kepBlobDirUrl) $readmeContent -}}
       {{- else -}}
         {{- warnf "Unable to load README for KEP %s URL=%s" $kep.kepNumber $readmeUrl -}}
       {{- end -}}
