@@ -43,13 +43,28 @@
 {{- $validStages := slice "alpha" "beta" "stable" "deprecated" -}}
 {{- $validStatuses := slice "implementable" "implemented" -}}
 
+{{/* kepNumber values that are template placeholders, never an assigned number. Every
+     KEP directory that still carries one of these (including the sig-cloud-provider
+     provider template) would otherwise collide on the same /resources/keps/0000/ page
+     path. Note: some real, numbered KEPs have "-template" in their directory name
+     (e.g. 5978-cluster-resource-claim-template), so kepNumber is the only reliable
+     signal here — matching on the name would drop real KEPs. */}}
+{{- $placeholderKepNumbers := slice "0000" "NNNN" -}}
+
+{{/* Page paths already claimed in this run, so a duplicate/placeholder kepNumber can
+     never silently overwrite another KEP's page. */}}
+{{- $usedPagePaths := dict -}}
+
 {{/* Generate pages for each valid KEP */}}
 {{- range $kep := $kepData -}}
-  {{/* Filter: only include KEPs beyond provisional */}}
+  {{/* Filter: only include KEPs beyond provisional, with a real assigned number */}}
   {{- $isValidStage := in $validStages $kep.stage -}}
   {{- $isValidStatus := in $validStatuses $kep.status -}}
+  {{- $isPlaceholderNumber := in $placeholderKepNumbers $kep.kepNumber -}}
 
-  {{- if or $isValidStage $isValidStatus -}}
+  {{- if $isPlaceholderNumber -}}
+    {{- warnf "Skipping KEP %s/%s: placeholder kepNumber %q, never assigned a real number" $kep.owningSig $kep.name $kep.kepNumber -}}
+  {{- else if or $isValidStage $isValidStatus -}}
     {{/* Build page params with all KEP metadata */}}
     {{- $params := dict
       "kepNumber" $kep.kepNumber
@@ -125,19 +140,25 @@
     {{/* Build page path: /resources/keps/{kepNumber}/ */}}
     {{- $pagePath := $kep.kepNumber -}}
 
-    {{/* Create page dict */}}
-    {{- $page := dict
-      "path" $pagePath
-      "title" $kep.title
-      "kind" "page"
-      "type" "keps"
-      "params" $params
-      "content" (dict
-        "mediaType" "text/markdown"
-        "value" $readmeContent
-      )
-    -}}
+    {{- if index $usedPagePaths $pagePath -}}
+      {{- warnf "Skipping KEP %s/%s: page path %q already used by another KEP" $kep.owningSig $kep.name $pagePath -}}
+    {{- else -}}
+      {{- $usedPagePaths = merge $usedPagePaths (dict $pagePath true) -}}
 
-    {{- $.AddPage $page -}}
+      {{/* Create page dict */}}
+      {{- $page := dict
+        "path" $pagePath
+        "title" $kep.title
+        "kind" "page"
+        "type" "keps"
+        "params" $params
+        "content" (dict
+          "mediaType" "text/markdown"
+          "value" $readmeContent
+        )
+      -}}
+
+      {{- $.AddPage $page -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
