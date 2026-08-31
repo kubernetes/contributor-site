@@ -48,3 +48,6 @@
 /summit/unconf    /events/2024/kcsna 302
 /summit/notes     https://drive.google.com/drive/folders/1j3i9I4a3lbmjqQNTYKxK0Gc6JgooDn14 302
 /summit/sched     /events/2024/kcsna/schedule 302
+
+# Section feeds are no longer generated; the blog feed lives at /index.xml.
+/blog/index.xml   /index.xml 301

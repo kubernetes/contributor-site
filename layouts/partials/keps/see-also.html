@@ -1,0 +1,51 @@
+{{- /* Renders one KEP `seeAlso` entry as a link. Shapes present in keps.json:
+       - markdown link:      "[Title](https://…)"
+       - full URL:           "https://…"
+       - root-relative path: "/keps/sig-scheduling/624-scheduling-framework"
+       - bare repo path:     "keps/sig-node/4569-cgroup-v1-maintenance-mode/README.md"
+       - nested path:        "/keps/prod-readiness/sig-apps/3329"
+       - singular "/kep/":   "/kep/sig-network/0752-endpointslices/"
+       - free text:          "KEP-32", "TBD", "n/a"
+
+       Every path shape resolves to the referenced KEP's own page on this site, so every
+       entry reads the same way regardless of how it was written. Paths we can't resolve
+       fall back to GitHub, and anything else is left as text.
+
+       @param {string} context One seeAlso entry.
+*/ -}}
+{{- $entry := . -}}
+{{- if strings.Contains $entry "[" -}}
+  {{ $entry | markdownify }}
+{{- else if strings.HasPrefix $entry "http" -}}
+  <a href="{{ $entry }}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" aria-hidden="true"></i> {{ $entry }}</a>
+{{- else -}}
+  {{- $path := printf "/%s" (strings.TrimPrefix "/" $entry) -}}
+  {{- /* A few entries write "/kep/…" for "/keps/…"; normalizing here fixes both the
+         lookup below and the directory name the GitHub fallback links to. */ -}}
+  {{- $path = replaceRE `^/kep/` "/keps/" $path -}}
+  {{- $kep := "" -}}
+  {{- /* The SIG is usually the only directory before the number, but some entries nest
+         further ("/keps/prod-readiness/sig-apps/3329", kubeadm's own subdirectory). */ -}}
+  {{- with findRESubmatch `^/keps/(?:[^/]+/)*([0-9]+)([^/]*)` $path 1 -}}
+    {{- $number := index . 0 1 -}}
+    {{- $directory := printf "%s%s" $number (index . 0 2) -}}
+    {{- $lookup := strings.TrimLeft "0" $number -}}
+    {{- with partialCached "keps/page-by-number.html" $lookup $lookup -}}
+      {{- /* A zero-padded number is legacy per-directory numbering ("0006-apply.md",
+             kubeadm's "0023-kubeadm-config.md") that only coincidentally matches a
+             modern KEP number, so require an exact directory match before trusting it.
+             Unpadded numbers are global KEP numbers and stay correct even when the
+             KEP's directory has since been renamed. */ -}}
+      {{- if or (not (strings.HasPrefix $number "0")) (eq .Params.name $directory) -}}
+        {{- $kep = . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if $kep -}}
+    <a href="{{ $kep.RelPermalink }}"><i class="fas fa-link" aria-hidden="true"></i> KEP-{{ $kep.Params.kepNumber }}: {{ $kep.Title }}</a>
+  {{- else if strings.Contains $path "/keps/" -}}
+    <a href="https://github.com/kubernetes/enhancements/tree/master{{ $path }}" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> {{ $entry }}</a>
+  {{- else -}}
+    {{ $entry | markdownify }}
+  {{- end -}}
+{{- end -}}
