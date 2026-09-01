@@ -138,9 +138,11 @@ Verify that the image was successfully published to the staging registry.
 Tag events are not processed retroactively: tags created before the release
 pipeline existed will not produce a staging image.
 
-Note: Staging registries have a 90-day retention policy and are intended only
+{{< alert color="info" title="Note" >}}
+Staging registries have a 90-day retention policy and are intended only
 for intermediate builds. End users should consume images from
 `registry.k8s.io` after they have been promoted.
+{{< /alert >}}
 
 ### 6. Add the image promoter configuration in kubernetes/k8s.io
 
