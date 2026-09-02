@@ -335,7 +335,13 @@ gen_link() {
       org="$(echo "$2" | rev | cut -d '/' -f2 | rev)" # reverse the string to trim from the "right"
       local default_branch
       default_branch="$(git -C "$2" rev-parse --abbrev-ref HEAD)"
-      generated_link="https://github.com/$org/$(basename "$2")/blob/${default_branch}${generated_link}"
+      # Images and other non-markdown assets must point at raw.githubusercontent.com;
+      # a /blob/ url serves GitHub's HTML page, which will not render in an <img>.
+      if basename "$generated_link" | $GREP -q -i -E '\.(svg|png|jpe?g|gif|webp|ico|bmp)$'; then
+        generated_link="https://raw.githubusercontent.com/$org/$(basename "$2")/${default_branch}${generated_link}"
+      else
+        generated_link="https://github.com/$org/$(basename "$2")/blob/${default_branch}${generated_link}"
+      fi
     fi
   fi
 
