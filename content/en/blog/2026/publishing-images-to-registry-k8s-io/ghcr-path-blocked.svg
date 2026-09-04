@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 150" font-family="Arial, Helvetica, sans-serif" font-size="13" role="img" aria-label="The blocked GHCR path: a tag push triggers GitHub Actions, which pushes the image to ghcr.io, where it cannot be made public.">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#37474f"/>
+    </marker>
+    <marker id="arrowdash" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 z" fill="#c62828"/>
+    </marker>
+  </defs>
+
+  <rect x="10" y="10" width="640" height="130" rx="8" fill="#fafafa" stroke="#bdbdbd" stroke-dasharray="4 3"/>
+  <text x="30" y="32" fill="#616161" font-weight="bold">The ghcr.io approach (blocked)</text>
+
+  <rect x="30" y="60" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="95" y="90" text-anchor="middle">tag push</text>
+
+  <rect x="190" y="60" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="255" y="90" text-anchor="middle">GitHub Actions</text>
+
+  <rect x="350" y="60" width="130" height="50" rx="6" fill="#eaf2fd" stroke="#5b8def"/>
+  <text x="415" y="90" text-anchor="middle">push to ghcr.io</text>
+
+  <rect x="510" y="60" width="130" height="50" rx="6" fill="#fdecea" stroke="#e57373"/>
+  <text x="575" y="84" text-anchor="middle" fill="#c62828">cannot be made</text>
+  <text x="575" y="100" text-anchor="middle" fill="#c62828">public</text>
+
+  <line x1="164" y1="85" x2="186" y2="85" stroke="#37474f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="324" y1="85" x2="346" y2="85" stroke="#37474f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="484" y1="85" x2="506" y2="85" stroke="#c62828" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrowdash)"/>
+</svg>
