@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "Publishing a Kubernetes SIG's Images to registry.k8s.io"
-draft: true
+date: 2026-09-16T10:00:00-08:00
 slug: publishing-images-to-registry-k8s-io
 author: >
   [Kahiro Okina](https://github.com/kahirokunn) (Craftsman Software, Inc.)
