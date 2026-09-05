@@ -115,6 +115,21 @@ to each site, check this out:
 If you think that the scope of a blog is not relevant to that site, feel
 free to suggest. 
 
+## Tag the SIG for visibility
+
+If a blog is about a particular Special Interest Group (SIG)'s work, it's always a good idea to tag that particular SIG on the PR for visibility and also encourage the author to share the blog PR in that SIG's Slack channel, and share the link to conversation in the PR description.
+
+Use the Prow command:
+
+```
+/sig <group-name>
+```
+
+For example, `/sig architecture` or `/sig node`. You can find the full list
+of SIGs here: [Kubernetes SIGs](https://www.kubernetes.dev/community/community-groups/sigs/)
+
+*A small step, but it makes sure the right people see the content early, and as the saying goes, given enough eyeballs, all bugs are shallow.*
+
 ## How do I preview before merging?
 
 When a PR is opened, Netlify, a web hosting platform, automatically builds
