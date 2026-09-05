@@ -28,7 +28,7 @@ Blog PRs are spread across two repositories depending on where they will
 be published. Here is where to find them:
 
 - [Open blog PRs on k/website](https://github.com/kubernetes/website/pulls?q=is%3Aopen+is%3Apr+label%3Aarea%2Fblog)
-- [Open PRs on k/contributor-site](https://github.com/kubernetes/contributor-site/pulls)
+- [Open PRs on k/contributor-site](https://github.com/kubernetes/contributor-site/pulls?q=is%3Aopen+is%3Apr+label%3Aarea%2Fblog)
 
 *Yay, just pick one and go for it!*
 
@@ -54,7 +54,7 @@ are some exceptions. Have a look at them as well:
 
 - [Blog-specific exceptions](https://kubernetes.io/docs/contribute/blog/article-submission/#article-content)
 
-*I know it's a lot to take in at once,and that's okay. Start with one thing,
+*I know it's a lot to take in at once, and that's okay. Start with one thing,
 maybe punctuation or formatting, and go from there. You will naturally
 get faster over time.*
 
@@ -104,8 +104,8 @@ their name, or `Name (independent)`. Lowercase "i" on independent.
 
 The blog publishes to one or both of these two sites:
 
-- [kubernetes.io](https://kubernetes.io) : the main Kubernetes blog, stored in the [k/website GitHub repo](https://github.com/kubernetes/website/)
-- [kubernetes.dev](https://www.kubernetes.dev) : the contributor blog, stored in the [k/contributor-site GitHub repo](https://github.com/kubernetes/contributor-site/)
+- [kubernetes.io](https://kubernetes.io): the main Kubernetes blog, stored in the [k/website GitHub repo](https://github.com/kubernetes/website/)
+- [kubernetes.dev](https://www.kubernetes.dev): the contributor blog, stored in the [k/contributor-site GitHub repo](https://github.com/kubernetes/contributor-site/)
 
 If you want to know the difference between the content that gets published
 to each site, check this out:
@@ -161,7 +161,11 @@ canonicalUrl: https://www.kubernetes.dev/blog/{YYYY}/{MM}/{DD}/{slug}
 
 Replace `{YYYY}`, `{MM}`, `{DD}`, and `{slug}` with the actual values.
 
-*Now how is the publication date assigned?* To open the publish PR, one has to jump on [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) channel to discuss the publication date with the other blog editors. The team confirms the date, suggest a change if needed, and once everyone is aligned , a publish PR can be created *(It's that easy!)*
+### Now how is the publication date assigned?
+
+To open the publish PR, one has to jump on [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) 
+channel to discuss the publication date with the other blog editors. The team confirms the date, suggest a change 
+if needed, and once everyone is aligned , a publish PR can be created *(It's that easy!)*
 
 One thing to keep in mind though, keep the publish PR small. Do not bundle in content changes. The smaller the PR, the easier it is to track, review, and fix if something goes wrong.
 
@@ -182,7 +186,7 @@ The person who wrote that draft put real effort into it. They cared enough
 to contribute to open source, to share something with the community. That
 deserves respect, especially when leaving feedback.
 
-When something needs attention:
+### When something needs attention:
 
 - Help the author see the problem. Do not just flag it, explain it.
 - If a piece feels borderline or a decision feels too big to make alone,
@@ -211,7 +215,7 @@ with and they know you as well.
 A good tip would be to start attending meetings and introducing yourself
 to your colleagues. :)
 
-**Slack:** [Join here](https://communityinviter.com/apps/kubernetes/community), then look for the [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) channel.
+**Slack:** [Join here](https://slack.k8s.io), then look for the [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) channel.
 
 **Meetings:** Join the biweekly [sig-docs meeting](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit?tab=t.0#heading=h.1uet0y7duzt7), Tuesdays at 17:30 UTC.
 
