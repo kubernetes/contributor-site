@@ -23,7 +23,7 @@ sub-project](https://github.com/kubernetes/community/blob/main/sig-architecture/
 bit about yourself, your role and how you got involved in Kubernetes.
 
 **Riaan Kleinhans (RK)**: Hi! My name is Riaan Kleinhans and I live in
-South Africa. I am the Project manager for the [ii-Team](ii.nz) in New
+South Africa. I am the Project manager for the [ii-Team](https://ii.nz/) in New
 Zealand. When I joined ii the plan was to move to New Zealand in April
 2020 and then Covid happened. Fortunately, being a flexible and
 dynamic team we were able to make it work remotely and in very
@@ -144,7 +144,7 @@ Several endpoints that were previously deemed ineligible for
 conformance have been identified and relocated to a new dedicated
 list, which is currently receiving focused attention for conformance
 test development. Again, that list can also be checked on
-[apisnoop.cncf.io](apisnoop.cncf.io.).
+[apisnoop.cncf.io](https://apisnoop.cncf.io/).
 
 To ensure the avoidance of new technical debt in the conformance
 project, there are upcoming plans to establish a release informing job
