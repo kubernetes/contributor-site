@@ -4,4 +4,4 @@ description: |
   The CLA defines the legal status of contributed code for the CNCF.
 ---
 
-{{< include-remote "https://raw.githubusercontent.com/kubernetes/community/master/CLA.md" >}}
+{{< include-remote "https://raw.githubusercontent.com/kubernetes/community/main/CLA.md" >}}
