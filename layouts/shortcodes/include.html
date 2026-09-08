@@ -16,7 +16,7 @@
 	{{- with $page }}
 	{{ .Content }}
 	{{- else -}}
-	{{ errorf "[%s] no Resource or Page matching %q." $.Page.Lang ($pattern | safeHTML ) }}
+	{{ errorf "[%s] no Resource or Page matching %q." $.Page.Lang $name }}
 	{{- end -}}
 	{{- end -}}
 	{{- else -}}
