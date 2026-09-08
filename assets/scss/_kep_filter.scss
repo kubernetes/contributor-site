@@ -49,7 +49,7 @@
       transition: border-color 0.15s ease;
 
       &:hover {
-        border-color: var(--bs-border-color);
+        border-color: var(--bs-secondary-color);
       }
 
       &:focus-visible {
@@ -195,7 +195,7 @@
       }
 
       &:hover {
-        border-color: var(--bs-border-color);
+        border-color: var(--bs-secondary-color);
       }
 
       &:focus-visible {
@@ -236,7 +236,7 @@
   font-family: inherit;
 
   &:hover {
-    background: var(--bs-body-bg);
+    background: var(--bs-secondary-bg);
     border-color: var(--bs-border-color);
   }
 

@@ -89,9 +89,9 @@
     }
 
     &.kep-status-generic {
-      background-color: #198754;
-      color: #fff;
-      border: 1px solid #198754;
+      background-color: var(--bs-secondary-bg);
+      color: var(--bs-secondary-color);
+      border: 1px solid var(--bs-border-color);
     }
   }
 
@@ -171,7 +171,7 @@
   .kep-tag-link {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    background-color: var(--bs-secondary-color);
+    background-color: var(--bs-secondary-bg);
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 500;
@@ -180,8 +180,8 @@
     transition: all 0.2s ease;
 
     &:hover {
-      background-color: var(--bs-body-color);
-      color: #ffffff;
+        background-color: var(--bs-tertiary-bg);
+      color: var(--bs-body-color);
       transform: translateY(-1px);
     }
   }
@@ -279,18 +279,15 @@
       display: none;
     }
 
-    h2 {
-      font-size: 1.5rem;
-      color: var(--bs-body-color);
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: 2.5rem;
+      margin-bottom: 1.25rem;
+      font-weight: 700;
     }
-
-    p {
-      margin-bottom: 1.5rem;
-      color: #3a3a3a;
-    }
-      p {
-        color: var(--bs-body-color);
-      }
 
     // Ensure images don't overflow
     img {
