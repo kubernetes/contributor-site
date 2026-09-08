@@ -5,7 +5,7 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 
 {{ define "main" }}
 <div class="td-content">
-	<h1>{{ .Title }}</h1>
+	<h1>{{ partial "page-title.html" . }}</h1>
   {{ with .Params.description }}<div class="lead">{{ . | markdownify }}</div>{{ end }}
 	<header class="article-meta">
 		{{ partial "taxonomy_terms_article_wrapper.html" . -}}
