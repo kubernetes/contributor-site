@@ -67,6 +67,27 @@ body:has(.calendar-container) main[role="main"] {
   flex: 0 1 auto;
 }
 
+.calendar-filter {
+  margin-bottom: 1rem;
+}
+
+.calendar-filter-input {
+  display: block;
+  width: 100%;
+  max-width: 32rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.calendar-filter-input:focus {
+  outline: 0;
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
 @media screen and (min-width: 768px) {
   .calendar-container {
     min-height: 0;

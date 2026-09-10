@@ -2,19 +2,50 @@ function openEvent(event) {
   window.open(event.event.url, '_blank', 'width=700,height=700');
   event.jsEvent.preventDefault();
   return false;
-};
+}
+
+function getCalendarFilterQuery() {
+  try {
+    return (new URLSearchParams(window.location.search).get('q') || '').trim();
+  } catch (e) {
+    return '';
+  }
+}
+
+function setCalendarFilterQuery(query) {
+  try {
+    var url = new URL(window.location.href);
+    if (query) {
+      url.searchParams.set('q', query);
+    } else {
+      url.searchParams.delete('q');
+    }
+    window.history.replaceState({}, '', url.pathname + url.search + url.hash);
+  } catch (e) {
+    // Ignore history sync failures (e.g. file://).
+  }
+}
+
+function eventMatchesQuery(event, query) {
+  if (!query) {
+    return true;
+  }
+  var title = (event.title || '').toLowerCase();
+  return title.indexOf(query.toLowerCase()) !== -1;
+}
 
 function renderCalendar(apiKey) {
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
-    
+    var filterInput = document.getElementById('calendar-filter-input');
+
     if (!calendarEl) {
       console.error('Calendar element not found. Cannot render calendar.');
       return;
     }
-    
+
     var isProduction = document.documentElement.getAttribute('data-isproduction') === 'true';
-    
+
     if (!apiKey) {
       if (isProduction) {
         console.error('Google Calendar API key is missing in production. Calendar will not render.');
@@ -25,10 +56,23 @@ function renderCalendar(apiKey) {
       return;
     }
 
+    var filterQuery = getCalendarFilterQuery();
+    if (filterInput) {
+      filterInput.value = filterQuery;
+    }
+
+    // Wider window when deep-linked/filtered so monthly meetings are more likely visible.
+    var listWeeks = filterQuery ? 8 : 1;
+
     var calendar = new FullCalendar.Calendar(calendarEl, {
       googleCalendarApiKey: apiKey,
       events: {
         googleCalendarId: 'calendar@kubernetes.io'
+      },
+      eventSourceSuccess: function(content) {
+        return content.filter(function(event) {
+          return eventMatchesQuery(event, filterQuery);
+        });
       },
       eventSourceFailure: function(errorObj) {
         console.error('Failed to fetch Google Calendar events:', errorObj);
@@ -43,7 +87,7 @@ function renderCalendar(apiKey) {
       views: {
         listView: {
           type: 'list',
-          duration: { weeks: 1 },
+          duration: { weeks: listWeeks },
           buttonText: 'list',
           listDayFormat: {
             month: 'long',
@@ -75,8 +119,20 @@ function renderCalendar(apiKey) {
       }
     });
     calendar.render();
+
+    if (filterInput) {
+      var debounceTimer = null;
+      filterInput.addEventListener('input', function() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(function() {
+          filterQuery = filterInput.value.trim();
+          setCalendarFilterQuery(filterQuery);
+          calendar.refetchEvents();
+        }, 200);
+      });
+    }
   });
-};
+}
 
 // Detect if device is mobile (screen width < 768px)
 function isMobileDevice() {
