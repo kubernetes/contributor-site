@@ -1,11 +1,62 @@
-/* Community Groups Topic Tags */
+/* Community Groups */
 .topic-tag {
   background-color: rgba(var(--bs-primary-rgb), 0.1);
   color: var(--bs-primary);
   transition: all 0.2s ease;
-
   &.active {
     background-color: var(--bs-primary);
-    color: #fff;
+    color: var(--bs-white);
+  }
+}
+
+[data-bs-theme="dark"] {
+    // Brand blue is 3.2:1 on the dark body bg. Bootstrap derives an emphasis
+   // tint from $primary that keeps the brand hue and passes at ~5.9:1.
+   --bs-primary: var(--bs-primary-text-emphasis);
+  #sigsTab {
+    --bs-nav-pills-link-active-bg: var(--bs-primary);
+    --bs-nav-pills-link-active-color: var(--bs-white);
+
+    .nav-link:hover:not(.active) {
+      background-color: var(--bs-tertiary-bg);
+    }
+  }
+
+  .topic-tag,
+  .sig-card-wrapper a.badge.bg-primary.bg-opacity-10 {
+    background-color: var(--bs-secondary-bg);
+    color: var(--bs-body-color);
+    border: 1px solid var(--bs-border-color);
+  }
+
+  .topic-tag.active {
+    background-color: var(--bs-emphasis-color);
+    color: var(--bs-body-bg);
+    border-color: var(--bs-emphasis-color);
+  }
+
+  .sig-card-wrapper {
+    .chair-tag,
+    .tech-lead-tag,
+    .sig-leader {
+      background-color: var(--bs-secondary-bg);
+      color: var(--bs-body-color);
+      border: 1px solid var(--bs-border-color);
+      border-radius: $border-radius-pill;
+    }
+    .fa-youtube { color: var(--bs-danger); }
+    .fa-video   { color: var(--bs-info); }
+    .btn {
+      background-color: var(--bs-secondary-bg);
+      color: var(--bs-body-color);
+      border: 1px solid var(--bs-border-color);
+      border-radius: $border-radius-pill;
+      &:hover,
+      &:focus {
+        background-color: var(--bs-tertiary-bg);
+        color: var(--bs-body-color);
+        border-color: var(--bs-border-color);
+      }
+    }     
   }
 }

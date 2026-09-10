@@ -3,28 +3,22 @@ Add styles or import other files. */
 
 // Utilities & helpers
 @import "reset";
-
 // Site chrome
 @import "navbar";
 @import "home";
-
 // KEP feature
 @import "kep_page";
 @import "community";
 @import "kep_filter";
 @import "kep_table";
-
 // Cross-cutting media queries
 @import "base";
-
 /* Chroma syntax highlighting (emacs theme) */
 .chroma {
   background-color: #f8f8f8;
-
   [data-bs-theme="dark"] & {
     background-color: #1b1f22;
   }
-
   .k, .kc, .kd, .kn, .kr, .ow { color: #a2f; font-weight: bold; }
   .kp { color: #a2f; }
   .kt { color: #0b0; font-weight: bold; }

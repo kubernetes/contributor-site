@@ -22,3 +22,9 @@
   background-color: $white;
   color: $dark;
 }
+
+.td-navbar .nav-link,
+.td-navbar .dropdown-toggle,
+.td-navbar .td-theme-toggle {
+  color: var(--bs-white);
+}
