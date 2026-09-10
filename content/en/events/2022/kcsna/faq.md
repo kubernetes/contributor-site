@@ -106,7 +106,7 @@ Until then, here are some additional resources you may find useful:
 
 Contributors will be allowed to bring a single family member
 or partner to the social (a "plus one"). 
-[See the Social page to request a guest pass](/event/2022/kcsna/social/).
+[See the Social page to request a guest pass](/events/2022/kcsna/social/).
 
 ### I have a question! How do I contact the event staff?
 
