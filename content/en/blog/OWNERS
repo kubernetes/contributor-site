@@ -1,7 +1,10 @@
 # See the OWNERS docs at https://go.k8s.io/owners
+
 approvers:
-  - sig-contributor-experience-leads
+  - sig-contribex-blog-owners
+
 reviewers:
-  - sig-contributor-experience-leads
+  - sig-contribex-blog-reviewers
+
 labels:
   - area/blog

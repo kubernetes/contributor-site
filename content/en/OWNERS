@@ -4,4 +4,4 @@
 # Teams and members are visible at https://github.com/orgs/kubernetes/teams.
 
 labels:
-- language/en
+  - language/en
