@@ -33,6 +33,7 @@
     var $table = $(table);
     var activeStages = new Set();
     var searchTerm = '';
+    var searchHashTimer;
 
     // Cache elements outside the search loop callback to prevent performance issues
     var selRelease = document.getElementById('kep-filter-release');
@@ -102,6 +103,8 @@
       searchInput.addEventListener('input', function() {
         searchTerm = this.value;
         dt.draw();
+        clearTimeout(searchHashTimer);
+        searchHashTimer = setTimeout(syncHash, 200);
       });
     }
 
@@ -156,6 +159,7 @@
       if (r) parts.push('release=' + encodeURIComponent(r));
       if (s) parts.push('sig=' + encodeURIComponent(s));
       if (activeStages.size) parts.push('stage=' + encodeURIComponent(Array.from(activeStages).join(',')));
+      if (searchTerm) parts.push('q=' + encodeURIComponent(searchTerm));
       var hash = parts.length ? '#' + parts.join('&') : '';
       history.replaceState(null, '', hash || window.location.pathname);
     }
@@ -172,6 +176,8 @@
       var sigEl = document.getElementById('kep-filter-sig');
       if (params.release && releaseEl) releaseEl.value = params.release;
       if (params.sig && sigEl) sigEl.value = params.sig;
+      searchTerm = params.q || '';
+      if (searchInput) searchInput.value = searchTerm;
       if (params.stage) {
         params.stage.split(',').forEach(function(s) {
           activeStages.add(s);
