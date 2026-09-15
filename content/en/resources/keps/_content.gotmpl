@@ -101,8 +101,12 @@
         {{- warnf "Unable to load README for KEP %s (tried .md and .MD): %s" $kep.kepNumber . -}}
       {{- end -}}
       {{- with .Value -}}
+        {{- /* Strip the mdtoc-generated table of contents: the site already
+               shows an index for this content in its own sidebar/index page */ -}}
+        {{- $readmeContent = replaceRE `(?s)<!-- toc -->.*?<!-- /toc -->\n*` "" .Content -}}
+
         {{- /* Fix common markdown link errors in KEP READMEs to avoid build failures */ -}}
-        {{- $readmeContent = replace .Content "]((http" "](http" -}}
+        {{- $readmeContent = replace $readmeContent "]((http" "](http" -}}
         {{- $readmeContent = replace $readmeContent "/))" "/)" -}}
         {{- $readmeContent = replace $readmeContent "((http" "(http" -}}
         
