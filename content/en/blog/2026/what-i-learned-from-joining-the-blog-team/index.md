@@ -85,7 +85,7 @@ author: >
 
 While reviewing the first PR, the front matter should have `draft: true`, and the pull request itself should not be in Draft state on GitHub. The `date: YYYY-MM-DD` field comes later, in a separate publish PR *(which we discuss later)*. Hugo, the static site generator, will not publish anything until the date is set.
 
-Also if the PR carries the `do-not-merge/work-in-progress` label, or has [WIP] in the title, it means the author is still working on it and it isn't ready for review yet. Once the content is actually ready, the PR should remove that label (or remove [WIP] from the title), this removed any confusion and signals the reviewers that it's good to review.
+Also if the PR carries the `do-not-merge/work-in-progress` label, or has [WIP] in the title, it means the author is still working on it and it isn't ready for review yet. Once the content is actually ready, the PR should remove that label (or remove [WIP] from the title), this prevent any confusion and signals the reviewers that it's good to review.
 
 *So the draft needs to be merged first to move to the second stage for
 setting the date.*
