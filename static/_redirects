@@ -39,15 +39,17 @@
 /kcseu2024        /events/2024/kcseu 301
 /kcsna2024        /events/2024/kcsna 301
 
+/kcsna2026        /events/2026/kcsna 301
+
 /services         /resources/services 301
 /requests         /resources/services 301
 
-/summit           /events/2024/kcsna  302
-/summit/reg       /events/2024/kcsna/registration 302
-/summit/cfp       /events/2024/kcsna/schedule 302
-/summit/unconf    /events/2024/kcsna 302
+/summit           /events/2026/kcsna  302
+/summit/reg       /events/2026/kcsna/maintainer-summit-na 302
+/summit/cfp       /events/2026/kcsna/maintainer-summit-na 302
+/summit/unconf    /events/2026/kcsna/maintainer-summit-na 302
 /summit/notes     https://drive.google.com/drive/folders/1j3i9I4a3lbmjqQNTYKxK0Gc6JgooDn14 302
-/summit/sched     /events/2024/kcsna/schedule 302
+/summit/sched     /events/2026/kcsna/maintainer-summit-na 302
 
 # Section feeds are no longer generated; the blog feed lives at /index.xml.
 /blog/index.xml   /index.xml 301
