@@ -1,0 +1,18 @@
+name: Check image alt text
+
+on:
+  pull_request:
+    paths:
+      - 'content/en/**/*.md'
+      - 'scripts/check-alt-text.js'
+
+jobs:
+  alt-text:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20.17.0'
+    - name: Validate alt text on images
+      run: npm run check:alt-text
