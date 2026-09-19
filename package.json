@@ -9,8 +9,7 @@
     "postcss-cli": "^10.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "check:alt-text": "node scripts/check-alt-text.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

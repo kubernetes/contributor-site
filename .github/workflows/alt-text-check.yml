@@ -4,15 +4,16 @@ on:
   pull_request:
     paths:
       - 'content/en/**/*.md'
-      - 'scripts/check-alt-text.js'
+      - 'hack/verify-alt-text.py'
+      - 'Makefile'
 
 jobs:
   alt-text:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/setup-python@v5
       with:
-        node-version: '20.17.0'
+        python-version: '3.12'
     - name: Validate alt text on images
-      run: npm run check:alt-text
+      run: make verify-alt-text

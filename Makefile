@@ -50,7 +50,7 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets container-targets
-targets: help gen-content render server clean clean-all production-build preview-build
+targets: help gen-content render server clean clean-all production-build preview-build verify-alt-text
 container-targets: container-image container-push container-gen-content container-render container-server
 
 help: ## Show this help text.
@@ -75,6 +75,9 @@ server: dependencies ## Run Hugo locally (if Hugo "extended" is installed locall
 		--buildFuture \
 		--disableFastRender \
 		--ignoreCache
+
+verify-alt-text: ## Verifies every image under content/en has alt text.
+	python3 hack/verify-alt-text.py
 
 docker-image:
 	@echo -e "**** The use of docker-image is deprecated. Use container-image instead. ****" 1>&2
