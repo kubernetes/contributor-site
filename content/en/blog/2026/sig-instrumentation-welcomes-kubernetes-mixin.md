@@ -27,7 +27,7 @@ Whether it's a new alert rule you have in mind, a dashboard improvement, an edge
 
 * Slack: join the [#monitoring-mixins](https://kubernetes.slack.com/messages/monitoring-mixins) and [#sig-instrumentation](https://kubernetes.slack.com/messages/sig-instrumentation) channels (visit [slack.k8s.io](https://slack.k8s.io/) for a workspace invitation)
 * Head over to the [kubernetes-mixin repository](https://sigs.k8s.io/kubernetes-mixin/) to contribute issues/PRs/discussions
-* Join the [SIG Instrumentation weekly calls](https://github.com/kubernetes/community/tree/main/sig-instrumentation#meetings)
+* Join the [SIG Instrumentation weekly calls](https://www.kubernetes.dev/community/community-groups/sigs/instrumentation/#meetings)
 
 ## Acknowledgments
 
