@@ -2,7 +2,7 @@
 layout: blog
 title: "Spotlight on SIG Apps"
 slug: sig-apps-spotlight
-draft: true
+date: 2026-09-22T10:00:00-08:00
 author: "Natalie Fisher (VMware by Broadcom)" 
 ---
 
