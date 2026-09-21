@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "What I learned from joining the Blog team"
-draft: true
+date: 2026-09-23T10:00:00-08:00
 slug: what-i-learned-from-joining-the-blog-team
 author: >
   [Kashish Verma](https://github.com/KashishV999)
