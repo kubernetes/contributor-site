@@ -92,7 +92,7 @@ We especially wanted practical talks, not just what worked but also what didn't,
 
 **Orlin:** But then the doors open, the venue fills up, people start talking, learning, and sharing ideas, and suddenly it all makes sense. That's exactly why the three of us came back to do it again.
 
-**Spas:** KCD Sofia 2026 is on Tuesday, September 29, at Sofia Event Center. Check out the [agenda](https://kcd.bg/agenda/), grab your ticket at [kcd.bg](https://kcd.bg), and come say hi. We hope to see you there!
+**Spas:** KCD Sofia 2026 is on Tuesday, September 29, at Sofia Event Center. Check out the [agenda](https://kcd.bg/agenda/) to see what's coming. We hope to see you there!
 
 ## Next stop...
 
