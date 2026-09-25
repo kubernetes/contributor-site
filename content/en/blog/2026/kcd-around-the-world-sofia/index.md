@@ -4,9 +4,9 @@ title: "KCD Around the World: Sofia"
 draft: true
 slug: kcd-around-the-world-sofia
 author: >
-  Orlin Vasilev,
-  Spas Atanasov,
-  Yoana Bahchevanova,
+  Orlin Vasilev (SAP),
+  Spas Atanasov (MariaDB),
+  Yoana Bahchevanova (Nortal),
   [Kashish Verma](https://github.com/KashishV999),
 ---
 
