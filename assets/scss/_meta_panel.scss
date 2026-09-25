@@ -1,0 +1,52 @@
+/* Shared meta panel: bordered container + labeled sections */
+.metadata-container {
+  background-color: $white;
+  border: 1px solid $slate-200;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba($slate-900, 0.03);
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metadata-col {
+  padding: 2rem;
+  position: relative;
+
+  &.border-start-refined {
+    border-left: 1px solid $slate-200;
+
+    @media (max-width: 991px) {
+      border-left: none;
+      border-top: 1px solid $slate-200;
+    }
+  }
+}
+
+.metadata-label {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: $slate-400;
+  margin-bottom: 2rem;
+  display: block;
+  font-weight: 600;
+}
+
+.metadata-sublabel {
+  font-family: var(--bs-font-monospace);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $slate-300; // lighter than .metadata-label for hierarchy
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
