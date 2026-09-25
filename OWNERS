@@ -3,16 +3,12 @@
 filters:
   ".*":
     approvers:
+      - chris-short
       - jberkus
-      - jeefy
       - lmktfy
-      - mrbobbytables
       - natalisucks
-      - nimbinatus
       - reylejano
       - stmcginnis
-      - TineoC
-      - tokt
       - sig-contributor-experience-leads
   # files/directories related to static site generator
   "^(assets|layouts|static|package-lock\\.json|package\\.json|netlify\\.toml|hugo\\.yaml)$":
