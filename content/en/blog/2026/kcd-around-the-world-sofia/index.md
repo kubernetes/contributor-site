@@ -4,10 +4,10 @@ title: "KCD Around the World: Sofia"
 date: 2026-09-XX
 slug: kcd-around-the-world-sofia
 author: >
-  [Kashish Verma](https://github.com/KashishV999),
   Orlin Vasilev,
   Spas Atanasov,
-  Yoana Bahchevanova
+  Yoana Bahchevanova,
+  [Kashish Verma](https://github.com/KashishV999),
 ---
 
 Welcome back to KCD Around the World, a series where we explore [Kubernetes Community Days](https://www.cncf.io/kcds/) from every corner of the globe. Behind every event is a community of volunteers, contributors, organizers and attendees who make it all happen. Through conversations with the people behind each KCD, we share what makes it unique.
