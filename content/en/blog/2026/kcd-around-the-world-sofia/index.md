@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "KCD Around the World: Sofia"
-draft: true
+date: 2026-09-28
 slug: kcd-around-the-world-sofia
 author: >
   Orlin Vasilev (SAP),
