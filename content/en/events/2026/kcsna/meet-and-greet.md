@@ -28,12 +28,17 @@ The Kubernetes Meet and Greet takes place during
 <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon + CloudNativeCon North America 2026</a>
 (November 9-12) at the Salt Palace Convention Center in Salt Lake City.
 
-The CNCF events team is still confirming the day, time, and room. Check back for
-the session link and a map of the room once the KubeCon schedule is published.
+- **When:** Wednesday, November 11, 12:20 PM to 2:20 PM. Lunch pickup starts
+  shortly before 12:20 PM.
+- **Where:** 2nd floor upper mezzanine, near Rooms 257-260. Take the stairs or
+  escalators up from the Solutions Showcase (Hall 2/3 exit).
+- **Seating:** 10 round tables of 10 along the windows, for 100 seats in total.
+
+Grab your lunch in the Solutions Showcase, then head up to the mezzanine.
+Reserved and directional signage marks the way.
 
 ### Instructions for new contributors
 
-Grab your lunch in the main exhibit hall, then head to the Meet and Greet room.
 Look for one or more SIGs, WGs, or other teams that interest you, sit down, and
 ask them about their group.
 
@@ -43,13 +48,13 @@ can guide you to the right table.
 
 ### Instructions for SIG members and current contributors
 
-Grab your lunch in the main exhibit hall, then head to the Meet and Greet room
-and look for your SIG or WG, or the one whose contributions you want to discuss.
+Look for your SIG or WG, or the one whose contributions you want to discuss.
+Setup starts at 11:30 AM if you want to claim a table early.
 
 You may be the first member of your SIG or WG to arrive. In that case, take the
 sign and the bag of SIG pins and find an empty table, or a table with enough
 space for another SIG to join. When the last member of your SIG leaves, pack up
 the pins and the sign and return them to ContribEx.
 
-SIG members do not need to stay for the entire session. Instead, pick a period
-of one to two hours when you can staff the table.
+SIG members do not need to stay for the full two hours. Instead, pick a period
+of up to an hour or two when you can staff the table.
