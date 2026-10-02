@@ -1,0 +1,7 @@
+{{- /* GetRemote returns markdown source, so markdownify it; safeHTML would
+       emit literal link syntax. */ -}}
+{{- with resources.GetRemote (.Get 0) -}}
+{{- trim .Content "\n\r " | markdownify -}}
+{{- else -}}
+{{- warnf "include-remote: cannot fetch %s" ($.Get 0) -}}
+{{- end -}}
