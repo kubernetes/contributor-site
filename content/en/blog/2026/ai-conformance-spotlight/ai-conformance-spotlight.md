@@ -2,7 +2,7 @@
 layout: blog
 title: "From Working Group to SIG Architecture: spotlight on AI Conformance"
 slug: sig-arch-ai-conformance-2026
-draft: yes
+draft: true
 author: "Frederico Muñoz (SAS Institute) and Kirti Goyal (independent)"
 ---
 
