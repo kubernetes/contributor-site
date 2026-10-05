@@ -76,7 +76,7 @@ Once you are ready to contribute, you will have to jump through one small legal 
 ## How do I sign a CLA?
 
 * After you make your first pull request, a GitHub bot will walk you through the process.
-* The process is [outlined in the Community repository](https://github.com/kubernetes/community/blob/main/CLA.md).
+* The process is [outlined on the CLA page](/cla/).
 
 ---
 
