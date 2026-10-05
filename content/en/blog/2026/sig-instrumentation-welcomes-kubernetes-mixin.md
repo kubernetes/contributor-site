@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "SIG Instrumentation Welcomes kubernetes-mixin"
-date: 2026-09-28
+date: 2026-10-12
 slug: sig-instrumentation-welcomes-kubernetes-mixin
 author: >
   [Stephen Lang](https://github.com/skl) (Grafana Labs)
