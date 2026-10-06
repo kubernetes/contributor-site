@@ -10,3 +10,4 @@
   {{ if strings.HasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>
   {{- .Text | safeHTML -}}
 </a>
+{{- /* No whitespace after the link, it would show before punctuation. */ -}}
