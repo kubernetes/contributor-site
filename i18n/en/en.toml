@@ -4,6 +4,9 @@
 [ui_search_placeholder]
 other = "Type name, tag, area..."
 
+[ui_aria_search_groups]
+other = "Filter community groups by name, tag, or label"
+
 [ui_view_readme_source]
 other = "View README Source"
 
@@ -61,8 +64,9 @@ other = "Tech Leads"
 [ui_meetings]
 other = "Meetings"
 
-[ui_at]
-other = "at"
+# Values are HTML-escaped by the caller; keep the markup when translating.
+[ui_meeting_day_time]
+other = '{{ .day }} at <span class="fw-bold">{{ .time }} {{ .tz }}</span>'
 
 [ui_show_details]
 other = "Show Details"
@@ -106,8 +110,8 @@ other = "Recordings"
 [ui_link_slack]
 other = "Slack"
 
-[ui_wg_prefix]
-other = "WG"
+[ui_wg_name]
+other = "WG {{ .name }}"
 
 [ui_description]
 other = "Description"
@@ -136,6 +140,9 @@ other = "Title"
 [kep_sig]
 other = "SIG"
 
+[kep_sig_name]
+other = "SIG {{ .name }}"
+
 [kep_author]
 other = "Author"
 
@@ -144,12 +151,6 @@ other = "Created"
 
 [kep_updated]
 other = "Updated"
-
-[kep_last_updated]
-other = "Last Updated"
-
-[kep_milestone]
-other = "Milestone"
 
 [kep_milestones]
 other = "Milestones"

@@ -47,7 +47,7 @@ For the initial localization setup, open a PR from a branch named `i18n/<lang-co
 
 3. **Set up an `OWNERS` file** at `content/<lang>/OWNERS` referencing your localization
    team's aliases (defined in the repository's `OWNERS_ALIASES`), with
-   `sig-contribex-website-owners` as a recommended fallback approver:
+   `sig-contributor-experience-leads` as a recommended fallback approver:
    ```yaml
    options:
      no_parent_owners: true
@@ -57,7 +57,7 @@ For the initial localization setup, open a PR from a branch named `i18n/<lang-co
 
    approvers:
    - <lang>-owners
-   - sig-contribex-website-owners
+   - sig-contributor-experience-leads
    ```
 
 4. **Translate UI strings** — create `i18n/<lang>/<lang>.toml` with the site's

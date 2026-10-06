@@ -1,9 +1,9 @@
 # Kubernetes Contributor Site - English (en)
 
-This directory contains the English localization of the Kubernetes Contributor Site.
+This document describes the English localization of the Kubernetes Contributor Site.
 
 For information on starting or contributing to a localization, see the
-[Localization section in CONTRIBUTING.md](../CONTRIBUTING.md#localization-l10n).
+[Localization section in CONTRIBUTING.md](CONTRIBUTING.md#localization-l10n).
 
 ## Contact
 - **SIG Contribex**: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
@@ -13,4 +13,4 @@ For information on starting or contributing to a localization, see the
 ## Code of Conduct
 All contributors must follow the [Kubernetes Code of Conduct](https://github.com/kubernetes/community/blob/master/code-of-conduct.md).
 
-For more information on contributing to this site, please see the main [README.md](../README.md).
+For more information on contributing to this site, please see the main [README.md](README.md).

@@ -63,7 +63,6 @@ languages:
     languagedirection: ltr
     params:
       languageNameLatinScript: English
-      time_format_blog: "02.01.2006"
 
 markup:
   goldmark:

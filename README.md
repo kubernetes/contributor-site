@@ -23,13 +23,15 @@ original location. A list of sources and their locations within the
 ### External sources
 
 - **Source:** [kubernetes/community/contributors/guide](https://git.k8s.io/community/contributors/guide) <br>
-  **Destination:** `/en/docs/guide/`
-- **Source:** [cncf/foundation/code-of-conduct.md](https://github.com/cncf/foundation/blob/master/code-of-conduct.md) <br>
-  **Destination:** `/en/includes/cncf-code-of-conduct.md`
-- **Source:** [kubernetes/sig-release/releases/release-1.36/README.md](https://git.k8s.io/sig-release/releases/release-1.36/README.md) <br>
-  **Destination:** `/en/resources/release/` ([View on kubernetes.dev](https://kubernetes.dev/en/resources/release/))
+  **Destination:** `content/en/docs/guide/`
+- **Source:** [cncf/foundation/code-of-conduct.md](https://github.com/cncf/foundation/blob/main/code-of-conduct.md) <br>
+  **Destination:** `content/en/includes/cncf-code-of-conduct.md`
+- **Source:** [kubernetes/sig-release/releases/release-1.37/README.md](https://git.k8s.io/sig-release/releases/release-1.37/README.md) <br>
+  **Destination:** `content/en/resources/release/` ([View on kubernetes.dev](https://kubernetes.dev/resources/release/))
 
-> **Note:** The release version in this source changes over time. Check the [sig-release repository](https://git.k8s.io/sig-release/releases/) for the latest release.
+> **Note:** The full list of synced files lives in [`external-sources/`](external-sources/).
+> The release version changes over time; check
+> [`external-sources/kubernetes/sig-release`](external-sources/kubernetes/sig-release) for the current one.
 
 ## Running the site locally
 
