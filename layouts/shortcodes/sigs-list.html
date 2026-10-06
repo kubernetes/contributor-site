@@ -114,7 +114,7 @@
                 <div class="card-body d-flex flex-column p-3">
                   <div class="d-flex justify-content-between align-items-start mb-2">
                     <h5 class="fw-bold mb-0 text-primary h6">
-                      <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
+                      <a href="{{ printf "community/community-groups/sigs/%s/" (.dir | replaceRE "^sig-" "") | relLangURL }}" class="text-decoration-none text-primary">{{ .name }}</a>
                     </h5>
                     <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="{{ T "ui_view_source" }}"><i class="fab fa-github"></i></a>
                   </div>
@@ -198,7 +198,7 @@
                       </a>
                       {{ end }}
 
-                      <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                      <a href="{{ printf "community/community-groups/sigs/%s/" (.dir | replaceRE "^sig-" "") | relLangURL }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">
                         {{ T "ui_visit" }} <i class="fas fa-arrow-right ms-1"></i>
                       </a>
                     </div>
@@ -232,7 +232,7 @@
                 <div class="card-body d-flex flex-column p-3">
                   <div class="d-flex justify-content-between align-items-start mb-2">
                     <h5 class="fw-bold mb-0 text-primary h6">
-                      <a href="/community/community-groups/wg/{{ .dir | replaceRE "^sig-" "" | replaceRE "^wg-" "" }}/" class="text-decoration-none text-primary">{{ T "ui_wg_name" (dict "name" .name) }}</a>
+                      <a href="{{ printf "community/community-groups/wg/%s/" (.dir | replaceRE "^sig-" "" | replaceRE "^wg-" "") | relLangURL }}" class="text-decoration-none text-primary">{{ T "ui_wg_name" (dict "name" .name) }}</a>
                     </h5>
                     <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="{{ T "ui_view_source" }}"><i class="fab fa-github"></i></a>
                   </div>
@@ -312,7 +312,7 @@
                       </a>
                       {{ end }}
 
-                      <a href="/community/community-groups/wg/{{ .dir | replaceRE "^wg-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                      <a href="{{ printf "community/community-groups/wg/%s/" (.dir | replaceRE "^wg-" "") | relLangURL }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">
                         {{ T "ui_visit" }} <i class="fas fa-arrow-right ms-1"></i>
                       </a>
                     </div>
@@ -346,7 +346,7 @@
                 <div class="card-body d-flex flex-column p-3">
                   <div class="d-flex justify-content-between align-items-start mb-2">
                     <h5 class="fw-bold mb-0 text-primary h6">
-                      <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="text-decoration-none text-primary">{{ .name }}</a>
+                      <a href="{{ printf "community/community-groups/committees/%s/" (.dir | replaceRE "^sig-" "" | replaceRE "^committee-" "") | relLangURL }}" class="text-decoration-none text-primary">{{ .name }}</a>
                     </h5>
                     <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-muted" title="{{ T "ui_view_source" }}"><i class="fab fa-github"></i></a>
                   </div>
@@ -425,7 +425,7 @@
                       </a>
                       {{ end }}
 
-                      <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="btn btn-sm btn-outline-primary rounded-pill px-3">
+                      <a href="{{ printf "community/community-groups/committees/%s/" (.dir | replaceRE "^sig-" "" | replaceRE "^committee-" "") | relLangURL }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">
                         {{ T "ui_visit" }} <i class="fas fa-arrow-right ms-1"></i>
                       </a>
                     </div>
