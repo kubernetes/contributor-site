@@ -32,6 +32,18 @@ This file needs to be removed once Docsy has been updated to 0.10.0.
 {{ template "_internal/opengraph.html" . -}}
 {{ template "_internal/schema.html" . -}}
 {{ template "_internal/twitter_cards.html" . -}}
+
+{{/* Docsy 0.10 loads dark-mode.js at body end, which flashes the light theme.
+     Set the theme early. Remove once Docsy loads it in <head>. */}}
+<script>
+  (() => {
+    const stored = localStorage.getItem('td-color-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = !stored || stored === 'auto' ? (prefersDark ? 'dark' : 'light') : stored;
+    document.documentElement.setAttribute('data-bs-theme', theme);
+  })();
+</script>
+
 {{ partialCached "head-css.html" . "asdf" -}}
 <script
   src="https://code.jquery.com/jquery-3.6.0.min.js"
