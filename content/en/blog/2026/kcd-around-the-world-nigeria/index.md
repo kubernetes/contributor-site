@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "KCD Around the World: Nigeria"
-date: 2026-10-13
+draft: true
 slug: kcd-around-the-world-nigeria
 author: >
   [Destiny Erhabor](https://github.com/Caesarsage),
