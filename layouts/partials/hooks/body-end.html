@@ -33,8 +33,8 @@
     var $table = $(table);
     var activeStages = new Set();
     var searchTerm = '';
+    var committedSearch = '';
 
-    // Cache elements outside the search loop callback to prevent performance issues
     var selRelease = document.getElementById('kep-filter-release');
     var selSig = document.getElementById('kep-filter-sig');
 
@@ -96,12 +96,17 @@
       }
     });
 
-    // Vanilla JS event listeners — no jQuery quirks
     var searchInput = document.getElementById('kep-search');
     if (searchInput) {
       searchInput.addEventListener('input', function() {
         searchTerm = this.value;
         dt.draw();
+      });
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key !== 'Enter') return;
+        e.preventDefault();
+        committedSearch = searchTerm.trim();
+        syncHash(true);
       });
     }
 
@@ -147,36 +152,42 @@
       });
     }
 
-    function syncHash() {
+    function syncHash(addHistoryEntry) {
       var parts = [];
-      var releaseEl = document.getElementById('kep-filter-release');
-      var sigEl = document.getElementById('kep-filter-sig');
-      var r = releaseEl ? releaseEl.value : '';
-      var s = sigEl ? sigEl.value : '';
+      var r = selRelease ? selRelease.value : '';
+      var s = selSig ? selSig.value : '';
       if (r) parts.push('release=' + encodeURIComponent(r));
       if (s) parts.push('sig=' + encodeURIComponent(s));
       if (activeStages.size) parts.push('stage=' + encodeURIComponent(Array.from(activeStages).join(',')));
+      if (committedSearch) parts.push('q=' + encodeURIComponent(committedSearch));
       var hash = parts.length ? '#' + parts.join('&') : '';
-      history.replaceState(null, '', hash || window.location.pathname);
+      if (hash === window.location.hash) return;
+      var url = hash || window.location.pathname + window.location.search;
+      history[addHistoryEntry ? 'pushState' : 'replaceState'](null, '', url);
     }
 
     function applyHash() {
       var h = window.location.hash.slice(1);
-      if (!h) return;
       var params = {};
-      h.split('&').forEach(function(p) {
+      if (h) h.split('&').forEach(function(p) {
         var kv = p.split('=');
-        if (kv.length === 2) params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]);
+        if (kv.length !== 2) return;
+        try { params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]); }
+        catch (e) { /* Ignore malformed URL parameters. */ }
       });
-      var releaseEl = document.getElementById('kep-filter-release');
-      var sigEl = document.getElementById('kep-filter-sig');
-      if (params.release && releaseEl) releaseEl.value = params.release;
-      if (params.sig && sigEl) sigEl.value = params.sig;
+      if (selRelease) selRelease.value = params.release || '';
+      if (selSig) selSig.value = params.sig || '';
+      committedSearch = searchTerm = params.q || '';
+      if (searchInput) searchInput.value = searchTerm;
+      activeStages.clear();
+      document.querySelectorAll('.kep-stage-btn').forEach(function(btn) {
+        btn.setAttribute('aria-checked', 'false');
+      });
       if (params.stage) {
-        params.stage.split(',').forEach(function(s) {
-          activeStages.add(s);
-          var btn = document.querySelector('.kep-stage-btn[data-stage="' + s + '"]');
-          if (btn) btn.setAttribute('aria-checked', 'true');
+        params.stage.split(',').forEach(function(stage) {
+          activeStages.add(stage);
+          var stageButton = document.querySelector('.kep-stage-btn[data-stage="' + stage + '"]');
+          if (stageButton) stageButton.setAttribute('aria-checked', 'true');
         });
       }
       dt.draw();
@@ -184,6 +195,7 @@
 
     applyHash();
     window.addEventListener('hashchange', applyHash);
+    window.addEventListener('popstate', applyHash);
   }
 
   if (document.readyState === 'loading') {
