@@ -19,6 +19,7 @@ Salt Palace Convention Center. The contributor events are:
 - [Maintainer Summit North America 2026] - a dedicated day for maintainers to collaborate in person, with keynotes, submitted talks, an unconference, and project meetings.
 - [Kubernetes 101: New Contributor Orientation] - a guided introduction to the project for people who want to contribute but do not know where to start.
 - [Kubernetes Meet and Greet] - a lunchtime drop-in where SIGs and WGs answer questions about getting involved.
+- [Kubernetes activities] - SIG and WG sessions, Contribfests, and Project Pavilion kiosks, by day.
 
 Two other sessions are worth noting for Kubernetes contributors, both on
 Tuesday, November 10:
@@ -42,3 +43,4 @@ report an incident to the CNCF event staff.
 [Maintainer Summit North America 2026]: /events/2026/kcsna/maintainer-summit-na/
 [Kubernetes 101: New Contributor Orientation]: /events/2026/kcsna/new-contributor-workshop/
 [Kubernetes Meet and Greet]: /events/2026/kcsna/meet-and-greet/
+[Kubernetes activities]: /events/2026/kcsna/activities/
