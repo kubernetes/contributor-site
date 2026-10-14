@@ -11,7 +11,7 @@ description: >
 ### About
 
 Kubernetes SIGs, WGs, and subprojects run sessions and kiosks throughout
-<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/" rel="noopener noreferrer" target="_blank">KubeCon + CloudNativeCon North America 2026</a>
+[KubeCon + CloudNativeCon North America 2026](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/)
 (November 9-12). They can get lost in a crowded schedule, so this page collects
 them in one place. Use it to find your SIG's update, meet the people
 behind a subproject, or pick a group to start contributing to.
@@ -31,13 +31,13 @@ involved.
 | [etcd] | [SIG etcd] | Tuesday 10:30 AM - 2:30 PM, Wednesday 10:15 AM - 1:25 PM, Thursday 10:15 AM - 2:00 PM | P-5B |
 
 For the latest kiosk times, check the
-<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/features-add-ons/project-engagement/#project-pavilion-kiosk-directory" rel="noopener noreferrer" target="_blank">Project Pavilion kiosk directory</a>.
+[Project Pavilion kiosk directory](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/features-add-ons/project-engagement/#project-pavilion-kiosk-directory).
 
 ### Sessions
 
 Unless a room says otherwise, sessions are in the Salt Palace Convention Center,
 Level 2. Session times can change, so check the
-<a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/" rel="noopener noreferrer" target="_blank">KubeCon schedule</a>
+[KubeCon schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/)
 before you go.
 
 #### Monday, November 9
@@ -91,15 +91,15 @@ before you go.
 | 2:40 PM | SIG Cluster Lifecycle | [10 Years of Minikube and the Future of Millions of Users](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289720) | 251 A-C |
 | 3:30 PM | SIG API Machinery | [SIG API Machinery in the Era of AI: Updates](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289734) | 250 A-C |
 
-[Dynamic Resource Allocation]: https://github.com/kubernetes-sigs/wg-device-management
+[Dynamic Resource Allocation]: /community/community-groups/wg/device-management/
 [Gateway API]: https://gateway-api.sigs.k8s.io/
 [Headlamp]: https://headlamp.dev/
 [Kueue]: https://kueue.sigs.k8s.io/
 [etcd]: https://etcd.io/
-[WG Device Management]: https://github.com/kubernetes/community/tree/master/wg-device-management
-[SIG Node]: https://github.com/kubernetes/community/tree/master/sig-node
-[SIG Network]: https://github.com/kubernetes/community/tree/master/sig-network
-[SIG UI]: https://github.com/kubernetes/community/tree/master/sig-ui
-[WG Batch]: https://github.com/kubernetes/community/tree/master/wg-batch
-[WG Workload Aware Scheduling]: https://github.com/kubernetes/community/tree/master/wg-workload-aware-scheduling
-[SIG etcd]: https://github.com/kubernetes/community/tree/master/sig-etcd
+[WG Device Management]: /community/community-groups/wg/device-management/
+[SIG Node]: /community/community-groups/sigs/node/
+[SIG Network]: /community/community-groups/sigs/network/
+[SIG UI]: /community/community-groups/sigs/ui/
+[WG Batch]: /community/community-groups/wg/batch/
+[WG Workload Aware Scheduling]: /community/community-groups/wg/workload-aware-scheduling/
+[SIG etcd]: /community/community-groups/sigs/etcd/
