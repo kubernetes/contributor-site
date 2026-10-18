@@ -14,6 +14,9 @@ Add styles or import other files. */
 @import "kep_filter";
 @import "kep_table";
 
+// Google Custom Search
+@import "gcs-search-dark";
+
 // Cross-cutting media queries
 @import "base";
 
@@ -59,4 +62,13 @@ Add styles or import other files. */
   .gt { color: #04d; }
   .gl { text-decoration: underline; }
   .w { color: #bbb; }
+}
+
+.td-box--2:has(.stay-involved) {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+
+  a {
+    color: var(--bs-link-color);
+  }
 }
