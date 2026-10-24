@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "One Signed Answer: SLSA Verification Summaries for registry.k8s.io Images"
-draft: true
+date: 2026-10-28
 slug: registry-k8s-io-verification-summaries
 author: >
   Sascha Grunert (Red Hat)
@@ -436,7 +436,7 @@ Thanks to [Adolfo García Veytia](https://github.com/puerco) for steering this
 work toward the SLSA verifier and the OpenSSF policy tooling instead of
 another homegrown verifier, to [Mahamed Ali](https://github.com/upodroid) for
 the infrastructure and identity work in SIG K8s Infra, and to the
-[Release Engineering](https://github.com/kubernetes/sig-release/tree/master/release-engineering)
+[Release Engineering](https://www.kubernetes.dev/community/community-groups/sigs/release/#release-engineering)
 subproject of SIG Release for reviewing the changes and this post.
 
 Thank you for reading this blog post! If you're interested in more, want to
