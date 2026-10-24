@@ -93,6 +93,12 @@
       color: var(--bs-secondary-color);
       border: 1px solid var(--bs-border-color);
     }
+
+    [data-bs-theme="dark"] & {
+      background-color: var(--bs-secondary-bg);
+      color: var(--bs-secondary-color);
+      border-color: var(--bs-border-color);
+    }
   }
 
   /* Data Grid for Timeline/Milestones */
@@ -287,6 +293,10 @@
       margin-top: 2.5rem;
       margin-bottom: 1.25rem;
       font-weight: 700;
+    }
+
+    h2 {
+      font-size: 1.5rem;
     }
 
     // Ensure images don't overflow

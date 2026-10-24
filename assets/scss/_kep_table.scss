@@ -431,6 +431,19 @@
 }
 // Docsy & Bootstrap 5 Dark Mode Compatibility Layer for DataTables
 [data-bs-theme="dark"] {
+  color-scheme: dark; // inherited by every select, so the popups go dark
+
+  select {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+
+    option,
+    optgroup {
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
+    }
+  }
+
   .dataTables_wrapper {
     .dataTables_length,
     .dataTables_info {
