@@ -1,10 +1,10 @@
 ---
 layout: blog
 title: "Announcing the Workload Conformance Working Group"
-draft: true
+date: 2026-10-27T04:30:00+00:00
 slug: announcing-workload-conformance-wg
 author: >
-  [Nabarun Pal](https://github.com/palnabarun) (Broadcom), on behalf of WG Workload Conformance
+  [Nabarun Pal](https://github.com/palnabarun) (Broadcom) on behalf of WG Workload Conformance
 ---
 
 We are excited to announce that the Kubernetes community now has a [Workload Conformance Working Group](https://www.kubernetes.dev/community/community-groups/wg/workload-conformance/).
@@ -62,6 +62,9 @@ If you maintain an application, tell us what it needs from the cluster and where
 - And because the subproject will outlive the working group, we're also looking for people who want to maintain it for the long term.
 
 You can find us in [`#wg-workload-conformance`](https://kubernetes.slack.com/messages/wg-workload-conformance) on Kubernetes Slack (visit [slack.k8s.io](https://slack.k8s.io/) for an invitation) and on the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-workload-conformance).
-The group plans to meet every two weeks, and the [working group page](https://www.kubernetes.dev/community/community-groups/wg/workload-conformance/) has the meeting details.
+The working group meets every other Wednesday at 15:00 UTC.
+The Zoom link and the agenda are in the [meeting notes](https://docs.google.com/document/d/16GPnmukPqbTkauWb3CtXzA3aEDUXoVKY34gA41YQmPk/edit).
+If you want to raise a topic, add it to the agenda.
+Joining the mailing list usually adds the meeting invite to your calendar.
 
 Thanks to everyone who reviewed and supported the [working group proposal](https://github.com/kubernetes/community/pull/9139).
