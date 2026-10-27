@@ -25,10 +25,10 @@ involved.
 | Kiosk | Sponsoring group | Schedule | Kiosk number |
 |---|---|---|---|
 | [Dynamic Resource Allocation] | [WG Device Management], [SIG Node] | Tuesday 10:30 AM - 2:30 PM | P-6A |
-| [Gateway API] | [SIG Network] | Wednesday 1:55 PM - 5:00 PM | P-5B |
+| [Gateway API] | [SIG Network] | Wednesday 10:15 AM - 1:25 PM | P-5B |
 | [Headlamp] | [SIG UI] | Tuesday 3:00 PM - 7:00 PM | P-5B |
 | [Kueue] / Workload Aware Scheduling | [WG Batch], [WG Workload Aware Scheduling] | Tuesday - Thursday, all showcase hours | P-5A |
-| [etcd] | [SIG etcd] | Tuesday 10:30 AM - 2:30 PM, Wednesday 10:15 AM - 1:25 PM, Thursday 10:15 AM - 2:00 PM | P-5B |
+| [etcd] | [SIG etcd] | Tuesday 10:30 AM - 2:30 PM, Wednesday 1:55 PM - 5:00 PM, Thursday 10:15 AM - 2:00 PM | P-5B |
 
 For the latest kiosk times, check the
 [Project Pavilion kiosk directory](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/features-add-ons/project-engagement/#project-pavilion-kiosk-directory).
