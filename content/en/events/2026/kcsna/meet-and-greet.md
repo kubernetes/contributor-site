@@ -34,6 +34,8 @@ The Kubernetes Meet and Greet takes place during
   escalators up from the Solutions Showcase (Hall 2/3 exit).
 - **Seating:** 10 round tables of 10 along the windows, for 100 seats in total.
 
+![Map of the Europe Foyer for the M&G](/events/2026/kcsna/map1.png)
+
 Grab your lunch in the Solutions Showcase, then head up to the mezzanine.
 Reserved and directional signage marks the way.
 
