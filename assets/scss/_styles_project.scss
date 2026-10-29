@@ -64,7 +64,7 @@ Add styles or import other files. */
   .w { color: #bbb; }
 }
 
-.td-box--2:has(.stay-involved) {
+.td-box:has(.stay-involved) {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
 
