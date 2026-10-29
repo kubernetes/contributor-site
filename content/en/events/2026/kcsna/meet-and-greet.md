@@ -37,6 +37,8 @@ The Kubernetes Meet and Greet takes place during
 Grab your lunch in the Solutions Showcase, then head up to the mezzanine.
 Reserved and directional signage marks the way.
 
+![map of the 2nd floor mezzanine](/events/2026/kcsna/mng26.png)
+
 ### Instructions for new contributors
 
 Look for one or more SIGs, WGs, or other teams that interest you, sit down, and
@@ -49,7 +51,6 @@ can guide you to the right table.
 ### Instructions for SIG members and current contributors
 
 Look for your SIG or WG, or the one whose contributions you want to discuss.
-Setup starts at 11:30 AM if you want to claim a table early.
 
 You may be the first member of your SIG or WG to arrive. In that case, take the
 sign and the bag of SIG pins and find an empty table, or a table with enough

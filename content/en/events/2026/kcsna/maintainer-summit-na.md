@@ -41,6 +41,8 @@ The day runs from 08:15 to 20:00 and includes:
   starting at 13:35 and running until 16:35.
 - **Project meetings** run in parallel all afternoon, including SIG-etcd,
   Gateway API, Karmada, OpenTelemetry, and KubeVirt.
+- **Contributor Awards** at the end of the day, a few dozen Kubernetes contributors 
+  are recognized for their extraordinary contributions over the last year.
 - **Reception** closes the evening from 17:30 to 20:00.
 
 Kubernetes contributors may want to note
