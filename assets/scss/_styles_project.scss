@@ -2,6 +2,7 @@
 Add styles or import other files. */
 
 // Utilities & helpers
+@import "tokens";
 @import "reset";
 
 // Site chrome
@@ -20,48 +21,65 @@ Add styles or import other files. */
 // Cross-cutting media queries
 @import "base";
 
-/* Chroma syntax highlighting (emacs theme) */
+/* Chroma syntax highlighting. Colors come from the --chroma-* tokens. */
 .chroma {
-  background-color: #f8f8f8;
+  background-color: var(--chroma-background);
 
-  [data-bs-theme="dark"] & {
-    background-color: #1b1f22;
+  .k, .kd, .kn, .kr, .ow {
+    color: var(--chroma-keyword);
+    font-weight: bold;
   }
 
-  .k, .kc, .kd, .kn, .kr, .ow { color: #a2f; font-weight: bold; }
-  .kp { color: #a2f; }
-  .kt { color: #0b0; font-weight: bold; }
-  .na, .s, .sa, .sb, .sc, .dl, .s2, .sh, .s1 { color: #b44; }
-  .nb, .nd { color: #a2f; }
-  .nc { color: #00f; }
-  .no { color: #800; }
-  .ni { color: #999; font-weight: bold; }
-  .ne { color: #d2413a; font-weight: bold; }
-  .nf { color: #00a000; }
-  .nl { color: #a0a000; }
-  .nn { color: #00f; font-weight: bold; }
-  .nt { color: #008000; font-weight: bold; }
-  .nv, .ss { color: #b8860b; }
-  .sd { color: #b44; font-style: italic; }
-  .se { color: #b62; font-weight: bold; }
-  .si { color: #b68; font-weight: bold; }
-  .sx { color: #008000; }
-  .sr { color: #b68; }
-  .m, .mb, .mf, .mh, .mi, .il, .mo, .o { color: #666; }
-  .c, .ch, .cm, .c1, .cp, .cpf { color: #080; font-style: italic; }
-  .cs { color: #080; font-weight: bold; }
-  .gd { color: #a00000; }
+  .kp { color: var(--chroma-keyword); }
+  .kc { color: var(--chroma-keyword-constant); font-weight: bold; }
+  .kt { color: var(--chroma-keyword-type); font-weight: bold; }
+  .na { color: var(--chroma-name-attribute); }
+  .nb { color: var(--chroma-name-builtin); }
+  .nc { color: var(--chroma-name-class); }
+  .no { color: var(--chroma-name-constant); }
+  .nd { color: var(--chroma-name-decorator); }
+  .ni { color: var(--chroma-name-entity); font-weight: bold; }
+  .ne { color: var(--chroma-name-exception); font-weight: bold; }
+  .nf { color: var(--chroma-name-function); }
+  .nl { color: var(--chroma-name-label); }
+  .nn { color: var(--chroma-name-namespace); font-weight: bold; }
+  .nt { color: var(--chroma-name-tag); font-weight: bold; }
+  .nv, .ss { color: var(--chroma-name-variable); }
+
+  .s, .sa, .sb, .sc, .dl, .s2, .sh, .s1 {
+    color: var(--chroma-string);
+  }
+
+  .sd { color: var(--chroma-string-doc); font-style: italic; }
+  .se { color: var(--chroma-string-escape); font-weight: bold; }
+  .si { color: var(--chroma-string-interpol); font-weight: bold; }
+  .sx { color: var(--chroma-string-other); }
+  .sr { color: var(--chroma-string-regex); }
+
+  .m, .mb, .mf, .mh, .mi, .il, .mo {
+    color: var(--chroma-number);
+  }
+
+  .o { color: var(--chroma-operator); }
+
+  .c, .ch, .cm, .c1, .cp, .cpf {
+    color: var(--chroma-comment);
+    font-style: italic;
+  }
+
+  .cs { color: var(--chroma-comment-special); font-weight: bold; }
+  .gd { color: var(--chroma-generic-deleted); }
   .ge { font-style: italic; }
-  .gr { color: #f00; }
-  .gh { color: #000080; font-weight: bold; }
-  .gi { color: #00a000; }
-  .go { color: #888; }
-  .gp { color: #000080; font-weight: bold; }
+  .gr { color: var(--chroma-generic-error); }
+  .gh { color: var(--chroma-generic-heading); font-weight: bold; }
+  .gi { color: var(--chroma-generic-inserted); }
+  .go { color: var(--chroma-generic-output); }
+  .gp { color: var(--chroma-generic-prompt); font-weight: bold; }
   .gs { font-weight: bold; }
-  .gu { color: #800080; font-weight: bold; }
-  .gt { color: #04d; }
+  .gu { color: var(--chroma-generic-subheading); font-weight: bold; }
+  .gt { color: var(--chroma-generic-traceback); }
   .gl { text-decoration: underline; }
-  .w { color: #bbb; }
+  .w { color: var(--chroma-whitespace); }
 }
 
 .td-box:has(.stay-involved) {
