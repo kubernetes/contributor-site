@@ -45,7 +45,7 @@ before you go.
 | Time | Group | Session | Room |
 |---|---|---|---|
 | 8:15 AM - 8:00 PM | Maintainers | [Maintainer Summit North America 2026](/events/2026/kcsna/maintainer-summit-na/) | Salt Palace, multiple rooms |
-| 12:06 PM | SIG etcd | [etcd Operator, Rebuilt and Ready](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289890) (Project Lightning Talk) | Hyatt Regency, Level 4, Regency Ballroom B-D |
+| 12:34 PM | SIG etcd | [etcd Operator, Rebuilt and Ready](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289890) (Project Lightning Talk) | Hyatt Regency, Level 4, Regency Ballroom B-D |
 
 #### Tuesday, November 10
 
@@ -60,6 +60,7 @@ before you go.
 | 2:50 PM | Security Response Committee | [How Kubernetes Handles AI Generated Security Reports](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289635) | 250 D-F |
 | 3:40 PM | SIG ContribEx | [Kubernetes SIG ContribEx: Sub-Project and Governance Updates](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289639) | 250 A-C |
 | 4:40 PM | SIG ContribEx | [Kubernetes 101: New Contributor Orientation](/events/2026/kcsna/new-contributor-workshop/) (Contribfest) | 255 A |
+| 4:40 PM | SIG Multicluster | [Multicluster AMA: The Community Answers](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1243723) | Hyatt Regency, Level 2, Salt Lake Ballroom C |
 | 5:30 PM | SIG Apps | [Managing Data at Scale: Best Practices and Evolution of SIG-Apps](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289699) | 250 A-C |
 | 5:30 PM | SIG Auth | [Authorized? It Depends.](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289677) | 251 A-C |
 
@@ -77,6 +78,7 @@ before you go.
 | 3:10 PM | SIG CLI | [What's New with Kubectl and Kustomize … and How You Can Help!](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289698) | 251 D-F |
 | 5:00 PM | SIG Architecture | [Kubernetes SIG Architecture Intro and Updates](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289705) | 250 A-C |
 | 5:00 PM | WG Node Lifecycle | [The Future of Kubernetes Eviction and Node Lifecycle](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289660) | 251 A-C |
+| 5:00 PM | WG Workload Conformance | [Validating Kubernetes Workloads: Checklists and Best Practices](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1374991) (BoF) | 254 |
 
 #### Thursday, November 12
 
