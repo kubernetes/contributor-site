@@ -40,11 +40,16 @@ Level 2. Session times can change, so check the
 [KubeCon schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/)
 before you go.
 
-#### Monday, November 9
+#### Sunday, November 8
 
 | Time | Group | Session | Room |
 |---|---|---|---|
 | 8:15 AM - 8:00 PM | Maintainers | [Maintainer Summit North America 2026](/events/2026/kcsna/maintainer-summit-na/) | Salt Palace, multiple rooms |
+
+#### Monday, November 9
+
+| Time | Group | Session | Room |
+|---|---|---|---|
 | 12:34 PM | SIG etcd | [etcd Operator, Rebuilt and Ready](https://kubecon-cloudnativecon-north-america-2026.sessionize.com/session/1289890) (Project Lightning Talk) | Hyatt Regency, Level 4, Regency Ballroom B-D |
 
 #### Tuesday, November 10
