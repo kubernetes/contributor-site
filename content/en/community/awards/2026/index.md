@@ -36,7 +36,7 @@ Drove Cluster Autoscaler split out into new Core/Provider repos
 Erik has been a consistent and valuable contributor to the Vertical Pod Autoscaler, driving forward key features like pod-level resource support. Beyond authoring code, he actively reviews PRs and fixes subtle bugs across the project. Thank you, Erik, for your dedication and impact!
 
 *Norbert Cyran, [@norbertcyran](https://github.com/norbertcyran)*  
-Driving CapacityBuffers an CapacityQuota
+Driving CapacityBuffers and CapacityQuota
 
 *Derek Frank, [@DerekFrank](https://github.com/DerekFrank)*  
 Relentlessly driving alignment between Karpenter and CA for the Scheduler-Driven Autoscaling effort
