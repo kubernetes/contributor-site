@@ -82,7 +82,7 @@ Destiny has ascended the contributor ladder in SIG Docs, providing helpful feedb
 *Kashish Verma, [@KashishV999](https://github.com/KashishV999)*  
 Kashish is the newest blog reviewer for SIG Docs, ramping up quickly from new contributor to knowledgable support for feature blog writers and other potential reviewers. She has shown drive and accountability, improving processes and even helping the current blog team stay consistent in their application of rules and guidelines. Her cross collaboration with SIG ContribEx has also kept the review blog pipeline moving, and we're thrilled with Kashish's ongoing SIG Docs blog contributions.
 
-#### SIG etcd
+#### etcd
 
 *Nont Thanonchai, [@nwnt](https://github.com/nwnt)*  
 Excellent work in launching the etcd operator rewrite, as well as improvements in robustness testing. Pitching in constantly based on SIG needs and roadmap.
