@@ -72,7 +72,7 @@ Simon singlehandledly unstuck 5 years of Slack admin backlog in less than a year
 Natalie became crucial for ContribEx for handling all kinds of comms for the comms subproject as well as ContribEx itself
 
 *Susan Sica, [@Serenity611](https://github.com/Serenity611)*  
-Susan over years now lead all the commuication around KubeCons and became vital for open Social media Comms handeling
+Susan over years now lead all the communication around KubeCons and became vital for open Social media Comms handling
 
 #### Docs
 
