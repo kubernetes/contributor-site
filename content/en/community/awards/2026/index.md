@@ -131,7 +131,7 @@ Maintaining ingress-nginx for several years, making a heroic effort to save it, 
 #### Node
 
 *Samuel Karp, [@samuelkarp](https://github.com/samuelkarp)*  
-for leadership bridging SIG Node and containerd together, driving release synchronization, KEP alignment policies, and NRI toward GA to strengthen runtime stability and increase features velocity.
+For leadership bridging SIG Node and containerd together, driving release synchronization, KEP alignment policies, and NRI toward GA to strengthen runtime stability and increase features velocity.
 
 *Harshal Patil, [@harche](https://github.com/harche)*  
 for continuing engagement, deep technical insight, and always stepping up to support the community and drive SIG Node initiatives.
