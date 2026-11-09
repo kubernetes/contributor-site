@@ -49,25 +49,25 @@
           <div class="kep-data-grid">
             {{ with .alpha }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot alpha"></span> Alpha</span>
+              <span class="kep-data-label"><span class="dot kep-stage-alpha"></span> Alpha</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}
             {{ with .beta }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot beta"></span> Beta</span>
+              <span class="kep-data-label"><span class="dot kep-stage-beta"></span> Beta</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}
             {{ with .stable }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot stable"></span> Stable</span>
+              <span class="kep-data-label"><span class="dot kep-stage-stable"></span> Stable</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}
             {{ with .deprecated }}
             <div class="kep-data-row">
-              <span class="kep-data-label"><span class="dot deprecated"></span> Depr.</span>
+              <span class="kep-data-label"><span class="dot kep-stage-deprecated"></span> Depr.</span>
               <span class="kep-data-value"><code>{{ . }}</code></span>
             </div>
             {{ end }}

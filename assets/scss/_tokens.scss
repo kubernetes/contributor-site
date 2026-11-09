@@ -1,6 +1,8 @@
 :root,
 [data-bs-theme="light"] {
   --control-border-color: var(--bs-border-color);
+  --accent-text-color: var(--bs-primary);
+  --accent-text-color: var(--bs-primary);
   --code-block-bg: var(--bs-tertiary-bg);
   --kep-stage-dot: var(--bs-tertiary-color);
   --kep-stage-dot-glow: transparent;
@@ -12,6 +14,8 @@
 
 [data-bs-theme="dark"] {
   --control-border-color: var(--bs-gray-600);
+  --accent-text-color: var(--bs-primary-text-emphasis);
+  --accent-text-color: var(--bs-primary-text-emphasis);
   --code-block-bg: var(--bs-body-bg);
 
   @each $role, $color in $chroma-dark {
