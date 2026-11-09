@@ -111,7 +111,7 @@ Godwin Ekainu joined the K8s Infra SIG and delivered many contributions to the p
 *Kahiro Okina, [@kahirokunn](https://github.com/kahirokunn)*  
 Kahiro has been a huge help in the SIG, keeping us on our toes ensuring our work is relevant to end users. He is consistently attached to determining the right way of doing things, even when that’s not convenient and when it involves spending a significant amount of time investigating processes; for example, finding out where to host images “properly” for k8s.io.
 
-*Mike Ng, [@mikesnhg](https://github.com/mikesnhg)*  
+*Mike Ng, [@mikeshng](https://github.com/mikeshng)*  
 Mike has been involved in the SIG for many years, and has been a consistent participant, with key contributions in Cluster Profile API (KEP-4322) and Placement Decision (KEP-5313). We were particularly impressed with the last one; Mike demonstrated a lot of patience explaining it to the SIG, and finding new ways of explaining it until we (the chairs) finally understood it. Mike is a quiet but key contributor to the SIG and we want to recognise him for that.
 
 *Arthur Outhenin-Chalandre, [@MrFreezeex](https://github.com/MrFreezeex)*  
