@@ -3,6 +3,7 @@ Add styles or import other files. */
 
 // Utilities & helpers
 @import "tokens";
+@import "kep_stages";
 @import "reset";
 
 // Site chrome
@@ -21,68 +22,19 @@ Add styles or import other files. */
 // Cross-cutting media queries
 @import "base";
 
-/* Chroma syntax highlighting. Colors come from the --chroma-* tokens. */
-.chroma {
-  background-color: var(--chroma-background);
+/* Generated Chroma syntax highlighting */
+@import "chroma_light";
 
-  .k, .kd, .kn, .kr, .ow {
-    color: var(--chroma-keyword);
-    font-weight: bold;
-  }
-
-  .kp { color: var(--chroma-keyword); }
-  .kc { color: var(--chroma-keyword-constant); font-weight: bold; }
-  .kt { color: var(--chroma-keyword-type); font-weight: bold; }
-  .na { color: var(--chroma-name-attribute); }
-  .nb { color: var(--chroma-name-builtin); }
-  .nc { color: var(--chroma-name-class); }
-  .no { color: var(--chroma-name-constant); }
-  .nd { color: var(--chroma-name-decorator); }
-  .ni { color: var(--chroma-name-entity); font-weight: bold; }
-  .ne { color: var(--chroma-name-exception); font-weight: bold; }
-  .nf { color: var(--chroma-name-function); }
-  .nl { color: var(--chroma-name-label); }
-  .nn { color: var(--chroma-name-namespace); font-weight: bold; }
-  .nt { color: var(--chroma-name-tag); font-weight: bold; }
-  .nv, .ss { color: var(--chroma-name-variable); }
-
-  .s, .sa, .sb, .sc, .dl, .s2, .sh, .s1 {
-    color: var(--chroma-string);
-  }
-
-  .sd { color: var(--chroma-string-doc); font-style: italic; }
-  .se { color: var(--chroma-string-escape); font-weight: bold; }
-  .si { color: var(--chroma-string-interpol); font-weight: bold; }
-  .sx { color: var(--chroma-string-other); }
-  .sr { color: var(--chroma-string-regex); }
-
-  .m, .mb, .mf, .mh, .mi, .il, .mo {
-    color: var(--chroma-number);
-  }
-
-  .o { color: var(--chroma-operator); }
-
-  .c, .ch, .cm, .c1, .cp, .cpf {
-    color: var(--chroma-comment);
-    font-style: italic;
-  }
-
-  .cs { color: var(--chroma-comment-special); font-weight: bold; }
-  .gd { color: var(--chroma-generic-deleted); }
-  .ge { font-style: italic; }
-  .gr { color: var(--chroma-generic-error); }
-  .gh { color: var(--chroma-generic-heading); font-weight: bold; }
-  .gi { color: var(--chroma-generic-inserted); }
-  .go { color: var(--chroma-generic-output); }
-  .gp { color: var(--chroma-generic-prompt); font-weight: bold; }
-  .gs { font-weight: bold; }
-  .gu { color: var(--chroma-generic-subheading); font-weight: bold; }
-  .gt { color: var(--chroma-generic-traceback); }
-  .gl { text-decoration: underline; }
-  .w { color: var(--chroma-whitespace); }
+[data-bs-theme="dark"] {
+  @import "chroma_dark";
 }
 
-.td-box:has(.stay-involved) {
+/* Use Bootstrap surfaces in both themes. */
+.chroma {
+  background-color: var(--bs-tertiary-bg);
+}
+
+.td-box--2:has(.stay-involved) {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
 

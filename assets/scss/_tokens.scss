@@ -1,46 +1,14 @@
+// Keep dark theme after :root: both selectors have equal specificity.
 :root,
 [data-bs-theme="light"] {
   --control-border-color: var(--bs-border-color);
   --accent-text-color: var(--bs-primary);
-  --accent-text-color: var(--bs-primary);
-  --code-block-bg: var(--bs-tertiary-bg);
+
   --kep-stage-dot: var(--bs-tertiary-color);
   --kep-stage-dot-glow: transparent;
-
-  @each $role, $color in $chroma-light {
-    --chroma-#{$role}: #{$color};
-  }
 }
 
 [data-bs-theme="dark"] {
   --control-border-color: var(--bs-gray-600);
   --accent-text-color: var(--bs-primary-text-emphasis);
-  --accent-text-color: var(--bs-primary-text-emphasis);
-  --code-block-bg: var(--bs-body-bg);
-
-  @each $role, $color in $chroma-dark {
-    --chroma-#{$role}: #{$color};
-  }
-}
-
-@each $stage, $c in $kep-stages {
-  .kep-stage-#{$stage} {
-    --kep-stage-bg: #{map-get($c, bg)};
-    --kep-stage-fg: #{map-get($c, text)};
-    --kep-stage-border: #{map-get($c, soft)};
-    --kep-stage-active-bg: #{map-get($c, soft)};
-    --kep-stage-accent: #{map-get($c, accent)};
-
-    @if map-get($c, dot) {
-      --kep-stage-dot: #{map-get($c, dot)};
-      --kep-stage-dot-glow: #{rgba(map-get($c, dot), $kep-stage-dot-glow)};
-    }
-  }
-
-  [data-bs-theme="dark"] .kep-stage-#{$stage} {
-    --kep-stage-bg: #{rgba(map-get($c, accent), $kep-stage-dark-fill)};
-    --kep-stage-fg: #{map-get($c, dark-text)};
-    --kep-stage-border: #{rgba(map-get($c, accent), $kep-stage-dark-border)};
-    --kep-stage-active-bg: #{rgba(map-get($c, accent), $kep-stage-dark-active-fill)};
-  }
 }
