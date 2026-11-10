@@ -5,7 +5,7 @@
   border-radius: 8px;
   padding: 1rem 1.25rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 3px rgba(var(--bs-black-rgb), 0.04);
 
   .kep-filter-row {
     display: flex;
@@ -39,7 +39,7 @@
     select {
       font-size: 0.85rem;
       padding: 0.4rem 0.6rem;
-      border: 1px solid var(--bs-border-color);
+      border: 1px solid var(--control-border-color);
       border-radius: 6px;
       background: var(--bs-body-bg);
       color: var(--bs-body-color);
@@ -53,7 +53,7 @@
       }
 
       &:focus-visible {
-        outline: 2px solid $primary;
+        outline: 2px solid var(--bs-primary);
         outline-offset: 1px;
         border-color: transparent;
       }
@@ -96,65 +96,19 @@
     min-height: 32px;
     font-family: inherit;
 
+    background: var(--kep-stage-bg);
+    color: var(--kep-stage-fg);
+
     &[aria-checked="true"] {
-      border-color: currentColor;
-      box-shadow: 0 0 0 2px rgba($primary, 0.15);
+      background: var(--kep-stage-active-bg);
+      border-color: var(--kep-stage-accent, currentColor);
+      box-shadow: 0 0 0 2px rgba(var(--bs-primary-rgb), 0.15);
       font-weight: 700;
     }
 
     &:focus-visible {
-      outline: 2px solid $primary;
+      outline: 2px solid var(--bs-primary);
       outline-offset: 2px;
-    }
-
-    &.kep-stage-alpha {
-      background: $kep-alpha-bg;
-      color: $kep-alpha-text;
-
-      &[aria-checked="true"] {
-        background: $kep-alpha-soft;
-        border-color: $kep-alpha-accent;
-      }
-    }
-
-    &.kep-stage-beta {
-      background: $kep-beta-bg;
-      color: $kep-beta-text;
-
-      &[aria-checked="true"] {
-        background: $kep-beta-soft;
-        border-color: $kep-beta-accent;
-      }
-    }
-
-    &.kep-stage-stable {
-      background: $kep-stable-bg;
-      color: $kep-stable-text;
-
-      &[aria-checked="true"] {
-        background: $kep-stable-soft;
-        border-color: $kep-stable-accent;
-      }
-    }
-
-    &.kep-stage-deprecated {
-      background: $kep-deprecated-bg;
-      color: $kep-deprecated-text;
-
-      &[aria-checked="true"] {
-        background: $kep-deprecated-soft;
-        border-color: var(--bs-border-color);
-      }
-    }
-
-    &.kep-stage-other {
-      background: $kep-other-bg;
-      color: $kep-other-text;
-
-      &[aria-checked="true"] {
-        background: $kep-other-soft;
-        border-color: $kep-other-accent;
-      }
     }
   }
 
@@ -183,7 +137,7 @@
       width: 100%;
       padding: 0.45rem 0.75rem 0.45rem 2rem;
       font-size: 0.85rem;
-      border: 1px solid var(--bs-border-color);
+      border: 1px solid var(--control-border-color);
       border-radius: 6px;
       background: var(--bs-body-bg);
       color: var(--bs-body-color);
@@ -199,7 +153,7 @@
       }
 
       &:focus-visible {
-        outline: 2px solid $primary;
+        outline: 2px solid var(--bs-primary);
         outline-offset: 1px;
         border-color: transparent;
       }
@@ -227,7 +181,7 @@
   padding: 0.5rem 1rem;
   font-size: 0.85rem;
   font-weight: 600;
-  color: $primary;
+  color: var(--accent-text-color);
   background: var(--bs-body-bg);
   border: 1px solid var(--bs-border-color);
   border-radius: 6px;
@@ -241,7 +195,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid $primary;
+    outline: 2px solid var(--bs-primary);
     outline-offset: 2px;
   }
 }

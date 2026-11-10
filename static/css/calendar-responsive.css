@@ -298,9 +298,39 @@ body:has(.calendar-container) main[role="main"] {
   }
 }
 
-.fc .fc-list-sticky .fc-list-day>* {
-  position: sticky !important;
+/* FullCalendar theme colors */
+#calendar.fc {
+  --fc-page-bg-color: var(--bs-body-bg);
+  --fc-neutral-bg-color: var(--bs-tertiary-bg);
+  --fc-neutral-text-color: var(--bs-secondary-color);
+  --fc-border-color: var(--bs-border-color);
+  --fc-list-event-hover-bg-color: var(--bs-tertiary-bg);
+  --fc-today-bg-color: var(--bs-primary-bg-subtle);
+
+  --fc-button-text-color: var(--bs-body-color);
+  --fc-button-bg-color: var(--bs-secondary-bg);
+  --fc-button-border-color: var(--bs-border-color);
+  --fc-button-hover-bg-color: var(--bs-tertiary-bg);
+  --fc-button-hover-border-color: var(--bs-border-color);
+  --fc-button-active-bg-color: var(--bs-primary-bg-subtle);
+  --fc-button-active-border-color: var(--bs-border-color);
+
+  color: var(--bs-body-color);
+}
+
+/* Calendar text */
+#calendar.fc .fc-toolbar-title,
+#calendar.fc .fc-col-header-cell-cushion,
+#calendar.fc .fc-daygrid-day-number,
+#calendar.fc .fc-list-day-text,
+#calendar.fc .fc-list-day-side-text {
+  color: var(--bs-body-color);
+}
+
+/* Sticky list headers */
+#calendar.fc .fc-list-sticky .fc-list-day > * {
+  position: sticky;
   top: 0;
-  background: var(--fc-page-bg-color, #fff) !important;
+  background-color: var(--bs-body-bg);
   z-index: 5;
 }

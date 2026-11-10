@@ -8,7 +8,7 @@
   scrollbar-color: var(--bs-secondary-color) transparent;
 
   &:focus-visible {
-    outline: 2px solid $primary;
+    outline: 2px solid var(--bs-primary);
     outline-offset: -2px;
   }
 
@@ -88,7 +88,7 @@
     }
 
     &:focus-visible {
-      outline: 2px solid $primary;
+      outline: 2px solid var(--bs-primary);
       outline-offset: -2px;
     }
   }
@@ -132,11 +132,11 @@
     transition: color 0.15s ease;
 
     &:hover {
-      color: $primary;
+      color: var(--accent-text-color);
     }
 
     &:focus-visible {
-      outline: 2px solid $primary;
+      outline: 2px solid var(--bs-primary);
       outline-offset: 2px;
       border-radius: 2px;
     }
@@ -163,12 +163,12 @@
     transition: color 0.15s ease;
 
     &:hover {
-      color: $primary;
+      color: var(--accent-text-color);
     }
   }
 
   .kep-author-etal {
-    color: var(--bs-tertiary-color);
+    color: var(--bs-secondary-color);
     font-size: 0.78rem;
     font-style: italic;
   }
@@ -185,37 +185,11 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
-  border: 1px solid transparent;
 
-  &.kep-stage-alpha {
-    background: $kep-alpha-bg;
-    color: $kep-alpha-text;
-    border-color: $kep-alpha-soft;
-  }
-
-  &.kep-stage-beta {
-    background: $kep-beta-bg;
-    color: $kep-beta-text;
-    border-color: $kep-beta-soft;
-  }
-
-  &.kep-stage-stable {
-    background: $kep-stable-bg;
-    color: $kep-stable-text;
-    border-color: $kep-stable-soft;
-  }
-
-  &.kep-stage-deprecated {
-    background: $kep-deprecated-bg;
-    color: $kep-deprecated-text;
-    border-color: $kep-deprecated-soft;
-  }
-
-  &.kep-stage-other {
-    background: $kep-other-bg;
-    color: $kep-other-text;
-    border-color: $kep-other-soft;
-  }
+  // Stage colors come from the .kep-stage-* class.
+  background: var(--kep-stage-bg);
+  color: var(--kep-stage-fg);
+  border: 1px solid var(--kep-stage-border, transparent);
 }
 
 // ===== Latest Version Styles =====
@@ -225,22 +199,6 @@
     font-size: 0.78rem;
     font-weight: 600;
     color: var(--bs-body-color);
-  }
-
-  .kep-latest-alpha {
-    color: $kep-alpha-text;
-  }
-
-  .kep-latest-beta {
-    color: $kep-beta-text;
-  }
-
-  .kep-latest-stable {
-    color: $kep-stable-text;
-  }
-
-  .kep-latest-deprecated {
-    color: var(--bs-secondary-color);
   }
 }
 
@@ -262,14 +220,14 @@
     select {
       font-size: 0.82rem;
       padding: 0.2rem 0.4rem;
-      border: 1px solid var(--bs-border-color);
+      border: 1px solid var(--control-border-color);
       border-radius: 4px;
       background: var(--bs-body-bg);
       color: var(--bs-body-color);
 
       &:focus {
-        border-color: $primary;
-        box-shadow: 0 0 0 .2rem rgba($primary, .25);
+        border-color: var(--bs-primary);
+        box-shadow: 0 0 0 .2rem rgba(var(--bs-primary-rgb), .25);
         outline: 0;
       }
     }
@@ -301,9 +259,9 @@
       }
 
       &.current {
-        background: $primary;
+        background: var(--bs-primary);
         color: var(--bs-white) !important; // beats DataTables' own !important on button color
-        border-color: $primary;
+        border-color: var(--bs-primary);
       }
 
       &.disabled {
@@ -429,9 +387,20 @@
     min-width: 44px;
   }
 }
-// Docsy & Bootstrap 5 Dark Mode Compatibility Layer for DataTables
+// DataTables dark-mode compatibility.
 [data-bs-theme="dark"] {
   .dataTables_wrapper {
+    select {
+      background-color: var(--bs-body-bg);
+      color: var(--bs-body-color);
+
+      option,
+      optgroup {
+        background-color: var(--bs-body-bg);
+        color: var(--bs-body-color);
+      }
+    }
+
     .dataTables_length,
     .dataTables_info {
       &, label {
@@ -439,18 +408,21 @@
       }
     }
 
-    // Override DataTables' !important pagination text color for dark mode.
+    // Override DataTables' !important pagination text color.
     .dataTables_paginate {
       &, a, span {
         color: var(--bs-body-color) !important;
       }
+
       .paginate_button {
         background: transparent;
         border: 1px solid transparent;
+
         &:hover {
           color: var(--bs-link-hover-color);
           background: var(--bs-tertiary-bg);
         }
+
         &.current {
           &, &:hover {
             color: var(--bs-body-color) !important;
@@ -459,6 +431,7 @@
             box-shadow: none;
           }
         }
+
         &.previous.disabled,
         &.next.disabled {
           &, &:hover, &:active {
@@ -472,4 +445,3 @@
     }
   }
 }
-
