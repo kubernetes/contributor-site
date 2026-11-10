@@ -11,7 +11,7 @@
 }
 
 .sig-card-title {
-  color: var(--bs-primary);
+  color: var(--accent-text-color);
   text-decoration: none;
 
   &:hover {
@@ -52,13 +52,13 @@
 
   .sig-card-wrapper {
     .btn-outline-primary {
-      --bs-btn-color: var(--bs-primary-text-emphasis);
-      --bs-btn-border-color: var(--bs-primary-text-emphasis);
+      --bs-btn-color: var(--accent-text-color);
+      --bs-btn-border-color: var(--accent-text-color);
     }
 
     .sig-details-btn {
-      --bs-btn-color: var(--bs-primary-text-emphasis);
-      --bs-btn-hover-color: var(--bs-primary-text-emphasis);
+      --bs-btn-color: var(--accent-text-color);
+      --bs-btn-hover-color: var(--accent-text-color);
       --bs-btn-bg: var(--bs-secondary-bg);
       --bs-btn-border-color: var(--control-border-color);
       --bs-btn-hover-bg: var(--bs-tertiary-bg);

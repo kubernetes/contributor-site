@@ -13,10 +13,10 @@
         <div class="kep-status-group mb-4">
           <div class="d-flex flex-wrap gap-2">
             {{ with .Params.stage }}
-            <span class="kep-badge-refined kep-stage-{{ . }}">{{ . | upper }}</span>
+            <span class="kep-badge-refined kep-stage-{{ cond (in (slice "alpha" "beta" "stable" "deprecated") .) . "other" }}">{{ . | upper }}</span>
             {{ end }}
             {{ with .Params.status }}
-            <span class="kep-badge-refined kep-status-generic">{{ . | humanize | title }}</span>
+            <span class="kep-badge-refined">{{ . | humanize | title }}</span>
             {{ end }}
           </div>
         </div>

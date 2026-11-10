@@ -68,32 +68,3 @@ $kep-stage-dark-fill:        0.15;
 $kep-stage-dark-active-fill: 0.25;
 $kep-stage-dark-border:      0.45;
 $kep-stage-dot-glow:         0.4;
-
-// Chroma syntax highlighting palettes.
-$chroma-light: (
-  background: #f8f8f8,
-  keyword: #a2f, keyword-constant: #a2f, keyword-type: #0b0,
-  name-attribute: #b44, name-builtin: #a2f, name-class: #00f, name-constant: #800,
-  name-decorator: #a2f, name-entity: #999, name-exception: #d2413a, name-function: #00a000,
-  name-label: #a0a000, name-namespace: #00f, name-tag: #008000, name-variable: #b8860b,
-  string: #b44, string-doc: #b44, string-escape: #b62, string-interpol: #b68,
-  string-other: #008000, string-regex: #b68, number: #666, operator: #666,
-  comment: #080, comment-special: #080,
-  generic-deleted: #a00000, generic-error: #f00, generic-heading: #000080, generic-inserted: #00a000,
-  generic-output: #888, generic-prompt: #000080, generic-subheading: #800080, generic-traceback: #04d,
-  whitespace: #bbb
-);
-
-$chroma-dark: (
-  background: #1b1f22,
-  keyword: #ff7b72, keyword-constant: #79c0ff, keyword-type: #ff7b72,
-  name-attribute: #79c0ff, name-builtin: #ffa657, name-class: #f0883e, name-constant: #79c0ff,
-  name-decorator: #d2a8ff, name-entity: #ffa657, name-exception: #f0883e, name-function: #d2a8ff,
-  name-label: #79c0ff, name-namespace: #ff7b72, name-tag: #7ee787, name-variable: #79c0ff,
-  string: #a5d6ff, string-doc: #a5d6ff, string-escape: #79c0ff, string-interpol: #79c0ff,
-  string-other: #a5d6ff, string-regex: #79c0ff, number: #a5d6ff, operator: #ff7b72,
-  comment: #8b949e, comment-special: #8b949e,
-  generic-deleted: #ffa198, generic-error: #ffa198, generic-heading: #79c0ff, generic-inserted: #56d364,
-  generic-output: #8b949e, generic-prompt: #8b949e, generic-subheading: #79c0ff, generic-traceback: #ff7b72,
-  whitespace: #6e7681
-);

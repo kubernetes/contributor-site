@@ -113,7 +113,7 @@
               <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
                 <div class="card-body d-flex flex-column p-3">
                   <div class="d-flex justify-content-between align-items-start mb-2">
-                    <h5 class="fw-bold mb-0 text-primary h6">
+                    <h5 class="fw-bold mb-0 h6">
                       <a href="/community/community-groups/sigs/{{ .dir | replaceRE "^sig-" "" }}/" class="sig-card-title text-decoration-none">{{ .name }}</a>
                     </h5>
                     <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-body-secondary" title="View Source"><i class="fab fa-github"></i></a>
@@ -238,7 +238,7 @@
               <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
                 <div class="card-body d-flex flex-column p-3">
                   <div class="d-flex justify-content-between align-items-start mb-2">
-                    <h5 class="fw-bold mb-0 text-primary h6">
+                    <h5 class="fw-bold mb-0 h6">
                       <a href="/community/community-groups/wg/{{ .dir | replaceRE "^sig-" "" | replaceRE "^wg-" "" }}/" class="sig-card-title text-decoration-none">WG {{ .name }}</a>
                     </h5>
                     <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-body-secondary" title="View Source"><i class="fab fa-github"></i></a>
@@ -359,7 +359,7 @@
               <div class="card h-100 border-0 shadow-sm border-top border-primary border-3">
                 <div class="card-body d-flex flex-column p-3">
                   <div class="d-flex justify-content-between align-items-start mb-2">
-                    <h5 class="fw-bold mb-0 text-primary h6">
+                    <h5 class="fw-bold mb-0 h6">
                       <a href="/community/community-groups/committees/{{ .dir | replaceRE "^sig-" "" | replaceRE "^committee-" "" }}/" class="sig-card-title text-decoration-none">{{ .name }}</a>
                     </h5>
                     <a href="https://github.com/kubernetes/community/tree/{{ $defaultBranch }}/{{ .dir }}" class="text-body-secondary" title="View Source"><i class="fab fa-github"></i></a>
