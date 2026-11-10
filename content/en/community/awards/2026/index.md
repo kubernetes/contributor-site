@@ -61,7 +61,7 @@ Long running Minikube maintainer.
 Thank you, Stefan, for all your work in SIG Cluster Lifecycle, and for your ability to combine technical excellence with the values that make this community unique, such as respect and care for others
 
 *Matt Boersma, [@mboersma](https://github.com/mboersma)*  
-For his Cluster API AWS and image-builder contributions
+For his Cluster API Azure and image-builder contributions
 
 #### Contributor Experience
 
@@ -141,7 +141,7 @@ For continuing engagement, deep technical insight, and always stepping up to sup
 *Agustina Barbetta, [@aibarbetta](https://github.com/aibarbetta)*  
 Agustina joined the Release Team in v1.33 as a Comms Shadow, and is currently the v1.38 Branch Manager. Throughout her time on the release team, she has consistently made valuable improvements in the documentation and processes for all the roles she has served in, well above and beyond the requirements of the job. For leaving each team a better place than she found it, we nominate Agustina for SIG Release Contributor of the Year.
 
-*Jenny Shu*  
+*Jenny Shu, [@jenshu](https://github.com/jenshu)*  
 Jenny has served on the Release Team since v1.32, when she joined as an Enhancements Shadow. She quickly excelled, and is currently a Branch Management Shadow for v1.38. During this time, she has made significant improvements to the documentation and processes for both the Enhancements subteam and Branch Management in ways that reduce our workload while improving collaboration. For bringing clarity to roles that were murky, we nominate Jenny Shu for SIG Release Contributor of the Year.
 
 #### Scheduling
