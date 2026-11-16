@@ -90,8 +90,19 @@ body:has(.calendar-container) main[role="main"] {
   background-color: var(--bs-tertiary-bg) !important;
 }
 
-#calendar .fc-list-event:hover td {
-  background-color: var(--bs-secondary-bg);
+#calendar .fc-list-event:hover > td {
+  background-color: var(--bs-secondary-bg) !important;
+  background-image: none !important;
+  color: var(--bs-body-color) !important;
+  box-shadow: none !important;
+}
+
+#calendar .fc-list-event:hover,
+#calendar .fc-list-event:hover td,
+#calendar .fc-list-event:hover a,
+#calendar .fc-list-event:hover .fc-list-event-time,
+#calendar .fc-list-event:hover .fc-list-event-title {
+  color: var(--bs-body-color) !important;
 }
 
 #calendar .fc-daygrid-event {
@@ -285,4 +296,55 @@ body:has(.calendar-container) main[role="main"] {
   .fc {
     font-size: 1rem;
   }
+}
+
+/* Month view grid styling */
+#calendar.fc {
+  --fc-border-color: color-mix(
+    in srgb,
+    var(--bs-border-color),
+    var(--bs-body-color) 35%
+  );
+}
+
+#calendar .fc-scrollgrid {
+  border: 1px solid var(--fc-border-color) !important;
+}
+
+#calendar .fc-col-header-cell {
+  border: 1px solid var(--fc-border-color) !important;
+  background: var(--bs-tertiary-bg);
+}
+
+#calendar .fc-daygrid-body td.fc-daygrid-day {
+  border: 1px solid var(--fc-border-color) !important;
+}
+
+#calendar .fc-daygrid-day-frame {
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 2px;
+}
+
+#calendar .fc-daygrid-event {
+  display: block;
+  margin: 2px 0 !important;
+  padding: 1px 3px !important;
+  border-radius: 2px;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+#calendar .fc-daygrid-event .fc-event-main-frame,
+#calendar .fc-daygrid-event .fc-event-title-container {
+  min-width: 0;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+#calendar .fc-daygrid-event .fc-event-title,
+#calendar .fc-daygrid-event .fc-event-time {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
 }
