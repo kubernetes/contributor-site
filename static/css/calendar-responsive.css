@@ -90,12 +90,6 @@ body:has(.calendar-container) main[role="main"] {
   background-color: var(--bs-tertiary-bg) !important;
 }
 
-#calendar .fc-list-event:hover > td {
-  background-color: var(--bs-secondary-bg) !important;
-  background-image: none !important;
-  color: var(--bs-body-color) !important;
-  box-shadow: none !important;
-}
 
 #calendar .fc-list-event:hover,
 #calendar .fc-list-event:hover td,
@@ -118,7 +112,6 @@ body:has(.calendar-container) main[role="main"] {
 }
 
 #calendar .fc-daygrid-event .fc-event-title {
-  display: block;
   overflow: hidden;
   white-space: nowrap !important;
   text-overflow: ellipsis;

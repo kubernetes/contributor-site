@@ -30,7 +30,8 @@ Add styles or import other files. */
 }
 
 /* Use Bootstrap surfaces in both themes. */
-.chroma {
+.chroma,
+[data-bs-theme="dark"] .chroma {
   background-color: var(--bs-tertiary-bg);
 }
 
