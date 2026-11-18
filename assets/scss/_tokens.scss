@@ -1,0 +1,14 @@
+// Keep dark theme after :root: both selectors have equal specificity.
+:root,
+[data-bs-theme="light"] {
+  --control-border-color: var(--bs-border-color);
+  --accent-text-color: var(--bs-primary);
+
+  --kep-stage-dot: var(--bs-tertiary-color);
+  --kep-stage-dot-glow: transparent;
+}
+
+[data-bs-theme="dark"] {
+  --control-border-color: var(--bs-gray-600);
+  --accent-text-color: var(--bs-primary-text-emphasis);
+}
