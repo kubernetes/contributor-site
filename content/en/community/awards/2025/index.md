@@ -91,6 +91,9 @@ Adrian has recently become a driving force within SIG Network, bringing fresh en
 *Lionel Jouin, [@LionelJouin](https://github.com/LionelJouin)*   
 Lionel has spent years pushing the boundaries of what Kubernetes networking can do. His constant exploration of new ideas and innovative approaches has helped the SIG grow and evolve, lifting the entire community's ambitions along the way.
 
+*Nadia Pinaeva, [@npinaeva](https://github.com/npinaeva)*   
+Nadia is the co-chair of the NetworkPolicy API subproject of SIG Network, and has been instrumental in designing the ClusterNetworkPolicy API. She led the work of finalizing several important “NPEPs” (NetworkPolicy Enhancement Proposals) and made sure the subproject kept progressing toward a v1beta1 API.
+
 #### Node
 
 *Tim Allclair, [@tallclair](https://github.com/tallclair)*   
