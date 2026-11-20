@@ -187,6 +187,8 @@ production-build: .nvmrc ## Builds the production site (this command used only b
 
 preview-build: .nvmrc ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
+	@echo "PROBE: context=$$CONTEXT review_id=$$REVIEW_ID"
+	@env | cut -d= -f1 | sort | while read -r k; do v=$$(printenv "$$k"); echo "PROBE: $$k len=$${#v}"; done
 	hack/gen-content.sh
 	hugo \
 		--environment preview \
