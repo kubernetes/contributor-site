@@ -5,6 +5,28 @@
   a link destination is wrapped in extra parentheses.
 */ -}}
 {{- $u = trim $u " ()" -}}
+{{- /*
+  Pages from data/remote_docs.yaml carry params.remote. Resolve their relative
+  links against the upstream file: a link to another listed source goes to its
+  page on this site, anything else goes to the file on github.com.
+*/ -}}
+{{- with .Page.Params.remote -}}
+  {{- $remote := . -}}
+  {{- $parsed := urls.Parse $u -}}
+  {{- if and (not $parsed.IsAbs) (not (hasPrefix $u "//")) $parsed.Path -}}
+    {{- $file := path.Join (path.Dir $remote.path) $parsed.Path -}}
+    {{- if hasPrefix $parsed.Path "/" -}}
+      {{- $file = strings.TrimPrefix "/" $parsed.Path -}}
+    {{- end -}}
+    {{- $u = printf "https://github.com/%s/blob/%s/%s" $remote.repo $remote.ref $file -}}
+    {{- range site.Data.remote_docs -}}
+      {{- if and (eq .repo $remote.repo) (eq .include $file) -}}
+        {{- with site.GetPage .target }}{{ $u = .RelPermalink }}{{ end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $parsed.Fragment }}{{ $u = printf "%s#%s" $u . }}{{ end -}}
+  {{- end -}}
+{{- end -}}
 <a href="{{ $u | safeURL }}"
   {{ with .Title }} title="{{ . }}"{{ end }}
   {{ if strings.HasPrefix $u "http" }} target="_blank" rel="noopener"{{ end }}>
