@@ -1,0 +1,78 @@
+{{- /*
+  Creates one page for every source listed in data/remote_docs.yaml.
+  See the comments in that file for how to add a source.
+*/ -}}
+
+{{- $globalOpts := dict -}}
+{{- with os.Getenv "HUGO_GITHUB_TOKEN" -}}
+  {{- $globalOpts = dict "headers" (dict "Authorization" (printf "Bearer %s" .)) -}}
+{{- end -}}
+
+{{- range $src := site.Data.remote_docs -}}
+  {{- $missing := slice -}}
+  {{- range slice "id" "repo" "ref" "include" "target" -}}
+    {{- if not (index $src .) }}{{ $missing = $missing | append . }}{{ end -}}
+  {{- end -}}
+  {{- if $missing -}}
+    {{- errorf "data/remote_docs.yaml: source %q is missing required field(s): %s" ($src.id | default "(no id)") (delimit $missing ", ") -}}
+    {{- continue -}}
+  {{- end -}}
+
+  {{- /* No custom cache "key": Hugo derives it from the URL, so changing a
+         source's repo, ref or include never serves a stale cached file. */ -}}
+  {{- $url := printf "https://raw.githubusercontent.com/%s/%s/%s" $src.repo $src.ref $src.include -}}
+  {{- $problem := "" -}}
+  {{- $md := "" -}}
+
+  {{- with try (resources.GetRemote $url $globalOpts) -}}
+    {{- with .Err -}}
+      {{- $problem = printf "%s" . -}}
+    {{- else with .Value -}}
+      {{- $md = replace .Content "\u200b" "" -}}
+    {{- else -}}
+      {{- $problem = "not found" -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- if $problem -}}
+    {{- if eq hugo.Environment "production" -}}
+      {{- errorf "remote_docs %q: unable to load %s: %s" $src.id $url $problem -}}
+    {{- else -}}
+      {{- warnf "remote_docs %q: unable to load %s: %s" $src.id $url $problem -}}
+    {{- end -}}
+  {{- else -}}
+    {{- /* Split off upstream front matter, if any. */ -}}
+    {{- $fm := dict -}}
+    {{- with findRESubmatch `(?s)\A---\r?\n(.*?\r?\n)---[ \t]*\r?\n` $md 1 -}}
+      {{- $fm = index . 0 1 | transform.Unmarshal -}}
+      {{- $md = strings.TrimPrefix (index . 0 0) $md -}}
+    {{- end -}}
+
+    {{- /* Drop the first H1 when it is the first thing in the body (matching
+           hack/gen-content.sh), and use it as the title if there is none. */ -}}
+    {{- $h1 := "" -}}
+    {{- with findRESubmatch `\A(?:\s*<!--\s*omit in toc\s*-->)*\s*#[ \t]+([^\r\n]+)\r?\n` $md 1 -}}
+      {{- $h1 = index . 0 1 | strings.TrimSpace -}}
+      {{- $md = strings.TrimPrefix (index . 0 0) $md -}}
+    {{- end -}}
+
+    {{- /* A page that other sources sit under is a section, like _index.md. */ -}}
+    {{- $isSection := false -}}
+    {{- range site.Data.remote_docs -}}
+      {{- if hasPrefix .target (printf "%s/" $src.target) }}{{ $isSection = true }}{{ end -}}
+    {{- end -}}
+
+    {{- /* Layouts read front matter as .Params.<key> (e.g. .Params.description),
+           so every upstream key goes into params too, as a content file would. */ -}}
+    {{- $page := merge $fm (dict
+      "path" $src.target
+      "kind" (cond $isSection "section" "page")
+      "title" ($fm.title | default $h1 | default (path.Base $src.target | humanize | title))
+      "params" (merge $fm ($fm.params | default dict) (dict
+        "remote" (dict "repo" $src.repo "ref" $src.ref "path" $src.include)
+      ))
+      "content" (dict "mediaType" "text/markdown" "value" $md)
+    ) -}}
+    {{- $.AddPage $page -}}
+  {{- end -}}
+{{- end -}}

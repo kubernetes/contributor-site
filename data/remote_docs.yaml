@@ -1,0 +1,68 @@
+# Remote docs: Markdown files pulled from other GitHub repos into this site.
+#
+# Each entry below is a "source". At build time, content/en/_content.gotmpl
+# reads this file, fetches each source file from raw.githubusercontent.com and
+# creates one page for it. To publish another upstream file, add an entry here;
+# you do not need to edit any template.
+#
+# This replaces hack/gen-content.sh and external-sources/ one source at a time
+# (https://github.com/kubernetes/contributor-site/issues/93). Until that is
+# finished, both mechanisms run side by side.
+#
+# ---------------------------------------------------------------------------
+# Fields (all required)
+# ---------------------------------------------------------------------------
+#
+#   id       Unique, lowercase, kebab-case name for the source. Build errors
+#            and warnings use it, so pick something readable.
+#
+#   repo     GitHub repo in "owner/name" form, e.g. kubernetes/sig-release.
+#
+#   ref      Branch or tag to read from. The site always builds from the head
+#            of this branch. Check the repo's default branch:
+#            kubernetes/community and cncf/foundation use "main",
+#            kubernetes/sig-release uses "master".
+#
+#   include  Path of one Markdown file, from the repo root,
+#            e.g. releases/release-1.38/README.md.
+#
+#   target   Path of the page on this site, under content/en/, without a
+#            leading or trailing "/". The page is served at "/<target>/".
+#            Keep the URL that the page has today, so links and bookmarks
+#            keep working.
+#
+# ---------------------------------------------------------------------------
+# What happens to each file
+# ---------------------------------------------------------------------------
+#
+#   - Front matter in the upstream file (title, description, weight, aliases,
+#     and so on) is kept.
+#   - If there is no title in the front matter, the first "# Heading" becomes
+#     the title. That heading is removed from the body, so the page does not
+#     show it twice.
+#   - Relative links to another file listed here point to its page on this
+#     site. Other relative links point to the file on github.com.
+#   - Relative image paths load from raw.githubusercontent.com.
+#   - If the file cannot be fetched (for example, it was renamed or deleted
+#     upstream), the production build fails and names the source "id". Local
+#     and preview builds only warn.
+#
+# ---------------------------------------------------------------------------
+# Adding a source
+# ---------------------------------------------------------------------------
+#
+#   1. Add an entry below. Keep entries grouped by upstream repo.
+#   2. Make sure no file under content/en/ already uses the same path as
+#      "target".
+#   3. Run "make server" and check the new page, its links and its images.
+#      Upstream changes show up on the next build; fetched files are cached
+#      for 2h (see "caches.getresource" in hugo.yaml).
+
+# --- kubernetes/sig-release ------------------------------------------------
+
+# The current release cycle. Update "include" when a new cycle starts.
+- id: sig-release-current-release
+  repo: kubernetes/sig-release
+  ref: master
+  include: releases/release-1.38/README.md
+  target: resources/release

@@ -161,10 +161,6 @@ clean-all: ## Cleans both build artifacts and files synced to content directory
 		-not -name ".gitignore" \
 		-not -name "_index.md" \
 		-exec rm -rf {} \;
-	find content/en/resources/release -maxdepth 1  \
-		-not -path content/en/resources/release \
-		-not -name ".gitignore" \
-		-exec rm -rf {} \;
 	find content/en/docs/orientation -maxdepth 1 \
 		-not -path content/en/docs/orientation \
 		-not -name ".gitignore" \
