@@ -16,7 +16,7 @@
     <div class="d-flex flex-wrap gap-2 my-4 border-top pt-4">
       {{ with .Params.remote_readme_url }}
       <a href="{{ . }}" target="_blank" class="btn btn-sm btn-outline-secondary rounded-pill">
-        <i class="fab fa-github me-1"></i> View README Source
+        <i class="fab fa-github me-1"></i> {{ T "ui_view_readme_source" }}
       </a>
       {{ end }}
       
@@ -24,12 +24,12 @@
       {{ $charterPage := .GetPage "charter" }}
       {{ if $charterPage }}
       <a href="{{ $charterPage.RelPermalink }}" class="btn btn-sm btn-primary rounded-pill">
-        <i class="fas fa-file-contract me-1"></i> View Charter
+        <i class="fas fa-file-contract me-1"></i> {{ T "ui_view_charter" }}
       </a>
       {{ else }}
         {{ with .Params.remote_charter_url }}
         <a href="{{ . }}" target="_blank" class="btn btn-sm btn-outline-secondary rounded-pill">
-          <i class="fab fa-github me-1"></i> View Charter Source
+          <i class="fab fa-github me-1"></i> {{ T "ui_view_charter_source" }}
         </a>
         {{ end }}
       {{ end }}
@@ -38,10 +38,10 @@
 
   {{ if .Params.leadership }}
   <div class="mt-5">
-    <h3 class="h4 fw-bold border-bottom pb-2 mb-4">Leadership</h3>
+    <h3 class="h4 fw-bold border-bottom pb-2 mb-4">{{ T "ui_leadership" }}</h3>
     
     {{ if .Params.leadership.chairs }}
-    <h4 class="h5 fw-semibold mb-3">Chairs</h4>
+    <h4 class="h5 fw-semibold mb-3">{{ T "ui_chairs" }}</h4>
     <div class="row g-4 mb-4">
       {{ range .Params.leadership.chairs }}
       <div class="col-md-6 col-lg-4">
@@ -64,7 +64,7 @@
     {{ end }}
 
     {{ if .Params.leadership.tech_leads }}
-    <h4 class="h5 fw-semibold mb-3">Tech Leads</h4>
+    <h4 class="h5 fw-semibold mb-3">{{ T "ui_tech_leads" }}</h4>
     <div class="row g-4 mb-4">
       {{ range .Params.leadership.tech_leads }}
       <div class="col-md-6 col-lg-4">
@@ -90,16 +90,16 @@
 
   {{ if .Params.meetings }}
   <div class="mt-5">
-    <h3 class="h4 fw-bold border-bottom pb-2 mb-4">Meetings</h3>
+    <h3 class="h4 fw-bold border-bottom pb-2 mb-4">{{ T "ui_meetings" }}</h3>
     <div class="card border-0 shadow-sm overflow-hidden">
       <div class="table-responsive">
         <table class="table table-hover mb-0">
           <thead class="bg-light">
             <tr>
-              <th class="ps-3">Description</th>
-              <th>Day</th>
-              <th>Time ({{ (index .Params.meetings 0).tz }})</th>
-              <th class="text-end pe-3">Links</th>
+              <th class="ps-3">{{ T "ui_description" }}</th>
+              <th>{{ T "ui_day" }}</th>
+              <th>{{ T "ui_time" }} ({{ (index .Params.meetings 0).tz }})</th>
+              <th class="text-end pe-3">{{ T "ui_links" }}</th>
             </tr>
           </thead>
           <tbody>
