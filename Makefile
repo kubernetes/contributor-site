@@ -50,7 +50,7 @@ BLOCK_STDOUT_CMD	:= python -c "import os,sys,fcntl; \
 .DEFAULT_GOAL	:= help
 
 .PHONY: targets container-targets
-targets: help gen-content render server clean clean-all production-build preview-build
+targets: help gen-content calendar render server clean clean-all production-build preview-build
 container-targets: container-image container-push container-gen-content container-render container-server
 
 help: ## Show this help text.
@@ -65,10 +65,13 @@ dependencies:
 gen-content: ## Generates content from external sources.
 	hack/gen-content.sh
 
-render: dependencies ## Build the site using Hugo on the host.
+calendar: ## Writes static/calendar-events.json from the public Kubernetes calendar feed.
+	node hack/gen-calendar.js static/calendar-events.json
+
+render: dependencies calendar ## Build the site using Hugo on the host.
 	hugo --logLevel info --ignoreCache --minify
 
-server: dependencies ## Run Hugo locally (if Hugo "extended" is installed locally)
+server: dependencies calendar ## Run Hugo locally (if Hugo "extended" is installed locally)
 	hugo server \
 		--logLevel info \
 		--buildDrafts \
@@ -176,7 +179,7 @@ clean-all: ## Cleans both build artifacts and files synced to content directory
 		-not -name "code-of-conduct.md" \
 		-exec rm -rf {} \;
 
-production-build: .nvmrc ## Builds the production site (this command used only by Netlify).
+production-build: .nvmrc calendar ## Builds the production site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
 	hack/gen-content.sh
 	hugo \
@@ -185,7 +188,7 @@ production-build: .nvmrc ## Builds the production site (this command used only b
 		--ignoreCache \
 		--minify
 
-preview-build: .nvmrc ## Builds a deploy preview of the site (this command used only by Netlify).
+preview-build: .nvmrc calendar ## Builds a deploy preview of the site (this command used only by Netlify).
 	$(BLOCK_STDOUT_CMD)
 	hack/gen-content.sh
 	hugo \
