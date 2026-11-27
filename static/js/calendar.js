@@ -4,35 +4,29 @@ function openEvent(event) {
   return false;
 };
 
-function renderCalendar(apiKey) {
+function renderCalendar(eventsUrl) {
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
-    
+
     if (!calendarEl) {
       console.error('Calendar element not found. Cannot render calendar.');
       return;
     }
-    
-    var isProduction = document.documentElement.getAttribute('data-isproduction') === 'true';
-    
-    if (!apiKey) {
-      if (isProduction) {
-        console.error('Google Calendar API key is missing in production. Calendar will not render.');
-      } else {
-        console.warn('Google Calendar API key is missing. Calendar will not render.');
-      }
-      calendarEl.innerHTML = '<div class="alert alert-warning">Community Calendar is not available in this environment (missing API Key).</div>';
-      return;
-    }
+
+    // Fetch the file once. A URL in `events` makes FullCalendar download the
+    // file again, with new start and end parameters, for every date range.
+    var data = fetch(eventsUrl).then(function(r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    });
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      googleCalendarApiKey: apiKey,
-      events: {
-        googleCalendarId: 'calendar@kubernetes.io'
+      events: function(info, success, failure) {
+        data.then(success, failure);
       },
       eventSourceFailure: function(errorObj) {
-        console.error('Failed to fetch Google Calendar events:', errorObj);
-        calendarEl.innerHTML = '<div class="alert alert-warning">Community Calendar is temporarily unavailable or access is restricted in this environment.</div>';
+        console.error('Failed to fetch calendar events:', errorObj);
+        calendarEl.innerHTML = '<div class="alert alert-warning">Community Calendar is temporarily unavailable.</div>';
       },
       themeSystem: 'bootstrap',
       initialView: 'listView',
